@@ -1,0 +1,17 @@
+# Environment / secrets — NEVER commit these
+.env
+
+# Runtime outputs (regenerated each run)
+.tmp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Google OAuth
+credentials.json
+token.json

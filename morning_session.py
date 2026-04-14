@@ -1,0 +1,224 @@
+"""
+Morning session entry point.
+Triggered by GitHub Actions at 9:00 AM ET on weekdays.
+
+Flow:
+  1. Start/check the 10-day session
+  2. Run the 7-agent pipeline (dry_run=True) on all 5 watchlist tickers
+  3. Pick the single highest-conviction BUY signal
+  4. Send a Telegram approval card (TP, SL, thesis)
+  5. Poll for 60 min — if approved, execute the paper trade
+  6. Record equity and advance the session day counter
+
+Usage:
+  python morning_session.py
+"""
+import os
+import sys
+from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from config import WATCHLIST, APPROVAL_TIMEOUT_SECONDS
+from orchestrator import run_pipeline
+from tools.market_data import get_latest_price
+from tools.session_manager import (
+    get_portfolio,
+    get_session_day,
+    is_session_active,
+    open_position,
+    record_equity,
+    start_session,
+)
+from tools.telegram_bot import poll_for_response, send_approval_request, send_message
+
+# Conviction string → numeric rank for comparison
+_CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
+
+
+# ---------------------------------------------------------------------------
+# Pipeline helpers
+# ---------------------------------------------------------------------------
+
+def _analyze_all(date: str) -> dict:
+    """Run dry-run pipeline for every watchlist ticker. Returns {ticker: state}."""
+    results = {}
+    for ticker in WATCHLIST:
+        try:
+            print(f"[morning] Analyzing {ticker}...")
+            state = run_pipeline(ticker, date, dry_run=True)
+            results[ticker] = state
+        except Exception as e:
+            print(f"[morning] Pipeline error for {ticker}: {e}")
+            results[ticker] = {
+                "error": str(e),
+                "final_order": {"action": "hold", "qty": 0},
+            }
+    return results
+
+
+def _pick_best(results: dict):
+    """
+    Filter for BUY signals and pick the highest-conviction one.
+    Returns (ticker, state) or (None, None) if no buys.
+    """
+    candidates = []
+    for ticker, state in results.items():
+        order = state.get("final_order", {})
+        if order.get("action") == "buy" and order.get("qty", 0) > 0:
+            conviction_str = state.get("trader_decision", {}).get("conviction", "low")
+            score = _CONVICTION_RANK.get(str(conviction_str).lower(), 0)
+            candidates.append((score, ticker, state))
+
+    if not candidates:
+        return None, None
+
+    candidates.sort(key=lambda x: x[0], reverse=True)
+    _, ticker, state = candidates[0]
+    return ticker, state
+
+
+def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, cash: float) -> dict:
+    """Construct the trade_summary dict required by send_approval_request."""
+    order = state.get("final_order", {})
+    trader = state.get("trader_decision", {})
+
+    current_price = get_latest_price(ticker)
+
+    # SL from fund manager, fall back to trader, then default 3%
+    sl_pct_raw = (
+        order.get("stop_loss_pct")
+        or trader.get("stop_loss_pct")
+        or 0.03
+    )
+    tp_pct_raw = sl_pct_raw * 2  # 2:1 reward-to-risk
+
+    # Position sizing: use fund manager's fraction, cap at available cash
+    position_fraction = order.get("position_size_pct") or 0.25
+    max_usd = cash * position_fraction
+    qty = max(1, int(max_usd / current_price))
+    actual_usd = round(qty * current_price, 2)
+
+    # Narrative fields — trimmed to keep Telegram message readable
+    why = (order.get("final_reasoning") or trader.get("reasoning") or "No reasoning provided.")[:350]
+    bull = (state.get("bull_case") or "")[:140]
+    bear = (state.get("bear_case") or "")[:140]
+
+    return {
+        "ticker": ticker,
+        "current_price": current_price,
+        "conviction": trader.get("conviction", "medium"),
+        "why": why,
+        "bull_case": bull or "See logs for full bull case.",
+        "bear_case": bear or "See logs for full bear case.",
+        "take_profit": round(current_price * (1 + tp_pct_raw), 2),
+        "take_profit_pct": tp_pct_raw * 100,
+        "stop_loss": round(current_price * (1 - sl_pct_raw), 2),
+        "stop_loss_pct": sl_pct_raw * 100,
+        "position_size_usd": actual_usd,
+        "qty": qty,
+        "session_day": session_day,
+        "total_days": total_days,
+        # Raw fractions stored separately for session_manager.open_position()
+        "_sl_pct_raw": sl_pct_raw,
+        "_tp_pct_raw": tp_pct_raw,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main():
+    today = datetime.today().strftime("%Y-%m-%d")
+    print(f"\n[morning] ========== Morning Session {today} ==========")
+
+    portfolio = get_portfolio()
+
+    # First run: initialise the session
+    if not portfolio["session"]["active"]:
+        print("[morning] No active session — starting a new 10-day session.")
+        portfolio = start_session()
+
+    # Session finished
+    if not is_session_active():
+        send_message(
+            "🏁 <b>Paper trading session complete!</b>\n\n"
+            "All 10 days are done. Check the dashboard for your final results."
+        )
+        print("[morning] Session complete. Nothing to do.")
+        return
+
+    session_day = get_session_day()
+    total_days = portfolio["session"]["total_days"]
+    equity = portfolio.get("equity", portfolio["initial_capital"])
+    cash = portfolio.get("cash", portfolio["initial_capital"])
+
+    print(f"[morning] Day {session_day}/{total_days}  |  Equity: ${equity:,.2f}  |  Cash: ${cash:,.2f}")
+    send_message(
+        f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {', '.join(WATCHLIST)}...\n"
+        f"<i>(This takes ~10–15 min. I'll ping you with the best trade.)</i>"
+    )
+
+    # Run the agent pipeline for all tickers
+    results = _analyze_all(today)
+    ticker, state = _pick_best(results)
+
+    if ticker is None:
+        no_trade_msg = (
+            f"📭 <b>No Trade Today — Day {session_day}/{total_days}</b>\n\n"
+            f"No BUY signals across {', '.join(WATCHLIST)}.\n"
+            f"All agents returned HOLD or conviction too low.\n\n"
+            f"Session equity: <b>${equity:,.2f}</b>"
+        )
+        send_message(no_trade_msg)
+        record_equity(equity)
+        print("[morning] No BUY signals found. Day logged.")
+        return
+
+    # Build and send the approval card
+    summary = _build_summary(ticker, state, session_day, total_days, cash)
+    print(f"[morning] Best opportunity: {ticker} (conviction: {summary['conviction']})")
+    send_approval_request(summary)
+    print(f"[morning] Approval request sent. Polling for up to {APPROVAL_TIMEOUT_SECONDS // 60} min...")
+
+    response = poll_for_response(timeout_seconds=APPROVAL_TIMEOUT_SECONDS)
+    print(f"[morning] Response received: {response}")
+
+    if response == "approved":
+        open_position(
+            ticker=ticker,
+            qty=summary["qty"],
+            entry_price=summary["current_price"],
+            stop_loss_pct=summary["_sl_pct_raw"],
+            take_profit_pct=summary["_tp_pct_raw"],
+        )
+        send_message(
+            f"✅ <b>Trade Executed — {ticker}</b>\n\n"
+            f"BUY {summary['qty']} shares @ ${summary['current_price']:.2f}\n"
+            f"Total deployed: ${summary['position_size_usd']:.2f}\n\n"
+            f"TP: ${summary['take_profit']:.2f}  |  SL: ${summary['stop_loss']:.2f}\n\n"
+            f"<i>I'll check TP/SL levels at market close and send an EOD summary.</i>"
+        )
+        # Equity stays the same right after buy (cash out, position in)
+        record_equity(equity)
+
+    elif response == "rejected":
+        send_message(
+            f"⏭ <b>Trade Skipped — Day {session_day}/{total_days}</b>\n\n"
+            f"No position opened today. See you tomorrow!"
+        )
+        record_equity(equity)
+
+    else:  # timeout
+        send_message(
+            f"⏰ <b>60-min window expired — Day {session_day}/{total_days}</b>\n\n"
+            f"No response received. Trade skipped for today."
+        )
+        record_equity(equity)
+
+    print(f"[morning] Day {session_day} complete.")
+
+
+if __name__ == "__main__":
+    main()

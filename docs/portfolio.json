@@ -1,0 +1,15 @@
+{
+  "session": {
+    "start_date": null,
+    "current_day": 0,
+    "total_days": 10,
+    "active": false,
+    "last_updated": null
+  },
+  "cash": 5000.0,
+  "initial_capital": 5000.0,
+  "equity": 5000.0,
+  "positions": {},
+  "trade_history": [],
+  "equity_curve": []
+}

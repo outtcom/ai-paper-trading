@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Trading Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --yellow: #f59e0b;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    header .badge.active { border-color: var(--green); color: var(--green); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .card .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .card .value { font-size: 1.6rem; font-weight: 700; }
+    .card .sub { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+    .card .value.green { color: var(--green); }
+    .card .value.red { color: var(--red); }
+
+    .section { margin-bottom: 28px; }
+    .section h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+
+    .chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+      height: 240px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 11px 12px; }
+
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .tag.tp { background: rgba(34,197,94,0.15); color: var(--green); }
+    .tag.sl { background: rgba(239,68,68,0.15); color: var(--red); }
+    .tag.open { background: rgba(59,130,246,0.15); color: var(--blue); }
+    .tag.skip { background: rgba(100,116,139,0.15); color: var(--muted); }
+
+    .pos-row td:first-child { font-weight: 600; }
+
+    .empty { color: var(--muted); font-size: 0.85rem; padding: 20px 12px; }
+
+    footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 32px; }
+
+    @media (max-width: 480px) {
+      .card .value { font-size: 1.3rem; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📈 Paper Trading Dashboard</h1>
+  <span class="badge" id="status-badge">Loading...</span>
+</header>
+
+<!-- KPI cards -->
+<div class="grid">
+  <div class="card">
+    <div class="label">Session Day</div>
+    <div class="value" id="kpi-day">—</div>
+    <div class="sub" id="kpi-day-sub"></div>
+  </div>
+  <div class="card">
+    <div class="label">Equity</div>
+    <div class="value" id="kpi-equity">—</div>
+    <div class="sub" id="kpi-equity-sub"></div>
+  </div>
+  <div class="card">
+    <div class="label">Cash</div>
+    <div class="value" id="kpi-cash">—</div>
+  </div>
+  <div class="card">
+    <div class="label">Win Rate</div>
+    <div class="value" id="kpi-winrate">—</div>
+    <div class="sub" id="kpi-winrate-sub"></div>
+  </div>
+</div>
+
+<!-- Equity curve -->
+<div class="section">
+  <h2>Equity Curve</h2>
+  <div class="chart-wrap">
+    <canvas id="equity-chart"></canvas>
+  </div>
+</div>
+
+<!-- Open positions -->
+<div class="section">
+  <h2>Open Positions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Qty</th>
+          <th>Entry</th>
+          <th>Current</th>
+          <th>Unreal. P&amp;L</th>
+          <th>Take Profit</th>
+          <th>Stop Loss</th>
+        </tr>
+      </thead>
+      <tbody id="positions-tbody">
+        <tr><td class="empty" colspan="7">No open positions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Trade history -->
+<div class="section">
+  <h2>Trade History</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Ticker</th>
+          <th>Qty</th>
+          <th>Entry</th>
+          <th>Exit</th>
+          <th>P&amp;L</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody id="history-tbody">
+        <tr><td class="empty" colspan="7">No completed trades yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer id="footer">Refreshes every 60 s &nbsp;·&nbsp; Last updated: <span id="last-updated">—</span></footer>
+
+<script>
+  let equityChart = null;
+
+  function fmt(n, decimals = 2) {
+    return Number(n).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+
+  function signClass(n) { return n >= 0 ? 'green' : 'red'; }
+  function signStr(n) { return n >= 0 ? '+' : ''; }
+
+  function render(data) {
+    const session = data.session || {};
+    const day = session.current_day || 0;
+    const totalDays = session.total_days || 10;
+    const active = session.active;
+    const initial = data.initial_capital || 5000;
+    const equity = data.equity || initial;
+    const cash = data.cash || initial;
+    const ret = ((equity - initial) / initial * 100);
+
+    // Badge
+    const badge = document.getElementById('status-badge');
+    badge.textContent = active ? `Day ${day} / ${totalDays} — Active` : (day >= totalDays ? 'Session Complete' : 'Inactive');
+    badge.className = 'badge' + (active ? ' active' : '');
+
+    // KPIs
+    document.getElementById('kpi-day').textContent = active ? `${day} / ${totalDays}` : (day >= totalDays ? '10 / 10' : '—');
+    document.getElementById('kpi-day-sub').textContent = session.start_date ? `Started ${session.start_date}` : '';
+
+    const equityEl = document.getElementById('kpi-equity');
+    equityEl.textContent = `$${fmt(equity)}`;
+    equityEl.className = `value ${signClass(ret)}`;
+    document.getElementById('kpi-equity-sub').textContent = `${signStr(ret)}${fmt(ret)}% vs $5,000`;
+
+    document.getElementById('kpi-cash').textContent = `$${fmt(cash)}`;
+
+    // Win rate
+    const history = data.trade_history || [];
+    const closed = history.filter(t => t.pnl !== undefined);
+    const winners = closed.filter(t => t.pnl > 0);
+    document.getElementById('kpi-winrate').textContent = closed.length ? `${winners.length}/${closed.length}` : '—';
+    if (closed.length) {
+      const avgPnl = closed.reduce((s, t) => s + t.pnl, 0) / closed.length;
+      document.getElementById('kpi-winrate-sub').textContent = `Avg P&L ${signStr(avgPnl)}$${fmt(avgPnl)}`;
+    }
+
+    // Equity chart
+    const curve = data.equity_curve || [];
+    const labels = curve.map(p => `Day ${p.day}`);
+    const values = curve.map(p => p.equity);
+    // Prepend starting point
+    if (!labels.includes('Day 0')) { labels.unshift('Start'); values.unshift(initial); }
+
+    const lineColor = ret >= 0 ? '#22c55e' : '#ef4444';
+
+    if (equityChart) {
+      equityChart.data.labels = labels;
+      equityChart.data.datasets[0].data = values;
+      equityChart.data.datasets[0].borderColor = lineColor;
+      equityChart.data.datasets[0].backgroundColor = lineColor + '18';
+      equityChart.update();
+    } else {
+      const ctx = document.getElementById('equity-chart').getContext('2d');
+      equityChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Equity',
+            data: values,
+            borderColor: lineColor,
+            backgroundColor: lineColor + '18',
+            borderWidth: 2.5,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: true,
+            tension: 0.3,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: ctx => `$${fmt(ctx.parsed.y)}`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#2a2d3a' },
+              ticks: { color: '#8892a4', font: { size: 11 } }
+            },
+            y: {
+              grid: { color: '#2a2d3a' },
+              ticks: {
+                color: '#8892a4',
+                font: { size: 11 },
+                callback: v => `$${fmt(v, 0)}`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Open positions
+    const posTbody = document.getElementById('positions-tbody');
+    const positions = data.positions || {};
+    const posKeys = Object.keys(positions);
+    if (posKeys.length === 0) {
+      posTbody.innerHTML = '<tr><td class="empty" colspan="7">No open positions</td></tr>';
+    } else {
+      posTbody.innerHTML = posKeys.map(ticker => {
+        const pos = positions[ticker];
+        // We don't have live prices here — show entry and stored TP/SL
+        const entry = pos.entry_price;
+        const tp = pos.take_profit;
+        const sl = pos.stop_loss;
+        // Approximate current using cost basis since we don't have live price in JSON
+        const cost = pos.cost_basis;
+        return `
+          <tr class="pos-row">
+            <td>${ticker}</td>
+            <td>${pos.qty}</td>
+            <td>$${fmt(entry)}</td>
+            <td><span style="color:var(--muted)">live</span></td>
+            <td><span style="color:var(--muted)">—</span></td>
+            <td style="color:var(--green)">$${fmt(tp)}</td>
+            <td style="color:var(--red)">$${fmt(sl)}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    // Trade history
+    const histTbody = document.getElementById('history-tbody');
+    if (history.length === 0) {
+      histTbody.innerHTML = '<tr><td class="empty" colspan="7">No completed trades yet</td></tr>';
+    } else {
+      histTbody.innerHTML = [...history].reverse().map(t => {
+        const pnlSign = t.pnl >= 0 ? '+' : '';
+        const pnlColor = t.pnl >= 0 ? 'var(--green)' : 'var(--red)';
+        let outcomeTag = '';
+        if (t.reason === 'take_profit') outcomeTag = '<span class="tag tp">TP Hit</span>';
+        else if (t.reason === 'stop_loss') outcomeTag = '<span class="tag sl">SL Hit</span>';
+        else outcomeTag = '<span class="tag skip">Manual</span>';
+        return `
+          <tr>
+            <td>${t.closed_date || '—'}</td>
+            <td><b>${t.ticker}</b></td>
+            <td>${t.qty}</td>
+            <td>$${fmt(t.entry_price)}</td>
+            <td>$${fmt(t.exit_price)}</td>
+            <td style="color:${pnlColor}">${pnlSign}$${fmt(t.pnl)} <span style="font-size:0.8em">(${pnlSign}${fmt(t.pnl_pct)}%)</span></td>
+            <td>${outcomeTag}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    // Footer timestamp
+    const lu = session.last_updated ? new Date(session.last_updated).toLocaleString() : '—';
+    document.getElementById('last-updated').textContent = lu;
+  }
+
+  function load() {
+    fetch('./portfolio.json?_=' + Date.now())
+      .then(r => r.json())
+      .then(render)
+      .catch(err => {
+        console.error('Failed to load portfolio.json:', err);
+        document.getElementById('status-badge').textContent = 'Data unavailable';
+      });
+  }
+
+  load();
+  setInterval(load, 60_000);
+</script>
+</body>
+</html>

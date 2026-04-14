@@ -1,0 +1,44 @@
+name: Morning Trading Session
+
+on:
+  schedule:
+    # 9:00 AM EDT (UTC-4) = 13:00 UTC  — valid Apr–Nov
+    # 9:00 AM EST (UTC-5) = 14:00 UTC  — update cron to '0 14' Nov–Mar
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:   # manual trigger for testing
+
+jobs:
+  morning:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit portfolio.json back to the repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run morning session
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python morning_session.py
+
+      - name: Commit portfolio state
+        run: |
+          git config user.name "Trading Bot"
+          git config user.email "trading-bot@noreply.github.com"
+          git add docs/portfolio.json
+          git diff --staged --quiet || git commit -m "session: morning update $(date -u '+%Y-%m-%d')"
+          git push
