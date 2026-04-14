@@ -1,10 +1,10 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 3,
+    "current_day": 4,
     "total_days": 10,
     "active": true,
-    "last_updated": "2026-04-14T12:20:14.943398+00:00"
+    "last_updated": "2026-04-14T12:41:42.058363+00:00"
   },
   "cash": 4678.69,
   "initial_capital": 5000.0,
@@ -52,6 +52,11 @@
     },
     {
       "day": 2,
+      "date": "2026-04-14",
+      "equity": 5000.0
+    },
+    {
+      "day": 3,
       "date": "2026-04-14",
       "equity": 5000.0
     }
