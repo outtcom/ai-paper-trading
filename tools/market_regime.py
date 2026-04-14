@@ -292,8 +292,8 @@ def get_full_regime(watchlist: list) -> dict:
     crypto_perf = {}
     for c in ["BTC-USD", "ETH-USD", "SOL-USD"]:
         try:
-            end   = datetime.today().strftime("%Y-%m-%d")
-            start = (datetime.today() - timedelta(days=3)).strftime("%Y-%m-%d")
+            end   = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
+            start = (datetime.today() - timedelta(days=7)).strftime("%Y-%m-%d")
             bars  = get_ohlcv(c, start, end)
             if len(bars) >= 2:
                 pct = round((bars[-1]["close"] - bars[-2]["close"]) / bars[-2]["close"] * 100, 2)
