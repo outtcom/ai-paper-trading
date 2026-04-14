@@ -58,6 +58,7 @@ def send_approval_request(trade_summary: dict) -> int:
         f"SL:     ${s['stop_loss']:.2f}  ({sl_pct})\n"
         f"Size:   ${s['position_size_usd']:.0f}  ({s['qty']} shares)\n\n"
         f"⏳ <i>Expires in 60 min — no reply = skip</i>"
+        + (f"\n\n📉 VIX: {s['vix_label']}" if s.get("vix_label") else "")
     )
 
     keyboard = json.dumps({

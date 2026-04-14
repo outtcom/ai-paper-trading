@@ -1,14 +1,16 @@
 """
 Morning session entry point.
-Triggered by GitHub Actions at 9:00 AM ET on weekdays.
+Triggered by GitHub Actions at 7:30 AM ET on weekdays.
 
 Flow:
   1. Start/check the 10-day session
-  2. Run the 7-agent pipeline (dry_run=True) on all 5 watchlist tickers
-  3. Pick the single highest-conviction BUY signal
-  4. Send a Telegram approval card (TP, SL, thesis)
-  5. Poll for 60 min — if approved, execute the paper trade
-  6. Record equity and advance the session day counter
+  2. Check VIX — if EXTREME, skip trading. Apply sizing multiplier otherwise.
+  3. Run the 7-agent pipeline (dry_run=True) on all watchlist tickers (stocks + crypto)
+  4. Skip any ticker with earnings within 3 days (gap risk)
+  5. Pick the single highest-conviction BUY signal
+  6. Send a Telegram approval card (TP, SL, thesis, VIX context)
+  7. Poll for 60 min — if approved, execute the paper trade
+  8. Record equity
 
 Usage:
   python morning_session.py
@@ -22,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import WATCHLIST, APPROVAL_TIMEOUT_SECONDS
 from orchestrator import run_pipeline
 from tools.market_data import get_latest_price
+from tools.market_regime import get_vix_multiplier, has_earnings_soon
 from tools.session_manager import (
     get_portfolio,
     get_session_day,
@@ -57,13 +60,16 @@ def _analyze_all(date: str) -> dict:
     return results
 
 
-def _pick_best(results: dict):
+def _pick_best(results: dict, blocked: set):
     """
-    Filter for BUY signals and pick the highest-conviction one.
+    Filter for BUY signals, skip earnings-blocked tickers, pick highest conviction.
     Returns (ticker, state) or (None, None) if no buys.
     """
     candidates = []
     for ticker, state in results.items():
+        if ticker in blocked:
+            print(f"[morning] {ticker} blocked — earnings within 3 days.")
+            continue
         order = state.get("final_order", {})
         if order.get("action") == "buy" and order.get("qty", 0) > 0:
             conviction_str = state.get("trader_decision", {}).get("conviction", "low")
@@ -78,7 +84,7 @@ def _pick_best(results: dict):
     return ticker, state
 
 
-def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, cash: float) -> dict:
+def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, cash: float, **kwargs) -> dict:
     """Construct the trade_summary dict required by send_approval_request."""
     order = state.get("final_order", {})
     trader = state.get("trader_decision", {})
@@ -93,9 +99,10 @@ def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, 
     )
     tp_pct_raw = sl_pct_raw * 2  # 2:1 reward-to-risk
 
-    # Position sizing: use fund manager's fraction, cap at available cash
+    # Position sizing: fund manager fraction × VIX multiplier, cap at cash
     position_fraction = order.get("position_size_pct") or 0.25
-    max_usd = cash * position_fraction
+    vix_mult = kwargs.get("vix_multiplier", 1.0)
+    max_usd = cash * position_fraction * vix_mult
     qty = max(1, int(max_usd / current_price))
     actual_usd = round(qty * current_price, 2)
 
@@ -119,6 +126,7 @@ def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, 
         "qty": qty,
         "session_day": session_day,
         "total_days": total_days,
+        "vix_label": kwargs.get("vix_label", ""),
         # Raw fractions stored separately for session_manager.open_position()
         "_sl_pct_raw": sl_pct_raw,
         "_tp_pct_raw": tp_pct_raw,
@@ -155,20 +163,46 @@ def main():
     cash = portfolio.get("cash", portfolio["initial_capital"])
 
     print(f"[morning] Day {session_day}/{total_days}  |  Equity: ${equity:,.2f}  |  Cash: ${cash:,.2f}")
+
+    # --- VIX check — gate on market volatility regime ---
+    vix_multiplier, vix_label = get_vix_multiplier()
+    print(f"[morning] VIX regime: {vix_label}  |  Sizing multiplier: {vix_multiplier}x")
+
+    if vix_multiplier == 0.0:
+        send_message(
+            f"🚨 <b>No Trade — VIX Extreme — Day {session_day}/{total_days}</b>\n\n"
+            f"VIX: {vix_label}\n"
+            f"Markets are too volatile. Staying in cash today.\n\n"
+            f"Session equity: <b>${equity:,.2f}</b>"
+        )
+        record_equity(equity)
+        print("[morning] VIX EXTREME — skipping all trades.")
+        return
+
+    # --- Earnings check — identify tickers to block ---
+    earnings_blocked = set()
+    for t in WATCHLIST:
+        e = has_earnings_soon(t, days=3)
+        if e["has_earnings"]:
+            earnings_blocked.add(t)
+            print(f"[morning] {t} blocked — earnings on {e['date']} ({e['days_until']}d)")
+
     send_message(
-        f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {', '.join(WATCHLIST)}...\n"
-        f"<i>(This takes ~10–15 min. I'll ping you with the best trade.)</i>"
+        f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {len(WATCHLIST)} tickers "
+        f"(stocks + crypto)...\n"
+        f"VIX: {vix_label}\n"
+        f"<i>Back in ~10–15 min with the best trade.</i>"
     )
 
     # Run the agent pipeline for all tickers
     results = _analyze_all(today)
-    ticker, state = _pick_best(results)
+    ticker, state = _pick_best(results, blocked=earnings_blocked)
 
     if ticker is None:
+        blocked_note = f"\nEarnings-blocked: {', '.join(earnings_blocked)}" if earnings_blocked else ""
         no_trade_msg = (
             f"📭 <b>No Trade Today — Day {session_day}/{total_days}</b>\n\n"
-            f"No BUY signals across {', '.join(WATCHLIST)}.\n"
-            f"All agents returned HOLD or conviction too low.\n\n"
+            f"No valid BUY signals across {len(WATCHLIST)} tickers.{blocked_note}\n\n"
             f"Session equity: <b>${equity:,.2f}</b>"
         )
         send_message(no_trade_msg)
@@ -177,7 +211,10 @@ def main():
         return
 
     # Build and send the approval card
-    summary = _build_summary(ticker, state, session_day, total_days, cash)
+    summary = _build_summary(
+        ticker, state, session_day, total_days, cash,
+        vix_multiplier=vix_multiplier, vix_label=vix_label,
+    )
     print(f"[morning] Best opportunity: {ticker} (conviction: {summary['conviction']})")
     send_approval_request(summary)
     print(f"[morning] Approval request sent. Polling for up to {APPROVAL_TIMEOUT_SECONDS // 60} min...")

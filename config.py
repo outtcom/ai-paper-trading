@@ -4,7 +4,14 @@ Edit this file to change tickers, risk settings, and model assignments.
 """
 
 # --- Watchlist ---
-WATCHLIST = ["AAPL", "GOOGL", "NVDA", "MSFT", "AMZN"]
+STOCKS   = ["AAPL", "GOOGL", "NVDA", "MSFT", "AMZN"]
+CRYPTO   = ["BTC-USD", "ETH-USD", "SOL-USD"]
+WATCHLIST = STOCKS + CRYPTO
+
+# --- VIX Regime Thresholds ---
+VIX_LOW      = 18   # below → full sizing (1.0x)
+VIX_MODERATE = 25   # below → 75% sizing
+VIX_HIGH     = 35   # below → 50% sizing; above → no trades
 
 # --- Model Assignments (tiered for token efficiency) ---
 MODELS = {

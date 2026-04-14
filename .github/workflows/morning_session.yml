@@ -2,9 +2,9 @@ name: Morning Trading Session
 
 on:
   schedule:
-    # 9:00 AM EDT (UTC-4) = 13:00 UTC  — valid Apr–Nov
-    # 9:00 AM EST (UTC-5) = 14:00 UTC  — update cron to '0 14' Nov–Mar
-    - cron: '0 13 * * 1-5'
+    # 7:30 AM EDT (UTC-4) = 11:30 UTC  — valid Apr–Nov
+    # 7:30 AM EST (UTC-5) = 12:30 UTC  — update cron to '30 12' Nov–Mar
+    - cron: '30 11 * * 1-5'
   workflow_dispatch:   # manual trigger for testing
 
 jobs:
