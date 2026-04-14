@@ -8,6 +8,9 @@ Provides:
   has_earnings_soon(ticker)     — True if earnings within N days
   get_earnings_calendar(tickers)— {ticker: date} for upcoming earnings
   get_full_regime()             — combined regime snapshot for briefings
+  is_fomc_day(date_str)         — True if today is a Fed announcement day
+  is_event_blocked(date_str)    — True if any high-impact event blocks trading
+  get_premarket_gaps(watchlist) — {ticker: gap_pct} for pre-market gap scanner
 """
 import sys
 import os
@@ -16,6 +19,72 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datetime import datetime, timedelta
 from tools.market_data import get_ohlcv, get_latest_price
 from config import VIX_LOW, VIX_MODERATE, VIX_HIGH
+
+
+# ---------------------------------------------------------------------------
+# FOMC & economic calendar — hardcoded Fed announcement dates
+# These are the dates when the Fed RELEASES its rate decision (market-moving)
+# Source: federalreserve.gov/monetarypolicy/fomccalendars.htm
+# ---------------------------------------------------------------------------
+
+FOMC_DATES = {
+    # 2025
+    "2025-01-29", "2025-03-19", "2025-05-07", "2025-06-18",
+    "2025-07-30", "2025-09-17", "2025-10-29", "2025-12-10",
+    # 2026
+    "2026-01-28", "2026-03-18", "2026-05-06", "2026-06-17",
+    "2026-07-29", "2026-09-16", "2026-10-28", "2026-12-09",
+}
+
+# CPI release dates (high-impact inflation data — avoid trading these days)
+# Source: bls.gov/schedule/news_release/cpi.htm
+CPI_DATES = {
+    # 2025
+    "2025-01-15", "2025-02-12", "2025-03-12", "2025-04-10",
+    "2025-05-13", "2025-06-11", "2025-07-15", "2025-08-12",
+    "2025-09-10", "2025-10-15", "2025-11-12", "2025-12-10",
+    # 2026
+    "2026-01-14", "2026-02-11", "2026-03-11", "2026-04-09",
+    "2026-05-13", "2026-06-10", "2026-07-14", "2026-08-12",
+    "2026-09-09", "2026-10-14", "2026-11-11", "2026-12-09",
+}
+
+# Non-Farm Payroll release dates (first Friday of each month)
+NFP_DATES = {
+    # 2025
+    "2025-01-10", "2025-02-07", "2025-03-07", "2025-04-04",
+    "2025-05-02", "2025-06-06", "2025-07-03", "2025-08-01",
+    "2025-09-05", "2025-10-03", "2025-11-07", "2025-12-05",
+    # 2026
+    "2026-01-09", "2026-02-06", "2026-03-06", "2026-04-03",
+    "2026-05-01", "2026-06-05", "2026-07-03", "2026-08-07",
+    "2026-09-04", "2026-10-02", "2026-11-06", "2026-12-04",
+}
+
+
+def is_fomc_day(date_str: str = None) -> bool:
+    """True if date_str is a Fed announcement day."""
+    if date_str is None:
+        date_str = datetime.today().strftime("%Y-%m-%d")
+    return date_str in FOMC_DATES
+
+
+def is_event_blocked(date_str: str = None) -> tuple:
+    """
+    Check if today is a high-impact macro event day.
+    Returns (blocked: bool, reason: str | None).
+    """
+    if date_str is None:
+        date_str = datetime.today().strftime("%Y-%m-%d")
+
+    if date_str in FOMC_DATES:
+        return True, f"FOMC announcement day ({date_str}) — no trades"
+    if date_str in CPI_DATES:
+        return True, f"CPI release day ({date_str}) — no trades"
+    if date_str in NFP_DATES:
+        return True, f"Non-Farm Payroll day ({date_str}) — no trades"
+
+    return False, None
 
 
 # ---------------------------------------------------------------------------
@@ -89,6 +158,44 @@ def get_market_trend(ticker: str = "SPY") -> dict:
         "above_ma200": above200,
         "trend":       trend,
     }
+
+
+# ---------------------------------------------------------------------------
+# Pre-market gap scanner
+# ---------------------------------------------------------------------------
+
+def get_premarket_gaps(watchlist: list, gap_threshold: float = 0.02) -> dict:
+    """
+    Detect pre-market gaps vs prior close for all watchlist tickers.
+    A gap is when current price differs from the previous session's close by >= gap_threshold.
+
+    Returns: {ticker: {"gap_pct": float, "prev_close": float, "current": float, "flagged": bool}}
+    """
+    results = {}
+    end   = datetime.today().strftime("%Y-%m-%d")
+    start = (datetime.today() - timedelta(days=7)).strftime("%Y-%m-%d")
+
+    for ticker in watchlist:
+        try:
+            bars = get_ohlcv(ticker, start, end)
+            if len(bars) < 2:
+                results[ticker] = {"error": "insufficient data"}
+                continue
+
+            prev_close = bars[-2]["close"]   # yesterday's closing price
+            current    = get_latest_price(ticker)  # pre-market or last price
+            gap_pct    = (current - prev_close) / prev_close
+
+            results[ticker] = {
+                "prev_close": round(prev_close, 4),
+                "current":    round(current, 4),
+                "gap_pct":    round(gap_pct * 100, 2),
+                "flagged":    abs(gap_pct) >= gap_threshold,
+            }
+        except Exception as e:
+            results[ticker] = {"error": str(e)}
+
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -172,6 +279,15 @@ def get_full_regime(watchlist: list) -> dict:
     qqq = get_market_trend("QQQ")
     btc = get_market_trend("BTC-USD")
 
+    # Check macro event calendar for the week ahead
+    today = datetime.today()
+    week_events = []
+    for i in range(7):
+        d = (today + timedelta(days=i)).strftime("%Y-%m-%d")
+        blocked, reason = is_event_blocked(d)
+        if blocked:
+            week_events.append({"date": d, "event": reason})
+
     # Weekend crypto performance (last 2 days)
     crypto_perf = {}
     for c in ["BTC-USD", "ETH-USD", "SOL-USD"]:
@@ -198,4 +314,5 @@ def get_full_regime(watchlist: list) -> dict:
         "btc":            btc,
         "crypto_perf":    crypto_perf,
         "earnings":       earnings,
+        "week_events":    week_events,
     }

@@ -18,6 +18,8 @@
       --red: #ef4444;
       --blue: #3b82f6;
       --yellow: #f59e0b;
+      --orange: #f97316;
+      --purple: #a855f7;
       --radius: 12px;
     }
 
@@ -48,10 +50,11 @@
       color: var(--muted);
     }
     header .badge.active { border-color: var(--green); color: var(--green); }
+    header .badge.circuit { border-color: var(--red); color: var(--red); }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
       gap: 14px;
       margin-bottom: 24px;
     }
@@ -63,11 +66,17 @@
       padding: 18px;
     }
 
+    .card.alert-card { border-color: var(--red); }
+
     .card .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-    .card .value { font-size: 1.6rem; font-weight: 700; }
+    .card .value { font-size: 1.5rem; font-weight: 700; }
     .card .sub { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
     .card .value.green { color: var(--green); }
     .card .value.red { color: var(--red); }
+    .card .value.blue { color: var(--blue); }
+    .card .value.yellow { color: var(--yellow); }
+    .card .value.purple { color: var(--purple); }
+    .card .value.orange { color: var(--orange); }
 
     .section { margin-bottom: 28px; }
     .section h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
@@ -80,6 +89,32 @@
       position: relative;
       height: 240px;
     }
+
+    .benchmark-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .benchmark-item { display: flex; flex-direction: column; gap: 4px; }
+    .benchmark-item .bl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .benchmark-item .bv { font-size: 1.1rem; font-weight: 700; }
+
+    .alpha-badge {
+      margin-left: auto;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .alpha-badge.positive { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid var(--green); }
+    .alpha-badge.negative { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid var(--red); }
 
     table {
       width: 100%;
@@ -119,27 +154,45 @@
     .tag.sl { background: rgba(239,68,68,0.15); color: var(--red); }
     .tag.open { background: rgba(59,130,246,0.15); color: var(--blue); }
     .tag.skip { background: rgba(100,116,139,0.15); color: var(--muted); }
+    .tag.partial { background: rgba(245,158,11,0.15); color: var(--yellow); }
+    .tag.time { background: rgba(168,85,247,0.15); color: var(--purple); }
 
     .pos-row td:first-child { font-weight: 600; }
-
     .empty { color: var(--muted); font-size: 0.85rem; padding: 20px 12px; }
+
+    .circuit-banner {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid var(--red);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .circuit-banner .cb-title { color: var(--red); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+    .circuit-banner .cb-reason { color: var(--muted); font-size: 0.82rem; }
 
     footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 32px; }
 
     @media (max-width: 480px) {
-      .card .value { font-size: 1.3rem; }
+      .card .value { font-size: 1.25rem; }
       .grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
+<!-- Circuit breaker banner (hidden unless triggered) -->
+<div class="circuit-banner" id="circuit-banner">
+  <div class="cb-title">🚨 Circuit Breaker Triggered</div>
+  <div class="cb-reason" id="circuit-reason"></div>
+</div>
+
 <header>
   <h1>📈 Paper Trading Dashboard</h1>
   <span class="badge" id="status-badge">Loading...</span>
 </header>
 
-<!-- KPI cards -->
+<!-- KPI cards — row 1 -->
 <div class="grid">
   <div class="card">
     <div class="label">Session Day</div>
@@ -154,12 +207,40 @@
   <div class="card">
     <div class="label">Cash</div>
     <div class="value" id="kpi-cash">—</div>
+    <div class="sub" id="kpi-cash-sub"></div>
   </div>
   <div class="card">
     <div class="label">Win Rate</div>
     <div class="value" id="kpi-winrate">—</div>
     <div class="sub" id="kpi-winrate-sub"></div>
   </div>
+  <div class="card">
+    <div class="label">Sharpe Ratio</div>
+    <div class="value blue" id="kpi-sharpe">—</div>
+    <div class="sub">Annualised (252d)</div>
+  </div>
+  <div class="card">
+    <div class="label">Peak Equity</div>
+    <div class="value green" id="kpi-peak">—</div>
+    <div class="sub" id="kpi-drawdown"></div>
+  </div>
+</div>
+
+<!-- Benchmark comparison bar -->
+<div class="benchmark-bar" id="benchmark-bar">
+  <div class="benchmark-item">
+    <span class="bl">Our Return</span>
+    <span class="bv" id="bench-ours">—</span>
+  </div>
+  <div class="benchmark-item">
+    <span class="bl">SPY Return</span>
+    <span class="bv" id="bench-spy">—</span>
+  </div>
+  <div class="benchmark-item">
+    <span class="bl">Alpha</span>
+    <span class="bv" id="bench-alpha">—</span>
+  </div>
+  <span class="alpha-badge" id="alpha-badge">vs SPY</span>
 </div>
 
 <!-- Equity curve -->
@@ -180,10 +261,10 @@
           <th>Ticker</th>
           <th>Qty</th>
           <th>Entry</th>
-          <th>Current</th>
-          <th>Unreal. P&amp;L</th>
-          <th>Take Profit</th>
-          <th>Stop Loss</th>
+          <th>TP</th>
+          <th>SL</th>
+          <th>Partial Level</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody id="positions-tbody">
@@ -216,6 +297,14 @@
   </div>
 </div>
 
+<!-- Trade journal -->
+<div class="section">
+  <h2>Trade Journal</h2>
+  <div class="table-wrap" id="journal-wrap">
+    <div class="empty" style="padding:20px 16px">No journal entries yet</div>
+  </div>
+</div>
+
 <footer id="footer">Refreshes every 60 s &nbsp;·&nbsp; Last updated: <span id="last-updated">—</span></footer>
 
 <script>
@@ -237,11 +326,26 @@
     const equity = data.equity || initial;
     const cash = data.cash || initial;
     const ret = ((equity - initial) / initial * 100);
+    const peakEquity = data.peak_equity || equity;
+    const drawdownFromPeak = peakEquity > 0 ? ((peakEquity - equity) / peakEquity * 100) : 0;
+    const cb = data.circuit_breaker || {};
+    const stats = data.stats || {};
+
+    // Circuit breaker banner
+    if (cb.triggered) {
+      document.getElementById('circuit-banner').style.display = 'block';
+      document.getElementById('circuit-reason').textContent = cb.reason || 'Trading halted.';
+    }
 
     // Badge
     const badge = document.getElementById('status-badge');
-    badge.textContent = active ? `Day ${day} / ${totalDays} — Active` : (day >= totalDays ? 'Session Complete' : 'Inactive');
-    badge.className = 'badge' + (active ? ' active' : '');
+    if (cb.triggered) {
+      badge.textContent = '🚨 Circuit Breaker';
+      badge.className = 'badge circuit';
+    } else {
+      badge.textContent = active ? `Day ${day} / ${totalDays} — Active` : (day >= totalDays ? 'Session Complete' : 'Inactive');
+      badge.className = 'badge' + (active ? ' active' : '');
+    }
 
     // KPIs
     document.getElementById('kpi-day').textContent = active ? `${day} / ${totalDays}` : (day >= totalDays ? '10 / 10' : '—');
@@ -253,6 +357,8 @@
     document.getElementById('kpi-equity-sub').textContent = `${signStr(ret)}${fmt(ret)}% vs $5,000`;
 
     document.getElementById('kpi-cash').textContent = `$${fmt(cash)}`;
+    const cashPct = initial > 0 ? ((cash / initial) * 100) : 0;
+    document.getElementById('kpi-cash-sub').textContent = `${fmt(cashPct, 0)}% in cash`;
 
     // Win rate
     const history = data.trade_history || [];
@@ -264,11 +370,56 @@
       document.getElementById('kpi-winrate-sub').textContent = `Avg P&L ${signStr(avgPnl)}$${fmt(avgPnl)}`;
     }
 
+    // Sharpe ratio
+    const sharpe = stats.sharpe;
+    const sharpeEl = document.getElementById('kpi-sharpe');
+    if (sharpe !== null && sharpe !== undefined) {
+      sharpeEl.textContent = fmt(sharpe);
+      sharpeEl.className = `value ${sharpe >= 1 ? 'green' : sharpe >= 0 ? 'blue' : 'red'}`;
+    } else {
+      sharpeEl.textContent = 'N/A';
+      sharpeEl.className = 'value blue';
+    }
+
+    // Peak equity & drawdown
+    document.getElementById('kpi-peak').textContent = `$${fmt(peakEquity)}`;
+    const ddEl = document.getElementById('kpi-drawdown');
+    if (drawdownFromPeak > 0) {
+      ddEl.textContent = `-${fmt(drawdownFromPeak)}% from peak`;
+      ddEl.style.color = drawdownFromPeak >= 10 ? 'var(--red)' : drawdownFromPeak >= 5 ? 'var(--yellow)' : 'var(--muted)';
+    } else {
+      ddEl.textContent = 'At high watermark';
+      ddEl.style.color = 'var(--green)';
+    }
+
+    // Benchmark comparison
+    const spyRet = stats.benchmark_return_pct;
+    const oursStr = `${signStr(ret)}${fmt(ret)}%`;
+    document.getElementById('bench-ours').textContent = oursStr;
+    document.getElementById('bench-ours').style.color = ret >= 0 ? 'var(--green)' : 'var(--red)';
+
+    if (spyRet !== null && spyRet !== undefined) {
+      const spyStr = `${signStr(spyRet)}${fmt(spyRet)}%`;
+      document.getElementById('bench-spy').textContent = spyStr;
+      document.getElementById('bench-spy').style.color = spyRet >= 0 ? 'var(--green)' : 'var(--red)';
+
+      const alpha = ret - spyRet;
+      const alphaStr = `${signStr(alpha)}${fmt(alpha)}%`;
+      document.getElementById('bench-alpha').textContent = alphaStr;
+      document.getElementById('bench-alpha').style.color = alpha >= 0 ? 'var(--green)' : 'var(--red)';
+
+      const badge = document.getElementById('alpha-badge');
+      badge.textContent = alpha >= 0 ? `+${fmt(alpha)}% alpha` : `${fmt(alpha)}% vs SPY`;
+      badge.className = 'alpha-badge ' + (alpha >= 0 ? 'positive' : 'negative');
+    } else {
+      document.getElementById('bench-spy').textContent = 'N/A';
+      document.getElementById('bench-alpha').textContent = 'N/A';
+    }
+
     // Equity chart
     const curve = data.equity_curve || [];
     const labels = curve.map(p => `Day ${p.day}`);
     const values = curve.map(p => p.equity);
-    // Prepend starting point
     if (!labels.includes('Day 0')) { labels.unshift('Start'); values.unshift(initial); }
 
     const lineColor = ret >= 0 ? '#22c55e' : '#ef4444';
@@ -309,17 +460,10 @@
             }
           },
           scales: {
-            x: {
-              grid: { color: '#2a2d3a' },
-              ticks: { color: '#8892a4', font: { size: 11 } }
-            },
+            x: { grid: { color: '#2a2d3a' }, ticks: { color: '#8892a4', font: { size: 11 } } },
             y: {
               grid: { color: '#2a2d3a' },
-              ticks: {
-                color: '#8892a4',
-                font: { size: 11 },
-                callback: v => `$${fmt(v, 0)}`
-              }
+              ticks: { color: '#8892a4', font: { size: 11 }, callback: v => `$${fmt(v, 0)}` }
             }
           }
         }
@@ -335,21 +479,23 @@
     } else {
       posTbody.innerHTML = posKeys.map(ticker => {
         const pos = positions[ticker];
-        // We don't have live prices here — show entry and stored TP/SL
         const entry = pos.entry_price;
         const tp = pos.take_profit;
         const sl = pos.stop_loss;
-        // Approximate current using cost basis since we don't have live price in JSON
-        const cost = pos.cost_basis;
+        const partial = pos.partial_profit_price || '—';
+        const partialTaken = pos.partial_taken;
+        const statusTag = partialTaken
+          ? '<span class="tag partial">Partial Done</span>'
+          : '<span class="tag open">Open</span>';
         return `
           <tr class="pos-row">
             <td>${ticker}</td>
             <td>${pos.qty}</td>
             <td>$${fmt(entry)}</td>
-            <td><span style="color:var(--muted)">live</span></td>
-            <td><span style="color:var(--muted)">—</span></td>
             <td style="color:var(--green)">$${fmt(tp)}</td>
             <td style="color:var(--red)">$${fmt(sl)}</td>
+            <td style="color:var(--yellow)">${typeof partial === 'number' ? '$' + fmt(partial) : partial}</td>
+            <td>${statusTag}</td>
           </tr>`;
       }).join('');
     }
@@ -363,9 +509,11 @@
         const pnlSign = t.pnl >= 0 ? '+' : '';
         const pnlColor = t.pnl >= 0 ? 'var(--green)' : 'var(--red)';
         let outcomeTag = '';
-        if (t.reason === 'take_profit') outcomeTag = '<span class="tag tp">TP Hit</span>';
+        if (t.reason === 'take_profit')    outcomeTag = '<span class="tag tp">TP Hit</span>';
         else if (t.reason === 'stop_loss') outcomeTag = '<span class="tag sl">SL Hit</span>';
-        else outcomeTag = '<span class="tag skip">Manual</span>';
+        else if (t.reason === 'partial_profit') outcomeTag = '<span class="tag partial">Partial</span>';
+        else if (t.reason === 'time_exit') outcomeTag = '<span class="tag time">Time Exit</span>';
+        else                               outcomeTag = '<span class="tag skip">Manual</span>';
         return `
           <tr>
             <td>${t.closed_date || '—'}</td>
@@ -376,6 +524,27 @@
             <td style="color:${pnlColor}">${pnlSign}$${fmt(t.pnl)} <span style="font-size:0.8em">(${pnlSign}${fmt(t.pnl_pct)}%)</span></td>
             <td>${outcomeTag}</td>
           </tr>`;
+      }).join('');
+    }
+
+    // Trade journal
+    const journal = data.journal || [];
+    const journalWrap = document.getElementById('journal-wrap');
+    if (journal.length === 0) {
+      journalWrap.innerHTML = '<div class="empty" style="padding:20px 16px">No journal entries yet</div>';
+    } else {
+      journalWrap.innerHTML = [...journal].reverse().map(entry => {
+        const rationale = (entry.rationale || '').slice(0, 280);
+        return `
+          <div style="padding:14px 16px; border-bottom:1px solid var(--border);">
+            <div style="display:flex; gap:12px; align-items:center; margin-bottom:8px; flex-wrap:wrap;">
+              <span style="font-weight:700; font-size:0.9rem;">${entry.ticker || '—'}</span>
+              <span style="color:var(--muted); font-size:0.78rem;">Day ${entry.day || '?'} · ${entry.date || '—'}</span>
+              <span class="tag open" style="margin-left:auto">${entry.action || 'BUY'} @ $${fmt(entry.entry_price || 0)}</span>
+              <span style="font-size:0.78rem; color:var(--yellow)">Conviction: ${entry.conviction || '—'}</span>
+            </div>
+            ${rationale ? `<div style="font-size:0.82rem; color:var(--muted); line-height:1.5">${rationale}${entry.rationale && entry.rationale.length > 280 ? '…' : ''}</div>` : ''}
+          </div>`;
       }).join('');
     }
 

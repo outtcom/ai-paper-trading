@@ -4,13 +4,15 @@ Triggered by GitHub Actions at 7:30 AM ET on weekdays.
 
 Flow:
   1. Start/check the 10-day session
-  2. Check VIX — if EXTREME, skip trading. Apply sizing multiplier otherwise.
-  3. Run the 7-agent pipeline (dry_run=True) on all watchlist tickers (stocks + crypto)
-  4. Skip any ticker with earnings within 3 days (gap risk)
-  5. Pick the single highest-conviction BUY signal
-  6. Send a Telegram approval card (TP, SL, thesis, VIX context)
-  7. Poll for 60 min — if approved, execute the paper trade
-  8. Record equity
+  2. Circuit breaker — halt if session drawdown > 15% or daily loss > 3%
+  3. FOMC / CPI / NFP auto-block — no trades on macro event days
+  4. Check VIX — if EXTREME, skip trading. Apply sizing multiplier otherwise.
+  5. Run the 7-agent pipeline (dry_run=True) on all watchlist tickers (stocks + crypto)
+  6. Skip any ticker with earnings within 3 days (gap risk)
+  7. Pick the single highest-conviction BUY signal
+  8. Send a Telegram approval card (TP, SL, thesis, VIX context)
+  9. Poll for 60 min — if approved, execute the paper trade
+  10. Log trade journal entry
 
 Usage:
   python morning_session.py
@@ -24,13 +26,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import WATCHLIST, APPROVAL_TIMEOUT_SECONDS
 from orchestrator import run_pipeline
 from tools.market_data import get_latest_price
-from tools.market_regime import get_vix_multiplier, has_earnings_soon
+from tools.market_regime import get_vix_multiplier, has_earnings_soon, is_event_blocked
 from tools.session_manager import (
+    add_journal_entry,
+    check_circuit_breaker,
     get_portfolio,
     get_session_day,
     is_session_active,
     open_position,
     record_equity,
+    set_spy_start_price,
     start_session,
 )
 from tools.telegram_bot import poll_for_response, send_approval_request, send_message
@@ -130,6 +135,8 @@ def _build_summary(ticker: str, state: dict, session_day: int, total_days: int, 
         # Raw fractions stored separately for session_manager.open_position()
         "_sl_pct_raw": sl_pct_raw,
         "_tp_pct_raw": tp_pct_raw,
+        # Full reasoning for journal
+        "_full_why": order.get("final_reasoning") or trader.get("reasoning") or "",
     }
 
 
@@ -163,6 +170,42 @@ def main():
     cash = portfolio.get("cash", portfolio["initial_capital"])
 
     print(f"[morning] Day {session_day}/{total_days}  |  Equity: ${equity:,.2f}  |  Cash: ${cash:,.2f}")
+
+    # --- Record SPY start price for benchmark (only on day 1) ---
+    if session_day == 1 and not portfolio.get("stats", {}).get("spy_start_price"):
+        try:
+            spy_price = get_latest_price("SPY")
+            set_spy_start_price(spy_price)
+            print(f"[morning] SPY benchmark anchored at ${spy_price:.2f}")
+        except Exception as e:
+            print(f"[morning] Could not fetch SPY start price: {e}")
+
+    # --- Circuit breaker — check drawdown limits ---
+    halt, halt_reason = check_circuit_breaker(equity)
+    if halt:
+        print(f"[morning] CIRCUIT BREAKER: {halt_reason}")
+        send_message(
+            f"🚨 <b>CIRCUIT BREAKER — Day {session_day}/{total_days}</b>\n\n"
+            f"{halt_reason}\n\n"
+            f"<b>Trading halted to protect capital.</b>\n"
+            f"Session equity: ${equity:,.2f}\n"
+            f"<i>No trades will be placed until circuit breaker is reviewed.</i>"
+        )
+        record_equity(equity)
+        return
+
+    # --- FOMC / CPI / NFP auto-block ---
+    event_blocked, event_reason = is_event_blocked(today)
+    if event_blocked:
+        print(f"[morning] Macro event block: {event_reason}")
+        send_message(
+            f"📅 <b>No Trade — Macro Event Day — Day {session_day}/{total_days}</b>\n\n"
+            f"🚫 {event_reason}\n\n"
+            f"Markets often make violent moves on these days. Staying in cash.\n"
+            f"Session equity: <b>${equity:,.2f}</b>"
+        )
+        record_equity(equity)
+        return
 
     # --- VIX check — gate on market volatility regime ---
     vix_multiplier, vix_label = get_vix_multiplier()
@@ -229,15 +272,33 @@ def main():
             entry_price=summary["current_price"],
             stop_loss_pct=summary["_sl_pct_raw"],
             take_profit_pct=summary["_tp_pct_raw"],
+            journal_note=summary["_full_why"][:500],
         )
+        # Add journal entry with full trade rationale
+        add_journal_entry({
+            "date": today,
+            "day": session_day,
+            "ticker": ticker,
+            "action": "BUY",
+            "entry_price": summary["current_price"],
+            "qty": summary["qty"],
+            "conviction": summary["conviction"],
+            "stop_loss": summary["stop_loss"],
+            "take_profit": summary["take_profit"],
+            "vix_label": vix_label,
+            "rationale": summary["_full_why"],
+            "bull_case": summary["bull_case"],
+            "bear_case": summary["bear_case"],
+        })
         send_message(
             f"✅ <b>Trade Executed — {ticker}</b>\n\n"
             f"BUY {summary['qty']} shares @ ${summary['current_price']:.2f}\n"
             f"Total deployed: ${summary['position_size_usd']:.2f}\n\n"
-            f"TP: ${summary['take_profit']:.2f}  |  SL: ${summary['stop_loss']:.2f}\n\n"
+            f"TP: ${summary['take_profit']:.2f}  |  SL: ${summary['stop_loss']:.2f}\n"
+            f"Partial profit at: ${round(summary['current_price'] * (1 + summary['_sl_pct_raw']), 2):.2f} "
+            f"(1:1 R/R — 50% sold, rest runs to TP)\n\n"
             f"<i>I'll check TP/SL levels at market close and send an EOD summary.</i>"
         )
-        # Equity stays the same right after buy (cash out, position in)
         record_equity(equity)
 
     elif response == "rejected":
