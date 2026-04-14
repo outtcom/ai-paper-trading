@@ -20,6 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import WATCHLIST, STOCKS, CRYPTO
 from tools.market_data import get_latest_price, get_ohlcv
 from tools.market_regime import get_full_regime
+from tools.sector_analysis import get_sector_strength, format_sector_heatmap
 from tools.session_manager import get_portfolio, get_session_day
 from tools.telegram_bot import send_message
 
@@ -156,6 +157,14 @@ def main():
         f"  • Max position this week: {int(vix_mult * 25)}% of $5k "
         f"(VIX-adjusted from 25%)"
     )
+
+    # Sector strength heatmap
+    try:
+        sector_strength = get_sector_strength()
+        lines.append("")
+        lines.append(format_sector_heatmap(sector_strength))
+    except Exception as e:
+        print(f"[weekly] Sector strength error: {e}")
 
     send_message("\n".join(lines))
     print("[weekly] Briefing sent.")

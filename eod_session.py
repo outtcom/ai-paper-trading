@@ -256,19 +256,26 @@ def _build_eod_message(
     winners = [t for t in completed if t.get("pnl", 0) > 0]
     win_rate = f"{len(winners)}/{len(completed)}" if completed else "0/0"
 
-    # Sharpe ratio
-    sharpe = portfolio.get("stats", {}).get("sharpe")
-    sharpe_str = f"{sharpe:.2f}" if sharpe is not None else "N/A (need more data)"
+    stats = portfolio.get("stats", {})
 
-    # SPY benchmark
-    spy_ret = portfolio.get("stats", {}).get("benchmark_return_pct")
+    def _fmt_ratio(v):
+        return f"{v:.2f}" if v is not None else "N/A"
+
+    sharpe  = _fmt_ratio(stats.get("sharpe"))
+    sortino = _fmt_ratio(stats.get("sortino"))
+    calmar  = _fmt_ratio(stats.get("calmar"))
+    max_dd  = f"{stats.get('max_drawdown_pct', 0):.1f}%" if stats.get("max_drawdown_pct") is not None else "N/A"
+
+    spy_ret = stats.get("benchmark_return_pct")
     spy_str = f"{'+' if spy_ret and spy_ret >= 0 else ''}{spy_ret:.1f}%" if spy_ret is not None else "N/A"
-    our_ret_str = f"{return_sign}{total_return:.1f}%"
+    alpha   = round(total_return - spy_ret, 2) if spy_ret is not None else None
+    alpha_str = f"{'+' if alpha and alpha >= 0 else ''}{alpha:.1f}%" if alpha is not None else "N/A"
 
     lines.append(
         f"Session Equity:  <b>${equity:,.2f}</b> ({return_sign}{total_return:.1f}%)\n"
-        f"vs SPY:          {our_ret_str} vs {spy_str} (benchmark)\n"
-        f"Sharpe Ratio:    {sharpe_str}\n"
+        f"vs SPY:          {return_sign}{total_return:.1f}% vs {spy_str}  (alpha: {alpha_str})\n"
+        f"Sharpe / Sortino / Calmar:  {sharpe} / {sortino} / {calmar}\n"
+        f"Max Drawdown:    {max_dd}\n"
         f"Win Rate:        {win_rate} closed trades\n"
         f"Days Remaining:  {days_remaining}"
     )

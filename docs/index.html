@@ -220,9 +220,19 @@
     <div class="sub">Annualised (252d)</div>
   </div>
   <div class="card">
-    <div class="label">Peak Equity</div>
-    <div class="value green" id="kpi-peak">—</div>
-    <div class="sub" id="kpi-drawdown"></div>
+    <div class="label">Sortino Ratio</div>
+    <div class="value purple" id="kpi-sortino">—</div>
+    <div class="sub">Downside-adjusted</div>
+  </div>
+  <div class="card">
+    <div class="label">Calmar Ratio</div>
+    <div class="value orange" id="kpi-calmar">—</div>
+    <div class="sub">Return / Max DD</div>
+  </div>
+  <div class="card">
+    <div class="label">Max Drawdown</div>
+    <div class="value" id="kpi-maxdd">—</div>
+    <div class="sub" id="kpi-peak-sub"></div>
   </div>
 </div>
 
@@ -381,16 +391,39 @@
       sharpeEl.className = 'value blue';
     }
 
-    // Peak equity & drawdown
-    document.getElementById('kpi-peak').textContent = `$${fmt(peakEquity)}`;
-    const ddEl = document.getElementById('kpi-drawdown');
-    if (drawdownFromPeak > 0) {
-      ddEl.textContent = `-${fmt(drawdownFromPeak)}% from peak`;
-      ddEl.style.color = drawdownFromPeak >= 10 ? 'var(--red)' : drawdownFromPeak >= 5 ? 'var(--yellow)' : 'var(--muted)';
+    // Sortino ratio
+    const sortino = stats.sortino;
+    const sortinoEl = document.getElementById('kpi-sortino');
+    if (sortino !== null && sortino !== undefined) {
+      sortinoEl.textContent = fmt(sortino);
+      sortinoEl.className = `value ${sortino >= 1.5 ? 'green' : sortino >= 0 ? 'purple' : 'red'}`;
     } else {
-      ddEl.textContent = 'At high watermark';
-      ddEl.style.color = 'var(--green)';
+      sortinoEl.textContent = 'N/A';
+      sortinoEl.className = 'value purple';
     }
+
+    // Calmar ratio
+    const calmar = stats.calmar;
+    const calmarEl = document.getElementById('kpi-calmar');
+    if (calmar !== null && calmar !== undefined) {
+      calmarEl.textContent = fmt(calmar);
+      calmarEl.className = `value ${calmar >= 3 ? 'green' : calmar >= 1 ? 'orange' : 'red'}`;
+    } else {
+      calmarEl.textContent = 'N/A';
+      calmarEl.className = 'value orange';
+    }
+
+    // Max drawdown
+    const maxDd = stats.max_drawdown_pct;
+    const maxDdEl = document.getElementById('kpi-maxdd');
+    if (maxDd !== null && maxDd !== undefined) {
+      maxDdEl.textContent = `-${fmt(maxDd)}%`;
+      maxDdEl.className = `value ${maxDd >= 10 ? 'red' : maxDd >= 5 ? 'yellow' : 'green'}`;
+    } else {
+      maxDdEl.textContent = '0.00%';
+      maxDdEl.className = 'value green';
+    }
+    document.getElementById('kpi-peak-sub').textContent = `Peak: $${fmt(peakEquity)}`;
 
     // Benchmark comparison
     const spyRet = stats.benchmark_return_pct;

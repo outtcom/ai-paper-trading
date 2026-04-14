@@ -13,12 +13,14 @@ from agents import fundamental_analyst, sentiment_analyst, technical_analyst
 from agents import researcher, trader, risk_manager, fund_manager
 
 
-def run_pipeline(ticker: str, date: str, dry_run: bool = True) -> dict:
+def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict = None) -> dict:
     """
     Run the full trading agent pipeline for one ticker.
 
     dry_run=True: compute decision but do NOT submit the order (safe default)
     dry_run=False: submit the order via Alpaca paper trading API
+    portfolio: real session portfolio dict (cash, equity, positions) — passed to
+               fund_manager so it sizes orders against actual capital.
 
     Returns the final state dict.
     """
@@ -51,14 +53,15 @@ def run_pipeline(ticker: str, date: str, dry_run: bool = True) -> dict:
 
     # Step 6: Risk Management
     print(f"  [6/7] Risk Management Team...")
-    portfolio = None
-    try:
-        portfolio = get_portfolio()
-    except Exception as e:
-        print(f"  [!] Could not fetch portfolio: {e}")
+    if portfolio is None:
+        # Fall back to old paper_broker if no session portfolio supplied
+        try:
+            portfolio = get_portfolio()
+        except Exception as e:
+            print(f"  [!] Could not fetch portfolio: {e}")
     state = risk_manager.run(state)
 
-    # Step 7: Fund Manager (final order)
+    # Step 7: Fund Manager (final order) — receives real capital figures
     print(f"  [7/7] Fund Manager...")
     state = fund_manager.run(state, portfolio=portfolio)
 

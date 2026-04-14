@@ -8,6 +8,7 @@ This module is the single source of truth for session state.
 The existing paper_broker.py is NOT used by the session — we manage state directly here.
 """
 import json
+import math
 import os
 import statistics
 from datetime import datetime, timezone
@@ -56,6 +57,9 @@ def _default_portfolio() -> dict:
         },
         "stats": {
             "sharpe": None,
+            "sortino": None,
+            "calmar": None,
+            "max_drawdown_pct": None,
             "spy_start_price": None,
             "spy_current_price": None,
             "benchmark_return_pct": None,
@@ -78,7 +82,15 @@ def _migrate(p: dict) -> dict:
     """Add any missing keys to an existing portfolio (backward compat)."""
     p.setdefault("peak_equity", p.get("equity", INITIAL_CAPITAL))
     p.setdefault("circuit_breaker", {"triggered": False, "reason": None, "triggered_date": None})
-    p.setdefault("stats", {"sharpe": None, "spy_start_price": None, "spy_current_price": None, "benchmark_return_pct": None})
+    p.setdefault("stats", {
+        "sharpe": None,
+        "sortino": None,
+        "calmar": None,
+        "max_drawdown_pct": None,
+        "spy_start_price": None,
+        "spy_current_price": None,
+        "benchmark_return_pct": None,
+    })
     p.setdefault("journal", [])
     return p
 
@@ -139,7 +151,7 @@ def advance_day() -> int:
 # ---------------------------------------------------------------------------
 
 def record_equity(equity: float) -> None:
-    """Append today's closing equity to the equity curve and update peak."""
+    """Append today's closing equity to the equity curve and update all metrics."""
     p = _migrate(_load())
     p["equity"] = round(equity, 2)
 
@@ -153,17 +165,50 @@ def record_equity(equity: float) -> None:
         "equity": round(equity, 2),
     })
 
-    # Recalculate Sharpe from updated curve
     curve = p["equity_curve"]
     if len(curve) >= 2:
-        equities = [e["equity"] for e in curve]
-        daily_returns = [(equities[i] - equities[i-1]) / equities[i-1] for i in range(1, len(equities))]
-        if len(daily_returns) >= 2:
+        equities   = [e["equity"] for e in curve]
+        daily_rets = [(equities[i] - equities[i-1]) / equities[i-1] for i in range(1, len(equities))]
+
+        if len(daily_rets) >= 2:
             try:
-                mean_r = statistics.mean(daily_returns)
-                std_r = statistics.stdev(daily_returns)
+                mean_r = statistics.mean(daily_rets)
+                std_r  = statistics.stdev(daily_rets)
+                ann    = 252 ** 0.5
+
+                # Sharpe (all volatility penalised)
                 if std_r > 0:
-                    p["stats"]["sharpe"] = round((mean_r / std_r) * (252 ** 0.5), 2)
+                    p["stats"]["sharpe"] = round((mean_r / std_r) * ann, 2)
+
+                # Sortino (only downside volatility penalised)
+                neg_rets = [r for r in daily_rets if r < 0]
+                if len(neg_rets) >= 2:
+                    down_std = statistics.stdev(neg_rets)
+                    if down_std > 0:
+                        p["stats"]["sortino"] = round((mean_r / down_std) * ann, 2)
+
+            except Exception:
+                pass
+
+        # Max drawdown (peak-to-trough over session)
+        peak_so_far = equities[0]
+        max_dd = 0.0
+        for eq in equities:
+            if eq > peak_so_far:
+                peak_so_far = eq
+            dd = (peak_so_far - eq) / peak_so_far
+            if dd > max_dd:
+                max_dd = dd
+        p["stats"]["max_drawdown_pct"] = round(max_dd * 100, 2)
+
+        # Calmar = annualised return / max drawdown
+        days_elapsed = len(curve)
+        initial = p.get("initial_capital", INITIAL_CAPITAL)
+        if days_elapsed >= 2 and initial > 0 and max_dd > 0:
+            try:
+                total_ret = (equity / initial) - 1
+                ann_ret   = (1 + total_ret) ** (252 / days_elapsed) - 1
+                p["stats"]["calmar"] = round(ann_ret / max_dd, 2)
             except Exception:
                 pass
 
