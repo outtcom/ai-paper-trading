@@ -112,7 +112,7 @@ def main():
     # VIX
     v_emoji = _vix_emoji(vix)
     lines.append(
-        f"{v_emoji} <b>VIX:</b> {vix:.1f if vix else 'N/A'}  —  {vix_label}\n"
+        f"{v_emoji} <b>VIX:</b> {f'{vix:.1f}' if vix is not None else 'N/A'}  —  {vix_label}\n"
         f"   Position sizing this week: <b>{int(vix_mult * 100)}%</b> of normal\n"
     )
 
