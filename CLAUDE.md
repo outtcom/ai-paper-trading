@@ -81,6 +81,22 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 - Monitor runs: https://github.com/outtcom/ai-paper-trading/actions
 - All workflows support `workflow_dispatch` for manual triggering from the Actions tab.
 
+## Known Issues & Fixes Applied
+
+| Issue | Fix |
+|---|---|
+| Yahoo Finance rate-limits cloud IPs silently | `market_data.py` now uses Finnhub as primary source; yfinance is fallback only |
+| Multiple workflows push `portfolio.json` simultaneously → rejected | Commit first, then `git pull --rebase`, then push (in all 6 workflows) |
+| Duplicate `_` vs `-` workflow files running scripts twice | Removed all `snake_case` duplicates — only `kebab-case` filenames remain |
+| `weekly_briefing.py` VIX None format error | Fixed: `{f'{vix:.1f}' if vix is not None else 'N/A'}` |
+| `morning_session.py` fails silently on Anthropic credit exhaustion | Wraps `main()` in try/except — sends Telegram alert on crash |
+| Reddit public JSON API blocked on GitHub Actions IPs | Expected — sentiment falls back gracefully; no code change needed |
+
+## API Credit Notes
+
+- **Anthropic API**: The morning session 7-agent pipeline consumes significant credits. Monitor balance at console.anthropic.com. Low credit sends a Telegram alert now.
+- **Finnhub free tier**: 60 API calls/minute. Sufficient for current watchlist size.
+
 ## Common Tasks
 
 | What you want | What to do |

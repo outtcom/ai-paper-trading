@@ -38,9 +38,11 @@ jobs:
         run: python morning_session.py
 
       - name: Commit portfolio changes
+        if: always()
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add docs/portfolio.json
           git diff --staged --quiet || git commit -m "auto: morning_session $(date +%Y-%m-%d)"
+          git pull --rebase
           git push

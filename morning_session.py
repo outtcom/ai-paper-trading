@@ -442,4 +442,18 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        err = str(e)
+        # Send Telegram alert for critical failures so they're not silent
+        try:
+            from tools.telegram_bot import send_message
+            send_message(
+                f"🚨 <b>Morning Session FAILED</b>\n\n"
+                f"<code>{err[:1000]}</code>\n\n"
+                f"Check: https://github.com/outtcom/ai-paper-trading/actions"
+            )
+        except Exception:
+            pass
+        raise
