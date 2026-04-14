@@ -1,0 +1,46 @@
+name: Morning Session
+
+on:
+  schedule:
+    - cron: '30 11 * * 1-5'  # 7:30 AM ET (EDT = UTC-4), Mon-Fri
+  workflow_dispatch:           # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  morning-session:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90       # script polls 60 min for Telegram approval
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          EOF
+
+      - name: Run morning session
+        run: python morning_session.py
+
+      - name: Commit portfolio changes
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add docs/portfolio.json
+          git diff --staged --quiet || git commit -m "auto: morning_session $(date +%Y-%m-%d)"
+          git push

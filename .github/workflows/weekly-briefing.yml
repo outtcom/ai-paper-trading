@@ -1,0 +1,45 @@
+name: Weekly Intelligence Briefing
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'   # 6:00 PM ET (EDT = UTC-4), Sunday
+  workflow_dispatch:         # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          EOF
+
+      - name: Run weekly briefing
+        run: python weekly_briefing.py
+
+      - name: Commit portfolio changes
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add docs/portfolio.json
+          git diff --staged --quiet || git commit -m "auto: weekly_briefing $(date +%Y-%m-%d)"
+          git push

@@ -1,0 +1,45 @@
+name: End-of-Day Session
+
+on:
+  schedule:
+    - cron: '15 20 * * 1-5'  # 4:15 PM ET (EDT = UTC-4), Mon-Fri
+  workflow_dispatch:           # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  eod-session:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          EOF
+
+      - name: Run end-of-day session
+        run: python eod_session.py
+
+      - name: Commit portfolio changes
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add docs/portfolio.json
+          git diff --staged --quiet || git commit -m "auto: eod_session $(date +%Y-%m-%d)"
+          git push
