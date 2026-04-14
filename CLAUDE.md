@@ -63,6 +63,24 @@ Edit `config.py` to change tickers, risk profile, position size limits, or model
 - `.env` — All API keys. Never stored anywhere else.
 - `.tmp/` — Disposable. Logs, state files, intermediate outputs.
 
+## Automation — GitHub Actions
+
+All scripts run automatically via `.github/workflows/`. No manual triggering needed.
+
+| Workflow | Schedule (ET) | Script |
+|---|---|---|
+| Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
+| Morning Session | Mon–Fri 7:30 AM | `morning_session.py` |
+| Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
+| Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
+| End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
+| Weekly Intelligence Briefing | Sunday 6:00 PM | `weekly_briefing.py` |
+
+- Secrets (`ANTHROPIC_API_KEY`, `FINNHUB_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) are stored in GitHub repo secrets — never in code.
+- Each workflow commits updated `docs/portfolio.json` back to the repo after running.
+- Monitor runs: https://github.com/outtcom/ai-paper-trading/actions
+- All workflows support `workflow_dispatch` for manual triggering from the Actions tab.
+
 ## Common Tasks
 
 | What you want | What to do |
@@ -73,6 +91,7 @@ Edit `config.py` to change tickers, risk profile, position size limits, or model
 | Add a new ticker | Read `workflows/add_new_ticker.md` |
 | Debug an agent failure | Check `.tmp/logs/YYYY-MM-DD/TICKER.log` |
 | Change risk profile | Edit `DEFAULT_RISK_PROFILE` in `config.py` |
+| Trigger a script manually | GitHub Actions → select workflow → Run workflow |
 
 ## Self-Improvement Loop
 
