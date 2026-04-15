@@ -44,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git add docs/portfolio.json
           git diff --staged --quiet || git commit -m "auto: weekly_briefing $(date +%Y-%m-%d)"
-          git pull --rebase
+          git pull --rebase -X ours
           git push

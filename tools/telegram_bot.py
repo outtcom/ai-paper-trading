@@ -94,12 +94,26 @@ def poll_for_response(timeout_seconds: int = 3600, poll_interval: int = 15) -> s
     deadline = time.time() + timeout_seconds
     offset = None
 
-    # Flush any stale updates so we don't accidentally pick up old button taps
+    # Drain ALL pending updates so stale button taps from previous runs can't
+    # auto-approve a new trade.  offset=-1 only gets the last 1 update; fetching
+    # with limit=100 repeatedly until empty clears every queued item.
     try:
-        resp = requests.get(f"{_BASE}/getUpdates", params={"timeout": 0, "offset": -1}, timeout=10)
-        stale = resp.json().get("result", [])
-        if stale:
+        while True:
+            resp = requests.get(
+                f"{_BASE}/getUpdates",
+                params={"timeout": 0, "limit": 100},
+                timeout=10,
+            )
+            stale = resp.json().get("result", [])
+            if not stale:
+                break
             offset = stale[-1]["update_id"] + 1
+            # Acknowledge this batch so Telegram won't return it again
+            requests.get(
+                f"{_BASE}/getUpdates",
+                params={"timeout": 0, "offset": offset},
+                timeout=10,
+            )
     except Exception:
         pass
 
