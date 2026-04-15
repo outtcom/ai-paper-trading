@@ -30,15 +30,22 @@ that is done by the specialized agents. Your job is to:
 4. Handle failures gracefully and log them
 5. Update workflows when you learn something new (rate limits, data quirks, etc.)
 
-## Model Usage Rules (token efficiency)
+## Model Usage Rules (Multi-LLM via LiteLLM)
 
-| Task | Model | Why |
-|------|-------|-----|
-| Data retrieval, summarization, formatting | `claude-haiku-4-5-20251001` | Fast and cheap |
-| Analyst reports, researcher debate, trader | `claude-sonnet-4-6` | Balanced reasoning |
-| Risk management, fund manager only | `claude-opus-4-6` | Deepest reasoning for final calls |
+| Agent | Model | Provider | Why |
+|-------|-------|----------|-----|
+| Fundamental, Sentiment, Technical Analysts | `groq/llama-3.1-70b-versatile` | Groq | Structured formatting, 5× cheaper than Haiku |
+| Bull/Bear Researchers | `openai/gpt-4o-mini` | OpenAI | Logical argumentation at low cost |
+| Trader | `claude-sonnet-4-6` | Anthropic | Best synthesis/cost balance |
+| Risk Manager | `groq/llama-3.1-70b-versatile` | Groq | Structured JSON output, no need for premium model |
+| Fund Manager | `claude-opus-4-6` | Anthropic | Non-negotiable — highest-stakes final gate |
 
-**Never use Opus for data retrieval or summarization tasks.**
+**Cost profile: ~$0.60/day (down from ~$5.00/day, 88% reduction)**
+- Groq API: `GROQ_API_KEY` in `.env` and GitHub secrets
+- OpenAI API: `OPENAI_API_KEY` in `.env` and GitHub secrets
+- All agents use `litellm.completion()` — unified interface, same semantics
+
+**Never downgrade the Fund Manager below Opus.**
 
 ## Critical Safety Rules
 
@@ -91,10 +98,14 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | `weekly_briefing.py` VIX None format error | Fixed: `{f'{vix:.1f}' if vix is not None else 'N/A'}` |
 | `morning_session.py` fails silently on Anthropic credit exhaustion | Wraps `main()` in try/except — sends Telegram alert on crash |
 | Reddit public JSON API blocked on GitHub Actions IPs | Expected — sentiment falls back gracefully; no code change needed |
+| $5/day LLM cost unsustainable | Switched to multi-LLM via LiteLLM: Groq (analysts + risk), GPT-4o-mini (researchers), Sonnet (trader), Opus (fund manager only). Cost: ~$0.60/day |
+| All pipeline tickers ran through LLM even if ineligible | Pre-filter in `_analyze_all()` skips earnings-blocked, same-sector, and volume-fail tickers before any API calls |
 
 ## API Credit Notes
 
-- **Anthropic API**: The morning session 7-agent pipeline consumes significant credits. Monitor balance at console.anthropic.com. Low credit sends a Telegram alert now.
+- **Anthropic API**: Only Trader (Sonnet) and Fund Manager (Opus) still use Claude. ~$0.47/day vs $5.00 previously. Monitor at console.anthropic.com.
+- **Groq API**: Free tier — 6,000 req/day, 30 req/min. Sufficient for current watchlist.
+- **OpenAI API**: GPT-4o-mini for researchers. ~$0.03/day at current volume.
 - **Finnhub free tier**: 60 API calls/minute. Sufficient for current watchlist size.
 
 ## Common Tasks

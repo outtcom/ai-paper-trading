@@ -1,6 +1,6 @@
 """
 Researcher Agents: Bull and Bear
-Model: claude-sonnet-4-6
+Model: openai/gpt-4o-mini (via LiteLLM)
 Two agents debate the stock using analyst reports.
 Bull argues for upside; Bear argues for downside.
 They run N debate rounds to stress-test the thesis.
@@ -9,11 +9,9 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, RESEARCHER_DEBATE_ROUNDS
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 BULL_SYSTEM = """You are a bullish equity researcher at a trading firm.
 Your job is to make the strongest possible case FOR buying a stock.
@@ -53,13 +51,12 @@ def run(state: dict) -> dict:
 
         for round_num in range(RESEARCHER_DEBATE_ROUNDS):
             # Bull argues
-            bull_response = client.messages.create(
-                model=MODELS["analyst"],
+            bull_response = litellm.completion(
+                model=MODELS["debate"],
                 max_tokens=600,
-                system=BULL_SYSTEM,
-                messages=bull_messages,
+                messages=[{"role": "system", "content": BULL_SYSTEM}] + bull_messages,
             )
-            bull_argument = bull_response.content[0].text
+            bull_argument = bull_response.choices[0].message.content
             bull_messages.append({"role": "assistant", "content": bull_argument})
 
             # Bear responds to bull's argument
@@ -67,13 +64,12 @@ def run(state: dict) -> dict:
                 "role": "user",
                 "content": f"The bull researcher argues:\n{bull_argument}\n\nRespond with your counter-argument."
             })
-            bear_response = client.messages.create(
-                model=MODELS["analyst"],
+            bear_response = litellm.completion(
+                model=MODELS["debate"],
                 max_tokens=600,
-                system=BEAR_SYSTEM,
-                messages=bear_messages,
+                messages=[{"role": "system", "content": BEAR_SYSTEM}] + bear_messages,
             )
-            bear_argument = bear_response.content[0].text
+            bear_argument = bear_response.choices[0].message.content
             bear_messages.append({"role": "assistant", "content": bear_argument})
 
             # Bull responds to bear

@@ -108,12 +108,19 @@ def _is_same_sector_open(ticker: str, portfolio: dict) -> bool:
 # Pipeline helpers
 # ---------------------------------------------------------------------------
 
-def _analyze_all(date: str, session_portfolio: dict) -> dict:
+def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = None) -> dict:
     """
     Run dry-run pipeline for every watchlist ticker.
+    Pre-filters definitionally ineligible tickers before any LLM calls:
+      - earnings-blocked tickers
+      - tickers in the same sector as an already-open position
+      - tickers that fail the volume confirmation check
     Passes real session portfolio so fund_manager prices against actual cash.
     Returns {ticker: state}.
     """
+    if earnings_blocked is None:
+        earnings_blocked = set()
+
     # Build a clean portfolio snapshot for the fund manager
     fm_portfolio = {
         "cash":      session_portfolio.get("cash", 5000),
@@ -122,6 +129,21 @@ def _analyze_all(date: str, session_portfolio: dict) -> dict:
     }
     results = {}
     for ticker in WATCHLIST:
+        # ── Pre-filter: skip definitionally ineligible tickers ────────────
+        if ticker in earnings_blocked:
+            print(f"[morning] {ticker} skipped (earnings block)")
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            continue
+
+        if _is_same_sector_open(ticker, session_portfolio):
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            continue
+
+        if not _has_volume_confirmation(ticker):
+            print(f"[morning] {ticker} skipped (volume filter)")
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            continue
+
         try:
             print(f"[morning] Analyzing {ticker}...")
             state = run_pipeline(ticker, date, dry_run=True, portfolio=fm_portfolio)
@@ -348,7 +370,7 @@ def main():
     )
 
     # ── Run full AI pipeline ───────────────────────────────────────────────
-    results = _analyze_all(today, portfolio)
+    results = _analyze_all(today, portfolio, earnings_blocked)
 
     # ── Pick best candidate ────────────────────────────────────────────────
     ticker, state, score = _pick_best(results, earnings_blocked, portfolio, sector_strength)

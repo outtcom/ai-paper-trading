@@ -71,9 +71,10 @@ BEARISH_REGIME_MULTIPLIER = 0.5   # halve size when SPY < 200d MA
 # Model Assignments (tiered for token efficiency)
 # ---------------------------------------------------------------------------
 MODELS = {
-    "fast":     "claude-haiku-4-5-20251001",   # data retrieval, summarisation
-    "analyst":  "claude-sonnet-4-6",            # analysts, researcher debate, trader
-    "decision": "claude-opus-4-6",              # risk management, fund manager only
+    "fast":     "groq/llama-3.1-70b-versatile",  # formatters (fundamental, sentiment, technical, risk manager)
+    "debate":   "openai/gpt-4o-mini",             # bull/bear researchers
+    "analyst":  "claude-sonnet-4-6",              # trader
+    "decision": "claude-opus-4-6",                # fund manager only
 }
 
 # ---------------------------------------------------------------------------
@@ -105,7 +106,7 @@ TECHNICAL_INDICATOR_PERIOD = 60    # trading days of price history for indicator
 # ---------------------------------------------------------------------------
 # Researcher Debate & Risk Perspectives
 # ---------------------------------------------------------------------------
-RESEARCHER_DEBATE_ROUNDS = 2
+RESEARCHER_DEBATE_ROUNDS = 1
 RISK_PERSPECTIVES = ["risk_seeking", "neutral", "risk_conservative"]
 
 # ---------------------------------------------------------------------------

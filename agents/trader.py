@@ -1,6 +1,6 @@
 """
 Trader Agent
-Model: claude-sonnet-4-6
+Model: claude-sonnet-4-6 (via LiteLLM)
 Synthesizes all analyst reports and the bull/bear debate into a trading decision.
 Runs 3 risk-profile variants (aggressive, moderate, conservative) and picks
 based on configured DEFAULT_RISK_PROFILE.
@@ -10,11 +10,9 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, DEFAULT_RISK_PROFILE, MAX_POSITION_SIZE
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 RISK_PROFILES = {
     "aggressive": {
@@ -83,14 +81,16 @@ BEAR CASE:
 
 Based on all of the above, what is your trading decision for {ticker}?"""
 
-        response = client.messages.create(
+        response = litellm.completion(
             model=MODELS["analyst"],
             max_tokens=400,
-            system=system,
-            messages=[{"role": "user", "content": context}],
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": context},
+            ],
         )
 
-        raw = response.content[0].text.strip()
+        raw = response.choices[0].message.content.strip()
         # Strip markdown code blocks if present
         if raw.startswith("```"):
             raw = raw.split("```")[1]

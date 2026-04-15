@@ -1,20 +1,18 @@
-from typing import Dict, Optional
 """
 Fund Manager Agent
-Model: claude-opus-4-6
+Model: claude-opus-4-6 (via LiteLLM) — final decision gate, non-negotiable
 Reviews the full analysis chain and risk-adjusted decision to produce
 the final executable order. This is the last gate before order submission.
 """
+from typing import Dict, Optional
 import json
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, INITIAL_CAPITAL
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 SYSTEM_PROMPT = """You are the fund manager at a trading firm.
 You are the final decision maker before any order is submitted.
@@ -75,14 +73,16 @@ Summary of Analysis:
 
 Make the final order decision for {ticker}."""
 
-        response = client.messages.create(
+        response = litellm.completion(
             model=MODELS["decision"],
             max_tokens=400,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": context}],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": context},
+            ],
         )
 
-        raw = response.content[0].text.strip()
+        raw = response.choices[0].message.content.strip()
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):

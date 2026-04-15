@@ -1,6 +1,6 @@
 """
 Risk Management Agent
-Model: claude-opus-4-6
+Model: groq/llama-3.1-70b-versatile (via LiteLLM)
 Reviews the trader's decision from three risk perspectives
 (risk-seeking, neutral, risk-conservative) and produces a risk-adjusted decision.
 """
@@ -9,11 +9,9 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, RISK_PERSPECTIVES
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 PERSPECTIVES = {
     "risk_seeking": "You focus on maximizing return potential. You push for larger positions if the thesis is strong.",
@@ -72,14 +70,16 @@ Bear Case Summary:
         perspective_outputs = []
 
         for perspective in RISK_PERSPECTIVES:
-            system = SYSTEM_PROMPT + f"\n\nYour perspective: {perspective}. {PERSPECTIVES[perspective]}"
-            response = client.messages.create(
-                model=MODELS["decision"],
+            perspective_system = SYSTEM_PROMPT + f"\n\nYour perspective: {perspective}. {PERSPECTIVES[perspective]}"
+            response = litellm.completion(
+                model=MODELS["fast"],
                 max_tokens=250,
-                system=system,
-                messages=[{"role": "user", "content": f"{context}\n\nEvaluate from the {perspective} perspective."}],
+                messages=[
+                    {"role": "system", "content": perspective_system},
+                    {"role": "user", "content": f"{context}\n\nEvaluate from the {perspective} perspective."},
+                ],
             )
-            raw = response.content[0].text.strip()
+            raw = response.choices[0].message.content.strip()
             if raw.startswith("```"):
                 raw = raw.split("```")[1]
                 if raw.startswith("json"):
@@ -94,13 +94,15 @@ Three Risk Perspectives:
 
 Synthesize into one final risk-adjusted decision."""
 
-        facilitator_response = client.messages.create(
-            model=MODELS["decision"],
+        facilitator_response = litellm.completion(
+            model=MODELS["fast"],
             max_tokens=300,
-            system=FACILITATOR_SYSTEM,
-            messages=[{"role": "user", "content": facilitator_input}],
+            messages=[
+                {"role": "system", "content": FACILITATOR_SYSTEM},
+                {"role": "user", "content": facilitator_input},
+            ],
         )
-        raw = facilitator_response.content[0].text.strip()
+        raw = facilitator_response.choices[0].message.content.strip()
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):

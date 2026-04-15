@@ -1,4 +1,5 @@
 anthropic>=0.40.0
+litellm>=1.50.0
 finnhub-python>=2.4.19
 praw>=7.7.0
 ta>=0.11.0

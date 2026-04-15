@@ -1,6 +1,6 @@
 """
 Sentiment Analyst Agent
-Model: claude-sonnet-4-6
+Model: groq/llama-3.1-70b-versatile (via LiteLLM)
 Analyzes news headlines and Reddit social sentiment to produce a sentiment report.
 """
 import json
@@ -8,13 +8,11 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, NEWS_LOOKBACK_DAYS, REDDIT_POST_LIMIT
 from tools.finnhub_data import get_news
 from tools.reddit_sentiment import get_sentiment_summary
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 SYSTEM_PROMPT = """You are a senior sentiment analyst at a trading firm.
 Your job is to analyze news articles and social media sentiment for a stock
@@ -50,14 +48,16 @@ Reddit Social Sentiment:
 
 Produce your sentiment analysis report."""
 
-        response = client.messages.create(
-            model=MODELS["analyst"],
+        response = litellm.completion(
+            model=MODELS["fast"],
             max_tokens=1200,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_content}],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_content},
+            ],
         )
 
-        report = response.content[0].text
+        report = response.choices[0].message.content
         state["sentiment_report"] = report
         write_log(ticker, date, f"[SENTIMENT ANALYST]\n{report}")
         save_state(state)

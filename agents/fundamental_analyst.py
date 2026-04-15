@@ -1,6 +1,6 @@
 """
 Fundamental Analyst Agent
-Model: claude-sonnet-4-6
+Model: groq/llama-3.1-70b-versatile (via LiteLLM)
 Analyzes financial statements, earnings, key ratios, and company profile
 to produce a fundamental analysis report.
 """
@@ -9,12 +9,10 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS
 from tools.finnhub_data import get_financials, get_company_profile, get_insider_transactions
 from tools.state_manager import save_state, write_log, log_error
-
-client = anthropic.Anthropic()
 
 SYSTEM_PROMPT = """You are a senior fundamental analyst at a trading firm.
 Your job is to analyze a company's financial health and produce a concise,
@@ -55,14 +53,16 @@ Recent Insider Transactions (last 10):
 
 Produce your fundamental analysis report."""
 
-        response = client.messages.create(
-            model=MODELS["analyst"],
+        response = litellm.completion(
+            model=MODELS["fast"],
             max_tokens=1500,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_content}],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_content},
+            ],
         )
 
-        report = response.content[0].text
+        report = response.choices[0].message.content
         state["fundamental_report"] = report
         write_log(ticker, date, f"[FUNDAMENTAL ANALYST]\n{report}")
         save_state(state)

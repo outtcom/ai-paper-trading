@@ -1,6 +1,6 @@
 """
 Technical Analyst Agent
-Model: claude-sonnet-4-6
+Model: groq/llama-3.1-70b-versatile (via LiteLLM)
 Interprets technical indicators (RSI, MACD, Bollinger Bands, EMA, volume, ATR)
 to produce a technical analysis report with price action context.
 """
@@ -9,14 +9,12 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import anthropic
+import litellm
 from config import MODELS, TECHNICAL_INDICATOR_PERIOD
 from tools.market_data import get_ohlcv
 from tools.technical_indicators import compute_indicators
 from tools.state_manager import save_state, write_log, log_error
 from datetime import datetime, timedelta
-
-client = anthropic.Anthropic()
 
 SYSTEM_PROMPT = """You are a senior technical analyst at a trading firm.
 Your job is to interpret technical indicators and price action to assess
@@ -60,14 +58,16 @@ Recent 10-Day Price Action:
 
 Produce your technical analysis report."""
 
-        response = client.messages.create(
-            model=MODELS["analyst"],
+        response = litellm.completion(
+            model=MODELS["fast"],
             max_tokens=1200,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_content}],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_content},
+            ],
         )
 
-        report = response.content[0].text
+        report = response.choices[0].message.content
         state["technical_report"] = report
         write_log(ticker, date, f"[TECHNICAL ANALYST]\n{report}")
         save_state(state)
