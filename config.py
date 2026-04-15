@@ -68,6 +68,29 @@ MIN_VOLUME_RATIO         = 0.8    # require recent vol ≥ 80% of 20d avg (0 = o
 BEARISH_REGIME_MULTIPLIER = 0.5   # halve size when SPY < 200d MA
 
 # ---------------------------------------------------------------------------
+# Slippage
+# ---------------------------------------------------------------------------
+SLIPPAGE_PCT = 0.0015        # 15 bps on every paper fill — buys higher, sells lower
+
+# ---------------------------------------------------------------------------
+# Portfolio Beta Cap
+# ---------------------------------------------------------------------------
+# Approximate 2-year trailing betas vs SPY (update manually each quarter)
+TICKER_BETA = {
+    "AAPL": 1.2, "NVDA": 1.8, "MSFT": 1.1,
+    "GOOGL": 1.2, "META": 1.3,
+    "AMZN": 1.3, "LLY": 0.5,  "JPM": 1.1,
+    "XOM":  0.8, "CAT": 1.2,  "WMT": 0.5,
+    "FCX":  1.6, "NEE": 0.4,  "PLD": 1.0,
+}
+MAX_PORTFOLIO_BETA = 1.5     # weighted avg beta cap (crypto excluded)
+
+# ---------------------------------------------------------------------------
+# VIX Rate-of-Change
+# ---------------------------------------------------------------------------
+VIX_ROC_THRESHOLD = 20.0    # % rise in VIX over 5 days → additional 0.5× size cut
+
+# ---------------------------------------------------------------------------
 # Model Assignments (tiered for token efficiency)
 # ---------------------------------------------------------------------------
 MODELS = {
