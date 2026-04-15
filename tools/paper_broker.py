@@ -77,8 +77,14 @@ def submit_order(ticker: str, action: str, qty: int, price: Optional[float] = No
     if action == "hold" or qty <= 0:
         return {"status": "skipped", "reason": "HOLD or zero qty"}
 
+    from config import SLIPPAGE_PCT
     p = _load_portfolio()
     exec_price = price or get_latest_price(ticker)
+    # Realistic fill: buys execute slightly above mid, sells slightly below
+    if action == "buy":
+        exec_price = round(exec_price * (1 + SLIPPAGE_PCT), 4)
+    elif action == "sell":
+        exec_price = round(exec_price * (1 - SLIPPAGE_PCT), 4)
 
     if action == "buy":
         cost = exec_price * qty
@@ -115,6 +121,7 @@ def submit_order(ticker: str, action: str, qty: int, price: Optional[float] = No
         "action": action,
         "qty": qty,
         "exec_price": exec_price,
+        "slippage_pct": SLIPPAGE_PCT,
         "total_value": round(exec_price * qty, 2),
         "status": "filled",
         "timestamp": datetime.utcnow().isoformat(),
