@@ -36,6 +36,17 @@ jobs:
           OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
           EOF
 
+      - name: Notify start
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          TEXT=$'⏰ <b>Morning Session starting</b> — '"$(date -u +'%Y-%m-%d')"$'\nAI pipeline running on 17 tickers. Trade card in ~15-20 min.'
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true
+
       - name: Run morning session
         run: python morning_session.py
 
@@ -48,3 +59,16 @@ jobs:
           git diff --staged --quiet || git commit -m "auto: morning_session $(date +%Y-%m-%d)"
           git pull --rebase -X ours
           git push
+
+      - name: Notify failure
+        if: failure()
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TEXT=$'🚨 <b>Morning Session FAILED</b>\n\nView logs:\n'"${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true

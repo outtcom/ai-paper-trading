@@ -2,8 +2,8 @@ name: Midday Position Monitor
 
 on:
   schedule:
-    - cron: '0 16 * * 1-5'  # 12:00 PM ET (EDT = UTC-4), Mon-Fri
-  workflow_dispatch:          # allow manual trigger
+    - cron: '0 16 * * 1-5'   # 12:00 PM ET (EDT = UTC-4), Mon-Fri
+  workflow_dispatch:           # allow manual trigger
 
 permissions:
   contents: write
@@ -46,3 +46,16 @@ jobs:
           git diff --staged --quiet || git commit -m "auto: midday_check $(date +%Y-%m-%d)"
           git pull --rebase -X ours
           git push
+
+      - name: Notify failure
+        if: failure()
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TEXT=$'🚨 <b>Midday Check FAILED</b>\n\nView logs:\n'"${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true
