@@ -18,7 +18,7 @@ _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 _SYSTEM_DIR = os.path.dirname(_TOOLS_DIR)
 PORTFOLIO_FILE = os.path.join(_SYSTEM_DIR, "docs", "portfolio.json")
 
-TOTAL_DAYS = 10
+TOTAL_DAYS = 22   # one calendar month of trading days
 INITIAL_CAPITAL = 5_000.0
 
 # Circuit breaker thresholds
@@ -65,6 +65,7 @@ def _default_portfolio() -> dict:
             "benchmark_return_pct": None,
         },
         "positions": {},
+        "open_orders": [],
         "trade_history": [],
         "equity_curve": [],
         "journal": [],
@@ -92,6 +93,7 @@ def _migrate(p: dict) -> dict:
         "benchmark_return_pct": None,
     })
     p.setdefault("journal", [])
+    p.setdefault("open_orders", [])
     return p
 
 
@@ -141,7 +143,7 @@ def advance_day() -> int:
     p["session"]["current_day"] = new_day
     if new_day > p["session"].get("total_days", TOTAL_DAYS):
         p["session"]["active"] = False
-        print("[session] Session complete — all 10 days finished.")
+        print(f"[session] Session complete — all {p['session']['total_days']} days finished.")
     _save(p)
     return new_day
 
@@ -307,6 +309,7 @@ def open_position(
         "qty": qty,
         "entry_price": round(entry_price, 2),
         "cost_basis": cost,
+        "last_price": round(entry_price, 2),     # updated by midday/EOD for live P&L
         "stop_loss": sl_price,
         "take_profit": tp_price,
         "partial_profit_price": partial_price,   # price at which we take 50% off
@@ -429,8 +432,12 @@ def update_trailing_stop(ticker: str, current_price: float) -> bool:
     if not pos:
         return False
 
+    # Always keep last_price current regardless of whether it's a new high
+    p["positions"][ticker]["last_price"] = round(current_price, 2)
+
     prev_high = pos.get("highest_price", pos["entry_price"])
     if current_price <= prev_high:
+        _save(p)
         return False
 
     # Update high-water mark
@@ -483,3 +490,52 @@ def add_journal_entry(entry: dict) -> None:
     entry["timestamp"] = datetime.now(timezone.utc).isoformat()
     p["journal"].append(entry)
     _save(p)
+
+
+def update_last_price(ticker: str, price: float) -> None:
+    """Update the last known market price for a position (for dashboard unrealized P&L)."""
+    p = _migrate(_load())
+    if ticker in p["positions"]:
+        p["positions"][ticker]["last_price"] = round(price, 2)
+        _save(p)
+
+
+def add_open_order(
+    ticker: str,
+    qty,
+    price: float,
+    side: str = "BUY",
+    order_type: str = "market",
+) -> None:
+    """
+    Record a proposed order pending Telegram approval.
+    status: 'pending' | 'executed' | 'rejected' | 'expired'
+    """
+    p = _migrate(_load())
+    p.setdefault("open_orders", []).append({
+        "ticker":       ticker,
+        "qty":          qty,
+        "side":         side.upper(),
+        "price":        round(price, 2),
+        "order_type":   order_type,
+        "status":       "pending",
+        "day":          p["session"].get("current_day", 0),
+        "submitted_at": datetime.now(timezone.utc).isoformat(),
+    })
+    _save(p)
+    print(f"[session] Open order queued: {side.upper()} {qty} {ticker} @ ${price:.2f}")
+
+
+def update_open_order(ticker: str, status: str) -> None:
+    """
+    Update the most recent pending order for a ticker.
+    status: 'executed' | 'rejected' | 'expired'
+    """
+    p = _migrate(_load())
+    for order in reversed(p.get("open_orders", [])):
+        if order["ticker"] == ticker and order["status"] == "pending":
+            order["status"] = status
+            order["resolved_at"] = datetime.now(timezone.utc).isoformat()
+            break
+    _save(p)
+    print(f"[session] Open order {ticker} → {status}")

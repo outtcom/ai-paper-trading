@@ -20,6 +20,7 @@ Usage:
 import os
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,6 +32,7 @@ from tools.session_manager import (
     get_session_day,
     partial_close_position,
     record_equity,
+    update_last_price,
     update_spy_benchmark,
     update_trailing_stop,
 )
@@ -48,7 +50,7 @@ def _days_held(pos: dict) -> int:
     """Return how many calendar days the position has been open."""
     try:
         opened = datetime.strptime(pos["opened_date"], "%Y-%m-%d")
-        return (datetime.utcnow() - opened).days
+        return (datetime.now(timezone.utc).replace(tzinfo=None) - opened).days
     except Exception:
         return 0
 
@@ -156,11 +158,12 @@ def _check_time_exits(portfolio: dict) -> list:
 
 
 def _total_equity(portfolio: dict) -> float:
-    """Cash + mark-to-market value of all open positions."""
+    """Cash + mark-to-market value of all open positions. Also persists last_price."""
     equity = portfolio["cash"]
     for ticker, pos in portfolio["positions"].items():
         try:
             price = get_latest_price(ticker)
+            update_last_price(ticker, price)  # keep dashboard unrealized P&L current
             equity += price * pos["qty"]
         except Exception:
             equity += pos["cost_basis"]
@@ -291,7 +294,7 @@ def _build_eod_message(
 # ---------------------------------------------------------------------------
 
 def main():
-    today = datetime.today().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[eod] ========== EOD Session {today} ==========")
 
     portfolio = get_portfolio()
@@ -358,12 +361,16 @@ def main():
         completed = final_portfolio.get("trade_history", [])
         winners = [t for t in completed if t.get("pnl", 0) > 0]
 
+        spy_line = (
+            f"vs SPY:       {'+' if spy_ret >= 0 else ''}{spy_ret:.1f}%\n"
+            if spy_ret is not None else "vs SPY:       N/A\n"
+        )
         send_message(
             f"🏁 <b>PAPER TRADING SESSION COMPLETE</b>\n\n"
             f"Final Equity: <b>${equity:,.2f}</b>\n"
             f"Total Return: <b>{'+' if final_ret >= 0 else ''}{final_ret:.1f}%</b>\n"
-            f"vs SPY:       {'+' if spy_ret and spy_ret >= 0 else ''}{spy_ret:.1f}%" if spy_ret else "" +
-            f"\nSharpe Ratio: {f'{sharpe:.2f}' if sharpe else 'N/A'}\n"
+            + spy_line +
+            f"Sharpe Ratio: {f'{sharpe:.2f}' if sharpe else 'N/A'}\n"
             f"Win Rate:     {len(winners)}/{len(completed)} trades\n\n"
             f"Check the dashboard for full details."
         )

@@ -11,6 +11,7 @@ Sends a Telegram alert only if at least one ticker has gapped significantly.
 import os
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +24,7 @@ GAP_THRESHOLD = 2.0   # percent — flag if gap exceeds this
 
 
 def main():
-    today = datetime.today().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[premarket] ========== Pre-Market Gap Scanner {today} ==========")
 
     portfolio = get_portfolio()

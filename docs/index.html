@@ -156,6 +156,10 @@
     .tag.skip { background: rgba(100,116,139,0.15); color: var(--muted); }
     .tag.partial { background: rgba(245,158,11,0.15); color: var(--yellow); }
     .tag.time { background: rgba(168,85,247,0.15); color: var(--purple); }
+    .tag.pending { background: rgba(249,115,22,0.15); color: var(--orange); }
+    .tag.executed { background: rgba(34,197,94,0.15); color: var(--green); }
+    .tag.rejected { background: rgba(239,68,68,0.15); color: var(--red); }
+    .tag.expired { background: rgba(100,116,139,0.15); color: var(--muted); }
 
     .pos-row td:first-child { font-weight: 600; }
     .empty { color: var(--muted); font-size: 0.85rem; padding: 20px 12px; }
@@ -271,14 +275,41 @@
           <th>Ticker</th>
           <th>Qty</th>
           <th>Entry</th>
+          <th>Current</th>
+          <th>Unreal P&amp;L</th>
           <th>TP</th>
           <th>SL</th>
           <th>Partial Level</th>
+          <th>Days Held</th>
           <th>Status</th>
         </tr>
       </thead>
       <tbody id="positions-tbody">
-        <tr><td class="empty" colspan="7">No open positions</td></tr>
+        <tr><td class="empty" colspan="10">No open positions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Open orders -->
+<div class="section">
+  <h2>Open Orders</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Ticker</th>
+          <th>Side</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Submitted</th>
+        </tr>
+      </thead>
+      <tbody id="orders-tbody">
+        <tr><td class="empty" colspan="8">No orders this session</td></tr>
       </tbody>
     </table>
   </div>
@@ -358,7 +389,7 @@
     }
 
     // KPIs
-    document.getElementById('kpi-day').textContent = active ? `${day} / ${totalDays}` : (day >= totalDays ? '10 / 10' : '—');
+    document.getElementById('kpi-day').textContent = active ? `${day} / ${totalDays}` : (day >= totalDays ? `${totalDays} / ${totalDays}` : '—');
     document.getElementById('kpi-day-sub').textContent = session.start_date ? `Started ${session.start_date}` : '';
 
     const equityEl = document.getElementById('kpi-equity');
@@ -507,28 +538,77 @@
     const posTbody = document.getElementById('positions-tbody');
     const positions = data.positions || {};
     const posKeys = Object.keys(positions);
+    const todayStr = new Date().toISOString().slice(0, 10);
     if (posKeys.length === 0) {
-      posTbody.innerHTML = '<tr><td class="empty" colspan="7">No open positions</td></tr>';
+      posTbody.innerHTML = '<tr><td class="empty" colspan="10">No open positions</td></tr>';
     } else {
       posTbody.innerHTML = posKeys.map(ticker => {
         const pos = positions[ticker];
         const entry = pos.entry_price;
+        const last  = pos.last_price || entry;
         const tp = pos.take_profit;
         const sl = pos.stop_loss;
         const partial = pos.partial_profit_price || '—';
         const partialTaken = pos.partial_taken;
+
+        // Unrealized P&L
+        const unrPnl = (last - entry) * pos.qty;
+        const unrPct = ((last - entry) / entry) * 100;
+        const pnlSign = unrPnl >= 0 ? '+' : '';
+        const pnlColor = unrPnl >= 0 ? 'var(--green)' : 'var(--red)';
+
+        // Days held
+        let daysHeld = '—';
+        if (pos.opened_date) {
+          const opened = new Date(pos.opened_date);
+          const today  = new Date(todayStr);
+          daysHeld = Math.max(0, Math.round((today - opened) / 86400000));
+        }
+
         const statusTag = partialTaken
           ? '<span class="tag partial">Partial Done</span>'
           : '<span class="tag open">Open</span>';
+
         return `
           <tr class="pos-row">
             <td>${ticker}</td>
             <td>${pos.qty}</td>
             <td>$${fmt(entry)}</td>
+            <td>${last !== entry ? '$' + fmt(last) : '<span style="color:var(--muted)">—</span>'}</td>
+            <td style="color:${pnlColor}">${pnlSign}$${fmt(unrPnl)} <span style="font-size:0.8em">(${pnlSign}${fmt(unrPct)}%)</span></td>
             <td style="color:var(--green)">$${fmt(tp)}</td>
             <td style="color:var(--red)">$${fmt(sl)}</td>
             <td style="color:var(--yellow)">${typeof partial === 'number' ? '$' + fmt(partial) : partial}</td>
+            <td>${daysHeld}</td>
             <td>${statusTag}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    // Open orders
+    const ordersTbody = document.getElementById('orders-tbody');
+    const openOrders = data.open_orders || [];
+    if (openOrders.length === 0) {
+      ordersTbody.innerHTML = '<tr><td class="empty" colspan="8">No orders this session</td></tr>';
+    } else {
+      ordersTbody.innerHTML = [...openOrders].reverse().map(o => {
+        const statusCls = o.status === 'pending' ? 'pending'
+          : o.status === 'executed' ? 'executed'
+          : o.status === 'rejected' ? 'rejected'
+          : 'expired';
+        const statusLabel = o.status.charAt(0).toUpperCase() + o.status.slice(1);
+        const sideColor = o.side === 'BUY' ? 'var(--green)' : 'var(--red)';
+        const submittedAt = o.submitted_at ? new Date(o.submitted_at).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) : '—';
+        return `
+          <tr>
+            <td>Day ${o.day || '?'}</td>
+            <td><b>${o.ticker}</b></td>
+            <td style="color:${sideColor}; font-weight:600">${o.side}</td>
+            <td>${o.qty}</td>
+            <td>$${fmt(o.price)}</td>
+            <td style="color:var(--muted); font-size:0.82em">${o.order_type || 'market'}</td>
+            <td><span class="tag ${statusCls}">${statusLabel}</span></td>
+            <td style="color:var(--muted); font-size:0.82em">${submittedAt}</td>
           </tr>`;
       }).join('');
     }

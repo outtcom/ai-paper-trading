@@ -24,13 +24,14 @@ Usage:
 import os
 import sys
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import (
     WATCHLIST, APPROVAL_TIMEOUT_SECONDS,
     MAX_CONCURRENT_POSITIONS, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
-    BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR,
+    BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
 )
 from orchestrator import run_pipeline
 from tools.market_data import get_latest_price, get_ohlcv
@@ -38,6 +39,7 @@ from tools.market_regime import get_vix_multiplier, get_market_trend, has_earnin
 from tools.sector_analysis import get_sector_strength, get_sector_bonus, format_sector_heatmap
 from tools.session_manager import (
     add_journal_entry,
+    add_open_order,
     check_circuit_breaker,
     get_portfolio,
     get_session_day,
@@ -46,6 +48,7 @@ from tools.session_manager import (
     record_equity,
     set_spy_start_price,
     start_session,
+    update_open_order,
 )
 from tools.telegram_bot import poll_for_response, send_approval_request, send_message
 
@@ -73,8 +76,9 @@ def _has_volume_confirmation(ticker: str) -> bool:
     if MIN_VOLUME_RATIO <= 0 or "-USD" in ticker:
         return True
     try:
-        end   = datetime.today().strftime("%Y-%m-%d")
-        start = (datetime.today() - timedelta(days=35)).strftime("%Y-%m-%d")
+        _now  = datetime.now(ZoneInfo("America/New_York"))
+        end   = _now.strftime("%Y-%m-%d")
+        start = (_now - timedelta(days=35)).strftime("%Y-%m-%d")
         bars  = get_ohlcv(ticker, start, end)
         volumes = [b.get("volume", 0) for b in bars if b.get("volume", 0) > 0]
         if len(volumes) < 10:
@@ -236,9 +240,9 @@ def _size_position(ticker: str, state: dict, cash: float, vix_mult: float, regim
         "why":              why,
         "bull_case":        bull or "See logs.",
         "bear_case":        bear or "See logs.",
-        "take_profit":      round(price * (1 + tp_pct), 4),
+        "take_profit":      round(price * (1 + tp_pct), 2),
         "take_profit_pct":  tp_pct * 100,
-        "stop_loss":        round(price * (1 - sl_pct), 4),
+        "stop_loss":        round(price * (1 - sl_pct), 2),
         "stop_loss_pct":    sl_pct * 100,
         "position_size_usd": actual_usd,
         "qty":              qty,
@@ -253,7 +257,7 @@ def _size_position(ticker: str, state: dict, cash: float, vix_mult: float, regim
 # ---------------------------------------------------------------------------
 
 def main():
-    today = datetime.today().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[morning] ========== Morning Session {today} ==========")
 
     portfolio = get_portfolio()
@@ -264,7 +268,8 @@ def main():
         portfolio = start_session()
 
     if not is_session_active():
-        send_message("🏁 <b>Paper trading session complete!</b>\n\nAll 10 days are done. Check the dashboard.")
+        _done_days = portfolio["session"].get("total_days", 22)
+        send_message(f"🏁 <b>Paper trading session complete!</b>\n\nAll {_done_days} days are done. Check the dashboard.")
         return
 
     session_day = get_session_day()
@@ -351,6 +356,8 @@ def main():
 
     # ── Sector strength (runs before pipeline to inform ranking) ──────────
     print("[morning] Fetching sector strength...")
+    top3    = ""
+    bottom3 = ""
     try:
         sector_strength = get_sector_strength()
         top3    = ", ".join(sector_strength.get("top_3", []))
@@ -363,9 +370,9 @@ def main():
     # ── Notify user: analysis starting ────────────────────────────────────
     send_message(
         f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {len(WATCHLIST)} tickers "
-        f"across {len([s for s in sector_strength.get('top_3',[])])} sectors...\n"
+        f"across {len(SECTOR_MAP)} sectors...\n"
         f"VIX: {vix_label}  |  Regime: {regime_label}\n"
-        f"Sector leaders: {top3}\n"
+        f"Sector leaders: {top3 or 'N/A'}\n"
         f"<i>Back in ~15–20 min with the best trade.</i>"
     )
 
@@ -405,6 +412,9 @@ def main():
 
     print(f"[morning] Best: {ticker}  score={score:.2f}  sector={summary['sector']}  qty={summary['qty']}")
 
+    # ── Log order as pending before sending for approval ──────────────────
+    add_open_order(ticker, summary["qty"], summary["current_price"], "BUY")
+
     # ── Send Telegram approval card ────────────────────────────────────────
     send_approval_request(summary)
     print(f"[morning] Approval sent. Polling {APPROVAL_TIMEOUT_SECONDS // 60} min...")
@@ -413,6 +423,7 @@ def main():
     print(f"[morning] Response: {response}")
 
     if response == "approved":
+        update_open_order(ticker, "executed")
         open_position(
             ticker         = ticker,
             qty            = summary["qty"],
@@ -453,10 +464,12 @@ def main():
         record_equity(equity)
 
     elif response == "rejected":
+        update_open_order(ticker, "rejected")
         send_message(f"⏭ <b>Trade Skipped — Day {session_day}/{total_days}</b>\n\nNo position opened. See you tomorrow!")
         record_equity(equity)
 
     else:
+        update_open_order(ticker, "expired")
         send_message(f"⏰ <b>60-min window expired — Day {session_day}/{total_days}</b>\n\nTrade skipped.")
         record_equity(equity)
 

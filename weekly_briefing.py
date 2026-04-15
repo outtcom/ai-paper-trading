@@ -14,6 +14,7 @@ This is the Sunday evening brief — read it before Monday open.
 import os
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -46,8 +47,9 @@ def _stock_watchlist_notes(stocks, earnings_map) -> list:
     lines = []
     for ticker in stocks:
         try:
-            end   = datetime.today().strftime("%Y-%m-%d")
-            start = (datetime.today() - timedelta(days=10)).strftime("%Y-%m-%d")
+            _now  = datetime.now(ZoneInfo("America/New_York"))
+            end   = _now.strftime("%Y-%m-%d")
+            start = (_now - timedelta(days=10)).strftime("%Y-%m-%d")
             bars  = get_ohlcv(ticker, start, end)
             if len(bars) >= 5:
                 pct_5d = round((bars[-1]["close"] - bars[-5]["close"]) / bars[-5]["close"] * 100, 2)
@@ -79,7 +81,7 @@ def _crypto_notes(crypto_perf) -> list:
 
 
 def main():
-    today = datetime.today().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[weekly] ========== Weekly Briefing {today} ==========")
 
     regime   = get_full_regime(WATCHLIST)

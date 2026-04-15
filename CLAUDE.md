@@ -88,6 +88,34 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 - Monitor runs: https://github.com/outtcom/ai-paper-trading/actions
 - All workflows support `workflow_dispatch` for manual triggering from the Actions tab.
 
+## Session Configuration
+
+- **Session length**: 22 trading days (≈ 1 calendar month). Configured in `tools/session_manager.py` → `TOTAL_DAYS`.
+- **Benchmark**: SPY. Alpha calculated daily at EOD. Full month-end review planned.
+- **Current session start**: 2026-04-14, Day 2 of 22.
+
+## Portfolio State (`docs/portfolio.json`)
+
+Key fields Claude should know about:
+
+| Field | Description |
+|---|---|
+| `positions[ticker].last_price` | Updated by midday + EOD after each price fetch — powers dashboard unrealized P&L |
+| `open_orders[]` | Orders proposed by the morning pipeline; status: `pending → executed / rejected / expired` |
+| `session.total_days` | 22 (one month). Change here to adjust session length. |
+
+## Dashboard (`docs/index.html`)
+
+Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
+
+**Sections:**
+- KPI cards: Equity, Cash, Win Rate, Sharpe, Sortino, Calmar, Max Drawdown
+- Benchmark bar: Our return vs SPY, alpha badge
+- Equity curve chart
+- **Open Positions**: Ticker, Qty, Entry, Current Price, Unrealized P&L (live), TP, SL, Partial Level, Days Held, Status
+- **Open Orders**: All orders from the session with status (Pending / Executed / Rejected / Expired)
+- Trade History, Trade Journal
+
 ## Known Issues & Fixes Applied
 
 | Issue | Fix |
@@ -100,6 +128,12 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | Reddit public JSON API blocked on GitHub Actions IPs | Expected — sentiment falls back gracefully; no code change needed |
 | $5/day LLM cost unsustainable | Switched to multi-LLM via LiteLLM: Groq (analysts + risk), GPT-4o-mini (researchers), Sonnet (trader), Opus (fund manager only). Cost: ~$0.60/day |
 | All pipeline tickers ran through LLM even if ineligible | Pre-filter in `_analyze_all()` skips earnings-blocked, same-sector, and volume-fail tickers before any API calls |
+| `datetime.today()` returns UTC on GitHub Actions | All 6 session scripts use `datetime.now(ZoneInfo("America/New_York"))` for ET timestamps |
+| EOD session-complete message dropped Sharpe/Win Rate lines | Fixed Python operator precedence bug — `spy_line` extracted as variable before f-string concatenation |
+| `morning_session.py` NameError on sector fetch failure | `top3`/`bottom3` initialised to `""` before `try` block |
+| Sector count said "across 3 sectors" | Fixed to use `len(SECTOR_MAP)` = 11 GICS sectors |
+| SL/TP stored at 4 decimal places, displayed at 2 | `_size_position` now uses `round(..., 2)` matching `open_position` |
+| `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
 
 ## API Credit Notes
 
@@ -119,6 +153,20 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | Debug an agent failure | Check `.tmp/logs/YYYY-MM-DD/TICKER.log` |
 | Change risk profile | Edit `DEFAULT_RISK_PROFILE` in `config.py` |
 | Trigger a script manually | GitHub Actions → select workflow → Run workflow |
+
+## Claude Code Hooks
+
+Configured in `C:\Users\Fahad\.claude\settings.json` (global, applies to all projects):
+
+| Event | Action |
+|---|---|
+| `Stop` | Plays `chimes.wav` — alerts Fahad that input is needed or a task is complete |
+| `Notification` | Plays `chimes.wav` — alerts on mid-task notifications (e.g. background agents finishing) |
+| `SessionStart` | Loads superpowers plugin context |
+
+Sound file: `C:\Windows\Media\chimes.wav` (async, non-blocking)
+
+---
 
 ## Self-Improvement Loop
 

@@ -13,18 +13,19 @@ Only sends a message if there are open positions.
 import os
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from tools.market_data import get_latest_price
-from tools.session_manager import get_portfolio, get_session_day
+from tools.session_manager import get_portfolio, get_session_day, update_last_price
 from tools.telegram_bot import send_message
 
 PROXIMITY_THRESHOLD = 0.75   # alert when 75%+ of the way to TP or SL
 
 
 def main():
-    today = datetime.today().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[midday] ========== Midday Check {today} ==========")
 
     portfolio = get_portfolio()
@@ -50,6 +51,7 @@ def main():
     for ticker, pos in positions.items():
         try:
             price      = get_latest_price(ticker)
+            update_last_price(ticker, price)  # keep dashboard unrealized P&L current
             entry      = pos["entry_price"]
             tp         = pos["take_profit"]
             sl         = pos["stop_loss"]
