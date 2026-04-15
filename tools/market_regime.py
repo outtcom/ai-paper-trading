@@ -316,3 +316,114 @@ def get_full_regime(watchlist: list) -> dict:
         "earnings":       earnings,
         "week_events":    week_events,
     }
+
+
+# ---------------------------------------------------------------------------
+# VIX Rate of Change
+# ---------------------------------------------------------------------------
+
+def get_vix_roc(days: int = 5) -> tuple:
+    """
+    Returns (pct_change, label) for VIX over the last `days` trading days.
+    pct_change is positive when VIX is rising (e.g. 22.5 = +22.5% over 5d).
+    Returns (None, "VIX RoC unavailable") on any failure — never blocks trading.
+    """
+    try:
+        end   = datetime.today().strftime("%Y-%m-%d")
+        start = (datetime.today() - timedelta(days=days * 2 + 7)).strftime("%Y-%m-%d")
+        bars  = get_ohlcv("^VIX", start, end)
+        if len(bars) < days + 1:
+            return None, "VIX RoC unavailable (insufficient data)"
+        old_close = bars[-(days + 1)]["close"]
+        new_close = bars[-1]["close"]
+        if old_close <= 0:
+            return None, "VIX RoC unavailable (zero price)"
+        pct   = round((new_close - old_close) / old_close * 100, 1)
+        sign  = "+" if pct >= 0 else ""
+        label = f"VIX RoC {sign}{pct:.1f}% ({days}d)"
+        return pct, label
+    except Exception:
+        return None, "VIX RoC unavailable"
+
+
+# ---------------------------------------------------------------------------
+# HYG credit spread proxy
+# ---------------------------------------------------------------------------
+
+def get_hyg_signal() -> tuple:
+    """
+    Check HYG (iShares High Yield ETF) vs its 20-day MA as a credit spread proxy.
+    Returns (risk_off: bool, pct_vs_ma: float | None, label: str).
+    risk_off = True when HYG is >2% below its 20-day MA.
+    Returns (False, None, "HYG unavailable") on any failure — never blocks trading.
+    """
+    try:
+        end   = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
+        start = (datetime.today() - timedelta(days=40)).strftime("%Y-%m-%d")
+        bars  = get_ohlcv("HYG", start, end)
+        if len(bars) < 20:
+            return False, None, "HYG unavailable (insufficient data)"
+        closes      = [b["close"] for b in bars]
+        current     = closes[-1]
+        ma20        = round(sum(closes[-20:]) / 20, 4)
+        pct_vs_ma   = round((current - ma20) / ma20 * 100, 2)
+        risk_off    = pct_vs_ma < -2.0
+        if risk_off:
+            label = f"HYG RISK-OFF ({pct_vs_ma:+.1f}% vs 20d MA) ⚠️"
+        else:
+            label = f"HYG OK ({pct_vs_ma:+.1f}% vs 20d MA) ✅"
+        return risk_off, pct_vs_ma, label
+    except Exception:
+        return False, None, "HYG unavailable"
+
+
+# ---------------------------------------------------------------------------
+# Earnings lookback — symmetric to has_earnings_soon()
+# ---------------------------------------------------------------------------
+
+def had_earnings_recently(ticker: str, days: int = 1) -> bool:
+    """
+    Return True if ticker reported earnings within the last `days` calendar days.
+    Always returns False for crypto tickers.
+    Uses the same yfinance approach as has_earnings_soon() but looks backward.
+    """
+    if "-USD" in ticker:
+        return False
+    try:
+        import yfinance as yf
+        t   = yf.Ticker(ticker)
+        now = datetime.now()
+
+        # Try earnings_dates first (newer yfinance)
+        try:
+            ed = t.earnings_dates
+            if ed is not None and not ed.empty:
+                for idx in ed.index:
+                    dt   = idx.to_pydatetime().replace(tzinfo=None)
+                    diff = (now - dt).days   # positive = past
+                    if 0 <= diff <= days:
+                        return True
+        except Exception:
+            pass
+
+        # Fallback: calendar dict
+        try:
+            cal = t.calendar
+            if isinstance(cal, dict):
+                dates = cal.get("Earnings Date", [])
+                if not isinstance(dates, list):
+                    dates = [dates]
+                for d in dates:
+                    if hasattr(d, "to_pydatetime"):
+                        d = d.to_pydatetime()
+                    if hasattr(d, "replace"):
+                        d = d.replace(tzinfo=None)
+                        diff = (now - d).days
+                        if 0 <= diff <= days:
+                            return True
+        except Exception:
+            pass
+
+    except Exception:
+        pass
+    return False
