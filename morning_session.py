@@ -7,16 +7,19 @@ Flow:
   2.  Circuit breaker — halt if peak drawdown > 15% or daily loss > 3%
   3.  FOMC / CPI / NFP auto-block — no trades on macro event days
   4.  VIX check — EXTREME → skip. Apply VIX sizing multiplier.
+  4b. VIX rate-of-change filter — spike >20% over 5d → additional 0.5× cut
   5.  Market regime overlay — bearish (SPY < 200d MA) → halve size further
+  5b. HYG credit spread check — risk-off signal → cap sizing at 0.5×
   6.  Concurrent position limit — skip if already at MAX_CONCURRENT_POSITIONS
   7.  Portfolio heat check — skip if >75% capital already deployed
-  8.  Earnings check — block tickers with earnings within 3 days
+  8.  Earnings check — block tickers with earnings within 5 days or reported within 2 days
   9.  Sector strength ranking — fetch sector ETF momentum before analysis
   10. Run 7-agent pipeline on all watchlist tickers (stocks + crypto)
   11. Volume confirmation filter — discard low-volume BUY signals
-  12. Rank candidates: conviction + sector bonus → pick best
-  13. Send Telegram approval card; poll 60 min
-  14. If approved: execute paper trade, log journal entry
+  12. Portfolio beta cap — skip if adding candidate exceeds 1.5× weighted beta
+  13. Rank candidates: conviction + sector bonus → pick best
+  14. Send Telegram approval card; poll 60 min
+  15. If approved: re-fetch live price, execute paper trade, log journal entry
 
 Usage:
   python morning_session.py
@@ -428,7 +431,7 @@ def main():
     send_message(
         f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {len(WATCHLIST)} tickers "
         f"across {len(SECTOR_MAP)} sectors...\n"
-        f"VIX: {vix_label}  |  Regime: {regime_label}\n"
+        f"VIX: {vix_label}  |  Regime: {regime_label}  |  {vix_roc_label}\n"
         f"Credit: {hyg_label}\n"
         f"Sector leaders: {top3 or 'N/A'}\n"
         f"<i>Back in ~15–20 min with the best trade.</i>"
@@ -452,7 +455,8 @@ def main():
 
     # ── Portfolio beta cap ────────────────────────────────────────────────
     if ticker and "-USD" not in ticker:
-        estimated_usd = cash * 0.25 * vix_multiplier * regime_mult
+        pos_frac      = float(state.get("final_order", {}).get("position_size_pct") or 0.25)
+        estimated_usd = cash * pos_frac * vix_multiplier * regime_mult
         port_beta     = _portfolio_beta(portfolio, ticker, estimated_usd)
         print(f"[morning] Portfolio beta (incl {ticker}): {port_beta:.2f}  cap={MAX_PORTFOLIO_BETA}")
         if port_beta > MAX_PORTFOLIO_BETA:
@@ -504,7 +508,8 @@ def main():
             exec_price = summary["current_price"]
         exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
         exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
-        price_delta_pct  = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2)
+        price_delta_pct  = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2) \
+                           if summary["current_price"] > 0 else 0.0
         print(f"[morning] Analysis: ${summary['current_price']:.2f} → Exec: ${exec_price:.2f} ({price_delta_pct:+.2f}%)")
 
         update_open_order(ticker, "executed")
