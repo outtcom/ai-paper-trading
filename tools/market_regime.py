@@ -330,7 +330,7 @@ def get_vix_roc(days: int = 5) -> tuple:
     """
     try:
         end   = datetime.today().strftime("%Y-%m-%d")
-        start = (datetime.today() - timedelta(days=days * 2 + 7)).strftime("%Y-%m-%d")
+        start = (datetime.today() - timedelta(days=days * 2 + 7)).strftime("%Y-%m-%d")  # wide window: enough trading bars across weekends/holidays
         bars  = get_ohlcv("^VIX", start, end)
         if len(bars) < days + 1:
             return None, "VIX RoC unavailable (insufficient data)"
@@ -358,7 +358,7 @@ def get_hyg_signal() -> tuple:
     Returns (False, None, "HYG unavailable") on any failure — never blocks trading.
     """
     try:
-        end   = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
+        end   = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")  # +1 day ensures today's bar is included on some providers
         start = (datetime.today() - timedelta(days=40)).strftime("%Y-%m-%d")
         bars  = get_ohlcv("HYG", start, end)
         if len(bars) < 20:
@@ -378,14 +378,15 @@ def get_hyg_signal() -> tuple:
 
 
 # ---------------------------------------------------------------------------
-# Earnings lookback — symmetric to has_earnings_soon()
+# Earnings lookback — analogous to has_earnings_soon()
 # ---------------------------------------------------------------------------
 
-def had_earnings_recently(ticker: str, days: int = 1) -> bool:
+def had_earnings_recently(ticker: str, days: int = 2) -> bool:
     """
     Return True if ticker reported earnings within the last `days` calendar days.
     Always returns False for crypto tickers.
     Uses the same yfinance approach as has_earnings_soon() but looks backward.
+    Default days=2 ensures a Friday earnings report is still caught on Monday.
     """
     if "-USD" in ticker:
         return False
