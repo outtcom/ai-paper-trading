@@ -32,10 +32,14 @@ from config import (
     WATCHLIST, APPROVAL_TIMEOUT_SECONDS,
     MAX_CONCURRENT_POSITIONS, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
     BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
+    TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD,
 )
 from orchestrator import run_pipeline
 from tools.market_data import get_latest_price, get_ohlcv
-from tools.market_regime import get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked
+from tools.market_regime import (
+    get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked,
+    get_vix_roc, get_hyg_signal, had_earnings_recently,
+)
 from tools.sector_analysis import get_sector_strength, get_sector_bonus, format_sector_heatmap
 from tools.session_manager import (
     add_journal_entry,
@@ -106,6 +110,41 @@ def _is_same_sector_open(ticker: str, portfolio: dict) -> bool:
             print(f"[morning] {ticker} blocked — sector '{sector}' already has open position in {open_ticker}")
             return True
     return False
+
+
+def _portfolio_beta(portfolio: dict, candidate_ticker: str, candidate_usd: float) -> float:
+    """
+    Return the weighted average portfolio beta if the candidate position is added.
+    Crypto positions are excluded (different risk profile).
+    Uses TICKER_BETA from config; defaults to 1.0 for unknown tickers.
+    """
+    total_equity = portfolio.get("equity", portfolio.get("initial_capital", 5000))
+    if total_equity <= 0:
+        return 1.0
+
+    weighted_beta = 0.0
+    total_weight  = 0.0
+
+    for ticker, pos in portfolio.get("positions", {}).items():
+        if "-USD" in ticker:
+            continue
+        beta = TICKER_BETA.get(ticker, 1.0)
+        try:
+            price     = get_latest_price(ticker)
+            pos_value = pos["qty"] * price
+        except Exception:
+            pos_value = pos.get("cost_basis", 0)
+        weight         = pos_value / total_equity
+        weighted_beta += beta * weight
+        total_weight  += weight
+
+    if candidate_ticker and "-USD" not in candidate_ticker and candidate_usd > 0:
+        beta           = TICKER_BETA.get(candidate_ticker, 1.0)
+        weight         = candidate_usd / total_equity
+        weighted_beta += beta * weight
+        total_weight  += weight
+
+    return round(weighted_beta, 2) if total_weight > 0 else 1.0
 
 
 # ---------------------------------------------------------------------------
@@ -319,11 +358,26 @@ def main():
         record_equity(equity)
         return
 
+    # ── VIX rate-of-change filter ─────────────────────────────────────────
+    vix_roc, vix_roc_label = get_vix_roc()
+    if vix_roc is not None and vix_roc > VIX_ROC_THRESHOLD:
+        print(f"[morning] VIX RoC {vix_roc:.1f}% > {VIX_ROC_THRESHOLD}% — additional 0.5× size cut")
+        vix_multiplier = round(vix_multiplier * 0.5, 2)
+        vix_label      = f"{vix_label} | RoC {vix_roc:+.1f}% 🔺"
+
     # ── Market regime overlay (SPY vs 200d MA) ────────────────────────────
     spy_trend    = get_market_trend("SPY")
     regime_mult  = BEARISH_REGIME_MULTIPLIER if spy_trend.get("above_ma200") is False else 1.0
     regime_label = "BEARISH (SPY < 200d MA) — halving size" if regime_mult < 1.0 else "BULLISH"
     print(f"[morning] Market regime: {regime_label}")
+
+    # ── HYG credit spread check ───────────────────────────────────────────
+    hyg_risk_off, _hyg_pct, hyg_label = get_hyg_signal()
+    print(f"[morning] HYG: {hyg_label}")
+    if hyg_risk_off and vix_multiplier > 0.5:
+        print(f"[morning] HYG risk-off — capping sizing at 0.5×")
+        vix_multiplier = min(vix_multiplier, 0.5)
+        vix_label      = f"{vix_label} | {hyg_label}"
 
     # ── Concurrent position limit ──────────────────────────────────────────
     if open_count >= MAX_CONCURRENT_POSITIONS:
@@ -349,10 +403,13 @@ def main():
     # ── Earnings check ────────────────────────────────────────────────────
     earnings_blocked = set()
     for t in WATCHLIST:
-        e = has_earnings_soon(t, days=3)
+        e = has_earnings_soon(t, days=5)
         if e["has_earnings"]:
             earnings_blocked.add(t)
-            print(f"[morning] {t} blocked — earnings {e['date']}")
+            print(f"[morning] {t} blocked — upcoming earnings {e['date']}")
+        elif had_earnings_recently(t, days=2):
+            earnings_blocked.add(t)
+            print(f"[morning] {t} blocked — post-earnings cooldown (reported in last 2 days)")
 
     # ── Sector strength (runs before pipeline to inform ranking) ──────────
     print("[morning] Fetching sector strength...")
@@ -372,6 +429,7 @@ def main():
         f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {len(WATCHLIST)} tickers "
         f"across {len(SECTOR_MAP)} sectors...\n"
         f"VIX: {vix_label}  |  Regime: {regime_label}\n"
+        f"Credit: {hyg_label}\n"
         f"Sector leaders: {top3 or 'N/A'}\n"
         f"<i>Back in ~15–20 min with the best trade.</i>"
     )
@@ -391,6 +449,22 @@ def main():
         )
         record_equity(equity)
         return
+
+    # ── Portfolio beta cap ────────────────────────────────────────────────
+    if ticker and "-USD" not in ticker:
+        estimated_usd = cash * 0.25 * vix_multiplier * regime_mult
+        port_beta     = _portfolio_beta(portfolio, ticker, estimated_usd)
+        print(f"[morning] Portfolio beta (incl {ticker}): {port_beta:.2f}  cap={MAX_PORTFOLIO_BETA}")
+        if port_beta > MAX_PORTFOLIO_BETA:
+            send_message(
+                f"📊 <b>Beta Cap — Day {session_day}/{total_days}</b>\n\n"
+                f"Adding {ticker} would push portfolio β to {port_beta:.2f} "
+                f"(max {MAX_PORTFOLIO_BETA}).\n"
+                f"Staying in cash to maintain diversification.\n\n"
+                f"Session equity: <b>${equity:,.2f}</b>"
+            )
+            record_equity(equity)
+            return
 
     # ── Size the position ──────────────────────────────────────────────────
     summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult)
@@ -423,42 +497,65 @@ def main():
     print(f"[morning] Response: {response}")
 
     if response == "approved":
+        # Re-fetch price at execution time — not the pre-market analysis-time quote
+        try:
+            exec_price = get_latest_price(ticker)
+        except Exception:
+            exec_price = summary["current_price"]
+        exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
+        exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
+        price_delta_pct  = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2)
+        print(f"[morning] Analysis: ${summary['current_price']:.2f} → Exec: ${exec_price:.2f} ({price_delta_pct:+.2f}%)")
+
         update_open_order(ticker, "executed")
         open_position(
-            ticker         = ticker,
-            qty            = summary["qty"],
-            entry_price    = summary["current_price"],
-            stop_loss_pct  = summary["_sl_pct_raw"],
-            take_profit_pct= summary["_tp_pct_raw"],
-            journal_note   = summary["_full_why"][:500],
+            ticker          = ticker,
+            qty             = summary["qty"],
+            entry_price     = exec_price,
+            stop_loss_pct   = summary["_sl_pct_raw"],
+            take_profit_pct = summary["_tp_pct_raw"],
+            journal_note    = summary["_full_why"][:500],
         )
+
+        # Capture which agents were aligned on this trade
+        agent_signals = {
+            "fundamental":       state.get("fundamental_analysis", {}).get("recommendation", ""),
+            "technical":         state.get("technical_analysis",   {}).get("signal", ""),
+            "sentiment":         state.get("sentiment_analysis",   {}).get("sentiment", ""),
+            "trader_conviction": state.get("trader_decision",      {}).get("conviction", ""),
+            "risk_approved":     state.get("risk_assessment",      {}).get("approved", None),
+        }
+
         add_journal_entry({
-            "date":        today,
-            "day":         session_day,
-            "ticker":      ticker,
-            "action":      "BUY",
-            "entry_price": summary["current_price"],
-            "qty":         summary["qty"],
-            "conviction":  summary["conviction"],
-            "score":       score,
-            "sector":      summary["sector"],
-            "sector_rank": summary["sector_rank"],
-            "stop_loss":   summary["stop_loss"],
-            "take_profit": summary["take_profit"],
-            "vix_label":   vix_label,
-            "regime":      regime_label,
-            "rationale":   summary["_full_why"],
-            "bull_case":   summary["bull_case"],
-            "bear_case":   summary["bear_case"],
+            "date":            today,
+            "day":             session_day,
+            "ticker":          ticker,
+            "action":          "BUY",
+            "analysis_price":  summary["current_price"],
+            "entry_price":     exec_price,
+            "price_delta_pct": price_delta_pct,
+            "qty":             summary["qty"],
+            "conviction":      summary["conviction"],
+            "score":           score,
+            "sector":          summary["sector"],
+            "sector_rank":     summary["sector_rank"],
+            "stop_loss":       exec_stop_loss,
+            "take_profit":     exec_take_profit,
+            "vix_label":       vix_label,
+            "regime":          regime_label,
+            "rationale":       summary["_full_why"],
+            "bull_case":       summary["bull_case"],
+            "bear_case":       summary["bear_case"],
+            "agent_signals":   agent_signals,
         })
         send_message(
             f"✅ <b>Trade Executed — {ticker}</b>\n\n"
-            f"BUY {summary['qty']} @ ${summary['current_price']:.2f}\n"
-            f"Deployed: ${summary['position_size_usd']:.2f}  |  "
+            f"BUY {summary['qty']} @ ${exec_price:.2f}\n"
+            f"Deployed: ${round(exec_price * summary['qty'], 2):.2f}  |  "
             f"Sector: {summary['sector']} (rank #{summary['sector_rank']})\n\n"
-            f"TP: ${summary['take_profit']:.2f}  |  SL: ${summary['stop_loss']:.2f}\n"
+            f"TP: ${exec_take_profit:.2f}  |  SL: ${exec_stop_loss:.2f}\n"
             f"Partial profit triggers at: "
-            f"${round(summary['current_price'] * (1 + summary['_sl_pct_raw']), 2):.2f} (1:1 R/R)\n\n"
+            f"${round(exec_price * (1 + summary['_sl_pct_raw']), 2):.2f} (1:1 R/R)\n\n"
             f"<i>EOD check at 4:15 PM ET.</i>"
         )
         record_equity(equity)
