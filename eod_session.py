@@ -157,6 +157,32 @@ def _check_time_exits(portfolio: dict) -> list:
     return exits
 
 
+def _agent_line(journal: list, ticker: str) -> str:
+    """
+    Return a formatted agent attribution line for the given ticker's BUY journal entry.
+    Returns "" if no agent_signals exist (legacy trades or trades without attribution).
+    Note: matches the FIRST BUY entry for this ticker — safe because the system
+    holds at most one position per ticker at a time.
+    """
+    trade_journal = next(
+        (j for j in journal if j.get("ticker") == ticker and j.get("action") == "BUY"),
+        {}
+    )
+    signals = trade_journal.get("agent_signals", {})
+    if not signals:
+        return ""
+    aligned = []
+    if "buy" in str(signals.get("fundamental", "")).lower():
+        aligned.append("Fund ✓")
+    if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
+        aligned.append("Tech ✓")
+    if any(k in str(signals.get("sentiment", "")).lower() for k in ("positive", "bullish")):
+        aligned.append("Sent ✓")
+    if signals.get("risk_approved"):
+        aligned.append("Risk ✓")
+    return f"Agents: {', '.join(aligned)}\n" if aligned else ""
+
+
 def _total_equity(portfolio: dict) -> float:
     """Cash + mark-to-market value of all open positions. Also persists last_price."""
     equity = portfolio["cash"]
@@ -216,24 +242,7 @@ def _build_eod_message(
         sign = "+" if trade["pnl"] >= 0 else ""
 
         # Agent attribution from journal entry
-        trade_journal = next(
-            (j for j in journal if j.get("ticker") == trade["ticker"] and j.get("action") == "BUY"),
-            {}
-        )
-        signals    = trade_journal.get("agent_signals", {})
-        agent_line = ""
-        if signals:
-            aligned = []
-            if "buy" in str(signals.get("fundamental", "")).lower():
-                aligned.append("Fund ✓")
-            if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
-                aligned.append("Tech ✓")
-            if any(k in str(signals.get("sentiment", "")).lower() for k in ("positive", "bullish")):
-                aligned.append("Sent ✓")
-            if signals.get("risk_approved"):
-                aligned.append("Risk ✓")
-            if aligned:
-                agent_line = f"Agents: {', '.join(aligned)}\n"
+        agent_line = _agent_line(journal, trade["ticker"])
 
         lines.append(
             f"{emoji} <b>{label} — {trade['ticker']}</b>\n"
@@ -245,24 +254,7 @@ def _build_eod_message(
     # Dead money exits
     for trade in time_exits:
         sign = "+" if trade["pnl"] >= 0 else ""
-        trade_journal = next(
-            (j for j in journal if j.get("ticker") == trade["ticker"] and j.get("action") == "BUY"),
-            {}
-        )
-        signals    = trade_journal.get("agent_signals", {})
-        agent_line = ""
-        if signals:
-            aligned = []
-            if "buy" in str(signals.get("fundamental", "")).lower():
-                aligned.append("Fund ✓")
-            if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
-                aligned.append("Tech ✓")
-            if any(k in str(signals.get("sentiment", "")).lower() for k in ("positive", "bullish")):
-                aligned.append("Sent ✓")
-            if signals.get("risk_approved"):
-                aligned.append("Risk ✓")
-            if aligned:
-                agent_line = f"Agents: {', '.join(aligned)}\n"
+        agent_line = _agent_line(journal, trade["ticker"])
         lines.append(
             f"⏳ <b>TIME EXIT ({trade.get('days_held', '?')}d) — {trade['ticker']}</b>\n"
             f"Entry: ${trade['entry_price']:.2f} → Exit: ${trade['exit_price']:.2f}\n"
