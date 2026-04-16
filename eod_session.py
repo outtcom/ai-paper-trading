@@ -207,26 +207,68 @@ def _build_eod_message(
         lines.append("")
 
     # TP/SL closures today
+    journal = portfolio.get("journal", [])
     for trade in closed_trades:
         if trade["reason"] == "take_profit":
             emoji, label = "🎯", "TAKE PROFIT"
         else:
             emoji, label = "🛑", "STOP LOSS"
         sign = "+" if trade["pnl"] >= 0 else ""
+
+        # Agent attribution from journal entry
+        trade_journal = next(
+            (j for j in journal if j.get("ticker") == trade["ticker"] and j.get("action") == "BUY"),
+            {}
+        )
+        signals    = trade_journal.get("agent_signals", {})
+        agent_line = ""
+        if signals:
+            aligned = []
+            if "buy" in str(signals.get("fundamental", "")).lower():
+                aligned.append("Fund ✓")
+            if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
+                aligned.append("Tech ✓")
+            if any(k in str(signals.get("sentiment", "")).lower() for k in ("positive", "bullish")):
+                aligned.append("Sent ✓")
+            if signals.get("risk_approved"):
+                aligned.append("Risk ✓")
+            if aligned:
+                agent_line = f"Agents: {', '.join(aligned)}\n"
+
         lines.append(
             f"{emoji} <b>{label} — {trade['ticker']}</b>\n"
             f"Entry: ${trade['entry_price']:.2f} → Exit: ${trade['exit_price']:.2f}\n"
             f"P&amp;L: {sign}${trade['pnl']:.2f} ({sign}{trade['pnl_pct']:.1f}%)\n"
+            + agent_line
         )
 
     # Dead money exits
     for trade in time_exits:
         sign = "+" if trade["pnl"] >= 0 else ""
+        trade_journal = next(
+            (j for j in journal if j.get("ticker") == trade["ticker"] and j.get("action") == "BUY"),
+            {}
+        )
+        signals    = trade_journal.get("agent_signals", {})
+        agent_line = ""
+        if signals:
+            aligned = []
+            if "buy" in str(signals.get("fundamental", "")).lower():
+                aligned.append("Fund ✓")
+            if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
+                aligned.append("Tech ✓")
+            if any(k in str(signals.get("sentiment", "")).lower() for k in ("positive", "bullish")):
+                aligned.append("Sent ✓")
+            if signals.get("risk_approved"):
+                aligned.append("Risk ✓")
+            if aligned:
+                agent_line = f"Agents: {', '.join(aligned)}\n"
         lines.append(
             f"⏳ <b>TIME EXIT ({trade.get('days_held', '?')}d) — {trade['ticker']}</b>\n"
             f"Entry: ${trade['entry_price']:.2f} → Exit: ${trade['exit_price']:.2f}\n"
             f"P&amp;L: {sign}${trade['pnl']:.2f} ({sign}{trade['pnl_pct']:.1f}%)  "
             f"<i>No follow-through — capital recycled</i>\n"
+            + agent_line
         )
 
     # Open positions still held
