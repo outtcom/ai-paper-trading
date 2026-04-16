@@ -89,6 +89,9 @@ def _finnhub_latest_price(ticker: str):
     symbol = ticker.lstrip("^")
     data = _finnhub_get(f"/quote?symbol={symbol}")
     price = data.get("c")
+    # Before market open, c == 0 — fall back to previous close (pc)
+    if not price or float(price) <= 0:
+        price = data.get("pc")
     return float(price) if price and float(price) > 0 else None
 
 
