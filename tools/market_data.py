@@ -96,6 +96,81 @@ def _finnhub_latest_price(ticker: str):
 
 
 # ---------------------------------------------------------------------------
+# Yahoo Finance direct (no library — works on cloud IPs where yfinance fails)
+# ---------------------------------------------------------------------------
+
+def _yahoo_direct_latest_price(ticker: str):
+    """
+    Fetch latest close via Yahoo Finance chart API using raw HTTP.
+    Works on GitHub Actions cloud IPs where the yfinance library is blocked.
+    Returns float or None on failure.
+    """
+    try:
+        import urllib.parse
+        encoded = urllib.parse.quote(ticker)
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{encoded}?interval=1d&range=5d"
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        # Filter out None values (incomplete bars)
+        closes = [c for c in closes if c is not None]
+        return float(closes[-1]) if closes else None
+    except Exception:
+        return None
+
+
+def _yahoo_direct_ohlcv(ticker: str, start: str, end: str) -> List[Dict]:
+    """
+    Fetch daily OHLCV via Yahoo Finance chart API using raw HTTP.
+    Works on GitHub Actions cloud IPs where the yfinance library is blocked.
+    Returns list of bar dicts or [] on failure.
+    """
+    try:
+        import urllib.parse
+        from datetime import timezone
+        start_ts = int(datetime.strptime(start, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp())
+        end_ts   = int(datetime.strptime(end,   "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp()) + 86400
+        encoded = urllib.parse.quote(ticker)
+        url = (
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{encoded}"
+            f"?interval=1d&period1={start_ts}&period2={end_ts}"
+        )
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+        result_data = data["chart"]["result"][0]
+        timestamps = result_data.get("timestamp", [])
+        quotes     = result_data["indicators"]["quote"][0]
+        bars = []
+        for i, ts in enumerate(timestamps):
+            o = quotes["open"][i]
+            h = quotes["high"][i]
+            l = quotes["low"][i]
+            c = quotes["close"][i]
+            v = quotes.get("volume", [None] * len(timestamps))[i]
+            if None in (o, h, l, c):
+                continue
+            bars.append({
+                "date":   datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d"),
+                "open":   round(float(o), 4),
+                "high":   round(float(h), 4),
+                "low":    round(float(l), 4),
+                "close":  round(float(c), 4),
+                "volume": int(v) if v is not None else 0,
+            })
+        return bars
+    except Exception:
+        return []
+
+
+# ---------------------------------------------------------------------------
 # yfinance fallback
 # ---------------------------------------------------------------------------
 
@@ -135,13 +210,18 @@ def get_ohlcv(ticker: str, start: str, end: str) -> List[Dict]:
     start_ts = int(datetime.strptime(start, "%Y-%m-%d").timestamp())
     end_ts   = int(datetime.strptime(end,   "%Y-%m-%d").timestamp()) + 86400  # inclusive
 
-    # Indices not supported via candle on Finnhub free tier — go straight to yfinance
+    # Indices not supported via candle on Finnhub free tier — skip to Yahoo direct
     if ticker not in INDEX_TICKERS:
         bars = _finnhub_ohlcv(ticker, start_ts, end_ts)
         if bars:
             return bars
 
-    # Fallback: yfinance
+    # Fallback 1: Yahoo Finance direct HTTP (works on cloud IPs)
+    bars = _yahoo_direct_ohlcv(ticker, start, end)
+    if bars:
+        return bars
+
+    # Fallback 2: yfinance library (local only — blocked on GitHub Actions)
     return _yf_ohlcv(ticker, start, end)
 
 
@@ -150,19 +230,24 @@ def get_latest_price(ticker: str) -> float:
     Return the most recent closing price for a ticker.
     Tries Finnhub first, falls back to yfinance historical bars.
     """
-    # Try Finnhub quote (fastest path)
+    # Try Finnhub quote (fastest path — doesn't support ^VIX on free tier)
     price = _finnhub_latest_price(ticker)
     if price is not None:
         return price
 
-    # Fallback: last bar from OHLCV
+    # Fallback 1: Yahoo Finance direct HTTP (works on cloud IPs — primary for indices)
+    price = _yahoo_direct_latest_price(ticker)
+    if price is not None:
+        return price
+
+    # Fallback 2: last bar from OHLCV (tries Yahoo direct then yfinance library)
     end   = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
     start = (datetime.today() - timedelta(days=10)).strftime("%Y-%m-%d")
     bars  = get_ohlcv(ticker, start, end)
     if bars:
         return bars[-1]["close"]
 
-    raise ValueError(f"No price data returned for {ticker} (tried Finnhub + yfinance)")
+    raise ValueError(f"No price data returned for {ticker} (tried Finnhub + Yahoo + yfinance)")
 
 
 if __name__ == "__main__":
