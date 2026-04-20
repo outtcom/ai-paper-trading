@@ -70,6 +70,11 @@ def _default_portfolio() -> dict:
         "equity_curve": [],
         "journal": [],
         "day_trade_signals": [],
+        "day_trade_capital": {
+            "initial":  5000.0,
+            "cash":     5000.0,
+            "equity":   5000.0,
+        },
     }
 
 
@@ -96,6 +101,7 @@ def _migrate(p: dict) -> dict:
     p.setdefault("journal", [])
     p.setdefault("open_orders", [])
     p.setdefault("day_trade_signals", [])
+    p.setdefault("day_trade_capital", {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
     return p
 
 
@@ -581,15 +587,59 @@ def update_open_order(ticker: str, status: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Day trade signal management (paper-only tracking)
+# Day trade signal management ($5,000 separate capital pool)
 # ---------------------------------------------------------------------------
 
+DT_MAX_CONCURRENT   = 4      # max simultaneous open day trade positions
+DT_POSITION_PCT     = 0.50   # use up to 50% of available cash per signal
+
+
 def add_day_trade_signal(signal: dict) -> None:
-    """Append a new day trade signal to portfolio['day_trade_signals']."""
+    """
+    Append a new day trade signal, allocating capital from the $5,000 day trade pool.
+    - Sizes position at 50% of available day trade cash (max 4 concurrent)
+    - Deducts allocated amount from day_trade_capital.cash
+    - Enriches signal with qty, allocated_usd
+    """
     p = _migrate(_load())
-    p.setdefault("day_trade_signals", []).append(signal)
+    open_signals = [s for s in p["day_trade_signals"] if s.get("status") == "open"]
+    if len(open_signals) >= DT_MAX_CONCURRENT:
+        print(f"[session] Day trade capital full ({DT_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
+        return
+
+    dt = p["day_trade_capital"]
+    cash = dt.get("cash", 0)
+    entry = signal.get("entry_price", 0)
+
+    if cash <= 0 or entry <= 0:
+        print(f"[session] Day trade capital exhausted or invalid entry, skipping {signal.get('ticker')}")
+        return
+
+    max_usd = cash * DT_POSITION_PCT
+    qty     = max(1, int(max_usd / entry))
+    allocated = round(qty * entry, 2)
+
+    if allocated > cash:
+        qty       = max(1, int(cash / entry))
+        allocated = round(qty * entry, 2)
+
+    if qty < 1:
+        print(f"[session] Day trade: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
+        return
+
+    signal["qty"]           = qty
+    signal["allocated_usd"] = allocated
+    dt["cash"]   = round(cash - allocated, 2)
+    dt["equity"] = round(dt["cash"] + sum(
+        s["entry_price"] * s.get("qty", 0)
+        for s in open_signals
+        if s.get("entry_price") and s.get("qty")
+    ) + allocated, 2)
+
+    p["day_trade_signals"].append(signal)
     _save(p)
-    print(f"[session] Day trade signal added: {signal.get('signal_type')} {signal.get('ticker')}")
+    print(f"[session] Day trade signal: {signal.get('signal_type')} {signal.get('ticker')} "
+          f"qty={qty} @ ${entry:.2f} (${allocated:.0f}) | DT cash left: ${dt['cash']:.0f}")
 
 
 def get_open_day_trade_signals() -> list:
@@ -600,21 +650,26 @@ def get_open_day_trade_signals() -> list:
 
 def close_day_trade_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
     """
-    Close a signal by ID. Computes pnl_pct and sets outcome.
+    Close a signal by ID. Computes pnl_pct/pnl_usd and credits proceeds back to day_trade_capital.
     Returns the updated signal dict.
     """
     p = _migrate(_load())
     for s in p.get("day_trade_signals", []):
         if s.get("id") == signal_id and s.get("status") == "open":
-            entry = s["entry_price"]
+            entry  = s["entry_price"]
+            qty    = s.get("qty", 0)
+            exit_p = round(exit_price, 2)
+
             if entry and entry > 0:
-                s["pnl_pct"] = round((exit_price - entry) / entry * 100, 2)
+                s["pnl_pct"] = round((exit_p - entry) / entry * 100, 2)
             else:
                 s["pnl_pct"] = 0.0
-            s["exit_price"] = round(exit_price, 2)
+
+            s["pnl_usd"]    = round((exit_p - entry) * qty, 2) if qty > 0 else 0.0
+            s["exit_price"] = exit_p
             s["exit_date"]  = exit_date
             s["status"]     = "closed"
-            # Determine outcome vs target/stop
+
             if s["pnl_pct"] >= s.get("target_pct", 0):
                 s["outcome"] = "win"
             elif s["pnl_pct"] <= -s.get("stop_pct", 0):
@@ -623,8 +678,29 @@ def close_day_trade_signal(signal_id: str, exit_price: float, exit_date: str) ->
                 s["outcome"] = "breakeven"
             else:
                 s["outcome"] = "win" if s["pnl_pct"] > 0 else "loss"
+
+            # Credit exit proceeds back to day trade capital
+            if qty > 0:
+                proceeds = round(exit_p * qty, 2)
+                dt = p.get("day_trade_capital", {})
+                dt["cash"] = round(dt.get("cash", 0) + proceeds, 2)
+                # Recalculate equity: cash + mark remaining open positions at entry
+                remaining_open = [
+                    sig for sig in p["day_trade_signals"]
+                    if sig.get("status") == "open" and sig.get("id") != signal_id
+                ]
+                dt["equity"] = round(
+                    dt["cash"] + sum(
+                        sig["entry_price"] * sig.get("qty", 0)
+                        for sig in remaining_open
+                        if sig.get("entry_price") and sig.get("qty")
+                    ), 2
+                )
+                p["day_trade_capital"] = dt
+
             _save(p)
-            print(f"[session] Day trade signal closed: {s['ticker']} {s['pnl_pct']:+.2f}% → {s['outcome']}")
+            print(f"[session] Day trade closed: {s['ticker']} {s['pnl_pct']:+.2f}% "
+                  f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | DT equity: ${p['day_trade_capital'].get('equity', 0):.0f}")
             return s
     print(f"[session] close_day_trade_signal: signal {signal_id} not found or already closed")
     return {}

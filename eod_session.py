@@ -217,7 +217,10 @@ def _total_equity(portfolio: dict) -> float:
 
 
 def _resolve_day_trade_signals(today: str) -> list:
-    """Auto-close day trade signals whose auto_close_date has passed."""
+    """
+    Auto-close day trade signals whose auto_close_date has passed.
+    Also mark-to-market the day trade capital equity for still-open signals.
+    """
     open_signals = get_open_day_trade_signals()
     resolved = []
     for signal in open_signals:
@@ -226,7 +229,8 @@ def _resolve_day_trade_signals(today: str) -> list:
                 exit_price = get_latest_price(signal["ticker"])
                 closed = close_day_trade_signal(signal["id"], exit_price, today)
                 resolved.append(closed)
-                print(f"[eod] Day trade resolved: {signal['ticker']} {closed.get('outcome')} {closed.get('pnl_pct', 0):+.2f}%")
+                print(f"[eod] Day trade resolved: {signal['ticker']} {closed.get('outcome')} "
+                      f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f})")
             except Exception as e:
                 print(f"[eod] Error resolving {signal['id']}: {e}")
     return resolved
@@ -327,18 +331,26 @@ def _build_eod_message(
                 lines.append(f"  {ticker}: (price unavailable: {e})")
         lines.append("")
 
-    # Day trade signal resolutions (paper only)
+    # Day trade signal resolutions
     if resolved_signals:
-        lines.append("<b>Day Trade Signals (Paper):</b>")
+        lines.append("<b>Day Trades Closed:</b>")
         for sig in resolved_signals:
             pct = sig.get("pnl_pct") or 0
+            usd = sig.get("pnl_usd") or 0
             outcome = sig.get("outcome", "?").upper()
             emoji = "✅" if outcome == "WIN" else ("❌" if outcome == "LOSS" else "➖")
             sign  = "+" if pct >= 0 else ""
             lines.append(
-                f"  {emoji} {sig['ticker']} ({sig.get('signal_type', '?')}): "
-                f"{sign}{pct:.2f}% → {outcome}"
+                f"  {emoji} {sig['ticker']} ({sig.get('signal_type','?')}): "
+                f"{sign}{pct:.2f}% ({sign}${usd:.2f}) → {outcome}"
             )
+        dt = portfolio.get("day_trade_capital", {})
+        dt_eq  = dt.get("equity", 5000)
+        dt_ret = round((dt_eq - 5000) / 5000 * 100, 2)
+        lines.append(
+            f"  DT Pool: <b>${dt_eq:,.2f}</b> "
+            f"({'+'if dt_ret>=0 else ''}{dt_ret:.1f}% vs $5,000 start)"
+        )
         lines.append("")
 
     # No activity today

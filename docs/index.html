@@ -239,14 +239,19 @@
     <div class="sub" id="kpi-peak-sub"></div>
   </div>
   <div class="card">
-    <div class="label">Day Trade Win Rate <span style="font-size:0.65rem; color:var(--muted)">paper</span></div>
+    <div class="label">DT Pool Equity</div>
+    <div class="value" id="kpi-dt-equity">—</div>
+    <div class="sub" id="kpi-dt-equity-sub">$5,000 start</div>
+  </div>
+  <div class="card">
+    <div class="label">DT Win Rate</div>
     <div class="value yellow" id="kpi-dt-winrate">—</div>
     <div class="sub" id="kpi-dt-winrate-sub"></div>
   </div>
   <div class="card">
-    <div class="label">Day Trade Avg P&amp;L <span style="font-size:0.65rem; color:var(--muted)">paper</span></div>
+    <div class="label">DT Avg P&amp;L</div>
     <div class="value" id="kpi-dt-avgpnl">—</div>
-    <div class="sub">Hypothetical only</div>
+    <div class="sub" id="kpi-dt-cash-sub"></div>
   </div>
 </div>
 
@@ -358,16 +363,17 @@
           <th>Date</th>
           <th>Ticker</th>
           <th>Type</th>
+          <th>Size</th>
           <th>Entry</th>
           <th>Target</th>
           <th>Stop</th>
           <th>Exit</th>
-          <th>P&amp;L %</th>
+          <th>P&amp;L</th>
           <th>Outcome</th>
         </tr>
       </thead>
       <tbody id="dt-signals-tbody">
-        <tr><td class="empty" colspan="9">No day trade signals yet</td></tr>
+        <tr><td class="empty" colspan="10">No day trade signals yet</td></tr>
       </tbody>
     </table>
   </div>
@@ -697,7 +703,18 @@
       }).join('');
     }
 
-    // Day trade signals
+    // Day trade signals + capital pool
+    const dtCap    = data.day_trade_capital || {};
+    const dtInit   = dtCap.initial || 5000;
+    const dtEq     = dtCap.equity  || dtInit;
+    const dtCash   = dtCap.cash    || dtInit;
+    const dtRet    = ((dtEq - dtInit) / dtInit * 100);
+
+    const dtEqEl = document.getElementById('kpi-dt-equity');
+    dtEqEl.textContent = `$${fmt(dtEq)}`;
+    dtEqEl.className = `value ${signClass(dtRet)}`;
+    document.getElementById('kpi-dt-equity-sub').textContent = `${signStr(dtRet)}${fmt(dtRet)}% | Cash $${fmt(dtCash, 0)}`;
+
     const dtSignals = data.day_trade_signals || [];
     const dtClosed  = dtSignals.filter(s => s.status === 'closed');
     const dtWins    = dtClosed.filter(s => s.outcome === 'win');
@@ -713,9 +730,12 @@
     if (dtClosed.length) {
       dtPnlEl.textContent = `${dtAvg >= 0 ? '+' : ''}${fmt(dtAvg)}%`;
       dtPnlEl.className = `value ${dtAvg >= 0 ? 'green' : 'red'}`;
+      const totalUsd = dtClosed.reduce((a, s) => a + (s.pnl_usd || 0), 0);
+      document.getElementById('kpi-dt-cash-sub').textContent = `Total ${totalUsd >= 0 ? '+' : ''}$${fmt(totalUsd)}`;
     } else {
       dtPnlEl.textContent = '—';
       dtPnlEl.className = 'value';
+      document.getElementById('kpi-dt-cash-sub').textContent = 'No closed trades';
     }
 
     const dtTbody = document.getElementById('dt-signals-tbody');
@@ -731,16 +751,22 @@
           : s.status === 'open' ? '<span class="tag open">Open</span>'
           : '<span class="tag skip">Flat</span>';
         const typeLabel = s.signal_type === 'gap_and_go' ? 'Gap &amp; Go' : 'Momentum';
+        const qty   = s.qty || 0;
+        const alloc = s.allocated_usd || 0;
+        const sizeStr = qty > 0 ? `${qty} sh<br><span style="font-size:0.78em;color:var(--muted)">$${fmt(alloc,0)}</span>` : '—';
+        const usd = s.pnl_usd;
+        const usdStr = usd !== null && usd !== undefined ? `<br><span style="font-size:0.78em">${usd>=0?'+':''}$${fmt(usd)}</span>` : '';
         return `
           <tr>
             <td style="color:var(--muted); font-size:0.82em">${s.generated_date || '—'}</td>
             <td><b>${s.ticker}</b></td>
             <td style="color:var(--yellow); font-size:0.82em">${typeLabel}</td>
+            <td>${sizeStr}</td>
             <td>$${fmt(s.entry_price)}</td>
             <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(+${fmt(s.target_pct)}%)</span></td>
             <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(-${fmt(s.stop_pct)}%)</span></td>
             <td>${s.exit_price !== null && s.exit_price !== undefined ? '$' + fmt(s.exit_price) : '<span style="color:var(--muted)">—</span>'}</td>
-            <td style="color:${pctColor}">${pctStr}</td>
+            <td style="color:${pctColor}">${pctStr}${usdStr}</td>
             <td>${outcomeTag}</td>
           </tr>`;
       }).join('');

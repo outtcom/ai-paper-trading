@@ -48,15 +48,23 @@ def calculate_spy_return(start_date: str, end_date: str) -> float:
 def calculate_day_trade_stats(portfolio: dict) -> dict:
     signals = portfolio.get("day_trade_signals", [])
     closed  = [s for s in signals if s.get("status") == "closed"]
+    dt_cap  = portfolio.get("day_trade_capital", {})
+    initial = dt_cap.get("initial", 5000)
+    final   = dt_cap.get("equity", initial)
     if not closed:
-        return {"count": 0, "win_rate": 0, "avg_pnl": 0, "hypothetical_total": 0}
-    wins   = [s for s in closed if s.get("outcome") == "win"]
-    pnls   = [s.get("pnl_pct") or 0 for s in closed]
+        return {"count": 0, "win_rate": 0, "avg_pnl_pct": 0, "total_pnl_usd": 0,
+                "pool_return_pct": round((final - initial) / initial * 100, 2),
+                "pool_final": final}
+    wins    = [s for s in closed if s.get("outcome") == "win"]
+    pnls    = [s.get("pnl_pct") or 0 for s in closed]
+    usd_pnl = sum(s.get("pnl_usd") or 0 for s in closed)
     return {
-        "count":              len(closed),
-        "win_rate":           round(len(wins) / len(closed) * 100, 1),
-        "avg_pnl":            round(sum(pnls) / len(pnls), 2),
-        "hypothetical_total": round(sum(pnls), 2),
+        "count":            len(closed),
+        "win_rate":         round(len(wins) / len(closed) * 100, 1),
+        "avg_pnl_pct":      round(sum(pnls) / len(pnls), 2),
+        "total_pnl_usd":    round(usd_pnl, 2),
+        "pool_return_pct":  round((final - initial) / initial * 100, 2),
+        "pool_final":       final,
     }
 
 
@@ -94,16 +102,20 @@ def format_summary(swing: dict, spy_return, dt_stats: dict, session: dict) -> st
     else:
         lines += ["📊 <b>vs SPY Benchmark</b>", "SPY return unavailable."]
 
-    dt = dt_stats
+    dt    = dt_stats
+    dt_r  = dt.get("pool_return_pct", 0)
+    dt_usd = dt.get("total_pnl_usd", 0)
     rec = ""
     if dt["count"] >= 5:
-        rec = "→ Recommend: allocate small capital in session 2" if dt["win_rate"] >= 60 else "→ Needs more data / refine filters"
+        rec = "→ Scale up day trade allocation in session 2" if dt["win_rate"] >= 60 else "→ Refine entry filters before scaling"
     lines += [
         "",
-        "📡 <b>Day Trade Signals (Paper / Hypothetical)</b>",
+        "📡 <b>Day Trade Signals — $5,000 Pool</b>",
         f"Signals: {dt['count']}  |  Win Rate: {dt['win_rate']:.0f}%",
-        f"Avg P&amp;L: {'+' if dt['avg_pnl'] >= 0 else ''}{dt['avg_pnl']:.2f}%  "
-        f"|  Hypothetical Total: {'+' if dt['hypothetical_total'] >= 0 else ''}{dt['hypothetical_total']:.2f}%",
+        f"Avg P&amp;L: {'+' if dt.get('avg_pnl_pct',0) >= 0 else ''}{dt.get('avg_pnl_pct',0):.2f}%  "
+        f"|  Total P&amp;L: {'+' if dt_usd >= 0 else ''}${dt_usd:,.2f}",
+        f"Pool: $5,000 → <b>${dt.get('pool_final', 5000):,.2f}</b> "
+        f"({'+' if dt_r >= 0 else ''}{dt_r:.2f}%)",
     ]
     if rec:
         lines.append(rec)
