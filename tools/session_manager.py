@@ -1,5 +1,5 @@
 """
-Session manager for the 10-day paper trading session.
+Session manager for the 22-day paper trading session.
 Manages all portfolio state in docs/portfolio.json, which is:
   - tracked by git (committed after each GitHub Actions run)
   - served by GitHub Pages (powers the live dashboard)
@@ -69,6 +69,7 @@ def _default_portfolio() -> dict:
         "trade_history": [],
         "equity_curve": [],
         "journal": [],
+        "day_trade_signals": [],
     }
 
 
@@ -94,6 +95,7 @@ def _migrate(p: dict) -> dict:
     })
     p.setdefault("journal", [])
     p.setdefault("open_orders", [])
+    p.setdefault("day_trade_signals", [])
     return p
 
 
@@ -282,46 +284,55 @@ def open_position(
     stop_loss_pct: float,
     take_profit_pct: float,
     journal_note: str = "",
+    direction: str = "long",
 ) -> None:
     """
-    Record a newly opened long position and deduct cash.
+    Record a newly opened position and update cash.
     stop_loss_pct / take_profit_pct are fractions (e.g. 0.03 = 3%).
+    direction: 'long' (default) or 'short'
+    For shorts: cash increases (proceeds received); reversed TP/SL levels.
     """
     p = _migrate(_load())
-    cost = round(entry_price * qty, 2)
+    notional = round(entry_price * qty, 2)
 
-    if cost > p["cash"]:
-        # Scale down qty to available cash
-        qty = int(p["cash"] / entry_price)
-        cost = round(entry_price * qty, 2)
+    if direction == "long":
+        if notional > p["cash"]:
+            qty = int(p["cash"] / entry_price)
+            notional = round(entry_price * qty, 2)
+        if qty <= 0:
+            print(f"[session] Cannot open long {ticker}: insufficient cash.")
+            return
+        sl_price      = round(entry_price * (1 - stop_loss_pct), 2)
+        tp_price      = round(entry_price * (1 + take_profit_pct), 2)
+        partial_price = round(entry_price * (1 + stop_loss_pct), 2)  # 1:1 R/R upside
+        p["cash"] = round(p["cash"] - notional, 2)
+    else:
+        # Short: receive proceeds, owe position at current price
+        sl_price      = round(entry_price * (1 + stop_loss_pct), 2)   # SL above entry
+        tp_price      = round(entry_price * (1 - take_profit_pct), 2) # TP below entry
+        partial_price = round(entry_price * (1 - stop_loss_pct), 2)   # 1:1 R/R downside
+        p["cash"] = round(p["cash"] + notional, 2)  # receive short proceeds
 
-    if qty <= 0:
-        print(f"[session] Cannot open position in {ticker}: insufficient cash.")
-        return
-
-    sl_price = round(entry_price * (1 - stop_loss_pct), 2)
-    tp_price = round(entry_price * (1 + take_profit_pct), 2)
-    # 1:1 R/R partial profit level (halfway between entry and TP)
-    partial_price = round(entry_price * (1 + stop_loss_pct), 2)
-
-    p["cash"] = round(p["cash"] - cost, 2)
     p["positions"][ticker] = {
+        "direction": direction,
         "qty": qty,
         "entry_price": round(entry_price, 2),
-        "cost_basis": cost,
+        "cost_basis": notional,
         "last_price": round(entry_price, 2),     # updated by midday/EOD for live P&L
         "stop_loss": sl_price,
         "take_profit": tp_price,
-        "partial_profit_price": partial_price,   # price at which we take 50% off
+        "partial_profit_price": partial_price,
         "stop_loss_pct": round(stop_loss_pct * 100, 2),
         "take_profit_pct": round(take_profit_pct * 100, 2),
-        "highest_price": round(entry_price, 2),  # for trailing stop
-        "partial_taken": False,                   # partial profit already executed?
+        "highest_price": round(entry_price, 2),  # for trailing stop (longs)
+        "lowest_price": round(entry_price, 2),   # for trailing stop (shorts)
+        "partial_taken": False,
         "opened_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "journal_note": journal_note,
     }
     _save(p)
-    print(f"[session] Opened {ticker}: {qty} shares @ ${entry_price:.2f}  TP=${tp_price:.2f}  SL=${sl_price:.2f}  Partial@${partial_price:.2f}")
+    dir_tag = "SHORT" if direction == "short" else "LONG"
+    print(f"[session] Opened {dir_tag} {ticker}: {qty} shares @ ${entry_price:.2f}  TP=${tp_price:.2f}  SL=${sl_price:.2f}  Partial@${partial_price:.2f}")
 
 
 def close_position(ticker: str, exit_price: float, reason: str) -> dict:
@@ -336,12 +347,24 @@ def close_position(ticker: str, exit_price: float, reason: str) -> dict:
         print(f"[session] close_position: no open position for {ticker}")
         return {}
 
-    proceeds = round(exit_price * pos["qty"], 2)
-    pnl = round(proceeds - pos["cost_basis"], 2)
+    direction = pos.get("direction", "long")
+    cover_cost = round(exit_price * pos["qty"], 2)
+
+    if direction == "short":
+        # Short: pay to cover. Cash already received proceeds at open.
+        pnl = round((pos["entry_price"] - exit_price) * pos["qty"], 2)
+        proceeds = round(pos["cost_basis"] + pnl, 2)  # notional returned +/- P&L
+        p["cash"] = round(p["cash"] - cover_cost, 2)
+    else:
+        proceeds = cover_cost
+        pnl = round(proceeds - pos["cost_basis"], 2)
+        p["cash"] = round(p["cash"] + proceeds, 2)
+
     pnl_pct = round(pnl / pos["cost_basis"] * 100, 2)
 
     trade = {
         "ticker": ticker,
+        "direction": direction,
         "qty": pos["qty"],
         "entry_price": pos["entry_price"],
         "exit_price": round(exit_price, 2),
@@ -354,12 +377,11 @@ def close_position(ticker: str, exit_price: float, reason: str) -> dict:
         "closed_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "journal_note": pos.get("journal_note", ""),
     }
-
-    p["cash"] = round(p["cash"] + proceeds, 2)
     del p["positions"][ticker]
     p["trade_history"].append(trade)
     _save(p)
-    print(f"[session] Closed {ticker} @ ${exit_price:.2f}  P&L: ${pnl:+.2f} ({pnl_pct:+.1f}%)  Reason: {reason}")
+    dir_tag = "SHORT" if direction == "short" else "LONG"
+    print(f"[session] Closed {dir_tag} {ticker} @ ${exit_price:.2f}  P&L: ${pnl:+.2f} ({pnl_pct:+.1f}%)  Reason: {reason}")
     return trade
 
 
@@ -379,35 +401,42 @@ def partial_close_position(ticker: str, qty_to_close: int, exit_price: float) ->
     if qty_to_close <= 0:
         return {}
 
+    direction = pos.get("direction", "long")
     partial_cost = round(pos["entry_price"] * qty_to_close, 2)
-    proceeds = round(exit_price * qty_to_close, 2)
-    pnl = round(proceeds - partial_cost, 2)
+    cover_cost   = round(exit_price * qty_to_close, 2)
+
+    if direction == "short":
+        pnl = round((pos["entry_price"] - exit_price) * qty_to_close, 2)
+        p["cash"] = round(p["cash"] - cover_cost, 2)
+    else:
+        pnl = round(cover_cost - partial_cost, 2)
+        p["cash"] = round(p["cash"] + cover_cost, 2)
+
     pnl_pct = round(pnl / partial_cost * 100, 2)
 
     # Update remaining position
-    remaining_qty = pos["qty"] - qty_to_close
+    remaining_qty  = pos["qty"] - qty_to_close
     remaining_cost = round(pos["entry_price"] * remaining_qty, 2)
 
-    p["cash"] = round(p["cash"] + proceeds, 2)
-
     if remaining_qty > 0:
-        p["positions"][ticker]["qty"] = remaining_qty
-        p["positions"][ticker]["cost_basis"] = remaining_cost
+        p["positions"][ticker]["qty"]         = remaining_qty
+        p["positions"][ticker]["cost_basis"]  = remaining_cost
         p["positions"][ticker]["partial_taken"] = True
         # Move stop loss to breakeven
         p["positions"][ticker]["stop_loss"] = pos["entry_price"]
-        print(f"[session] Partial close {ticker}: sold {qty_to_close} @ ${exit_price:.2f}, SL moved to breakeven ${pos['entry_price']:.2f}")
+        print(f"[session] Partial close {ticker}: {'covered' if direction == 'short' else 'sold'} {qty_to_close} @ ${exit_price:.2f}, SL moved to breakeven ${pos['entry_price']:.2f}")
     else:
         del p["positions"][ticker]
 
     # Log partial trade to history
     partial_trade = {
         "ticker": ticker,
+        "direction": direction,
         "qty": qty_to_close,
         "entry_price": pos["entry_price"],
         "exit_price": round(exit_price, 2),
         "cost_basis": partial_cost,
-        "proceeds": proceeds,
+        "proceeds": round(partial_cost + pnl, 2),
         "pnl": pnl,
         "pnl_pct": pnl_pct,
         "reason": "partial_profit",
@@ -423,8 +452,9 @@ def partial_close_position(ticker: str, qty_to_close: int, exit_price: float) ->
 
 def update_trailing_stop(ticker: str, current_price: float) -> bool:
     """
-    Ratchet the stop loss upward if current price exceeds the previous high.
-    Trail = original stop_loss_pct below highest_price.
+    Ratchet the stop loss as price moves favorably.
+    - Long: stop rises when price makes new highs.
+    - Short: stop falls when price makes new lows.
     Returns True if stop was updated.
     """
     p = _migrate(_load())
@@ -432,27 +462,36 @@ def update_trailing_stop(ticker: str, current_price: float) -> bool:
     if not pos:
         return False
 
-    # Always keep last_price current regardless of whether it's a new high
     p["positions"][ticker]["last_price"] = round(current_price, 2)
-
-    prev_high = pos.get("highest_price", pos["entry_price"])
-    if current_price <= prev_high:
-        _save(p)
-        return False
-
-    # Update high-water mark
-    p["positions"][ticker]["highest_price"] = round(current_price, 2)
-
-    # New SL = highest_price × (1 - original_sl_pct)
     sl_pct = pos["stop_loss_pct"] / 100
-    new_sl = round(current_price * (1 - sl_pct), 2)
-    old_sl = pos["stop_loss"]
+    direction = pos.get("direction", "long")
 
-    if new_sl > old_sl:
-        p["positions"][ticker]["stop_loss"] = new_sl
-        _save(p)
-        print(f"[session] Trailing stop updated {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (high ${current_price:.2f})")
-        return True
+    if direction == "short":
+        prev_low = pos.get("lowest_price", pos["entry_price"])
+        if current_price >= prev_low:
+            _save(p)
+            return False
+        p["positions"][ticker]["lowest_price"] = round(current_price, 2)
+        new_sl  = round(current_price * (1 + sl_pct), 2)
+        old_sl  = pos["stop_loss"]
+        if new_sl < old_sl:
+            p["positions"][ticker]["stop_loss"] = new_sl
+            _save(p)
+            print(f"[session] Trailing stop updated SHORT {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (low ${current_price:.2f})")
+            return True
+    else:
+        prev_high = pos.get("highest_price", pos["entry_price"])
+        if current_price <= prev_high:
+            _save(p)
+            return False
+        p["positions"][ticker]["highest_price"] = round(current_price, 2)
+        new_sl  = round(current_price * (1 - sl_pct), 2)
+        old_sl  = pos["stop_loss"]
+        if new_sl > old_sl:
+            p["positions"][ticker]["stop_loss"] = new_sl
+            _save(p)
+            print(f"[session] Trailing stop updated {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (high ${current_price:.2f})")
+            return True
 
     _save(p)
     return False
@@ -539,3 +578,53 @@ def update_open_order(ticker: str, status: str) -> None:
             break
     _save(p)
     print(f"[session] Open order {ticker} → {status}")
+
+
+# ---------------------------------------------------------------------------
+# Day trade signal management (paper-only tracking)
+# ---------------------------------------------------------------------------
+
+def add_day_trade_signal(signal: dict) -> None:
+    """Append a new day trade signal to portfolio['day_trade_signals']."""
+    p = _migrate(_load())
+    p.setdefault("day_trade_signals", []).append(signal)
+    _save(p)
+    print(f"[session] Day trade signal added: {signal.get('signal_type')} {signal.get('ticker')}")
+
+
+def get_open_day_trade_signals() -> list:
+    """Return all signals with status == 'open'."""
+    p = _migrate(_load())
+    return [s for s in p.get("day_trade_signals", []) if s.get("status") == "open"]
+
+
+def close_day_trade_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
+    """
+    Close a signal by ID. Computes pnl_pct and sets outcome.
+    Returns the updated signal dict.
+    """
+    p = _migrate(_load())
+    for s in p.get("day_trade_signals", []):
+        if s.get("id") == signal_id and s.get("status") == "open":
+            entry = s["entry_price"]
+            if entry and entry > 0:
+                s["pnl_pct"] = round((exit_price - entry) / entry * 100, 2)
+            else:
+                s["pnl_pct"] = 0.0
+            s["exit_price"] = round(exit_price, 2)
+            s["exit_date"]  = exit_date
+            s["status"]     = "closed"
+            # Determine outcome vs target/stop
+            if s["pnl_pct"] >= s.get("target_pct", 0):
+                s["outcome"] = "win"
+            elif s["pnl_pct"] <= -s.get("stop_pct", 0):
+                s["outcome"] = "loss"
+            elif abs(s["pnl_pct"]) < 0.1:
+                s["outcome"] = "breakeven"
+            else:
+                s["outcome"] = "win" if s["pnl_pct"] > 0 else "loss"
+            _save(p)
+            print(f"[session] Day trade signal closed: {s['ticker']} {s['pnl_pct']:+.2f}% → {s['outcome']}")
+            return s
+    print(f"[session] close_day_trade_signal: signal {signal_id} not found or already closed")
+    return {}

@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from tools.market_data import get_latest_price
 from tools.session_manager import get_portfolio, get_session_day
-from tools.telegram_bot import send_message
+from tools.telegram_bot import broadcast_message
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
 
     lines.append("\n<i>Next update: EOD summary at 4:15 PM ET.</i>")
 
-    send_message("\n".join(lines))
+    broadcast_message("\n".join(lines))
     print("[preclose] Alert sent.")
 
 

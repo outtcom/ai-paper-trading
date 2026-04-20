@@ -1,17 +1,20 @@
-name: Morning Session
+name: Session Summary
 
 on:
-  schedule:
-    - cron: '30 11 * * 1-5'  # 7:30 AM ET (EDT = UTC-4), Mon-Fri
-  workflow_dispatch:           # allow manual trigger
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type YES to run the 22-day session summary'
+        required: true
+        default: 'NO'
 
 permissions:
   contents: write
 
 jobs:
-  morning-session:
+  session-summary:
     runs-on: ubuntu-latest
-    timeout-minutes: 90       # script polls 60 min for Telegram approval
+    if: github.event.inputs.confirm == 'YES'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -37,29 +40,8 @@ jobs:
           TELEGRAM_GROUP_CHAT_ID=${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
           EOF
 
-      - name: Notify start
-        env:
-          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          TEXT=$'⏰ <b>Morning Session starting</b> — '"$(date -u +'%Y-%m-%d')"$'\nAI pipeline running on 17 tickers. Trade card in ~15-20 min.'
-          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
-            --data-urlencode "chat_id=${CHAT_ID}" \
-            --data-urlencode "parse_mode=HTML" \
-            --data-urlencode "text=${TEXT}" || true
-
-      - name: Run morning session
-        run: python morning_session.py
-
-      - name: Commit portfolio changes
-        if: always()
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add docs/portfolio.json
-          git diff --staged --quiet || git commit -m "auto: morning_session $(date +%Y-%m-%d)"
-          git pull --rebase -X ours
-          git push
+      - name: Run session summary
+        run: python session_summary.py
 
       - name: Notify failure
         if: failure()
@@ -68,7 +50,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          TEXT=$'🚨 <b>Morning Session FAILED</b>\n\nView logs:\n'"${RUN_URL}"
+          TEXT=$'🚨 <b>Session Summary FAILED</b>\n\nView logs:\n'"${RUN_URL}"
           curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${CHAT_ID}" \
             --data-urlencode "parse_mode=HTML" \

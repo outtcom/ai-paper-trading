@@ -238,6 +238,16 @@
     <div class="value" id="kpi-maxdd">—</div>
     <div class="sub" id="kpi-peak-sub"></div>
   </div>
+  <div class="card">
+    <div class="label">Day Trade Win Rate <span style="font-size:0.65rem; color:var(--muted)">paper</span></div>
+    <div class="value yellow" id="kpi-dt-winrate">—</div>
+    <div class="sub" id="kpi-dt-winrate-sub"></div>
+  </div>
+  <div class="card">
+    <div class="label">Day Trade Avg P&amp;L <span style="font-size:0.65rem; color:var(--muted)">paper</span></div>
+    <div class="value" id="kpi-dt-avgpnl">—</div>
+    <div class="sub">Hypothetical only</div>
+  </div>
 </div>
 
 <!-- Benchmark comparison bar -->
@@ -333,6 +343,31 @@
       </thead>
       <tbody id="history-tbody">
         <tr><td class="empty" colspan="7">No completed trades yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Day Trade Signals (paper) -->
+<div class="section">
+  <h2>Day Trade Signals <span style="font-size:0.72rem; color:var(--yellow); text-transform:none; letter-spacing:0; font-weight:600; background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:6px; border:1px solid var(--yellow)">Paper Only</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Ticker</th>
+          <th>Type</th>
+          <th>Entry</th>
+          <th>Target</th>
+          <th>Stop</th>
+          <th>Exit</th>
+          <th>P&amp;L %</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody id="dt-signals-tbody">
+        <tr><td class="empty" colspan="9">No day trade signals yet</td></tr>
       </tbody>
     </table>
   </div>
@@ -551,9 +586,10 @@
         const partial = pos.partial_profit_price || '—';
         const partialTaken = pos.partial_taken;
 
-        // Unrealized P&L
-        const unrPnl = (last - entry) * pos.qty;
-        const unrPct = ((last - entry) / entry) * 100;
+        // Unrealized P&L (short positions profit when price falls)
+        const isShort = pos.direction === 'short';
+        const unrPnl = isShort ? (entry - last) * pos.qty : (last - entry) * pos.qty;
+        const unrPct = isShort ? ((entry - last) / entry) * 100 : ((last - entry) / entry) * 100;
         const pnlSign = unrPnl >= 0 ? '+' : '';
         const pnlColor = unrPnl >= 0 ? 'var(--green)' : 'var(--red)';
 
@@ -567,7 +603,7 @@
 
         const statusTag = partialTaken
           ? '<span class="tag partial">Partial Done</span>'
-          : '<span class="tag open">Open</span>';
+          : (isShort ? '<span class="tag sl">Short 🔻</span>' : '<span class="tag open">Open</span>');
 
         return `
           <tr class="pos-row">
@@ -658,6 +694,55 @@
             </div>
             ${rationale ? `<div style="font-size:0.82rem; color:var(--muted); line-height:1.5">${rationale}${entry.rationale && entry.rationale.length > 280 ? '…' : ''}</div>` : ''}
           </div>`;
+      }).join('');
+    }
+
+    // Day trade signals
+    const dtSignals = data.day_trade_signals || [];
+    const dtClosed  = dtSignals.filter(s => s.status === 'closed');
+    const dtWins    = dtClosed.filter(s => s.outcome === 'win');
+    const dtPnls    = dtClosed.map(s => s.pnl_pct || 0);
+    const dtAvg     = dtClosed.length ? dtPnls.reduce((a, b) => a + b, 0) / dtClosed.length : 0;
+
+    const dtWrEl = document.getElementById('kpi-dt-winrate');
+    dtWrEl.textContent = dtClosed.length ? `${dtWins.length}/${dtClosed.length}` : '—';
+    dtWrEl.className = 'value yellow';
+    document.getElementById('kpi-dt-winrate-sub').textContent = dtClosed.length ? `${(dtWins.length / dtClosed.length * 100).toFixed(0)}% hit rate` : 'No signals closed';
+
+    const dtPnlEl = document.getElementById('kpi-dt-avgpnl');
+    if (dtClosed.length) {
+      dtPnlEl.textContent = `${dtAvg >= 0 ? '+' : ''}${fmt(dtAvg)}%`;
+      dtPnlEl.className = `value ${dtAvg >= 0 ? 'green' : 'red'}`;
+    } else {
+      dtPnlEl.textContent = '—';
+      dtPnlEl.className = 'value';
+    }
+
+    const dtTbody = document.getElementById('dt-signals-tbody');
+    if (dtSignals.length === 0) {
+      dtTbody.innerHTML = '<tr><td class="empty" colspan="9">No day trade signals yet</td></tr>';
+    } else {
+      dtTbody.innerHTML = [...dtSignals].reverse().map(s => {
+        const pct = s.pnl_pct;
+        const pctStr = pct !== null && pct !== undefined ? `${pct >= 0 ? '+' : ''}${fmt(pct)}%` : '—';
+        const pctColor = pct !== null && pct !== undefined ? (pct >= 0 ? 'var(--green)' : 'var(--red)') : 'var(--muted)';
+        const outcomeTag = s.outcome === 'win' ? '<span class="tag tp">WIN</span>'
+          : s.outcome === 'loss' ? '<span class="tag sl">LOSS</span>'
+          : s.status === 'open' ? '<span class="tag open">Open</span>'
+          : '<span class="tag skip">Flat</span>';
+        const typeLabel = s.signal_type === 'gap_and_go' ? 'Gap &amp; Go' : 'Momentum';
+        return `
+          <tr>
+            <td style="color:var(--muted); font-size:0.82em">${s.generated_date || '—'}</td>
+            <td><b>${s.ticker}</b></td>
+            <td style="color:var(--yellow); font-size:0.82em">${typeLabel}</td>
+            <td>$${fmt(s.entry_price)}</td>
+            <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(+${fmt(s.target_pct)}%)</span></td>
+            <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(-${fmt(s.stop_pct)}%)</span></td>
+            <td>${s.exit_price !== null && s.exit_price !== undefined ? '$' + fmt(s.exit_price) : '<span style="color:var(--muted)">—</span>'}</td>
+            <td style="color:${pctColor}">${pctStr}</td>
+            <td>${outcomeTag}</td>
+          </tr>`;
       }).join('');
     }
 

@@ -137,3 +137,32 @@ RISK_PERSPECTIVES = ["risk_seeking", "neutral", "risk_conservative"]
 # ---------------------------------------------------------------------------
 LOG_DIR   = ".tmp/logs"
 STATE_DIR = ".tmp/state"
+
+# ---------------------------------------------------------------------------
+# Dashboard & Group Notifications
+# ---------------------------------------------------------------------------
+DASHBOARD_URL = "https://outtcom.github.io/ai-paper-trading/"
+
+# ---------------------------------------------------------------------------
+# Day Trade Signals (paper-only tracking, no capital allocated)
+# ---------------------------------------------------------------------------
+DAY_TRADE_GAP_MIN_PCT      = 2.0   # minimum pre-market gap % to trigger gap-and-go
+DAY_TRADE_VOLUME_RATIO_MIN = 1.5   # volume vs 30-day avg required for confirmation
+GAP_AND_GO_TARGET_PCT      = 1.5   # TP: target 1.5% gain same day
+GAP_AND_GO_STOP_PCT        = 0.8   # SL: stop if falls 0.8% from entry
+MOMENTUM_NEAR_HIGH_PCT     = 2.0   # within 2% of 52-week high qualifies
+MOMENTUM_TARGET_PCT        = 2.0   # TP: target 2% gain over 1-2 days
+MOMENTUM_STOP_PCT          = 1.0   # SL: stop if falls 1% from entry
+
+# ---------------------------------------------------------------------------
+# Short Selling (bear regime — SPY < 200d MA)
+# ---------------------------------------------------------------------------
+ALLOW_SHORT_SELLING = True
+SHORT_TP_PCT        = 8.0   # target 8% decline from entry
+SHORT_SL_PCT        = 4.0   # stop if price rises 4% from entry
+
+# ---------------------------------------------------------------------------
+# Sector Momentum Tilt
+# ---------------------------------------------------------------------------
+SECTOR_TILT_TOP_MULT    = 1.25   # amplify size for trades in top-2 sectors
+SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors

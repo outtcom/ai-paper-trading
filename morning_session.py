@@ -36,9 +36,13 @@ from config import (
     MAX_CONCURRENT_POSITIONS, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
     BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
     TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD,
+    ALLOW_SHORT_SELLING, SHORT_TP_PCT, SHORT_SL_PCT,
+    SECTOR_TILT_TOP_MULT, SECTOR_TILT_BOTTOM_MULT,
+    DAY_TRADE_VOLUME_RATIO_MIN, MOMENTUM_NEAR_HIGH_PCT,
+    MOMENTUM_TARGET_PCT, MOMENTUM_STOP_PCT,
 )
 from orchestrator import run_pipeline
-from tools.market_data import get_latest_price, get_ohlcv
+from tools.market_data import get_latest_price, get_ohlcv, _yahoo_direct_ohlcv
 from tools.market_regime import (
     get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked,
     get_vix_roc, get_hyg_signal, had_earnings_recently,
@@ -47,6 +51,7 @@ from tools.sector_analysis import get_sector_strength, get_sector_bonus, format_
 from tools.session_manager import (
     add_journal_entry,
     add_open_order,
+    add_day_trade_signal,
     check_circuit_breaker,
     get_portfolio,
     get_session_day,
@@ -57,7 +62,10 @@ from tools.session_manager import (
     start_session,
     update_open_order,
 )
-from tools.telegram_bot import poll_for_response, send_approval_request, send_message
+from tools.telegram_bot import (
+    poll_for_response, send_approval_request, send_message,
+    broadcast_message, send_group_trade_signal,
+)
 
 _CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
 
@@ -245,29 +253,55 @@ def _pick_best(results: dict, blocked: set, portfolio: dict, sector_strength: di
     return ticker, state, score
 
 
-def _size_position(ticker: str, state: dict, cash: float, vix_mult: float, regime_mult: float) -> dict:
+def _size_position(
+    ticker: str,
+    state: dict,
+    cash: float,
+    vix_mult: float,
+    regime_mult: float,
+    direction: str = "long",
+    sector_strength: dict = None,
+) -> dict:
     """
     Compute entry price, quantity, TP, SL, and dollar size.
     Handles fractional crypto quantities (stored as float).
+    direction: 'long' or 'short'
+    sector_strength: used to apply momentum tilt multiplier.
     """
     order  = state.get("final_order", {})
     trader = state.get("trader_decision", {})
 
-    price     = get_latest_price(ticker)
-    sl_pct    = float(order.get("stop_loss_pct") or trader.get("stop_loss_pct") or 0.03)
-    tp_pct    = sl_pct * 2            # 2:1 reward-to-risk
+    price = get_latest_price(ticker)
+
+    if direction == "short":
+        sl_pct = SHORT_SL_PCT  / 100
+        tp_pct = SHORT_TP_PCT  / 100
+    else:
+        sl_pct = float(order.get("stop_loss_pct") or trader.get("stop_loss_pct") or 0.03)
+        tp_pct = sl_pct * 2   # 2:1 reward-to-risk
+
+    # Sector momentum tilt
+    sector_mult = 1.0
+    if sector_strength:
+        ticker_sector = TICKER_SECTOR.get(ticker, "")
+        top2 = set((sector_strength.get("top_3") or [])[:2])
+        bot2 = set((sector_strength.get("bottom_3") or [])[:2])
+        if ticker_sector in top2:
+            sector_mult = SECTOR_TILT_TOP_MULT
+        elif ticker_sector in bot2:
+            sector_mult = SECTOR_TILT_BOTTOM_MULT
 
     pos_frac  = float(order.get("position_size_pct") or 0.25)
-    max_usd   = cash * pos_frac * vix_mult * regime_mult
+    max_usd   = cash * pos_frac * vix_mult * regime_mult * sector_mult
     max_usd   = min(max_usd, cash * 0.25)   # hard cap: never > 25% of cash
 
     is_crypto = "-USD" in ticker
     if is_crypto:
-        qty = round(max_usd / price, 6)      # fractional units
+        qty = round(max_usd / price, 6)
         if qty < 0.0001:
             qty = 0
     else:
-        qty = max(1, int(max_usd / price))   # whole shares
+        qty = max(1, int(max_usd / price))
 
     actual_usd = round(qty * price, 2)
 
@@ -275,23 +309,103 @@ def _size_position(ticker: str, state: dict, cash: float, vix_mult: float, regim
     bull = (state.get("bull_case") or "")[:140]
     bear = (state.get("bear_case") or "")[:140]
 
+    if direction == "short":
+        take_profit = round(price * (1 - tp_pct), 2)
+        stop_loss   = round(price * (1 + sl_pct), 2)
+    else:
+        take_profit = round(price * (1 + tp_pct), 2)
+        stop_loss   = round(price * (1 - sl_pct), 2)
+
     return {
-        "ticker":           ticker,
-        "current_price":    price,
-        "conviction":       state.get("trader_decision", {}).get("conviction", "medium"),
-        "why":              why,
-        "bull_case":        bull or "See logs.",
-        "bear_case":        bear or "See logs.",
-        "take_profit":      round(price * (1 + tp_pct), 2),
-        "take_profit_pct":  tp_pct * 100,
-        "stop_loss":        round(price * (1 - sl_pct), 2),
-        "stop_loss_pct":    sl_pct * 100,
+        "ticker":            ticker,
+        "direction":         direction,
+        "current_price":     price,
+        "conviction":        state.get("trader_decision", {}).get("conviction", "medium"),
+        "why":               why,
+        "bull_case":         bull or "See logs.",
+        "bear_case":         bear or "See logs.",
+        "take_profit":       take_profit,
+        "take_profit_pct":   tp_pct * 100,
+        "stop_loss":         stop_loss,
+        "stop_loss_pct":     sl_pct * 100,
         "position_size_usd": actual_usd,
-        "qty":              qty,
-        "_sl_pct_raw":      sl_pct,
-        "_tp_pct_raw":      tp_pct,
-        "_full_why":        order.get("final_reasoning") or trader.get("reasoning") or "",
+        "qty":               qty,
+        "_sl_pct_raw":       sl_pct,
+        "_tp_pct_raw":       tp_pct,
+        "_sector_mult":      sector_mult,
+        "_full_why":         order.get("final_reasoning") or trader.get("reasoning") or "",
     }
+
+
+# ---------------------------------------------------------------------------
+# Momentum breakout scan (paper day trade signals)
+# ---------------------------------------------------------------------------
+
+def _scan_momentum_breakouts(watchlist: list, today: str, sector_strength: dict) -> list:
+    """
+    Scan watchlist for momentum breakout signals.
+    Triggers when price is within MOMENTUM_NEAR_HIGH_PCT% of 52-week high
+    AND 3-day avg volume >= DAY_TRADE_VOLUME_RATIO_MIN × 30-day avg.
+    Paper-only — no capital allocated.
+    """
+    signals = []
+    one_year_ago = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=370)).strftime("%Y-%m-%d")
+    auto_close   = (datetime.strptime(today, "%Y-%m-%d") + timedelta(days=2)).strftime("%Y-%m-%d")
+
+    for ticker in watchlist:
+        if ticker.endswith("-USD"):
+            continue
+        try:
+            bars = _yahoo_direct_ohlcv(ticker, one_year_ago, today)
+            if len(bars) < 30:
+                continue
+            highs = [b.get("high", b.get("close", 0)) for b in bars if b.get("high", 0) > 0]
+            high_52w = max(highs) if highs else 0
+            if high_52w <= 0:
+                continue
+            current_price = bars[-1].get("close", 0)
+            if current_price <= 0:
+                continue
+            near_high = current_price >= high_52w * (1 - MOMENTUM_NEAR_HIGH_PCT / 100)
+            if not near_high:
+                continue
+            volumes = [b.get("volume", 0) for b in bars if b.get("volume", 0) > 0]
+            if len(volumes) < 10:
+                continue
+            avg_30d   = sum(volumes[-30:]) / min(30, len(volumes))
+            avg_3d    = sum(volumes[-3:])  / 3
+            vol_ratio = (avg_3d / avg_30d) if avg_30d > 0 else 0
+            if vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN:
+                print(f"[morning] {ticker} near 52w high — vol ratio {vol_ratio:.2f}x < {DAY_TRADE_VOLUME_RATIO_MIN}x, skipping")
+                continue
+            target = round(current_price * (1 + MOMENTUM_TARGET_PCT / 100), 2)
+            stop   = round(current_price * (1 - MOMENTUM_STOP_PCT   / 100), 2)
+            signal = {
+                "id":              f"DTS-{today}-{ticker}-momentum",
+                "ticker":          ticker,
+                "signal_type":     "momentum_breakout",
+                "generated_date":  today,
+                "entry_price":     round(current_price, 2),
+                "target_price":    target,
+                "target_pct":      MOMENTUM_TARGET_PCT,
+                "stop_price":      stop,
+                "stop_pct":        MOMENTUM_STOP_PCT,
+                "status":          "open",
+                "exit_price":      None,
+                "exit_date":       None,
+                "pnl_pct":         None,
+                "outcome":         None,
+                "auto_close_date": auto_close,
+                "rationale":       f"Near 52w high (${high_52w:.2f}) — vol ratio {vol_ratio:.1f}x",
+            }
+            add_day_trade_signal(signal)
+            send_group_trade_signal(signal)
+            signals.append(signal)
+            print(f"[morning] Momentum breakout: {ticker} @ ${current_price:.2f}  52wH=${high_52w:.2f}  vol={vol_ratio:.1f}x")
+        except Exception as e:
+            print(f"[morning] Momentum scan error {ticker}: {e}")
+
+    return signals
 
 
 # ---------------------------------------------------------------------------
@@ -311,7 +425,7 @@ def main():
 
     if not is_session_active():
         _done_days = portfolio["session"].get("total_days", 22)
-        send_message(f"🏁 <b>Paper trading session complete!</b>\n\nAll {_done_days} days are done. Check the dashboard.")
+        broadcast_message(f"🏁 <b>Paper trading session complete!</b>\n\nAll {_done_days} days are done. Check the dashboard.")
         return
 
     session_day = get_session_day()
@@ -332,7 +446,7 @@ def main():
     # ── Circuit breaker ────────────────────────────────────────────────────
     halt, halt_reason = check_circuit_breaker(equity)
     if halt:
-        send_message(
+        broadcast_message(
             f"🚨 <b>CIRCUIT BREAKER — Day {session_day}/{total_days}</b>\n\n"
             f"{halt_reason}\n\n<b>Trading halted to protect capital.</b>"
         )
@@ -342,7 +456,7 @@ def main():
     # ── Macro event block ──────────────────────────────────────────────────
     event_blocked, event_reason = is_event_blocked(today)
     if event_blocked:
-        send_message(
+        broadcast_message(
             f"📅 <b>No Trade — Macro Event — Day {session_day}/{total_days}</b>\n\n"
             f"🚫 {event_reason}\nStaying in cash."
         )
@@ -354,7 +468,7 @@ def main():
     print(f"[morning] VIX: {vix_label}  sizing={vix_multiplier}x")
 
     if vix_multiplier == 0.0:
-        send_message(
+        broadcast_message(
             f"🚨 <b>No Trade — VIX Extreme — Day {session_day}/{total_days}</b>\n\n"
             f"VIX: {vix_label}\nStaying in cash.\n\nSession equity: <b>${equity:,.2f}</b>"
         )
@@ -369,10 +483,22 @@ def main():
         vix_label      = f"{vix_label} | RoC {vix_roc:+.1f}% 🔺"
 
     # ── Market regime overlay (SPY vs 200d MA) ────────────────────────────
-    spy_trend    = get_market_trend("SPY")
-    regime_mult  = BEARISH_REGIME_MULTIPLIER if spy_trend.get("above_ma200") is False else 1.0
-    regime_label = "BEARISH (SPY < 200d MA) — halving size" if regime_mult < 1.0 else "BULLISH"
-    print(f"[morning] Market regime: {regime_label}")
+    spy_trend = get_market_trend("SPY")
+    bearish   = spy_trend.get("above_ma200") is False
+
+    if bearish and ALLOW_SHORT_SELLING:
+        trade_direction = "short"
+        regime_mult     = 1.0   # full size — we're shorting with the trend
+        regime_label    = "BEARISH (SPY < 200d MA) — seeking SHORT candidates"
+    elif bearish:
+        trade_direction = "long"
+        regime_mult     = BEARISH_REGIME_MULTIPLIER
+        regime_label    = "BEARISH (SPY < 200d MA) — halving size"
+    else:
+        trade_direction = "long"
+        regime_mult     = 1.0
+        regime_label    = "BULLISH"
+    print(f"[morning] Market regime: {regime_label}  direction={trade_direction}")
 
     # ── HYG credit spread check ───────────────────────────────────────────
     hyg_risk_off, _hyg_pct, hyg_label = get_hyg_signal()
@@ -384,7 +510,7 @@ def main():
 
     # ── Concurrent position limit ──────────────────────────────────────────
     if open_count >= MAX_CONCURRENT_POSITIONS:
-        send_message(
+        broadcast_message(
             f"⏸ <b>No New Trade — Day {session_day}/{total_days}</b>\n\n"
             f"Already at max concurrent positions ({open_count}/{MAX_CONCURRENT_POSITIONS}).\n"
             f"Waiting for existing positions to resolve before adding new exposure."
@@ -395,7 +521,7 @@ def main():
     # ── Portfolio heat check ───────────────────────────────────────────────
     heat = _portfolio_heat(portfolio)
     if heat >= MAX_PORTFOLIO_HEAT:
-        send_message(
+        broadcast_message(
             f"🌡 <b>No New Trade — Day {session_day}/{total_days}</b>\n\n"
             f"Portfolio heat: {heat*100:.0f}% deployed (max {MAX_PORTFOLIO_HEAT*100:.0f}%).\n"
             f"Keeping dry powder. No new positions today."
@@ -427,9 +553,13 @@ def main():
         print(f"[morning] Sector strength error: {e}")
         sector_strength = {"ranking": [], "top_3": [], "bottom_3": [], "sectors": {}}
 
+    # ── Momentum breakout scan (paper day trade signals) ──────────────────
+    _scan_momentum_breakouts(WATCHLIST, today, sector_strength)
+
     # ── Notify user: analysis starting ────────────────────────────────────
-    send_message(
-        f"🔍 <b>Day {session_day}/{total_days}</b> — Analysing {len(WATCHLIST)} tickers "
+    dir_note = " 🔻 Shorting mode" if trade_direction == "short" else ""
+    broadcast_message(
+        f"🔍 <b>Day {session_day}/{total_days}</b>{dir_note} — Analysing {len(WATCHLIST)} tickers "
         f"across {len(SECTOR_MAP)} sectors...\n"
         f"VIX: {vix_label}  |  Regime: {regime_label}  |  {vix_roc_label}\n"
         f"Credit: {hyg_label}\n"
@@ -445,7 +575,7 @@ def main():
 
     if ticker is None:
         blocked_note = f"\nEarnings-blocked: {', '.join(earnings_blocked)}" if earnings_blocked else ""
-        send_message(
+        broadcast_message(
             f"📭 <b>No Trade Today — Day {session_day}/{total_days}</b>\n\n"
             f"No valid BUY signals after filters (volume, sector, earnings).{blocked_note}\n\n"
             f"Session equity: <b>${equity:,.2f}</b>"
@@ -460,7 +590,7 @@ def main():
         port_beta     = _portfolio_beta(portfolio, ticker, estimated_usd)
         print(f"[morning] Portfolio beta (incl {ticker}): {port_beta:.2f}  cap={MAX_PORTFOLIO_BETA}")
         if port_beta > MAX_PORTFOLIO_BETA:
-            send_message(
+            broadcast_message(
                 f"📊 <b>Beta Cap — Day {session_day}/{total_days}</b>\n\n"
                 f"Adding {ticker} would push portfolio β to {port_beta:.2f} "
                 f"(max {MAX_PORTFOLIO_BETA}).\n"
@@ -471,7 +601,8 @@ def main():
             return
 
     # ── Size the position ──────────────────────────────────────────────────
-    summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult)
+    summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult,
+                             direction=trade_direction, sector_strength=sector_strength)
     summary["session_day"]  = session_day
     summary["total_days"]   = total_days
     summary["vix_label"]    = vix_label
@@ -480,7 +611,7 @@ def main():
                               if summary["sector"] in sector_strength.get("ranking", []) else "N/A"
 
     if summary["qty"] <= 0:
-        send_message(
+        broadcast_message(
             f"📭 <b>No Trade — {ticker} — Day {session_day}/{total_days}</b>\n\n"
             f"Ticker selected but position size rounds to 0 (price too high for available capital).\n"
             f"Cash: ${cash:,.2f}  |  {ticker} @ ${summary['current_price']:,.2f}"
@@ -493,8 +624,9 @@ def main():
     # ── Log order as pending before sending for approval ──────────────────
     add_open_order(ticker, summary["qty"], summary["current_price"], "BUY")
 
-    # ── Send Telegram approval card ────────────────────────────────────────
+    # ── Send Telegram approval card (private) + group informational card ──
     send_approval_request(summary)
+    send_group_trade_signal(summary)
     print(f"[morning] Approval sent. Polling {APPROVAL_TIMEOUT_SECONDS // 60} min...")
 
     response = poll_for_response(timeout_seconds=APPROVAL_TIMEOUT_SECONDS)
@@ -506,8 +638,12 @@ def main():
             exec_price = get_latest_price(ticker)
         except Exception:
             exec_price = summary["current_price"]
-        exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
-        exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
+        if summary.get("direction") == "short":
+            exec_stop_loss   = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
+            exec_take_profit = round(exec_price * (1 - summary["_tp_pct_raw"]), 2)
+        else:
+            exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
+            exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
         price_delta_pct  = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2) \
                            if summary["current_price"] > 0 else 0.0
         print(f"[morning] Analysis: ${summary['current_price']:.2f} → Exec: ${exec_price:.2f} ({price_delta_pct:+.2f}%)")
@@ -520,6 +656,7 @@ def main():
             stop_loss_pct   = summary["_sl_pct_raw"],
             take_profit_pct = summary["_tp_pct_raw"],
             journal_note    = summary["_full_why"][:500],
+            direction       = summary.get("direction", "long"),
         )
 
         # Capture which agents were aligned on this trade
@@ -553,26 +690,31 @@ def main():
             "bear_case":       summary["bear_case"],
             "agent_signals":   agent_signals,
         })
-        send_message(
-            f"✅ <b>Trade Executed — {ticker}</b>\n\n"
-            f"BUY {summary['qty']} @ ${exec_price:.2f}\n"
+        is_short = summary.get("direction") == "short"
+        dir_tag  = "SHORT 🔻" if is_short else "BUY"
+        if is_short:
+            partial_level = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
+        else:
+            partial_level = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
+        broadcast_message(
+            f"✅ <b>Trade Executed — {ticker} {dir_tag}</b>\n\n"
+            f"{dir_tag} {summary['qty']} @ ${exec_price:.2f}\n"
             f"Deployed: ${round(exec_price * summary['qty'], 2):.2f}  |  "
             f"Sector: {summary['sector']} (rank #{summary['sector_rank']})\n\n"
             f"TP: ${exec_take_profit:.2f}  |  SL: ${exec_stop_loss:.2f}\n"
-            f"Partial profit triggers at: "
-            f"${round(exec_price * (1 + summary['_sl_pct_raw']), 2):.2f} (1:1 R/R)\n\n"
+            f"Partial profit triggers at: ${partial_level:.2f} (1:1 R/R)\n\n"
             f"<i>EOD check at 4:15 PM ET.</i>"
         )
         record_equity(equity)
 
     elif response == "rejected":
         update_open_order(ticker, "rejected")
-        send_message(f"⏭ <b>Trade Skipped — Day {session_day}/{total_days}</b>\n\nNo position opened. See you tomorrow!")
+        broadcast_message(f"⏭ <b>Trade Skipped — Day {session_day}/{total_days}</b>\n\nNo position opened. See you tomorrow!")
         record_equity(equity)
 
     else:
         update_open_order(ticker, "expired")
-        send_message(f"⏰ <b>60-min window expired — Day {session_day}/{total_days}</b>\n\nTrade skipped.")
+        broadcast_message(f"⏰ <b>60-min window expired — Day {session_day}/{total_days}</b>\n\nTrade skipped.")
         record_equity(equity)
 
     print(f"[morning] Day {session_day} complete.")
@@ -585,8 +727,8 @@ if __name__ == "__main__":
         err = str(e)
         # Send Telegram alert for critical failures so they're not silent
         try:
-            from tools.telegram_bot import send_message
-            send_message(
+            from tools.telegram_bot import broadcast_message as _bcast
+            _bcast(
                 f"🚨 <b>Morning Session FAILED</b>\n\n"
                 f"<code>{err[:1000]}</code>\n\n"
                 f"Check: https://github.com/outtcom/ai-paper-trading/actions"

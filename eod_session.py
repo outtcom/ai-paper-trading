@@ -28,6 +28,8 @@ from tools.market_data import get_latest_price
 from tools.session_manager import (
     advance_day,
     close_position,
+    close_day_trade_signal,
+    get_open_day_trade_signals,
     get_portfolio,
     get_session_day,
     partial_close_position,
@@ -36,7 +38,7 @@ from tools.session_manager import (
     update_spy_benchmark,
     update_trailing_stop,
 )
-from tools.telegram_bot import send_message
+from tools.telegram_bot import broadcast_message
 
 DEAD_MONEY_DAYS = 3      # close position if held this many days with no progress
 DEAD_MONEY_BAND = 0.01   # "flat" = within ±1% of entry
@@ -71,8 +73,10 @@ def _check_partial_profit(portfolio: dict) -> list:
             partial_price = round(pos["entry_price"] * (1 + sl_pct), 2)
 
         try:
-            price = get_latest_price(ticker)
-            if price >= partial_price:
+            price     = get_latest_price(ticker)
+            direction = pos.get("direction", "long")
+            triggered = (price <= partial_price) if direction == "short" else (price >= partial_price)
+            if triggered:
                 qty_to_close = max(1, pos["qty"] // 2)
                 print(f"[eod] PARTIAL PROFIT: {ticker} @ ${price:.2f} (1:1 level ${partial_price:.2f})")
                 trade = partial_close_position(ticker, qty_to_close, price)
@@ -108,16 +112,24 @@ def _check_tp_sl(portfolio: dict) -> list:
     closed = []
     for ticker, pos in list(portfolio["positions"].items()):
         try:
-            price = get_latest_price(ticker)
-            tp = pos["take_profit"]
-            sl = pos["stop_loss"]
+            price     = get_latest_price(ticker)
+            tp        = pos["take_profit"]
+            sl        = pos["stop_loss"]
+            direction = pos.get("direction", "long")
 
-            if price >= tp:
+            if direction == "short":
+                tp_hit = price <= tp   # price fell to target
+                sl_hit = price >= sl   # price rose past stop
+            else:
+                tp_hit = price >= tp
+                sl_hit = price <= sl
+
+            if tp_hit:
                 print(f"[eod] TP HIT: {ticker}  price=${price:.2f}  TP=${tp:.2f}")
                 trade = close_position(ticker, tp, "take_profit")
                 trade["current_price"] = price
                 closed.append(trade)
-            elif price <= sl:
+            elif sl_hit:
                 print(f"[eod] SL HIT: {ticker}  price=${price:.2f}  SL=${sl:.2f}")
                 trade = close_position(ticker, sl, "stop_loss")
                 trade["current_price"] = price
@@ -184,16 +196,40 @@ def _agent_line(journal: list, ticker: str) -> str:
 
 
 def _total_equity(portfolio: dict) -> float:
-    """Cash + mark-to-market value of all open positions. Also persists last_price."""
+    """Cash + mark-to-market value of all open positions. Also persists last_price.
+    For short positions: cash already includes short proceeds; subtract cover cost."""
     equity = portfolio["cash"]
     for ticker, pos in portfolio["positions"].items():
+        direction = pos.get("direction", "long")
         try:
             price = get_latest_price(ticker)
-            update_last_price(ticker, price)  # keep dashboard unrealized P&L current
-            equity += price * pos["qty"]
+            update_last_price(ticker, price)
+            if direction == "short":
+                equity -= price * pos["qty"]   # subtract current cover cost
+            else:
+                equity += price * pos["qty"]
         except Exception:
-            equity += pos["cost_basis"]
+            if direction == "short":
+                equity -= pos.get("cost_basis", 0)
+            else:
+                equity += pos.get("cost_basis", 0)
     return round(equity, 2)
+
+
+def _resolve_day_trade_signals(today: str) -> list:
+    """Auto-close day trade signals whose auto_close_date has passed."""
+    open_signals = get_open_day_trade_signals()
+    resolved = []
+    for signal in open_signals:
+        if signal.get("auto_close_date", "9999-99-99") <= today:
+            try:
+                exit_price = get_latest_price(signal["ticker"])
+                closed = close_day_trade_signal(signal["id"], exit_price, today)
+                resolved.append(closed)
+                print(f"[eod] Day trade resolved: {signal['ticker']} {closed.get('outcome')} {closed.get('pnl_pct', 0):+.2f}%")
+            except Exception as e:
+                print(f"[eod] Error resolving {signal['id']}: {e}")
+    return resolved
 
 
 def _build_eod_message(
@@ -205,6 +241,7 @@ def _build_eod_message(
     equity: float,
     session_day: int,
     total_days: int,
+    resolved_signals: list = None,
 ) -> str:
     initial = portfolio["initial_capital"]
     total_return = round((equity - initial) / initial * 100, 2)
@@ -269,18 +306,39 @@ def _build_eod_message(
         lines.append("<b>Open Positions:</b>")
         for ticker, pos in open_pos.items():
             try:
-                price = get_latest_price(ticker)
-                unr = round((price - pos["entry_price"]) * pos["qty"], 2)
-                unr_pct = round((price - pos["entry_price"]) / pos["entry_price"] * 100, 2)
+                price     = get_latest_price(ticker)
+                direction = pos.get("direction", "long")
+                if direction == "short":
+                    unr     = round((pos["entry_price"] - price) * pos["qty"], 2)
+                    unr_pct = round((pos["entry_price"] - price) / pos["entry_price"] * 100, 2)
+                    dir_tag = " 🔻"
+                else:
+                    unr     = round((price - pos["entry_price"]) * pos["qty"], 2)
+                    unr_pct = round((price - pos["entry_price"]) / pos["entry_price"] * 100, 2)
+                    dir_tag = ""
                 sign = "+" if unr >= 0 else ""
                 partial_note = " (partial taken)" if pos.get("partial_taken") else ""
                 lines.append(
-                    f"  {ticker}: ${pos['entry_price']:.2f} → ${price:.2f}  "
+                    f"  {ticker}{dir_tag}: ${pos['entry_price']:.2f} → ${price:.2f}  "
                     f"({sign}{unr_pct:.1f}%)  "
                     f"TP ${pos['take_profit']:.2f}  SL ${pos['stop_loss']:.2f}{partial_note}"
                 )
             except Exception as e:
                 lines.append(f"  {ticker}: (price unavailable: {e})")
+        lines.append("")
+
+    # Day trade signal resolutions (paper only)
+    if resolved_signals:
+        lines.append("<b>Day Trade Signals (Paper):</b>")
+        for sig in resolved_signals:
+            pct = sig.get("pnl_pct") or 0
+            outcome = sig.get("outcome", "?").upper()
+            emoji = "✅" if outcome == "WIN" else ("❌" if outcome == "LOSS" else "➖")
+            sign  = "+" if pct >= 0 else ""
+            lines.append(
+                f"  {emoji} {sig['ticker']} ({sig.get('signal_type', '?')}): "
+                f"{sign}{pct:.2f}% → {outcome}"
+            )
         lines.append("")
 
     # No activity today
@@ -341,6 +399,9 @@ def main():
     total_days = portfolio["session"]["total_days"]
     print(f"[eod] Day {session_day}/{total_days}")
 
+    # Step 0: Resolve expired day trade signals (paper only)
+    resolved_signals = _resolve_day_trade_signals(today)
+
     # Step 1: Partial profit at 1:1 R/R (before checking full TP/SL)
     partial_trades = _check_partial_profit(portfolio)
     portfolio = get_portfolio()  # reload after partials
@@ -377,8 +438,9 @@ def main():
     msg = _build_eod_message(
         portfolio, closed_trades, partial_trades, time_exits,
         trailing_updates, equity, session_day, total_days,
+        resolved_signals=resolved_signals,
     )
-    send_message(msg)
+    broadcast_message(msg)
     print(f"[eod] Summary sent. Equity: ${equity:,.2f}")
 
     # Step 8: Advance the session day counter
@@ -399,7 +461,7 @@ def main():
             f"vs SPY:       {'+' if spy_ret >= 0 else ''}{spy_ret:.1f}%\n"
             if spy_ret is not None else "vs SPY:       N/A\n"
         )
-        send_message(
+        broadcast_message(
             f"🏁 <b>PAPER TRADING SESSION COMPLETE</b>\n\n"
             f"Final Equity: <b>${equity:,.2f}</b>\n"
             f"Total Return: <b>{'+' if final_ret >= 0 else ''}{final_ret:.1f}%</b>\n"
@@ -409,6 +471,12 @@ def main():
             f"Check the dashboard for full details."
         )
         print("[eod] Session complete!")
+        # Trigger 22-day session summary report
+        try:
+            import session_summary
+            session_summary.run()
+        except Exception as e:
+            print(f"[eod] Session summary error: {e}")
 
 
 if __name__ == "__main__":

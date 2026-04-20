@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from tools.market_data import get_latest_price
 from tools.session_manager import get_portfolio, get_session_day, update_last_price
-from tools.telegram_bot import send_message
+from tools.telegram_bot import broadcast_message
 
 PROXIMITY_THRESHOLD = 0.75   # alert when 75%+ of the way to TP or SL
 
@@ -130,7 +130,7 @@ def main():
         f"Next update: Pre-close alert at 3:30 PM ET.</i>"
     )
 
-    send_message("\n".join(lines))
+    broadcast_message("\n".join(lines))
     print(f"[midday] Alert sent. {len(alerts)} action items, {len(normal)} monitoring.")
 
 
