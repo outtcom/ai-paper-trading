@@ -1,14 +1,14 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 6,
+    "current_day": 7,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-04-21T17:08:38.645209+00:00"
+    "last_updated": "2026-04-21T21:05:32.846810+00:00"
   },
   "cash": 4678.69,
   "initial_capital": 5000.0,
-  "equity": 5016.11,
+  "equity": 5010.98,
   "peak_equity": 5020.37,
   "circuit_breaker": {
     "triggered": false,
@@ -16,20 +16,20 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.76,
-    "sortino": 3.57,
-    "calmar": 99.51,
+    "sharpe": -0.3,
+    "sortino": -0.46,
+    "calmar": 27.55,
     "spy_start_price": 686.1,
-    "spy_current_price": 708.72,
-    "benchmark_return_pct": 3.3,
-    "max_drawdown_pct": 0.08
+    "spy_current_price": 704.08,
+    "benchmark_return_pct": 2.62,
+    "max_drawdown_pct": 0.19
   },
   "positions": {
     "GOOGL": {
       "qty": 1,
       "entry_price": 321.31,
       "cost_basis": 321.31,
-      "last_price": 333.81,
+      "last_price": 332.29,
       "stop_loss": 314.35,
       "take_profit": 372.72,
       "partial_profit_price": 347.01,
@@ -93,6 +93,11 @@
       "day": 6,
       "date": "2026-04-21",
       "equity": 5016.11
+    },
+    {
+      "day": 6,
+      "date": "2026-04-21",
+      "equity": 5010.98
     }
   ],
   "journal": [
