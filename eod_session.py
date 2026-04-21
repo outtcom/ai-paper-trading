@@ -226,11 +226,42 @@ def _resolve_day_trade_signals(today: str) -> list:
     for signal in open_signals:
         if signal.get("auto_close_date", "9999-99-99") <= today:
             try:
-                exit_price = get_latest_price(signal["ticker"])
+                ticker = signal["ticker"]
+                gen_date = signal.get("generated_date", today)
+                # Fetch OHLCV for the trade date to get actual open (execution price)
+                # and close (EOD exit price)
+                try:
+                    from datetime import datetime, timedelta
+                    day_after = (datetime.strptime(gen_date, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
+                    bars = _yahoo_direct_ohlcv(ticker, gen_date, day_after)
+                    trade_day = next((b for b in bars if b.get("date", "") >= gen_date), None)
+                    actual_open  = trade_day["open"]  if trade_day and trade_day.get("open")  else None
+                    actual_close = trade_day["close"] if trade_day and trade_day.get("close") else None
+                except Exception:
+                    actual_open  = None
+                    actual_close = None
+
+                # Use actual open as entry price if available (pre-market entry_price may differ).
+                # Shift TP/SL proportionally so R/R is preserved from the real execution price.
+                if actual_open and actual_open > 0:
+                    old_entry = signal.get("entry_price") or actual_open
+                    tp_pct = signal.get("target_pct", 1.5) / 100
+                    sl_pct = signal.get("stop_pct",   0.8) / 100
+                    direction = signal.get("direction", "long")
+                    signal["entry_price"]  = round(actual_open, 2)
+                    if direction == "short":
+                        signal["target_price"] = round(actual_open * (1 - tp_pct), 2)
+                        signal["stop_price"]   = round(actual_open * (1 + sl_pct), 2)
+                    else:
+                        signal["target_price"] = round(actual_open * (1 + tp_pct), 2)
+                        signal["stop_price"]   = round(actual_open * (1 - sl_pct), 2)
+
+                exit_price = actual_close if actual_close else get_latest_price(ticker)
                 closed = close_day_trade_signal(signal["id"], exit_price, today)
                 resolved.append(closed)
-                print(f"[eod] Day trade resolved: {signal['ticker']} {closed.get('outcome')} "
-                      f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f})")
+                open_note = f" (open=${actual_open:.2f})" if actual_open else ""
+                print(f"[eod] Day trade resolved: {ticker} {closed.get('outcome')} "
+                      f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f}){open_note}")
             except Exception as e:
                 print(f"[eod] Error resolving {signal['id']}: {e}")
     return resolved

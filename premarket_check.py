@@ -57,26 +57,39 @@ def _detect_gap_and_go_signals(gaps: dict, today: str) -> list:
         except Exception:
             avg_vol = 0
 
-        # Finnhub current volume (field 'v' in quote)
+        # Finnhub current volume (field 'v' in quote).
+        # At 7 AM pre-market the regular-session accumulator is 0 — use prev-day volume
+        # as a proxy when intraday vol hasn't started yet.
         try:
             quote = _finnhub_get(f"/quote?symbol={ticker}")
             current_vol = quote.get("v", 0) or 0
+            # If intraday vol is 0 (pre-market), fall back to previous close volume
+            if current_vol == 0 and avg_vol > 0:
+                current_vol = avg_vol  # treat as "normal" volume; skip the ratio gate
         except Exception:
             current_vol = 0
 
-        vol_ratio = (current_vol / avg_vol) if avg_vol > 0 else 0
+        vol_ratio = (current_vol / avg_vol) if avg_vol > 0 else 1.0
 
-        if vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN and avg_vol > 0:
+        if vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN and avg_vol > 0 and current_vol > 0:
             print(f"[premarket] {ticker} gap {gap_pct:+.1f}% — volume ratio {vol_ratio:.2f}x < {DAY_TRADE_VOLUME_RATIO_MIN}x, skipping signal")
             continue
 
-        target = round(entry_price * (1 + GAP_AND_GO_TARGET_PCT / 100), 2)
-        stop   = round(entry_price * (1 - GAP_AND_GO_STOP_PCT  / 100), 2)
+        # Gap direction determines trade direction: gap up = long, gap down = short
+        direction = "short" if gap_pct < 0 else "long"
+        if direction == "short":
+            target = round(entry_price * (1 - GAP_AND_GO_TARGET_PCT / 100), 2)
+            stop   = round(entry_price * (1 + GAP_AND_GO_STOP_PCT   / 100), 2)
+        else:
+            target = round(entry_price * (1 + GAP_AND_GO_TARGET_PCT / 100), 2)
+            stop   = round(entry_price * (1 - GAP_AND_GO_STOP_PCT   / 100), 2)
 
+        vol_label = f"{vol_ratio:.1f}x" if current_vol > 0 else "pre-mkt"
         signal = {
             "id":               f"DTS-{today}-{ticker}-gap",
             "ticker":           ticker,
             "signal_type":      "gap_and_go",
+            "direction":        direction,
             "generated_date":   today,
             "entry_price":      round(entry_price, 2),
             "target_price":     target,
@@ -89,7 +102,7 @@ def _detect_gap_and_go_signals(gaps: dict, today: str) -> list:
             "pnl_pct":          None,
             "outcome":          None,
             "auto_close_date":  today,
-            "rationale":        f"Pre-market gap {gap_pct:+.1f}% (vol ratio {vol_ratio:.1f}x)"
+            "rationale":        f"Pre-market gap {gap_pct:+.1f}% ({direction.upper()}, vol {vol_label})"
         }
 
         add_day_trade_signal(signal)
