@@ -134,6 +134,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | Sector count said "across 3 sectors" | Fixed to use `len(SECTOR_MAP)` = 11 GICS sectors |
 | SL/TP stored at 4 decimal places, displayed at 2 | `_size_position` now uses `round(..., 2)` matching `open_position` |
 | `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
+| Pre-market gap signals blocked by volume ratio 1.0x < 1.5x | Finnhub `v=0` before 9:30 AM (intraday accumulator not started). Setting `current_vol=avg_vol` gives ratio=1.0 which still fails. Fix: use `premarket_vol` flag and **skip the ratio check entirely** before open. |
 
 ## API Credit Notes
 
