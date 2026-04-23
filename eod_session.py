@@ -24,12 +24,14 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from tools.market_data import get_latest_price
+from tools.market_data import get_latest_price, _yahoo_direct_ohlcv
 from tools.session_manager import (
     advance_day,
     close_position,
     close_day_trade_signal,
+    close_scalping_signal,
     get_open_day_trade_signals,
+    get_open_scalping_signals,
     get_portfolio,
     get_session_day,
     partial_close_position,
@@ -267,6 +269,58 @@ def _resolve_day_trade_signals(today: str) -> list:
     return resolved
 
 
+def _resolve_scalping_signals_eod(today: str) -> list:
+    """
+    Fallback: close any scalping signals not resolved at noon.
+    Uses daily high/low to determine if TP or SL was hit during the session,
+    then exits at the daily close.
+    """
+    from datetime import timedelta
+    open_scalps = get_open_scalping_signals()
+    resolved = []
+    for signal in open_scalps:
+        if signal.get("auto_close_date", "9999-99-99") > today:
+            continue
+        try:
+            ticker    = signal["ticker"]
+            gen_date  = signal.get("generated_date", today)
+            direction = signal.get("direction", "long")
+            tp        = signal["target_price"]
+            sl        = signal["stop_price"]
+
+            # Fetch daily bar for the trade date
+            day_after = (datetime.strptime(gen_date, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
+            bars      = _yahoo_direct_ohlcv(ticker, gen_date, day_after)
+            trade_bar = next((b for b in bars if b.get("date", "") >= gen_date), None)
+
+            if trade_bar:
+                if direction == "long":
+                    if trade_bar["high"] >= tp:
+                        exit_price = tp                    # TP hit during session
+                    elif trade_bar["low"] <= sl:
+                        exit_price = sl                    # SL hit during session
+                    else:
+                        exit_price = trade_bar["close"]    # exit at close
+                else:
+                    if trade_bar["low"] <= tp:
+                        exit_price = tp
+                    elif trade_bar["high"] >= sl:
+                        exit_price = sl
+                    else:
+                        exit_price = trade_bar["close"]
+            else:
+                exit_price = get_latest_price(ticker)
+
+            closed = close_scalping_signal(signal["id"], exit_price, today)
+            if closed:
+                resolved.append(closed)
+                print(f"[eod] Scalping fallback closed: {ticker} {closed.get('outcome')} "
+                      f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f})")
+        except Exception as e:
+            print(f"[eod] Error resolving scalp {signal.get('id')}: {e}")
+    return resolved
+
+
 def _build_eod_message(
     portfolio: dict,
     closed_trades: list,
@@ -444,6 +498,8 @@ def main():
 
     # Step 0: Resolve expired day trade signals (paper only)
     resolved_signals = _resolve_day_trade_signals(today)
+    # Step 0b: Fallback — close any scalping signals midday_check missed
+    _resolve_scalping_signals_eod(today)
 
     # Step 1: Partial profit at 1:1 R/R (before checking full TP/SL)
     partial_trades = _check_partial_profit(portfolio)

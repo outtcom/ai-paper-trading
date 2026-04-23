@@ -166,3 +166,12 @@ SHORT_SL_PCT        = 4.0   # stop if price rises 4% from entry
 # ---------------------------------------------------------------------------
 SECTOR_TILT_TOP_MULT    = 1.25   # amplify size for trades in top-2 sectors
 SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors
+
+# ---------------------------------------------------------------------------
+# ORB Scalping Signals (paper-only, separate $5K pool, auto-close at noon)
+# ---------------------------------------------------------------------------
+SCALPING_RANGE_MINUTES = 30      # opening range = first 30 min of trading (9:30–10:00 AM)
+SCALPING_TARGET_PCT    = 0.75    # TP: +0.75% from entry
+SCALPING_STOP_PCT      = 0.40    # SL: -0.40% from entry
+SCALPING_VOL_RATIO_MIN = 1.3     # volume vs baseline (lower bar — 5-min bars are spiky)
+SCALPING_CAPITAL_INIT  = 5000.0  # separate pool, never drawn from main portfolio

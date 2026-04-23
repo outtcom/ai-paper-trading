@@ -102,6 +102,7 @@ def _migrate(p: dict) -> dict:
     p.setdefault("open_orders", [])
     p.setdefault("day_trade_signals", [])
     p.setdefault("day_trade_capital", {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
+    p.setdefault("scalping_capital",  {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
     return p
 
 
@@ -703,4 +704,121 @@ def close_day_trade_signal(signal_id: str, exit_price: float, exit_date: str) ->
                   f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | DT equity: ${p['day_trade_capital'].get('equity', 0):.0f}")
             return s
     print(f"[session] close_day_trade_signal: signal {signal_id} not found or already closed")
+    return {}
+
+
+# ---------------------------------------------------------------------------
+# ORB Scalping Signal helpers (separate $5,000 scalping_capital pool)
+# ---------------------------------------------------------------------------
+
+def add_scalping_signal(signal: dict) -> None:
+    """
+    Append a scalping signal, allocating capital from the $5,000 scalping pool.
+    Same 50% sizing and 4-concurrent-max logic as day trade signals.
+    Enriches signal with qty, allocated_usd.
+    """
+    p = _migrate(_load())
+    open_scalps = [
+        s for s in p["day_trade_signals"]
+        if s.get("status") == "open" and s.get("signal_type") == "scalping_orb"
+    ]
+    if len(open_scalps) >= DT_MAX_CONCURRENT:
+        print(f"[session] Scalping pool full ({DT_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
+        return
+
+    sc = p["scalping_capital"]
+    cash  = sc.get("cash", 0)
+    entry = signal.get("entry_price", 0)
+
+    if cash <= 0 or entry <= 0:
+        print(f"[session] Scalping capital exhausted or invalid entry, skipping {signal.get('ticker')}")
+        return
+
+    max_usd   = cash * DT_POSITION_PCT
+    qty       = max(1, int(max_usd / entry))
+    allocated = round(qty * entry, 2)
+
+    if allocated > cash:
+        qty       = max(1, int(cash / entry))
+        allocated = round(qty * entry, 2)
+
+    if qty < 1:
+        print(f"[session] Scalping: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
+        return
+
+    signal["qty"]           = qty
+    signal["allocated_usd"] = allocated
+    sc["cash"]   = round(cash - allocated, 2)
+    sc["equity"] = round(sc["cash"] + sum(
+        s["entry_price"] * s.get("qty", 0)
+        for s in open_scalps
+        if s.get("entry_price") and s.get("qty")
+    ) + allocated, 2)
+
+    p["day_trade_signals"].append(signal)
+    _save(p)
+    print(f"[session] Scalping signal: {signal.get('ticker')} qty={qty} @ ${entry:.2f} "
+          f"(${allocated:.0f}) | scalping cash left: ${sc['cash']:.0f}")
+
+
+def get_open_scalping_signals() -> list:
+    """Return all scalping_orb signals with status == 'open'."""
+    p = _migrate(_load())
+    return [
+        s for s in p.get("day_trade_signals", [])
+        if s.get("status") == "open" and s.get("signal_type") == "scalping_orb"
+    ]
+
+
+def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
+    """
+    Close a scalping signal by ID. Computes P&L and credits proceeds back to scalping_capital.
+    Returns the updated signal dict. Skips silently if already closed.
+    """
+    p = _migrate(_load())
+    for s in p.get("day_trade_signals", []):
+        if s.get("id") == signal_id and s.get("status") == "open" and s.get("signal_type") == "scalping_orb":
+            entry  = s["entry_price"]
+            qty    = s.get("qty", 0)
+            exit_p = round(exit_price, 2)
+
+            s["pnl_pct"]    = round((exit_p - entry) / entry * 100, 2) if entry > 0 else 0.0
+            s["pnl_usd"]    = round((exit_p - entry) * qty, 2) if qty > 0 else 0.0
+            s["exit_price"] = exit_p
+            s["exit_date"]  = exit_date
+            s["status"]     = "closed"
+
+            if s["pnl_pct"] >= s.get("target_pct", 0):
+                s["outcome"] = "win"
+            elif s["pnl_pct"] <= -s.get("stop_pct", 0):
+                s["outcome"] = "loss"
+            elif abs(s["pnl_pct"]) < 0.1:
+                s["outcome"] = "breakeven"
+            else:
+                s["outcome"] = "win" if s["pnl_pct"] > 0 else "loss"
+
+            if qty > 0:
+                proceeds = round(exit_p * qty, 2)
+                sc = p.get("scalping_capital", {})
+                sc["cash"] = round(sc.get("cash", 0) + proceeds, 2)
+                remaining = [
+                    sig for sig in p["day_trade_signals"]
+                    if sig.get("status") == "open"
+                    and sig.get("signal_type") == "scalping_orb"
+                    and sig.get("id") != signal_id
+                ]
+                sc["equity"] = round(
+                    sc["cash"] + sum(
+                        sig["entry_price"] * sig.get("qty", 0)
+                        for sig in remaining
+                        if sig.get("entry_price") and sig.get("qty")
+                    ), 2
+                )
+                p["scalping_capital"] = sc
+
+            _save(p)
+            print(f"[session] Scalping closed: {s['ticker']} {s['pnl_pct']:+.2f}% "
+                  f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | scalping equity: ${p['scalping_capital'].get('equity', 0):.0f}")
+            return s
+    print(f"[session] close_scalping_signal: {signal_id} not found or already closed")
     return {}

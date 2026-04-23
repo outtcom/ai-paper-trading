@@ -17,11 +17,56 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from tools.market_data import get_latest_price
-from tools.session_manager import get_portfolio, get_session_day, update_last_price
+from tools.market_data import get_latest_price, _yahoo_intraday_ohlcv
+from tools.session_manager import (
+    get_portfolio, get_session_day, update_last_price,
+    get_open_scalping_signals, close_scalping_signal,
+)
 from tools.telegram_bot import broadcast_message
 
 PROXIMITY_THRESHOLD = 0.75   # alert when 75%+ of the way to TP or SL
+
+
+def _resolve_scalping_signals(today: str) -> list:
+    """
+    Close all open scalping signals at noon.
+    Replays intraday bars to check if TP or SL was hit during the morning.
+    Falls back to current live price if bars unavailable.
+    Returns list of closed signal dicts.
+    """
+    signals  = get_open_scalping_signals()
+    resolved = []
+    for signal in signals:
+        if signal.get("auto_close_date", "") > today:
+            continue
+        ticker    = signal["ticker"]
+        direction = signal.get("direction", "long")
+        tp        = signal["target_price"]
+        sl        = signal["stop_price"]
+        gen_date  = signal["generated_date"]
+
+        # Replay 5-min bars to find first TP or SL hit
+        bars       = _yahoo_intraday_ohlcv(ticker, gen_date, "5m")
+        exit_price = None
+        for bar in bars:
+            if direction == "long":
+                if bar["high"] >= tp:
+                    exit_price = tp; break   # TP hit
+                if bar["low"]  <= sl:
+                    exit_price = sl; break   # SL hit
+            else:  # short
+                if bar["low"]  <= tp:
+                    exit_price = tp; break   # TP hit
+                if bar["high"] >= sl:
+                    exit_price = sl; break   # SL hit
+
+        if exit_price is None:
+            exit_price = get_latest_price(ticker)  # close at noon price
+
+        closed  = close_scalping_signal(signal["id"], exit_price, today)
+        if closed:
+            resolved.append(closed)
+    return resolved
 
 
 def main():
@@ -33,6 +78,9 @@ def main():
     if not portfolio["session"]["active"]:
         print("[midday] No active session. Exiting.")
         return
+
+    # Resolve any open scalping signals — they auto-close at noon
+    scalp_resolved = _resolve_scalping_signals(today)
 
     positions = portfolio.get("positions", {})
 
@@ -130,8 +178,23 @@ def main():
         f"Next update: Pre-close alert at 3:30 PM ET.</i>"
     )
 
+    # Append scalping resolution summary if any signals closed
+    if scalp_resolved:
+        scalp_lines = ["\n⚡ <b>ORB Scalping — Noon Close:</b>"]
+        for s in scalp_resolved:
+            pnl  = s.get("pnl_pct", 0) or 0
+            icon = "✅" if s.get("outcome") == "win" else ("❌" if s.get("outcome") == "loss" else "➖")
+            scalp_lines.append(
+                f"  {icon} {s['ticker']} {s.get('direction','').upper()} "
+                f"{'+' if pnl >= 0 else ''}{pnl:.2f}% → {(s.get('outcome') or '?').upper()}"
+            )
+        sc = get_portfolio().get("scalping_capital", {})
+        scalp_lines.append(f"<i>Scalping pool: ${sc.get('equity', 5000):,.2f}</i>")
+        lines.extend(scalp_lines)
+
     broadcast_message("\n".join(lines))
-    print(f"[midday] Alert sent. {len(alerts)} action items, {len(normal)} monitoring.")
+    print(f"[midday] Alert sent. {len(alerts)} action items, {len(normal)} monitoring, "
+          f"{len(scalp_resolved)} scalping signal(s) closed.")
 
 
 if __name__ == "__main__":

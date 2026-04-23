@@ -78,6 +78,7 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 |---|---|---|
 | Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
 | Morning Session | Mon–Fri 7:30 AM | `morning_session.py` |
+| ORB Scalping Scan | Mon–Fri 10:00 AM | `scalping_scan.py` |
 | Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
 | End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
@@ -135,6 +136,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | SL/TP stored at 4 decimal places, displayed at 2 | `_size_position` now uses `round(..., 2)` matching `open_position` |
 | `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
 | Pre-market gap signals blocked by volume ratio 1.0x < 1.5x | Finnhub `v=0` before 9:30 AM (intraday accumulator not started). Setting `current_vol=avg_vol` gives ratio=1.0 which still fails. Fix: use `premarket_vol` flag and **skip the ratio check entirely** before open. |
+| `_yahoo_intraday_ohlcv()` fails locally on Windows | `ZoneInfo("America/New_York")` needs `tzdata` package on Windows. Fix: use plain UTC offset (`datetime.utcfromtimestamp(ts - 4*3600)`) — no tzdata needed, works on GitHub Actions Linux too. |
 
 ## API Credit Notes
 

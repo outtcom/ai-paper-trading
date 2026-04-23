@@ -253,6 +253,16 @@
     <div class="value" id="kpi-dt-avgpnl">—</div>
     <div class="sub" id="kpi-dt-cash-sub"></div>
   </div>
+  <div class="card">
+    <div class="label">Scalping Equity</div>
+    <div class="value" id="kpi-scalp-equity">—</div>
+    <div class="sub" id="kpi-scalp-equity-sub">$5,000 start</div>
+  </div>
+  <div class="card">
+    <div class="label">Scalping Win Rate</div>
+    <div class="value yellow" id="kpi-scalp-winrate">—</div>
+    <div class="sub" id="kpi-scalp-winrate-sub"></div>
+  </div>
 </div>
 
 <!-- Benchmark comparison bar -->
@@ -374,6 +384,33 @@
       </thead>
       <tbody id="dt-signals-tbody">
         <tr><td class="empty" colspan="10">No day trade signals yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ORB Scalping Signals (paper) -->
+<div class="section">
+  <h2>ORB Scalping Signals <span style="font-size:0.72rem; color:var(--yellow); text-transform:none; letter-spacing:0; font-weight:600; background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:6px; border:1px solid var(--yellow)">Paper Only</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Ticker</th>
+          <th>Dir</th>
+          <th>Size</th>
+          <th>Entry</th>
+          <th>Range</th>
+          <th>TP</th>
+          <th>SL</th>
+          <th>Exit</th>
+          <th>P&amp;L</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody id="scalp-signals-tbody">
+        <tr><td class="empty" colspan="11">No scalping signals yet</td></tr>
       </tbody>
     </table>
   </div>
@@ -763,6 +800,66 @@
             <td style="color:var(--yellow); font-size:0.82em">${typeLabel}</td>
             <td>${sizeStr}</td>
             <td>$${fmt(s.entry_price)}</td>
+            <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(+${fmt(s.target_pct)}%)</span></td>
+            <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(-${fmt(s.stop_pct)}%)</span></td>
+            <td>${s.exit_price !== null && s.exit_price !== undefined ? '$' + fmt(s.exit_price) : '<span style="color:var(--muted)">—</span>'}</td>
+            <td style="color:${pctColor}">${pctStr}${usdStr}</td>
+            <td>${outcomeTag}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    // ORB Scalping signals + capital pool
+    const scCap    = data.scalping_capital || {};
+    const scInit   = scCap.initial || 5000;
+    const scEq     = scCap.equity  || scInit;
+    const scRet    = ((scEq - scInit) / scInit * 100);
+
+    const scEqEl = document.getElementById('kpi-scalp-equity');
+    scEqEl.textContent = `$${fmt(scEq)}`;
+    scEqEl.className = `value ${signClass(scRet)}`;
+    document.getElementById('kpi-scalp-equity-sub').textContent = `${signStr(scRet)}${fmt(scRet)}% | $5,000 start`;
+
+    const scSignals = (data.day_trade_signals || []).filter(s => s.signal_type === 'scalping_orb');
+    const scClosed  = scSignals.filter(s => s.status === 'closed');
+    const scWins    = scClosed.filter(s => s.outcome === 'win');
+
+    const scWrEl = document.getElementById('kpi-scalp-winrate');
+    scWrEl.textContent = scClosed.length ? `${scWins.length}/${scClosed.length}` : '—';
+    scWrEl.className = 'value yellow';
+    document.getElementById('kpi-scalp-winrate-sub').textContent = scClosed.length
+      ? `${(scWins.length / scClosed.length * 100).toFixed(0)}% hit rate`
+      : 'No signals closed';
+
+    const scTbody = document.getElementById('scalp-signals-tbody');
+    if (scSignals.length === 0) {
+      scTbody.innerHTML = '<tr><td class="empty" colspan="11">No scalping signals yet</td></tr>';
+    } else {
+      scTbody.innerHTML = [...scSignals].reverse().map(s => {
+        const pct = s.pnl_pct;
+        const pctStr  = pct !== null && pct !== undefined ? `${pct >= 0 ? '+' : ''}${fmt(pct)}%` : '—';
+        const pctColor = pct !== null && pct !== undefined ? (pct >= 0 ? 'var(--green)' : 'var(--red)') : 'var(--muted)';
+        const usd     = s.pnl_usd;
+        const usdStr  = usd !== null && usd !== undefined ? `<br><span style="font-size:0.78em">${usd>=0?'+':''}$${fmt(usd)}</span>` : '';
+        const outcomeTag = s.outcome === 'win' ? '<span class="tag tp">WIN</span>'
+          : s.outcome === 'loss' ? '<span class="tag sl">LOSS</span>'
+          : s.status === 'open' ? '<span class="tag open">Open</span>'
+          : '<span class="tag skip">Flat</span>';
+        const qty  = s.qty || 0;
+        const alloc = s.allocated_usd || 0;
+        const sizeStr = qty > 0 ? `${qty} sh<br><span style="font-size:0.78em;color:var(--muted)">$${fmt(alloc,0)}</span>` : '—';
+        const rangeStr = (s.range_low && s.range_high)
+          ? `$${fmt(s.range_low)}–$${fmt(s.range_high)}`
+          : '—';
+        const dirColor = s.direction === 'long' ? 'var(--green)' : 'var(--red)';
+        return `
+          <tr>
+            <td style="color:var(--muted); font-size:0.82em">${s.generated_date || '—'}</td>
+            <td><b>${s.ticker}</b></td>
+            <td style="color:${dirColor}; font-weight:600; font-size:0.82em">${(s.direction || 'long').toUpperCase()}</td>
+            <td>${sizeStr}</td>
+            <td>$${fmt(s.entry_price)}</td>
+            <td style="font-size:0.82em; color:var(--muted)">${rangeStr}</td>
             <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(+${fmt(s.target_pct)}%)</span></td>
             <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(-${fmt(s.stop_pct)}%)</span></td>
             <td>${s.exit_price !== null && s.exit_price !== undefined ? '$' + fmt(s.exit_price) : '<span style="color:var(--muted)">—</span>'}</td>

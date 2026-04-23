@@ -170,6 +170,69 @@ def _yahoo_direct_ohlcv(ticker: str, start: str, end: str) -> List[Dict]:
         return []
 
 
+def _yahoo_intraday_ohlcv(ticker: str, date: str, interval: str = "5m") -> List[Dict]:
+    """
+    Fetch intraday bars from Yahoo Finance chart API for a given date.
+    period1/period2 are set to the regular session window (9:30–16:05 ET).
+    Yahoo's includePrePost=false further restricts bars to regular hours.
+    Returns list of dicts: {timestamp_et, open, high, low, close, volume}
+    Returns [] on any failure (caller must handle gracefully).
+    """
+    try:
+        import urllib.parse
+        from datetime import timezone
+
+        # Build UTC timestamps for the regular session window.
+        # ET is UTC-4 (EDT, April–Nov) or UTC-5 (EST, Nov–Mar).
+        # Approximate with UTC-4 for the full year — misses 1 bar at most in winter.
+        day = datetime.strptime(date, "%Y-%m-%d")
+        et_offset = 4 * 3600  # EDT = UTC-4 (close enough for bar filtering)
+        # 9:25 AM ET = 13:25 UTC (EDT)
+        period1 = int(day.replace(tzinfo=timezone.utc).timestamp()) + 13 * 3600 + 25 * 60
+        # 4:05 PM ET = 20:05 UTC (EDT)
+        period2 = int(day.replace(tzinfo=timezone.utc).timestamp()) + 20 * 3600 + 5 * 60
+
+        encoded = urllib.parse.quote(ticker)
+        url = (
+            f"https://query2.finance.yahoo.com/v8/finance/chart/{encoded}"
+            f"?interval={interval}&period1={period1}&period2={period2}"
+            f"&includePrePost=false"
+        )
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+
+        result_data = data["chart"]["result"][0]
+        timestamps  = result_data.get("timestamp", [])
+        quotes      = result_data["indicators"]["quote"][0]
+
+        bars = []
+        for i, ts in enumerate(timestamps):
+            o = quotes["open"][i]
+            h = quotes["high"][i]
+            l = quotes["low"][i]
+            c = quotes["close"][i]
+            v = quotes.get("volume", [None] * len(timestamps))[i]
+            if None in (o, h, l, c):
+                continue
+            # Approximate ET time for the timestamp label (UTC-4 / EDT)
+            dt_et = datetime.utcfromtimestamp(ts - et_offset)
+            bars.append({
+                "timestamp_et": dt_et.strftime("%Y-%m-%d %H:%M"),
+                "open":   round(float(o), 4),
+                "high":   round(float(h), 4),
+                "low":    round(float(l), 4),
+                "close":  round(float(c), 4),
+                "volume": int(v) if v is not None else 0,
+            })
+        return bars
+    except Exception:
+        return []
+
+
 # ---------------------------------------------------------------------------
 # yfinance fallback
 # ---------------------------------------------------------------------------

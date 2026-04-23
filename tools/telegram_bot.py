@@ -61,21 +61,30 @@ def send_group_trade_signal(signal: dict) -> dict:
     if not _GROUP_ID:
         return {}
 
-    # Day trade signal card
-    if signal.get("signal_type") in ("gap_and_go", "momentum_breakout"):
-        label = "Gap & Go" if signal["signal_type"] == "gap_and_go" else "Momentum Breakout"
+    # Day trade / scalping signal card
+    _DT_LABELS = {
+        "gap_and_go":        "Gap & Go",
+        "momentum_breakout": "Momentum Breakout",
+        "scalping_orb":      "ORB Scalp",
+    }
+    if signal.get("signal_type") in _DT_LABELS:
+        label = _DT_LABELS[signal["signal_type"]]
         qty   = signal.get("qty", 0)
         alloc = signal.get("allocated_usd", 0)
-        size_line = (f"Size:   <b>{qty} shares (${alloc:,.0f})</b> from $5K day trade pool\n"
+        pool  = "$5K scalping pool" if signal["signal_type"] == "scalping_orb" else "$5K day trade pool"
+        size_line = (f"Size:   <b>{qty} shares (${alloc:,.0f})</b> from {pool}\n"
                      if qty > 0 else "Size:   calculating...\n")
+        closes = "12:00 PM ET" if signal["signal_type"] == "scalping_orb" else signal.get("auto_close_date", "EOD")
         text = (
             f"📡 <b>{label} — {signal['ticker']}</b>\n\n"
             f"Entry:  <b>${signal['entry_price']:.2f}</b>\n"
-            f"Target: ${signal['target_price']:.2f} (+{signal['target_pct']:.1f}%)\n"
-            f"Stop:   ${signal['stop_price']:.2f} (-{signal['stop_pct']:.1f}%)\n"
+            f"Target: ${signal['target_price']:.2f} (+{signal['target_pct']:.2f}%)\n"
+            f"Stop:   ${signal['stop_price']:.2f} (-{signal['stop_pct']:.2f}%)\n"
             f"{size_line}"
-            f"Closes: {signal.get('auto_close_date', 'EOD')}\n"
+            f"Closes: {closes}\n"
         )
+        if signal["signal_type"] == "scalping_orb" and signal.get("range_high") and signal.get("range_low"):
+            text += f"Range:  ${signal['range_low']:.2f} – ${signal['range_high']:.2f} (30-min ORB)\n"
         if signal.get("rationale"):
             text += f"\n<i>{signal['rationale']}</i>"
     else:
