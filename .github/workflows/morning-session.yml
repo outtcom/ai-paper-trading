@@ -2,7 +2,7 @@ name: Morning Session
 
 on:
   schedule:
-    - cron: '30 11 * * 1-5'  # 7:30 AM ET (EDT = UTC-4), Mon-Fri
+    - cron: '30 10 * * 1-5'  # triggers 6:30 AM EDT; ~60 min GHA queue → arrives ~7:30 AM ET
   workflow_dispatch:           # allow manual trigger
 
 permissions:

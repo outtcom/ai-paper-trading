@@ -2,7 +2,7 @@ name: End-of-Day Session
 
 on:
   schedule:
-    - cron: '15 20 * * 1-5'  # 4:15 PM ET (EDT = UTC-4), Mon-Fri
+    - cron: '45 19 * * 1-5'  # triggers 3:45 PM EDT; ~60 min GHA queue → arrives ~4:45 PM ET (post-close)
   workflow_dispatch:           # allow manual trigger
 
 permissions:

@@ -2,7 +2,7 @@ name: Midday Position Monitor
 
 on:
   schedule:
-    - cron: '0 16 * * 1-5'   # 12:00 PM ET (EDT = UTC-4), Mon-Fri
+    - cron: '0 15 * * 1-5'   # triggers 11:00 AM EDT; ~60 min GHA queue → arrives ~12:00 PM ET
   workflow_dispatch:           # allow manual trigger
 
 permissions:

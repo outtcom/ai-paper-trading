@@ -2,7 +2,7 @@ name: Pre-Close Alert
 
 on:
   schedule:
-    - cron: '30 19 * * 1-5'  # 3:30 PM ET (EDT = UTC-4), Mon-Fri
+    - cron: '30 18 * * 1-5'  # triggers 2:30 PM EDT; ~60 min GHA queue → arrives ~3:30 PM ET
   workflow_dispatch:           # allow manual trigger
 
 permissions:
