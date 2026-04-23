@@ -57,21 +57,18 @@ def _detect_gap_and_go_signals(gaps: dict, today: str) -> list:
         except Exception:
             avg_vol = 0
 
-        # Finnhub current volume (field 'v' in quote).
-        # At 7 AM pre-market the regular-session accumulator is 0 — use prev-day volume
-        # as a proxy when intraday vol hasn't started yet.
+        # Finnhub 'v' field is the intraday session accumulator — it is 0 before 9:30 AM ET.
+        # When v=0 we are in pre-market: skip the volume ratio gate entirely and flag it.
         try:
             quote = _finnhub_get(f"/quote?symbol={ticker}")
             current_vol = quote.get("v", 0) or 0
-            # If intraday vol is 0 (pre-market), fall back to previous close volume
-            if current_vol == 0 and avg_vol > 0:
-                current_vol = avg_vol  # treat as "normal" volume; skip the ratio gate
         except Exception:
             current_vol = 0
 
-        vol_ratio = (current_vol / avg_vol) if avg_vol > 0 else 1.0
+        premarket_vol = (current_vol == 0)  # True before regular session opens
+        vol_ratio = (current_vol / avg_vol) if (avg_vol > 0 and current_vol > 0) else None
 
-        if vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN and avg_vol > 0 and current_vol > 0:
+        if not premarket_vol and vol_ratio is not None and vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN:
             print(f"[premarket] {ticker} gap {gap_pct:+.1f}% — volume ratio {vol_ratio:.2f}x < {DAY_TRADE_VOLUME_RATIO_MIN}x, skipping signal")
             continue
 
@@ -84,7 +81,7 @@ def _detect_gap_and_go_signals(gaps: dict, today: str) -> list:
             target = round(entry_price * (1 + GAP_AND_GO_TARGET_PCT / 100), 2)
             stop   = round(entry_price * (1 - GAP_AND_GO_STOP_PCT   / 100), 2)
 
-        vol_label = f"{vol_ratio:.1f}x" if current_vol > 0 else "pre-mkt"
+        vol_label = "pre-mkt" if premarket_vol else f"{vol_ratio:.1f}x"
         signal = {
             "id":               f"DTS-{today}-{ticker}-gap",
             "ticker":           ticker,
