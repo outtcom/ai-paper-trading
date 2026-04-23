@@ -1,0 +1,70 @@
+name: QA Analyst
+
+on:
+  workflow_run:
+    workflows:
+      - "Pre-Market Gap Scanner"
+      - "Morning Session"
+      - "ORB Scalping Scan"
+      - "Midday Position Monitor"
+      - "Pre-Close Alert"
+      - "End-of-Day Session"
+      - "Weekly Intelligence Briefing"
+    types:
+      - completed
+
+permissions:
+  contents: write   # push auto-fixes
+  actions: write    # read logs + retrigger via dispatch
+
+jobs:
+  qa-check:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'failure'
+
+    env:
+      FAILED_RUN_ID:        ${{ github.event.workflow_run.id }}
+      FAILED_WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          TELEGRAM_GROUP_CHAT_ID=${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
+          EOF
+
+      - name: Run QA Analyst
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python qa_analyst.py
+
+      - name: Notify if QA itself fails
+        if: failure()
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL:   ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TEXT=$'🚨 <b>QA Analyst itself FAILED</b>\nFailed workflow: '"$FAILED_WORKFLOW_NAME"$'\n\nLogs:\n'"${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true

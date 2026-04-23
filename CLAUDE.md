@@ -83,6 +83,7 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
 | End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
 | Weekly Intelligence Briefing | Sunday 6:00 PM | `weekly_briefing.py` |
+| QA Analyst | After any workflow failure | `qa_analyst.py` |
 
 - Secrets (`ANTHROPIC_API_KEY`, `FINNHUB_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) are stored in GitHub repo secrets — never in code.
 - Each workflow commits updated `docs/portfolio.json` back to the repo after running.
@@ -137,6 +138,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
 | Pre-market gap signals blocked by volume ratio 1.0x < 1.5x | Finnhub `v=0` before 9:30 AM (intraday accumulator not started). Setting `current_vol=avg_vol` gives ratio=1.0 which still fails. Fix: use `premarket_vol` flag and **skip the ratio check entirely** before open. |
 | `_yahoo_intraday_ohlcv()` fails locally on Windows | `ZoneInfo("America/New_York")` needs `tzdata` package on Windows. Fix: use plain UTC offset (`datetime.utcfromtimestamp(ts - 4*3600)`) — no tzdata needed, works on GitHub Actions Linux too. |
+| All workflows arrive ~1 hour late | GitHub Actions free-tier runner queue congestion during US market hours. Fix: crons shifted 60 min earlier so trigger + queue delay = correct arrival time. |
 
 ## API Credit Notes
 
