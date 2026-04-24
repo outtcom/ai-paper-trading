@@ -1,27 +1,27 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 9,
+    "current_day": 10,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-04-24T15:56:02.527529+00:00"
+    "last_updated": "2026-04-24T20:31:00.572173+00:00"
   },
   "cash": 4678.69,
   "initial_capital": 5000.0,
-  "equity": 5017.58,
-  "peak_equity": 5020.37,
+  "equity": 5023.09,
+  "peak_equity": 5023.09,
   "circuit_breaker": {
     "triggered": false,
     "reason": null,
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 1.99,
-    "sortino": 2.74,
-    "calmar": 30.39,
+    "sharpe": 3.42,
+    "sortino": 4.94,
+    "calmar": 37.79,
     "spy_start_price": 686.1,
-    "spy_current_price": 708.45,
-    "benchmark_return_pct": 3.26,
+    "spy_current_price": 713.94,
+    "benchmark_return_pct": 4.06,
     "max_drawdown_pct": 0.19
   },
   "positions": {
@@ -29,13 +29,13 @@
       "qty": 1,
       "entry_price": 321.31,
       "cost_basis": 321.31,
-      "last_price": 343.19,
-      "stop_loss": 314.35,
+      "last_price": 344.4,
+      "stop_loss": 316.85,
       "take_profit": 372.72,
       "partial_profit_price": 347.01,
       "stop_loss_pct": 8.0,
       "take_profit_pct": 16.0,
-      "highest_price": 341.68,
+      "highest_price": 344.4,
       "partial_taken": false,
       "opened_date": "2026-04-14",
       "journal_note": "GOOGL's strong fundamentals (35% ROE, discounted P/E, near-zero debt) and bullish MACD crossover support entry, but the 17.5% run in 10 sessions with declining volume and DOJ antitrust overhang justify the risk team's reduction to 4%. At ~$321/share, a 4% allocation of the $10,000 portfolio yields ~$400, which rounds to 1 share. The 8% stop-loss at ~$295 accommodates elevated ATR while protecting against trend reversal; ideally entry would be on a pullback toward $315 but placing the order now w"
@@ -123,6 +123,11 @@
       "day": 9,
       "date": "2026-04-24",
       "equity": 5017.58
+    },
+    {
+      "day": 9,
+      "date": "2026-04-24",
+      "equity": 5023.09
     }
   ],
   "journal": [
@@ -243,15 +248,16 @@
       "target_pct": 1.5,
       "stop_price": 419.08,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 424.62,
+      "exit_date": "2026-04-24",
+      "pnl_pct": 2.13,
+      "outcome": "win",
       "auto_close_date": "2026-04-24",
       "rationale": "Pre-market gap -4.0% (SHORT, vol pre-mkt)",
       "qty": 5,
-      "allocated_usd": 2078.75
+      "allocated_usd": 2078.75,
+      "pnl_usd": 44.35
     },
     {
       "id": "DTS-2026-04-24-META-gap",
@@ -264,15 +270,16 @@
       "target_pct": 1.5,
       "stop_price": 664.42,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 675.03,
+      "exit_date": "2026-04-24",
+      "pnl_pct": 2.41,
+      "outcome": "win",
       "auto_close_date": "2026-04-24",
       "rationale": "Pre-market gap -2.3% (SHORT, vol pre-mkt)",
       "qty": 2,
-      "allocated_usd": 1318.3
+      "allocated_usd": 1318.3,
+      "pnl_usd": 31.76
     },
     {
       "id": "DTS-2026-04-24-CAT-gap",
@@ -285,15 +292,16 @@
       "target_pct": 1.5,
       "stop_price": 828.56,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 830.79,
+      "exit_date": "2026-04-24",
+      "pnl_pct": -0.53,
+      "outcome": "loss",
       "auto_close_date": "2026-04-24",
       "rationale": "Pre-market gap +3.3% (LONG, vol pre-mkt)",
       "qty": 1,
-      "allocated_usd": 835.24
+      "allocated_usd": 835.24,
+      "pnl_usd": -4.45
     },
     {
       "id": "DTS-2026-04-24-FCX-gap",
@@ -306,21 +314,22 @@
       "target_pct": 1.5,
       "stop_price": 61.97,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 61.05,
+      "exit_date": "2026-04-24",
+      "pnl_pct": -0.7,
+      "outcome": "loss",
       "auto_close_date": "2026-04-24",
       "rationale": "Pre-market gap -12.6% (SHORT, vol pre-mkt)",
       "qty": 5,
-      "allocated_usd": 307.4
+      "allocated_usd": 307.4,
+      "pnl_usd": -2.15
     }
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": 427.17,
-    "equity": 4966.86
+    "cash": 5036.37,
+    "equity": 5036.37
   },
   "scalping_capital": {
     "initial": 5000.0,
