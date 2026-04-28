@@ -4,9 +4,9 @@
     "current_day": 11,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-04-28T11:51:29.117912+00:00"
+    "last_updated": "2026-04-28T12:41:00.764559+00:00"
   },
-  "cash": 5029.03,
+  "cash": 3945.98,
   "initial_capital": 5000.0,
   "equity": 5029.03,
   "peak_equity": 5029.03,
@@ -16,16 +16,46 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 4.55,
-    "sortino": 6.65,
-    "calmar": 42.67,
+    "sharpe": 4.43,
+    "sortino": 6.3,
+    "calmar": 40.46,
     "spy_start_price": 686.1,
     "spy_current_price": 715.17,
     "benchmark_return_pct": 4.24,
     "max_drawdown_pct": 0.19
   },
-  "positions": {},
-  "open_orders": [],
+  "positions": {
+    "NVDA": {
+      "direction": "long",
+      "qty": 5,
+      "entry_price": 216.61,
+      "cost_basis": 1083.05,
+      "last_price": 216.61,
+      "stop_loss": -866.44,
+      "take_profit": 2382.71,
+      "partial_profit_price": 1299.66,
+      "stop_loss_pct": 500.0,
+      "take_profit_pct": 1000.0,
+      "highest_price": 216.61,
+      "lowest_price": 216.61,
+      "partial_taken": false,
+      "opened_date": "2026-04-28",
+      "journal_note": "The strategy brief explicitly calls for HIGH capital deployment priority with zero current deployment, targeting Technology as a leading momentum sector. NVDA is the flagship AI/tech momentum name and fits the thesis perfectly. While all three quantitative streams failed due to model errors, the absence of data is not a bearish signal \u2014 it's an infrastructure issue. Sizing at ~40% rather than a full position reflects the NEUTRAL market posture and VIX at 19.3, with a 5% stop-loss to manage downs"
+    }
+  },
+  "open_orders": [
+    {
+      "ticker": "NVDA",
+      "qty": 5,
+      "side": "BUY",
+      "price": 216.61,
+      "order_type": "market",
+      "status": "executed",
+      "day": 11,
+      "submitted_at": "2026-04-28T12:19:35.457849+00:00",
+      "resolved_at": "2026-04-28T12:40:59.811998+00:00"
+    }
+  ],
   "trade_history": [
     {
       "ticker": "GOOGL",
@@ -138,6 +168,11 @@
       "day": 10,
       "date": "2026-04-27",
       "equity": 5029.03
+    },
+    {
+      "day": 11,
+      "date": "2026-04-28",
+      "equity": 5029.03
     }
   ],
   "journal": [
@@ -156,6 +191,35 @@
       "bull_case": "# GOOGL Bull Rebuttal \u2014 April 14, 2026\n\n## The Bear Case Mistakes Narrative for Fundamentals\n\nThe bear argument is eloquent but relies on th",
       "bear_case": "# GOOGL Bear Rebuttal \u2014 April 14, 2026\n\n## Confidence Isn't a Substitute for Evidence\n\nThe bull rebuttal is well-constructed, but it commits",
       "timestamp": "2026-04-14T05:39:08.786474+00:00"
+    },
+    {
+      "date": "2026-04-28",
+      "day": 11,
+      "ticker": "NVDA",
+      "action": "BUY",
+      "analysis_price": 216.61,
+      "entry_price": 216.61,
+      "price_delta_pct": 0.0,
+      "qty": 5,
+      "conviction": "low",
+      "score": 1.65,
+      "sector": "Technology",
+      "sector_rank": 1,
+      "stop_loss": -866.44,
+      "take_profit": 2382.71,
+      "vix_label": "MODERATE (19.3) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "The strategy brief explicitly calls for HIGH capital deployment priority with zero current deployment, targeting Technology as a leading momentum sector. NVDA is the flagship AI/tech momentum name and fits the thesis perfectly. While all three quantitative streams failed due to model errors, the absence of data is not a bearish signal \u2014 it's an infrastructure issue. Sizing at ~40% rather than a full position reflects the NEUTRAL market posture and VIX at 19.3, with a 5% stop-loss to manage downside risk on a conviction that is moderate but strategically necessary to close the pacing gap.",
+      "bull_case": "NVIDIA Corporation (NVDA) presents an outstanding investment opportunity based on its strong position in the high-growth sectors of AI, gami",
+      "bear_case": "While NVIDIA Corporation (NVDA) has garnered significant investor enthusiasm, the case against buying or holding the stock is compelling and",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "low",
+        "risk_approved": null
+      },
+      "timestamp": "2026-04-28T12:40:59.814073+00:00"
     }
   ],
   "day_trade_signals": [
@@ -454,5 +518,211 @@
     "initial": 5000.0,
     "cash": 5000.0,
     "equity": 5000.0
+  },
+  "spy_equity_curve": [],
+  "dt_equity_curve": [],
+  "scalping_equity_curve": [],
+  "benchmark_indices": {
+    "QQQ": {
+      "start_price": null,
+      "current_price": null,
+      "return_pct": null
+    },
+    "IWM": {
+      "start_price": null,
+      "current_price": null,
+      "return_pct": null
+    },
+    "GLD": {
+      "start_price": null,
+      "current_price": null,
+      "return_pct": null
+    }
+  },
+  "sector_strength": {
+    "sectors": {
+      "Technology": {
+        "etf": "XLK",
+        "price": 160.57,
+        "mom_5d": 3.89,
+        "mom_1m": 21.18,
+        "mom_3m": 8.46,
+        "above_ma50": true,
+        "rsi_14": 91.9,
+        "score": 14.45,
+        "sector": "Technology"
+      },
+      "Communication Services": {
+        "etf": "XLC",
+        "price": 115.81,
+        "mom_5d": -2.48,
+        "mom_1m": 6.43,
+        "mom_3m": -0.93,
+        "above_ma50": true,
+        "rsi_14": 65.1,
+        "score": 3.29,
+        "sector": "Communication Services"
+      },
+      "Consumer Discretionary": {
+        "etf": "XLY",
+        "price": 117.84,
+        "mom_5d": -1.69,
+        "mom_1m": 8.28,
+        "mom_3m": -3.95,
+        "above_ma50": true,
+        "rsi_14": 77.6,
+        "score": 3.84,
+        "sector": "Consumer Discretionary"
+      },
+      "Healthcare": {
+        "etf": "XLV",
+        "price": 143.46,
+        "mom_5d": -2.69,
+        "mom_1m": -1.56,
+        "mom_3m": -7.71,
+        "above_ma50": false,
+        "rsi_14": 41.2,
+        "score": -3.13,
+        "sector": "Healthcare"
+      },
+      "Financials": {
+        "etf": "XLF",
+        "price": 51.81,
+        "mom_5d": -1.56,
+        "mom_1m": 5.63,
+        "mom_3m": -2.25,
+        "above_ma50": true,
+        "rsi_14": 66.8,
+        "score": 2.9,
+        "sector": "Financials"
+      },
+      "Energy": {
+        "etf": "XLE",
+        "price": 56.77,
+        "mom_5d": 3.09,
+        "mom_1m": -7.72,
+        "mom_3m": 14.29,
+        "above_ma50": false,
+        "rsi_14": 31.8,
+        "score": -0.07,
+        "sector": "Energy"
+      },
+      "Industrials": {
+        "etf": "XLI",
+        "price": 172.51,
+        "mom_5d": -0.8,
+        "mom_1m": 6.97,
+        "mom_3m": 4.51,
+        "above_ma50": true,
+        "rsi_14": 66.8,
+        "score": 5.15,
+        "sector": "Industrials"
+      },
+      "Consumer Staples": {
+        "etf": "XLP",
+        "price": 82.34,
+        "mom_5d": -0.06,
+        "mom_1m": 1.48,
+        "mom_3m": -0.99,
+        "above_ma50": false,
+        "rsi_14": 55.8,
+        "score": 0.52,
+        "sector": "Consumer Staples"
+      },
+      "Materials": {
+        "etf": "XLB",
+        "price": 51.78,
+        "mom_5d": -0.86,
+        "mom_1m": 5.48,
+        "mom_3m": 3.6,
+        "above_ma50": true,
+        "rsi_14": 68.0,
+        "score": 4.2,
+        "sector": "Materials"
+      },
+      "Utilities": {
+        "etf": "XLU",
+        "price": 46.19,
+        "mom_5d": 0.96,
+        "mom_1m": 1.9,
+        "mom_3m": 6.36,
+        "above_ma50": false,
+        "rsi_14": 49.2,
+        "score": 2.51,
+        "sector": "Utilities"
+      },
+      "Real Estate": {
+        "etf": "XLRE",
+        "price": 43.49,
+        "mom_5d": -2.58,
+        "mom_1m": 7.94,
+        "mom_3m": 5.43,
+        "above_ma50": true,
+        "rsi_14": 67.3,
+        "score": 5.28,
+        "sector": "Real Estate"
+      }
+    },
+    "ranking": [
+      "Technology",
+      "Real Estate",
+      "Industrials",
+      "Materials",
+      "Consumer Discretionary",
+      "Communication Services",
+      "Financials",
+      "Utilities",
+      "Consumer Staples",
+      "Energy",
+      "Healthcare"
+    ],
+    "top_3": [
+      "Technology",
+      "Real Estate",
+      "Industrials"
+    ],
+    "bottom_3": [
+      "Consumer Staples",
+      "Energy",
+      "Healthcare"
+    ],
+    "as_of": "2026-04-28"
+  },
+  "strategy_brief": {
+    "market_posture": "neutral",
+    "risk_budget_multiplier": 0.85,
+    "focus_sectors": [
+      "Technology",
+      "Real Estate",
+      "Industrials"
+    ],
+    "avoid_sectors": [
+      "Consumer Staples",
+      "Energy",
+      "Healthcare"
+    ],
+    "target_new_positions": 2,
+    "conviction_floor": "medium",
+    "primary_thesis": "SPY trend remains bullish and credit conditions are healthy, but VIX at 19.3 warrants a modest haircut to full risk-on sizing; with zero deployment at the session midpoint, initiating 2 positions in leading momentum sectors is the priority to close the pacing gap. VIX RoC trending negative suggests conditions may improve, allowing for re-rating toward risk-on if volatility continues to compress.",
+    "capital_deployment_priority": "high",
+    "day_trade_go": true
+  },
+  "index_etf_signals": {
+    "SPY": {
+      "action": "hold",
+      "confidence": 0.5
+    },
+    "QQQ": {
+      "action": "hold",
+      "confidence": 0.5
+    },
+    "IWM": {
+      "action": "hold",
+      "confidence": 0.5
+    },
+    "GLD": {
+      "action": "hold",
+      "confidence": 0.5
+    }
   }
 }
