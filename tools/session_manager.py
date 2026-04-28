@@ -75,6 +75,17 @@ def _default_portfolio() -> dict:
             "cash":     5000.0,
             "equity":   5000.0,
         },
+        "spy_equity_curve":      [],   # [{day, date, equity}] SPY normalized to $5000 start
+        "dt_equity_curve":       [],   # [{day, date, equity}] day trade pool daily snapshots
+        "scalping_equity_curve": [],   # [{day, date, equity}] scalping pool daily snapshots
+        "benchmark_indices": {
+            "QQQ": {"start_price": None, "current_price": None, "return_pct": None},
+            "IWM": {"start_price": None, "current_price": None, "return_pct": None},
+            "GLD": {"start_price": None, "current_price": None, "return_pct": None},
+        },
+        "sector_strength":   {},   # latest sector heatmap from morning session
+        "strategy_brief":    {},   # latest strategy consultant output
+        "index_etf_signals": {},   # latest pipeline signals for SPY/QQQ/IWM/GLD
     }
 
 
@@ -103,6 +114,17 @@ def _migrate(p: dict) -> dict:
     p.setdefault("day_trade_signals", [])
     p.setdefault("day_trade_capital", {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
     p.setdefault("scalping_capital",  {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
+    p.setdefault("spy_equity_curve", [])
+    p.setdefault("dt_equity_curve", [])
+    p.setdefault("scalping_equity_curve", [])
+    p.setdefault("benchmark_indices", {
+        "QQQ": {"start_price": None, "current_price": None, "return_pct": None},
+        "IWM": {"start_price": None, "current_price": None, "return_pct": None},
+        "GLD": {"start_price": None, "current_price": None, "return_pct": None},
+    })
+    p.setdefault("sector_strength", {})
+    p.setdefault("strategy_brief", {})
+    p.setdefault("index_etf_signals", {})
     return p
 
 
@@ -822,3 +844,91 @@ def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> 
             return s
     print(f"[session] close_scalping_signal: {signal_id} not found or already closed")
     return {}
+
+
+# ---------------------------------------------------------------------------
+# Equity curve & benchmark tracking
+# ---------------------------------------------------------------------------
+
+def record_spy_equity(spy_price: float) -> None:
+    """Normalize SPY price to $5000 start and append to spy_equity_curve."""
+    p = _migrate(_load())
+    start = p["stats"].get("spy_start_price")
+    if not start or start <= 0:
+        return
+    normalized = round(5000.0 * (spy_price / start), 2)
+    p["spy_equity_curve"].append({
+        "day":    p["session"].get("current_day", 0),
+        "date":   datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "equity": normalized,
+    })
+    _save(p)
+
+
+def record_dt_equity() -> None:
+    """Snapshot current day_trade_capital.equity into dt_equity_curve."""
+    p = _migrate(_load())
+    dt_equity = p.get("day_trade_capital", {}).get("equity", 5000.0)
+    p["dt_equity_curve"].append({
+        "day":    p["session"].get("current_day", 0),
+        "date":   datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "equity": round(dt_equity, 2),
+    })
+    _save(p)
+
+
+def record_scalping_equity() -> None:
+    """Snapshot current scalping_capital.equity into scalping_equity_curve."""
+    p = _migrate(_load())
+    sc_equity = p.get("scalping_capital", {}).get("equity", 5000.0)
+    p["scalping_equity_curve"].append({
+        "day":    p["session"].get("current_day", 0),
+        "date":   datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "equity": round(sc_equity, 2),
+    })
+    _save(p)
+
+
+def update_benchmark_indices(prices: dict) -> None:
+    """
+    Update QQQ/IWM/GLD benchmark tracking.
+    Sets start_price on first call (when start_price is None); updates current_price + return_pct every call.
+    prices: {"QQQ": 450.0, "IWM": 200.0, "GLD": 230.0}
+    """
+    p = _migrate(_load())
+    bi = p["benchmark_indices"]
+    for ticker, price in prices.items():
+        if ticker not in bi:
+            bi[ticker] = {"start_price": None, "current_price": None, "return_pct": None}
+        entry = bi[ticker]
+        if entry["start_price"] is None:
+            entry["start_price"] = round(price, 2)
+        entry["current_price"] = round(price, 2)
+        if entry["start_price"] and entry["start_price"] > 0:
+            entry["return_pct"] = round((price - entry["start_price"]) / entry["start_price"] * 100, 2)
+    p["benchmark_indices"] = bi
+    _save(p)
+
+
+def update_sector_strength(sector_data: dict) -> None:
+    """Save latest sector heatmap to portfolio.json."""
+    p = _migrate(_load())
+    p["sector_strength"] = sector_data
+    _save(p)
+
+
+def update_strategy_brief(brief: dict) -> None:
+    """Save latest strategy consultant brief to portfolio.json."""
+    p = _migrate(_load())
+    p["strategy_brief"] = brief
+    _save(p)
+
+
+def update_index_etf_signals(signals: dict) -> None:
+    """
+    Save latest ETF pipeline results.
+    signals format: {"SPY": {"action": "hold", "confidence": 0.6}, "QQQ": {"action": "buy", "confidence": 0.8}, ...}
+    """
+    p = _migrate(_load())
+    p["index_etf_signals"] = signals
+    _save(p)

@@ -32,7 +32,8 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import (
-    WATCHLIST, APPROVAL_TIMEOUT_SECONDS,
+    WATCHLIST, STOCKS, CRYPTO, INDEX_ETFS, ETF_OVERLAP_THRESHOLD,
+    APPROVAL_TIMEOUT_SECONDS,
     MAX_CONCURRENT_POSITIONS, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
     BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
     TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD,
@@ -41,6 +42,7 @@ from config import (
     DAY_TRADE_VOLUME_RATIO_MIN, MOMENTUM_NEAR_HIGH_PCT,
     MOMENTUM_TARGET_PCT, MOMENTUM_STOP_PCT,
 )
+from agents import strategy_consultant
 from orchestrator import run_pipeline
 from tools.market_data import get_latest_price, get_ohlcv, _yahoo_direct_ohlcv
 from tools.market_regime import (
@@ -61,7 +63,12 @@ from tools.session_manager import (
     set_spy_start_price,
     start_session,
     update_open_order,
+    update_strategy_brief,
+    update_sector_strength,
+    update_benchmark_indices,
+    update_index_etf_signals,
 )
+from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
     poll_for_response, send_approval_request, send_message,
     broadcast_message, send_group_trade_signal,
@@ -162,14 +169,14 @@ def _portfolio_beta(portfolio: dict, candidate_ticker: str, candidate_usd: float
 # Pipeline helpers
 # ---------------------------------------------------------------------------
 
-def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = None) -> dict:
+def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = None, strategy_brief: dict = None, watchlist: list = None) -> dict:
     """
     Run dry-run pipeline for every watchlist ticker.
     Pre-filters definitionally ineligible tickers before any LLM calls:
       - earnings-blocked tickers
       - tickers in the same sector as an already-open position
       - tickers that fail the volume confirmation check
-    Passes real session portfolio so fund_manager prices against actual cash.
+    Passes real session portfolio and strategy brief to fund_manager.
     Returns {ticker: state}.
     """
     if earnings_blocked is None:
@@ -182,7 +189,7 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
         "positions": list(session_portfolio.get("positions", {}).keys()),
     }
     results = {}
-    for ticker in WATCHLIST:
+    for ticker in (watchlist or WATCHLIST):
         # ── Pre-filter: skip definitionally ineligible tickers ────────────
         if ticker in earnings_blocked:
             print(f"[morning] {ticker} skipped (earnings block)")
@@ -200,7 +207,7 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
 
         try:
             print(f"[morning] Analyzing {ticker}...")
-            state = run_pipeline(ticker, date, dry_run=True, portfolio=fm_portfolio)
+            state = run_pipeline(ticker, date, dry_run=True, portfolio=fm_portfolio, strategy_brief=strategy_brief)
             results[ticker] = state
         except Exception as e:
             print(f"[morning] Pipeline error for {ticker}: {e}")
@@ -442,6 +449,14 @@ def main():
             set_spy_start_price(get_latest_price("SPY"))
         except Exception as e:
             print(f"[morning] SPY anchor error: {e}")
+        try:
+            update_benchmark_indices({
+                "QQQ": get_latest_price("QQQ"),
+                "IWM": get_latest_price("IWM"),
+                "GLD": get_latest_price("GLD"),
+            })
+        except Exception as e:
+            print(f"[morning] QQQ/IWM/GLD anchor error: {e}")
 
     # ── Circuit breaker ────────────────────────────────────────────────────
     halt, halt_reason = check_circuit_breaker(equity)
@@ -531,7 +546,8 @@ def main():
 
     # ── Earnings check ────────────────────────────────────────────────────
     earnings_blocked = set()
-    for t in WATCHLIST:
+    daily_watchlist  = list(WATCHLIST)   # default; overwritten after universe scan below
+    for t in daily_watchlist:
         e = has_earnings_soon(t, days=5)
         if e["has_earnings"]:
             earnings_blocked.add(t)
@@ -553,22 +569,86 @@ def main():
         print(f"[morning] Sector strength error: {e}")
         sector_strength = {"ranking": [], "top_3": [], "bottom_3": [], "sectors": {}}
 
+    # ── S&P 500 universe scan — dynamic top movers ────────────────────────
+    print("[morning] Scanning S&P 500 universe for top movers...")
+    try:
+        universe_picks = get_top_movers_by_sector(n_per_sector=2)
+        dynamic_stocks = list(dict.fromkeys(t for tickers in universe_picks.values() for t in tickers))
+        universe_note = format_universe_summary(universe_picks)
+    except Exception as e:
+        print(f"[morning] Universe scan failed: {e} — falling back to static WATCHLIST")
+        dynamic_stocks = list(STOCKS)
+        universe_note = ""
+    daily_watchlist = dynamic_stocks + INDEX_ETFS + CRYPTO
+    print(f"[morning] Daily watchlist: {len(daily_watchlist)} tickers ({len(dynamic_stocks)} stocks + {len(INDEX_ETFS)} ETFs + {len(CRYPTO)} crypto)")
+
     # ── Momentum breakout scan (paper day trade signals) ──────────────────
-    _scan_momentum_breakouts(WATCHLIST, today, sector_strength)
+    _scan_momentum_breakouts(daily_watchlist, today, sector_strength)
+
+    # ── Strategy Consultant: daily macro brief ────────────────────────────
+    print("[morning] Running Strategy Consultant...")
+    vix_data_for_brief = {
+        "label":     vix_label,
+        "roc_label": vix_roc_label,
+        "spy_trend": spy_trend.get("trend", "unknown"),
+    }
+    hyg_data_for_brief = {"label": hyg_label}
+    strategy_brief = strategy_consultant.run(
+        portfolio       = portfolio,
+        date            = today,
+        vix_data        = vix_data_for_brief,
+        sector_strength = sector_strength,
+        hyg_data        = hyg_data_for_brief,
+    )
+
+    # Apply strategy multiplier on top of existing VIX/regime multipliers
+    strat_mult = float(strategy_brief.get("risk_budget_multiplier", 1.0))
+    if strat_mult != 1.0:
+        vix_multiplier = round(vix_multiplier * strat_mult, 2)
+        print(f"[morning] Strategy multiplier {strat_mult:.2f}× → vix_multiplier now {vix_multiplier:.2f}×")
+
+    # Persist brief and sector data to portfolio.json for dashboard
+    try:
+        update_strategy_brief(strategy_brief)
+        update_sector_strength(sector_strength)
+    except Exception as e:
+        print(f"[morning] Could not persist strategy brief/sectors: {e}")
 
     # ── Notify user: analysis starting ────────────────────────────────────
     dir_note = " 🔻 Shorting mode" if trade_direction == "short" else ""
+    brief_note = (
+        f"\n\n<b>Strategy Brief</b> [{strategy_brief.get('market_posture', 'neutral').upper()}]:\n"
+        f"{strategy_brief.get('primary_thesis', '')}\n"
+        f"Target positions: {strategy_brief.get('target_new_positions', 1)}  |  "
+        f"Risk mult: {strategy_brief.get('risk_budget_multiplier', 1.0):.1f}×  |  "
+        f"Deploy: {strategy_brief.get('capital_deployment_priority', 'normal').upper()}"
+    )
     broadcast_message(
-        f"🔍 <b>Day {session_day}/{total_days}</b>{dir_note} — Analysing {len(WATCHLIST)} tickers "
+        f"🔍 <b>Day {session_day}/{total_days}</b>{dir_note} — Analysing {len(daily_watchlist)} tickers "
         f"across {len(SECTOR_MAP)} sectors...\n"
         f"VIX: {vix_label}  |  Regime: {regime_label}  |  {vix_roc_label}\n"
         f"Credit: {hyg_label}\n"
-        f"Sector leaders: {top3 or 'N/A'}\n"
+        f"Sector leaders: {top3 or 'N/A'}"
+        f"{brief_note}\n\n"
         f"<i>Back in ~15–20 min with the best trade.</i>"
+        + (f"\n\n{universe_note}" if universe_note else "")
     )
 
     # ── Run full AI pipeline ───────────────────────────────────────────────
-    results = _analyze_all(today, portfolio, earnings_blocked)
+    results = _analyze_all(today, portfolio, earnings_blocked, strategy_brief=strategy_brief, watchlist=daily_watchlist)
+
+    # Extract ETF pipeline signals and persist to portfolio.json
+    try:
+        etf_signals = {
+            etf: {
+                "action":     results.get(etf, {}).get("final_order", {}).get("action", "hold"),
+                "confidence": float(results.get(etf, {}).get("trader_decision", {}).get("confidence", 0.5) or 0.5),
+            }
+            for etf in INDEX_ETFS
+        }
+        update_index_etf_signals(etf_signals)
+    except Exception as e:
+        print(f"[morning] ETF signal extraction failed: {e}")
 
     # ── Pick best candidate ────────────────────────────────────────────────
     ticker, state, score = _pick_best(results, earnings_blocked, portfolio, sector_strength)

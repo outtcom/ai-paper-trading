@@ -36,6 +36,10 @@ from tools.session_manager import (
     get_session_day,
     partial_close_position,
     record_equity,
+    record_spy_equity,
+    record_dt_equity,
+    record_scalping_equity,
+    update_benchmark_indices,
     update_last_price,
     update_spy_benchmark,
     update_trailing_stop,
@@ -518,12 +522,32 @@ def main():
     portfolio = get_portfolio()  # reload after time exits
 
     # Step 5: Update SPY benchmark
+    spy_price = None
     try:
         spy_price = get_latest_price("SPY")
         update_spy_benchmark(spy_price)
         print(f"[eod] SPY @ ${spy_price:.2f}")
     except Exception as e:
         print(f"[eod] Could not fetch SPY price: {e}")
+
+    # Step 5b: Record daily equity snapshots for all four curves
+    try:
+        if spy_price:
+            record_spy_equity(spy_price)
+        record_dt_equity()
+        record_scalping_equity()
+    except Exception as e:
+        print(f"[eod] Equity curve snapshot error: {e}")
+
+    # Step 5c: Update QQQ/IWM/GLD benchmark indices
+    try:
+        update_benchmark_indices({
+            "QQQ": get_latest_price("QQQ"),
+            "IWM": get_latest_price("IWM"),
+            "GLD": get_latest_price("GLD"),
+        })
+    except Exception as e:
+        print(f"[eod] Benchmark indices update failed: {e}")
 
     # Step 6: Calculate and record equity
     portfolio = get_portfolio()

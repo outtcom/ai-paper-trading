@@ -181,6 +181,23 @@
       .card .value { font-size: 1.25rem; }
       .grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    .strategy-brief {
+      background: var(--surface);
+      border: 1px solid var(--yellow);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .brief-posture {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .brief-posture.risk-on { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid var(--green); }
+    .brief-posture.neutral  { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid var(--blue); }
+    .brief-posture.risk-off { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid var(--red); }
   </style>
 </head>
 <body>
@@ -195,6 +212,22 @@
   <h1>📈 Paper Trading Dashboard</h1>
   <span class="badge" id="status-badge">Loading...</span>
 </header>
+
+<!-- Strategy brief banner (hidden if empty) -->
+<div class="strategy-brief" id="strategy-brief" style="display:none">
+  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:6px">
+    <span class="brief-posture" id="brief-posture"></span>
+    <span style="font-size:0.82rem; color:var(--muted)">Risk multiplier:</span>
+    <span style="font-size:0.82rem; font-weight:700; color:var(--yellow)" id="brief-mult"></span>
+    <span style="font-size:0.82rem; color:var(--muted); margin-left:8px">Deploy:</span>
+    <span style="font-size:0.82rem; font-weight:600" id="brief-deploy"></span>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:6px" id="brief-thesis"></div>
+  <div style="font-size:0.78rem; color:var(--muted)">
+    Focus: <span style="color:var(--green)" id="brief-focus">—</span>
+    &nbsp;·&nbsp; Avoid: <span style="color:var(--red)" id="brief-avoid">—</span>
+  </div>
+</div>
 
 <!-- KPI cards — row 1 -->
 <div class="grid">
@@ -272,14 +305,48 @@
     <span class="bv" id="bench-ours">—</span>
   </div>
   <div class="benchmark-item">
-    <span class="bl">SPY Return</span>
+    <span class="bl">SPY</span>
     <span class="bv" id="bench-spy">—</span>
   </div>
   <div class="benchmark-item">
-    <span class="bl">Alpha</span>
+    <span class="bl">QQQ</span>
+    <span class="bv" id="bench-qqq">—</span>
+  </div>
+  <div class="benchmark-item">
+    <span class="bl">IWM</span>
+    <span class="bv" id="bench-iwm">—</span>
+  </div>
+  <div class="benchmark-item">
+    <span class="bl">GLD</span>
+    <span class="bv" id="bench-gld">—</span>
+  </div>
+  <div class="benchmark-item">
+    <span class="bl">Alpha vs SPY</span>
     <span class="bv" id="bench-alpha">—</span>
   </div>
   <span class="alpha-badge" id="alpha-badge">vs SPY</span>
+</div>
+
+<!-- Sector heatmap -->
+<div class="section" id="sector-heatmap-section" style="display:none">
+  <h2>
+    Sector Heatmap
+    <button onclick="toggleHeatmapMode()" id="heatmap-toggle-btn" style="margin-left:12px; background:var(--surface); border:1px solid var(--border); color:var(--muted); padding:2px 10px; border-radius:6px; font-size:0.72rem; cursor:pointer; text-transform:uppercase; letter-spacing:0.05em">5D</button>
+  </h2>
+  <div class="table-wrap">
+    <table id="sector-heatmap-table">
+      <thead><tr><th>Sector</th><th id="heatmap-col-header">1-Month</th><th>vs Avg</th></tr></thead>
+      <tbody id="sector-heatmap-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Index ETF candidates panel -->
+<div class="section" id="etf-panel-section" style="display:none">
+  <h2>Index ETF Candidates</h2>
+  <div class="grid" id="etf-panel-grid" style="grid-template-columns: repeat(4, 1fr)">
+    <!-- populated by JS -->
+  </div>
 </div>
 
 <!-- Equity curve -->
@@ -287,6 +354,9 @@
   <h2>Equity Curve</h2>
   <div class="chart-wrap">
     <canvas id="equity-chart"></canvas>
+  </div>
+  <div class="chart-wrap" style="height:90px; margin-top:8px">
+    <canvas id="drawdown-chart"></canvas>
   </div>
 </div>
 
@@ -450,6 +520,21 @@
     const cb = data.circuit_breaker || {};
     const stats = data.stats || {};
 
+    // Strategy brief banner
+    const brief = data.strategy_brief || {};
+    if (brief.market_posture) {
+      document.getElementById('strategy-brief').style.display = 'block';
+      const posEl = document.getElementById('brief-posture');
+      const posture = (brief.market_posture || '').toLowerCase();
+      posEl.textContent = brief.market_posture.toUpperCase();
+      posEl.className = 'brief-posture ' + (posture.includes('risk-on') || posture === 'aggressive' ? 'risk-on' : posture.includes('risk-off') || posture === 'defensive' ? 'risk-off' : 'neutral');
+      document.getElementById('brief-mult').textContent = `${fmt(brief.risk_budget_multiplier || 1.0, 2)}×`;
+      document.getElementById('brief-deploy').textContent = (brief.capital_deployment_priority || 'normal').toUpperCase();
+      document.getElementById('brief-thesis').textContent = brief.primary_thesis || '';
+      document.getElementById('brief-focus').textContent = (brief.focus_sectors || []).join(', ') || '—';
+      document.getElementById('brief-avoid').textContent = (brief.avoid_sectors || []).join(', ') || '—';
+    }
+
     // Circuit breaker banner
     if (cb.triggered) {
       document.getElementById('circuit-banner').style.display = 'block';
@@ -558,55 +643,142 @@
       document.getElementById('bench-alpha').textContent = 'N/A';
     }
 
-    // Equity chart
-    const curve = data.equity_curve || [];
-    const labels = curve.map(p => `Day ${p.day}`);
-    const values = curve.map(p => p.equity);
-    if (!labels.includes('Day 0')) { labels.unshift('Start'); values.unshift(initial); }
+    // Extended benchmark strip — QQQ, IWM, GLD
+    const bi = data.benchmark_indices || {};
+    ['QQQ', 'IWM', 'GLD'].forEach(etf => {
+      const el = document.getElementById('bench-' + etf.toLowerCase());
+      if (!el) return;
+      const entry = bi[etf] || {};
+      if (entry.return_pct !== null && entry.return_pct !== undefined) {
+        el.textContent = `${entry.return_pct >= 0 ? '+' : ''}${fmt(entry.return_pct)}%`;
+        el.style.color = entry.return_pct >= 0 ? 'var(--green)' : 'var(--red)';
+      } else {
+        el.textContent = 'N/A';
+        el.style.color = 'var(--muted)';
+      }
+    });
 
-    const lineColor = ret >= 0 ? '#22c55e' : '#ef4444';
+    // Multi-curve equity chart (Portfolio + SPY + DT + Scalping)
+    const curve = data.equity_curve || [];
+    const spyCurve = data.spy_equity_curve || [];
+    const dtCurve = data.dt_equity_curve || [];
+    const scCurve = data.scalping_equity_curve || [];
+
+    const labels = curve.map(p => `Day ${p.day}`);
+    const portfolioVals = curve.map(p => p.equity);
+    if (!labels.includes('Day 0')) { labels.unshift('Start'); portfolioVals.unshift(initial); }
+
+    // Align SPY, DT, Scalp to same day labels
+    function alignCurve(srcCurve, dayLabels) {
+      const map = {};
+      srcCurve.forEach(p => { map[`Day ${p.day}`] = p.equity; });
+      return dayLabels.map(l => map[l] !== undefined ? map[l] : null);
+    }
+    const spyVals  = alignCurve(spyCurve, labels);
+    const dtVals   = alignCurve(dtCurve, labels);
+    const scVals   = alignCurve(scCurve, labels);
+
+    const lineColor = (portfolioVals[portfolioVals.length - 1] || initial) >= initial ? '#22c55e' : '#ef4444';
+    const chartDatasets = [
+      {
+        label: 'Portfolio',
+        data: portfolioVals,
+        borderColor: lineColor,
+        backgroundColor: lineColor + '18',
+        borderWidth: 2.5,
+        pointRadius: 3,
+        fill: true,
+        tension: 0.3,
+        spanGaps: true,
+      },
+      {
+        label: 'S&P 500',
+        data: spyVals,
+        borderColor: '#3b82f6',
+        borderWidth: 2,
+        borderDash: [5, 3],
+        pointRadius: 0,
+        fill: false,
+        tension: 0.3,
+        spanGaps: true,
+      },
+      {
+        label: 'Day Trade',
+        data: dtVals,
+        borderColor: '#f59e0b',
+        borderWidth: 1.5,
+        borderDash: [3, 2],
+        pointRadius: 0,
+        fill: false,
+        tension: 0.3,
+        spanGaps: true,
+      },
+      {
+        label: 'Scalping',
+        data: scVals,
+        borderColor: '#a855f7',
+        borderWidth: 1.5,
+        borderDash: [2, 3],
+        pointRadius: 0,
+        fill: false,
+        tension: 0.3,
+        spanGaps: true,
+      },
+    ];
+
+    const chartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, position: 'top', labels: { color: '#8892a4', font: { size: 11 }, usePointStyle: true, pointStyleWidth: 14 } },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: $${fmt(ctx.parsed.y)}` } }
+      },
+      scales: {
+        x: { grid: { color: '#2a2d3a' }, ticks: { color: '#8892a4', font: { size: 11 } } },
+        y: { grid: { color: '#2a2d3a' }, ticks: { color: '#8892a4', font: { size: 11 }, callback: v => `$${fmt(v, 0)}` } }
+      }
+    };
 
     if (equityChart) {
       equityChart.data.labels = labels;
-      equityChart.data.datasets[0].data = values;
-      equityChart.data.datasets[0].borderColor = lineColor;
-      equityChart.data.datasets[0].backgroundColor = lineColor + '18';
+      equityChart.data.datasets = chartDatasets;
       equityChart.update();
     } else {
       const ctx = document.getElementById('equity-chart').getContext('2d');
-      equityChart = new Chart(ctx, {
+      equityChart = new Chart(ctx, { type: 'line', data: { labels, datasets: chartDatasets }, options: chartOptions });
+    }
+
+    // Drawdown subplot
+    const ddVals = portfolioVals.map(v => v !== null ? -(Math.max(0, (Math.max(...portfolioVals.slice(0, portfolioVals.indexOf(v) + 1)) - v) / Math.max(...portfolioVals.slice(0, portfolioVals.indexOf(v) + 1)) * 100)) : null);
+    if (window.drawdownChart) {
+      window.drawdownChart.data.labels = labels;
+      window.drawdownChart.data.datasets[0].data = ddVals;
+      window.drawdownChart.update();
+    } else {
+      const ddCtx = document.getElementById('drawdown-chart').getContext('2d');
+      window.drawdownChart = new Chart(ddCtx, {
         type: 'line',
         data: {
           labels,
           datasets: [{
-            label: 'Equity',
-            data: values,
-            borderColor: lineColor,
-            backgroundColor: lineColor + '18',
-            borderWidth: 2.5,
-            pointRadius: 4,
-            pointHoverRadius: 6,
+            label: 'Drawdown %',
+            data: ddVals,
+            borderColor: '#ef4444',
+            backgroundColor: 'rgba(239,68,68,0.15)',
+            borderWidth: 1.5,
+            pointRadius: 0,
             fill: true,
             tension: 0.3,
+            spanGaps: true,
           }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: ctx => `$${fmt(ctx.parsed.y)}`
-              }
-            }
-          },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `DD: ${fmt(ctx.parsed.y)}%` } } },
           scales: {
-            x: { grid: { color: '#2a2d3a' }, ticks: { color: '#8892a4', font: { size: 11 } } },
-            y: {
-              grid: { color: '#2a2d3a' },
-              ticks: { color: '#8892a4', font: { size: 11 }, callback: v => `$${fmt(v, 0)}` }
-            }
+            x: { display: false },
+            y: { grid: { color: '#2a2d3a' }, ticks: { color: '#8892a4', font: { size: 10 }, callback: v => `${fmt(v, 1)}%` } }
           }
         }
       });
@@ -869,9 +1041,77 @@
       }).join('');
     }
 
+    // ETF candidates panel
+    const etfSignals = data.index_etf_signals || {};
+    const bi2 = data.benchmark_indices || {};
+    const etfTickers = ['SPY', 'QQQ', 'IWM', 'GLD'];
+    const etfGrid = document.getElementById('etf-panel-grid');
+    if (etfGrid) {
+      const cards = etfTickers.map(etf => {
+        const sig = etfSignals[etf] || {};
+        const action = (sig.action || 'hold').toLowerCase();
+        const conf = sig.confidence ? Math.round(sig.confidence * 100) : null;
+        const label = action === 'buy' ? 'GO' : action === 'sell' ? 'AVOID' : 'WAIT';
+        const labelColor = action === 'buy' ? 'var(--green)' : action === 'sell' ? 'var(--red)' : 'var(--yellow)';
+        const borderColor = action === 'buy' ? 'var(--green)' : action === 'sell' ? 'var(--red)' : 'var(--border)';
+        const entry2 = bi2[etf] || {};
+        const retPct = entry2.return_pct;
+        const retStr = retPct !== null && retPct !== undefined ? `${retPct >= 0 ? '+' : ''}${fmt(retPct)}%` : 'N/A';
+        const retColor = retPct !== null && retPct !== undefined ? (retPct >= 0 ? 'var(--green)' : 'var(--red)') : 'var(--muted)';
+        const confStr = conf !== null ? ` ${conf}%` : '';
+        return `
+          <div class="card" style="border-color:${borderColor}">
+            <div class="label">${etf}</div>
+            <div class="value" style="color:${labelColor}; font-size:1.2rem">${label}${confStr}</div>
+            <div class="sub" style="color:${retColor}">${retStr} session</div>
+          </div>`;
+      }).join('');
+      if (Object.keys(etfSignals).length > 0 || Object.keys(bi2).length > 0) {
+        document.getElementById('etf-panel-section').style.display = 'block';
+        etfGrid.innerHTML = cards;
+      }
+    }
+
+    // Sector heatmap
+    window._lastData = data;
+    renderSectorHeatmap(data);
+
     // Footer timestamp
     const lu = session.last_updated ? new Date(session.last_updated).toLocaleString() : '—';
     document.getElementById('last-updated').textContent = lu;
+  }
+
+  let heatmapMode = '1m'; // '1m' or '5d'
+  function toggleHeatmapMode() {
+    heatmapMode = heatmapMode === '1m' ? '5d' : '1m';
+    const btn = document.getElementById('heatmap-toggle-btn');
+    const col = document.getElementById('heatmap-col-header');
+    if (btn) btn.textContent = heatmapMode === '1m' ? '5D' : '1M';
+    if (col) col.textContent = heatmapMode === '1m' ? '1-Month' : '5-Day';
+    if (window._lastData) renderSectorHeatmap(window._lastData);
+  }
+
+  function renderSectorHeatmap(data) {
+    const ss = data.sector_strength || {};
+    const sectors = ss.sectors || {};
+    const keys = Object.keys(sectors);
+    if (keys.length === 0) return;
+    document.getElementById('sector-heatmap-section').style.display = 'block';
+    const tbody = document.getElementById('sector-heatmap-tbody');
+    const top3 = ss.top_3 || [];
+    const bot3 = ss.bottom_3 || [];
+    tbody.innerHTML = keys.map(sector => {
+      const s = sectors[sector] || {};
+      const val = heatmapMode === '1m' ? (s.momentum_1m || s.momentum || 0) : (s.momentum_5d || 0);
+      const color = val >= 1 ? 'var(--green)' : val <= -1 ? 'var(--red)' : 'var(--muted)';
+      const badge = val >= 1 ? `<span class="tag tp">+${fmt(val)}%</span>`
+                  : val <= -1 ? `<span class="tag sl">${fmt(val)}%</span>`
+                  : `<span class="tag skip">${val >= 0 ? '+' : ''}${fmt(val)}%</span>`;
+      const rankBadge = top3.includes(sector) ? '<span class="tag tp" style="font-size:0.68rem">TOP</span>'
+                      : bot3.includes(sector) ? '<span class="tag sl" style="font-size:0.68rem">BOT</span>'
+                      : '';
+      return `<tr><td style="font-weight:600">${sector} ${rankBadge}</td><td>${badge}</td><td style="color:${color}; font-size:0.82em">${val >= 0 ? '+' : ''}${fmt(val)}%</td></tr>`;
+    }).join('');
   }
 
   function load() {

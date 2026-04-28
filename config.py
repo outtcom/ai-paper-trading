@@ -40,7 +40,11 @@ SECTOR_ETFS = {
 
 CRYPTO   = ["BTC-USD", "ETH-USD", "SOL-USD"]
 STOCKS   = [ticker for tickers in SECTOR_MAP.values() for ticker in tickers]
-WATCHLIST = STOCKS + CRYPTO
+# Index ETF candidates — compete in the pipeline alongside stocks
+INDEX_ETFS = ["SPY", "QQQ", "IWM", "GLD"]
+
+# Update WATCHLIST to include ETFs
+WATCHLIST = STOCKS + CRYPTO + INDEX_ETFS
 
 # Reverse lookup: ticker → sector name
 TICKER_SECTOR = {
@@ -51,6 +55,9 @@ TICKER_SECTOR = {
 # Crypto gets its own pseudo-sector
 for c in CRYPTO:
     TICKER_SECTOR[c] = "Crypto"
+# Index ETFs get their own pseudo-sector
+for etf in INDEX_ETFS:
+    TICKER_SECTOR[etf] = "Index ETF"
 
 # ---------------------------------------------------------------------------
 # VIX Regime Thresholds
@@ -62,8 +69,8 @@ VIX_HIGH     = 35   # below → 50% sizing; above → no trades (EXTREME)
 # ---------------------------------------------------------------------------
 # Session Risk Controls
 # ---------------------------------------------------------------------------
-MAX_CONCURRENT_POSITIONS = 2      # never hold more than 2 positions at once
-MAX_PORTFOLIO_HEAT       = 0.75   # halt new entries if >75% capital deployed
+MAX_CONCURRENT_POSITIONS = 3      # never hold more than 3 positions at once
+MAX_PORTFOLIO_HEAT       = 0.85   # halt new entries if >85% capital deployed
 MIN_VOLUME_RATIO         = 0.8    # require recent vol ≥ 80% of 20d avg (0 = off)
 BEARISH_REGIME_MULTIPLIER = 0.5   # halve size when SPY < 200d MA
 
@@ -83,7 +90,15 @@ TICKER_BETA = {
     "XOM":  0.8, "CAT": 1.2,  "WMT": 0.5,
     "FCX":  1.6, "NEE": 0.4,  "PLD": 1.0,
 }
+TICKER_BETA.update({"SPY": 1.0, "QQQ": 1.2, "IWM": 1.3, "GLD": 0.1})
 MAX_PORTFOLIO_BETA = 1.5     # weighted avg beta cap (crypto excluded)
+
+# ---------------------------------------------------------------------------
+# ETF Allocation Constraints
+# ---------------------------------------------------------------------------
+# ETF allocation constraints (strategy consultant recommendation)
+ETF_MAX_ALLOCATION_PCT = 0.40   # cap combined ETF positions at 40% of total portfolio equity
+ETF_OVERLAP_THRESHOLD  = 0.30   # if QQQ/IWM overlap >30% with existing Tech/SmallCap holdings, apply penalty
 
 # ---------------------------------------------------------------------------
 # VIX Rate-of-Change
