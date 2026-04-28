@@ -67,8 +67,11 @@ def _detect_orb_signals(watchlist: list, today: str) -> list:
 
         vol_ratio = (cur_vol / baseline_5m_vol) if baseline_5m_vol > 0 else 1.0
 
-        broke_up   = current > range_high and vol_ratio >= SCALPING_VOL_RATIO_MIN
-        broke_down = current < range_low  and vol_ratio >= SCALPING_VOL_RATIO_MIN
+        # Require close to be at least 0.15% beyond the range boundary to avoid
+        # false breakouts from brief pokes above/below the range high/low
+        MIN_BREAKOUT_MARGIN = 0.0015
+        broke_up   = (current > range_high * (1 + MIN_BREAKOUT_MARGIN)) and vol_ratio >= SCALPING_VOL_RATIO_MIN
+        broke_down = (current < range_low  * (1 - MIN_BREAKOUT_MARGIN)) and vol_ratio >= SCALPING_VOL_RATIO_MIN
 
         if not broke_up and not broke_down:
             dir_label = "LONG" if current > range_high else ("SHORT" if current < range_low else "FLAT")

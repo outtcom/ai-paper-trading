@@ -35,6 +35,11 @@ SYSTEM_TEMPLATE = """You are a {profile} trader at a trading firm.
 You have received analysis from fundamental, sentiment, and technical analysts,
 plus a bull/bear debate. Synthesize this into a trading decision.
 
+IMPORTANT: When conviction is medium or high AND analyst signals align in the same
+direction, choose BUY or SELL — do not default to HOLD. In a trending market,
+inaction costs benchmark alpha. Only choose HOLD when signals are genuinely mixed
+or conviction is low.
+
 Your output must be a JSON object with this exact structure:
 {{
   "action": "buy" | "sell" | "hold",

@@ -13,7 +13,7 @@ from agents import fundamental_analyst, sentiment_analyst, technical_analyst
 from agents import researcher, trader, risk_manager, fund_manager
 
 
-def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict = None) -> dict:
+def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict = None, strategy_brief: dict = None) -> dict:
     """
     Run the full trading agent pipeline for one ticker.
 
@@ -21,6 +21,8 @@ def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict =
     dry_run=False: submit the order via Alpaca paper trading API
     portfolio: real session portfolio dict (cash, equity, positions) — passed to
                fund_manager so it sizes orders against actual capital.
+    strategy_brief: daily strategy brief from strategy_consultant — passed to
+                    fund_manager to inform final decision.
 
     Returns the final state dict.
     """
@@ -61,9 +63,9 @@ def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict =
             print(f"  [!] Could not fetch portfolio: {e}")
     state = risk_manager.run(state)
 
-    # Step 7: Fund Manager (final order) — receives real capital figures
+    # Step 7: Fund Manager (final order) — receives real capital figures + strategy brief
     print(f"  [7/7] Fund Manager...")
-    state = fund_manager.run(state, portfolio=portfolio)
+    state = fund_manager.run(state, portfolio=portfolio, strategy_brief=strategy_brief)
 
     final_order = state.get("final_order", {})
     action = final_order.get("action", "hold")
