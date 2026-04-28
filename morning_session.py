@@ -285,6 +285,8 @@ def _size_position(
         tp_pct = SHORT_TP_PCT  / 100
     else:
         sl_pct = float(order.get("stop_loss_pct") or trader.get("stop_loss_pct") or 0.03)
+        if sl_pct > 1.0:   # model returned percentage (e.g. 5.0) not decimal (0.05) — normalise
+            sl_pct /= 100
         tp_pct = sl_pct * 2   # 2:1 reward-to-risk
 
     # Sector momentum tilt
