@@ -67,6 +67,7 @@ from tools.session_manager import (
     update_sector_strength,
     update_benchmark_indices,
     update_index_etf_signals,
+    set_benchmark_start_prices,
 )
 from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
@@ -451,14 +452,28 @@ def main():
             set_spy_start_price(get_latest_price("SPY"))
         except Exception as e:
             print(f"[morning] SPY anchor error: {e}")
-        try:
-            update_benchmark_indices({
-                "QQQ": get_latest_price("QQQ"),
-                "IWM": get_latest_price("IWM"),
-                "GLD": get_latest_price("GLD"),
-            })
-        except Exception as e:
-            print(f"[morning] QQQ/IWM/GLD anchor error: {e}")
+
+    # ── QQQ/IWM/GLD anchor — runs any day start_price is missing ──────────
+    bi = portfolio.get("benchmark_indices", {})
+    unanchored = [etf for etf in ["QQQ", "IWM", "GLD"] if bi.get(etf, {}).get("start_price") is None]
+    if unanchored:
+        session_start = portfolio.get("session", {}).get("start_date", "")
+        if session_start:
+            anchor_end = (datetime.strptime(session_start, "%Y-%m-%d") + timedelta(days=7)).strftime("%Y-%m-%d")
+            anchor_prices = {}
+            for etf in unanchored:
+                try:
+                    bars = get_ohlcv(etf, session_start, anchor_end)
+                    if bars:
+                        anchor_prices[etf] = bars[0]["close"]
+                        print(f"[morning] Anchored {etf} start_price={bars[0]['close']} ({bars[0]['date']})")
+                except Exception as e:
+                    print(f"[morning] Could not anchor {etf}: {e}")
+            if anchor_prices:
+                try:
+                    set_benchmark_start_prices(anchor_prices)
+                except Exception as e:
+                    print(f"[morning] Failed to save {etf} anchor: {e}")
 
     # ── Circuit breaker ────────────────────────────────────────────────────
     halt, halt_reason = check_circuit_breaker(equity)

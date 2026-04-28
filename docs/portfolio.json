@@ -548,19 +548,19 @@
   ],
   "benchmark_indices": {
     "QQQ": {
-      "start_price": 657.55,
+      "start_price": null,
       "current_price": 657.55,
-      "return_pct": 0.0
+      "return_pct": null
     },
     "IWM": {
-      "start_price": 273.91,
+      "start_price": null,
       "current_price": 273.91,
-      "return_pct": 0.0
+      "return_pct": null
     },
     "GLD": {
-      "start_price": 421.91,
+      "start_price": null,
       "current_price": 421.91,
-      "return_pct": 0.0
+      "return_pct": null
     }
   },
   "sector_strength": {

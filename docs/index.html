@@ -1102,7 +1102,7 @@
     const bot3 = ss.bottom_3 || [];
     tbody.innerHTML = keys.map(sector => {
       const s = sectors[sector] || {};
-      const val = heatmapMode === '1m' ? (s.momentum_1m || s.momentum || 0) : (s.momentum_5d || 0);
+      const val = heatmapMode === '1m' ? (s.mom_1m || 0) : (s.mom_5d || 0);
       const color = val >= 1 ? 'var(--green)' : val <= -1 ? 'var(--red)' : 'var(--muted)';
       const badge = val >= 1 ? `<span class="tag tp">+${fmt(val)}%</span>`
                   : val <= -1 ? `<span class="tag sl">${fmt(val)}%</span>`

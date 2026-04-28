@@ -910,6 +910,18 @@ def update_benchmark_indices(prices: dict) -> None:
     _save(p)
 
 
+def set_benchmark_start_prices(prices: dict) -> None:
+    """Set only the start_price for benchmark indices (historical anchoring)."""
+    p = _migrate(_load())
+    bi = p["benchmark_indices"]
+    for ticker, price in prices.items():
+        if ticker not in bi:
+            bi[ticker] = {"start_price": None, "current_price": None, "return_pct": None}
+        bi[ticker]["start_price"] = round(price, 2)
+    p["benchmark_indices"] = bi
+    _save(p)
+
+
 def update_sector_strength(sector_data: dict) -> None:
     """Save latest sector heatmap to portfolio.json."""
     p = _migrate(_load())
