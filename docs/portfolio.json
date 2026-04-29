@@ -1,14 +1,14 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 12,
+    "current_day": 13,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-04-29T16:22:48.520344+00:00"
+    "last_updated": "2026-04-29T20:44:39.988543+00:00"
   },
   "cash": 3441.69,
   "initial_capital": 5000.0,
-  "equity": 5011.83,
+  "equity": 5006.4,
   "peak_equity": 5029.03,
   "circuit_breaker": {
     "triggered": false,
@@ -16,13 +16,13 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.04,
-    "sortino": 0.03,
-    "calmar": 8.02,
+    "sharpe": -0.74,
+    "sortino": -0.62,
+    "calmar": 3.14,
     "spy_start_price": 686.1,
-    "spy_current_price": 711.69,
-    "benchmark_return_pct": 3.73,
-    "max_drawdown_pct": 0.34
+    "spy_current_price": 711.58,
+    "benchmark_return_pct": 3.71,
+    "max_drawdown_pct": 0.45
   },
   "positions": {
     "NVDA": {
@@ -30,7 +30,7 @@
       "qty": 5,
       "entry_price": 216.61,
       "cost_basis": 1083.05,
-      "last_price": 210.23,
+      "last_price": 209.25,
       "stop_loss": 205.78,
       "take_profit": 238.27,
       "partial_profit_price": 227.44,
@@ -47,13 +47,13 @@
       "qty": 1,
       "entry_price": 504.29,
       "cost_basis": 504.29,
-      "last_price": 515.11,
-      "stop_loss": 463.95,
+      "last_price": 518.46,
+      "stop_loss": 476.98,
       "take_profit": 584.98,
       "partial_profit_price": 544.63,
       "stop_loss_pct": 8.0,
       "take_profit_pct": 16.0,
-      "highest_price": 504.29,
+      "highest_price": 518.46,
       "lowest_price": 504.29,
       "partial_taken": false,
       "opened_date": "2026-04-29",
@@ -211,6 +211,11 @@
       "day": 12,
       "date": "2026-04-29",
       "equity": 5011.83
+    },
+    {
+      "day": 12,
+      "date": "2026-04-29",
+      "equity": 5006.4
     }
   ],
   "journal": [
@@ -587,15 +592,16 @@
       "target_pct": 1.5,
       "stop_price": 58.68,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 56.93,
+      "exit_date": "2026-04-29",
+      "pnl_pct": -2.2,
+      "outcome": "loss",
       "auto_close_date": "2026-04-29",
       "rationale": "Pre-market gap -3.9% (SHORT, vol pre-mkt)",
       "qty": 43,
-      "allocated_usd": 2503.03
+      "allocated_usd": 2503.03,
+      "pnl_usd": -55.04
     },
     {
       "id": "DTS-2026-04-29-VTR-momentum",
@@ -620,8 +626,8 @@
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": 1370.72,
-    "equity": 5099.73
+    "cash": 3818.71,
+    "equity": 5044.69
   },
   "scalping_capital": {
     "initial": 5000.0,
@@ -633,6 +639,11 @@
       "day": 11,
       "date": "2026-04-28",
       "equity": 5186.49
+    },
+    {
+      "day": 12,
+      "date": "2026-04-29",
+      "equity": 5185.69
     }
   ],
   "dt_equity_curve": [
@@ -640,6 +651,11 @@
       "day": 11,
       "date": "2026-04-28",
       "equity": 5099.73
+    },
+    {
+      "day": 12,
+      "date": "2026-04-29",
+      "equity": 5044.69
     }
   ],
   "scalping_equity_curve": [
@@ -647,23 +663,28 @@
       "day": 11,
       "date": "2026-04-28",
       "equity": 5000.0
+    },
+    {
+      "day": 12,
+      "date": "2026-04-29",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 657.55,
-      "return_pct": null
+      "current_price": 661.57,
+      "return_pct": 5.24
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 273.91,
-      "return_pct": null
+      "current_price": 272.08,
+      "return_pct": 1.25
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 421.91,
-      "return_pct": null
+      "current_price": 417.41,
+      "return_pct": -6.22
     }
   },
   "sector_strength": {
