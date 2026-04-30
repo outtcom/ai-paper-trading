@@ -4,9 +4,9 @@
     "current_day": 13,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-04-30T11:43:59.675023+00:00"
+    "last_updated": "2026-04-30T12:25:43.867840+00:00"
   },
-  "cash": 3441.69,
+  "cash": 3178.65,
   "initial_capital": 5000.0,
   "equity": 5006.4,
   "peak_equity": 5029.03,
@@ -16,9 +16,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -0.74,
-    "sortino": -0.62,
-    "calmar": 3.14,
+    "sharpe": -0.72,
+    "sortino": -0.59,
+    "calmar": 3.0,
     "spy_start_price": 686.1,
     "spy_current_price": 711.58,
     "benchmark_return_pct": 3.71,
@@ -58,6 +58,23 @@
       "partial_taken": false,
       "opened_date": "2026-04-29",
       "journal_note": "Portfolio is critically underdeployed at 21% vs 55% target with risk-on posture and high capital deployment priority. MU is a leading semiconductor name in the focus Technology sector with strong AI/HBM demand tailwinds. Despite incomplete analysis data, the structural thesis is sound. A 5% position (~$449 at ~$112/share) is conservative given deployment urgency, but appropriate given the lack of fundamental/technical/sentiment confirmation. The 8% stop-loss provides adequate downside protection"
+    },
+    "AMZN": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 263.04,
+      "cost_basis": 263.04,
+      "last_price": 263.04,
+      "stop_loss": 249.89,
+      "take_profit": 289.34,
+      "partial_profit_price": 276.19,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 263.04,
+      "lowest_price": 263.04,
+      "partial_taken": false,
+      "opened_date": "2026-04-30",
+      "journal_note": "Portfolio is critically under-deployed at 31% vs 59% target in a risk-on environment with bullish SPY trend and declining VIX. AMZN is a core technology name in a focus sector with strong structural drivers (AWS, advertising, Prime). While quantitative modules failed due to infrastructure issues rather than negative signals, the qualitative case is balanced-to-positive, and the cost of under-deployment in this regime outweighs the risk of a modest starter position. Taking a reduced position (~12"
     }
   },
   "open_orders": [
@@ -82,6 +99,17 @@
       "day": 12,
       "submitted_at": "2026-04-29T12:14:18.420952+00:00",
       "resolved_at": "2026-04-29T12:36:26.842154+00:00"
+    },
+    {
+      "ticker": "AMZN",
+      "qty": 1,
+      "side": "BUY",
+      "price": 263.04,
+      "order_type": "market",
+      "status": "executed",
+      "day": 13,
+      "submitted_at": "2026-04-30T12:12:45.492814+00:00",
+      "resolved_at": "2026-04-30T12:25:42.578027+00:00"
     }
   ],
   "trade_history": [
@@ -216,6 +244,11 @@
       "day": 12,
       "date": "2026-04-29",
       "equity": 5006.4
+    },
+    {
+      "day": 13,
+      "date": "2026-04-30",
+      "equity": 5006.4
     }
   ],
   "journal": [
@@ -292,6 +325,35 @@
         "risk_approved": null
       },
       "timestamp": "2026-04-29T12:36:26.844536+00:00"
+    },
+    {
+      "date": "2026-04-30",
+      "day": 13,
+      "ticker": "AMZN",
+      "action": "BUY",
+      "analysis_price": 263.04,
+      "entry_price": 263.04,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "low",
+      "score": 1.4,
+      "sector": "Consumer Discretionary",
+      "sector_rank": 4,
+      "stop_loss": 249.89,
+      "take_profit": 289.34,
+      "vix_label": "MODERATE (18.0) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "Portfolio is critically under-deployed at 31% vs 59% target in a risk-on environment with bullish SPY trend and declining VIX. AMZN is a core technology name in a focus sector with strong structural drivers (AWS, advertising, Prime). While quantitative modules failed due to infrastructure issues rather than negative signals, the qualitative case is balanced-to-positive, and the cost of under-deployment in this regime outweighs the risk of a modest starter position. Taking a reduced position (~12% of portfolio, ~$1000) with a 5% stop-loss to manage downside while addressing the deployment gap.",
+      "bull_case": "Amazon (AMZN) presents a compelling buy opportunity based on its exceptional market positioning, robust fundamentals, and positive sentiment",
+      "bear_case": "While the bulls can point to Amazon\u2019s (AMZN) established market presence and diversification, the case for buying or holding this stock is w",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "low",
+        "risk_approved": null
+      },
+      "timestamp": "2026-04-30T12:25:42.580711+00:00"
     }
   ],
   "day_trade_signals": [
@@ -754,123 +816,123 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 157.85,
-        "mom_5d": 2.04,
-        "mom_1m": 21.5,
-        "mom_3m": 5.78,
+        "price": 159.11,
+        "mom_5d": 0.65,
+        "mom_1m": 24.79,
+        "mom_3m": 8.33,
         "above_ma50": true,
-        "rsi_14": 81.0,
-        "score": 13.52,
+        "rsi_14": 81.6,
+        "score": 15.26,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 115.75,
-        "mom_5d": -1.2,
-        "mom_1m": 8.14,
-        "mom_3m": -0.86,
+        "price": 115.29,
+        "mom_5d": -2.2,
+        "mom_1m": 6.79,
+        "mom_3m": -3.76,
         "above_ma50": true,
-        "rsi_14": 58.6,
-        "score": 4.54,
+        "rsi_14": 54.5,
+        "score": 2.98,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 117.01,
-        "mom_5d": -1.65,
-        "mom_1m": 10.72,
-        "mom_3m": -3.91,
+        "price": 116.84,
+        "mom_5d": -1.76,
+        "mom_1m": 10.58,
+        "mom_3m": -3.59,
         "above_ma50": true,
-        "rsi_14": 69.4,
-        "score": 5.08,
+        "rsi_14": 64.4,
+        "score": 5.04,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 143.84,
-        "mom_5d": -1.43,
-        "mom_1m": 0.4,
-        "mom_3m": -6.79,
+        "price": 142.84,
+        "mom_5d": -2.42,
+        "mom_1m": -0.68,
+        "mom_3m": -7.14,
         "above_ma50": false,
-        "rsi_14": 30.5,
-        "score": -1.59,
+        "rsi_14": 29.2,
+        "score": -2.49,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 51.85,
-        "mom_5d": -0.86,
-        "mom_1m": 8.45,
-        "mom_3m": -2.15,
+        "price": 51.92,
+        "mom_5d": -0.56,
+        "mom_1m": 7.36,
+        "mom_3m": -3.04,
         "above_ma50": true,
-        "rsi_14": 57.3,
-        "score": 4.54,
+        "rsi_14": 56.7,
+        "score": 3.9,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 57.71,
-        "mom_5d": 3.29,
-        "mom_1m": -7.75,
-        "mom_3m": 15.3,
+        "price": 59.03,
+        "mom_5d": 4.4,
+        "mom_1m": -4.73,
+        "mom_3m": 16.87,
         "above_ma50": true,
-        "rsi_14": 47.9,
-        "score": 1.17,
+        "rsi_14": 59.7,
+        "score": 3.33,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 170.98,
-        "mom_5d": -0.27,
-        "mom_1m": 7.4,
-        "mom_3m": 4.17,
+        "price": 169.93,
+        "mom_5d": -0.65,
+        "mom_1m": 8.51,
+        "mom_3m": 2.45,
         "above_ma50": true,
-        "rsi_14": 51.4,
-        "score": 5.45,
+        "rsi_14": 44.1,
+        "score": 5.55,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 83.08,
-        "mom_5d": 1.52,
-        "mom_1m": 1.59,
-        "mom_3m": 0.92,
+        "price": 82.92,
+        "mom_5d": 0.99,
+        "mom_1m": 1.27,
+        "mom_3m": 0.96,
         "above_ma50": false,
-        "rsi_14": 51.7,
-        "score": 1.43,
+        "rsi_14": 46.7,
+        "score": 1.12,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 51.4,
-        "mom_5d": -0.71,
-        "mom_1m": 5.09,
-        "mom_3m": 2.9,
+        "price": 50.96,
+        "mom_5d": -1.68,
+        "mom_1m": 3.81,
+        "mom_3m": 1.92,
         "above_ma50": true,
-        "rsi_14": 44.9,
-        "score": 3.91,
+        "rsi_14": 40.6,
+        "score": 2.79,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 46.25,
-        "mom_5d": 2.89,
-        "mom_1m": 1.45,
-        "mom_3m": 6.74,
+        "price": 45.68,
+        "mom_5d": 1.81,
+        "mom_1m": -0.52,
+        "mom_3m": 5.42,
         "above_ma50": false,
-        "rsi_14": 44.5,
-        "score": 2.94,
+        "rsi_14": 35.4,
+        "score": 1.37,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 43.91,
-        "mom_5d": 0.3,
-        "mom_1m": 9.75,
-        "mom_3m": 7.49,
+        "price": 43.64,
+        "mom_5d": 0.41,
+        "mom_1m": 8.53,
+        "mom_3m": 5.49,
         "above_ma50": true,
-        "rsi_14": 65.3,
-        "score": 7.46,
+        "rsi_14": 59.5,
+        "score": 6.49,
         "sector": "Real Estate"
       }
     },
@@ -879,12 +941,12 @@
       "Real Estate",
       "Industrials",
       "Consumer Discretionary",
-      "Communication Services",
       "Financials",
+      "Energy",
+      "Communication Services",
       "Materials",
       "Utilities",
       "Consumer Staples",
-      "Energy",
       "Healthcare"
     ],
     "top_3": [
@@ -893,28 +955,28 @@
       "Industrials"
     ],
     "bottom_3": [
+      "Utilities",
       "Consumer Staples",
-      "Energy",
       "Healthcare"
     ],
-    "as_of": "2026-04-29"
+    "as_of": "2026-04-30"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.4,
+    "risk_budget_multiplier": 1.3,
     "focus_sectors": [
       "Technology",
       "Real Estate",
       "Industrials"
     ],
     "avoid_sectors": [
+      "Utilities",
       "Consumer Staples",
-      "Energy",
       "Healthcare"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "All macro signals are green \u2014 VIX at 18 and falling, SPY in a confirmed uptrend, credit conditions healthy \u2014 yet the portfolio is critically underdeployed at 21% vs a 55% target with 10 days remaining. Aggressive capital deployment into leading sectors is the priority; sitting in cash is the primary risk today.",
+    "primary_thesis": "VIX is at the 18.0 threshold with a sharp -6.6% 5-day decline signaling easing fear, SPY trend is bullish, and credit conditions remain healthy \u2014 momentum favors continued equity exposure. Portfolio is critically behind pace at 31% deployed vs 59% expected, making aggressive capital deployment the primary imperative today.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
