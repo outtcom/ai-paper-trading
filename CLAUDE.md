@@ -138,7 +138,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
 | Pre-market gap signals blocked by volume ratio 1.0x < 1.5x | Finnhub `v=0` before 9:30 AM (intraday accumulator not started). Setting `current_vol=avg_vol` gives ratio=1.0 which still fails. Fix: use `premarket_vol` flag and **skip the ratio check entirely** before open. |
 | `_yahoo_intraday_ohlcv()` fails locally on Windows | `ZoneInfo("America/New_York")` needs `tzdata` package on Windows. Fix: use plain UTC offset (`datetime.utcfromtimestamp(ts - 4*3600)`) — no tzdata needed, works on GitHub Actions Linux too. |
-| All workflows arrive ~1 hour late | GitHub Actions free-tier runner queue congestion during US market hours. Fix: crons shifted 60 min earlier so trigger + queue delay = correct arrival time. |
+| Workflows arrive late due to GHA queue | Free-tier runner congestion during US market hours. Actual measured delays: pre-market ~105 min, morning ~90 min, midday ~70 min, pre-close ~90 min, EOD ~60 min. Crons calibrated individually to each job's observed delay. |
 | Local `morning_session.py` fails with Anthropic credit error, GitHub Actions succeeds | Two separate API keys: local `.env` key vs GitHub repo secret. They have independent billing. Exhaust one → top up at console.anthropic.com. GitHub Actions pipeline unaffected. |
 | Local scripts crash on Windows with `UnicodeEncodeError` on emoji print statements | cp1252 codec can't encode emoji. Fix: run with `PYTHONIOENCODING=utf-8 python script.py` locally. |
 
