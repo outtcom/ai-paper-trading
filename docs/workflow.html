@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Paper Trading — System Workflow</title>
+<style>
+  :root {
+    --bg:       #0d0f14;
+    --surface:  #151820;
+    --card:     #1c2030;
+    --border:   #2a2f42;
+    --text:     #e2e8f0;
+    --muted:    #64748b;
+    --green:    #22c55e;
+    --red:      #ef4444;
+    --yellow:   #f59e0b;
+    --blue:     #3b82f6;
+    --purple:   #a855f7;
+    --cyan:     #06b6d4;
+    --orange:   #f97316;
+    --pink:     #ec4899;
+    --indigo:   #6366f1;
+    --teal:     #14b8a6;
+    --lime:     #84cc16;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  .page { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── Typography ─────────────────────────────────────────── */
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+  h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 20px; color: var(--text); }
+  h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+  .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .mono { font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; }
+
+  /* ── Cards ──────────────────────────────────────────────── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .section { margin-bottom: 48px; }
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #1a1f35 0%, #0d0f14 60%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+  }
+  .hero-title { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .hero-badge {
+    background: rgba(99,102,241,0.2);
+    border: 1px solid rgba(99,102,241,0.4);
+    color: var(--indigo);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .hero-sub { color: var(--muted); font-size: 0.9rem; max-width: 600px; }
+  .hero-stats { display: flex; gap: 32px; margin-top: 24px; }
+  .hero-stat-val { font-size: 1.5rem; font-weight: 700; }
+  .hero-stat-lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .hero-meta {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 200px;
+  }
+  .hero-meta-row { display: flex; justify-content: space-between; gap: 16px; font-size: 0.82rem; padding: 4px 0; }
+  .hero-meta-key { color: var(--muted); }
+  .hero-meta-val { font-weight: 600; }
+
+  /* ── WAT Layers ─────────────────────────────────────────── */
+  .wat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .wat-card {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid;
+    position: relative;
+  }
+  .wat-card.workflows { background: rgba(99,102,241,0.07); border-color: rgba(99,102,241,0.3); }
+  .wat-card.agents    { background: rgba(6,182,212,0.07);  border-color: rgba(6,182,212,0.3);  }
+  .wat-card.tools     { background: rgba(34,197,94,0.07);  border-color: rgba(34,197,94,0.3);  }
+  .wat-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .wat-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .wat-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .wat-items { list-style: none; margin-top: 12px; }
+  .wat-items li { font-size: 0.78rem; color: var(--muted); padding: 3px 0; }
+  .wat-items li::before { content: '→ '; }
+
+  /* ── Pipeline ───────────────────────────────────────────── */
+  .pipeline-wrapper {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    overflow-x: auto;
+  }
+  .pipeline-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 0;
+  }
+  .pipeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .step-box {
+    border-radius: 12px;
+    border: 1px solid;
+    padding: 14px 16px;
+    min-width: 140px;
+    max-width: 160px;
+    text-align: center;
+    position: relative;
+  }
+  .step-num {
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+  .step-model { font-size: 0.65rem; padding: 2px 8px; border-radius: 999px; display: inline-block; margin-bottom: 6px; }
+  .step-detail { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+
+  .arrow-h {
+    display: flex; align-items: center;
+    padding: 0 6px;
+    color: var(--muted);
+    font-size: 1.2rem;
+    margin-top: 28px;
+    flex-shrink: 0;
+  }
+  .arrow-v {
+    text-align: center; color: var(--muted); font-size: 1.2rem;
+    padding: 6px 0; line-height: 1;
+  }
+
+  /* Step color themes */
+  .step-fundamental { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.4); }
+  .step-fundamental .step-num { background: var(--indigo); color: #fff; }
+  .step-fundamental .step-model { background: rgba(99,102,241,0.2); color: var(--indigo); }
+
+  .step-sentiment { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.4); }
+  .step-sentiment .step-num { background: var(--cyan); color: #fff; }
+  .step-sentiment .step-model { background: rgba(6,182,212,0.2); color: var(--cyan); }
+
+  .step-technical { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.4); }
+  .step-technical .step-num { background: var(--purple); color: #fff; }
+  .step-technical .step-model { background: rgba(168,85,247,0.2); color: var(--purple); }
+
+  .step-bull { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.4); }
+  .step-bull .step-num { background: var(--green); color: #fff; }
+  .step-bull .step-model { background: rgba(34,197,94,0.2); color: var(--green); }
+
+  .step-bear { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.4); }
+  .step-bear .step-num { background: var(--red); color: #fff; }
+  .step-bear .step-model { background: rgba(239,68,68,0.2); color: var(--red); }
+
+  .step-trader { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.4); }
+  .step-trader .step-num { background: var(--yellow); color: #000; }
+  .step-trader .step-model { background: rgba(245,158,11,0.2); color: var(--yellow); }
+
+  .step-risk { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.4); }
+  .step-risk .step-num { background: var(--orange); color: #fff; }
+  .step-risk .step-model { background: rgba(249,115,22,0.2); color: var(--orange); }
+
+  .step-fund { background: rgba(236,72,153,0.1); border-color: rgba(236,72,153,0.4); }
+  .step-fund .step-num { background: var(--pink); color: #fff; }
+  .step-fund .step-model { background: rgba(236,72,153,0.2); color: var(--pink); }
+
+  .step-broker { background: rgba(20,184,166,0.1); border-color: rgba(20,184,166,0.4); }
+  .step-broker .step-num { background: var(--teal); color: #fff; }
+
+  /* ── Pre-filter box ─────────────────────────────────────── */
+  .prefilter-box {
+    background: rgba(100,116,139,0.08);
+    border: 1px dashed rgba(100,116,139,0.4);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .prefilter-box .label { margin-bottom: 0; white-space: nowrap; }
+  .filter-chip {
+    background: rgba(100,116,139,0.15);
+    border: 1px solid rgba(100,116,139,0.3);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ── Timeline ───────────────────────────────────────────── */
+  .timeline { position: relative; }
+  .timeline-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+  }
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 0; right: 0;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .tl-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+  .tl-content {
+    text-align: center;
+    padding: 0 4px;
+  }
+  .tl-time { font-size: 0.72rem; font-weight: 700; margin-bottom: 4px; }
+  .tl-name { font-size: 0.7rem; font-weight: 600; margin-bottom: 3px; }
+  .tl-file { font-size: 0.62rem; color: var(--muted); font-family: monospace; }
+  .tl-bullets { margin-top: 8px; text-align: left; }
+  .tl-bullets li { font-size: 0.65rem; color: var(--muted); list-style: none; padding: 1px 0; }
+  .tl-bullets li::before { content: '· '; }
+
+  /* ── Model routing table ────────────────────────────────── */
+  .model-table { width: 100%; border-collapse: collapse; }
+  .model-table th {
+    text-align: left; padding: 10px 14px;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+  }
+  .model-table td {
+    padding: 10px 14px; border-bottom: 1px solid rgba(42,47,66,0.5);
+    font-size: 0.82rem; vertical-align: middle;
+  }
+  .model-table tr:last-child td { border-bottom: none; }
+  .model-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .model-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 600;
+  }
+  .model-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .cost-badge {
+    padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
+  }
+
+  /* ── Watchlist ──────────────────────────────────────────── */
+  .watchlist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .wl-sector {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .wl-sector-name { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 8px; }
+  .wl-etf { font-size: 0.65rem; color: var(--muted); margin-bottom: 6px; font-family: monospace; }
+  .wl-tickers { display: flex; flex-wrap: wrap; gap: 5px; }
+  .wl-ticker {
+    padding: 3px 9px; border-radius: 5px; font-size: 0.72rem; font-weight: 700;
+    font-family: monospace;
+  }
+
+  /* ── Risk Framework ─────────────────────────────────────── */
+  .risk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .risk-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .risk-card h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 12px; }
+  .risk-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(42,47,66,0.4); font-size: 0.82rem; }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-key { color: var(--muted); }
+  .risk-val { font-weight: 600; }
+  .vix-bar { display: flex; height: 8px; border-radius: 999px; overflow: hidden; margin-top: 8px; }
+  .vix-seg { flex: 1; }
+  .vix-seg.low    { background: var(--green); }
+  .vix-seg.mod    { background: var(--yellow); }
+  .vix-seg.high   { background: var(--orange); }
+  .vix-seg.ext    { background: var(--red); }
+  .vix-labels { display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--muted); margin-top: 4px; }
+
+  /* ── Infrastructure ─────────────────────────────────────── */
+  .infra-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .infra-node {
+    border-radius: 12px;
+    padding: 16px 20px;
+    min-width: 130px;
+    text-align: center;
+    border: 1px solid;
+  }
+  .infra-node .node-icon { font-size: 1.4rem; margin-bottom: 6px; }
+  .infra-node .node-name { font-size: 0.8rem; font-weight: 700; margin-bottom: 2px; }
+  .infra-node .node-sub  { font-size: 0.65rem; color: var(--muted); }
+  .infra-arrow { color: var(--muted); font-size: 1.4rem; padding: 0 8px; }
+
+  /* ── APIs ───────────────────────────────────────────────── */
+  .api-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .api-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .api-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .api-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .api-name { font-size: 0.88rem; font-weight: 700; }
+  .api-tier { font-size: 0.65rem; color: var(--muted); }
+  .api-detail { font-size: 0.75rem; color: var(--muted); line-height: 1.6; }
+  .api-limit { display: inline-block; margin-top: 8px; padding: 2px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 600; }
+
+  /* ── Signals ────────────────────────────────────────────── */
+  .signals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .signal-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+
+  /* ── Pill ───────────────────────────────────────────────── */
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.68rem; font-weight: 700; }
+  .pill-green  { background: rgba(34,197,94,0.15);  color: var(--green);  }
+  .pill-red    { background: rgba(239,68,68,0.15);  color: var(--red);    }
+  .pill-yellow { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .pill-blue   { background: rgba(59,130,246,0.15); color: var(--blue);   }
+  .pill-purple { background: rgba(168,85,247,0.15); color: var(--purple); }
+  .pill-cyan   { background: rgba(6,182,212,0.15);  color: var(--cyan);   }
+  .pill-orange { background: rgba(249,115,22,0.15); color: var(--orange); }
+  .pill-pink   { background: rgba(236,72,153,0.15); color: var(--pink);   }
+
+  /* ── Divider ────────────────────────────────────────────── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .wat-grid { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .signals-grid { grid-template-columns: 1fr; }
+    .pipeline-row { flex-direction: column; align-items: center; }
+    .arrow-h { transform: rotate(90deg); margin: 4px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-title">
+          <h1>AI Paper Trading System</h1>
+          <span class="hero-badge">TradingAgents v2</span>
+        </div>
+        <p class="hero-sub">A multi-agent LLM trading firm simulation built on the TradingAgents architecture (Tauric Research / UCLA / MIT). Specialized AI analysts, a research debate team, and a tiered decision hierarchy — mirroring a real hedge fund's workflow.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-val" style="color:var(--pink)">8</div>
+            <div class="hero-stat-lbl">AI Agents</div>
+          </div>
+          <div>
+            <div class="hero-stat-val" style="color:var(--cyan)">4</div>
+            <div class="hero-stat-lbl">LLM Providers</div>
+          </div>
+          <div>
+            <div class="hero-stat-val" style="color:var(--green)">26</div>
+            <div class="hero-stat-lbl">Tickers</div>
+          </div>
+          <div>
+            <div class="hero-stat-val" style="color:var(--yellow)">7</div>
+            <div class="hero-stat-lbl">Daily Sessions</div>
+          </div>
+          <div>
+            <div class="hero-stat-val" style="color:var(--purple)">~$0.60</div>
+            <div class="hero-stat-lbl">Cost / Day</div>
+          </div>
+          <div>
+            <div class="hero-stat-val" style="color:var(--orange)">22</div>
+            <div class="hero-stat-lbl">Day Session</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="label" style="margin-bottom:10px">Current Session</div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Start</span><span class="hero-meta-val">Apr 14, 2026</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Total Days</span><span class="hero-meta-val">22 trading days</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Capital</span><span class="hero-meta-val">$5,000.00</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Broker</span><span class="hero-meta-val">Alpaca Paper</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Benchmark</span><span class="hero-meta-val">SPY</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Dashboard</span><span class="hero-meta-val" style="color:var(--blue)">GitHub Pages</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Automation</span><span class="hero-meta-val">GitHub Actions</span></div>
+        <div class="hero-meta-row"><span class="hero-meta-key">Alerts</span><span class="hero-meta-val">Telegram</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WAT ARCHITECTURE ──────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Framework</div>
+    <h2>WAT Architecture — Workflows · Agents · Tools</h2>
+    <div class="wat-grid">
+      <div class="wat-card workflows">
+        <div class="wat-icon">📋</div>
+        <div class="wat-title" style="color:var(--indigo)">Layer 1: Workflows</div>
+        <p class="wat-desc">Markdown SOPs in <code>workflows/</code>. Define objectives, inputs, tool sequence, outputs, and edge-case handling in plain language.</p>
+        <ul class="wat-items">
+          <li>add_new_ticker.md</li>
+          <li>morning_session.md</li>
+          <li>risk_review.md</li>
+          <li>backtest.md</li>
+        </ul>
+      </div>
+      <div class="wat-card agents">
+        <div class="wat-icon">🤖</div>
+        <div class="wat-title" style="color:var(--cyan)">Layer 2: Agents (Claude Code)</div>
+        <p class="wat-desc">Intelligent orchestration. Reads workflows, runs tools in correct sequence, handles failures gracefully, updates workflows on new learnings.</p>
+        <ul class="wat-items">
+          <li>Reads the relevant workflow SOP</li>
+          <li>Sequences tool calls deterministically</li>
+          <li>Retries → fallback → log on failure</li>
+          <li>Self-improves via documented learnings</li>
+        </ul>
+      </div>
+      <div class="wat-card tools">
+        <div class="wat-icon">⚙️</div>
+        <div class="wat-title" style="color:var(--green)">Layer 3: Tools</div>
+        <p class="wat-desc">Python scripts in <code>tools/</code> that execute deterministically. API calls, data transforms, file I/O. Credentials live only in <code>.env</code>.</p>
+        <ul class="wat-items">
+          <li>market_data.py — Finnhub + yfinance</li>
+          <li>session_manager.py — portfolio state</li>
+          <li>telegram_bot.py — notifications</li>
+          <li>sector_analysis.py — momentum</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── AGENT PIPELINE ───────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Core Engine</div>
+    <h2>Multi-Agent Trading Pipeline — 7 Agents, 1 Decision</h2>
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:24px">Runs every morning for each eligible ticker in the watchlist. Each agent receives the full state from all previous agents and appends its analysis before passing forward.</p>
+
+    <!-- Pre-filter -->
+    <div class="prefilter-box">
+      <span class="label">Pre-Filter (before any LLM call)</span>
+      <span class="filter-chip">Earnings blackout window</span>
+      <span class="filter-chip">Same-sector cap (max 1 per sector)</span>
+      <span class="filter-chip">Volume ≥ 80% of 20d avg</span>
+      <span class="filter-chip">Circuit breaker check</span>
+      <span class="filter-chip">Max 3 concurrent positions</span>
+      <span class="filter-chip">Portfolio heat &gt; 85% → skip</span>
+      <span class="filter-chip">VIX &gt; 35 → no trades</span>
+    </div>
+
+    <div class="pipeline-wrapper">
+      <!-- Row 1: Analysts (parallel) -->
+      <div style="text-align:center;margin-bottom:6px">
+        <span class="label">Data Sources → Analysis (runs in parallel per ticker)</span>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;margin-bottom:0;">
+        <!-- Data sources -->
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center;margin-right:8px;">
+          <div style="background:rgba(100,116,139,0.12);border:1px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;min-width:90px;">
+            <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase">Finnhub</div>
+            <div style="font-size:0.62rem;color:var(--muted)">Primary</div>
+          </div>
+          <div style="background:rgba(100,116,139,0.12);border:1px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;min-width:90px;">
+            <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase">yfinance</div>
+            <div style="font-size:0.62rem;color:var(--muted)">Fallback</div>
+          </div>
+          <div style="background:rgba(100,116,139,0.12);border:1px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;min-width:90px;">
+            <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase">Reddit</div>
+            <div style="font-size:0.62rem;color:var(--muted)">Public JSON</div>
+          </div>
+          <div style="background:rgba(100,116,139,0.12);border:1px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;min-width:90px;">
+            <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase">News API</div>
+            <div style="font-size:0.62rem;color:var(--muted)">7d lookback</div>
+          </div>
+        </div>
+        <div class="arrow-h" style="margin-top:40px;">→</div>
+
+        <!-- Three analysts -->
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="pipeline-step">
+            <div class="step-box step-fundamental">
+              <div class="step-num">1</div>
+              <div class="step-name">Fundamental Analyst</div>
+              <span class="step-model">Groq / Llama-3.1-70B</span>
+              <div class="step-detail">P/E, P/S, ROE, EPS growth, debt/equity, revenue trend, moat assessment</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-box step-sentiment">
+              <div class="step-num">2</div>
+              <div class="step-name">Sentiment Analyst</div>
+              <span class="step-model">Groq / Llama-3.1-70B</span>
+              <div class="step-detail">News scoring, Reddit post analysis, insider sentiment, short interest, analyst ratings</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-box step-technical">
+              <div class="step-num">3</div>
+              <div class="step-name">Technical Analyst</div>
+              <span class="step-model">Groq / Llama-3.1-70B</span>
+              <div class="step-detail">MACD, RSI-14, Bollinger Bands, SMA 50/200, ATR, volume trend, support/resistance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow-h" style="margin-top:100px;">→</div>
+
+        <!-- Bull / Bear -->
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="pipeline-step">
+            <div class="step-box step-bull">
+              <div class="step-num">4a</div>
+              <div class="step-name">Bull Researcher</div>
+              <span class="step-model">OpenAI / GPT-4o-mini</span>
+              <div class="step-detail">Reads all 3 analyst reports. Constructs bullish thesis. Rebuts bear arguments.</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:0.75rem;color:var(--muted);padding:4px 0;">⟷ debate</div>
+          <div class="pipeline-step">
+            <div class="step-box step-bear">
+              <div class="step-num">4b</div>
+              <div class="step-name">Bear Researcher</div>
+              <span class="step-model">OpenAI / GPT-4o-mini</span>
+              <div class="step-detail">Reads all 3 analyst reports. Constructs bearish thesis. Rebuts bull arguments.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow-h" style="margin-top:100px;">→</div>
+
+        <!-- Trader -->
+        <div class="pipeline-step">
+          <div class="step-box step-trader" style="min-width:160px;">
+            <div class="step-num">5</div>
+            <div class="step-name">Trader</div>
+            <span class="step-model">Claude Sonnet 4.6</span>
+            <div class="step-detail">Synthesizes all analyst + debate reports. Proposes action (BUY / SELL / HOLD), size, stop-loss, take-profit, conviction score (0–10), strategy alignment.</div>
+          </div>
+        </div>
+
+        <div class="arrow-h" style="margin-top:60px;">→</div>
+
+        <!-- Risk Manager -->
+        <div class="pipeline-step">
+          <div class="step-box step-risk" style="min-width:160px;">
+            <div class="step-num">6</div>
+            <div class="step-name">Risk Manager</div>
+            <span class="step-model">Groq / Llama-3.1-70B</span>
+            <div class="step-detail">Validates against: portfolio heat, beta cap, VIX regime, position limits, sector concentration, beta-weighted sizing. Can veto or resize.</div>
+          </div>
+        </div>
+
+        <div class="arrow-h" style="margin-top:60px;">→</div>
+
+        <!-- Fund Manager -->
+        <div class="pipeline-step">
+          <div class="step-box step-fund" style="min-width:160px;border-width:2px;">
+            <div class="step-num">7</div>
+            <div class="step-name">Fund Manager</div>
+            <span class="step-model">Claude Opus 4.6</span>
+            <div class="step-detail">⚡ Non-negotiable final gate. Reads full chain. Applies strategy brief (VIX, regime, sector rank, capital priority). Issues final order or HOLD.</div>
+          </div>
+        </div>
+
+        <div class="arrow-h" style="margin-top:60px;">→</div>
+
+        <!-- Alpaca -->
+        <div class="pipeline-step">
+          <div class="step-box step-broker" style="min-width:140px;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">📈</div>
+            <div class="step-name" style="color:var(--teal)">Alpaca Paper</div>
+            <div class="step-detail" style="margin-top:4px;">paper-api.alpaca.markets<br><br>Market order submitted.<br>State saved to portfolio.json.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- State flow note -->
+      <div style="text-align:center;margin-top:20px;color:var(--muted);font-size:0.72rem;border-top:1px solid var(--border);padding-top:16px;">
+        State object flows through every agent via <code>state_manager.py</code> → logs written to <code>.tmp/logs/YYYY-MM-DD/TICKER.log</code> → final decision committed to <code>docs/portfolio.json</code>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── DAILY TIMELINE ────────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Automation</div>
+    <h2>Daily Session Timeline — Mon–Fri (All times ET)</h2>
+    <div class="card" style="padding:32px;">
+      <div class="timeline-track">
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--blue);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--blue)">7:00 AM</div>
+            <div class="tl-name">Pre-Market<br>Gap Scanner</div>
+            <div class="tl-file">premarket_check.py</div>
+            <ul class="tl-bullets">
+              <li>Pre-market price gaps &gt;2%</li>
+              <li>Volume confirmation</li>
+              <li>Index futures (ES, NQ)</li>
+              <li>Gap-and-go signals</li>
+              <li>Momentum near 52w high</li>
+              <li>Telegram: pre-market brief</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--green);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--green)">7:30 AM</div>
+            <div class="tl-name">Morning<br>Session</div>
+            <div class="tl-file">morning_session.py</div>
+            <ul class="tl-bullets">
+              <li>VIX + market regime check</li>
+              <li>Strategy Consultant brief</li>
+              <li>Sector strength ranking</li>
+              <li>Full 7-agent pipeline</li>
+              <li>Position sizing + risk gate</li>
+              <li>Order execution (paper)</li>
+              <li>Benchmark anchoring</li>
+              <li>Telegram: session summary</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--purple);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--purple)">10:00 AM</div>
+            <div class="tl-name">ORB Scalping<br>Scan</div>
+            <div class="tl-file">scalping_scan.py</div>
+            <ul class="tl-bullets">
+              <li>30-min opening range build</li>
+              <li>Range breakout detection</li>
+              <li>Volume confirmation 1.3×</li>
+              <li>Paper signals only ($5K pool)</li>
+              <li>TP: +0.75%, SL: -0.40%</li>
+              <li>Auto-close at 12:00 PM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--cyan);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--cyan)">12:00 PM</div>
+            <div class="tl-name">Midday<br>Monitor</div>
+            <div class="tl-file">midday_check.py</div>
+            <ul class="tl-bullets">
+              <li>Live price update (positions)</li>
+              <li>Unrealized P&amp;L refresh</li>
+              <li>SL / TP proximity alerts</li>
+              <li>Trailing stop adjustments</li>
+              <li>Scalping auto-close</li>
+              <li>Telegram: midday update</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--yellow);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--yellow)">3:30 PM</div>
+            <div class="tl-name">Pre-Close<br>Alert</div>
+            <div class="tl-file">preclose_alert.py</div>
+            <ul class="tl-bullets">
+              <li>Price vs SL/TP check</li>
+              <li>Crossing warnings</li>
+              <li>Positions near stop</li>
+              <li>Intraday OHLCV refresh</li>
+              <li>Telegram: pre-close alert</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--orange);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--orange)">4:15 PM</div>
+            <div class="tl-name">End-of-Day<br>Session</div>
+            <div class="tl-file">eod_session.py</div>
+            <ul class="tl-bullets">
+              <li>Final closing prices</li>
+              <li>Equity curve entry</li>
+              <li>Sharpe / Sortino / Calmar</li>
+              <li>Alpha vs SPY calculation</li>
+              <li>Win rate update</li>
+              <li>Max drawdown tracking</li>
+              <li>Telegram: EOD summary</li>
+              <li>Commit portfolio.json</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--pink);"></div>
+          <div class="tl-content">
+            <div class="tl-time" style="color:var(--pink)">Sun 6 PM</div>
+            <div class="tl-name">Weekly<br>Intelligence</div>
+            <div class="tl-file">weekly_briefing.py</div>
+            <ul class="tl-bullets">
+              <li>Full week P&amp;L review</li>
+              <li>Macro: VIX, fed, yields</li>
+              <li>Sector rotation analysis</li>
+              <li>Best / worst performers</li>
+              <li>Strategy adjustments</li>
+              <li>Telegram: weekly briefing</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:24px;padding:12px 16px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:8px;font-size:0.75rem;color:var(--muted);">
+        ⚡ <strong style="color:var(--red)">QA Analyst</strong> (<code>qa_analyst.py</code>) fires automatically after <em>any</em> workflow failure — diagnoses root cause and sends Telegram alert.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── MODEL ROUTING ─────────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">LLM Strategy</div>
+    <h2>Model Routing — Multi-LLM via LiteLLM (~$0.60/day)</h2>
+    <div class="card" style="padding:0;">
+      <table class="model-table">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Model</th>
+            <th>Provider</th>
+            <th>Why This Model</th>
+            <th>Est. Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fundamental Analyst</strong></td>
+            <td><span class="model-badge" style="background:rgba(99,102,241,0.12);color:var(--indigo)"><span class="model-dot" style="background:var(--indigo)"></span>llama-3.1-70b-versatile</span></td>
+            <td>Groq</td>
+            <td>Structured output formatting; fast inference; 5× cheaper than Haiku</td>
+            <td><span class="cost-badge" style="background:rgba(34,197,94,0.12);color:var(--green)">~free</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sentiment Analyst</strong></td>
+            <td><span class="model-badge" style="background:rgba(99,102,241,0.12);color:var(--indigo)"><span class="model-dot" style="background:var(--indigo)"></span>llama-3.1-70b-versatile</span></td>
+            <td>Groq</td>
+            <td>High throughput for Reddit/news text classification at zero marginal cost</td>
+            <td><span class="cost-badge" style="background:rgba(34,197,94,0.12);color:var(--green)">~free</span></td>
+          </tr>
+          <tr>
+            <td><strong>Technical Analyst</strong></td>
+            <td><span class="model-badge" style="background:rgba(99,102,241,0.12);color:var(--indigo)"><span class="model-dot" style="background:var(--indigo)"></span>llama-3.1-70b-versatile</span></td>
+            <td>Groq</td>
+            <td>Pattern recognition from indicator values; no premium quality needed</td>
+            <td><span class="cost-badge" style="background:rgba(34,197,94,0.12);color:var(--green)">~free</span></td>
+          </tr>
+          <tr>
+            <td><strong>Bull Researcher</strong></td>
+            <td><span class="model-badge" style="background:rgba(34,197,94,0.12);color:var(--green)"><span class="model-dot" style="background:var(--green)"></span>gpt-4o-mini</span></td>
+            <td>OpenAI</td>
+            <td>Logical argumentation and rebuttal quality; better debate than Llama at low cost</td>
+            <td><span class="cost-badge" style="background:rgba(245,158,11,0.12);color:var(--yellow)">~$0.01/day</span></td>
+          </tr>
+          <tr>
+            <td><strong>Bear Researcher</strong></td>
+            <td><span class="model-badge" style="background:rgba(34,197,94,0.12);color:var(--green)"><span class="model-dot" style="background:var(--green)"></span>gpt-4o-mini</span></td>
+            <td>OpenAI</td>
+            <td>Symmetric debate partner for the bull; same model ensures fair argumentation quality</td>
+            <td><span class="cost-badge" style="background:rgba(245,158,11,0.12);color:var(--yellow)">~$0.01/day</span></td>
+          </tr>
+          <tr>
+            <td><strong>Trader</strong></td>
+            <td><span class="model-badge" style="background:rgba(245,158,11,0.12);color:var(--yellow)"><span class="model-dot" style="background:var(--yellow)"></span>claude-sonnet-4-6</span></td>
+            <td>Anthropic</td>
+            <td>Best synthesis/cost balance; reads full report chain, proposes sized position with rationale</td>
+            <td><span class="cost-badge" style="background:rgba(249,115,22,0.12);color:var(--orange)">~$0.10/day</span></td>
+          </tr>
+          <tr>
+            <td><strong>Risk Manager</strong></td>
+            <td><span class="model-badge" style="background:rgba(99,102,241,0.12);color:var(--indigo)"><span class="model-dot" style="background:var(--indigo)"></span>llama-3.1-70b-versatile</span></td>
+            <td>Groq</td>
+            <td>Rule-based validation maps well to structured JSON output; no premium model needed</td>
+            <td><span class="cost-badge" style="background:rgba(34,197,94,0.12);color:var(--green)">~free</span></td>
+          </tr>
+          <tr>
+            <td><strong>Fund Manager</strong></td>
+            <td><span class="model-badge" style="background:rgba(236,72,153,0.12);color:var(--pink)"><span class="model-dot" style="background:var(--pink)"></span>claude-opus-4-6</span></td>
+            <td>Anthropic</td>
+            <td>⚡ Non-negotiable. Highest-stakes final gate. Best contextual reasoning for nuanced capital allocation decisions.</td>
+            <td><span class="cost-badge" style="background:rgba(239,68,68,0.12);color:var(--red)">~$0.47/day</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:0.75rem;color:var(--muted);">All agents use <code>litellm.completion()</code> — unified interface, identical semantics across providers. Cost reduced from ~$5.00/day to ~$0.60/day (88% reduction).</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── WATCHLIST ──────────────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Universe</div>
+    <h2>Watchlist — 26 Instruments Across 11 GICS Sectors</h2>
+    <div class="watchlist-grid">
+      <div class="wl-sector">
+        <div class="wl-sector-name">Technology</div>
+        <div class="wl-etf">Sector ETF: XLK</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(99,102,241,0.15);color:var(--indigo)">AAPL</span>
+          <span class="wl-ticker" style="background:rgba(99,102,241,0.15);color:var(--indigo)">NVDA</span>
+          <span class="wl-ticker" style="background:rgba(99,102,241,0.15);color:var(--indigo)">MSFT</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Communication Services</div>
+        <div class="wl-etf">Sector ETF: XLC</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(6,182,212,0.15);color:var(--cyan)">GOOGL</span>
+          <span class="wl-ticker" style="background:rgba(6,182,212,0.15);color:var(--cyan)">META</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Consumer Discretionary</div>
+        <div class="wl-etf">Sector ETF: XLY</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(168,85,247,0.15);color:var(--purple)">AMZN</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Healthcare</div>
+        <div class="wl-etf">Sector ETF: XLV</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(34,197,94,0.15);color:var(--green)">LLY</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Financials</div>
+        <div class="wl-etf">Sector ETF: XLF</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(245,158,11,0.15);color:var(--yellow)">JPM</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Energy</div>
+        <div class="wl-etf">Sector ETF: XLE</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(249,115,22,0.15);color:var(--orange)">XOM</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Industrials</div>
+        <div class="wl-etf">Sector ETF: XLI</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(132,204,22,0.15);color:var(--lime)">CAT</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Consumer Staples</div>
+        <div class="wl-etf">Sector ETF: XLP</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(20,184,166,0.15);color:var(--teal)">WMT</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Materials</div>
+        <div class="wl-etf">Sector ETF: XLB</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(236,72,153,0.15);color:var(--pink)">FCX</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Utilities</div>
+        <div class="wl-etf">Sector ETF: XLU</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(59,130,246,0.15);color:var(--blue)">NEE</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Real Estate</div>
+        <div class="wl-etf">Sector ETF: XLRE</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(99,102,241,0.15);color:var(--indigo)">PLD</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Crypto</div>
+        <div class="wl-etf">No sector ETF</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(245,158,11,0.15);color:var(--yellow)">BTC</span>
+          <span class="wl-ticker" style="background:rgba(245,158,11,0.15);color:var(--yellow)">ETH</span>
+          <span class="wl-ticker" style="background:rgba(245,158,11,0.15);color:var(--yellow)">SOL</span>
+        </div>
+      </div>
+      <div class="wl-sector">
+        <div class="wl-sector-name">Index ETF Candidates</div>
+        <div class="wl-etf">Compete vs stocks in pipeline</div>
+        <div class="wl-tickers">
+          <span class="wl-ticker" style="background:rgba(34,197,94,0.15);color:var(--green)">SPY</span>
+          <span class="wl-ticker" style="background:rgba(34,197,94,0.15);color:var(--green)">QQQ</span>
+          <span class="wl-ticker" style="background:rgba(34,197,94,0.15);color:var(--green)">IWM</span>
+          <span class="wl-ticker" style="background:rgba(34,197,94,0.15);color:var(--green)">GLD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── RISK FRAMEWORK ────────────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Risk Controls</div>
+    <h2>Risk Framework — Multi-Layer Protection</h2>
+    <div class="risk-grid">
+
+      <div class="risk-card">
+        <h3>Position Limits</h3>
+        <div class="risk-row"><span class="risk-key">Max concurrent positions</span><span class="risk-val" style="color:var(--yellow)">3</span></div>
+        <div class="risk-row"><span class="risk-key">Max per position</span><span class="risk-val" style="color:var(--yellow)">25% of equity</span></div>
+        <div class="risk-row"><span class="risk-key">Portfolio heat cap</span><span class="risk-val" style="color:var(--yellow)">85%</span></div>
+        <div class="risk-row"><span class="risk-key">Max portfolio beta</span><span class="risk-val" style="color:var(--yellow)">1.5×</span></div>
+        <div class="risk-row"><span class="risk-key">ETF combined cap</span><span class="risk-val" style="color:var(--yellow)">40% of equity</span></div>
+        <div class="risk-row"><span class="risk-key">Min volume ratio</span><span class="risk-val" style="color:var(--yellow)">80% of 20d avg</span></div>
+      </div>
+
+      <div class="risk-card">
+        <h3>VIX Regime Sizing</h3>
+        <div class="risk-row"><span class="risk-key" style="color:var(--green)">Low (&lt;18)</span><span class="risk-val" style="color:var(--green)">100% position size</span></div>
+        <div class="risk-row"><span class="risk-key" style="color:var(--yellow)">Moderate (18–25)</span><span class="risk-val" style="color:var(--yellow)">75% position size</span></div>
+        <div class="risk-row"><span class="risk-key" style="color:var(--orange)">High (25–35)</span><span class="risk-val" style="color:var(--orange)">50% position size</span></div>
+        <div class="risk-row"><span class="risk-key" style="color:var(--red)">Extreme (&gt;35)</span><span class="risk-val" style="color:var(--red)">No new trades</span></div>
+        <div class="risk-row"><span class="risk-key">VIX 5d spike &gt;20%</span><span class="risk-val" style="color:var(--red)">Additional 0.5× cut</span></div>
+        <div style="margin-top:10px;">
+          <div class="vix-bar">
+            <div class="vix-seg low"></div>
+            <div class="vix-seg mod"></div>
+            <div class="vix-seg high"></div>
+            <div class="vix-seg ext"></div>
+          </div>
+          <div class="vix-labels"><span>0</span><span>18</span><span>25</span><span>35</span><span>∞</span></div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h3>Regime Adjustments</h3>
+        <div class="risk-row"><span class="risk-key">SPY &lt; 200d MA → Bearish</span><span class="risk-val" style="color:var(--red)">0.5× size multiplier</span></div>
+        <div class="risk-row"><span class="risk-key">Short selling (bear only)</span><span class="risk-val" style="color:var(--yellow)">Allowed</span></div>
+        <div class="risk-row"><span class="risk-key">Short TP</span><span class="risk-val" style="color:var(--green)">8% decline</span></div>
+        <div class="risk-row"><span class="risk-key">Short SL</span><span class="risk-val" style="color:var(--red)">4% rise</span></div>
+        <div class="risk-row"><span class="risk-key">Sector top-2 tilt</span><span class="risk-val" style="color:var(--green)">+25% position size</span></div>
+        <div class="risk-row"><span class="risk-key">Sector bottom-2 tilt</span><span class="risk-val" style="color:var(--red)">−25% position size</span></div>
+      </div>
+
+      <div class="risk-card">
+        <h3>Per-Trade Parameters</h3>
+        <div class="risk-row"><span class="risk-key">Default risk profile</span><span class="risk-val" style="color:var(--cyan)">Moderate</span></div>
+        <div class="risk-row"><span class="risk-key">Stop-loss range</span><span class="risk-val" style="color:var(--yellow)">3–8% (VIX-adjusted)</span></div>
+        <div class="risk-row"><span class="risk-key">Take-profit range</span><span class="risk-val" style="color:var(--green)">6–15%</span></div>
+        <div class="risk-row"><span class="risk-key">Partial profit level</span><span class="risk-val" style="color:var(--green)">~50% of TP target</span></div>
+        <div class="risk-row"><span class="risk-key">Slippage model</span><span class="risk-val" style="color:var(--muted)">15 bps per fill</span></div>
+        <div class="risk-row"><span class="risk-key">Circuit breaker</span><span class="risk-val" style="color:var(--red)">Halts all activity</span></div>
+      </div>
+
+      <div class="risk-card">
+        <h3>ORB Scalping (Paper-Only)</h3>
+        <div class="risk-row"><span class="risk-key">Capital pool</span><span class="risk-val">$5,000 separate</span></div>
+        <div class="risk-row"><span class="risk-key">Opening range window</span><span class="risk-val">9:30–10:00 AM (30 min)</span></div>
+        <div class="risk-row"><span class="risk-key">Breakout confirmation</span><span class="risk-val">1.3× volume ratio</span></div>
+        <div class="risk-row"><span class="risk-key">Take-profit</span><span class="risk-val" style="color:var(--green)">+0.75% from entry</span></div>
+        <div class="risk-row"><span class="risk-key">Stop-loss</span><span class="risk-val" style="color:var(--red)">−0.40% from entry</span></div>
+        <div class="risk-row"><span class="risk-key">Auto-close</span><span class="risk-val" style="color:var(--yellow)">12:00 PM hard cut</span></div>
+      </div>
+
+      <div class="risk-card">
+        <h3>Day Trade Signals (Paper-Only)</h3>
+        <div class="risk-row"><span class="risk-key">Gap-and-go min gap</span><span class="risk-val">≥ 2.0% pre-market</span></div>
+        <div class="risk-row"><span class="risk-key">Volume confirmation</span><span class="risk-val">1.5× 30d avg</span></div>
+        <div class="risk-row"><span class="risk-key">Gap TP</span><span class="risk-val" style="color:var(--green)">+1.5% same day</span></div>
+        <div class="risk-row"><span class="risk-key">Gap SL</span><span class="risk-val" style="color:var(--red)">−0.8% from entry</span></div>
+        <div class="risk-row"><span class="risk-key">Momentum: near 52w high</span><span class="risk-val">within 2% of high</span></div>
+        <div class="risk-row"><span class="risk-key">Momentum TP / SL</span><span class="risk-val">+2.0% / −1.0%</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── DATA SOURCES / APIs ───────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Integrations</div>
+    <h2>Data Sources &amp; APIs</h2>
+    <div class="api-grid">
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(249,115,22,0.15);">📊</div>
+          <div>
+            <div class="api-name">Finnhub</div>
+            <div class="api-tier">Primary market data</div>
+          </div>
+        </div>
+        <div class="api-detail">Real-time quotes, historical OHLCV, company fundamentals, news headlines, pre-market data, VIX, earnings calendar.</div>
+        <div class="api-limit" style="background:rgba(34,197,94,0.1);color:var(--green);">60 calls/min — free tier</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(59,130,246,0.15);">📉</div>
+          <div>
+            <div class="api-name">yfinance</div>
+            <div class="api-tier">Fallback market data</div>
+          </div>
+        </div>
+        <div class="api-detail">Historical OHLCV bars, adjusted prices, sector ETF data. Used when Finnhub rate-limits or returns stale data. No API key needed.</div>
+        <div class="api-limit" style="background:rgba(245,158,11,0.1);color:var(--yellow);">Rate-limited on cloud IPs</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(255,69,0,0.15);">🤖</div>
+          <div>
+            <div class="api-name">Reddit</div>
+            <div class="api-tier">Public JSON API</div>
+          </div>
+        </div>
+        <div class="api-detail">r/wallstreetbets, r/investing, r/stocks post scraping via public .json endpoints. No OAuth — self-service API killed Nov 2025.</div>
+        <div class="api-limit" style="background:rgba(239,68,68,0.1);color:var(--red);">Blocked on GH Actions IPs</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(99,102,241,0.15);">🦙</div>
+          <div>
+            <div class="api-name">Groq</div>
+            <div class="api-tier">Analysts + Risk Manager</div>
+          </div>
+        </div>
+        <div class="api-detail">Ultra-fast Llama-3.1-70B inference. Powers Fundamental, Sentiment, Technical Analysts and Risk Manager. Effectively free at current volume.</div>
+        <div class="api-limit" style="background:rgba(34,197,94,0.1);color:var(--green);">6,000 req/day, 30 req/min</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(34,197,94,0.15);">🟢</div>
+          <div>
+            <div class="api-name">OpenAI</div>
+            <div class="api-tier">Bull/Bear Researchers</div>
+          </div>
+        </div>
+        <div class="api-detail">GPT-4o-mini for the Bull and Bear researcher debate. Selected for logical argumentation quality at low token cost.</div>
+        <div class="api-limit" style="background:rgba(245,158,11,0.1);color:var(--yellow);">~$0.03/day at current volume</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(236,72,153,0.15);">🤖</div>
+          <div>
+            <div class="api-name">Anthropic</div>
+            <div class="api-tier">Trader + Fund Manager</div>
+          </div>
+        </div>
+        <div class="api-detail">Claude Sonnet 4.6 (Trader) + Claude Opus 4.6 (Fund Manager). Highest reasoning quality reserved for final synthesis and execution gate.</div>
+        <div class="api-limit" style="background:rgba(239,68,68,0.1);color:var(--red);">~$0.47/day — monitor credits</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(20,184,166,0.15);">📈</div>
+          <div>
+            <div class="api-name">Alpaca</div>
+            <div class="api-tier">Paper Trading Broker</div>
+          </div>
+        </div>
+        <div class="api-detail">paper-api.alpaca.markets — NEVER changed to live. Market order execution, portfolio sync. 15 bps slippage modelled on each fill.</div>
+        <div class="api-limit" style="background:rgba(34,197,94,0.1);color:var(--green);">Free paper trading</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-icon" style="background:rgba(6,182,212,0.15);">✈️</div>
+          <div>
+            <div class="api-name">Telegram</div>
+            <div class="api-tier">Alerts &amp; Group Notifications</div>
+          </div>
+        </div>
+        <div class="api-detail">@Fahads_AITraderbot — sends session messages to private chat + group. Pre-market, morning, midday, pre-close, EOD, and weekly briefings.</div>
+        <div class="api-limit" style="background:rgba(34,197,94,0.1);color:var(--green);">Free bot API</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── INFRASTRUCTURE FLOW ───────────────────────────────── -->
+  <div class="section">
+    <div class="label" style="margin-bottom:6px">Infrastructure</div>
+    <h2>Automation &amp; Delivery Pipeline</h2>
+    <div class="card" style="padding:32px;">
+      <div class="infra-flow">
+
+        <div class="infra-node" style="background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.3);">
+          <div class="node-icon">⏰</div>
+          <div class="node-name" style="color:var(--indigo)">Cron Schedule</div>
+          <div class="node-sub">GitHub Actions<br>7 triggers/day</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3);">
+          <div class="node-icon">🐧</div>
+          <div class="node-name" style="color:var(--yellow)">Ubuntu Runner</div>
+          <div class="node-sub">Python 3.11<br>Free tier (~90 min queue)</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(168,85,247,0.08);border-color:rgba(168,85,247,0.3);">
+          <div class="node-icon">🤖</div>
+          <div class="node-name" style="color:var(--purple)">Session Script</div>
+          <div class="node-sub">e.g. morning_session.py<br>Full pipeline execution</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.3);">
+          <div class="node-icon">📄</div>
+          <div class="node-name" style="color:var(--cyan)">portfolio.json</div>
+          <div class="node-sub">docs/ directory<br>Full state snapshot</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.3);">
+          <div class="node-icon">📦</div>
+          <div class="node-name" style="color:var(--green)">Git Commit</div>
+          <div class="node-sub">Auto-commit + pull<br>--rebase + push</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.3);">
+          <div class="node-icon">🌐</div>
+          <div class="node-name" style="color:var(--orange)">GitHub Pages</div>
+          <div class="node-sub">index.html<br>Refreshes every 60s</div>
+        </div>
+
+        <div class="infra-arrow">→</div>
+
+        <div class="infra-node" style="background:rgba(236,72,153,0.08);border-color:rgba(236,72,153,0.3);">
+          <div class="node-icon">✈️</div>
+          <div class="node-name" style="color:var(--pink)">Telegram</div>
+          <div class="node-sub">Private + Group chat<br>Session summary</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:14px;">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">GitHub Secrets</div>
+          <div style="font-size:0.72rem;color:var(--muted);line-height:1.8;font-family:monospace;">
+            ANTHROPIC_API_KEY<br>
+            GROQ_API_KEY<br>
+            OPENAI_API_KEY<br>
+            FINNHUB_API_KEY<br>
+            TELEGRAM_BOT_TOKEN<br>
+            TELEGRAM_CHAT_ID<br>
+            TELEGRAM_GROUP_CHAT_ID
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:14px;">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Key Paths</div>
+          <div style="font-size:0.72rem;color:var(--muted);line-height:1.8;font-family:monospace;">
+            docs/portfolio.json → state<br>
+            docs/index.html → dashboard<br>
+            .tmp/logs/YYYY-MM-DD/ → logs<br>
+            agents/ → LLM modules<br>
+            tools/ → deterministic scripts<br>
+            workflows/ → SOPs<br>
+            .env → local API keys
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:14px;">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Safety Rules</div>
+          <div style="font-size:0.72rem;line-height:1.8;">
+            <div style="color:var(--red);">⛔ NEVER use live Alpaca endpoint</div>
+            <div style="color:var(--red);">⛔ NEVER skip Risk Management</div>
+            <div style="color:var(--red);">⛔ NEVER hardcode API keys</div>
+            <div style="color:var(--yellow);">⚠ Fund Manager HOLD → no order</div>
+            <div style="color:var(--green);">✓ Always log full agent chain</div>
+            <div style="color:var(--green);">✓ Retry once → fallback → log</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <div style="text-align:center;color:var(--muted);font-size:0.75rem;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);">
+    AI Paper Trading System · TradingAgents Architecture · outtcom/ai-paper-trading · Dashboard: outtcom.github.io/ai-paper-trading
+  </div>
+
+</div>
+</body>
+</html>
