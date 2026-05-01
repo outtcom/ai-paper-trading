@@ -1055,7 +1055,10 @@
         const labelColor = action === 'buy' ? 'var(--green)' : action === 'sell' ? 'var(--red)' : 'var(--yellow)';
         const borderColor = action === 'buy' ? 'var(--green)' : action === 'sell' ? 'var(--red)' : 'var(--border)';
         const entry2 = bi2[etf] || {};
-        const retPct = entry2.return_pct;
+        let retPct = entry2.return_pct;
+        if ((retPct === null || retPct === undefined) && etf === 'SPY') {
+          retPct = (data.stats && data.stats.benchmark_return_pct != null) ? data.stats.benchmark_return_pct : null;
+        }
         const retStr = retPct !== null && retPct !== undefined ? `${retPct >= 0 ? '+' : ''}${fmt(retPct)}%` : 'N/A';
         const retColor = retPct !== null && retPct !== undefined ? (retPct >= 0 ? 'var(--green)' : 'var(--red)') : 'var(--muted)';
         const confStr = conf !== null ? ` ${conf}%` : '';
