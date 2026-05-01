@@ -1,14 +1,14 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 14,
+    "current_day": 15,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-05-01T15:42:05.467262+00:00"
+    "last_updated": "2026-05-01T20:12:14.500192+00:00"
   },
   "cash": 4207.55,
   "initial_capital": 5000.0,
-  "equity": 4989.77,
+  "equity": 5018.18,
   "peak_equity": 5029.03,
   "circuit_breaker": {
     "triggered": false,
@@ -16,12 +16,12 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.41,
-    "sortino": -2.0,
-    "calmar": -2.52,
+    "sharpe": 0.51,
+    "sortino": 0.59,
+    "calmar": 4.41,
     "spy_start_price": 686.1,
-    "spy_current_price": 718.66,
-    "benchmark_return_pct": 4.75,
+    "spy_current_price": 720.65,
+    "benchmark_return_pct": 5.04,
     "max_drawdown_pct": 0.78
   },
   "positions": {
@@ -30,13 +30,13 @@
       "qty": 1,
       "entry_price": 504.29,
       "cost_basis": 504.29,
-      "last_price": 533.05,
-      "stop_loss": 476.98,
+      "last_price": 542.21,
+      "stop_loss": 498.83,
       "take_profit": 584.98,
       "partial_profit_price": 544.63,
       "stop_loss_pct": 8.0,
       "take_profit_pct": 16.0,
-      "highest_price": 518.46,
+      "highest_price": 542.21,
       "lowest_price": 504.29,
       "partial_taken": false,
       "opened_date": "2026-04-29",
@@ -47,13 +47,13 @@
       "qty": 1,
       "entry_price": 263.04,
       "cost_basis": 263.04,
-      "last_price": 270.4,
-      "stop_loss": 251.81,
+      "last_price": 268.42,
+      "stop_loss": 255.0,
       "take_profit": 289.34,
       "partial_profit_price": 276.19,
       "stop_loss_pct": 5.0,
       "take_profit_pct": 10.0,
-      "highest_price": 265.06,
+      "highest_price": 268.42,
       "lowest_price": 263.04,
       "partial_taken": false,
       "opened_date": "2026-04-30",
@@ -257,6 +257,11 @@
       "day": 14,
       "date": "2026-05-01",
       "equity": 4989.77
+    },
+    {
+      "day": 14,
+      "date": "2026-05-01",
+      "equity": 5018.18
     }
   ],
   "journal": [
@@ -683,15 +688,16 @@
       "target_pct": 2.0,
       "stop_price": 86.69,
       "stop_pct": 1.0,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 87.37,
+      "exit_date": "2026-05-01",
+      "pnl_pct": -0.23,
+      "outcome": "loss",
       "auto_close_date": "2026-05-01",
       "rationale": "Near 52w high ($88.37) \u2014 vol ratio 1.5x",
       "qty": 14,
-      "allocated_usd": 1225.98
+      "allocated_usd": 1225.98,
+      "pnl_usd": -2.8
     },
     {
       "id": "DTS-2026-04-30-LLY-gap",
@@ -762,8 +768,8 @@
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": 3991.95,
-    "equity": 5217.93
+    "cash": 5215.13,
+    "equity": 5215.13
   },
   "scalping_capital": {
     "initial": 5000.0,
@@ -785,6 +791,11 @@
       "day": 13,
       "date": "2026-04-30",
       "equity": 5237.28
+    },
+    {
+      "day": 14,
+      "date": "2026-05-01",
+      "equity": 5251.79
     }
   ],
   "dt_equity_curve": [
@@ -802,6 +813,11 @@
       "day": 13,
       "date": "2026-04-30",
       "equity": 5217.93
+    },
+    {
+      "day": 14,
+      "date": "2026-05-01",
+      "equity": 5215.13
     }
   ],
   "scalping_equity_curve": [
@@ -819,23 +835,28 @@
       "day": 13,
       "date": "2026-04-30",
       "equity": 5000.0
+    },
+    {
+      "day": 14,
+      "date": "2026-05-01",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 667.74,
-      "return_pct": 6.23
+      "current_price": 674.18,
+      "return_pct": 7.25
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 277.97,
-      "return_pct": 3.44
+      "current_price": 279.28,
+      "return_pct": 3.93
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 423.66,
-      "return_pct": -4.81
+      "current_price": 423.18,
+      "return_pct": -4.92
     }
   },
   "sector_strength": {
