@@ -79,6 +79,7 @@ def _default_portfolio() -> dict:
         "dt_equity_curve":       [],   # [{day, date, equity}] day trade pool daily snapshots
         "scalping_equity_curve": [],   # [{day, date, equity}] scalping pool daily snapshots
         "benchmark_indices": {
+            "SPY": {"start_price": None, "current_price": None, "return_pct": None},
             "QQQ": {"start_price": None, "current_price": None, "return_pct": None},
             "IWM": {"start_price": None, "current_price": None, "return_pct": None},
             "GLD": {"start_price": None, "current_price": None, "return_pct": None},
@@ -117,11 +118,9 @@ def _migrate(p: dict) -> dict:
     p.setdefault("spy_equity_curve", [])
     p.setdefault("dt_equity_curve", [])
     p.setdefault("scalping_equity_curve", [])
-    p.setdefault("benchmark_indices", {
-        "QQQ": {"start_price": None, "current_price": None, "return_pct": None},
-        "IWM": {"start_price": None, "current_price": None, "return_pct": None},
-        "GLD": {"start_price": None, "current_price": None, "return_pct": None},
-    })
+    bi_default = p.setdefault("benchmark_indices", {})
+    for _etf in ("SPY", "QQQ", "IWM", "GLD"):
+        bi_default.setdefault(_etf, {"start_price": None, "current_price": None, "return_pct": None})
     p.setdefault("sector_strength", {})
     p.setdefault("strategy_brief", {})
     p.setdefault("index_etf_signals", {})
@@ -535,8 +534,17 @@ def update_spy_benchmark(spy_price: float) -> None:
     p = _migrate(_load())
     start = p["stats"].get("spy_start_price")
     p["stats"]["spy_current_price"] = round(spy_price, 2)
+    ret = None
     if start and start > 0:
-        p["stats"]["benchmark_return_pct"] = round((spy_price - start) / start * 100, 2)
+        ret = round((spy_price - start) / start * 100, 2)
+        p["stats"]["benchmark_return_pct"] = ret
+    bi = p.setdefault("benchmark_indices", {})
+    bi.setdefault("SPY", {"start_price": None, "current_price": None, "return_pct": None})
+    bi["SPY"]["current_price"] = round(spy_price, 2)
+    if start:
+        bi["SPY"]["start_price"] = round(start, 2)
+    if ret is not None:
+        bi["SPY"]["return_pct"] = ret
     _save(p)
 
 
@@ -545,6 +553,9 @@ def set_spy_start_price(spy_price: float) -> None:
     p = _migrate(_load())
     if not p["stats"].get("spy_start_price"):
         p["stats"]["spy_start_price"] = round(spy_price, 2)
+        bi = p.setdefault("benchmark_indices", {})
+        bi.setdefault("SPY", {"start_price": None, "current_price": None, "return_pct": None})
+        bi["SPY"]["start_price"] = round(spy_price, 2)
         _save(p)
         print(f"[session] SPY benchmark start price: ${spy_price:.2f}")
 

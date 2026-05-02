@@ -843,6 +843,11 @@
     }
   ],
   "benchmark_indices": {
+    "SPY": {
+      "start_price": 686.1,
+      "current_price": 720.65,
+      "return_pct": 5.04
+    },
     "QQQ": {
       "start_price": 628.6,
       "current_price": 674.18,
