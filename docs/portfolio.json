@@ -1035,19 +1035,19 @@
   "index_etf_signals": {
     "SPY": {
       "action": "hold",
-      "confidence": 0.5
+      "confidence": 0.35
     },
     "QQQ": {
       "action": "hold",
-      "confidence": 0.5
+      "confidence": 0.35
     },
     "IWM": {
       "action": "hold",
-      "confidence": 0.5
+      "confidence": 0.35
     },
     "GLD": {
       "action": "hold",
-      "confidence": 0.5
+      "confidence": 0.35
     }
   }
 }

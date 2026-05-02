@@ -655,14 +655,18 @@ def main():
     results = _analyze_all(today, portfolio, earnings_blocked, strategy_brief=strategy_brief, watchlist=daily_watchlist)
 
     # Extract ETF pipeline signals and persist to portfolio.json
+    # Trader outputs "conviction" (low/medium/high string), not "confidence" (float)
+    _CONVICTION_CONF = {"high": 0.85, "medium": 0.65, "low": 0.35}
     try:
-        etf_signals = {
-            etf: {
+        etf_signals = {}
+        for etf in INDEX_ETFS:
+            td = results.get(etf, {}).get("trader_decision", {})
+            conviction_str = str(td.get("conviction", "low")).lower()
+            conf = _CONVICTION_CONF.get(conviction_str, 0.5)
+            etf_signals[etf] = {
                 "action":     results.get(etf, {}).get("final_order", {}).get("action", "hold"),
-                "confidence": float(results.get(etf, {}).get("trader_decision", {}).get("confidence", 0.5) or 0.5),
+                "confidence": conf,
             }
-            for etf in INDEX_ETFS
-        }
         update_index_etf_signals(etf_signals)
     except Exception as e:
         print(f"[morning] ETF signal extraction failed: {e}")
