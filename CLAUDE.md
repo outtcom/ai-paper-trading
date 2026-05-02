@@ -127,7 +127,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | Duplicate `_` vs `-` workflow files running scripts twice | Removed all `snake_case` duplicates — only `kebab-case` filenames remain |
 | `weekly_briefing.py` VIX None format error | Fixed: `{f'{vix:.1f}' if vix is not None else 'N/A'}` |
 | `morning_session.py` fails silently on Anthropic credit exhaustion | Wraps `main()` in try/except — sends Telegram alert on crash |
-| Reddit public JSON API blocked on GitHub Actions IPs | Expected — sentiment falls back gracefully; no code change needed |
+| Reddit public JSON API blocked on GitHub Actions IPs | `get_sentiment_summary()` now falls back to Finnhub `news_sentiment()` endpoint when Reddit returns 0 posts — free tier, works from any IP. Sentiment analyst receives bullish/bearish % + buzz score instead of post list. |
 | $5/day LLM cost unsustainable | Switched to multi-LLM via LiteLLM: Groq (analysts + risk), GPT-4o-mini (researchers), Sonnet (trader), Opus (fund manager only). Cost: ~$0.60/day |
 | All pipeline tickers ran through LLM even if ineligible | Pre-filter in `_analyze_all()` skips earnings-blocked, same-sector, and volume-fail tickers before any API calls |
 | `datetime.today()` returns UTC on GitHub Actions | All 6 session scripts use `datetime.now(ZoneInfo("America/New_York"))` for ET timestamps |

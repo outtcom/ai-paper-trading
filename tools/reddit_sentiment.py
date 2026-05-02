@@ -70,6 +70,28 @@ def get_sentiment_summary(ticker: str, limit: int = 25) -> Dict:
     posts = get_posts(ticker, limit)
 
     if not posts:
+        # Reddit public JSON API is blocked on cloud IPs (GitHub Actions).
+        # Fall back to Finnhub's ML news sentiment — free tier, works everywhere.
+        try:
+            from tools.finnhub_data import get_news_sentiment
+            fh = get_news_sentiment(ticker)
+            bull = fh.get("bullish_pct", 50)
+            bear = fh.get("bearish_pct", 50)
+            avg = round((bull - bear) / 100, 3)
+            label = "bullish" if avg > 0.1 else "bearish" if avg < -0.1 else "neutral"
+            return {
+                "ticker": ticker,
+                "post_count": 0,
+                "avg_sentiment": avg,
+                "sentiment_label": label,
+                "source": "finnhub_news_sentiment",
+                "finnhub": fh,
+                "note": f"Reddit unavailable — Finnhub news sentiment: {bull}% bullish / {bear}% bearish ({fh.get('articles_last_week', 0)} articles/week)",
+                "top_posts": [],
+            }
+        except Exception as e:
+            print(f"[reddit_sentiment] Finnhub fallback also failed: {e}")
+
         return {
             "ticker": ticker,
             "post_count": 0,

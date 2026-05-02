@@ -93,9 +93,43 @@ def get_company_profile(ticker: str) -> dict:
     }
 
 
+def get_news_sentiment(ticker: str) -> dict:
+    """
+    Fetch Finnhub's ML-derived news sentiment scores.
+    Returns buzz + bullish/bearish percentages. Free tier, works from any IP.
+    Used as fallback when Reddit public JSON API is blocked (cloud IPs).
+    """
+    client = _client()
+    try:
+        data = client.news_sentiment(ticker)
+        sentiment = data.get("sentiment", {})
+        buzz = data.get("buzz", {})
+        return {
+            "ticker": ticker,
+            "bullish_pct": round(sentiment.get("bullishPercent", 0) * 100, 1),
+            "bearish_pct": round(sentiment.get("bearishPercent", 0) * 100, 1),
+            "articles_last_week": buzz.get("articlesInLastWeek", 0),
+            "buzz_score": round(buzz.get("buzz", 0), 3),
+            "company_news_score": round(data.get("companyNewsScore", 0), 3),
+            "sector_avg_bullish_pct": round(data.get("sectorAverageBullishPercent", 0) * 100, 1),
+        }
+    except Exception as e:
+        return {
+            "ticker": ticker,
+            "bullish_pct": 50,
+            "bearish_pct": 50,
+            "articles_last_week": 0,
+            "buzz_score": 0,
+            "company_news_score": 0,
+            "sector_avg_bullish_pct": 50,
+            "error": str(e),
+        }
+
+
 if __name__ == "__main__":
     ticker = "AAPL"
     print("News:", get_news(ticker, days_back=3))
     print("Financials:", get_financials(ticker))
     print("Insiders:", get_insider_transactions(ticker))
     print("Profile:", get_company_profile(ticker))
+    print("News Sentiment:", get_news_sentiment(ticker))
