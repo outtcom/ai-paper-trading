@@ -1,59 +1,42 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 15,
+    "current_day": 16,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-05-04T16:23:33.189055+00:00"
+    "last_updated": "2026-05-04T20:41:10.513524+00:00"
   },
-  "cash": 3809.86,
+  "cash": 4386.31,
   "initial_capital": 5000.0,
-  "equity": 5018.18,
-  "peak_equity": 5029.03,
+  "equity": 5055.38,
+  "peak_equity": 5055.38,
   "circuit_breaker": {
     "triggered": false,
     "reason": null,
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.5,
-    "sortino": 0.57,
-    "calmar": 4.25,
+    "sharpe": 2.39,
+    "sortino": 3.6,
+    "calmar": 12.87,
     "spy_start_price": 686.1,
-    "spy_current_price": 720.65,
-    "benchmark_return_pct": 5.04,
+    "spy_current_price": 718.01,
+    "benchmark_return_pct": 4.65,
     "max_drawdown_pct": 0.78
   },
   "positions": {
-    "MU": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 504.29,
-      "cost_basis": 504.29,
-      "last_price": 578.72,
-      "stop_loss": 498.83,
-      "take_profit": 584.98,
-      "partial_profit_price": 544.63,
-      "stop_loss_pct": 8.0,
-      "take_profit_pct": 16.0,
-      "highest_price": 542.21,
-      "lowest_price": 504.29,
-      "partial_taken": false,
-      "opened_date": "2026-04-29",
-      "journal_note": "Portfolio is critically underdeployed at 21% vs 55% target with risk-on posture and high capital deployment priority. MU is a leading semiconductor name in the focus Technology sector with strong AI/HBM demand tailwinds. Despite incomplete analysis data, the structural thesis is sound. A 5% position (~$449 at ~$112/share) is conservative given deployment urgency, but appropriate given the lack of fundamental/technical/sentiment confirmation. The 8% stop-loss provides adequate downside protection"
-    },
     "AMZN": {
       "direction": "long",
       "qty": 1,
       "entry_price": 263.04,
       "cost_basis": 263.04,
-      "last_price": 270.77,
-      "stop_loss": 255.0,
+      "last_price": 272.05,
+      "stop_loss": 258.45,
       "take_profit": 289.34,
       "partial_profit_price": 276.19,
       "stop_loss_pct": 5.0,
       "take_profit_pct": 10.0,
-      "highest_price": 268.42,
+      "highest_price": 272.05,
       "lowest_price": 263.04,
       "partial_taken": false,
       "opened_date": "2026-04-30",
@@ -64,7 +47,7 @@
       "qty": 1,
       "entry_price": 397.69,
       "cost_basis": 397.69,
-      "last_price": 393.61,
+      "last_price": 397.02,
       "stop_loss": 377.81,
       "take_profit": 437.46,
       "partial_profit_price": 417.57,
@@ -153,6 +136,21 @@
       "opened_date": "2026-04-28",
       "closed_date": "2026-04-30",
       "journal_note": "The strategy brief explicitly calls for HIGH capital deployment priority with zero current deployment, targeting Technology as a leading momentum sector. NVDA is the flagship AI/tech momentum name and fits the thesis perfectly. While all three quantitative streams failed due to model errors, the absence of data is not a bearish signal \u2014 it's an infrastructure issue. Sizing at ~40% rather than a full position reflects the NEUTRAL market posture and VIX at 19.3, with a 5% stop-loss to manage downs"
+    },
+    {
+      "ticker": "MU",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 504.29,
+      "exit_price": 576.45,
+      "cost_basis": 504.29,
+      "proceeds": 576.45,
+      "pnl": 72.16,
+      "pnl_pct": 14.31,
+      "reason": "partial_profit",
+      "opened_date": "2026-04-29",
+      "closed_date": "2026-05-04",
+      "journal_note": "Portfolio is critically underdeployed at 21% vs 55% target with risk-on posture and high capital deployment priority. MU is a leading semiconductor name in the focus Technology sector with strong AI/HBM demand tailwinds. Despite incomplete analysis data, the structural thesis is sound. A 5% position (~$449 at ~$112/share) is conservative given deployment urgency, but appropriate given the lack of fundamental/technical/sentiment confirmation. The 8% stop-loss provides adequate downside protection"
     }
   ],
   "equity_curve": [
@@ -295,6 +293,11 @@
       "day": 15,
       "date": "2026-05-04",
       "equity": 5018.18
+    },
+    {
+      "day": 15,
+      "date": "2026-05-04",
+      "equity": 5055.38
     }
   ],
   "journal": [
@@ -838,15 +841,16 @@
       "target_pct": 1.5,
       "stop_price": 277.9,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 276.83,
+      "exit_date": "2026-05-04",
+      "pnl_pct": -1.18,
+      "outcome": "loss",
       "auto_close_date": "2026-05-04",
       "rationale": "Pre-market gap +3.2% (LONG, vol pre-mkt)",
       "qty": 9,
-      "allocated_usd": 2521.26
+      "allocated_usd": 2521.26,
+      "pnl_usd": -29.79
     },
     {
       "id": "DTS-2026-05-04-LLY-gap",
@@ -859,15 +863,16 @@
       "target_pct": 1.5,
       "stop_price": 955.62,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 967.93,
+      "exit_date": "2026-05-04",
+      "pnl_pct": 0.48,
+      "outcome": "win",
       "auto_close_date": "2026-05-04",
       "rationale": "Pre-market gap +3.1% (LONG, vol pre-mkt)",
       "qty": 1,
-      "allocated_usd": 963.33
+      "allocated_usd": 963.33,
+      "pnl_usd": 4.6
     },
     {
       "id": "DTS-2026-05-04-FCX-gap",
@@ -880,15 +885,16 @@
       "target_pct": 1.5,
       "stop_price": 57.0,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 55.57,
+      "exit_date": "2026-05-04",
+      "pnl_pct": -1.73,
+      "outcome": "loss",
       "auto_close_date": "2026-05-04",
       "rationale": "Pre-market gap -2.1% (SHORT, vol pre-mkt)",
       "qty": 15,
-      "allocated_usd": 848.25
+      "allocated_usd": 848.25,
+      "pnl_usd": -14.7
     },
     {
       "id": "DTS-2026-05-04-GOOGL-momentum",
@@ -913,8 +919,8 @@
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": 496.6,
-    "equity": 5215.13
+    "cash": 4789.55,
+    "equity": 5175.24
   },
   "scalping_capital": {
     "initial": 5000.0,
@@ -941,6 +947,11 @@
       "day": 14,
       "date": "2026-05-01",
       "equity": 5251.79
+    },
+    {
+      "day": 15,
+      "date": "2026-05-04",
+      "equity": 5232.55
     }
   ],
   "dt_equity_curve": [
@@ -963,6 +974,11 @@
       "day": 14,
       "date": "2026-05-01",
       "equity": 5215.13
+    },
+    {
+      "day": 15,
+      "date": "2026-05-04",
+      "equity": 5175.24
     }
   ],
   "scalping_equity_curve": [
@@ -985,28 +1001,33 @@
       "day": 14,
       "date": "2026-05-01",
       "equity": 5000.0
+    },
+    {
+      "day": 15,
+      "date": "2026-05-04",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 720.65,
-      "return_pct": 5.04
+      "current_price": 718.01,
+      "return_pct": 4.65
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 674.18,
-      "return_pct": 7.25
+      "current_price": 672.88,
+      "return_pct": 7.04
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 279.28,
-      "return_pct": 3.93
+      "current_price": 277.88,
+      "return_pct": 3.41
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 423.18,
-      "return_pct": -4.92
+      "current_price": 414.71,
+      "return_pct": -6.83
     }
   },
   "sector_strength": {
