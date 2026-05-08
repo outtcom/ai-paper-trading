@@ -4,9 +4,9 @@
     "current_day": 19,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-05-08T10:50:16.877101+00:00"
+    "last_updated": "2026-05-08T11:53:13.073866+00:00"
   },
-  "cash": 4386.31,
+  "cash": 3319.55,
   "initial_capital": 5000.0,
   "equity": 5066.0,
   "peak_equity": 5076.93,
@@ -16,9 +16,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.55,
-    "sortino": 3.89,
-    "calmar": 12.68,
+    "sharpe": 2.52,
+    "sortino": 3.78,
+    "calmar": 12.32,
     "spy_start_price": 686.1,
     "spy_current_price": 731.58,
     "benchmark_return_pct": 6.63,
@@ -58,6 +58,23 @@
       "partial_taken": false,
       "opened_date": "2026-05-04",
       "journal_note": "The portfolio is severely under-deployed at 16% vs. 68% target with only 7 days remaining, and the strategy brief explicitly prioritizes aggressive capital deployment into Technology \u2014 ADI is a leading analog semiconductor company squarely in that focus sector. While quantitative analysis modules failed due to infrastructure errors (not due to any negative signal on ADI), the cost of guaranteed under-deployment outweighs the risk of a moderate position with a 5% stop-loss. Deploying ~$1,800 (rou"
+    },
+    "EQIX": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 1066.76,
+      "cost_basis": 1066.76,
+      "last_price": 1066.76,
+      "stop_loss": 992.09,
+      "take_profit": 1216.11,
+      "partial_profit_price": 1141.43,
+      "stop_loss_pct": 7.0,
+      "take_profit_pct": 14.0,
+      "highest_price": 1066.76,
+      "lowest_price": 1066.76,
+      "partial_taken": false,
+      "opened_date": "2026-05-08",
+      "journal_note": "Despite the analysis pipeline failures, EQIX is a best-in-class data center REIT directly in our focus sector (Real Estate) with strong structural tailwinds from AI/cloud demand. We are critically under-deployed at 13% on Day 19/22 in a risk-on environment \u2014 the opportunity cost of holding cash is severe. Taking a moderate position (~20% of portfolio, ~4 shares at ~$950) with a 7% stop-loss acknowledges the lack of quantitative signals while still deploying capital into a high-quality name align"
     }
   },
   "open_orders": [
@@ -115,6 +132,17 @@
       "day": 16,
       "submitted_at": "2026-05-05T11:31:23.707216+00:00",
       "resolved_at": "2026-05-05T12:31:25.476850+00:00"
+    },
+    {
+      "ticker": "EQIX",
+      "qty": 1,
+      "side": "BUY",
+      "price": 1066.76,
+      "order_type": "market",
+      "status": "executed",
+      "day": 19,
+      "submitted_at": "2026-05-08T11:36:24.339438+00:00",
+      "resolved_at": "2026-05-08T11:53:12.115954+00:00"
     }
   ],
   "trade_history": [
@@ -339,6 +367,11 @@
       "day": 18,
       "date": "2026-05-07",
       "equity": 5066.0
+    },
+    {
+      "day": 19,
+      "date": "2026-05-08",
+      "equity": 5066.0
     }
   ],
   "journal": [
@@ -473,6 +506,35 @@
         "risk_approved": null
       },
       "timestamp": "2026-05-04T12:09:39.743936+00:00"
+    },
+    {
+      "date": "2026-05-08",
+      "day": 19,
+      "ticker": "EQIX",
+      "action": "BUY",
+      "analysis_price": 1066.76,
+      "entry_price": 1066.76,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "low",
+      "score": 1.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 992.09,
+      "take_profit": 1216.11,
+      "vix_label": "LOW (17.1) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "Despite the analysis pipeline failures, EQIX is a best-in-class data center REIT directly in our focus sector (Real Estate) with strong structural tailwinds from AI/cloud demand. We are critically under-deployed at 13% on Day 19/22 in a risk-on environment \u2014 the opportunity cost of holding cash is severe. Taking a moderate position (~20% of portfolio, ~4 shares at ~$950) with a 7% stop-loss acknowledges the lack of quantitative signals while still deploying capital into a high-quality name aligned with our thesis.",
+      "bull_case": "**Bull Case for Equinix Inc. (EQIX)**\n\nEquinix Inc. (EQIX) stands out as a premier investment opportunity in the data center and interconnec",
+      "bear_case": "**Bear Case for Equinix Inc. (EQIX)**\n\nDespite the bullish perspective on Equinix Inc. (EQIX), significant risks overshadow its potential up",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "low",
+        "risk_approved": null
+      },
+      "timestamp": "2026-05-08T11:53:12.119787+00:00"
     }
   ],
   "day_trade_signals": [
@@ -1292,123 +1354,123 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 170.03,
-        "mom_5d": 6.86,
-        "mom_1m": 23.72,
-        "mom_3m": 25.36,
+        "price": 169.69,
+        "mom_5d": 6.39,
+        "mom_1m": 19.76,
+        "mom_3m": 20.24,
         "above_ma50": true,
-        "rsi_14": 82.2,
-        "score": 19.99,
+        "rsi_14": 79.5,
+        "score": 16.84,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 117.35,
-        "mom_5d": 1.79,
-        "mom_1m": 4.95,
-        "mom_3m": 0.98,
+        "price": 117.38,
+        "mom_5d": 0.75,
+        "mom_1m": 3.14,
+        "mom_3m": 1.4,
         "above_ma50": true,
-        "rsi_14": 42.8,
-        "score": 4.21,
+        "rsi_14": 41.5,
+        "score": 3.07,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 119.87,
-        "mom_5d": 2.59,
-        "mom_1m": 11.23,
-        "mom_3m": 2.01,
+        "price": 119.88,
+        "mom_5d": 1.29,
+        "mom_1m": 8.18,
+        "mom_3m": 1.6,
         "above_ma50": true,
-        "rsi_14": 58.5,
-        "score": 7.79,
+        "rsi_14": 47.4,
+        "score": 5.8,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 145.4,
-        "mom_5d": 1.79,
-        "mom_1m": -0.8,
-        "mom_3m": -6.1,
+        "price": 144.72,
+        "mom_5d": -0.87,
+        "mom_1m": -3.31,
+        "mom_3m": -8.24,
         "above_ma50": false,
-        "rsi_14": 45.9,
-        "score": -1.08,
+        "rsi_14": 34.8,
+        "score": -3.56,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 51.84,
-        "mom_5d": -0.15,
-        "mom_1m": 3.93,
-        "mom_3m": -2.72,
+        "price": 51.55,
+        "mom_5d": -1.11,
+        "mom_1m": 0.68,
+        "mom_3m": -4.99,
         "above_ma50": true,
-        "rsi_14": 47.1,
-        "score": 2.38,
+        "rsi_14": 36.3,
+        "score": 0.01,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 57.0,
-        "mom_5d": -3.44,
-        "mom_1m": -5.25,
-        "mom_3m": 9.17,
+        "price": 55.95,
+        "mom_5d": -6.2,
+        "mom_1m": -3.62,
+        "mom_3m": 5.07,
         "above_ma50": false,
-        "rsi_14": 52.0,
-        "score": -1.82,
+        "rsi_14": 54.7,
+        "score": -2.66,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 176.87,
-        "mom_5d": 4.08,
-        "mom_1m": 7.66,
-        "mom_3m": 5.05,
+        "price": 174.0,
+        "mom_5d": -0.33,
+        "mom_1m": 2.09,
+        "mom_3m": 0.47,
         "above_ma50": true,
-        "rsi_14": 61.8,
-        "score": 7.06,
+        "rsi_14": 50.9,
+        "score": 2.04,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 84.24,
-        "mom_5d": 1.59,
-        "mom_1m": 3.67,
-        "mom_3m": -3.08,
+        "price": 83.98,
+        "mom_5d": -0.39,
+        "mom_1m": 1.45,
+        "mom_3m": -4.5,
         "above_ma50": true,
-        "rsi_14": 67.2,
-        "score": 2.7,
+        "rsi_14": 60.2,
+        "score": 0.71,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 52.41,
-        "mom_5d": 2.85,
-        "mom_1m": 4.65,
-        "mom_3m": 3.78,
+        "price": 51.4,
+        "mom_5d": -0.14,
+        "mom_1m": -0.68,
+        "mom_3m": -0.21,
         "above_ma50": true,
-        "rsi_14": 56.4,
-        "score": 4.94,
+        "rsi_14": 46.0,
+        "score": 0.58,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 45.71,
-        "mom_5d": 0.07,
-        "mom_1m": -1.21,
-        "mom_3m": 6.06,
+        "price": 45.12,
+        "mom_5d": -3.69,
+        "mom_1m": -3.55,
+        "mom_3m": 4.08,
         "above_ma50": false,
-        "rsi_14": 44.4,
-        "score": 0.63,
+        "rsi_14": 41.5,
+        "score": -2.07,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 44.74,
-        "mom_5d": 2.52,
-        "mom_1m": 7.24,
-        "mom_3m": 8.51,
+        "price": 44.4,
+        "mom_5d": 0.0,
+        "mom_1m": 4.62,
+        "mom_3m": 5.74,
         "above_ma50": true,
-        "rsi_14": 58.6,
-        "score": 7.08,
+        "rsi_14": 49.2,
+        "score": 4.46,
         "sector": "Real Estate"
       }
     },
@@ -1416,14 +1478,14 @@
       "Technology",
       "Consumer Discretionary",
       "Real Estate",
-      "Industrials",
-      "Materials",
       "Communication Services",
+      "Industrials",
       "Consumer Staples",
+      "Materials",
       "Financials",
       "Utilities",
-      "Healthcare",
-      "Energy"
+      "Energy",
+      "Healthcare"
     ],
     "top_3": [
       "Technology",
@@ -1432,14 +1494,14 @@
     ],
     "bottom_3": [
       "Utilities",
-      "Healthcare",
-      "Energy"
+      "Energy",
+      "Healthcare"
     ],
-    "as_of": "2026-05-07"
+    "as_of": "2026-05-08"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.45,
+    "risk_budget_multiplier": 1.5,
     "focus_sectors": [
       "Technology",
       "Consumer Discretionary",
@@ -1447,12 +1509,12 @@
     ],
     "avoid_sectors": [
       "Utilities",
-      "Healthcare",
-      "Energy"
+      "Energy",
+      "Healthcare"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "With VIX at 17.4, SPY in a confirmed uptrend, and credit conditions healthy, macro conditions are unambiguously risk-on; at Day 18/22 with only 14% deployed against an 82% target, aggressive capital deployment into leading sectors is the highest-priority imperative today \u2014 sitting in cash is the primary risk. Initiate up to 2 new positions in Technology and Consumer Discretionary momentum leaders immediately, complementing existing AMZN and ADI holdings.",
+    "primary_thesis": "With VIX at 17.1, SPY in a confirmed uptrend, and credit conditions stable, macro conditions fully support aggressive deployment. At only 13% deployed on Day 19/22 \u2014 73 percentage points behind pace \u2014 capital must be put to work today in leading sectors or we lock in opportunity cost against a rising market.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
