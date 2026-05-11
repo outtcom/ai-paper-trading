@@ -34,7 +34,7 @@ that is done by the specialized agents. Your job is to:
 
 | Agent | Model | Provider | Why |
 |-------|-------|----------|-----|
-| Fundamental, Sentiment, Technical Analysts | `groq/llama-3.1-70b-versatile` | Groq | Structured formatting, 5× cheaper than Haiku |
+| Fundamental, Sentiment, Technical Analysts | `groq/llama-3.3-70b-versatile` | Groq | Structured formatting, 5× cheaper than Haiku |
 | Bull/Bear Researchers | `openai/gpt-4o-mini` | OpenAI | Logical argumentation at low cost |
 | Trader | `claude-sonnet-4-6` | Anthropic | Best synthesis/cost balance |
 | Risk Manager | `groq/llama-3.1-70b-versatile` | Groq | Structured JSON output, no need for premium model |
@@ -141,11 +141,13 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | Workflows arrive late due to GHA queue | Free-tier runner congestion during US market hours. Actual measured delays: pre-market ~105 min, morning ~90 min, midday ~70 min, pre-close ~90 min, EOD ~60 min. Crons calibrated individually to each job's observed delay. |
 | Local `morning_session.py` fails with Anthropic credit error, GitHub Actions succeeds | Two separate API keys: local `.env` key vs GitHub repo secret. They have independent billing. Exhaust one → top up at console.anthropic.com. GitHub Actions pipeline unaffected. |
 | Local scripts crash on Windows with `UnicodeEncodeError` on emoji print statements | cp1252 codec can't encode emoji. Fix: run with `PYTHONIOENCODING=utf-8 python script.py` locally. |
+| Groq `llama-3.1-70b-versatile` decommissioned — all 5 Groq agents silently failing since Day 11 | Changed `MODELS["fast"]` in `config.py` to `groq/llama-3.3-70b-versatile` (direct successor, drop-in replacement). This affected: Fundamental Analyst, Sentiment Analyst, Technical Analyst, Risk Manager, Strategy Consultant. |
+| ORB scalping: zero signals generated across 15 days | `bars[-1]` pointed to the ~11:00 AM bar (GHA runs 60-90 min late). Breakout had already reverted by then. Fixed: now uses `bars[n_range_bars]` — the actual first bar after the opening range (10:00 AM bar) — so signals fire at the correct ORB moment regardless of when GHA executes. |
 
 ## API Credit Notes
 
 - **Anthropic API**: Only Trader (Sonnet) and Fund Manager (Opus) still use Claude. ~$0.47/day vs $5.00 previously. Monitor at console.anthropic.com.
-- **Groq API**: Free tier — 6,000 req/day, 30 req/min. Sufficient for current watchlist.
+- **Groq API**: Free tier — 6,000 req/day, 30 req/min. Model: `llama-3.3-70b-versatile` (updated from decommissioned `llama-3.1-70b-versatile` on 2026-05-02).
 - **OpenAI API**: GPT-4o-mini for researchers. ~$0.03/day at current volume.
 - **Finnhub free tier**: 60 API calls/minute. Sufficient for current watchlist size.
 

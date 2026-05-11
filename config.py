@@ -109,7 +109,7 @@ VIX_ROC_THRESHOLD = 20.0    # % rise in VIX over 5 days → additional 0.5× siz
 # Model Assignments (tiered for token efficiency)
 # ---------------------------------------------------------------------------
 MODELS = {
-    "fast":     "groq/llama-3.1-70b-versatile",  # formatters (fundamental, sentiment, technical, risk manager)
+    "fast":     "groq/llama-3.3-70b-versatile",  # formatters (fundamental, sentiment, technical, risk manager)
     "debate":   "openai/gpt-4o-mini",             # bull/bear researchers
     "analyst":  "claude-sonnet-4-6",              # trader
     "decision": "claude-opus-4-6",                # fund manager only

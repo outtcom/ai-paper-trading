@@ -44,6 +44,7 @@ from config import (
 )
 from agents import strategy_consultant
 from orchestrator import run_pipeline
+from tools.health_check import run as run_health_check, check_pipeline_errors
 from tools.market_data import get_latest_price, get_ohlcv, _yahoo_direct_ohlcv
 from tools.market_regime import (
     get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked,
@@ -428,6 +429,9 @@ def main():
 
     portfolio = get_portfolio()
 
+    # ── LLM provider health check ──────────────────────────────────────────
+    run_health_check()
+
     # ── Start new session if none active ───────────────────────────────────
     if not portfolio["session"]["active"]:
         print("[morning] No active session — starting a new 10-day session.")
@@ -653,6 +657,9 @@ def main():
 
     # ── Run full AI pipeline ───────────────────────────────────────────────
     results = _analyze_all(today, portfolio, earnings_blocked, strategy_brief=strategy_brief, watchlist=daily_watchlist)
+
+    # ── Alert on widespread agent failures ────────────────────────────────
+    check_pipeline_errors(results, today)
 
     # Extract ETF pipeline signals and persist to portfolio.json
     # Trader outputs "conviction" (low/medium/high string), not "confidence" (float)

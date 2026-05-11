@@ -50,8 +50,10 @@ def _detect_orb_signals(watchlist: list, today: str) -> list:
         range_high  = max(b["high"] for b in range_bars)
         range_low   = min(b["low"]  for b in range_bars)
 
-        # Last completed bar = the breakout bar (bars[-1])
-        last_bar = bars[-1]
+        # Breakout bar = the first bar AFTER the opening range (bars[n_range_bars]).
+        # Using bars[-1] caused stale signals because GHA runs 60-90 min late —
+        # by then price has already reverted inside the range.
+        last_bar = bars[n_range_bars]
         current  = last_bar["close"]
         cur_vol  = last_bar["volume"]
 
