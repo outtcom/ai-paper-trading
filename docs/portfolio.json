@@ -4,7 +4,7 @@
     "current_day": 18,
     "total_days": 22,
     "active": true,
-    "last_updated": "2026-05-14T12:26:11.556020+00:00"
+    "last_updated": "2026-05-14T15:40:23.186747+00:00"
   },
   "cash": 4501.38,
   "initial_capital": 5000.0,
@@ -1165,6 +1165,30 @@
       "rationale": "Pre-market gap +2.6% (LONG, vol pre-mkt)",
       "qty": 1,
       "allocated_usd": 1015.75
+    },
+    {
+      "id": "DTS-2026-05-14-META-scalp",
+      "ticker": "META",
+      "signal_type": "scalping_orb",
+      "direction": "long",
+      "generated_date": "2026-05-14",
+      "entry_price": 622.49,
+      "target_price": 627.15,
+      "target_pct": 0.75,
+      "stop_price": 620.0,
+      "stop_pct": 0.4,
+      "range_high": 619.46,
+      "range_low": 615.0,
+      "status": "open",
+      "exit_price": null,
+      "exit_date": null,
+      "pnl_pct": null,
+      "pnl_usd": null,
+      "outcome": null,
+      "auto_close_date": "2026-05-14",
+      "rationale": "ORB breakout above $619.46 (vol 1.7x)",
+      "qty": 4,
+      "allocated_usd": 2489.96
     }
   ],
   "day_trade_capital": {
@@ -1174,7 +1198,7 @@
   },
   "scalping_capital": {
     "initial": 5000.0,
-    "cash": 5000.0,
+    "cash": 2510.04,
     "equity": 5000.0
   },
   "spy_equity_curve": [
