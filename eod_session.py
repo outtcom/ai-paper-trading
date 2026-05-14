@@ -359,7 +359,7 @@ def _build_eod_message(
         for ticker, price in trailing_updates:
             pos = portfolio["positions"].get(ticker, {})
             new_sl = pos.get("stop_loss", "?")
-            lines.append(f"  ↑ {ticker}: SL raised → ${new_sl:.2f} (high ${price:.2f})")
+            lines.append(f"  ↑ {ticker}: SL raised → ${float(new_sl):.2f} (high ${float(price):.2f})")
         lines.append("")
 
     # TP/SL closures today
