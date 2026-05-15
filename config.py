@@ -69,8 +69,8 @@ VIX_HIGH     = 35   # below → 50% sizing; above → no trades (EXTREME)
 # ---------------------------------------------------------------------------
 # Session Risk Controls
 # ---------------------------------------------------------------------------
-MAX_CONCURRENT_POSITIONS = 3      # never hold more than 3 positions at once
-MAX_PORTFOLIO_HEAT       = 0.85   # halt new entries if >85% capital deployed
+MAX_CONCURRENT_POSITIONS = 5      # never hold more than 5 positions at once
+MAX_PORTFOLIO_HEAT       = 0.90   # halt new entries if >90% capital deployed
 MIN_VOLUME_RATIO         = 0.8    # require recent vol ≥ 80% of 20d avg (0 = off)
 BEARISH_REGIME_MULTIPLIER = 0.5   # halve size when SPY < 200d MA
 
@@ -125,14 +125,13 @@ DEFAULT_RISK_PROFILE = "moderate"      # aggressive | moderate | conservative
 # ---------------------------------------------------------------------------
 # Session Settings
 # ---------------------------------------------------------------------------
-SESSION_DAYS = 10                  # total trading days in the session
+SESSION_DAYS = 30                  # total trading days in the session (30-day forward test)
 
 # ---------------------------------------------------------------------------
 # Telegram Notifications
 # ---------------------------------------------------------------------------
 TELEGRAM_BOT_TOKEN       = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID         = os.getenv("TELEGRAM_CHAT_ID")
-APPROVAL_TIMEOUT_SECONDS = 3600    # 1 hour to approve/reject a trade
 
 # ---------------------------------------------------------------------------
 # Data Settings
@@ -183,10 +182,15 @@ SECTOR_TILT_TOP_MULT    = 1.25   # amplify size for trades in top-2 sectors
 SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors
 
 # ---------------------------------------------------------------------------
-# ORB Scalping Signals (paper-only, separate $5K pool, auto-close at noon)
+# ICT FVG Scalping (paper-only, separate $5K pool, auto-close at noon)
+# Strategy: Fair Value Gap + Optimal Trade Entry within NY Open Kill Zone
 # ---------------------------------------------------------------------------
-SCALPING_RANGE_MINUTES = 30      # opening range = first 30 min of trading (9:30–10:00 AM)
-SCALPING_TARGET_PCT    = 0.75    # TP: +0.75% from entry
-SCALPING_STOP_PCT      = 0.40    # SL: -0.40% from entry
-SCALPING_VOL_RATIO_MIN = 1.3     # volume vs baseline (lower bar — 5-min bars are spiky)
-SCALPING_CAPITAL_INIT  = 5000.0  # separate pool, never drawn from main portfolio
+SCALPING_RANGE_MINUTES        = 30       # 9:30–10:00 AM opening range (unchanged)
+SCALPING_DISPLACEMENT_MIN_PCT = 0.30     # min displacement % to confirm institutional bias
+SCALPING_FVG_MIN_GAP_PCT      = 0.05    # min FVG size as % of price (filter noise)
+SCALPING_OTE_LOW_FIBO         = 0.618   # OTE zone lower bound (Fib 61.8%)
+SCALPING_OTE_HIGH_FIBO        = 0.786   # OTE zone upper bound (Fib 78.6%)
+SCALPING_MIN_RRR              = 2.0     # minimum risk:reward ratio required
+SCALPING_STOP_BUFFER_MULT     = 0.10    # stop = FVG boundary ± (fvg_size × 0.10)
+SCALPING_VOL_RATIO_MIN        = 1.3     # volume vs baseline (unchanged)
+SCALPING_CAPITAL_INIT         = 5000.0  # separate pool, never drawn from main portfolio

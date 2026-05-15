@@ -101,14 +101,36 @@ def main():
     crypto_perf = regime.get("crypto_perf", {})
     earnings  = regime.get("earnings", {})
 
+    # Alpha vs SPY
+    spy_return_pct  = round(portfolio.get("stats", {}).get("benchmark_return_pct", 0) or 0, 1)
+    alpha_pct       = round(ret - spy_return_pct, 1)
+    alpha_sign      = "+" if alpha_pct >= 0 else ""
+    cash            = portfolio.get("cash", initial)
+    deployed_pct    = round((1 - cash / equity) * 100, 1) if equity > 0 else 0.0
+
+    # Scalping pool P&L
+    scalping        = portfolio.get("scalping_capital", {})
+    scalp_initial   = scalping.get("initial", 5000.0)
+    scalp_equity    = scalping.get("equity", scalp_initial)
+    scalp_ret       = round((scalp_equity - scalp_initial) / scalp_initial * 100, 2) if scalp_initial else 0.0
+    scalp_signals   = scalping.get("signals_fired", 0)
+
+    week_num = max(1, round(session_day / 5))
+
     lines = [f"📅 <b>WEEK AHEAD BRIEFING</b>  |  Week of {today}\n"]
 
-    # Session status
+    # Session performance header
     if portfolio["session"]["active"]:
-        sign = "+" if ret >= 0 else ""
+        ret_sign   = "+" if ret >= 0 else ""
+        spy_sign   = "+" if spy_return_pct >= 0 else ""
+        scalp_sign = "+" if scalp_ret >= 0 else ""
         lines.append(
-            f"💼 <b>Session:</b> Day {session_day}/{total_days}  |  "
-            f"Equity ${equity:,.2f} ({sign}{ret:.1f}%)\n"
+            f"📊 <b>Week {week_num} of {total_days // 5} — Session Performance</b>\n"
+            f"  Portfolio:   {ret_sign}{ret:.1f}%  |  SPY: {spy_sign}{spy_return_pct:.1f}%  |  "
+            f"Alpha: <b>{alpha_sign}{alpha_pct:.1f}%</b>\n"
+            f"  Capital deployed: {deployed_pct:.0f}%  (target: 70%)\n"
+            f"  ICT FVG scalping: {scalp_signals} signals  |  P&L: {scalp_sign}{scalp_ret:.2f}%  "
+            f"(${scalp_equity - scalp_initial:+,.0f})\n"
         )
 
     # VIX

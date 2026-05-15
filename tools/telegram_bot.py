@@ -66,41 +66,62 @@ def send_group_trade_signal(signal: dict) -> dict:
         "gap_and_go":        "Gap & Go",
         "momentum_breakout": "Momentum Breakout",
         "scalping_orb":      "ORB Scalp",
+        "scalping_fvg":      "ICT FVG Scalp",
     }
     if signal.get("signal_type") in _DT_LABELS:
-        label = _DT_LABELS[signal["signal_type"]]
-        qty   = signal.get("qty", 0)
-        alloc = signal.get("allocated_usd", 0)
-        pool  = "$5K scalping pool" if signal["signal_type"] == "scalping_orb" else "$5K day trade pool"
+        label     = _DT_LABELS[signal["signal_type"]]
+        qty       = signal.get("qty", 0)
+        alloc     = signal.get("allocated_usd", 0)
+        stype     = signal["signal_type"]
+        pool      = "$5K scalping pool" if stype.startswith("scalping_") else "$5K day trade pool"
         size_line = (f"Size:   <b>{qty} shares (${alloc:,.0f})</b> from {pool}\n"
                      if qty > 0 else "Size:   calculating...\n")
-        closes = "12:00 PM ET" if signal["signal_type"] == "scalping_orb" else signal.get("auto_close_date", "EOD")
+        closes = "12:00 PM ET" if stype.startswith("scalping_") else signal.get("auto_close_date", "EOD")
+
+        direction  = signal.get("direction", "long")
+        tp_sign    = "+" if direction == "long" else "-"
+        sl_sign    = "-" if direction == "long" else "+"
         text = (
             f"📡 <b>{label} — {signal['ticker']}</b>\n\n"
+            f"Direction: <b>{direction.upper()}</b>\n"
             f"Entry:  <b>${signal['entry_price']:.2f}</b>\n"
-            f"Target: ${signal['target_price']:.2f} (+{signal['target_pct']:.2f}%)\n"
-            f"Stop:   ${signal['stop_price']:.2f} (-{signal['stop_pct']:.2f}%)\n"
-            f"{size_line}"
-            f"Closes: {closes}\n"
+            f"Target: ${signal['target_price']:.2f} ({tp_sign}{signal['target_pct']:.2f}%)\n"
+            f"Stop:   ${signal['stop_price']:.2f} ({sl_sign}{signal['stop_pct']:.2f}%)\n"
         )
-        if signal["signal_type"] == "scalping_orb" and signal.get("range_high") and signal.get("range_low"):
+        if signal.get("rrr"):
+            text += f"RRR:    {signal['rrr']:.1f}:1\n"
+        text += f"{size_line}Closes: {closes}\n"
+
+        if stype == "scalping_fvg":
+            if signal.get("fvg_top") and signal.get("fvg_bottom"):
+                text += f"FVG:    ${signal['fvg_bottom']:.2f} – ${signal['fvg_top']:.2f}\n"
+            if signal.get("displacement_pct"):
+                text += (f"Disp:   {signal['displacement_pct']:+.2f}%  "
+                         f"(${signal.get('displacement_low', 0):.2f}–${signal.get('displacement_high', 0):.2f})\n")
+        elif stype == "scalping_orb" and signal.get("range_high") and signal.get("range_low"):
             text += f"Range:  ${signal['range_low']:.2f} – ${signal['range_high']:.2f} (30-min ORB)\n"
+
         if signal.get("rationale"):
             text += f"\n<i>{signal['rationale']}</i>"
     else:
-        # Swing trade informational card (mirrors approval card, no buttons)
+        # Swing trade informational card (group-only, informational)
         direction = signal.get("direction", "long")
         dir_tag   = " 🔻 SHORT" if direction == "short" else ""
+        tp_sign   = "–" if direction == "short" else "+"
+        sl_sign   = "+" if direction == "short" else "–"
+        why_full  = (signal.get("why") or signal.get("rationale") or "—").strip()
+        news_lines = signal.get("top_news", [])
+        news_block = ("\n\n📰 <b>Top News:</b>\n" + "\n".join(f"  • {h}" for h in news_lines[:3])) if news_lines else ""
         text = (
             f"📊 <b>Trade Signal{dir_tag} — {signal['ticker']}</b>\n\n"
             f"Price: ${signal.get('current_price', signal.get('entry_price', 0)):.2f}  |  "
             f"Conviction: {signal.get('conviction', '—').upper()}\n\n"
-            f"<b>Why:</b> {signal.get('why', signal.get('rationale', '—'))}\n\n"
+            f"<b>Why this trade:</b>\n{why_full}\n\n"
             f"Entry: ${signal.get('current_price', signal.get('entry_price', 0)):.2f}\n"
-            f"TP:    ${signal['take_profit']:.2f} (+{signal['take_profit_pct']:.1f}%)\n"
-            f"SL:    ${signal['stop_loss']:.2f} (-{signal['stop_loss_pct']:.1f}%)\n"
-            f"Size:  ${signal.get('position_size_usd', 0):.0f}  ({signal.get('qty', 0)} shares)\n\n"
-            f"<i>Trade pending approval</i>"
+            f"TP:    ${signal['take_profit']:.2f} ({tp_sign}{signal['take_profit_pct']:.1f}%)\n"
+            f"SL:    ${signal['stop_loss']:.2f} ({sl_sign}{signal['stop_loss_pct']:.1f}%)\n"
+            f"Size:  ${signal.get('position_size_usd', 0):.0f}  ({signal.get('qty', 0)} shares)"
+            f"{news_block}"
         )
         if signal.get("vix_label"):
             text += f"\nVIX: {signal['vix_label']}"
@@ -163,6 +184,74 @@ def send_approval_request(trade_summary: dict) -> int:
     )
     data = resp.json()
     return data.get("result", {}).get("message_id")
+
+
+def send_trade_notification(trade_summary: dict) -> dict:
+    """
+    Send informational swing-trade card to BOTH private chat and group (no buttons).
+    Trade is auto-executing immediately — no approval needed.
+
+    Expected keys: ticker, current_price, conviction, why, bull_case, bear_case,
+      take_profit, take_profit_pct, stop_loss, stop_loss_pct,
+      position_size_usd, qty, session_day, total_days, direction (optional),
+      top_news (optional list of headline strings)
+    """
+    s         = trade_summary
+    direction = s.get("direction", "long")
+    dir_tag   = "  🔻 SHORT" if direction == "short" else ""
+    tp_sign   = "–" if direction == "short" else "+"
+    sl_sign   = "+" if direction == "short" else "–"
+
+    # ── Reasoning (full, no truncation) ──────────────────────────────────
+    why = (s.get("why") or "").strip()
+
+    # ── Bull / Bear cases (first 350 chars each — long enough to be useful) ──
+    bull_raw = (s.get("bull_case") or "").strip()
+    bear_raw = (s.get("bear_case") or "").strip()
+    # Extract just the top 3 bullet points / sentences to keep it scannable
+    def _top_lines(text: str, max_chars: int = 350) -> str:
+        if not text:
+            return "N/A"
+        # If the text has bullet points, take the first 3
+        lines = [l.strip() for l in text.split("\n") if l.strip()]
+        # Prefer bullet lines
+        bullets = [l for l in lines if l.startswith(("-", "•", "*", "1", "2", "3"))]
+        chosen = bullets[:3] if bullets else lines[:4]
+        result = "\n".join(chosen)
+        return result[:max_chars] + ("…" if len(result) > max_chars else "")
+
+    bull_text = _top_lines(bull_raw)
+    bear_text = _top_lines(bear_raw)
+
+    # ── News headlines ────────────────────────────────────────────────────
+    top_news = s.get("top_news", [])
+    news_block = ""
+    if top_news:
+        news_lines = "\n".join(f"  • {h}" for h in top_news[:3])
+        news_block = f"\n\n📰 <b>Top News:</b>\n{news_lines}"
+
+    # ── VIX / regime context ──────────────────────────────────────────────
+    regime_line = ""
+    if s.get("vix_label"):
+        regime_line = f"\n\nVIX: {s['vix_label']}"
+
+    text = (
+        f"📊 <b>TRADE EXECUTING{dir_tag}</b> — Day {s['session_day']}/{s['total_days']}\n"
+        f"<b>{s['ticker']}</b>  @  ${s['current_price']:.2f}  ·  Conviction: <b>{s['conviction'].upper()}</b>\n"
+        f"━━━━━━━━━━━━━━━━━━━\n\n"
+        f"🎯 <b>Entry:</b>  ${s['current_price']:.2f}\n"
+        f"✅ <b>Target:</b> ${s['take_profit']:.2f} ({tp_sign}{s['take_profit_pct']:.1f}%)\n"
+        f"🛑 <b>Stop:</b>   ${s['stop_loss']:.2f} ({sl_sign}{s['stop_loss_pct']:.1f}%)\n"
+        f"💰 <b>Size:</b>   ${s['position_size_usd']:.0f}  ({s['qty']} shares)\n\n"
+        f"━━━━━━━━━━━━━━━━━━━\n"
+        f"📋 <b>Why this trade:</b>\n{why}\n\n"
+        f"📈 <b>Bull case:</b>\n{bull_text}\n\n"
+        f"📉 <b>Bear case:</b>\n{bear_text}"
+        f"{news_block}"
+        f"{regime_line}\n\n"
+        f"<i>Auto-executing now</i>"
+    )
+    return broadcast_message(text)
 
 
 def poll_for_response(timeout_seconds: int = 3600, poll_interval: int = 15) -> str:

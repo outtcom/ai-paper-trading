@@ -360,6 +360,12 @@
   </div>
 </div>
 
+<!-- Active Trades Summary -->
+<div class="section" id="active-trades-section" style="display:none">
+  <h2>Active Trades</h2>
+  <div id="active-trades-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; padding:4px 0"></div>
+</div>
+
 <!-- Open positions -->
 <div class="section">
   <h2>Open Positions</h2>
@@ -368,19 +374,20 @@
       <thead>
         <tr>
           <th>Ticker</th>
-          <th>Qty</th>
+          <th>Qty Rem.</th>
           <th>Entry</th>
           <th>Current</th>
           <th>Unreal P&amp;L</th>
           <th>TP</th>
           <th>SL</th>
           <th>Partial Level</th>
+          <th>Partial Sold</th>
           <th>Days Held</th>
           <th>Status</th>
         </tr>
       </thead>
       <tbody id="positions-tbody">
-        <tr><td class="empty" colspan="10">No open positions</td></tr>
+        <tr><td class="empty" colspan="11">No open positions</td></tr>
       </tbody>
     </table>
   </div>
@@ -459,9 +466,9 @@
   </div>
 </div>
 
-<!-- ORB Scalping Signals (paper) -->
+<!-- ICT FVG Scalping Signals (paper) -->
 <div class="section">
-  <h2>ORB Scalping Signals <span style="font-size:0.72rem; color:var(--yellow); text-transform:none; letter-spacing:0; font-weight:600; background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:6px; border:1px solid var(--yellow)">Paper Only</span></h2>
+  <h2>ICT FVG Scalping Signals <span style="font-size:0.72rem; color:var(--yellow); text-transform:none; letter-spacing:0; font-weight:600; background:rgba(245,158,11,0.1); padding:2px 8px; border-radius:6px; border:1px solid var(--yellow)">Paper Only</span></h2>
   <div class="table-wrap">
     <table>
       <thead>
@@ -471,7 +478,8 @@
           <th>Dir</th>
           <th>Size</th>
           <th>Entry</th>
-          <th>Range</th>
+          <th>FVG Zone</th>
+          <th>RRR</th>
           <th>TP</th>
           <th>SL</th>
           <th>Exit</th>
@@ -480,7 +488,7 @@
         </tr>
       </thead>
       <tbody id="scalp-signals-tbody">
-        <tr><td class="empty" colspan="11">No scalping signals yet</td></tr>
+        <tr><td class="empty" colspan="12">No scalping signals yet</td></tr>
       </tbody>
     </table>
   </div>
@@ -784,13 +792,56 @@
       });
     }
 
+    // Active Trades summary cards
+    const activeSection = document.getElementById('active-trades-section');
+    const activeGrid    = document.getElementById('active-trades-grid');
+    const positions_for_cards = data.positions || {};
+    const cardKeys = Object.keys(positions_for_cards);
+    if (cardKeys.length === 0) {
+      activeSection.style.display = 'none';
+    } else {
+      activeSection.style.display = '';
+      activeGrid.innerHTML = cardKeys.map(ticker => {
+        const pos = positions_for_cards[ticker];
+        const entry = pos.entry_price;
+        const last  = pos.last_price || entry;
+        const isShort = pos.direction === 'short';
+        const unrPnl = isShort ? (entry - last) * pos.qty : (last - entry) * pos.qty;
+        const unrPct = isShort ? ((entry - last) / entry) * 100 : ((last - entry) / entry) * 100;
+        const pnlSign = unrPnl >= 0 ? '+' : '';
+        const pnlColor = unrPnl >= 0 ? '#22c55e' : '#ef4444';
+        const partialTaken = pos.partial_taken;
+        const partialQtySold = pos.partial_qty_sold || 0;
+        const originalQty = pos.original_qty || pos.qty;
+        const borderColor = unrPnl >= 0 ? '#22c55e' : '#ef4444';
+        const dirLabel = isShort ? '🔻 SHORT' : '📈 LONG';
+        let statusLine = partialTaken
+          ? `<span style="color:#f59e0b; font-size:0.78rem">Partial: sold ${partialQtySold} sh, ${pos.qty} remaining</span>`
+          : `<span style="color:#8892a4; font-size:0.78rem">${pos.qty} shares @ $${fmt(entry)}</span>`;
+        return `
+          <div style="background:var(--card); border:1px solid ${borderColor}33; border-left:3px solid ${borderColor}; border-radius:8px; padding:14px 16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-weight:700; font-size:1rem">${ticker}</span>
+              <span style="font-size:0.75rem; color:#8892a4">${dirLabel}</span>
+            </div>
+            <div style="font-size:1.1rem; font-weight:700; color:${pnlColor}; margin-bottom:4px">${pnlSign}$${fmt(unrPnl)} <span style="font-size:0.78rem">(${pnlSign}${fmt(unrPct)}%)</span></div>
+            ${statusLine}
+            <div style="display:flex; gap:16px; margin-top:8px; font-size:0.78rem">
+              <span>Now: <b>$${fmt(last)}</b></span>
+              <span style="color:#22c55e">TP $${fmt(pos.take_profit)}</span>
+              <span style="color:#ef4444">SL $${fmt(pos.stop_loss)}</span>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
     // Open positions
     const posTbody = document.getElementById('positions-tbody');
     const positions = data.positions || {};
     const posKeys = Object.keys(positions);
     const todayStr = new Date().toISOString().slice(0, 10);
     if (posKeys.length === 0) {
-      posTbody.innerHTML = '<tr><td class="empty" colspan="10">No open positions</td></tr>';
+      posTbody.innerHTML = '<tr><td class="empty" colspan="11">No open positions</td></tr>';
     } else {
       posTbody.innerHTML = posKeys.map(ticker => {
         const pos = positions[ticker];
@@ -800,6 +851,8 @@
         const sl = pos.stop_loss;
         const partial = pos.partial_profit_price || '—';
         const partialTaken = pos.partial_taken;
+        const partialQtySold = pos.partial_qty_sold || 0;
+        const originalQty = pos.original_qty || pos.qty;
 
         // Unrealized P&L (short positions profit when price falls)
         const isShort = pos.direction === 'short';
@@ -816,6 +869,17 @@
           daysHeld = Math.max(0, Math.round((today - opened) / 86400000));
         }
 
+        // Partial sold display
+        let partialSoldCell = '<span style="color:var(--muted)">—</span>';
+        if (partialTaken && partialQtySold > 0) {
+          const partialPnl = pos.partial_pnl || 0;
+          const partialPnlSign = partialPnl >= 0 ? '+' : '';
+          partialSoldCell = `<span style="color:var(--yellow); font-weight:600">${partialQtySold} sh</span>`
+            + `<br><span style="font-size:0.78em; color:var(--muted)">${partialPnlSign}$${fmt(partialPnl)}</span>`;
+        } else if (partialTaken) {
+          partialSoldCell = '<span style="color:var(--yellow)">Done</span>';
+        }
+
         const statusTag = partialTaken
           ? '<span class="tag partial">Partial Done</span>'
           : (isShort ? '<span class="tag sl">Short 🔻</span>' : '<span class="tag open">Open</span>');
@@ -823,13 +887,14 @@
         return `
           <tr class="pos-row">
             <td>${ticker}</td>
-            <td>${pos.qty}</td>
+            <td>${pos.qty}${partialQtySold > 0 ? ` <span style="font-size:0.75em; color:var(--muted)">of ${originalQty}</span>` : ''}</td>
             <td>$${fmt(entry)}</td>
             <td>${last !== entry ? '$' + fmt(last) : '<span style="color:var(--muted)">—</span>'}</td>
             <td style="color:${pnlColor}">${pnlSign}$${fmt(unrPnl)} <span style="font-size:0.8em">(${pnlSign}${fmt(unrPct)}%)</span></td>
             <td style="color:var(--green)">$${fmt(tp)}</td>
             <td style="color:var(--red)">$${fmt(sl)}</td>
             <td style="color:var(--yellow)">${typeof partial === 'number' ? '$' + fmt(partial) : partial}</td>
+            <td>${partialSoldCell}</td>
             <td>${daysHeld}</td>
             <td>${statusTag}</td>
           </tr>`;
@@ -872,17 +937,22 @@
       histTbody.innerHTML = [...history].reverse().map(t => {
         const pnlSign = t.pnl >= 0 ? '+' : '';
         const pnlColor = t.pnl >= 0 ? 'var(--green)' : 'var(--red)';
+        const isPartial = t.reason === 'partial_profit';
         let outcomeTag = '';
         if (t.reason === 'take_profit')    outcomeTag = '<span class="tag tp">TP Hit</span>';
         else if (t.reason === 'stop_loss') outcomeTag = '<span class="tag sl">SL Hit</span>';
-        else if (t.reason === 'partial_profit') outcomeTag = '<span class="tag partial">Partial</span>';
+        else if (isPartial)                outcomeTag = '<span class="tag partial">Partial</span>';
         else if (t.reason === 'time_exit') outcomeTag = '<span class="tag time">Time Exit</span>';
         else                               outcomeTag = '<span class="tag skip">Manual</span>';
+        // Show qty with partial badge when applicable
+        const qtyDisplay = isPartial
+          ? `${t.qty} <span style="font-size:0.75em; color:var(--yellow)">partial</span>`
+          : t.qty;
         return `
           <tr>
             <td>${t.closed_date || '—'}</td>
             <td><b>${t.ticker}</b></td>
-            <td>${t.qty}</td>
+            <td>${qtyDisplay}</td>
             <td>$${fmt(t.entry_price)}</td>
             <td>$${fmt(t.exit_price)}</td>
             <td style="color:${pnlColor}">${pnlSign}$${fmt(t.pnl)} <span style="font-size:0.8em">(${pnlSign}${fmt(t.pnl_pct)}%)</span></td>
@@ -992,7 +1062,7 @@
     scEqEl.className = `value ${signClass(scRet)}`;
     document.getElementById('kpi-scalp-equity-sub').textContent = `${signStr(scRet)}${fmt(scRet)}% | $5,000 start`;
 
-    const scSignals = (data.day_trade_signals || []).filter(s => s.signal_type === 'scalping_orb');
+    const scSignals = (data.day_trade_signals || []).filter(s => s.signal_type && s.signal_type.startsWith('scalping_'));
     const scClosed  = scSignals.filter(s => s.status === 'closed');
     const scWins    = scClosed.filter(s => s.outcome === 'win');
 
@@ -1020,10 +1090,13 @@
         const qty  = s.qty || 0;
         const alloc = s.allocated_usd || 0;
         const sizeStr = qty > 0 ? `${qty} sh<br><span style="font-size:0.78em;color:var(--muted)">$${fmt(alloc,0)}</span>` : '—';
-        const rangeStr = (s.range_low && s.range_high)
-          ? `$${fmt(s.range_low)}–$${fmt(s.range_high)}`
-          : '—';
+        const fvgStr = (s.fvg_bottom && s.fvg_top)
+          ? `$${fmt(s.fvg_bottom)}–$${fmt(s.fvg_top)}`
+          : (s.range_low && s.range_high ? `$${fmt(s.range_low)}–$${fmt(s.range_high)}` : '—');
+        const rrrStr = s.rrr ? `${Number(s.rrr).toFixed(1)}:1` : '—';
         const dirColor = s.direction === 'long' ? 'var(--green)' : 'var(--red)';
+        const tpSign = s.direction === 'short' ? '-' : '+';
+        const slSign = s.direction === 'short' ? '+' : '-';
         return `
           <tr>
             <td style="color:var(--muted); font-size:0.82em">${s.generated_date || '—'}</td>
@@ -1031,9 +1104,10 @@
             <td style="color:${dirColor}; font-weight:600; font-size:0.82em">${(s.direction || 'long').toUpperCase()}</td>
             <td>${sizeStr}</td>
             <td>$${fmt(s.entry_price)}</td>
-            <td style="font-size:0.82em; color:var(--muted)">${rangeStr}</td>
-            <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(+${fmt(s.target_pct)}%)</span></td>
-            <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(-${fmt(s.stop_pct)}%)</span></td>
+            <td style="font-size:0.82em; color:var(--muted)">${fvgStr}</td>
+            <td style="font-size:0.82em; color:var(--yellow)">${rrrStr}</td>
+            <td style="color:var(--green)">$${fmt(s.target_price)} <span style="font-size:0.78em">(${tpSign}${fmt(s.target_pct)}%)</span></td>
+            <td style="color:var(--red)">$${fmt(s.stop_price)} <span style="font-size:0.78em">(${slSign}${fmt(s.stop_pct)}%)</span></td>
             <td>${s.exit_price !== null && s.exit_price !== undefined ? '$' + fmt(s.exit_price) : '<span style="color:var(--muted)">—</span>'}</td>
             <td style="color:${pctColor}">${pctStr}${usdStr}</td>
             <td>${outcomeTag}</td>

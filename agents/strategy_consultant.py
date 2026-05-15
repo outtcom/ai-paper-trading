@@ -28,6 +28,11 @@ Key principles:
 - Sector rotation matters: follow momentum into leading sectors.
 - VIX below 18 = green light for full positioning.
 - HYG above 20d MA = credit conditions healthy = favour equities.
+- The PRIMARY mandate is to OUTPERFORM SPY. Negative and worsening alpha is CRITICAL —
+  holding cash guarantees continued underperformance. Every 1% of uninvested capital costs
+  approximately 0.5% alpha over a 30-day session.
+- If alpha vs SPY is worse than -2%, override caution: risk_budget_multiplier must be ≥ 1.2
+  and capital_deployment_priority must be "high" unless VIX ≥ 25 or credit is stressed.
 
 When setting risk_budget_multiplier:
   1.3 to 1.5: Risk-on — VIX low, trend bullish, session behind on deployment
@@ -87,11 +92,24 @@ def run(
         expected_pct = round(session_day / total_days * 100)
         pacing_note  = "BEHIND — increase urgency" if deployed_pct < expected_pct - 15 else "on track"
 
+        # Alpha vs SPY awareness
+        session_return_pct = round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 1)
+        spy_return_pct     = round(portfolio.get("stats", {}).get("benchmark_return_pct", 0) or 0, 1)
+        alpha_pct          = round(session_return_pct - spy_return_pct, 1)
+        alpha_label        = f"{alpha_pct:+.1f}% vs SPY"
+        if alpha_pct < -2:
+            alpha_urgency = "CRITICAL — widen deployment immediately"
+        elif alpha_pct < 0:
+            alpha_urgency = "behind — increase urgency"
+        else:
+            alpha_urgency = "on track"
+
         context = f"""DATE: {date} ({day_of_week})
 SESSION PACING: Day {session_day}/{total_days} — {days_remaining} days remaining
   Expected deployment by now: ~{expected_pct}%
   Actual deployment: {deployed_pct:.0f}%
   Pacing: {pacing_note}
+ALPHA vs SPY: {alpha_label} → {alpha_urgency}
 
 PORTFOLIO:
   Equity: ${equity:,.2f}  |  Cash: ${cash:,.2f}

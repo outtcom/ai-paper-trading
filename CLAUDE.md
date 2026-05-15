@@ -78,12 +78,13 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 |---|---|---|
 | Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
 | Morning Session | Mon–Fri 7:30 AM | `morning_session.py` |
-| ORB Scalping Scan | Mon–Fri 10:00 AM | `scalping_scan.py` |
+| ICT FVG Scalping Scan | Mon–Fri 10:00 AM | `scalping_scan.py` |
 | Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
 | End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
 | Weekly Intelligence Briefing | Sunday 6:00 PM | `weekly_briefing.py` |
 | QA Analyst | After any workflow failure | `qa_analyst.py` |
+| New Session Reset | Manual only (after 22:00 UTC weekdays / anytime weekends) | `tools/new_session.py` |
 
 - Secrets (`ANTHROPIC_API_KEY`, `FINNHUB_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) are stored in GitHub repo secrets — never in code.
 - Each workflow commits updated `docs/portfolio.json` back to the repo after running.
@@ -92,9 +93,11 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 
 ## Session Configuration
 
-- **Session length**: 22 trading days (≈ 1 calendar month). Configured in `tools/session_manager.py` → `TOTAL_DAYS`.
-- **Benchmark**: SPY. Alpha calculated daily at EOD. Full month-end review planned.
-- **Current session start**: 2026-04-14, Day 2 of 22.
+- **Session length**: 30 trading days (≈ 6 calendar weeks). Configured in `tools/session_manager.py` → `TOTAL_DAYS` and `config.py` → `SESSION_DAYS`.
+- **Benchmark**: SPY. Alpha calculated daily at EOD and tracked in weekly briefing.
+- **Session 1**: 2026-04-14 → 2026-05-15 (22 days). Return: +0.36%, SPY: +5.04%, alpha: -4.68%. Root cause: only 16% capital deployed (target 68%).
+- **Session 2 start**: 2026-05-15. Target: beat SPY over 30 days.
+- **To start a new session**: trigger `new-session.yml` via GitHub Actions → Run workflow. Only after 22:00 UTC on a weekday (or any time on a weekend) to avoid cron collisions.
 
 ## Portfolio State (`docs/portfolio.json`)
 
@@ -143,6 +146,9 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | Local scripts crash on Windows with `UnicodeEncodeError` on emoji print statements | cp1252 codec can't encode emoji. Fix: run with `PYTHONIOENCODING=utf-8 python script.py` locally. |
 | Groq `llama-3.1-70b-versatile` decommissioned — all 5 Groq agents silently failing since Day 11 | Changed `MODELS["fast"]` in `config.py` to `groq/llama-3.3-70b-versatile` (direct successor, drop-in replacement). This affected: Fundamental Analyst, Sentiment Analyst, Technical Analyst, Risk Manager, Strategy Consultant. |
 | ORB scalping: zero signals generated across 15 days | `bars[-1]` pointed to the ~11:00 AM bar (GHA runs 60-90 min late). Breakout had already reverted by then. Fixed: now uses `bars[n_range_bars]` — the actual first bar after the opening range (10:00 AM bar) — so signals fire at the correct ORB moment regardless of when GHA executes. |
+| ORB scalping produced 0 signals even after the bars[] fix — choppy opens never produce clean breakouts | Replaced ORB entirely with **ICT FVG + OTE strategy** (2026-05-15). Instead of chasing breakouts above the range, scanner now finds institutional Fair Value Gaps during the displacement, enters on pullback to FVG or OTE zone (61.8%–78.6% Fib), targets displacement high/low liquidity, enforces 2:1 min RRR. `signal_type` changed from `scalping_orb` → `scalping_fvg`. `session_manager.py` filters updated to `startswith("scalping_")` for forward compatibility. |
+| Session 1 alpha -4.68% — only 16% capital deployed at Day 15 (target 68%) | Root causes: (1) approval gate timed out/skipped trades during Fahad's off-hours, (2) MAX_CONCURRENT_POSITIONS=3 too restrictive, (3) Fund Manager HOLD bias. Fixes: approval gate removed (trades auto-execute after Telegram notify), MAX_CONCURRENT_POSITIONS raised 3→5, MAX_PORTFOLIO_HEAT raised 0.85→0.90, Fund Manager given 4 explicit HOLD-override conditions, strategy consultant primed with SPY alpha urgency logic. |
+| `APPROVAL_TIMEOUT_SECONDS` referenced in morning_session.py after removal from config.py | Import removed from config import line. `send_approval_request` and `poll_for_response` replaced by `send_trade_notification` (broadcasts to both private+group, no buttons). morning-session.yml timeout reduced 90→30 min. |
 
 ## API Credit Notes
 

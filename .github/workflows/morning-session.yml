@@ -11,7 +11,7 @@ permissions:
 jobs:
   morning-session:
     runs-on: ubuntu-latest
-    timeout-minutes: 90       # script polls 60 min for Telegram approval
+    timeout-minutes: 30       # auto-execute — no approval polling
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

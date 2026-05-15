@@ -47,8 +47,16 @@ Your output must be a JSON object with this exact structure:
   "position_size": 0.0-{max_position} (fraction of portfolio),
   "entry_price_target": null or float,
   "stop_loss_pct": null or float (e.g. 0.05 for 5%),
-  "reasoning": "2-3 sentence explanation"
+  "reasoning": "<specific 3-4 sentence explanation — MUST include: (1) the exact technical signal or price level driving entry, (2) what the fundamental verdict says and one supporting metric, (3) sentiment direction and what news/catalyst is driving it, (4) why NOW vs waiting>"
 }}
+
+Rules for reasoning — it will be sent directly to a trader's phone:
+- Name specific price levels, indicators, or patterns (e.g. "broke above $182 resistance with RSI at 58")
+- Cite one real number from fundamentals (e.g. "P/E 28x below sector avg 35x")
+- State the sentiment verdict and the key news driving it
+- State the timing catalyst (why enter today, not tomorrow)
+- Do NOT write generic phrases like "positive outlook", "strong fundamentals", "bullish signals"
+- If you cannot cite a specific reason, that is a signal to HOLD
 
 Output ONLY the JSON, no other text."""
 
@@ -88,7 +96,7 @@ Based on all of the above, what is your trading decision for {ticker}?"""
 
         response = litellm.completion(
             model=MODELS["analyst"],
-            max_tokens=400,
+            max_tokens=600,
             messages=[
                 {"role": "system", "content": system},
                 {"role": "user", "content": context},

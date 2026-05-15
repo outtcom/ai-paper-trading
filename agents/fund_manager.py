@@ -28,6 +28,16 @@ IMPORTANT: When the strategy brief shows risk-on posture or high capital deploym
 priority, avoid reducing position sizes without a specific risk reason. The cost of
 under-deployment is real — it guarantees underperforming the benchmark.
 
+CRITICAL RULE: The benchmark is SPY. A HOLD decision is NOT neutral — it is an active
+bet that cash outperforms equities. In a bull market, cash always loses.
+Default rule: ACCEPT medium-conviction trades in focus sectors unless ONE of these
+specific conditions is met:
+  1. VIX ≥ 25 (elevated volatility regime explicitly noted in the strategy brief)
+  2. Adding this position would push portfolio beta above the max limit
+  3. The ticker is in an "avoid" sector listed in the strategy brief
+  4. Earnings are within 3 days for this ticker (mentioned in analysis)
+If none of these four conditions apply and the strategy brief is risk-on or neutral, BUY.
+
 Output a JSON object with:
 {
   "action": "buy" | "sell" | "hold",
@@ -36,8 +46,15 @@ Output a JSON object with:
   "position_size_pct": float (fraction of portfolio),
   "stop_loss_pct": float or null,
   "override": false | "reduced" | "rejected",
-  "final_reasoning": "2-3 sentence explanation of final decision"
+  "final_reasoning": "<specific 3-5 sentence explanation — MUST include: the primary signal driving the decision, one concrete number from the analysis (price level, P/E, RSI, etc.), what the risk team flagged and whether it changes the view, and the key asymmetry (upside vs downside in concrete terms)>"
 }
+
+Rules for final_reasoning — it will be read by the portfolio owner on their phone:
+- State the specific entry thesis in one sentence (not 'positive outlook' — say what exactly signals go)
+- Cite at least one real data point (e.g. "NVDA trading at $875, broke above 50d MA at $845")
+- State what the risk manager said and whether you agree or disagree and why
+- State the specific upside target and downside risk in dollar or % terms
+- If you override the risk decision, explain the exact reason with a specific data point
 
 Output ONLY the JSON, no other text.
 CRITICAL: If action is hold, set qty to 0."""
@@ -93,7 +110,7 @@ Make the final order decision for {ticker}."""
 
         response = litellm.completion(
             model=MODELS["decision"],
-            max_tokens=400,
+            max_tokens=700,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": context},

@@ -59,6 +59,17 @@ Produce your sentiment analysis report."""
 
         report = response.choices[0].message.content
         state["sentiment_report"] = report
+
+        # Save top 3 headlines for Telegram notification
+        top_news = []
+        for a in news[:3]:
+            headline = a.get("headline", "").strip()
+            source   = a.get("source", "")
+            dt       = a.get("datetime", "")[:10]  # just the date
+            if headline:
+                top_news.append(f"[{dt}] {headline}" + (f" — {source}" if source else ""))
+        state["top_news"] = top_news
+
         write_log(ticker, date, f"[SENTIMENT ANALYST]\n{report}")
         save_state(state)
 

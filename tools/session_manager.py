@@ -1,5 +1,5 @@
 """
-Session manager for the 22-day paper trading session.
+Session manager for the 30-day paper trading session.
 Manages all portfolio state in docs/portfolio.json, which is:
   - tracked by git (committed after each GitHub Actions run)
   - served by GitHub Pages (powers the live dashboard)
@@ -18,7 +18,7 @@ _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 _SYSTEM_DIR = os.path.dirname(_TOOLS_DIR)
 PORTFOLIO_FILE = os.path.join(_SYSTEM_DIR, "docs", "portfolio.json")
 
-TOTAL_DAYS = 22   # one calendar month of trading days
+TOTAL_DAYS = 30   # 30-day forward test session
 INITIAL_CAPITAL = 5_000.0
 
 # Circuit breaker thresholds
@@ -753,7 +753,7 @@ def add_scalping_signal(signal: dict) -> None:
     p = _migrate(_load())
     open_scalps = [
         s for s in p["day_trade_signals"]
-        if s.get("status") == "open" and s.get("signal_type") == "scalping_orb"
+        if s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_")
     ]
     if len(open_scalps) >= DT_MAX_CONCURRENT:
         print(f"[session] Scalping pool full ({DT_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
@@ -795,11 +795,11 @@ def add_scalping_signal(signal: dict) -> None:
 
 
 def get_open_scalping_signals() -> list:
-    """Return all scalping_orb signals with status == 'open'."""
+    """Return all open scalping signals (any scalping_ signal_type)."""
     p = _migrate(_load())
     return [
         s for s in p.get("day_trade_signals", [])
-        if s.get("status") == "open" and s.get("signal_type") == "scalping_orb"
+        if s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_")
     ]
 
 
@@ -810,7 +810,7 @@ def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> 
     """
     p = _migrate(_load())
     for s in p.get("day_trade_signals", []):
-        if s.get("id") == signal_id and s.get("status") == "open" and s.get("signal_type") == "scalping_orb":
+        if s.get("id") == signal_id and s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_"):
             entry  = s["entry_price"]
             qty    = s.get("qty", 0)
             exit_p = round(exit_price, 2)
@@ -837,7 +837,7 @@ def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> 
                 remaining = [
                     sig for sig in p["day_trade_signals"]
                     if sig.get("status") == "open"
-                    and sig.get("signal_type") == "scalping_orb"
+                    and sig.get("signal_type", "").startswith("scalping_")
                     and sig.get("id") != signal_id
                 ]
                 sc["equity"] = round(

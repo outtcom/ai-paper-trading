@@ -33,7 +33,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import (
     WATCHLIST, STOCKS, CRYPTO, INDEX_ETFS, ETF_OVERLAP_THRESHOLD,
-    APPROVAL_TIMEOUT_SECONDS,
     MAX_CONCURRENT_POSITIONS, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
     BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
     TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD,
@@ -72,7 +71,7 @@ from tools.session_manager import (
 )
 from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
-    poll_for_response, send_approval_request, send_message,
+    send_trade_notification, send_message,
     broadcast_message, send_group_trade_signal,
 )
 
@@ -316,9 +315,10 @@ def _size_position(
 
     actual_usd = round(qty * price, 2)
 
-    why  = (order.get("final_reasoning") or trader.get("reasoning") or "No reasoning provided.")[:350]
-    bull = (state.get("bull_case") or "")[:140]
-    bear = (state.get("bear_case") or "")[:140]
+    why  = (order.get("final_reasoning") or trader.get("reasoning") or "No reasoning provided.")
+    bull = (state.get("bull_case") or "")
+    bear = (state.get("bear_case") or "")
+    top_news = state.get("top_news", [])
 
     if direction == "short":
         take_profit = round(price * (1 - tp_pct), 2)
@@ -345,6 +345,7 @@ def _size_position(
         "_tp_pct_raw":       tp_pct,
         "_sector_mult":      sector_mult,
         "_full_why":         order.get("final_reasoning") or trader.get("reasoning") or "",
+        "top_news":          top_news,
     }
 
 
@@ -729,101 +730,86 @@ def main():
 
     print(f"[morning] Best: {ticker}  score={score:.2f}  sector={summary['sector']}  qty={summary['qty']}")
 
-    # ── Log order as pending before sending for approval ──────────────────
+    # ── Log order as pending ───────────────────────────────────────────────
     add_open_order(ticker, summary["qty"], summary["current_price"], "BUY")
 
-    # ── Send Telegram approval card (private) + group informational card ──
-    send_approval_request(summary)
+    # ── Notify via Telegram (both private + group), then auto-execute ──────
+    send_trade_notification(summary)
     send_group_trade_signal(summary)
-    print(f"[morning] Approval sent. Polling {APPROVAL_TIMEOUT_SECONDS // 60} min...")
 
-    response = poll_for_response(timeout_seconds=APPROVAL_TIMEOUT_SECONDS)
-    print(f"[morning] Response: {response}")
-
-    if response == "approved":
-        # Re-fetch price at execution time — not the pre-market analysis-time quote
-        try:
-            exec_price = get_latest_price(ticker)
-        except Exception:
-            exec_price = summary["current_price"]
-        if summary.get("direction") == "short":
-            exec_stop_loss   = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
-            exec_take_profit = round(exec_price * (1 - summary["_tp_pct_raw"]), 2)
-        else:
-            exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
-            exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
-        price_delta_pct  = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2) \
-                           if summary["current_price"] > 0 else 0.0
-        print(f"[morning] Analysis: ${summary['current_price']:.2f} → Exec: ${exec_price:.2f} ({price_delta_pct:+.2f}%)")
-
-        update_open_order(ticker, "executed")
-        open_position(
-            ticker          = ticker,
-            qty             = summary["qty"],
-            entry_price     = exec_price,
-            stop_loss_pct   = summary["_sl_pct_raw"],
-            take_profit_pct = summary["_tp_pct_raw"],
-            journal_note    = summary["_full_why"][:500],
-            direction       = summary.get("direction", "long"),
-        )
-
-        # Capture which agents were aligned on this trade
-        agent_signals = {
-            "fundamental":       state.get("fundamental_analysis", {}).get("recommendation", ""),
-            "technical":         state.get("technical_analysis",   {}).get("signal", ""),
-            "sentiment":         state.get("sentiment_analysis",   {}).get("sentiment", ""),
-            "trader_conviction": state.get("trader_decision",      {}).get("conviction", ""),
-            "risk_approved":     state.get("risk_assessment",      {}).get("approved", None),
-        }
-
-        add_journal_entry({
-            "date":            today,
-            "day":             session_day,
-            "ticker":          ticker,
-            "action":          "BUY",
-            "analysis_price":  summary["current_price"],
-            "entry_price":     exec_price,
-            "price_delta_pct": price_delta_pct,
-            "qty":             summary["qty"],
-            "conviction":      summary["conviction"],
-            "score":           score,
-            "sector":          summary["sector"],
-            "sector_rank":     summary["sector_rank"],
-            "stop_loss":       exec_stop_loss,
-            "take_profit":     exec_take_profit,
-            "vix_label":       vix_label,
-            "regime":          regime_label,
-            "rationale":       summary["_full_why"],
-            "bull_case":       summary["bull_case"],
-            "bear_case":       summary["bear_case"],
-            "agent_signals":   agent_signals,
-        })
-        is_short = summary.get("direction") == "short"
-        dir_tag  = "SHORT 🔻" if is_short else "BUY"
-        if is_short:
-            partial_level = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
-        else:
-            partial_level = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
-        broadcast_message(
-            f"✅ <b>Trade Executed — {ticker} {dir_tag}</b>\n\n"
-            f"{dir_tag} {summary['qty']} @ ${exec_price:.2f}\n"
-            f"Deployed: ${round(exec_price * summary['qty'], 2):.2f}  |  "
-            f"Sector: {summary['sector']} (rank #{summary['sector_rank']})\n\n"
-            f"TP: ${exec_take_profit:.2f}  |  SL: ${exec_stop_loss:.2f}\n"
-            f"Partial profit triggers at: ${partial_level:.2f} (1:1 R/R)\n\n"
-            f"<i>EOD check at 4:15 PM ET.</i>"
-        )
-        record_equity(equity)
-
-    elif response == "rejected":
-        update_open_order(ticker, "rejected")
-        broadcast_message(f"⏭ <b>Trade Skipped — Day {session_day}/{total_days}</b>\n\nNo position opened. See you tomorrow!")
-        record_equity(equity)
-
+    # Re-fetch live price at execution time — not the pre-market analysis quote
+    try:
+        exec_price = get_latest_price(ticker)
+    except Exception:
+        exec_price = summary["current_price"]
+    if summary.get("direction") == "short":
+        exec_stop_loss   = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
+        exec_take_profit = round(exec_price * (1 - summary["_tp_pct_raw"]), 2)
     else:
-        update_open_order(ticker, "expired")
-        broadcast_message(f"⏰ <b>60-min window expired — Day {session_day}/{total_days}</b>\n\nTrade skipped.")
-        record_equity(equity)
+        exec_stop_loss   = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
+        exec_take_profit = round(exec_price * (1 + summary["_tp_pct_raw"]), 2)
+    price_delta_pct = round((exec_price - summary["current_price"]) / summary["current_price"] * 100, 2) \
+                      if summary["current_price"] > 0 else 0.0
+    print(f"[morning] Analysis: ${summary['current_price']:.2f} → Exec: ${exec_price:.2f} ({price_delta_pct:+.2f}%)")
+
+    update_open_order(ticker, "executed")
+    open_position(
+        ticker          = ticker,
+        qty             = summary["qty"],
+        entry_price     = exec_price,
+        stop_loss_pct   = summary["_sl_pct_raw"],
+        take_profit_pct = summary["_tp_pct_raw"],
+        journal_note    = summary["_full_why"],
+        direction       = summary.get("direction", "long"),
+    )
+
+    # Capture which agents were aligned on this trade
+    agent_signals = {
+        "fundamental":       state.get("fundamental_analysis", {}).get("recommendation", ""),
+        "technical":         state.get("technical_analysis",   {}).get("signal", ""),
+        "sentiment":         state.get("sentiment_analysis",   {}).get("sentiment", ""),
+        "trader_conviction": state.get("trader_decision",      {}).get("conviction", ""),
+        "risk_approved":     state.get("risk_assessment",      {}).get("approved", None),
+    }
+
+    add_journal_entry({
+        "date":            today,
+        "day":             session_day,
+        "ticker":          ticker,
+        "action":          "BUY",
+        "analysis_price":  summary["current_price"],
+        "entry_price":     exec_price,
+        "price_delta_pct": price_delta_pct,
+        "qty":             summary["qty"],
+        "conviction":      summary["conviction"],
+        "score":           score,
+        "sector":          summary["sector"],
+        "sector_rank":     summary["sector_rank"],
+        "stop_loss":       exec_stop_loss,
+        "take_profit":     exec_take_profit,
+        "vix_label":       vix_label,
+        "regime":          regime_label,
+        "rationale":       summary["_full_why"],
+        "bull_case":       summary["bull_case"],
+        "bear_case":       summary["bear_case"],
+        "agent_signals":   agent_signals,
+    })
+    is_short = summary.get("direction") == "short"
+    dir_tag  = "SHORT 🔻" if is_short else "BUY"
+    if is_short:
+        partial_level = round(exec_price * (1 - summary["_sl_pct_raw"]), 2)
+    else:
+        partial_level = round(exec_price * (1 + summary["_sl_pct_raw"]), 2)
+    broadcast_message(
+        f"✅ <b>Trade Executed — {ticker} {dir_tag}</b>\n\n"
+        f"{dir_tag} {summary['qty']} @ ${exec_price:.2f}\n"
+        f"Deployed: ${round(exec_price * summary['qty'], 2):.2f}  |  "
+        f"Sector: {summary['sector']} (rank #{summary['sector_rank']})\n\n"
+        f"TP: ${exec_take_profit:.2f}  |  SL: ${exec_stop_loss:.2f}\n"
+        f"Partial profit triggers at: ${partial_level:.2f} (1:1 R/R)\n\n"
+        f"<i>EOD check at 4:15 PM ET.</i>"
+    )
+    record_equity(equity)
 
     print(f"[morning] Day {session_day} complete.")
 
