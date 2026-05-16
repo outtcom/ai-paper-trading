@@ -358,8 +358,11 @@ def _build_eod_message(
         lines.append("<b>Trailing Stops Updated:</b>")
         for ticker, price in trailing_updates:
             pos = portfolio["positions"].get(ticker, {})
-            new_sl = pos.get("stop_loss", "?")
-            lines.append(f"  ↑ {ticker}: SL raised → ${float(new_sl):.2f} (high {price if price != '?' else 'N/A'})")
+            new_sl = pos.get("stop_loss")
+            if new_sl is not None:
+                lines.append(f"  ↑ {ticker}: SL raised → ${float(new_sl):.2f} (high ${float(price):.2f})")
+            else:
+                lines.append(f"  ↑ {ticker}: SL raised (closed same session) (high ${float(price):.2f})")
         lines.append("")
 
     # TP/SL closures today
