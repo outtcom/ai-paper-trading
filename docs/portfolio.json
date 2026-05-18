@@ -1,83 +1,31 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 18,
+    "current_day": 19,
     "total_days": 30,
     "active": true,
-    "last_updated": "2026-05-18T17:20:36.079658+00:00",
+    "last_updated": "2026-05-18T20:44:09.351681+00:00",
     "session_number": 2
   },
-  "cash": 4501.38,
+  "cash": 5299.81,
   "initial_capital": 5000.0,
-  "equity": 5281.59,
-  "peak_equity": 5281.59,
+  "equity": 5299.81,
+  "peak_equity": 5299.81,
   "circuit_breaker": {
     "triggered": false,
     "reason": null,
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.78,
-    "sortino": 18.46,
-    "calmar": 57.94,
+    "sharpe": 2.91,
+    "sortino": 19.12,
+    "calmar": 60.38,
     "spy_start_price": 686.1,
-    "spy_current_price": 742.31,
-    "benchmark_return_pct": 8.19,
+    "spy_current_price": 738.65,
+    "benchmark_return_pct": 7.66,
     "max_drawdown_pct": 0.78
   },
-  "positions": {
-    "AMZN": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 263.04,
-      "cost_basis": 263.04,
-      "last_price": 265.2,
-      "stop_loss": 256.62,
-      "take_profit": 289.34,
-      "partial_profit_price": 276.19,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 270.13,
-      "lowest_price": 263.04,
-      "partial_taken": false,
-      "opened_date": "2026-04-30",
-      "journal_note": "Portfolio is critically under-deployed at 31% vs 59% target in a risk-on environment with bullish SPY trend and declining VIX. AMZN is a core technology name in a focus sector with strong structural drivers (AWS, advertising, Prime). While quantitative modules failed due to infrastructure issues rather than negative signals, the qualitative case is balanced-to-positive, and the cost of under-deployment in this regime outweighs the risk of a modest starter position. Taking a reduced position (~12"
-    },
-    "TXN": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 297.76,
-      "cost_basis": 297.76,
-      "last_price": 299.92,
-      "stop_loss": 281.83,
-      "take_profit": 345.4,
-      "partial_profit_price": 321.58,
-      "stop_loss_pct": 8.0,
-      "take_profit_pct": 16.0,
-      "highest_price": 306.34,
-      "lowest_price": 297.76,
-      "partial_taken": false,
-      "opened_date": "2026-05-12",
-      "journal_note": "Overriding the risk team's reduction back to the trader's original 0.05 position size. The strategy brief explicitly states HIGH capital deployment priority with the portfolio severely behind pace at only 5% deployed with 6 sessions remaining \u2014 the cost of under-deployment is the greater risk. TXN has strong bullish technicals (price above both EMAs, MACD crossover), positive sentiment catalysts (Zacks Strong Buy, raised guidance), and sits in the priority Technology sector. The 8% stop-loss ade"
-    },
-    "CSCO": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 101.87,
-      "cost_basis": 203.74,
-      "last_price": 117.52,
-      "stop_loss": 95.76,
-      "take_profit": 114.09,
-      "partial_profit_price": 107.98,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 101.87,
-      "lowest_price": 101.87,
-      "partial_taken": false,
-      "opened_date": "2026-05-14",
-      "journal_note": "CSCO is a Technology momentum leader with strong earnings catalyst (12% revenue growth, raised guidance) and bullish technicals \u2014 fitting the strategy brief's mandate to aggressively deploy into Tech. The risk team approved at 3.75% but I'm sizing up slightly to 4% given the RISK-ON posture and critical under-deployment gap (11% vs 82% target at Day 18/22); the cost of under-deployment outweighs the modest overbought risk. Stop-loss at 6% (~$95.76) sits below the $96.57 support level, providing "
-    }
-  },
+  "positions": {},
   "open_orders": [
     {
       "ticker": "NVDA",
@@ -191,6 +139,66 @@
       "opened_date": "2026-04-29",
       "closed_date": "2026-05-11",
       "journal_note": "Portfolio is critically underdeployed at 21% vs 55% target with risk-on posture and high capital deployment priority. MU is a leading semiconductor name in the focus Technology sector with strong AI/HBM demand tailwinds. Despite incomplete analysis data, the structural thesis is sound. A 5% position (~$449 at ~$112/share) is conservative given deployment urgency, but appropriate given the lack of fundamental/technical/sentiment confirmation. The 8% stop-loss provides adequate downside protection"
+    },
+    {
+      "ticker": "CSCO",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 101.87,
+      "exit_price": 118.88,
+      "cost_basis": 101.87,
+      "proceeds": 118.88,
+      "pnl": 17.01,
+      "pnl_pct": 16.7,
+      "reason": "partial_profit",
+      "opened_date": "2026-05-14",
+      "closed_date": "2026-05-18",
+      "journal_note": "CSCO is a Technology momentum leader with strong earnings catalyst (12% revenue growth, raised guidance) and bullish technicals \u2014 fitting the strategy brief's mandate to aggressively deploy into Tech. The risk team approved at 3.75% but I'm sizing up slightly to 4% given the RISK-ON posture and critical under-deployment gap (11% vs 82% target at Day 18/22); the cost of under-deployment outweighs the modest overbought risk. Stop-loss at 6% (~$95.76) sits below the $96.57 support level, providing "
+    },
+    {
+      "ticker": "CSCO",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 101.87,
+      "exit_price": 114.09,
+      "cost_basis": 101.87,
+      "proceeds": 114.09,
+      "pnl": 12.22,
+      "pnl_pct": 12.0,
+      "reason": "take_profit",
+      "opened_date": "2026-05-14",
+      "closed_date": "2026-05-18",
+      "journal_note": "CSCO is a Technology momentum leader with strong earnings catalyst (12% revenue growth, raised guidance) and bullish technicals \u2014 fitting the strategy brief's mandate to aggressively deploy into Tech. The risk team approved at 3.75% but I'm sizing up slightly to 4% given the RISK-ON posture and critical under-deployment gap (11% vs 82% target at Day 18/22); the cost of under-deployment outweighs the modest overbought risk. Stop-loss at 6% (~$95.76) sits below the $96.57 support level, providing "
+    },
+    {
+      "ticker": "AMZN",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 263.04,
+      "exit_price": 264.86,
+      "cost_basis": 263.04,
+      "proceeds": 264.86,
+      "pnl": 1.82,
+      "pnl_pct": 0.69,
+      "reason": "time_exit",
+      "opened_date": "2026-04-30",
+      "closed_date": "2026-05-18",
+      "journal_note": "Portfolio is critically under-deployed at 31% vs 59% target in a risk-on environment with bullish SPY trend and declining VIX. AMZN is a core technology name in a focus sector with strong structural drivers (AWS, advertising, Prime). While quantitative modules failed due to infrastructure issues rather than negative signals, the qualitative case is balanced-to-positive, and the cost of under-deployment in this regime outweighs the risk of a modest starter position. Taking a reduced position (~12"
+    },
+    {
+      "ticker": "TXN",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 297.76,
+      "exit_price": 300.6,
+      "cost_basis": 297.76,
+      "proceeds": 300.6,
+      "pnl": 2.84,
+      "pnl_pct": 0.95,
+      "reason": "time_exit",
+      "opened_date": "2026-05-12",
+      "closed_date": "2026-05-18",
+      "journal_note": "Overriding the risk team's reduction back to the trader's original 0.05 position size. The strategy brief explicitly states HIGH capital deployment priority with the portfolio severely behind pace at only 5% deployed with 6 sessions remaining \u2014 the cost of under-deployment is the greater risk. TXN has strong bullish technicals (price above both EMAs, MACD crossover), positive sentiment catalysts (Zacks Strong Buy, raised guidance), and sits in the priority Technology sector. The 8% stop-loss ade"
     }
   ],
   "equity_curve": [
@@ -378,6 +386,11 @@
       "day": 18,
       "date": "2026-05-18",
       "equity": 5281.59
+    },
+    {
+      "day": 18,
+      "date": "2026-05-18",
+      "equity": 5299.81
     }
   ],
   "journal": [
@@ -1104,15 +1117,16 @@
       "target_pct": 1.5,
       "stop_price": 224.02,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 235.74,
+      "exit_date": "2026-05-18",
+      "pnl_pct": 4.39,
+      "outcome": "win",
       "auto_close_date": "2026-05-14",
       "rationale": "Pre-market gap +2.3% (LONG, vol pre-mkt)",
       "qty": 11,
-      "allocated_usd": 2484.13
+      "allocated_usd": 2484.13,
+      "pnl_usd": 109.01
     },
     {
       "id": "DTS-2026-05-14-GOOGL-gap",
@@ -1125,15 +1139,16 @@
       "target_pct": 1.5,
       "stop_price": 399.4,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 401.07,
+      "exit_date": "2026-05-18",
+      "pnl_pct": -0.38,
+      "outcome": "loss",
       "auto_close_date": "2026-05-14",
       "rationale": "Pre-market gap +3.9% (LONG, vol pre-mkt)",
       "qty": 3,
-      "allocated_usd": 1207.86
+      "allocated_usd": 1207.86,
+      "pnl_usd": -4.65
     },
     {
       "id": "DTS-2026-05-14-META-gap",
@@ -1146,15 +1161,16 @@
       "target_pct": 1.5,
       "stop_price": 611.7,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 618.43,
+      "exit_date": "2026-05-18",
+      "pnl_pct": 0.29,
+      "outcome": "win",
       "auto_close_date": "2026-05-14",
       "rationale": "Pre-market gap +2.3% (LONG, vol pre-mkt)",
       "qty": 1,
-      "allocated_usd": 616.63
+      "allocated_usd": 616.63,
+      "pnl_usd": 1.8
     },
     {
       "id": "DTS-2026-05-14-LLY-gap",
@@ -1167,15 +1183,16 @@
       "target_pct": 1.5,
       "stop_price": 1007.62,
       "stop_pct": 0.8,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 1006.7,
+      "exit_date": "2026-05-18",
+      "pnl_pct": -0.89,
+      "outcome": "loss",
       "auto_close_date": "2026-05-14",
       "rationale": "Pre-market gap +2.6% (LONG, vol pre-mkt)",
       "qty": 1,
-      "allocated_usd": 1015.75
+      "allocated_usd": 1015.75,
+      "pnl_usd": -9.05
     },
     {
       "id": "DTS-2026-05-14-META-scalp",
@@ -1204,8 +1221,8 @@
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": -102.08,
-    "equity": 5222.29
+    "cash": 5319.4,
+    "equity": 5319.4
   },
   "scalping_capital": {
     "initial": 5000.0,
@@ -1249,6 +1266,11 @@
       "day": 17,
       "date": "2026-05-13",
       "equity": 5409.63
+    },
+    {
+      "day": 18,
+      "date": "2026-05-18",
+      "equity": 5382.96
     }
   ],
   "dt_equity_curve": [
@@ -1286,6 +1308,11 @@
       "day": 17,
       "date": "2026-05-13",
       "equity": 5222.29
+    },
+    {
+      "day": 18,
+      "date": "2026-05-18",
+      "equity": 5319.4
     }
   ],
   "scalping_equity_curve": [
@@ -1323,28 +1350,33 @@
       "day": 17,
       "date": "2026-05-13",
       "equity": 5000.0
+    },
+    {
+      "day": 18,
+      "date": "2026-05-18",
+      "equity": 4990.04
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 742.31,
-      "return_pct": 8.19
+      "current_price": 738.65,
+      "return_pct": 7.66
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 714.71,
-      "return_pct": 13.7
+      "current_price": 705.88,
+      "return_pct": 12.29
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 282.67,
-      "return_pct": 5.19
+      "current_price": 275.97,
+      "return_pct": 2.7
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 430.5,
-      "return_pct": -3.28
+      "current_price": 418.43,
+      "return_pct": -5.99
     }
   },
   "sector_strength": {
