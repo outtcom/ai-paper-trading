@@ -1,8 +1,8 @@
-name: ORB Scalping Scan
+name: ICT FVG Scalping Scan
 
 on:
   schedule:
-    - cron: '30 13 * * 1-5'  # triggers 9:30 AM EDT; ~45 min GHA queue → arrives ~10:15 AM ET
+    - cron: '30 11 * * 1-5'  # triggers 7:30 AM EDT; observed ~3h GHA queue → arrives ~10:30 AM ET
   workflow_dispatch:          # allow manual trigger
 
 permissions:
@@ -36,7 +36,7 @@ jobs:
           TELEGRAM_GROUP_CHAT_ID=${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
           EOF
 
-      - name: Run ORB scalping scan
+      - name: Run ICT FVG scalping scan
         run: python scalping_scan.py
 
       - name: Commit portfolio changes
@@ -56,7 +56,7 @@ jobs:
           GROUP_CHAT_ID: ${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          TEXT=$'🚨 <b>ORB Scalping Scan FAILED</b>\n\nView logs:\n'"${RUN_URL}"
+          TEXT=$'🚨 <b>ICT FVG Scalping Scan FAILED</b>\n\nView logs:\n'"${RUN_URL}"
           curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${CHAT_ID}" \
             --data-urlencode "parse_mode=HTML" \

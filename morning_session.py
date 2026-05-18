@@ -75,8 +75,8 @@ from tools.session_manager import (
 )
 from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
-    send_trade_notification, send_message,
-    broadcast_message, send_group_trade_signal,
+    send_trade_notification, send_full_agent_chain,
+    send_message, broadcast_message, send_group_trade_signal,
 )
 
 _CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
@@ -771,6 +771,8 @@ def main():
     # ── Notify via Telegram (both private + group), then auto-execute ──────
     send_trade_notification(summary)
     send_group_trade_signal(summary)
+    # Send full agent reasoning chain (3 follow-up messages) to private chat
+    send_full_agent_chain(state)
 
     # Re-fetch live price at execution time — not the pre-market analysis quote
     try:

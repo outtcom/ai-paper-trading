@@ -254,6 +254,87 @@ def send_trade_notification(trade_summary: dict) -> dict:
     return broadcast_message(text)
 
 
+def send_full_agent_chain(state: dict) -> None:
+    """
+    Send the complete multi-agent reasoning chain as three follow-up Telegram messages
+    immediately after the main trade card. Sent to private chat only (detailed logs).
+
+    Message 1/3: Fundamental + Sentiment analyst reports (full text)
+    Message 2/3: Technical analyst + Bull/Bear researcher full reports
+    Message 3/3: Trader decision + Risk Manager assessment + Fund Manager final reasoning
+    """
+    ticker = state.get("ticker", "?")
+    header = f"<b>📋 FULL ANALYSIS — {ticker}</b>"
+
+    def _safe(text) -> str:
+        if not text:
+            return "<i>Not available</i>"
+        if isinstance(text, dict):
+            import json as _json
+            return f"<code>{_json.dumps(text, indent=2)[:3000]}</code>"
+        return str(text).strip()
+
+    # Message 1/3 — Fundamental + Sentiment
+    fund_text = _safe(state.get("fundamental_report"))
+    sent_text = _safe(state.get("sentiment_report"))
+    msg1 = (
+        f"{header} <i>(1/3)</i>\n\n"
+        f"━━ <b>[1/7] Fundamental Analyst</b> ━━\n"
+        f"{fund_text[:3000]}\n\n"
+        f"━━ <b>[2/7] Sentiment Analyst</b> ━━\n"
+        f"{sent_text[:3000]}"
+    )
+    send_message(msg1, chat_id=_CHAT_ID)
+
+    # Message 2/3 — Technical + Bull/Bear Researcher
+    tech_text = _safe(state.get("technical_report"))
+    bull_text = _safe(state.get("bull_case"))
+    bear_text = _safe(state.get("bear_case"))
+    msg2 = (
+        f"{header} <i>(2/3)</i>\n\n"
+        f"━━ <b>[3/7] Technical Analyst</b> ━━\n"
+        f"{tech_text[:2500]}\n\n"
+        f"━━ <b>[4/7] Bull Researcher</b> ━━\n"
+        f"{bull_text[:1200]}\n\n"
+        f"━━ <b>[5/7] Bear Researcher</b> ━━\n"
+        f"{bear_text[:1200]}"
+    )
+    send_message(msg2, chat_id=_CHAT_ID)
+
+    # Message 3/3 — Trader + Risk Manager + Fund Manager
+    trader  = state.get("trader_decision", {})
+    risk    = state.get("risk_adjusted_decision", {})
+    fm      = state.get("final_order", {})
+
+    trader_text = (
+        f"Action: <b>{str(trader.get('action', '?')).upper()}</b>  "
+        f"Conviction: <b>{str(trader.get('conviction', '?')).upper()}</b>\n"
+        f"{_safe(trader.get('reasoning'))}"
+    )
+    risk_text = (
+        f"Assessment: <b>{str(risk.get('risk_assessment', '?')).upper()}</b>  "
+        f"Position: <b>{float(risk.get('final_position_size') or 0) * 100:.0f}%</b>  "
+        f"SL: <b>{float(risk.get('stop_loss_pct') or 0) * 100:.1f}%</b>\n"
+        f"{_safe(risk.get('reasoning'))}"
+    )
+    fm_text = (
+        f"Action: <b>{str(fm.get('action', '?')).upper()}</b>  "
+        f"Qty: <b>{fm.get('qty', '?')}</b>  "
+        f"Size: <b>{float(fm.get('position_size_pct') or 0) * 100:.0f}%</b>\n"
+        f"{_safe(fm.get('final_reasoning'))}"
+    )
+    msg3 = (
+        f"{header} <i>(3/3)</i>\n\n"
+        f"━━ <b>[6/7] Trader Decision</b> ━━\n"
+        f"{trader_text[:2000]}\n\n"
+        f"━━ <b>[7a] Risk Manager</b> ━━\n"
+        f"{risk_text[:2000]}\n\n"
+        f"━━ <b>[7b] Fund Manager (Final Gate)</b> ━━\n"
+        f"{fm_text[:2000]}"
+    )
+    send_message(msg3, chat_id=_CHAT_ID)
+
+
 def poll_for_response(timeout_seconds: int = 3600, poll_interval: int = 15) -> str:
     """
     Long-poll Telegram for an inline button callback from the configured private chat.
