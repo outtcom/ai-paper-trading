@@ -2,7 +2,7 @@ name: Morning Session
 
 on:
   schedule:
-    - cron: '0 10 * * 1-5'   # triggers 6:00 AM EDT; ~90 min GHA queue → arrives ~7:30 AM ET
+    - cron: '30 11 * * 1-5'  # triggers 7:30 AM EDT; observed ~2h15min GHA queue → arrives ~9:45 AM ET (after open)
   workflow_dispatch:           # allow manual trigger
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   morning-session:
     runs-on: ubuntu-latest
-    timeout-minutes: 30       # auto-execute — no approval polling
+    timeout-minutes: 60       # includes up to 45min market-open wait + pipeline run
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

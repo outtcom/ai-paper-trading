@@ -1,9 +1,12 @@
 """
 Morning session entry point.
-Triggered by GitHub Actions at 7:30 AM ET on weekdays.
+Triggered by GitHub Actions at 7:30 AM EDT on weekdays (cron: 30 11 * * 1-5).
+Observed GHA queue delay: ~2h15min → actual execution ~9:45 AM ET.
+Market-open guard sleeps up to 45 min if we land pre-9:30 AM.
 
 Flow:
-  1.  Start/check the 10-day session
+  0.  Market open guard — sleep until 9:30 AM ET if pre-market (max 45 min)
+  1.  Start/check the 30-day session
   2.  Circuit breaker — halt if peak drawdown > 15% or daily loss > 3%
   3.  FOMC / CPI / NFP auto-block — no trades on macro event days
   4.  VIX check — EXTREME → skip. Apply VIX sizing multiplier.
@@ -11,21 +14,22 @@ Flow:
   5.  Market regime overlay — bearish (SPY < 200d MA) → halve size further
   5b. HYG credit spread check — risk-off signal → cap sizing at 0.5×
   6.  Concurrent position limit — skip if already at MAX_CONCURRENT_POSITIONS
-  7.  Portfolio heat check — skip if >75% capital already deployed
+  7.  Portfolio heat check — skip if >MAX_PORTFOLIO_HEAT capital already deployed
   8.  Earnings check — block tickers with earnings within 5 days or reported within 2 days
   9.  Sector strength ranking — fetch sector ETF momentum before analysis
   10. Run 7-agent pipeline on all watchlist tickers (stocks + crypto)
   11. Volume confirmation filter — discard low-volume BUY signals
   12. Portfolio beta cap — skip if adding candidate exceeds 1.5× weighted beta
   13. Rank candidates: conviction + sector bonus → pick best
-  14. Send Telegram approval card; poll 60 min
-  15. If approved: re-fetch live price, execute paper trade, log journal entry
+  14. Send Telegram trade notification (no approval gate — auto-execute)
+  15. Execute paper trade immediately, log journal entry
 
 Usage:
   python morning_session.py
 """
 import os
 import sys
+import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
@@ -76,6 +80,34 @@ from tools.telegram_bot import (
 )
 
 _CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
+
+
+# ---------------------------------------------------------------------------
+# Market open guard
+# ---------------------------------------------------------------------------
+
+def _wait_for_market_open(max_wait_minutes: int = 45) -> None:
+    """
+    If current ET time is before 9:30 AM, sleep until market open (or max_wait_minutes).
+    Handles variable GHA queue delays — ensures orders are not submitted pre-market.
+    """
+    et = ZoneInfo("America/New_York")
+    now_et = datetime.now(et)
+    market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+    if now_et >= market_open:
+        return
+    wait_secs = (market_open - now_et).total_seconds()
+    max_secs  = max_wait_minutes * 60
+    sleep_for = min(wait_secs, max_secs)
+    target_str = market_open.strftime("%H:%M:%S ET") if sleep_for >= wait_secs else f"{max_wait_minutes} min cap reached"
+    print(f"[morning] Pre-market ({now_et.strftime('%H:%M ET')}) — waiting {sleep_for/60:.1f} min until {target_str}")
+    broadcast_message(
+        f"⏳ <b>Morning Session</b> — pre-market hold\n"
+        f"Current time: {now_et.strftime('%H:%M ET')}. "
+        f"Waiting {sleep_for/60:.0f} min for market open at 9:30 AM ET."
+    )
+    time.sleep(sleep_for)
+    print(f"[morning] Market open — proceeding with pipeline.")
 
 
 # ---------------------------------------------------------------------------
@@ -429,6 +461,9 @@ def main():
     print(f"\n[morning] ========== Morning Session {today} ==========")
 
     portfolio = get_portfolio()
+
+    # ── Market open guard — sleep if GHA launched us pre-market ───────────
+    _wait_for_market_open(max_wait_minutes=45)
 
     # ── LLM provider health check ──────────────────────────────────────────
     run_health_check()

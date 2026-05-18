@@ -77,7 +77,7 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | Workflow | Schedule (ET) | Script |
 |---|---|---|
 | Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
-| Morning Session | Mon–Fri 7:30 AM | `morning_session.py` |
+| Morning Session | Mon–Fri 9:45 AM (cron 7:30 AM EDT + ~2h15min queue) | `morning_session.py` |
 | ICT FVG Scalping Scan | Mon–Fri 10:00 AM | `scalping_scan.py` |
 | Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
@@ -141,7 +141,7 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | `preclose_alert.py` showed double-negative `--X.Y%` | Conditional label + `abs()` when price crosses SL/TP |
 | Pre-market gap signals blocked by volume ratio 1.0x < 1.5x | Finnhub `v=0` before 9:30 AM (intraday accumulator not started). Setting `current_vol=avg_vol` gives ratio=1.0 which still fails. Fix: use `premarket_vol` flag and **skip the ratio check entirely** before open. |
 | `_yahoo_intraday_ohlcv()` fails locally on Windows | `ZoneInfo("America/New_York")` needs `tzdata` package on Windows. Fix: use plain UTC offset (`datetime.utcfromtimestamp(ts - 4*3600)`) — no tzdata needed, works on GitHub Actions Linux too. |
-| Workflows arrive late due to GHA queue | Free-tier runner congestion during US market hours. Actual measured delays: pre-market ~105 min, morning ~90 min, midday ~70 min, pre-close ~90 min, EOD ~60 min. Crons calibrated individually to each job's observed delay. |
+| Workflows arrive late due to GHA queue | Free-tier runner congestion during US market hours. **Measured delays (Session 1/2):** morning ~2h15min (orders arrived 8:12–8:57 AM EDT = pre-market). Fix: moved morning cron to `30 11 * * 1-5` (7:30 AM EDT) so 2h15min delay → 9:45 AM ET (after open). Added `_wait_for_market_open(max_wait_minutes=45)` guard in `morning_session.py` as a backstop. |
 | Local `morning_session.py` fails with Anthropic credit error, GitHub Actions succeeds | Two separate API keys: local `.env` key vs GitHub repo secret. They have independent billing. Exhaust one → top up at console.anthropic.com. GitHub Actions pipeline unaffected. |
 | Local scripts crash on Windows with `UnicodeEncodeError` on emoji print statements | cp1252 codec can't encode emoji. Fix: run with `PYTHONIOENCODING=utf-8 python script.py` locally. |
 | Groq `llama-3.1-70b-versatile` decommissioned — all 5 Groq agents silently failing since Day 11 | Changed `MODELS["fast"]` in `config.py` to `groq/llama-3.3-70b-versatile` (direct successor, drop-in replacement). This affected: Fundamental Analyst, Sentiment Analyst, Technical Analyst, Risk Manager, Strategy Consultant. |
