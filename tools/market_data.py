@@ -313,6 +313,45 @@ def get_latest_price(ticker: str) -> float:
     raise ValueError(f"No price data returned for {ticker} (tried Finnhub + Yahoo + yfinance)")
 
 
+def get_intraday_ohlcv_history(ticker: str, days_back: int = 60, interval: str = "5m") -> dict:
+    """
+    Fetch historical intraday bars via yfinance (free tier: up to 60 days of 5-min bars).
+    Returns {date_str: [list of {timestamp_et, open, high, low, close, volume}]}.
+    Groups bars by trading date. Empty dict on failure.
+    """
+    try:
+        import yfinance as yf
+        from datetime import timezone
+
+        tk   = yf.Ticker(ticker)
+        hist = tk.history(period=f"{days_back}d", interval=interval, auto_adjust=True)
+        if hist.empty:
+            return {}
+
+        by_date: dict = {}
+        for idx, row in hist.iterrows():
+            # idx is timezone-aware (ET on yfinance pandas)
+            try:
+                dt_et = idx.astimezone(timezone(timedelta(hours=-4)))  # EDT approx
+            except Exception:
+                dt_et = idx
+            date_str = dt_et.strftime("%Y-%m-%d")
+            time_str = dt_et.strftime("%Y-%m-%d %H:%M")
+            bar = {
+                "timestamp_et": time_str,
+                "open":   round(float(row["Open"]),   4),
+                "high":   round(float(row["High"]),   4),
+                "low":    round(float(row["Low"]),    4),
+                "close":  round(float(row["Close"]),  4),
+                "volume": int(row["Volume"]) if row["Volume"] == row["Volume"] else 0,
+            }
+            by_date.setdefault(date_str, []).append(bar)
+        return by_date
+    except Exception as e:
+        print(f"[market_data] get_intraday_ohlcv_history({ticker}): {e}")
+        return {}
+
+
 if __name__ == "__main__":
     print(f"VIX:  {get_latest_price('^VIX'):.2f}")
     print(f"SPY:  {get_latest_price('SPY'):.2f}")

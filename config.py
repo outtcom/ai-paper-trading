@@ -69,10 +69,11 @@ VIX_HIGH     = 35   # below → 50% sizing; above → no trades (EXTREME)
 # ---------------------------------------------------------------------------
 # Session Risk Controls
 # ---------------------------------------------------------------------------
-MAX_CONCURRENT_POSITIONS = 5      # never hold more than 5 positions at once
-MAX_PORTFOLIO_HEAT       = 0.90   # halt new entries if >90% capital deployed
-MIN_VOLUME_RATIO         = 0.8    # require recent vol ≥ 80% of 20d avg (0 = off)
-BEARISH_REGIME_MULTIPLIER = 0.5   # halve size when SPY < 200d MA
+MAX_CONCURRENT_POSITIONS  = 5      # never hold more than 5 positions at once
+MAX_PORTFOLIO_HEAT        = 0.90   # halt new entries if >90% capital deployed
+MAX_NEW_POSITIONS_PER_DAY = 2      # execute up to 2 new trades/day when under-deployed
+MIN_VOLUME_RATIO          = 0.8    # require recent vol ≥ 80% of 20d avg (0 = off)
+BEARISH_REGIME_MULTIPLIER = 0.5    # halve size when SPY < 200d MA
 
 # ---------------------------------------------------------------------------
 # Slippage
@@ -160,10 +161,8 @@ DASHBOARD_URL = "https://outtcom.github.io/ai-paper-trading/"
 # ---------------------------------------------------------------------------
 # Day Trade Signals (paper-only tracking, no capital allocated)
 # ---------------------------------------------------------------------------
-DAY_TRADE_GAP_MIN_PCT      = 2.0   # minimum pre-market gap % to trigger gap-and-go
+DAY_TRADE_GAP_MIN_PCT      = 2.0   # minimum pre-market gap % to flag in scanner
 DAY_TRADE_VOLUME_RATIO_MIN = 1.5   # volume vs 30-day avg required for confirmation
-GAP_AND_GO_TARGET_PCT      = 1.5   # TP: target 1.5% gain same day
-GAP_AND_GO_STOP_PCT        = 0.8   # SL: stop if falls 0.8% from entry
 MOMENTUM_NEAR_HIGH_PCT     = 2.0   # within 2% of 52-week high qualifies
 MOMENTUM_TARGET_PCT        = 2.0   # TP: target 2% gain over 1-2 days
 MOMENTUM_STOP_PCT          = 1.0   # SL: stop if falls 1% from entry

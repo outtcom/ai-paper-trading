@@ -1029,7 +1029,7 @@
           : s.outcome === 'loss' ? '<span class="tag sl">LOSS</span>'
           : s.status === 'open' ? '<span class="tag open">Open</span>'
           : '<span class="tag skip">Flat</span>';
-        const typeLabel = s.signal_type === 'gap_and_go' ? 'Gap &amp; Go' : 'Momentum';
+        const typeLabel = s.signal_type === 'momentum_breakout' ? 'Momentum' : (s.signal_type || 'Signal');
         const qty   = s.qty || 0;
         const alloc = s.allocated_usd || 0;
         const sizeStr = qty > 0 ? `${qty} sh<br><span style="font-size:0.78em;color:var(--muted)">$${fmt(alloc,0)}</span>` : '—';

@@ -63,7 +63,6 @@ def send_group_trade_signal(signal: dict) -> dict:
 
     # Day trade / scalping signal card
     _DT_LABELS = {
-        "gap_and_go":        "Gap & Go",
         "momentum_breakout": "Momentum Breakout",
         "scalping_orb":      "ORB Scalp",
         "scalping_fvg":      "ICT FVG Scalp",

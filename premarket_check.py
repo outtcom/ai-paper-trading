@@ -2,8 +2,9 @@
 Pre-market gap scanner — runs at 7:00 AM ET (30 min before morning session).
 Triggered by GitHub Actions daily.
 
-Scans all watchlist tickers for significant pre-market gaps vs prior close.
-Also detects gap-and-go day trade signals (paper-only, no capital allocated).
+Scans all watchlist tickers for significant pre-market gaps vs prior close
+and sends an informational alert so the morning pipeline can factor them in.
+Gap-and-go signals were removed (0.43 profit factor, confirmed losing strategy).
 """
 import os
 import sys
@@ -12,102 +13,13 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from config import (
-    WATCHLIST,
-    DAY_TRADE_GAP_MIN_PCT, DAY_TRADE_VOLUME_RATIO_MIN,
-    GAP_AND_GO_TARGET_PCT, GAP_AND_GO_STOP_PCT,
-)
-from tools.market_data import _yahoo_direct_ohlcv, _finnhub_get
+from config import WATCHLIST
+from tools.market_data import _yahoo_direct_ohlcv
 from tools.market_regime import get_premarket_gaps, is_event_blocked
-from tools.session_manager import get_portfolio, add_day_trade_signal
-from tools.telegram_bot import broadcast_message, send_group_trade_signal
+from tools.session_manager import get_portfolio
+from tools.telegram_bot import broadcast_message
 
 GAP_THRESHOLD = 2.0   # percent — flag if gap exceeds this
-
-
-def _detect_gap_and_go_signals(gaps: dict, today: str) -> list:
-    """
-    Scan gap data for gap-and-go day trade signals.
-    A signal is generated when gap >= DAY_TRADE_GAP_MIN_PCT and volume >= DAY_TRADE_VOLUME_RATIO_MIN.
-    Returns list of signal dicts added to portfolio.
-    """
-    from datetime import timedelta
-    signals = []
-
-    for ticker, data in gaps.items():
-        if ticker.endswith("-USD"):
-            continue  # skip crypto for gap-and-go
-        gap_pct = data.get("gap_pct", 0)
-        if abs(gap_pct) < DAY_TRADE_GAP_MIN_PCT:
-            continue
-
-        entry_price = data.get("current") or data.get("prev_close")
-        if not entry_price or entry_price <= 0:
-            continue
-
-        # Fetch 30-day average volume via Yahoo direct HTTP
-        try:
-            end   = today
-            start = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=35)).strftime("%Y-%m-%d")
-            bars  = _yahoo_direct_ohlcv(ticker, start, end)
-            if len(bars) >= 5:
-                avg_vol = sum(b["volume"] for b in bars[-30:] if b["volume"] > 0) / max(1, sum(1 for b in bars[-30:] if b["volume"] > 0))
-            else:
-                avg_vol = 0
-        except Exception:
-            avg_vol = 0
-
-        # Finnhub 'v' field is the intraday session accumulator — it is 0 before 9:30 AM ET.
-        # When v=0 we are in pre-market: skip the volume ratio gate entirely and flag it.
-        try:
-            quote = _finnhub_get(f"/quote?symbol={ticker}")
-            current_vol = quote.get("v", 0) or 0
-        except Exception:
-            current_vol = 0
-
-        premarket_vol = (current_vol == 0)  # True before regular session opens
-        vol_ratio = (current_vol / avg_vol) if (avg_vol > 0 and current_vol > 0) else None
-
-        if not premarket_vol and vol_ratio is not None and vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN:
-            print(f"[premarket] {ticker} gap {gap_pct:+.1f}% — volume ratio {vol_ratio:.2f}x < {DAY_TRADE_VOLUME_RATIO_MIN}x, skipping signal")
-            continue
-
-        # Gap direction determines trade direction: gap up = long, gap down = short
-        direction = "short" if gap_pct < 0 else "long"
-        if direction == "short":
-            target = round(entry_price * (1 - GAP_AND_GO_TARGET_PCT / 100), 2)
-            stop   = round(entry_price * (1 + GAP_AND_GO_STOP_PCT   / 100), 2)
-        else:
-            target = round(entry_price * (1 + GAP_AND_GO_TARGET_PCT / 100), 2)
-            stop   = round(entry_price * (1 - GAP_AND_GO_STOP_PCT   / 100), 2)
-
-        vol_label = "pre-mkt" if premarket_vol else f"{vol_ratio:.1f}x"
-        signal = {
-            "id":               f"DTS-{today}-{ticker}-gap",
-            "ticker":           ticker,
-            "signal_type":      "gap_and_go",
-            "direction":        direction,
-            "generated_date":   today,
-            "entry_price":      round(entry_price, 2),
-            "target_price":     target,
-            "target_pct":       GAP_AND_GO_TARGET_PCT,
-            "stop_price":       stop,
-            "stop_pct":         GAP_AND_GO_STOP_PCT,
-            "status":           "open",
-            "exit_price":       None,
-            "exit_date":        None,
-            "pnl_pct":          None,
-            "outcome":          None,
-            "auto_close_date":  today,
-            "rationale":        f"Pre-market gap {gap_pct:+.1f}% ({direction.upper()}, vol {vol_label})"
-        }
-
-        add_day_trade_signal(signal)
-        send_group_trade_signal(signal)
-        signals.append(signal)
-        print(f"[premarket] Gap-and-go signal: {ticker} {gap_pct:+.1f}% @ ${entry_price:.2f}  TP=${target:.2f}  SL=${stop:.2f}")
-
-    return signals
 
 
 def main():
@@ -131,9 +43,6 @@ def main():
         return
 
     gaps = get_premarket_gaps(WATCHLIST, gap_threshold=GAP_THRESHOLD / 100)
-
-    # Detect gap-and-go signals before formatting the summary
-    gap_signals = _detect_gap_and_go_signals(gaps, today)
 
     flagged   = {t: g for t, g in gaps.items() if g.get("flagged")}
     unflagged = {t: g for t, g in gaps.items() if not g.get("flagged") and "gap_pct" in g}
@@ -170,9 +79,6 @@ def main():
             sign = "+" if pct > 0 else ""
             lines.append(f"  {ticker}: {sign}{pct:.1f}%")
 
-    if gap_signals:
-        lines.append(f"\n📡 <b>Gap-and-Go Signals:</b> {len(gap_signals)} generated (paper only — see group)")
-
     session_day = portfolio["session"].get("current_day", "?")
     total_days  = portfolio["session"].get("total_days", 22)
     equity      = portfolio.get("equity", portfolio["initial_capital"])
@@ -180,7 +86,7 @@ def main():
     lines.append("<i>Morning session analysis starts in 30 min.</i>")
 
     broadcast_message("\n".join(lines))
-    print(f"[premarket] Scan sent. {len(flagged)} tickers flagged, {len(gap_signals)} gap-and-go signals.")
+    print(f"[premarket] Scan sent. {len(flagged)} significant gaps flagged.")
 
 
 if __name__ == "__main__":
