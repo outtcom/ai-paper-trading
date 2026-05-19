@@ -5,7 +5,7 @@ on:
     workflows:
       - "Pre-Market Gap Scanner"
       - "Morning Session"
-      - "ORB Scalping Scan"
+      - "ICT FVG Scalping Scan"
       - "Midday Position Monitor"
       - "Pre-Close Alert"
       - "End-of-Day Session"
@@ -23,6 +23,7 @@ jobs:
     if: github.event.workflow_run.conclusion == 'failure'
 
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       FAILED_RUN_ID:        ${{ github.event.workflow_run.id }}
       FAILED_WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
 

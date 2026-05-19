@@ -10,6 +10,8 @@ jobs:
   new-session:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Abort if triggered during trading hours (05:00–22:00 UTC)
         run: |
