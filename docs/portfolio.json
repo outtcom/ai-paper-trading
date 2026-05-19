@@ -4,10 +4,10 @@
     "current_day": 19,
     "total_days": 30,
     "active": true,
-    "last_updated": "2026-05-18T20:44:09.351681+00:00",
+    "last_updated": "2026-05-19T14:22:09.151193+00:00",
     "session_number": 2
   },
-  "cash": 5299.81,
+  "cash": 3341.74,
   "initial_capital": 5000.0,
   "equity": 5299.81,
   "peak_equity": 5299.81,
@@ -17,15 +17,50 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.91,
-    "sortino": 19.12,
-    "calmar": 60.38,
+    "sharpe": 2.87,
+    "sortino": 18.61,
+    "calmar": 58.52,
     "spy_start_price": 686.1,
     "spy_current_price": 738.65,
     "benchmark_return_pct": 7.66,
     "max_drawdown_pct": 0.78
   },
-  "positions": {},
+  "positions": {
+    "VLO": {
+      "direction": "long",
+      "qty": 5,
+      "entry_price": 259.85,
+      "cost_basis": 1299.25,
+      "last_price": 259.85,
+      "stop_loss": 244.26,
+      "take_profit": 291.03,
+      "partial_profit_price": 275.44,
+      "stop_loss_pct": 6.0,
+      "take_profit_pct": 12.0,
+      "highest_price": 259.85,
+      "lowest_price": 259.85,
+      "partial_taken": false,
+      "opened_date": "2026-05-19",
+      "journal_note": "VLO is in the Energy focus sector with a fresh bullish MACD crossover (3.91 vs signal 2.55) and price at $259.43 above both the 20d EMA ($246.39) and 50d EMA ($242.00) \u2014 classic momentum entry. RSI at 56.58 confirms room to run before overbought territory. Risk team flagged the -11.4% revenue decline and 31.7x P/E as concerns and reduced position from 5% to 4.5%, but with 0% deployment at Day 19/30, alpha at -1.7%, and a RISK-ON posture with HIGH capital deployment priority, I'm restoring the original 5% \u2014 under-deployment is the bigger risk here and the conservative concern doesn't meet any of the four override conditions. Upside target is the upper Bollinger Band at $261.18 near-term with potential for continuation on earnings revision momentum; downside is capped at 6% stop-loss (~$243.86), giving roughly 1:1 risk-reward on the initial move but with trend continuation potential well beyond."
+    },
+    "MU": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 658.82,
+      "cost_basis": 658.82,
+      "last_price": 658.82,
+      "stop_loss": 625.88,
+      "take_profit": 724.7,
+      "partial_profit_price": 691.76,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 658.82,
+      "lowest_price": 658.82,
+      "partial_taken": false,
+      "opened_date": "2026-05-19",
+      "journal_note": "I'm overriding the hold recommendation. The strategy brief is unambiguous: 0% deployment at Day 19/30 with -1.7% alpha vs SPY is an emergency \u2014 cash is the biggest risk, not MU's valuation. MU at $664.90 is well above its EMA20 ($642) and EMA50 ($556), confirming a strong uptrend in a focus sector (Technology). The bearish MACD histogram (-1.68) and low volume are real concerns, which is why I'm sizing at 50% rather than the full 10% the risk-seeking perspective suggested or higher \u2014 but a HOLD here with VIX at 17.8 in a risk-on environment is an active bet that cash beats equities, which is losing us the session. The 92.8x P/E is elevated but MU is a cyclical memory name where forward earnings expectations matter more than trailing P/E; 40.84% ROE and 0.27 debt-to-equity show strong fundamentals. With a 5% stop at ~$632 (just below EMA20 support at $642 for some buffer), downside risk is ~$133 on 4 shares, while upside toward the upper Bollinger Band area gives meaningful room to capture alpha. Deploying now to close the gap."
+    }
+  },
   "open_orders": [
     {
       "ticker": "NVDA",
@@ -92,6 +127,28 @@
       "day": 18,
       "submitted_at": "2026-05-14T12:12:04.071814+00:00",
       "resolved_at": "2026-05-14T12:26:10.116105+00:00"
+    },
+    {
+      "ticker": "VLO",
+      "qty": 5,
+      "side": "BUY",
+      "price": 259.85,
+      "order_type": "market",
+      "status": "executed",
+      "day": 19,
+      "submitted_at": "2026-05-19T14:22:02.241921+00:00",
+      "resolved_at": "2026-05-19T14:22:04.700261+00:00"
+    },
+    {
+      "ticker": "MU",
+      "qty": 1,
+      "side": "BUY",
+      "price": 658.82,
+      "order_type": "market",
+      "status": "executed",
+      "day": 19,
+      "submitted_at": "2026-05-19T14:22:05.773034+00:00",
+      "resolved_at": "2026-05-19T14:22:08.279763+00:00"
     }
   ],
   "trade_history": [
@@ -391,6 +448,11 @@
       "day": 18,
       "date": "2026-05-18",
       "equity": 5299.81
+    },
+    {
+      "day": 19,
+      "date": "2026-05-19",
+      "equity": 5299.81
     }
   ],
   "journal": [
@@ -554,6 +616,64 @@
         "risk_approved": null
       },
       "timestamp": "2026-05-14T12:26:10.119882+00:00"
+    },
+    {
+      "date": "2026-05-19",
+      "day": 19,
+      "ticker": "VLO",
+      "action": "BUY",
+      "analysis_price": 259.85,
+      "entry_price": 259.85,
+      "price_delta_pct": 0.0,
+      "qty": 5,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 244.26,
+      "take_profit": 291.03,
+      "vix_label": "LOW (17.8) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "VLO is in the Energy focus sector with a fresh bullish MACD crossover (3.91 vs signal 2.55) and price at $259.43 above both the 20d EMA ($246.39) and 50d EMA ($242.00) \u2014 classic momentum entry. RSI at 56.58 confirms room to run before overbought territory. Risk team flagged the -11.4% revenue decline and 31.7x P/E as concerns and reduced position from 5% to 4.5%, but with 0% deployment at Day 19/30, alpha at -1.7%, and a RISK-ON posture with HIGH capital deployment priority, I'm restoring the original 5% \u2014 under-deployment is the bigger risk here and the conservative concern doesn't meet any of the four override conditions. Upside target is the upper Bollinger Band at $261.18 near-term with potential for continuation on earnings revision momentum; downside is capped at 6% stop-loss (~$243.86), giving roughly 1:1 risk-reward on the initial move but with trend continuation potential well beyond.",
+      "bull_case": "Valero Energy Corp (VLO) presents a compelling opportunity for investors seeking exposure in the refining sector amidst a favorable market backdrop. While there are flagged concerns regarding negative revenue growth, the positives significantly outweigh the risks.\n\n### Fundamental Strengths\nValero's financial health remains robust with a respectable Return on Equity (ROE) of 17.63% and a manageable debt-to-equity ratio of 0.4476, indicating efficient utilization of capital. Despite recent revenue declines, Valero's Q1 performance with an adjusted EPS of $4.22 beats expectations, showcasing its resilience in a challenging market. The ongoing refining up-cycle provides a strategic advantage for Valero, promising enhanced margins.\n\n### Sentiment and Market Position\nThe sentiment surrounding VLO is shifting positively, driven by strong earnings results, upward revisions of earnings estimates, and analyst optimism. The energy sector's momentum, buoyed by refining dynamics, positions Valero favorably to capitalize on export growth and improved refinery utilization.\n\n### Technical Indicators\nTechnically, VLO is demonstrating bullish trends, trading above key EMAs and exhibiting a bullish MACD crossover, suggesting increasing momentum. Although the current price is near overbought territory, the bullish indicators show strong support at the EMA levels, indicating a likely continuation of the upward trend.\n\n### Risks and Mitigation\nWhile Valero faces the threat of persistent negative revenue growth and a high P/E ratio potentially indicating overvaluation, these issues appear manageable against the backdrop of a recovering refining sector and improved margins. As refining conditions stabilize, revenue is likely to rebound, bolstering investor confidence.\n\n### Catalysts\n1. **Continued Earnings Growth**: Sustained upward revisions in earnings estimates as refining margins improve.\n2. **Strong Dividends**: The recently declared quarterly cash dividend of $1.20 enhances shareholder returns and reflects management\u2019s confidence.\n3. **Strategic Advantages**: Valero's operational flexibility and export capabilities position it to capitalize on a tightening energy market.\n\nOverall, VLO offers a balanced risk-reward profile with significant upside potential driven by both fundamental improvements and favorable market trends, making it a strong buy at current levels.",
+      "bear_case": "Valero Energy Corp (VLO), while boasting certain positive metrics, presents significant risks that outweigh its potential for short-term gains, making it a poor investment choice at current levels.\n\n### Fundamental Weaknesses\nDespite a relatively strong Return on Equity (ROE) of 17.63%, the stark reality is that Valero has experienced a troubling **-11.4% revenue growth** over the past three years. This decline raises red flags regarding the company's ability to sustain profitability, particularly in a **competitive market** where gross margins are already low at **5.59%**. The **high P/E ratio of 31.7091** relative to historical averages suggests that the stock may be overvalued, leaving investors vulnerable to price corrections if earnings do not keep pace with projections.\n\n### Sentiment Volatility\nWhile the sentiment appears to be shifting positively with reports of strong earnings and optimistic analyst projections, these views stem largely from short-term metrics. The energy market's inherent volatility, influenced by geopolitical tensions and shifts in energy policy, could rapidly reverse the current bullish outlook. Moreover, the neutral sentiment analysis indicates **50% buyers and 50% sellers**, reflecting a lack of consensus that could lead to significant market swings.\n\n### Technical Concerns\nTechnically, although VLO shows bullish trends, certain indicators reveal worrying signs. The **low trading volume** (0.16 of the 20-day average) points to a lack of conviction among buyers and could signal an imminent downturn. Coupled with the stock nearing overbought regions on the Bollinger Bands, we should maintain caution against potential corrections.\n\n### Emerging Risks\n1. **Refining Margin Compression**: As competitors ramp up production, margins might compress, negating any gains from the current uptrend.\n2. **Economic Headwinds**: Macroeconomic conditions, including inflation and rising interest rates, could exert downward pressure on energy consumption and, consequently, refining margins.\n3. **Geopolitical Impacts**: Global uncertainties, particularly in oil supply routes or regulations, could price Valero out of competitiveness, exacerbating revenue struggles.\n\nIn conclusion, while VLO projects a facade of stability, the underlying fundamentals, sentiment volatility, and sector-specific risks suggest that the risks far outweigh the potential rewards, warranting a strong sell recommendation.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": null
+      },
+      "timestamp": "2026-05-19T14:22:04.704507+00:00"
+    },
+    {
+      "date": "2026-05-19",
+      "day": 19,
+      "ticker": "MU",
+      "action": "BUY",
+      "analysis_price": 658.82,
+      "entry_price": 658.82,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "low",
+      "score": 1.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 625.88,
+      "take_profit": 724.7,
+      "vix_label": "LOW (17.8) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "I'm overriding the hold recommendation. The strategy brief is unambiguous: 0% deployment at Day 19/30 with -1.7% alpha vs SPY is an emergency \u2014 cash is the biggest risk, not MU's valuation. MU at $664.90 is well above its EMA20 ($642) and EMA50 ($556), confirming a strong uptrend in a focus sector (Technology). The bearish MACD histogram (-1.68) and low volume are real concerns, which is why I'm sizing at 50% rather than the full 10% the risk-seeking perspective suggested or higher \u2014 but a HOLD here with VIX at 17.8 in a risk-on environment is an active bet that cash beats equities, which is losing us the session. The 92.8x P/E is elevated but MU is a cyclical memory name where forward earnings expectations matter more than trailing P/E; 40.84% ROE and 0.27 debt-to-equity show strong fundamentals. With a 5% stop at ~$632 (just below EMA20 support at $642 for some buffer), downside risk is ~$133 on 4 shares, while upside toward the upper Bollinger Band area gives meaningful room to capture alpha. Deploying now to close the gap.",
+      "bull_case": "**Bull Case for Micron Technology Inc. (MU)**\n\nMicron Technology offers compelling reasons for investors to consider it as a strong buying opportunity despite some mixed signals. \n\n**Fundamentally**, Micron's high Return on Equity (ROE) of 40.84% demonstrates its ability to efficiently utilize shareholder equity, heralding sustainable profit generation moving forward. Furthermore, the reasonable debt-to-equity ratio of 0.2691 indicates financial flexibility and a robust balance sheet. While the high P/E ratio presents valuation concerns, it reflects investor confidence regarding Micron's future potential\u2014especially with the growing demand for memory in AI and data-centric environments.\n\n**Sentiment-driven** catalysts bolster this outlook further. Notably, renowned investors like Stanley Druckenmiller backing Micron signals institutional confidence amidst sector-wide corrections. The company\u2019s commitment to invest $150 billion in expanding manufacturing across the U.S. and South Korea underscores an aggressive growth strategy aimed at capturing significant market share in the AI-driven memory segment. Analyst reiterations of buy ratings, despite recent sell-offs, emphasize prevailing optimism about Micron\u2019s future.\n\n**Technically**, while recent trends point towards potential short-term pullbacks, the stock remains above critical moving averages, signaling a broader bullish trend. The current RSI indicates healthy flexibility for price movements, suggesting that opportunistic buying could harness upward momentum.\n\n**Risks** such as high valuations and insider selling exist, yet these factors are outweighed by Micron's strong fundamentals, strategic positioning in a high-demand sector, and robust financial health.\n\n**Catalysts for Growth:**\n1. **AI Memory Demand**: Continued acceleration in AI hardware requirements will drive memory sales.\n2. **Manufacturing Expansion**: $150 billion investment to increase capacity aims to meet soaring demand and solidify market leadership.\n3. **Institutional Confidence**: Backing from influential investors will support price stability and possibly lead to upward momentum. \n\nWith these strong catalysts and favorable fundamentals, Micron presents a compelling investment case.",
+      "bear_case": "While the bull thesis for Micron Technology Inc. (MU) presents compelling elements, a bearish stance is warranted as the associated risks strongly outweigh the positives.\n\n**Fundamentally**, although a high ROE of 40.84% and manageable debt levels suggest effective management, they should not obscure the glaring P/E ratio of 92.84, indicating a potentially severe overvaluation. This high multiple reflects inflated expectations that are not substantiated by Micron\u2019s modest revenue growth of only 6.71% over the past three years. A robust valuation should coincide with robust revenue growth to justify investment at these price levels, yet the projections appear unrealistic amid fluctuating economic conditions and competitive pressures.\n\n**Sentiment-wise**, the recent sell-off in semiconductor stocks due to rising Treasury yields and inflation concerns cannot be dismissed lightly. Structural headwinds in the semiconductor market, compounded by negative investor sentiment, present substantial risks. While notable investors like Stanley Druckenmiller\u2019s involvement is a positive sign, such backing does not prevent the possibility of a broader industry and market downturn. Furthermore, the insider selling, especially by key figures, signals potential lack of confidence in the company\u2019s immediate future.\n\n**Technically**, the current price sitting near upper Bollinger Bands raises serious red flags as it indicates potential resistance points and suggests an overstretched valuation prone to corrections. The bearish MACD crossover further affirms a likely downturn ahead. Additionally, the volume being significantly below the 20-day average indicates weak market conviction in the present stock price, which could magnify sell-off pressures.\n\n**Top 3 Bear Risks:**\n1. **Severe Overvaluation**: The P/E ratio of 92.84 does not reflect a corresponding growth narrative, posing risks of a valuation correction.\n2. **Market Sentiment Deterioration**: Rising Treasury yields and inflation concerns significantly impact semiconductor demand, particularly affecting Micron\u2019s future performance.\n3. **Technical Indicators of Weakness**: The bearish MACD crossover and proximity to upper Bollinger Bands signal a probable price pullback, intensifying market vulnerabilities.\n\nIn conclusion, despite some strong elements, the comprehensive fundamental, sentiment, and technical analysis flags significant red flags that suggest investors should approach MU with caution or consider selling.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "low",
+        "risk_approved": null
+      },
+      "timestamp": "2026-05-19T14:22:08.284156+00:00"
     }
   ],
   "day_trade_signals": [
@@ -1383,123 +1503,123 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 175.63,
-        "mom_5d": -1.26,
-        "mom_1m": 13.79,
-        "mom_3m": 24.64,
+        "price": 171.94,
+        "mom_5d": -1.86,
+        "mom_1m": 11.24,
+        "mom_3m": 22.63,
         "above_ma50": true,
-        "rsi_14": 78.2,
-        "score": 12.45,
+        "rsi_14": 68.9,
+        "score": 10.59,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 117.08,
-        "mom_5d": 1.29,
-        "mom_1m": -1.7,
-        "mom_3m": 2.17,
+        "price": 116.93,
+        "mom_5d": 0.92,
+        "mom_1m": -1.53,
+        "mom_3m": 1.55,
         "above_ma50": true,
-        "rsi_14": 56.6,
-        "score": 0.97,
+        "rsi_14": 58.6,
+        "score": 0.82,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 117.33,
-        "mom_5d": -1.71,
-        "mom_1m": -2.56,
-        "mom_3m": 0.26,
+        "price": 114.76,
+        "mom_5d": -2.98,
+        "mom_1m": -4.26,
+        "mom_3m": -1.27,
         "above_ma50": true,
-        "rsi_14": 51.5,
-        "score": -0.74,
+        "rsi_14": 40.9,
+        "score": -2.28,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 145.08,
-        "mom_5d": 1.43,
-        "mom_1m": -2.5,
-        "mom_3m": -7.99,
-        "above_ma50": false,
-        "rsi_14": 54.5,
-        "score": -2.42,
+        "price": 147.06,
+        "mom_5d": 0.83,
+        "mom_1m": -0.24,
+        "mom_3m": -6.49,
+        "above_ma50": true,
+        "rsi_14": 64.4,
+        "score": -0.17,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 51.59,
-        "mom_5d": 0.81,
-        "mom_1m": -1.59,
-        "mom_3m": -1.89,
+        "price": 51.62,
+        "mom_5d": 0.09,
+        "mom_1m": -1.91,
+        "mom_3m": -1.01,
         "above_ma50": true,
-        "rsi_14": 46.6,
-        "score": 0.07,
+        "rsi_14": 46.2,
+        "score": -0.13,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 59.02,
-        "mom_5d": 3.24,
-        "mom_1m": 7.27,
-        "mom_3m": 7.74,
+        "price": 60.58,
+        "mom_5d": 5.23,
+        "mom_1m": 10.01,
+        "mom_3m": 9.79,
         "above_ma50": true,
-        "rsi_14": 55.8,
-        "score": 7.15,
+        "rsi_14": 57.3,
+        "score": 9.53,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 171.27,
-        "mom_5d": -2.15,
-        "mom_1m": -1.29,
-        "mom_3m": -2.15,
-        "above_ma50": true,
-        "rsi_14": 50.6,
-        "score": -0.72,
+        "price": 168.49,
+        "mom_5d": -3.36,
+        "mom_1m": -3.11,
+        "mom_3m": -4.45,
+        "above_ma50": false,
+        "rsi_14": 47.4,
+        "score": -3.45,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 85.39,
-        "mom_5d": 2.42,
-        "mom_1m": 3.55,
-        "mom_3m": -3.01,
+        "price": 86.19,
+        "mom_5d": 2.08,
+        "mom_1m": 4.62,
+        "mom_3m": -1.68,
         "above_ma50": true,
-        "rsi_14": 66.5,
-        "score": 2.9,
+        "rsi_14": 71.4,
+        "score": 3.6,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 50.58,
-        "mom_5d": -3.21,
-        "mom_1m": -2.51,
-        "mom_3m": -4.6,
+        "price": 49.12,
+        "mom_5d": -5.79,
+        "mom_1m": -5.95,
+        "mom_3m": -7.02,
         "above_ma50": false,
-        "rsi_14": 44.6,
-        "score": -3.14,
+        "rsi_14": 38.6,
+        "score": -6.12,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.09,
-        "mom_5d": -2.34,
-        "mom_1m": -4.5,
-        "mom_3m": -3.34,
+        "price": 43.91,
+        "mom_5d": -2.82,
+        "mom_1m": -4.01,
+        "mom_3m": -4.76,
         "above_ma50": false,
-        "rsi_14": 32.9,
-        "score": -3.62,
+        "rsi_14": 34.4,
+        "score": -3.8,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 43.68,
-        "mom_5d": -2.0,
-        "mom_1m": -1.8,
-        "mom_3m": 0.76,
+        "price": 43.79,
+        "mom_5d": -1.77,
+        "mom_1m": -1.9,
+        "mom_3m": 1.37,
         "above_ma50": true,
-        "rsi_14": 47.3,
-        "score": -0.35,
+        "rsi_14": 51.8,
+        "score": -0.21,
         "sector": "Real Estate"
       }
     },
@@ -1509,12 +1629,12 @@
       "Consumer Staples",
       "Communication Services",
       "Financials",
-      "Real Estate",
-      "Industrials",
-      "Consumer Discretionary",
       "Healthcare",
-      "Materials",
-      "Utilities"
+      "Real Estate",
+      "Consumer Discretionary",
+      "Industrials",
+      "Utilities",
+      "Materials"
     ],
     "top_3": [
       "Technology",
@@ -1522,28 +1642,28 @@
       "Consumer Staples"
     ],
     "bottom_3": [
-      "Healthcare",
-      "Materials",
-      "Utilities"
+      "Industrials",
+      "Utilities",
+      "Materials"
     ],
-    "as_of": "2026-05-18"
+    "as_of": "2026-05-19"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.3,
+    "risk_budget_multiplier": 1.4,
     "focus_sectors": [
       "Technology",
       "Energy",
       "Consumer Staples"
     ],
     "avoid_sectors": [
-      "Healthcare",
-      "Materials",
-      "Utilities"
+      "Industrials",
+      "Utilities",
+      "Materials"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "With alpha at -2.6% and only 15% deployed entering Day 18 of 22, aggressive capital deployment into leading sectors is the only path to closing the performance gap \u2014 sitting in cash is the single largest risk in this bullish, credit-healthy environment. VIX at 18.7 warrants modest position sizing discipline but does not override the critical urgency to rotate cash into momentum leaders in Technology and Energy immediately.",
+    "primary_thesis": "With 0% deployment at Day 19/30 and alpha at -1.7% vs SPY, sitting in cash is the primary risk \u2014 VIX at 17.8 and a bullish SPY trend provide a clear green light to deploy aggressively into leading sectors. Prioritize Technology and Energy momentum plays immediately to close the alpha gap before the session window narrows further.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
@@ -1554,7 +1674,7 @@
     },
     "QQQ": {
       "action": "hold",
-      "confidence": 0.65
+      "confidence": 0.35
     },
     "IWM": {
       "action": "hold",
