@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 23,
+    "current_day": 24,
     "total_days": 30,
     "active": true,
-    "last_updated": "2026-05-25T16:53:53.993430+00:00",
+    "last_updated": "2026-05-25T20:43:21.202192+00:00",
     "session_number": 2
   },
-  "cash": 2561.99,
+  "cash": 3656.81,
   "initial_capital": 5000.0,
-  "equity": 5324.98,
+  "equity": 5324.9,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,55 +17,21 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.78,
-    "sortino": 19.34,
-    "calmar": 51.45,
+    "sharpe": 2.75,
+    "sortino": 18.4,
+    "calmar": 50.17,
     "spy_start_price": 686.1,
     "spy_current_price": 745.64,
     "benchmark_return_pct": 8.68,
     "max_drawdown_pct": 0.78
   },
   "positions": {
-    "GOOGL": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 385.21,
-      "cost_basis": 770.42,
-      "last_price": 382.99,
-      "stop_loss": 365.58,
-      "take_profit": 431.44,
-      "partial_profit_price": 408.32,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 388.91,
-      "lowest_price": 385.21,
-      "partial_taken": false,
-      "opened_date": "2026-05-20",
-      "journal_note": "GOOGL is a Technology sector momentum leader trading at $384.74, holding above EMA-20 ($379.16) with RSI at 49.96 leaving significant upside room \u2014 entry thesis is a consolidation breakout above $380 support following fresh Google I/O AI catalysts (Gemini enterprise upgrades, Thales cloud deal). Fundamentals are strong: ROE 38.98%, Q1 revenue $109.9B (+22% YoY), P/E of 35.5x justified by growth, and near-zero leverage (D/E 0.12). Risk team approved at 5% position size with 6% stop-loss near $362 (just below EMA-50 at $356), which I agree with \u2014 the MACD bearish crossover is a minor short-term headwind but not sufficient to override the bullish structure. Upside target is ~$400-410 (4-7% gain) vs downside risk of ~$362 (6% loss), giving roughly 1:1 risk-reward, acceptable given the high capital deployment priority and only 24% portfolio deployment on Day 20. With $4,040 cash and a 5% target (~$470), we buy 1 share at ~$385."
-    },
-    "V": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 331.34,
-      "cost_basis": 331.34,
-      "last_price": 328.9,
-      "stop_loss": 318.09,
-      "take_profit": 357.85,
-      "partial_profit_price": 344.59,
-      "stop_loss_pct": 4.0,
-      "take_profit_pct": 8.0,
-      "highest_price": 331.34,
-      "lowest_price": 331.34,
-      "partial_taken": false,
-      "opened_date": "2026-05-21",
-      "journal_note": "Visa shows a clean bullish setup with price at $331.36 above both 20d EMA ($323.64) and 50d EMA ($318.26), MACD histogram positive at +0.507, and RSI at 53.7 leaving ample room before overbought territory. Fundamentals are elite \u2014 81.3% gross margin and 58.9% ROE \u2014 though the 31x P/E demands discipline on sizing. Risk team approved at 0.05 but with only $2,565 cash and HIGH deployment priority in a risk-on regime trailing SPY by -1.1% alpha, I'm buying 1 share (~$331, ~4.2% of portfolio) which is close to the recommended size while respecting cash constraints for other opportunities. Upside target is the upper Bollinger Band at $339 (~2.3% from entry) with 4% stop-loss at ~$318 near the 50d EMA providing strong technical support \u2014 roughly 1:1 risk/reward on a high-quality compounder that fits the Technology-adjacent fintech theme."
-    },
     "LLY": {
       "direction": "long",
       "qty": 1,
       "entry_price": 1065.02,
       "cost_basis": 1065.02,
-      "last_price": 1065.02,
+      "last_price": 1065.0,
       "stop_loss": 990.47,
       "take_profit": 1214.12,
       "partial_profit_price": 1139.57,
@@ -82,7 +48,7 @@
       "qty": 3,
       "entry_price": 201.05,
       "cost_basis": 603.15,
-      "last_price": 201.05,
+      "last_price": 201.03,
       "stop_loss": 191.0,
       "take_profit": 221.16,
       "partial_profit_price": 211.1,
@@ -390,6 +356,36 @@
       "opened_date": "2026-05-19",
       "closed_date": "2026-05-21",
       "journal_note": "VLO is in the Energy focus sector with a fresh bullish MACD crossover (3.91 vs signal 2.55) and price at $259.43 above both the 20d EMA ($246.39) and 50d EMA ($242.00) \u2014 classic momentum entry. RSI at 56.58 confirms room to run before overbought territory. Risk team flagged the -11.4% revenue decline and 31.7x P/E as concerns and reduced position from 5% to 4.5%, but with 0% deployment at Day 19/30, alpha at -1.7%, and a RISK-ON posture with HIGH capital deployment priority, I'm restoring the original 5% \u2014 under-deployment is the bigger risk here and the conservative concern doesn't meet any of the four override conditions. Upside target is the upper Bollinger Band at $261.18 near-term with potential for continuation on earnings revision momentum; downside is capped at 6% stop-loss (~$243.86), giving roughly 1:1 risk-reward on the initial move but with trend continuation potential well beyond."
+    },
+    {
+      "ticker": "GOOGL",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 385.21,
+      "exit_price": 382.97,
+      "cost_basis": 770.42,
+      "proceeds": 765.94,
+      "pnl": -4.48,
+      "pnl_pct": -0.58,
+      "reason": "time_exit",
+      "opened_date": "2026-05-20",
+      "closed_date": "2026-05-25",
+      "journal_note": "GOOGL is a Technology sector momentum leader trading at $384.74, holding above EMA-20 ($379.16) with RSI at 49.96 leaving significant upside room \u2014 entry thesis is a consolidation breakout above $380 support following fresh Google I/O AI catalysts (Gemini enterprise upgrades, Thales cloud deal). Fundamentals are strong: ROE 38.98%, Q1 revenue $109.9B (+22% YoY), P/E of 35.5x justified by growth, and near-zero leverage (D/E 0.12). Risk team approved at 5% position size with 6% stop-loss near $362 (just below EMA-50 at $356), which I agree with \u2014 the MACD bearish crossover is a minor short-term headwind but not sufficient to override the bullish structure. Upside target is ~$400-410 (4-7% gain) vs downside risk of ~$362 (6% loss), giving roughly 1:1 risk-reward, acceptable given the high capital deployment priority and only 24% portfolio deployment on Day 20. With $4,040 cash and a 5% target (~$470), we buy 1 share at ~$385."
+    },
+    {
+      "ticker": "V",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 331.34,
+      "exit_price": 328.88,
+      "cost_basis": 331.34,
+      "proceeds": 328.88,
+      "pnl": -2.46,
+      "pnl_pct": -0.74,
+      "reason": "time_exit",
+      "opened_date": "2026-05-21",
+      "closed_date": "2026-05-25",
+      "journal_note": "Visa shows a clean bullish setup with price at $331.36 above both 20d EMA ($323.64) and 50d EMA ($318.26), MACD histogram positive at +0.507, and RSI at 53.7 leaving ample room before overbought territory. Fundamentals are elite \u2014 81.3% gross margin and 58.9% ROE \u2014 though the 31x P/E demands discipline on sizing. Risk team approved at 0.05 but with only $2,565 cash and HIGH deployment priority in a risk-on regime trailing SPY by -1.1% alpha, I'm buying 1 share (~$331, ~4.2% of portfolio) which is close to the recommended size while respecting cash constraints for other opportunities. Upside target is the upper Bollinger Band at $339 (~2.3% from entry) with 4% stop-loss at ~$318 near the 50d EMA providing strong technical support \u2014 roughly 1:1 risk/reward on a high-quality compounder that fits the Technology-adjacent fintech theme."
     }
   ],
   "equity_curve": [
@@ -627,6 +623,11 @@
       "day": 23,
       "date": "2026-05-25",
       "equity": 5324.98
+    },
+    {
+      "day": 23,
+      "date": "2026-05-25",
+      "equity": 5324.9
     }
   ],
   "journal": [
@@ -1688,21 +1689,22 @@
       "target_pct": 2.0,
       "stop_price": 67.47,
       "stop_pct": 1.0,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 68.29,
+      "exit_date": "2026-05-25",
+      "pnl_pct": 0.21,
+      "outcome": "win",
       "auto_close_date": "2026-05-23",
       "rationale": "Near 52w high ($68.97) \u2014 vol ratio 1.6x",
       "qty": 19,
-      "allocated_usd": 1294.85
+      "allocated_usd": 1294.85,
+      "pnl_usd": 2.66
     }
   ],
   "day_trade_capital": {
     "initial": 5000.0,
-    "cash": 3993.77,
-    "equity": 5288.62
+    "cash": 5291.28,
+    "equity": 5291.28
   },
   "scalping_capital": {
     "initial": 5000.0,
@@ -1771,6 +1773,11 @@
       "day": 22,
       "date": "2026-05-22",
       "equity": 5433.9
+    },
+    {
+      "day": 23,
+      "date": "2026-05-25",
+      "equity": 5433.9
     }
   ],
   "dt_equity_curve": [
@@ -1833,6 +1840,11 @@
       "day": 22,
       "date": "2026-05-22",
       "equity": 5288.62
+    },
+    {
+      "day": 23,
+      "date": "2026-05-25",
+      "equity": 5291.28
     }
   ],
   "scalping_equity_curve": [
@@ -1894,6 +1906,11 @@
     {
       "day": 22,
       "date": "2026-05-22",
+      "equity": 4990.04
+    },
+    {
+      "day": 23,
+      "date": "2026-05-25",
       "equity": 4990.04
     }
   ],
