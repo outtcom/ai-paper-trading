@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 26,
+    "current_day": 27,
     "total_days": 30,
     "active": true,
-    "last_updated": "2026-05-28T17:52:49.603115+00:00",
+    "last_updated": "2026-05-28T21:19:04.122400+00:00",
     "session_number": 2
   },
-  "cash": 2131.32,
+  "cash": 3073.97,
   "initial_capital": 5000.0,
-  "equity": 5312.61,
+  "equity": 5342.22,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,12 +17,12 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.51,
-    "sortino": 17.05,
-    "calmar": 42.81,
+    "sharpe": 2.71,
+    "sortino": 18.29,
+    "calmar": 46.37,
     "spy_start_price": 686.1,
-    "spy_current_price": 750.46,
-    "benchmark_return_pct": 9.38,
+    "spy_current_price": 754.6,
+    "benchmark_return_pct": 9.98,
     "max_drawdown_pct": 0.78
   },
   "positions": {
@@ -31,13 +31,13 @@
       "qty": 1,
       "entry_price": 1065.02,
       "cost_basis": 1065.02,
-      "last_price": 1125.37,
-      "stop_loss": 1007.12,
+      "last_price": 1126.8,
+      "stop_loss": 1047.92,
       "take_profit": 1214.12,
       "partial_profit_price": 1139.57,
       "stop_loss_pct": 7.0,
       "take_profit_pct": 14.0,
-      "highest_price": 1082.92,
+      "highest_price": 1126.8,
       "lowest_price": 1065.02,
       "partial_taken": false,
       "opened_date": "2026-05-25",
@@ -48,41 +48,24 @@
       "qty": 3,
       "entry_price": 201.05,
       "cost_basis": 603.15,
-      "last_price": 203.61,
-      "stop_loss": 191.67,
+      "last_price": 203.79,
+      "stop_loss": 193.6,
       "take_profit": 221.16,
       "partial_profit_price": 211.1,
       "stop_loss_pct": 5.0,
       "take_profit_pct": 10.0,
-      "highest_price": 201.76,
+      "highest_price": 203.79,
       "lowest_price": 201.05,
       "partial_taken": false,
       "opened_date": "2026-05-25",
       "journal_note": "MS is in a confirmed uptrend with price at $201.03 above both 20d EMA ($192.30) and 50d EMA ($185.75), with a bullish MACD crossover \u2014 this is a clean momentum entry. P/E at 18.8x with 16.3% ROE makes this reasonably valued for a high-quality financial. The risk team reduced position size from 5% to 3.5% citing high debt-to-equity, but elevated leverage is structural for financials and not a valid standalone reason to undersize \u2014 I'm splitting the difference at ~4.2% given we are critically underdeployed at 21% vs 77% target with only 7 days left. MS is not in a focus sector but also not in an avoid sector, and with VIX at 16.6 and risk-on posture, deploying capital here beats holding cash. Upside target is ~$210-215 (5-7% from entry near $200), downside capped at $190 via the 5% stop, giving roughly 1.3:1 reward-to-risk on a trending name."
-    },
-    "SLB": {
-      "direction": "long",
-      "qty": 17,
-      "entry_price": 58.37,
-      "cost_basis": 992.29,
-      "last_price": 55.13,
-      "stop_loss": 55.45,
-      "take_profit": 64.21,
-      "partial_profit_price": 61.29,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 58.37,
-      "lowest_price": 58.37,
-      "partial_taken": false,
-      "opened_date": "2026-05-26",
-      "journal_note": "SLB at $58.31 has confirmed a bullish MACD crossover (1.15 vs signal 1.03) above both 20d and 50d EMAs with RSI at 61 leaving room to run \u2014 this is a clean momentum entry in a focus sector (Energy) during a risk-on mandate. The risk team reduced position from 5% to 3.5% citing elevated P/E of 25.4x and low volume, but I disagree with the reduction: the strategy brief explicitly flags under-deployment as the single greatest portfolio risk with only 31% deployed, -2.2% alpha, and 6 days remaining \u2014 Energy is a non-negotiable deployment target. None of the four override conditions apply (VIX 16.9, Energy is focus not avoid, no earnings catalyst mentioned, beta well within limits with only 2 positions). Upside target is the upper Bollinger Band area around $60-61 (~3-5% gain) vs downside risk of 5% stop at ~$55.40 just below the 20d EMA support, giving acceptable asymmetry. Restoring to trader's original 5% size (~$449, 7 shares) to address the cash drag crisis."
     },
     "EQR": {
       "direction": "long",
       "qty": 8,
       "entry_price": 66.65,
       "cost_basis": 533.2,
-      "last_price": 66.32,
+      "last_price": 66.26,
       "stop_loss": 63.65,
       "take_profit": 72.65,
       "partial_profit_price": 69.65,
@@ -442,6 +425,21 @@
       "opened_date": "2026-05-21",
       "closed_date": "2026-05-25",
       "journal_note": "Visa shows a clean bullish setup with price at $331.36 above both 20d EMA ($323.64) and 50d EMA ($318.26), MACD histogram positive at +0.507, and RSI at 53.7 leaving ample room before overbought territory. Fundamentals are elite \u2014 81.3% gross margin and 58.9% ROE \u2014 though the 31x P/E demands discipline on sizing. Risk team approved at 0.05 but with only $2,565 cash and HIGH deployment priority in a risk-on regime trailing SPY by -1.1% alpha, I'm buying 1 share (~$331, ~4.2% of portfolio) which is close to the recommended size while respecting cash constraints for other opportunities. Upside target is the upper Bollinger Band at $339 (~2.3% from entry) with 4% stop-loss at ~$318 near the 50d EMA providing strong technical support \u2014 roughly 1:1 risk/reward on a high-quality compounder that fits the Technology-adjacent fintech theme."
+    },
+    {
+      "ticker": "SLB",
+      "direction": "long",
+      "qty": 17,
+      "entry_price": 58.37,
+      "exit_price": 55.45,
+      "cost_basis": 992.29,
+      "proceeds": 942.65,
+      "pnl": -49.64,
+      "pnl_pct": -5.0,
+      "reason": "stop_loss",
+      "opened_date": "2026-05-26",
+      "closed_date": "2026-05-28",
+      "journal_note": "SLB at $58.31 has confirmed a bullish MACD crossover (1.15 vs signal 1.03) above both 20d and 50d EMAs with RSI at 61 leaving room to run \u2014 this is a clean momentum entry in a focus sector (Energy) during a risk-on mandate. The risk team reduced position from 5% to 3.5% citing elevated P/E of 25.4x and low volume, but I disagree with the reduction: the strategy brief explicitly flags under-deployment as the single greatest portfolio risk with only 31% deployed, -2.2% alpha, and 6 days remaining \u2014 Energy is a non-negotiable deployment target. None of the four override conditions apply (VIX 16.9, Energy is focus not avoid, no earnings catalyst mentioned, beta well within limits with only 2 positions). Upside target is the upper Bollinger Band area around $60-61 (~3-5% gain) vs downside risk of 5% stop at ~$55.40 just below the 20d EMA support, giving acceptable asymmetry. Restoring to trader's original 5% size (~$449, 7 shares) to address the cash drag crisis."
     }
   ],
   "equity_curve": [
@@ -709,6 +707,11 @@
       "day": 26,
       "date": "2026-05-28",
       "equity": 5312.61
+    },
+    {
+      "day": 26,
+      "date": "2026-05-28",
+      "equity": 5342.22
     }
   ],
   "journal": [
@@ -1958,6 +1961,11 @@
       "day": 25,
       "date": "2026-05-27",
       "equity": 5469.03
+    },
+    {
+      "day": 26,
+      "date": "2026-05-28",
+      "equity": 5499.2
     }
   ],
   "dt_equity_curve": [
@@ -2034,6 +2042,11 @@
     {
       "day": 25,
       "date": "2026-05-27",
+      "equity": 5291.28
+    },
+    {
+      "day": 26,
+      "date": "2026-05-28",
       "equity": 5291.28
     }
   ],
@@ -2112,28 +2125,33 @@
       "day": 25,
       "date": "2026-05-27",
       "equity": 5005.64
+    },
+    {
+      "day": 26,
+      "date": "2026-05-28",
+      "equity": 5005.64
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 750.46,
-      "return_pct": 9.38
+      "current_price": 754.6,
+      "return_pct": 9.98
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 729.45,
-      "return_pct": 16.04
+      "current_price": 735.6,
+      "return_pct": 17.02
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 290.37,
-      "return_pct": 8.06
+      "current_price": 292.03,
+      "return_pct": 8.67
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 408.49,
-      "return_pct": -8.22
+      "current_price": 412.77,
+      "return_pct": -7.26
     }
   },
   "sector_strength": {
