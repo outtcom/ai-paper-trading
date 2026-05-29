@@ -2,14 +2,38 @@ name: End-of-Day Session
 
 on:
   schedule:
-    - cron: '15 19 * * 1-5'  # triggers 3:15 PM EDT; ~60 min GHA queue → arrives ~4:15 PM ET (post-close)
-  workflow_dispatch:           # allow manual trigger
+    - cron: '10 18 * * 1-5'  # EDT (Mar-Nov): 2:10 PM EDT + 2h05min queue → 4:15 PM ET
+    - cron: '10 19 * * 1-5'  # EST (Nov-Mar): 2:10 PM EST + 2h05min queue → 4:15 PM ET
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+  dst-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check DST window
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
+          # Target: 4:15 PM ET. Accept: 3:45–5:00 PM (945–1020 min from midnight)
+          if [ $MINS -ge 945 ] && [ $MINS -le 1020 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 3:45–5:00 PM window, skipping."
+          fi
+
   eod-session:
+    needs: dst-gate
+    if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

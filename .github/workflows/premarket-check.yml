@@ -2,14 +2,38 @@ name: Pre-Market Gap Scanner
 
 on:
   schedule:
-    - cron: '15 9 * * 1-5'  # triggers 5:15 AM EDT; ~105 min GHA queue → arrives ~7:00 AM ET
-  workflow_dispatch:          # allow manual trigger
+    - cron: '30 7 * * 1-5'  # EDT (Mar-Nov): 3:30 AM EDT + 3h30min queue → 7:00 AM ET
+    - cron: '30 8 * * 1-5'  # EST (Nov-Mar): 3:30 AM EST + 3h30min queue → 7:00 AM ET
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+  dst-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check DST window
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
+          # Target: 7:00 AM ET. Accept: 6:15 AM–7:45 AM (375–465 min from midnight)
+          if [ $MINS -ge 375 ] && [ $MINS -le 465 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 6:15–7:45 AM window, skipping."
+          fi
+
   premarket-check:
+    needs: dst-gate
+    if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

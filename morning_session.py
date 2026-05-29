@@ -504,7 +504,7 @@ def main():
     portfolio = get_portfolio()
 
     # ── Market open guard — sleep if GHA launched us pre-market ───────────
-    _wait_for_market_open(max_wait_minutes=45)
+    _wait_for_market_open(max_wait_minutes=75)
 
     # ── LLM provider health check ──────────────────────────────────────────
     run_health_check()

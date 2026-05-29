@@ -121,7 +121,7 @@ def main() -> None:
     next_day = new_portfolio["session"].get("current_day", 1)
     started_msg = (
         f"🚀 <b>Session {new_session_num} Started</b>\n\n"
-        f"Day {next_day} of {TOTAL_DAYS} — 30-day forward test\n"
+        f"Day {next_day} of {TOTAL_DAYS} — 60-day forward test\n"
         f"Capital: ${INITIAL_CAPITAL:,.2f}\n\n"
         f"🎯 Target: Beat SPY\n"
         f"📊 Watch: outtcom.github.io/ai-paper-trading"

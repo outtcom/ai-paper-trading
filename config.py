@@ -126,7 +126,7 @@ DEFAULT_RISK_PROFILE = "moderate"      # aggressive | moderate | conservative
 # ---------------------------------------------------------------------------
 # Session Settings
 # ---------------------------------------------------------------------------
-SESSION_DAYS = 30                  # total trading days in the session (30-day forward test)
+SESSION_DAYS = 60                  # total trading days in the session (60-day forward test)
 
 # ---------------------------------------------------------------------------
 # Telegram Notifications

@@ -18,7 +18,7 @@ _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 _SYSTEM_DIR = os.path.dirname(_TOOLS_DIR)
 PORTFOLIO_FILE = os.path.join(_SYSTEM_DIR, "docs", "portfolio.json")
 
-TOTAL_DAYS = 30   # 30-day forward test session
+TOTAL_DAYS = 60   # 60-day forward test session
 INITIAL_CAPITAL = 5_000.0
 
 # Circuit breaker thresholds

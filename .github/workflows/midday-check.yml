@@ -2,14 +2,38 @@ name: Midday Position Monitor
 
 on:
   schedule:
-    - cron: '50 14 * * 1-5'  # triggers 10:50 AM EDT; ~70 min GHA queue → arrives ~12:00 PM ET
-  workflow_dispatch:           # allow manual trigger
+    - cron: '0 13 * * 1-5'  # EDT (Mar-Nov): 9:00 AM EDT + 3h queue → 12:00 PM ET
+    - cron: '0 14 * * 1-5'  # EST (Nov-Mar): 9:00 AM EST + 3h queue → 12:00 PM ET
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+  dst-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check DST window
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
+          # Target: 12:00 PM ET. Accept: 11:30 AM–12:30 PM (690–750 min from midnight)
+          if [ $MINS -ge 690 ] && [ $MINS -le 750 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 11:30 AM–12:30 PM window, skipping."
+          fi
+
   midday-check:
+    needs: dst-gate
+    if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
