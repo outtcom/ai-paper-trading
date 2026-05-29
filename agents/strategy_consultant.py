@@ -41,6 +41,9 @@ When setting risk_budget_multiplier:
   0.5 to 0.6: Meaningful risk signals present
   Below 0.5: Only in extreme conditions (high VIX + credit stress)
 
+IMPORTANT: The context provides a MINIMUM risk_budget_multiplier based on pacing and alpha.
+You MUST NOT output a risk_budget_multiplier below this minimum, regardless of caution.
+
 Output a single JSON object — no other text:
 {
   "market_posture": "risk-on" | "neutral" | "risk-off",
@@ -90,25 +93,38 @@ def run(
             sector_summary = "Sector data unavailable"
 
         expected_pct = round(session_day / total_days * 100)
-        pacing_note  = "BEHIND — increase urgency" if deployed_pct < expected_pct - 15 else "on track"
+        pacing_gap   = expected_pct - deployed_pct
+        if pacing_gap > 20:
+            pacing_note    = "CRITICAL — severely behind pace, deploy immediately"
+            min_multiplier = 1.4
+        elif pacing_gap > 10:
+            pacing_note    = "BEHIND — increase urgency"
+            min_multiplier = 1.2
+        else:
+            pacing_note    = "on track"
+            min_multiplier = 1.0
 
-        # Alpha vs SPY awareness
+        # Alpha vs SPY awareness — also raises multiplier floor if alpha is negative
         session_return_pct = round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 1)
         spy_return_pct     = round(portfolio.get("stats", {}).get("benchmark_return_pct", 0) or 0, 1)
         alpha_pct          = round(session_return_pct - spy_return_pct, 1)
         alpha_label        = f"{alpha_pct:+.1f}% vs SPY"
         if alpha_pct < -2:
-            alpha_urgency = "CRITICAL — widen deployment immediately"
+            alpha_urgency  = "CRITICAL — widen deployment immediately"
+            min_multiplier = max(min_multiplier, 1.3)
         elif alpha_pct < 0:
-            alpha_urgency = "behind — increase urgency"
+            alpha_urgency  = "behind — increase urgency"
+            min_multiplier = max(min_multiplier, 1.1)
         else:
-            alpha_urgency = "on track"
+            alpha_urgency  = "on track"
 
         context = f"""DATE: {date} ({day_of_week})
 SESSION PACING: Day {session_day}/{total_days} — {days_remaining} days remaining
   Expected deployment by now: ~{expected_pct}%
   Actual deployment: {deployed_pct:.0f}%
+  Pacing gap: {pacing_gap:.0f}% behind pace
   Pacing: {pacing_note}
+  *** MINIMUM risk_budget_multiplier: {min_multiplier:.1f} — you MUST NOT go below this ***
 ALPHA vs SPY: {alpha_label} → {alpha_urgency}
 
 PORTFOLIO:

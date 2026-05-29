@@ -10,14 +10,14 @@ import os
 # ---------------------------------------------------------------------------
 
 SECTOR_MAP = {
-    "Technology":             ["AAPL", "NVDA", "MSFT"],
+    "Technology":             ["AAPL", "NVDA", "MSFT", "MU"],   # added MU — semis, different beta from AAPL/MSFT
     "Communication Services": ["GOOGL", "META"],
-    "Consumer Discretionary": ["AMZN"],
-    "Healthcare":             ["LLY"],        # Eli Lilly — GLP-1 leader
-    "Financials":             ["JPM"],        # JPMorgan — largest US bank
-    "Energy":                 ["XOM"],        # ExxonMobil — energy bellwether
-    "Industrials":            ["CAT"],        # Caterpillar — economic cycle indicator
-    "Consumer Staples":       ["WMT"],        # Walmart — defensive anchor
+    "Consumer Discretionary": ["AMZN", "TSLA"],                 # added TSLA — growth/momentum driver
+    "Healthcare":             ["LLY", "UNH"],                   # added UNH — insurance/managed care, uncorrelated to GLP-1
+    "Financials":             ["JPM", "GS"],                    # added GS — higher beta, trading revenue
+    "Energy":                 ["XOM", "CVX"],                   # added CVX — integrated major, slightly different exposure
+    "Industrials":            ["CAT", "GE"],                    # added GE — aerospace/energy diversified
+    "Consumer Staples":       ["WMT", "COST"],                  # added COST — warehouse retail, different margin profile
     "Materials":              ["FCX"],        # Freeport-McMoRan — copper/gold play
     "Utilities":              ["NEE"],        # NextEra — clean energy leader
     "Real Estate":            ["PLD"],        # Prologis — e-commerce logistics REIT

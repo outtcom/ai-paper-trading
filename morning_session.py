@@ -256,11 +256,18 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
     Deduplicates by sector across the returned list.
     Returns list of (ticker, state, score); empty list if no candidates.
     """
+    # Compute cash ratio once — used to relax same-sector filter when under-deployed
+    _port_cash   = portfolio.get("cash", 0)
+    _port_equity = portfolio.get("equity", _port_cash or 1)
+    _cash_ratio  = _port_cash / _port_equity if _port_equity > 0 else 1.0
+
     raw = []
     for ticker, state in results.items():
         if ticker in blocked:
             continue
-        if _is_same_sector_open(ticker, portfolio):
+        # Relax same-sector filter when critically under-deployed (≥60% cash).
+        # Still deduped by sector within the returned list via seen_sectors below.
+        if _is_same_sector_open(ticker, portfolio) and _cash_ratio < 0.60:
             continue
 
         order = state.get("final_order", {})
@@ -342,17 +349,22 @@ def _size_position(
         elif ticker_sector in bot2:
             sector_mult = SECTOR_TILT_BOTTOM_MULT
 
-    pos_frac  = float(order.get("position_size_pct") or 0.25)
+    pos_frac   = float(order.get("position_size_pct") or 0.25)
+    macro_mult = min(vix_mult * regime_mult, 1.0)   # composite dampener (never amplifies)
 
-    # Deployment urgency floor — override LLM timidity when behind on pacing
+    # Deployment urgency floor — override LLM timidity when behind on pacing.
+    # When critically under-deployed, also bypass VIX/regime dampener so urgency
+    # is not silently cancelled out by stacked multipliers.
     total_equity = equity if equity and equity > 0 else cash
     cash_ratio   = cash / total_equity
     if cash_ratio > 0.60:      # >60% cash = critically under-deployed
-        pos_frac = max(pos_frac, 0.20)
+        pos_frac   = max(pos_frac, 0.20)
+        macro_mult = 1.0                    # urgency overrides VIX/regime dampener
     elif cash_ratio > 0.40:    # >40% cash = behind pace
-        pos_frac = max(pos_frac, 0.15)
+        pos_frac   = max(pos_frac, 0.15)
+        macro_mult = max(macro_mult, 0.80)  # partial override — cap the damage
 
-    max_usd   = cash * pos_frac * vix_mult * regime_mult * sector_mult
+    max_usd   = cash * pos_frac * macro_mult * sector_mult
     max_usd   = min(max_usd, cash * 0.30)   # hard cap: never > 30% of cash per position
 
     is_crypto = "-USD" in ticker

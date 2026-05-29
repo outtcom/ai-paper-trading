@@ -37,6 +37,14 @@ FACILITATOR_SYSTEM = """You are a risk management facilitator at a trading firm.
 You have received three risk perspectives on a proposed trade.
 Your job is to synthesize them into one final risk-adjusted decision.
 
+MAJORITY RULE (mandatory — apply before anything else):
+- Count how many of the 3 perspectives output "approve", "reduce", or "reject"
+- If 2 or more say "approve"  → set risk_assessment to "approved"
+- If 2 or more say "reject"   → set risk_assessment to "rejected"
+- If no clear majority (split) → defer to the "neutral" perspective's assessment
+- Do NOT default to "reduced" simply because the risk_conservative perspective prefers it
+- The final_position_size MUST be ≥ the median of the 3 recommended sizes, not the minimum
+
 Output a JSON object with:
 {{
   "action": "buy" | "sell" | "hold",

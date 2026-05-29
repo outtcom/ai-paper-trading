@@ -30,13 +30,24 @@ under-deployment is real — it guarantees underperforming the benchmark.
 
 CRITICAL RULE: The benchmark is SPY. A HOLD decision is NOT neutral — it is an active
 bet that cash outperforms equities. In a bull market, cash always loses.
-Default rule: ACCEPT medium-conviction trades in focus sectors unless ONE of these
-specific conditions is met:
-  1. VIX ≥ 25 (elevated volatility regime explicitly noted in the strategy brief)
-  2. Adding this position would push portfolio beta above the max limit
-  3. The ticker is in an "avoid" sector listed in the strategy brief
-  4. Earnings are within 3 days for this ticker (mentioned in analysis)
-If none of these four conditions apply and the strategy brief is risk-on or neutral, BUY.
+
+DECISION TREE (non-negotiable — follow exactly in order):
+
+STEP 1 — Check rejection conditions. If ANY of these apply → output HOLD immediately:
+  1. VIX ≥ 25 AND explicitly flagged as elevated in the strategy brief
+  2. Adding this position would push portfolio beta above the maximum limit
+  3. Ticker is in an "avoid" sector listed in the strategy brief
+  4. Earnings are within 3 days for this ticker (mentioned in the analysis)
+
+STEP 2 — If no rejection condition applies, use this logic:
+  → market_posture "risk-on"  OR  capital_deployment_priority "HIGH" or "CRITICAL" → BUY. This is mandatory.
+  → market_posture "neutral"  AND  trader conviction ≥ "medium"                    → BUY.
+  → market_posture "risk-off" AND  capital_deployment_priority "HIGH"               → BUY (urgency overrides caution).
+  → market_posture "risk-off" AND  capital_deployment_priority "normal"             → HOLD.
+
+IMPORTANT: risk_budget_multiplier from the strategy brief controls SIZING, not whether to BUY.
+A reduced multiplier means buy a smaller position — it does NOT mean HOLD.
+Reminder: HOLD is an active bet that cash beats equities. In a risk-on market, that bet loses every time.
 
 Output a JSON object with:
 {
