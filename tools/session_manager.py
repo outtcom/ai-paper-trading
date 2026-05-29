@@ -795,11 +795,14 @@ def add_scalping_signal(signal: dict) -> None:
 
 
 def get_open_scalping_signals() -> list:
-    """Return all open scalping signals (any scalping_ signal_type)."""
+    """Return all open scalping/momentum signals."""
     p = _migrate(_load())
     return [
         s for s in p.get("day_trade_signals", [])
-        if s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_")
+        if s.get("status") == "open" and (
+            s.get("signal_type", "").startswith("scalping_") or
+            s.get("signal_type") == "momentum_continuation"
+        )
     ]
 
 

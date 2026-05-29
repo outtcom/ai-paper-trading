@@ -182,14 +182,14 @@ SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors
 
 # ---------------------------------------------------------------------------
 # ICT FVG Scalping (paper-only, separate $5K pool, auto-close at noon)
-# Strategy: Fair Value Gap + Optimal Trade Entry within NY Open Kill Zone
+# Strategy: 10 AM Momentum Continuation (Opening Range Breakout)
+# Replaces ICT FVG which generated insufficient signals (1 in entire session)
 # ---------------------------------------------------------------------------
-SCALPING_RANGE_MINUTES        = 30       # 9:30–10:00 AM opening range (unchanged)
-SCALPING_DISPLACEMENT_MIN_PCT = 0.30     # min displacement % to confirm institutional bias
-SCALPING_FVG_MIN_GAP_PCT      = 0.05    # min FVG size as % of price (filter noise)
-SCALPING_OTE_LOW_FIBO         = 0.618   # OTE zone lower bound (Fib 61.8%)
-SCALPING_OTE_HIGH_FIBO        = 0.786   # OTE zone upper bound (Fib 78.6%)
-SCALPING_MIN_RRR              = 2.0     # minimum risk:reward ratio required
-SCALPING_STOP_BUFFER_MULT     = 0.10    # stop = FVG boundary ± (fvg_size × 0.10)
-SCALPING_VOL_RATIO_MIN        = 1.3     # volume vs baseline (unchanged)
-SCALPING_CAPITAL_INIT         = 5000.0  # separate pool, never drawn from main portfolio
+MOMENTUM_CONT_OR_MINUTES          = 30     # opening range length (9:30–10:00 AM)
+MOMENTUM_CONT_MAX_EXTENSION_PCT   = 0.03   # max 3% above/below OR to avoid chasing
+MOMENTUM_CONT_MIN_OR_RANGE_PCT    = 0.003  # min 0.3% OR range (filter flat opens)
+MOMENTUM_CONT_VOL_RATIO           = 1.2    # confirmation bars vol must be >1.2x OR vol
+MOMENTUM_CONT_MAX_STOP_PCT        = 0.02   # max 2% stop (cap when OR is wide)
+MOMENTUM_CONT_MIN_RRR             = 1.8    # minimum risk:reward ratio
+MOMENTUM_CONT_MAX_SIGNALS         = 3      # max concurrent momentum signals per day
+SCALPING_CAPITAL_INIT             = 5000.0 # separate pool, never drawn from main portfolio

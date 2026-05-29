@@ -180,7 +180,7 @@ def main():
 
     # Append scalping resolution summary if any signals closed
     if scalp_resolved:
-        scalp_lines = ["\n⚡ <b>ORB Scalping — Noon Close:</b>"]
+        scalp_lines = ["\n⚡ <b>10AM Momentum — Noon Close:</b>"]
         for s in scalp_resolved:
             pnl  = s.get("pnl_pct", 0) or 0
             icon = "✅" if s.get("outcome") == "win" else ("❌" if s.get("outcome") == "loss" else "➖")

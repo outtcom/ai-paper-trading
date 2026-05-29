@@ -63,9 +63,10 @@ def send_group_trade_signal(signal: dict) -> dict:
 
     # Day trade / scalping signal card
     _DT_LABELS = {
-        "momentum_breakout": "Momentum Breakout",
-        "scalping_orb":      "ORB Scalp",
-        "scalping_fvg":      "ICT FVG Scalp",
+        "momentum_breakout":   "Momentum Breakout",
+        "scalping_orb":        "ORB Scalp",
+        "scalping_fvg":        "ICT FVG Scalp",
+        "scalping_momentum":   "10AM Momentum",
     }
     if signal.get("signal_type") in _DT_LABELS:
         label     = _DT_LABELS[signal["signal_type"]]
