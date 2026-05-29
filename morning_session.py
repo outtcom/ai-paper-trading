@@ -221,11 +221,22 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
         "equity":    session_portfolio.get("equity", 5000),
         "positions": list(session_portfolio.get("positions", {}).keys()),
     }
+    avoid_sectors = set((strategy_brief or {}).get("avoid_sectors", []))
+
     results = {}
     for ticker in (watchlist or WATCHLIST):
         # ── Pre-filter: skip definitionally ineligible tickers ────────────
         if ticker in earnings_blocked:
             print(f"[morning] {ticker} skipped (earnings block)")
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            continue
+
+        # Skip avoid-sector tickers before any LLM calls — Fund Manager would
+        # reject them at step 7 anyway, and running the full pipeline wastes
+        # Groq API quota and triggers rate-limit errors.
+        ticker_sector = TICKER_SECTOR.get(ticker, "")
+        if avoid_sectors and ticker_sector and ticker_sector in avoid_sectors:
+            print(f"[morning] {ticker} skipped (avoid sector: {ticker_sector})")
             results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
             continue
 
