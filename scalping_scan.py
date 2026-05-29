@@ -59,10 +59,11 @@ def _detect_momentum_continuation(watchlist: list, today: str) -> list:
             print(f"[momentum] {ticker}: only {len(bars)} bars — skipping")
             continue
 
-        or_bars   = bars[:n_range]    # 9:30–10:00 AM (opening range)
-        conf_bars = bars[n_range:]    # 10:00 AM onwards (confirmation window)
+        or_bars   = bars[:n_range]             # 9:30–10:00 AM (opening range)
+        conf_bars = bars[n_range:n_range * 2]  # 10:00–10:30 AM only (confirmation window)
 
-        if not conf_bars:
+        if len(conf_bars) < 3:
+            print(f"[momentum] {ticker}: only {len(conf_bars)} confirmation bars — skipping")
             continue
 
         or_high = max(b["high"] for b in or_bars)
@@ -80,13 +81,22 @@ def _detect_momentum_continuation(watchlist: list, today: str) -> list:
         if current < 10:          # skip low-priced stocks
             continue
 
-        # Volume check: confirmation window volume vs opening range volume
-        or_vol_avg   = sum(b["volume"] for b in or_bars)   / len(or_bars)
-        conf_vol_avg = sum(b["volume"] for b in conf_bars) / len(conf_bars)
-        vol_ratio    = conf_vol_avg / or_vol_avg if or_vol_avg > 0 else 0
+        # Volume check: confirmation bar volume vs 30-day daily baseline per 5-min bar.
+        # Using daily baseline (not OR volume) because the opening rush is always the
+        # highest-volume period — comparing against it would filter almost everything.
+        try:
+            start_d    = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=35)).strftime("%Y-%m-%d")
+            daily_bars = _yahoo_direct_ohlcv(ticker, start_d, today)
+            recent_v   = [b["volume"] for b in daily_bars[-30:] if b["volume"] > 0]
+            baseline   = sum(recent_v) / max(1, len(recent_v)) / 78   # avg volume per 5-min bar
+        except Exception:
+            baseline = 0
 
-        if vol_ratio < MOMENTUM_CONT_VOL_RATIO:
-            print(f"[momentum] {ticker}: volume {vol_ratio:.1f}x < {MOMENTUM_CONT_VOL_RATIO}x — weak momentum")
+        conf_vol_avg = sum(b["volume"] for b in conf_bars) / len(conf_bars)
+        vol_ratio    = conf_vol_avg / baseline if baseline > 0 else 1.0
+
+        if baseline > 0 and vol_ratio < MOMENTUM_CONT_VOL_RATIO:
+            print(f"[momentum] {ticker}: volume {vol_ratio:.1f}x baseline < {MOMENTUM_CONT_VOL_RATIO}x — weak momentum")
             continue
 
         # Determine breakout direction
