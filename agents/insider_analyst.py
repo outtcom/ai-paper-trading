@@ -47,22 +47,36 @@ def run(state: dict) -> dict:
     date = state["date"]
 
     try:
-        # Load pre-computed signals if available, else compute live
-        signals_path = os.path.join(".tmp", "state", date, "insider_signals.json")
-        if os.path.exists(signals_path):
-            with open(signals_path, encoding="utf-8") as f:
-                all_signals = json.load(f)
-            ticker_data = all_signals.get(ticker, {})
+        # Load pre-computed signals — docs/ (GHA committed cache) takes priority,
+        # then .tmp/ (local dev same-runner), then compute live as fallback.
+        docs_path = os.path.join("docs", "insider_signals.json")
+        tmp_path  = os.path.join(".tmp", "state", date, "insider_signals.json")
+        insider_signal = None
+        trump_mentions = []
+
+        if os.path.exists(docs_path):
+            with open(docs_path, encoding="utf-8") as f:
+                cached = json.load(f)
+            if cached.get("date") == date:
+                ticker_data    = cached.get("signals", {}).get(ticker, {})
+                insider_signal = ticker_data.get("insider_signal")
+                trump_mentions = ticker_data.get("trump_mentions", [])
+                source_note    = "pre-computed by scanner (docs/)"
+            else:
+                source_note = "docs/ cache stale — computing live"
+        elif os.path.exists(tmp_path):
+            with open(tmp_path, encoding="utf-8") as f:
+                all_signals    = json.load(f)
+            ticker_data    = all_signals.get(ticker, {})
             insider_signal = ticker_data.get("insider_signal")
             trump_mentions = ticker_data.get("trump_mentions", [])
-            source_note = "pre-computed by insider_scan"
+            source_note    = "pre-computed by scanner (.tmp/)"
         else:
-            insider_signal = compute_insider_signal(ticker)
-            trump_mentions = get_trump_mentions(ticker, days_back=7)
-            source_note = "computed live (scanner cache not found)"
+            source_note = "computed live (no cache found)"
 
         if insider_signal is None:
             insider_signal = compute_insider_signal(ticker)
+            trump_mentions = get_trump_mentions(ticker, days_back=7)
 
         trump_summary = trump_mentions[:5] if trump_mentions else []
         trump_text = json.dumps(trump_summary, indent=2) if trump_summary else "None detected in last 7 days."

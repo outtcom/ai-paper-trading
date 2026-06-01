@@ -55,7 +55,8 @@ WORKFLOW_FILES = {
     "Midday Position Monitor":      "midday-check.yml",
     "Pre-Close Alert":              "preclose-alert.yml",
     "End-of-Day Session":           "eod-session.yml",
-    "Weekly Intelligence Briefing": "weekly-briefing.yml",
+    "Weekly Intelligence Briefing":              "weekly-briefing.yml",
+    "Insider Activity + Political Signal Scan":  "insider-scan.yml",
 }
 
 

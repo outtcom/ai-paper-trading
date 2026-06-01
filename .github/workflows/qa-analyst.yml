@@ -10,6 +10,7 @@ on:
       - "Pre-Close Alert"
       - "End-of-Day Session"
       - "Weekly Intelligence Briefing"
+      - "Insider Activity + Political Signal Scan"
     types:
       - completed
 

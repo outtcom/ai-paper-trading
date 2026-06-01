@@ -6,8 +6,8 @@ Scans all stock tickers (not crypto/ETFs) for:
   1. Significant SEC Form 4 insider buying/selling (60-day window)
   2. Trump/political stock mentions in news (7-day window)
 
-Saves pre-computed signals to .tmp/state/YYYY-MM-DD/insider_signals.json
-so the morning session pipeline loads them without extra API calls.
+Saves pre-computed signals to docs/insider_signals.json (committed to repo)
+so the morning session pipeline can load them after checking out the code.
 
 Sends a Telegram alert when significant activity is detected.
 """
@@ -30,11 +30,11 @@ from tools.telegram_bot import broadcast_message
 
 
 def _save_signals(all_signals: dict, date: str) -> None:
-    state_dir = os.path.join(".tmp", "state", date)
-    os.makedirs(state_dir, exist_ok=True)
-    path = os.path.join(state_dir, "insider_signals.json")
+    os.makedirs("docs", exist_ok=True)
+    path = os.path.join("docs", "insider_signals.json")
+    payload = {"date": date, "signals": all_signals}
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(all_signals, f, indent=2, ensure_ascii=False)
+        json.dump(payload, f, indent=2, ensure_ascii=False)
     print(f"[insider_scan] Signals saved → {path}")
 
 
@@ -45,6 +45,15 @@ def _format_dollar(value: float) -> str:
     if abs_val >= 1_000:
         return f"${abs_val / 1_000:.0f}K"
     return f"${abs_val:.0f}"
+
+
+def _is_within_hours(date_str: str, hours: int) -> bool:
+    from datetime import timedelta
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M")
+        return dt >= datetime.utcnow() - timedelta(hours=hours)
+    except Exception:
+        return False
 
 
 def _build_alert(strong_signals: list, date: str) -> str:
@@ -85,18 +94,8 @@ def _build_alert(strong_signals: list, date: str) -> str:
             lines.append(f"  {emoji} <b>{ticker}</b> — \"{headline}\" ({recent['sentiment_hint']})")
         lines.append("")
 
-    scanned = len([s for s in strong_signals])
     lines.append(f"<i>Signals pre-loaded for morning pipeline. {len(STOCKS)} tickers scanned.</i>")
     return "\n".join(lines)
-
-
-def _is_within_hours(date_str: str, hours: int) -> bool:
-    from datetime import timedelta
-    try:
-        dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M")
-        return dt >= datetime.utcnow() - timedelta(hours=hours)
-    except Exception:
-        return False
 
 
 def main():
@@ -123,7 +122,7 @@ def main():
             has_trump = has_recent_trump_mention(trump_mentions, hours_back=48)
 
             strength_label = insider_signal["signal_strength"]
-            trump_label = f" | Trump mention" if has_trump else ""
+            trump_label = " | Trump mention" if has_trump else ""
             print(f"{strength_label}{trump_label}")
 
             if is_significant or has_trump:
@@ -140,8 +139,11 @@ def main():
 
     if strong_signals:
         alert = _build_alert(strong_signals, today)
-        broadcast_message(alert)
-        print("[insider_scan] Alert sent.")
+        try:
+            broadcast_message(alert)
+            print("[insider_scan] Alert sent.")
+        except Exception as e:
+            print(f"[insider_scan] Telegram alert failed (signals still saved): {e}")
     else:
         print("[insider_scan] No significant signals today — no alert sent.")
 

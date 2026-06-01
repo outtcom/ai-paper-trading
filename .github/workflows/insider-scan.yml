@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   dst-gate:
@@ -64,6 +64,15 @@ jobs:
 
       - name: Run insider scan
         run: python insider_scan.py
+
+      - name: Commit insider signals
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add docs/insider_signals.json
+          git diff --staged --quiet || git commit -m "auto: insider_scan $(date +%Y-%m-%d)"
+          git pull --rebase -X ours
+          git push
 
       - name: Notify failure
         if: failure()
