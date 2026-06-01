@@ -23,12 +23,12 @@ jobs:
             exit 0
           fi
           MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
-          # Target: 9:30 AM ET. Accept: 9:00–10:30 AM (540–630 min). Wide window — _wait_for_market_open handles early arrivals.
-          if [ $MINS -ge 540 ] && [ $MINS -le 630 ]; then
+          # Target: 9:30 AM ET. Accept: 7:00 AM–3:00 PM (420–900 min). Wide window handles up to 8h GHA queue delays.
+          if [ $MINS -ge 420 ] && [ $MINS -le 900 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 9:00–10:30 AM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 7:00 AM–3:00 PM window, skipping."
           fi
 
   morning-session:

@@ -23,12 +23,12 @@ jobs:
             exit 0
           fi
           MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
-          # Target: 10:30 AM ET. Accept: 10:00–11:00 AM (600–660 min from midnight)
-          if [ $MINS -ge 600 ] && [ $MINS -le 660 ]; then
+          # Target: 10:30 AM ET. Accept: 8:00 AM–3:00 PM (480–900 min). Wide window handles up to 8h GHA queue delays.
+          if [ $MINS -ge 480 ] && [ $MINS -le 900 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 10:00–11:00 AM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:00 AM–3:00 PM window, skipping."
           fi
 
   scalping-check:
