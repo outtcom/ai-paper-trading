@@ -1,0 +1,1409 @@
+{
+  "date": "2026-06-01",
+  "signals": {
+    "AAPL": {
+      "insider_signal": {
+        "ticker": "AAPL",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -3390021134.49,
+        "largest_single_transaction": {
+          "name": "LEVINSON ARTHUR D",
+          "direction": "sell",
+          "dollar_value": 1170858427.52,
+          "date": "2026-05-27",
+          "shares": 3764576,
+          "price": 311.02
+        },
+        "notable_insiders": [
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 1170858427.52,
+            "date": "2026-05-27",
+            "shares": 3764576,
+            "price": 311.02
+          },
+          {
+            "name": "Borders Ben",
+            "direction": "sell",
+            "dollar_value": 11226770,
+            "date": "2026-05-08",
+            "shares": 38713,
+            "price": 290
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 1088731943.04,
+            "date": "2026-05-06",
+            "shares": 3819576,
+            "price": 285.04
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 1115528343.93,
+            "date": "2026-05-06",
+            "shares": 3920049,
+            "price": 284.57
+          },
+          {
+            "name": "Parekh Kevan",
+            "direction": "sell",
+            "dollar_value": 3675650,
+            "date": "2026-04-23",
+            "shares": 13366,
+            "price": 275
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:15:51.788373"
+    },
+    "NVDA": {
+      "insider_signal": {
+        "ticker": "NVDA",
+        "days_back": 60,
+        "transactions_analyzed": 1,
+        "net_buy_count": 0,
+        "net_sell_count": 1,
+        "net_dollar_value": -3030882.0,
+        "largest_single_transaction": {
+          "name": "Dabiri John",
+          "direction": "sell",
+          "dollar_value": 3030882,
+          "date": "2026-05-27",
+          "shares": 14163,
+          "price": 214
+        },
+        "notable_insiders": [
+          {
+            "name": "Dabiri John",
+            "direction": "sell",
+            "dollar_value": 3030882,
+            "date": "2026-05-27",
+            "shares": 14163,
+            "price": 214
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "US Equity Indexes Recover After Trump Claims Israel, Hezbollah Agreed to De-escalate Fighting in Lebanon",
+          "date": "2026-06-01 21:03",
+          "summary": "US equity indexes rose after President Donald Trump claimed Israel and Hezbollah agreed to dial back",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:53.240766"
+    },
+    "MSFT": {
+      "insider_signal": {
+        "ticker": "MSFT",
+        "days_back": 60,
+        "transactions_analyzed": 3,
+        "net_buy_count": 0,
+        "net_sell_count": 3,
+        "net_dollar_value": -56302681.74,
+        "largest_single_transaction": {
+          "name": "Coleman Amy",
+          "direction": "sell",
+          "dollar_value": 18922966.03,
+          "date": "2026-05-14",
+          "shares": 46003,
+          "price": 411.342
+        },
+        "notable_insiders": [
+          {
+            "name": "Coleman Amy",
+            "direction": "sell",
+            "dollar_value": 18798978.45,
+            "date": "2026-05-15",
+            "shares": 45915,
+            "price": 409.43
+          },
+          {
+            "name": "Coleman Amy",
+            "direction": "sell",
+            "dollar_value": 18922966.03,
+            "date": "2026-05-14",
+            "shares": 46003,
+            "price": 411.342
+          },
+          {
+            "name": "Coleman Amy",
+            "direction": "sell",
+            "dollar_value": 18580737.26,
+            "date": "2026-04-15",
+            "shares": 47266,
+            "price": 393.11
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "US Equity Indexes Recover After Trump Claims Israel, Hezbollah Agreed to De-escalate Fighting in Lebanon",
+          "date": "2026-06-01 21:03",
+          "summary": "US equity indexes rose after President Donald Trump claimed Israel and Hezbollah agreed to dial back",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:54.035852"
+    },
+    "MU": {
+      "insider_signal": {
+        "ticker": "MU",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -324502185.56,
+        "largest_single_transaction": {
+          "name": "RAY MICHAEL CHARLES",
+          "direction": "sell",
+          "dollar_value": 37722222.78,
+          "date": "2026-05-01",
+          "shares": 70258,
+          "price": 536.91
+        },
+        "notable_insiders": [
+          {
+            "name": "GOMO STEVEN J",
+            "direction": "sell",
+            "dollar_value": 13498676.4,
+            "date": "2026-05-11",
+            "shares": 17139,
+            "price": 787.6
+          },
+          {
+            "name": "GOMO STEVEN J",
+            "direction": "sell",
+            "dollar_value": 14265779.33,
+            "date": "2026-05-11",
+            "shares": 18139,
+            "price": 786.47
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 36620563.71,
+            "date": "2026-05-01",
+            "shares": 67227,
+            "price": 544.73
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 36613196.55,
+            "date": "2026-05-01",
+            "shares": 67347,
+            "price": 543.65
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 36724910.91,
+            "date": "2026-05-01",
+            "shares": 67667,
+            "price": 542.73
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 36823406.4,
+            "date": "2026-05-01",
+            "shares": 67980,
+            "price": 541.68
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 37157700.66,
+            "date": "2026-05-01",
+            "shares": 68738,
+            "price": 540.57
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 37385578.02,
+            "date": "2026-05-01",
+            "shares": 69298,
+            "price": 539.49
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 37690150.8,
+            "date": "2026-05-01",
+            "shares": 69978,
+            "price": 538.6
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 37722222.78,
+            "date": "2026-05-01",
+            "shares": 70258,
+            "price": 536.91
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
+          "date": "2026-06-01 16:09",
+          "summary": "Micron Technology just became the 12th-biggest company in the world, bigger than Berkshire Hathaway. UBS sees another 56% upside as June 24 earnings near.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:55.185207"
+    },
+    "GOOGL": {
+      "insider_signal": {
+        "ticker": "GOOGL",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 4,
+        "net_sell_count": 6,
+        "net_dollar_value": -145729721.88,
+        "largest_single_transaction": {
+          "name": "Pichai Sundar",
+          "direction": "sell",
+          "dollar_value": 86632561.14,
+          "date": "2026-05-25",
+          "shares": 228353,
+          "price": 379.38
+        },
+        "notable_insiders": [
+          {
+            "name": "Schindler Philipp",
+            "direction": "sell",
+            "dollar_value": 32713937.4,
+            "date": "2026-05-25",
+            "shares": 86230,
+            "price": 379.38
+          },
+          {
+            "name": "Ashkenazi Anat",
+            "direction": "sell",
+            "dollar_value": 26383223.34,
+            "date": "2026-05-25",
+            "shares": 69543,
+            "price": 379.38
+          },
+          {
+            "name": "Pichai Sundar",
+            "direction": "sell",
+            "dollar_value": 86632561.14,
+            "date": "2026-05-25",
+            "shares": 228353,
+            "price": 379.38
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "McDonald's Wants to Feel More Upscale With Wings, Restaurant Remodels",
+          "date": "2026-06-01 18:00",
+          "summary": "(Bloomberg) -- McDonald’s Corp. is betting on everything from fancier chicken to new playgrounds as part of a campaign to make fast food feel less like fast food.Most Read from BloombergUS Says Deals ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:56.132614"
+    },
+    "META": {
+      "insider_signal": {
+        "ticker": "META",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -132901149.58,
+        "largest_single_transaction": {
+          "name": "Olivan Javier",
+          "direction": "sell",
+          "dollar_value": 51661302.35,
+          "date": "2026-05-18",
+          "shares": 84781,
+          "price": 609.35
+        },
+        "notable_insiders": [
+          {
+            "name": "Mahoney Curtis J.",
+            "direction": "sell",
+            "dollar_value": 681890.56,
+            "date": "2026-05-27",
+            "shares": 1118,
+            "price": 609.92
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 51381469.54,
+            "date": "2026-05-26",
+            "shares": 84373,
+            "price": 608.98
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 4501580.16,
+            "date": "2026-05-26",
+            "shares": 7392,
+            "price": 608.98
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 1305653.12,
+            "date": "2026-05-26",
+            "shares": 2144,
+            "price": 608.98
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 4501580.16,
+            "date": "2026-05-26",
+            "shares": 7392,
+            "price": 608.98
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 8417930.54,
+            "date": "2026-05-26",
+            "shares": 13823,
+            "price": 608.98
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 51661302.35,
+            "date": "2026-05-18",
+            "shares": 84781,
+            "price": 609.35
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 4554281.9,
+            "date": "2026-05-18",
+            "shares": 7474,
+            "price": 609.35
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 1341179.35,
+            "date": "2026-05-18",
+            "shares": 2201,
+            "price": 609.35
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 4554281.9,
+            "date": "2026-05-18",
+            "shares": 7474,
+            "price": 609.35
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:15:57.091134"
+    },
+    "AMZN": {
+      "insider_signal": {
+        "ticker": "AMZN",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -35332799.65,
+        "largest_single_transaction": {
+          "name": "Zapolsky David",
+          "direction": "sell",
+          "dollar_value": 11060750.7,
+          "date": "2026-05-22",
+          "shares": 41190,
+          "price": 268.53
+        },
+        "notable_insiders": [
+          {
+            "name": "Zapolsky David",
+            "direction": "sell",
+            "dollar_value": 11060750.7,
+            "date": "2026-05-22",
+            "shares": 41190,
+            "price": 268.53
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 3761213.75,
+            "date": "2026-05-21",
+            "shares": 14159,
+            "price": 265.6412
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 3866099.33,
+            "date": "2026-05-21",
+            "shares": 14592,
+            "price": 264.9465
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 4521793.19,
+            "date": "2026-05-21",
+            "shares": 17126,
+            "price": 264.0309
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 5478093.78,
+            "date": "2026-05-21",
+            "shares": 20815,
+            "price": 263.1801
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 6644848.9,
+            "date": "2026-05-21",
+            "shares": 25369,
+            "price": 261.9279
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Up As Trump Says This On Iran; AI Stocks Pop On Anthropic IPO Move (Live Coverage)",
+          "date": "2026-06-01 20:37",
+          "summary": "The Dow Jones index fought back Monday after President Trump spoke on Iran. Nvidia popped. Warren Buffett's Berkshire boosted a stock.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:57.899326"
+    },
+    "TSLA": {
+      "insider_signal": {
+        "ticker": "TSLA",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 2,
+        "net_sell_count": 8,
+        "net_dollar_value": -83266335.58,
+        "largest_single_transaction": {
+          "name": "Wilson-Thompson Kathleen",
+          "direction": "sell",
+          "dollar_value": 19369989.71,
+          "date": "2026-04-30",
+          "shares": 50759,
+          "price": 381.607
+        },
+        "notable_insiders": [
+          {
+            "name": "Taneja Vaibhav",
+            "direction": "sell",
+            "dollar_value": 8148150,
+            "date": "2026-05-13",
+            "shares": 18107,
+            "price": 450
+          },
+          {
+            "name": "Taneja Vaibhav",
+            "direction": "buy",
+            "dollar_value": 384569.54,
+            "date": "2026-05-13",
+            "shares": 21107,
+            "price": 18.22
+          },
+          {
+            "name": "Taneja Vaibhav",
+            "direction": "buy",
+            "dollar_value": 352333.08,
+            "date": "2026-05-13",
+            "shares": 19107,
+            "price": 18.44
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 18598961.32,
+            "date": "2026-04-30",
+            "shares": 48399,
+            "price": 384.284
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 18735226.47,
+            "date": "2026-04-30",
+            "shares": 48839,
+            "price": 383.612
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 19150910.71,
+            "date": "2026-04-30",
+            "shares": 50079,
+            "price": 382.414
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 19369989.71,
+            "date": "2026-04-30",
+            "shares": 50759,
+            "price": 381.607
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:15:58.775113"
+    },
+    "LLY": {
+      "insider_signal": {
+        "ticker": "LLY",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 8,
+        "net_sell_count": 2,
+        "net_dollar_value": -182687474219.15,
+        "largest_single_transaction": {
+          "name": "LILLY ENDOWMENT INC",
+          "direction": "sell",
+          "dollar_value": 91530439650.45,
+          "date": "2026-05-06",
+          "shares": 91881150,
+          "price": 996.183
+        },
+        "notable_insiders": [
+          {
+            "name": "LUCIANO JUAN R",
+            "direction": "buy",
+            "dollar_value": 16650304.59,
+            "date": "2026-05-18",
+            "shares": 16851,
+            "price": 988.09
+          },
+          {
+            "name": "Fyrwald J Erik",
+            "direction": "buy",
+            "dollar_value": 74383415.2,
+            "date": "2026-05-18",
+            "shares": 75280,
+            "price": 988.09
+          },
+          {
+            "name": "Alvarez Ralph",
+            "direction": "buy",
+            "dollar_value": 54964482.43,
+            "date": "2026-05-18",
+            "shares": 55627,
+            "price": 988.09
+          },
+          {
+            "name": "Sulzberger Gabrielle",
+            "direction": "buy",
+            "dollar_value": 2951424.83,
+            "date": "2026-05-18",
+            "shares": 2987,
+            "price": 988.09
+          },
+          {
+            "name": "LILLY ENDOWMENT INC",
+            "direction": "sell",
+            "dollar_value": 91530439650.45,
+            "date": "2026-05-06",
+            "shares": 91881150,
+            "price": 996.183
+          },
+          {
+            "name": "LILLY ENDOWMENT INC",
+            "direction": "sell",
+            "dollar_value": 91444614965.55,
+            "date": "2026-05-06",
+            "shares": 91883358,
+            "price": 995.225
+          },
+          {
+            "name": "LUCIANO JUAN R",
+            "direction": "buy",
+            "dollar_value": 15486516.5,
+            "date": "2026-04-20",
+            "shares": 16835,
+            "price": 919.9
+          },
+          {
+            "name": "Fyrwald J Erik",
+            "direction": "buy",
+            "dollar_value": 69240873.0,
+            "date": "2026-04-20",
+            "shares": 75270,
+            "price": 919.9
+          },
+          {
+            "name": "Alvarez Ralph",
+            "direction": "buy",
+            "dollar_value": 51160238.5,
+            "date": "2026-04-20",
+            "shares": 55615,
+            "price": 919.9
+          },
+          {
+            "name": "Sulzberger Gabrielle",
+            "direction": "buy",
+            "dollar_value": 2743141.8,
+            "date": "2026-04-20",
+            "shares": 2982,
+            "price": 919.9
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures, Oil Prices Rise As Trump Makes This Iran Move; Nvidia, Tesla Lead 5 Titans Near Buy Points",
+          "date": "2026-05-31 23:39",
+          "summary": "Crude oil prices rose Sunday as President Trump reportedly stiffened Iran deal terms. Nvidia, Tesla lead five titans near buy points.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:15:59.557839"
+    },
+    "UNH": {
+      "insider_signal": {
+        "ticker": "UNH",
+        "days_back": 60,
+        "transactions_analyzed": 1,
+        "net_buy_count": 0,
+        "net_sell_count": 1,
+        "net_dollar_value": -6320775.0,
+        "largest_single_transaction": {
+          "name": "Conway Patrick Hugh",
+          "direction": "sell",
+          "dollar_value": 6320775,
+          "date": "2026-04-23",
+          "shares": 17805,
+          "price": 355
+        },
+        "notable_insiders": [
+          {
+            "name": "Conway Patrick Hugh",
+            "direction": "sell",
+            "dollar_value": 6320775,
+            "date": "2026-04-23",
+            "shares": 17805,
+            "price": 355
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Infighting, court battles could put long-hyped air taxi breakthrough in jeopardy",
+          "date": "2026-05-29 06:00",
+          "summary": "Trump's eVTOL pilot program is giving the air taxi industry its validation, but legal battles have put investor sentiment on hold. ",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:00.591036"
+    },
+    "JPM": {
+      "insider_signal": {
+        "ticker": "JPM",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 1,
+        "net_sell_count": 9,
+        "net_dollar_value": -426198998.08,
+        "largest_single_transaction": {
+          "name": "Erdoes Mary E.",
+          "direction": "sell",
+          "dollar_value": 188685348.2,
+          "date": "2026-05-15",
+          "shares": 632399,
+          "price": 298.3644
+        },
+        "notable_insiders": [
+          {
+            "name": "Friedman Stacey",
+            "direction": "sell",
+            "dollar_value": 13940759.13,
+            "date": "2026-05-20",
+            "shares": 46428,
+            "price": 300.2662
+          },
+          {
+            "name": "Lake Marianne",
+            "direction": "sell",
+            "dollar_value": 22794956.91,
+            "date": "2026-05-15",
+            "shares": 76402,
+            "price": 298.3555
+          },
+          {
+            "name": "Petno Douglas B",
+            "direction": "sell",
+            "dollar_value": 67396930.95,
+            "date": "2026-05-15",
+            "shares": 224619,
+            "price": 300.05
+          },
+          {
+            "name": "Erdoes Mary E.",
+            "direction": "sell",
+            "dollar_value": 188685348.2,
+            "date": "2026-05-15",
+            "shares": 632399,
+            "price": 298.3644
+          },
+          {
+            "name": "Beer Lori A",
+            "direction": "sell",
+            "dollar_value": 20038239.15,
+            "date": "2026-05-15",
+            "shares": 66783,
+            "price": 300.05
+          },
+          {
+            "name": "Piepszak Jennifer",
+            "direction": "sell",
+            "dollar_value": 26326080.95,
+            "date": "2026-05-05",
+            "shares": 85082,
+            "price": 309.4201
+          },
+          {
+            "name": "BACON ASHLEY",
+            "direction": "sell",
+            "dollar_value": 76980099.6,
+            "date": "2026-05-05",
+            "shares": 248785,
+            "price": 309.4242
+          },
+          {
+            "name": "Barnum Jeremy",
+            "direction": "sell",
+            "dollar_value": 10036583.19,
+            "date": "2026-05-05",
+            "shares": 32438,
+            "price": 309.4082
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Trump's Scandals Are Muddying CLARITY's Chances, Mike Novogratz Says—But Do Prediction Markets Agree?",
+          "date": "2026-06-01 09:12",
+          "summary": "Mike Novogratz cut his CLARITY Act passage odds from 90% to 60%, blaming Trump&#39;s $1.776 billion slush fund and $250 bill push.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "HSBC CEO Pitches HK Clients, Hires More Bankers After Setbacks",
+          "date": "2026-05-31 23:00",
+          "summary": "(Bloomberg) -- HSBC Holdings Plc is redoubling efforts to revive its flagging Hong Kong investment banking franchise, deploying its top leadership to win back market share as competition intensifies i",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Big Tech Is Suddenly Impacting Niche Market for US Dividends",
+          "date": "2026-05-31 14:00",
+          "summary": "(Bloomberg) -- The dominance of a few technology giants in the benchmark S&P 500 Index is now carrying over into the niche market for dividend futures and options. Most Read from BloombergUS Says Deal",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:01.682058"
+    },
+    "GS": {
+      "insider_signal": {
+        "ticker": "GS",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -475978227.01,
+        "largest_single_transaction": {
+          "name": "SOLOMON DAVID M",
+          "direction": "sell",
+          "dollar_value": 128791981.46,
+          "date": "2026-05-01",
+          "shares": 138422,
+          "price": 930.43
+        },
+        "notable_insiders": [
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 30299774.7,
+            "date": "2026-05-14",
+            "shares": 31070,
+            "price": 975.21
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 31670275.94,
+            "date": "2026-05-14",
+            "shares": 32498,
+            "price": 974.53
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 32950267.02,
+            "date": "2026-05-14",
+            "shares": 33858,
+            "price": 973.19
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 34436567.22,
+            "date": "2026-05-14",
+            "shares": 35418,
+            "price": 972.29
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 27863052.15,
+            "date": "2026-05-01",
+            "shares": 29949,
+            "price": 930.35
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 27918261.59,
+            "date": "2026-05-01",
+            "shares": 30029,
+            "price": 929.71
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 28327138.45,
+            "date": "2026-05-01",
+            "shares": 30497,
+            "price": 928.85
+          },
+          {
+            "name": "SOLOMON DAVID M",
+            "direction": "sell",
+            "dollar_value": 127825237.5,
+            "date": "2026-05-01",
+            "shares": 137262,
+            "price": 931.25
+          },
+          {
+            "name": "SOLOMON DAVID M",
+            "direction": "sell",
+            "dollar_value": 128791981.46,
+            "date": "2026-05-01",
+            "shares": 138422,
+            "price": 930.43
+          },
+          {
+            "name": "FREDMAN SHEARA J",
+            "direction": "sell",
+            "dollar_value": 5895670.98,
+            "date": "2026-05-01",
+            "shares": 6338,
+            "price": 930.21
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "For Goldman’s Top Bankers, It’s All AI Data Centers All the Time",
+          "date": "2026-06-01 18:48",
+          "summary": "(Bloomberg) -- For leveraged finance practitioners, artificial intelligence is the only game in town — especially in the absence of more debt deals to finance mergers and acquisitions.Most Read from B",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Oil Rises From Six-Week Low Amid Uncertainty Over US-Iran Deal",
+          "date": "2026-05-31 22:58",
+          "summary": "(Bloomberg) -- Oil rose from a six-week low amid uncertainty over the outlook for a peace deal to end the war in Iran. Most Read from BloombergUS Says Deals With Iran for Safe Hormuz Transit Are Prohi",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:02.442314"
+    },
+    "XOM": {
+      "insider_signal": {
+        "ticker": "XOM",
+        "days_back": 60,
+        "transactions_analyzed": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "net_dollar_value": 0.0,
+        "largest_single_transaction": null,
+        "notable_insiders": [],
+        "signal_strength": "neutral",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Oil: Trump says peace talks are still on, but Iran says otherwise",
+          "date": "2026-06-01 19:34",
+          "summary": "Oil prices (CL=F, BZ=F) surged back above $90 per barrel on Monday after a confusing back-and-forth between US and Iranian officials, with President Trump affirming that peace talks are continuing \"at",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "BATL, USO, UCO Edge Higher As Oil Gains: Exxon Executive Warns Shrinking Inventories Could Send Crude To $160",
+          "date": "2026-06-01 07:11",
+          "summary": "Neil Chapman, Senior Vice President of ExxonMobil, warned last week that global crude, gasoline, diesel, and jet fuel inventories were headed toward unprecedented lows, potentially driving dated Brent",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:03.246431"
+    },
+    "CVX": {
+      "insider_signal": {
+        "ticker": "CVX",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 10,
+        "net_sell_count": 0,
+        "net_dollar_value": 0.0,
+        "largest_single_transaction": {
+          "name": "Austin Wanda M",
+          "direction": "buy",
+          "dollar_value": 0,
+          "date": "2026-05-27",
+          "shares": 3032,
+          "price": 0
+        },
+        "notable_insiders": [],
+        "signal_strength": "neutral",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "BATL, USO, UCO Edge Higher As Oil Gains: Exxon Executive Warns Shrinking Inventories Could Send Crude To $160",
+          "date": "2026-06-01 07:11",
+          "summary": "Neil Chapman, Senior Vice President of ExxonMobil, warned last week that global crude, gasoline, diesel, and jet fuel inventories were headed toward unprecedented lows, potentially driving dated Brent",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Elizabeth Warren Says Trump's Iran War Is Costing Americans $800 Million A Day While Oil CEOs Get Richer",
+          "date": "2026-06-01 00:09",
+          "summary": "Elizabeth Warren criticizes Trump for causing excessive gas prices in the US, accuses oil executives of profiting from the Iran war.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Oil Rises From Six-Week Low Amid Uncertainty Over US-Iran Deal",
+          "date": "2026-05-31 22:58",
+          "summary": "(Bloomberg) -- Oil rose from a six-week low amid uncertainty over the outlook for a peace deal to end the war in Iran. Most Read from BloombergUS Says Deals With Iran for Safe Hormuz Transit Are Prohi",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:04.107800"
+    },
+    "CAT": {
+      "insider_signal": {
+        "ticker": "CAT",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 2,
+        "net_sell_count": 8,
+        "net_dollar_value": -327809842.47,
+        "largest_single_transaction": {
+          "name": "Johnson Denise C",
+          "direction": "sell",
+          "dollar_value": 52880140.32,
+          "date": "2026-05-14",
+          "shares": 58384,
+          "price": 905.73
+        },
+        "notable_insiders": [
+          {
+            "name": "Epley Kyle Joseph",
+            "direction": "buy",
+            "dollar_value": 5188729.05,
+            "date": "2026-05-26",
+            "shares": 5711,
+            "price": 908.55
+          },
+          {
+            "name": "Creed Joseph E",
+            "direction": "buy",
+            "dollar_value": 9994958.55,
+            "date": "2026-05-26",
+            "shares": 11001,
+            "price": 908.55
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 45436414.0,
+            "date": "2026-05-14",
+            "shares": 49825,
+            "price": 911.92
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 46834729.5,
+            "date": "2026-05-14",
+            "shares": 51430,
+            "price": 910.65
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 47151570.4,
+            "date": "2026-05-14",
+            "shares": 51832,
+            "price": 909.7
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 48527784.0,
+            "date": "2026-05-14",
+            "shares": 53400,
+            "price": 908.76
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 50576301.96,
+            "date": "2026-05-14",
+            "shares": 55702,
+            "price": 907.98
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 51586589.89,
+            "date": "2026-05-14",
+            "shares": 56893,
+            "price": 906.73
+          },
+          {
+            "name": "Johnson Denise C",
+            "direction": "sell",
+            "dollar_value": 52880140.32,
+            "date": "2026-05-14",
+            "shares": 58384,
+            "price": 905.73
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:16:04.839426"
+    },
+    "GE": {
+      "insider_signal": {
+        "ticker": "GE",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 8,
+        "net_sell_count": 2,
+        "net_dollar_value": -5921015.66,
+        "largest_single_transaction": {
+          "name": "Ali Mohamed",
+          "direction": "sell",
+          "dollar_value": 5921015.66,
+          "date": "2026-05-01",
+          "shares": 20666,
+          "price": 286.51
+        },
+        "notable_insiders": [
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 5921015.66,
+            "date": "2026-05-01",
+            "shares": 20666,
+            "price": 286.51
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Trump Put Boeing Back In The China Game — And Now The Stock Is Racing Toward A Golden Cross",
+          "date": "2026-06-01 10:23",
+          "summary": "Boeing&#39;s China opportunity is back after a historic aircraft agreement, while FAA production approvals and a looming golden cross are strengthening the bull case for BA stock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Larry Kudlow: The ‘Trumpian Economy’ Is Booming Despite the Gas Price Noise",
+          "date": "2026-05-29 12:45",
+          "summary": "Larry Kudlow spent Wednesday evening on Fox Business arguing that the economy is stronger than headlines admit. “The Trumpian economy is absolutely booming as is the stock market,” he said, listing th",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:05.562080"
+    },
+    "WMT": {
+      "insider_signal": {
+        "ticker": "WMT",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 0,
+        "net_sell_count": 10,
+        "net_dollar_value": -367654516436.79,
+        "largest_single_transaction": {
+          "name": "Walton Family Holdings Trust",
+          "direction": "sell",
+          "dollar_value": 61979620596.33,
+          "date": "2026-05-22",
+          "shares": 511932956,
+          "price": 121.0698
+        },
+        "notable_insiders": [
+          {
+            "name": "Watkins Latriece",
+            "direction": "sell",
+            "dollar_value": 14300550.91,
+            "date": "2026-05-28",
+            "shares": 120203,
+            "price": 118.97
+          },
+          {
+            "name": "McMillon C Douglas",
+            "direction": "sell",
+            "dollar_value": 495215695.74,
+            "date": "2026-05-28",
+            "shares": 4174579,
+            "price": 118.6265
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 60623514238.36,
+            "date": "2026-05-28",
+            "shares": 509387789,
+            "price": 119.0125
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 60669375275.65,
+            "date": "2026-05-27",
+            "shares": 509595438,
+            "price": 119.054
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 61697411881.78,
+            "date": "2026-05-26",
+            "shares": 509849616,
+            "price": 121.011
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 61418574076.75,
+            "date": "2026-05-26",
+            "shares": 509850877,
+            "price": 120.4638
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 60756504121.26,
+            "date": "2026-05-26",
+            "shares": 509870319,
+            "price": 119.1607
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 61979620596.33,
+            "date": "2026-05-22",
+            "shares": 511932956,
+            "price": 121.0698
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Walmart Caps Usage of an AI Tool for Employees After High Demand",
+          "date": "2026-06-01 15:00",
+          "summary": "(Bloomberg) -- Walmart Inc. is limiting staff’s usage of an artificial-intelligence tool following high demand, illustrating how corporations are adjusting their calculations for incorporating the tec",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-01T23:16:06.334442"
+    },
+    "COST": {
+      "insider_signal": {
+        "ticker": "COST",
+        "days_back": 60,
+        "transactions_analyzed": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "net_dollar_value": 0.0,
+        "largest_single_transaction": null,
+        "notable_insiders": [],
+        "signal_strength": "neutral",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:16:07.238426"
+    },
+    "FCX": {
+      "insider_signal": {
+        "ticker": "FCX",
+        "days_back": 60,
+        "transactions_analyzed": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "net_dollar_value": 0.0,
+        "largest_single_transaction": null,
+        "notable_insiders": [],
+        "signal_strength": "neutral",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:16:08.243804"
+    },
+    "NEE": {
+      "insider_signal": {
+        "ticker": "NEE",
+        "days_back": 60,
+        "transactions_analyzed": 1,
+        "net_buy_count": 1,
+        "net_sell_count": 0,
+        "net_dollar_value": 742118.19,
+        "largest_single_transaction": {
+          "name": "Arnaboldi Nicole S",
+          "direction": "buy",
+          "dollar_value": 742118.19,
+          "date": "2026-04-06",
+          "shares": 8003,
+          "price": 92.73
+        },
+        "notable_insiders": [
+          {
+            "name": "Arnaboldi Nicole S",
+            "direction": "buy",
+            "dollar_value": 742118.19,
+            "date": "2026-04-06",
+            "shares": 8003,
+            "price": 92.73
+          }
+        ],
+        "signal_strength": "strong_buy",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:16:09.603177"
+    },
+    "PLD": {
+      "insider_signal": {
+        "ticker": "PLD",
+        "days_back": 60,
+        "transactions_analyzed": 10,
+        "net_buy_count": 7,
+        "net_sell_count": 3,
+        "net_dollar_value": 6199351.61,
+        "largest_single_transaction": {
+          "name": "LYONS IRVING F III",
+          "direction": "buy",
+          "dollar_value": 6202552.25,
+          "date": "2026-04-28",
+          "shares": 43825,
+          "price": 141.53
+        },
+        "notable_insiders": [
+          {
+            "name": "LYONS IRVING F III",
+            "direction": "buy",
+            "dollar_value": 6202552.25,
+            "date": "2026-04-28",
+            "shares": 43825,
+            "price": 141.53
+          }
+        ],
+        "signal_strength": "strong_buy",
+        "error": null
+      },
+      "trump_mentions": [],
+      "scanned_at": "2026-06-01T23:16:11.379153"
+    }
+  }
+}
