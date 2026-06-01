@@ -27,6 +27,10 @@ Keep your argument concise (200-300 words). End with your top 3 bear risks."""
 
 
 def _build_context(state: dict) -> str:
+    insider_section = (
+        f"\n\nINSIDER & POLITICAL ANALYSIS:\n{state['insider_report']}"
+        if state.get("insider_report") else ""
+    )
     return f"""Ticker: {state['ticker']} | Date: {state['date']}
 
 FUNDAMENTAL ANALYSIS:
@@ -36,7 +40,7 @@ SENTIMENT ANALYSIS:
 {state.get('sentiment_report', 'N/A')}
 
 TECHNICAL ANALYSIS:
-{state.get('technical_report', 'N/A')}"""
+{state.get('technical_report', 'N/A')}{insider_section}"""
 
 
 def run(state: dict) -> dict:

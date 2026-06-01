@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tools.state_manager import init_state, write_log
 from tools.paper_broker import get_portfolio, submit_order
 from agents import fundamental_analyst, sentiment_analyst, technical_analyst
-from agents import researcher, trader, risk_manager, fund_manager
+from agents import insider_analyst, researcher, trader, risk_manager, fund_manager
 
 
 def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict = None, strategy_brief: dict = None) -> dict:
@@ -34,27 +34,31 @@ def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict =
     write_log(ticker, date, f"Pipeline started. dry_run={dry_run}")
 
     # Step 1: Fundamental Analysis
-    print(f"  [1/7] Fundamental Analyst...")
+    print(f"  [1/8] Fundamental Analyst...")
     state = fundamental_analyst.run(state)
 
     # Step 2: Sentiment Analysis
-    print(f"  [2/7] Sentiment Analyst...")
+    print(f"  [2/8] Sentiment Analyst...")
     state = sentiment_analyst.run(state)
 
     # Step 3: Technical Analysis
-    print(f"  [3/7] Technical Analyst...")
+    print(f"  [3/8] Technical Analyst...")
     state = technical_analyst.run(state)
 
-    # Step 4: Bull/Bear Researcher Debate
-    print(f"  [4/7] Researcher Debate (Bull vs Bear)...")
+    # Step 4: Insider Activity + Political Signal Analysis
+    print(f"  [4/8] Insider & Political Analyst...")
+    state = insider_analyst.run(state)
+
+    # Step 5: Bull/Bear Researcher Debate
+    print(f"  [5/8] Researcher Debate (Bull vs Bear)...")
     state = researcher.run(state)
 
-    # Step 5: Trader Decision
-    print(f"  [5/7] Trader...")
+    # Step 6: Trader Decision
+    print(f"  [6/8] Trader...")
     state = trader.run(state)
 
-    # Step 6: Risk Management
-    print(f"  [6/7] Risk Management Team...")
+    # Step 7: Risk Management
+    print(f"  [7/8] Risk Management Team...")
     if portfolio is None:
         # Fall back to old paper_broker if no session portfolio supplied
         try:
@@ -63,8 +67,8 @@ def run_pipeline(ticker: str, date: str, dry_run: bool = True, portfolio: dict =
             print(f"  [!] Could not fetch portfolio: {e}")
     state = risk_manager.run(state)
 
-    # Step 7: Fund Manager (final order) — receives real capital figures + strategy brief
-    print(f"  [7/7] Fund Manager...")
+    # Step 8: Fund Manager (final order) — receives real capital figures + strategy brief
+    print(f"  [8/8] Fund Manager...")
     state = fund_manager.run(state, portfolio=portfolio, strategy_brief=strategy_brief)
 
     final_order = state.get("final_order", {})

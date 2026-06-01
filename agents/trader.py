@@ -86,6 +86,9 @@ SENTIMENT ANALYSIS:
 TECHNICAL ANALYSIS:
 {state.get('technical_report', 'N/A')}
 
+INSIDER & POLITICAL ANALYSIS:
+{state.get('insider_report', 'N/A')}
+
 BULL CASE:
 {state.get('bull_case', 'N/A')}
 

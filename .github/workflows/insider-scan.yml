@@ -1,0 +1,84 @@
+name: Insider Activity + Political Signal Scan
+
+on:
+  schedule:
+    - cron: '30 11 * * 1-5'  # EDT (Mar-Nov): 7:30 AM ET + ~3.5h queue → arrives ~11:00 AM ET
+    - cron: '30 12 * * 1-5'  # EST (Nov-Mar): 7:30 AM ET + ~3.5h queue → arrives ~11:00 AM ET
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dst-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check DST window
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
+          # Target: 7:30 AM ET. Accept: 5:00 AM–2:00 PM (300–840 min). Wide window handles up to 8h GHA queue delays.
+          if [ $MINS -ge 300 ] && [ $MINS -le 840 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 5:00 AM–2:00 PM window, skipping."
+          fi
+
+  insider-scan:
+    needs: dst-gate
+    if: needs.dst-gate.outputs.skip != 'true'
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          TELEGRAM_GROUP_CHAT_ID=${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
+          EOF
+
+      - name: Run insider scan
+        run: python insider_scan.py
+
+      - name: Notify failure
+        if: failure()
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GROUP_CHAT_ID: ${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TEXT=$'🚨 <b>Insider Scan FAILED</b>\n\nView logs:\n'"${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true
+          [ -n "${GROUP_CHAT_ID}" ] && curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${GROUP_CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true

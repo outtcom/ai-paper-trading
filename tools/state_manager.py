@@ -24,6 +24,8 @@ def init_state(ticker: str, date: str) -> dict:
         "fundamental_report": None,
         "sentiment_report": None,
         "technical_report": None,
+        "insider_report": None,
+        "insider_signal": None,
         "bull_case": None,
         "bear_case": None,
         "trader_decision": None,
