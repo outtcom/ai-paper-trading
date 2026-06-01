@@ -29,7 +29,9 @@ def _sentiment_hint(text: str) -> str:
 
 def get_trump_mentions(ticker: str, days_back: int = 7) -> list:
     """
-    Return news articles mentioning Trump or political keywords for a ticker.
+    Return news articles where Trump/political keywords appear in the HEADLINE.
+    Headline-only matching eliminates general market articles that tangentially
+    mention the keyword in body text but aren't actually about this stock + politics.
     Each result: {headline, date, summary, source, keyword_matched, sentiment_hint}.
     """
     try:
@@ -39,8 +41,8 @@ def get_trump_mentions(ticker: str, days_back: int = 7) -> list:
 
     results = []
     for a in articles:
-        text = (a.get("headline", "") + " " + a.get("summary", "")).lower()
-        matched = next((kw for kw in POLITICAL_KEYWORDS if kw in text), None)
+        headline = a.get("headline", "").lower()
+        matched = next((kw for kw in POLITICAL_KEYWORDS if kw in headline), None)
         if matched:
             results.append({
                 "headline": a.get("headline", ""),

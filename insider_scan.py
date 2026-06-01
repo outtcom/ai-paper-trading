@@ -61,22 +61,23 @@ def _build_alert(strong_signals: list, date: str) -> str:
 
     insider_hits = [
         (ticker, sig, _) for ticker, sig, _ in strong_signals
-        if sig["signal_strength"] in ("strong_buy", "strong_sell", "buy", "sell")
+        if sig.get("signal_strength") in ("strong_buy", "strong_sell", "buy", "sell")
     ]
-    insider_hits.sort(key=lambda x: abs(x[1]["net_dollar_value"]), reverse=True)
+    insider_hits.sort(key=lambda x: abs(x[1].get("net_open_market_value", 0)), reverse=True)
 
     if insider_hits:
-        lines.append("<b>Insider Activity:</b>")
+        lines.append("<b>Open-Market Insider Activity:</b>")
         for ticker, sig, _ in insider_hits[:5]:
             label = sig["signal_strength"].upper().replace("_", " ")
-            net = _format_dollar(sig["net_dollar_value"])
-            direction = "+" if sig["net_dollar_value"] >= 0 else "-"
-            lines.append(f"  • <b>{ticker}</b> — {label} | Net: {direction}{net} over 60d")
+            net_fmt = sig.get("net_open_market_fmt", "$0")
+            buys  = sig.get("open_market_buys", 0)
+            sells = sig.get("open_market_sells", 0)
+            lines.append(f"  • <b>{ticker}</b> — {label}  ({buys} buy / {sells} sell, net {net_fmt})")
             largest = sig.get("largest_single_transaction")
             if largest:
                 name = largest.get("name", "Insider")
-                dv = _format_dollar(largest["dollar_value"])
-                lines.append(f"    Notable: {name} {largest['direction']} {dv} on {largest['date']}")
+                dv   = largest.get("dollar_fmt", _format_dollar(largest.get("dollar_value", 0)))
+                lines.append(f"    ↳ {name}: {largest['direction']} {dv} on {largest['date']}")
         lines.append("")
 
     trump_hits = [
@@ -84,17 +85,17 @@ def _build_alert(strong_signals: list, date: str) -> str:
         if has_recent_trump_mention(mentions, hours_back=48)
     ]
     if trump_hits:
-        lines.append("<b>Trump/Political Mentions (last 48h):</b>")
+        lines.append("<b>Trump/Political Headlines (last 48h):</b>")
         for ticker, _, mentions in trump_hits[:5]:
             recent = next(
                 (m for m in mentions if _is_within_hours(m["date"], 48)), mentions[0]
             )
             emoji = "📈" if recent["sentiment_hint"] == "positive" else ("📉" if recent["sentiment_hint"] == "negative" else "⚠️")
-            headline = recent["headline"][:80]
-            lines.append(f"  {emoji} <b>{ticker}</b> — \"{headline}\" ({recent['sentiment_hint']})")
+            headline = recent["headline"][:90]
+            lines.append(f"  {emoji} <b>{ticker}</b> — {headline}")
         lines.append("")
 
-    lines.append(f"<i>Signals pre-loaded for morning pipeline. {len(STOCKS)} tickers scanned.</i>")
+    lines.append(f"<i>{len(STOCKS)} stocks scanned. Signals loaded for morning pipeline.</i>")
     return "\n".join(lines)
 
 
@@ -118,7 +119,7 @@ def main():
                 "scanned_at": datetime.utcnow().isoformat(),
             }
 
-            is_significant = insider_signal["signal_strength"] in ("strong_buy", "strong_sell", "buy", "sell")
+            is_significant = insider_signal.get("signal_strength") in ("strong_buy", "strong_sell", "buy", "sell")
             has_trump = has_recent_trump_mention(trump_mentions, hours_back=48)
 
             strength_label = insider_signal["signal_strength"]
