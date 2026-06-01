@@ -128,7 +128,7 @@ def compute_insider_signal(ticker: str, days_back: int = 60) -> dict:
             "open_market_sells":       net_sell_count,
             "compensation_grants":     grant_count,
             "net_open_market_value":   round(net_open_buy, 2),
-            "net_open_market_fmt":     (("+" if net_open_buy >= 0 else "") + _fmt(net_open_buy)),
+            "net_open_market_fmt":     (("+" if net_open_buy >= 0 else "-") + _fmt(net_open_buy)),
             "largest_single_transaction": largest,
             "notable_transactions":    notable,
             "signal_strength":         _signal_strength(net_open_buy, net_buy_count),
