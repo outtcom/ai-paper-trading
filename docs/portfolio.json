@@ -4,7 +4,7 @@
     "current_day": 28,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-05-29T20:38:09.994291+00:00",
+    "last_updated": "2026-06-02T14:23:14.980635+00:00",
     "session_number": 2
   },
   "cash": 2113.68,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 2.45,
-    "sortino": 13.49,
-    "calmar": 40.33,
+    "sharpe": 2.43,
+    "sortino": 13.26,
+    "calmar": 39.53,
     "spy_start_price": 686.1,
     "spy_current_price": 756.48,
     "benchmark_return_pct": 10.26,
@@ -782,6 +782,11 @@
     {
       "day": 27,
       "date": "2026-05-29",
+      "equity": 5319.31
+    },
+    {
+      "day": 28,
+      "date": "2026-06-02",
       "equity": 5319.31
     }
   ],
