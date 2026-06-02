@@ -6,80 +6,17 @@
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -87532032.31,
-        "net_open_market_fmt": "-$87.5M",
-        "largest_single_transaction": {
-          "name": "LEVINSON ARTHUR D",
-          "direction": "sell",
-          "dollar_value": 42550898.39,
-          "dollar_fmt": "$42.6M",
-          "date": "2026-05-06",
-          "shares_traded": 149527,
-          "price_per_share": 284.57
-        },
-        "notable_transactions": [
-          {
-            "name": "LEVINSON ARTHUR D",
-            "direction": "sell",
-            "dollar_value": 15551000.0,
-            "dollar_fmt": "$15.6M",
-            "date": "2026-05-27",
-            "shares_traded": 50000,
-            "price_per_share": 311.02
-          },
-          {
-            "name": "Borders Ben",
-            "direction": "sell",
-            "dollar_value": 369460,
-            "dollar_fmt": "$369K",
-            "date": "2026-05-08",
-            "shares_traded": 1274,
-            "price_per_share": 290
-          },
-          {
-            "name": "LEVINSON ARTHUR D",
-            "direction": "sell",
-            "dollar_value": 28638823.92,
-            "dollar_fmt": "$28.6M",
-            "date": "2026-05-06",
-            "shares_traded": 100473,
-            "price_per_share": 285.04
-          },
-          {
-            "name": "LEVINSON ARTHUR D",
-            "direction": "sell",
-            "dollar_value": 42550898.39,
-            "dollar_fmt": "$42.6M",
-            "date": "2026-05-06",
-            "shares_traded": 149527,
-            "price_per_share": 284.57
-          },
-          {
-            "name": "Parekh Kevan",
-            "direction": "sell",
-            "dollar_value": 421850,
-            "dollar_fmt": "$422K",
-            "date": "2026-04-23",
-            "shares_traded": 1534,
-            "price_per_share": 275
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
       },
-      "trump_mentions": [
-        {
-          "headline": "Taiwan president says keeping political status quo is key to securing supply chains",
-          "date": "2026-06-02 03:38",
-          "summary": "Taiwan President Lai Ching-te said on Tuesday that maintaining the ‌political status quo is the most responsible thing the island can do to secure global supply chains ‌as it hosts some of the world's",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-02T15:39:53.099031"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T17:00:34.820110"
     },
     "NVDA": {
       "insider_signal": {
@@ -113,17 +50,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Elizabeth Warren Branded Kevin Warsh Trump’s ‘Sock Puppet.’ His First Fed Meeting May Prove Her Wrong",
-          "date": "2026-06-02 13:43",
-          "summary": "Few things move markets more than interest rates. Lower rates can boost stock prices, support home sales, and make borrowing cheaper. Higher rates do the opposite. That’s why investors spend so much t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-02T15:39:54.182898"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T17:00:36.745477"
     },
     "MSFT": {
       "insider_signal": {
@@ -185,7 +113,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:39:55.251426"
+      "scanned_at": "2026-06-02T17:00:48.144224"
     },
     "MU": {
       "insider_signal": {
@@ -301,7 +229,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:39:56.218220"
+      "scanned_at": "2026-06-02T17:01:02.760861"
     },
     "GOOGL": {
       "insider_signal": {
@@ -345,7 +273,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:39:57.310511"
+      "scanned_at": "2026-06-02T17:01:14.236268"
     },
     "META": {
       "insider_signal": {
@@ -407,158 +335,41 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:39:58.504784"
+      "scanned_at": "2026-06-02T17:01:26.207797"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 6,
-        "compensation_grants": 4,
-        "net_open_market_value": -6563229.41,
-        "net_open_market_fmt": "-$6.6M",
-        "largest_single_transaction": {
-          "name": "Zapolsky David",
-          "direction": "sell",
-          "dollar_value": 2489273.1,
-          "dollar_fmt": "$2.5M",
-          "date": "2026-05-22",
-          "shares_traded": 9270,
-          "price_per_share": 268.53
-        },
-        "notable_transactions": [
-          {
-            "name": "Zapolsky David",
-            "direction": "sell",
-            "dollar_value": 2489273.1,
-            "dollar_fmt": "$2.5M",
-            "date": "2026-05-22",
-            "shares_traded": 9270,
-            "price_per_share": 268.53
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 115022.64,
-            "dollar_fmt": "$115K",
-            "date": "2026-05-21",
-            "shares_traded": 433,
-            "price_per_share": 265.6412
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 671374.43,
-            "dollar_fmt": "$671K",
-            "date": "2026-05-21",
-            "shares_traded": 2534,
-            "price_per_share": 264.9465
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 974009.99,
-            "dollar_fmt": "$974K",
-            "date": "2026-05-21",
-            "shares_traded": 3689,
-            "price_per_share": 264.0309
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 1198522.18,
-            "dollar_fmt": "$1.2M",
-            "date": "2026-05-21",
-            "shares_traded": 4554,
-            "price_per_share": 263.1801
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 1115027.07,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-05-21",
-            "shares_traded": 4257,
-            "price_per_share": 261.9279
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:39:59.453330"
+      "scanned_at": "2026-06-02T17:01:37.591774"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 5,
-        "compensation_grants": 3,
-        "net_open_market_value": -4831487.23,
-        "net_open_market_fmt": "-$4.8M",
-        "largest_single_transaction": {
-          "name": "Wilson-Thompson Kathleen",
-          "direction": "sell",
-          "dollar_value": 2631561.87,
-          "dollar_fmt": "$2.6M",
-          "date": "2026-04-30",
-          "shares_traded": 6896,
-          "price_per_share": 381.607
-        },
-        "notable_transactions": [
-          {
-            "name": "Taneja Vaibhav",
-            "direction": "sell",
-            "dollar_value": 1350000,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-13",
-            "shares_traded": 3000,
-            "price_per_share": 450
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 169084.96,
-            "dollar_fmt": "$169K",
-            "date": "2026-04-30",
-            "shares_traded": 440,
-            "price_per_share": 384.284
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 475678.88,
-            "dollar_fmt": "$476K",
-            "date": "2026-04-30",
-            "shares_traded": 1240,
-            "price_per_share": 383.612
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 260041.52,
-            "dollar_fmt": "$260K",
-            "date": "2026-04-30",
-            "shares_traded": 680,
-            "price_per_share": 382.414
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 2631561.87,
-            "dollar_fmt": "$2.6M",
-            "date": "2026-04-30",
-            "shares_traded": 6896,
-            "price_per_share": 381.607
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "open_market_buys": 0,
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:00.715026"
+      "scanned_at": "2026-06-02T17:01:58.423515"
     },
     "LLY": {
       "insider_signal": {
@@ -602,7 +413,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:01.995928"
+      "scanned_at": "2026-06-02T17:02:09.386744"
     },
     "UNH": {
       "insider_signal": {
@@ -637,7 +448,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:04.300722"
+      "scanned_at": "2026-06-02T17:02:20.308863"
     },
     "JPM": {
       "insider_signal": {
@@ -734,133 +545,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Scandals Are Muddying CLARITY's Chances, Mike Novogratz Says—But Do Prediction Markets Agree?",
-          "date": "2026-06-01 09:12",
-          "summary": "Mike Novogratz cut his CLARITY Act passage odds from 90% to 60%, blaming Trump&#39;s $1.776 billion slush fund and $250 bill push.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-02T15:40:06.287875"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T17:02:31.220410"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 10,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -18136177.88,
-        "net_open_market_fmt": "-$18.1M",
-        "largest_single_transaction": {
-          "name": "FREDMAN SHEARA J",
-          "direction": "sell",
-          "dollar_value": 7596094.86,
-          "dollar_fmt": "$7.6M",
-          "date": "2026-05-01",
-          "shares_traded": 8166,
-          "price_per_share": 930.21
-        },
-        "notable_transactions": [
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1392599.88,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-14",
-            "shares_traded": 1428,
-            "price_per_share": 975.21
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1325360.8,
-            "dollar_fmt": "$1.3M",
-            "date": "2026-05-14",
-            "shares_traded": 1360,
-            "price_per_share": 974.53
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1518176.4,
-            "dollar_fmt": "$1.5M",
-            "date": "2026-05-14",
-            "shares_traded": 1560,
-            "price_per_share": 973.19
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 2439475.61,
-            "dollar_fmt": "$2.4M",
-            "date": "2026-05-14",
-            "shares_traded": 2509,
-            "price_per_share": 972.29
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 74428.0,
-            "dollar_fmt": "$74K",
-            "date": "2026-05-01",
-            "shares_traded": 80,
-            "price_per_share": 930.35
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 435104.28,
-            "dollar_fmt": "$435K",
-            "date": "2026-05-01",
-            "shares_traded": 468,
-            "price_per_share": 929.71
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 125394.75,
-            "dollar_fmt": "$125K",
-            "date": "2026-05-01",
-            "shares_traded": 135,
-            "price_per_share": 928.85
-          },
-          {
-            "name": "SOLOMON DAVID M",
-            "direction": "sell",
-            "dollar_value": 1080250.0,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-05-01",
-            "shares_traded": 1160,
-            "price_per_share": 931.25
-          },
-          {
-            "name": "SOLOMON DAVID M",
-            "direction": "sell",
-            "dollar_value": 2149293.3,
-            "dollar_fmt": "$2.1M",
-            "date": "2026-05-01",
-            "shares_traded": 2310,
-            "price_per_share": 930.43
-          },
-          {
-            "name": "FREDMAN SHEARA J",
-            "direction": "sell",
-            "dollar_value": 7596094.86,
-            "dollar_fmt": "$7.6M",
-            "date": "2026-05-01",
-            "shares_traded": 8166,
-            "price_per_share": 930.21
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:07.950106"
+      "scanned_at": "2026-06-02T17:02:52.094829"
     },
     "XOM": {
       "insider_signal": {
@@ -886,7 +589,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T15:40:13.933278"
+      "scanned_at": "2026-06-02T17:03:01.966780"
     },
     "CVX": {
       "insider_signal": {
@@ -918,17 +621,9 @@
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Elizabeth Warren Says Trump's Iran War Is Costing Americans $800 Million A Day While Oil CEOs Get Richer",
-          "date": "2026-06-01 00:09",
-          "summary": "Elizabeth Warren criticizes Trump for causing excessive gas prices in the US, accuses oil executives of profiting from the Iran war.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T15:40:16.619468"
+      "scanned_at": "2026-06-02T17:03:15.259804"
     },
     "CAT": {
       "insider_signal": {
@@ -1026,7 +721,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:19.618474"
+      "scanned_at": "2026-06-02T17:03:21.008692"
     },
     "GE": {
       "insider_signal": {
@@ -1078,7 +773,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T15:40:21.792924"
+      "scanned_at": "2026-06-02T17:03:25.946640"
     },
     "WMT": {
       "insider_signal": {
@@ -1176,7 +871,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:23.347417"
+      "scanned_at": "2026-06-02T17:03:33.562221"
     },
     "COST": {
       "insider_signal": {
@@ -1192,8 +887,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:24.998405"
+      "trump_mentions": [
+        {
+          "headline": "Tariff-Driven Inflation Is Trapping Mortgage Rates, and the Fed Can’t Fix It with Rate Cuts",
+          "date": "2026-06-02 15:29",
+          "summary": "On a recent Rich Habits Podcast segment, market commentator Ron Santella put it bluntly: “The playbook from last week hasn’t changed. It’s actually gotten more entrenched. Higher for longer is the bas",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-02T17:03:38.168290"
     },
     "FCX": {
       "insider_signal": {
@@ -1210,7 +914,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:26.633609"
+      "scanned_at": "2026-06-02T17:03:41.524066"
     },
     "NEE": {
       "insider_signal": {
@@ -1244,7 +948,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T15:40:28.505405"
+      "scanned_at": "2026-06-02T17:03:47.740169"
     },
     "PLD": {
       "insider_signal": {
@@ -1279,7 +983,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T15:40:31.061599"
+      "scanned_at": "2026-06-02T17:03:55.491569"
     }
   }
 }
