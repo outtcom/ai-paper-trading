@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,7 +9,7 @@
         "open_market_sells": 5,
         "compensation_grants": 5,
         "net_open_market_value": -87532032.31,
-        "net_open_market_fmt": "$87.5M",
+        "net_open_market_fmt": "-$87.5M",
         "largest_single_transaction": {
           "name": "LEVINSON ARTHUR D",
           "direction": "sell",
@@ -69,8 +69,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:07.902668"
+      "trump_mentions": [
+        {
+          "headline": "Taiwan president says keeping political status quo is key to securing supply chains",
+          "date": "2026-06-02 03:38",
+          "summary": "Taiwan President Lai Ching-te said on Tuesday that maintaining the ‌political status quo is the most responsible thing the island can do to secure global supply chains ‌as it hosts some of the world's",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-02T15:39:53.099031"
     },
     "NVDA": {
       "insider_signal": {
@@ -80,7 +89,7 @@
         "open_market_sells": 1,
         "compensation_grants": 0,
         "net_open_market_value": -133750.0,
-        "net_open_market_fmt": "$134K",
+        "net_open_market_fmt": "-$134K",
         "largest_single_transaction": {
           "name": "Dabiri John",
           "direction": "sell",
@@ -106,25 +115,25 @@
       },
       "trump_mentions": [
         {
-          "headline": "US Equity Indexes Recover After Trump Claims Israel, Hezbollah Agreed to De-escalate Fighting in Lebanon",
-          "date": "2026-06-01 21:03",
-          "summary": "US equity indexes rose after President Donald Trump claimed Israel and Hezbollah agreed to dial back",
+          "headline": "Elizabeth Warren Branded Kevin Warsh Trump’s ‘Sock Puppet.’ His First Fed Meeting May Prove Her Wrong",
+          "date": "2026-06-02 13:43",
+          "summary": "Few things move markets more than interest rates. Lower rates can boost stock prices, support home sales, and make borrowing cheaper. Higher rates do the opposite. That’s why investors spend so much t",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-01T23:26:08.840749"
+      "scanned_at": "2026-06-02T15:39:54.182898"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
+        "open_market_sells": 5,
         "compensation_grants": 0,
-        "net_open_market_value": -1091754.91,
-        "net_open_market_fmt": "$1.1M",
+        "net_open_market_value": -1473108.19,
+        "net_open_market_fmt": "-$1.5M",
         "largest_single_transaction": {
           "name": "Coleman Amy",
           "direction": "sell",
@@ -135,6 +144,24 @@
           "price_per_share": 393.11
         },
         "notable_transactions": [
+          {
+            "name": "Coleman Amy",
+            "direction": "sell",
+            "dollar_value": 195404.16,
+            "dollar_fmt": "$195K",
+            "date": "2026-06-01",
+            "shares_traded": 434,
+            "price_per_share": 450.24
+          },
+          {
+            "name": "Jolla Alice L.",
+            "direction": "sell",
+            "dollar_value": 185949.12,
+            "dollar_fmt": "$186K",
+            "date": "2026-06-01",
+            "shares_traded": 413,
+            "price_per_share": 450.24
+          },
           {
             "name": "Coleman Amy",
             "direction": "sell",
@@ -157,17 +184,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "US Equity Indexes Recover After Trump Claims Israel, Hezbollah Agreed to De-escalate Fighting in Lebanon",
-          "date": "2026-06-01 21:03",
-          "summary": "US equity indexes rose after President Donald Trump claimed Israel and Hezbollah agreed to dial back",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-01T23:26:09.955424"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T15:39:55.251426"
     },
     "MU": {
       "insider_signal": {
@@ -177,7 +195,7 @@
         "open_market_sells": 10,
         "compensation_grants": 0,
         "net_open_market_value": -3364588.73,
-        "net_open_market_fmt": "$3.4M",
+        "net_open_market_fmt": "-$3.4M",
         "largest_single_transaction": {
           "name": "GOMO STEVEN J",
           "direction": "sell",
@@ -282,17 +300,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
-          "date": "2026-06-01 16:09",
-          "summary": "Micron Technology just became the 12th-biggest company in the world, bigger than Berkshire Hathaway. UBS sees another 56% upside as June 24 earnings near.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-01T23:26:10.818918"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T15:39:56.218220"
     },
     "GOOGL": {
       "insider_signal": {
@@ -301,15 +310,15 @@
         "open_market_buys": 0,
         "open_market_sells": 3,
         "compensation_grants": 7,
-        "net_open_market_value": -2842694.34,
-        "net_open_market_fmt": "$2.8M",
+        "net_open_market_value": -1477850.34,
+        "net_open_market_fmt": "-$1.5M",
         "largest_single_transaction": {
-          "name": "Pichai Sundar",
+          "name": "Schindler Philipp",
           "direction": "sell",
-          "dollar_value": 1403706.0,
-          "dollar_fmt": "$1.4M",
+          "dollar_value": 763691.94,
+          "dollar_fmt": "$764K",
           "date": "2026-05-25",
-          "shares_traded": 3700,
+          "shares_traded": 2013,
           "price_per_share": 379.38
         },
         "notable_transactions": [
@@ -330,22 +339,13 @@
             "date": "2026-05-25",
             "shares_traded": 1780,
             "price_per_share": 379.38
-          },
-          {
-            "name": "Pichai Sundar",
-            "direction": "sell",
-            "dollar_value": 1403706.0,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-25",
-            "shares_traded": 3700,
-            "price_per_share": 379.38
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:11.620604"
+      "scanned_at": "2026-06-02T15:39:57.310511"
     },
     "META": {
       "insider_signal": {
@@ -355,7 +355,7 @@
         "open_market_sells": 10,
         "compensation_grants": 0,
         "net_open_market_value": -2544069.51,
-        "net_open_market_fmt": "$2.5M",
+        "net_open_market_fmt": "-$2.5M",
         "largest_single_transaction": {
           "name": "Mahoney Curtis J.",
           "direction": "sell",
@@ -407,7 +407,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:12.352885"
+      "scanned_at": "2026-06-02T15:39:58.504784"
     },
     "AMZN": {
       "insider_signal": {
@@ -417,7 +417,7 @@
         "open_market_sells": 6,
         "compensation_grants": 4,
         "net_open_market_value": -6563229.41,
-        "net_open_market_fmt": "$6.6M",
+        "net_open_market_fmt": "-$6.6M",
         "largest_single_transaction": {
           "name": "Zapolsky David",
           "direction": "sell",
@@ -486,17 +486,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Up As Trump Says This On Iran; AI Stocks Pop On Anthropic IPO Move (Live Coverage)",
-          "date": "2026-06-01 20:37",
-          "summary": "The Dow Jones index fought back Monday after President Trump spoke on Iran. Nvidia popped. Warren Buffett's Berkshire boosted a stock.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-01T23:26:13.131617"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T15:39:59.453330"
     },
     "TSLA": {
       "insider_signal": {
@@ -506,7 +497,7 @@
         "open_market_sells": 5,
         "compensation_grants": 3,
         "net_open_market_value": -4831487.23,
-        "net_open_market_fmt": "$4.8M",
+        "net_open_market_fmt": "-$4.8M",
         "largest_single_transaction": {
           "name": "Wilson-Thompson Kathleen",
           "direction": "sell",
@@ -567,7 +558,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:13.805810"
+      "scanned_at": "2026-06-02T15:40:00.715026"
     },
     "LLY": {
       "insider_signal": {
@@ -577,7 +568,7 @@
         "open_market_sells": 2,
         "compensation_grants": 0,
         "net_open_market_value": -15668745.2,
-        "net_open_market_fmt": "$15.7M",
+        "net_open_market_fmt": "-$15.7M",
         "largest_single_transaction": {
           "name": "LILLY ENDOWMENT INC",
           "direction": "sell",
@@ -610,17 +601,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Jones Futures, Oil Prices Rise As Trump Makes This Iran Move; Nvidia, Tesla Lead 5 Titans Near Buy Points",
-          "date": "2026-05-31 23:39",
-          "summary": "Crude oil prices rose Sunday as President Trump reportedly stiffened Iran deal terms. Nvidia, Tesla lead five titans near buy points.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-01T23:26:14.508492"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-02T15:40:01.995928"
     },
     "UNH": {
       "insider_signal": {
@@ -630,7 +612,7 @@
         "open_market_sells": 1,
         "compensation_grants": 0,
         "net_open_market_value": -284000.0,
-        "net_open_market_fmt": "$284K",
+        "net_open_market_fmt": "-$284K",
         "largest_single_transaction": {
           "name": "Conway Patrick Hugh",
           "direction": "sell",
@@ -655,7 +637,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:15.172291"
+      "scanned_at": "2026-06-02T15:40:04.300722"
     },
     "JPM": {
       "insider_signal": {
@@ -665,7 +647,7 @@
         "open_market_sells": 8,
         "compensation_grants": 2,
         "net_open_market_value": -11906979.66,
-        "net_open_market_fmt": "$11.9M",
+        "net_open_market_fmt": "-$11.9M",
         "largest_single_transaction": {
           "name": "Erdoes Mary E.",
           "direction": "sell",
@@ -762,7 +744,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-01T23:26:15.867345"
+      "scanned_at": "2026-06-02T15:40:06.287875"
     },
     "GS": {
       "insider_signal": {
@@ -772,7 +754,7 @@
         "open_market_sells": 10,
         "compensation_grants": 0,
         "net_open_market_value": -18136177.88,
-        "net_open_market_fmt": "$18.1M",
+        "net_open_market_fmt": "-$18.1M",
         "largest_single_transaction": {
           "name": "FREDMAN SHEARA J",
           "direction": "sell",
@@ -878,7 +860,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:16.550261"
+      "scanned_at": "2026-06-02T15:40:07.950106"
     },
     "XOM": {
       "insider_signal": {
@@ -904,7 +886,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-01T23:26:17.236490"
+      "scanned_at": "2026-06-02T15:40:13.933278"
     },
     "CVX": {
       "insider_signal": {
@@ -922,6 +904,22 @@
       },
       "trump_mentions": [
         {
+          "headline": "As Trump Predicts Gas Prices Will 'Drop Like A Rock,' Moody's Chief Economist Estimates $100 Billion Iran War Cost To Americans",
+          "date": "2026-06-02 02:02",
+          "summary": "Moody&#39;s warns Trump&#39;s Iran War costs US households $750, delivering a massive economic blow as surging gas prices erase recent tax refunds.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Gavin Newsom Says Trump's Iran War Is Driving Up Gas Prices—'Trump Doesn't Even Bother To Care'",
+          "date": "2026-06-02 00:25",
+          "summary": "Gov. Gavin Newsom criticized Trump for causing disruptions in global energy supply chains as tensions grow between US and Iran.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Elizabeth Warren Says Trump's Iran War Is Costing Americans $800 Million A Day While Oil CEOs Get Richer",
           "date": "2026-06-01 00:09",
           "summary": "Elizabeth Warren criticizes Trump for causing excessive gas prices in the US, accuses oil executives of profiting from the Iran war.",
@@ -930,7 +928,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-01T23:26:17.936793"
+      "scanned_at": "2026-06-02T15:40:16.619468"
     },
     "CAT": {
       "insider_signal": {
@@ -940,7 +938,7 @@
         "open_market_sells": 8,
         "compensation_grants": 0,
         "net_open_market_value": -12968208.1,
-        "net_open_market_fmt": "$13.0M",
+        "net_open_market_fmt": "-$13.0M",
         "largest_single_transaction": {
           "name": "Johnson Denise C",
           "direction": "sell",
@@ -1028,7 +1026,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:18.668424"
+      "scanned_at": "2026-06-02T15:40:19.618474"
     },
     "GE": {
       "insider_signal": {
@@ -1038,7 +1036,7 @@
         "open_market_sells": 1,
         "compensation_grants": 9,
         "net_open_market_value": -159872.58,
-        "net_open_market_fmt": "$160K",
+        "net_open_market_fmt": "-$160K",
         "largest_single_transaction": {
           "name": "Ali Mohamed",
           "direction": "sell",
@@ -1080,7 +1078,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-01T23:26:19.372212"
+      "scanned_at": "2026-06-02T15:40:21.792924"
     },
     "WMT": {
       "insider_signal": {
@@ -1090,7 +1088,7 @@
         "open_market_sells": 8,
         "compensation_grants": 2,
         "net_open_market_value": -122404245.26,
-        "net_open_market_fmt": "$122.4M",
+        "net_open_market_fmt": "-$122.4M",
         "largest_single_transaction": {
           "name": "Walton Family Holdings Trust",
           "direction": "sell",
@@ -1178,7 +1176,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:20.051104"
+      "scanned_at": "2026-06-02T15:40:23.347417"
     },
     "COST": {
       "insider_signal": {
@@ -1195,7 +1193,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:20.752481"
+      "scanned_at": "2026-06-02T15:40:24.998405"
     },
     "FCX": {
       "insider_signal": {
@@ -1212,7 +1210,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:21.450801"
+      "scanned_at": "2026-06-02T15:40:26.633609"
     },
     "NEE": {
       "insider_signal": {
@@ -1236,8 +1234,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:22.110978"
+      "trump_mentions": [
+        {
+          "headline": "As Trump Predicts Gas Prices Will 'Drop Like A Rock,' Moody's Chief Economist Estimates $100 Billion Iran War Cost To Americans",
+          "date": "2026-06-02 02:02",
+          "summary": "Moody&#39;s warns Trump&#39;s Iran War costs US households $750, delivering a massive economic blow as surging gas prices erase recent tax refunds.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-02T15:40:28.505405"
     },
     "PLD": {
       "insider_signal": {
@@ -1272,7 +1279,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-01T23:26:22.794282"
+      "scanned_at": "2026-06-02T15:40:31.061599"
     }
   }
 }
