@@ -28,6 +28,16 @@ from tools.insider_tracker import compute_insider_signal
 from tools.political_signal import get_trump_mentions, has_recent_trump_mention
 from tools.telegram_bot import broadcast_message
 
+COMPANY_NAMES = {
+    "AAPL": "Apple",           "NVDA": "Nvidia",          "MSFT": "Microsoft",
+    "MU":   "Micron",          "GOOGL": "Google",         "META": "Meta",
+    "AMZN": "Amazon",          "TSLA": "Tesla",            "LLY": "Eli Lilly",
+    "UNH":  "UnitedHealth",    "JPM":  "JPMorgan",        "GS":  "Goldman Sachs",
+    "XOM":  "ExxonMobil",      "CVX":  "Chevron",         "CAT": "Caterpillar",
+    "GE":   "GE Aerospace",    "WMT":  "Walmart",         "COST": "Costco",
+    "FCX":  "Freeport-McMoRan","NEE":  "NextEra Energy",  "PLD": "Prologis",
+}
+
 
 def _save_signals(all_signals: dict, date: str) -> None:
     os.makedirs("docs", exist_ok=True)
@@ -56,46 +66,134 @@ def _is_within_hours(date_str: str, hours: int) -> bool:
         return False
 
 
+_ROMAN = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"}
+_SUFFIXES = {"Jr", "Jr.", "Sr", "Sr.", "Phd", "Md"}
+_ENTITY_WORDS = {"TRUST", "INC", "LLC", "CORP", "LP", "FUND", "FOUNDATION", "FAMILY", "PARTNERS"}
+
+
+def _clean_name(raw: str) -> str:
+    """Convert 'LEVINSON ARTHUR D' → 'Arthur D. Levinson'. Entities → generic label."""
+    if not raw:
+        return "Company insider"
+    upper_tokens = raw.upper().split()
+    if any(kw in upper_tokens for kw in _ENTITY_WORDS):
+        return "Company insider (institutional)"
+    parts = []
+    for w in raw.split():
+        upper_w = w.upper()
+        if upper_w in _ROMAN:          # keep roman numerals uppercase: III not Iii
+            parts.append(upper_w)
+        elif w.capitalize() in _SUFFIXES:
+            parts.append(w.capitalize())
+        else:
+            parts.append(w.capitalize())
+    # If last token is a single letter (middle initial), add a period
+    if len(parts) > 1 and len(parts[-1]) == 1:
+        parts[-1] = parts[-1] + "."
+    return " ".join(parts)
+
+
 def _build_alert(strong_signals: list, date: str) -> str:
-    lines = [f"🕵️ <b>INSIDER SCAN — {date}</b>\n"]
+    # Parse date for display
+    try:
+        display_date = datetime.strptime(date, "%Y-%m-%d").strftime("%B %-d, %Y")
+    except Exception:
+        display_date = date
 
-    insider_hits = [
-        (ticker, sig, _) for ticker, sig, _ in strong_signals
-        if sig.get("signal_strength") in ("strong_buy", "strong_sell", "buy", "sell")
+    lines = [
+        f"🕵️ <b>Insider Trading Report — {display_date}</b>",
+        "",
+        "<i>What company insiders did with their own stock this week."
+        " Buys = personal conviction. Sells = usually pre-scheduled, not a warning sign.</i>",
+        "",
     ]
-    insider_hits.sort(key=lambda x: abs(x[1].get("net_open_market_value", 0)), reverse=True)
 
-    if insider_hits:
-        lines.append("<b>Open-Market Insider Activity:</b>")
-        for ticker, sig, _ in insider_hits[:5]:
-            label = sig["signal_strength"].upper().replace("_", " ")
+    # Split into buys vs sells
+    buy_hits  = [(t, s, m) for t, s, m in strong_signals
+                 if s.get("signal_strength") in ("strong_buy", "buy")]
+    sell_hits = [(t, s, m) for t, s, m in strong_signals
+                 if s.get("signal_strength") in ("strong_sell", "sell")]
+    buy_hits.sort( key=lambda x: x[1].get("net_open_market_value", 0), reverse=True)
+    sell_hits.sort(key=lambda x: abs(x[1].get("net_open_market_value", 0)), reverse=True)
+
+    # ── BUYS ──────────────────────────────────────────────
+    if buy_hits:
+        lines.append("✅ <b>INSIDER BUYS</b> — High-conviction signal")
+        for ticker, sig, _ in buy_hits[:4]:
+            company = COMPANY_NAMES.get(ticker, ticker)
             net_fmt = sig.get("net_open_market_fmt", "$0")
-            buys  = sig.get("open_market_buys", 0)
-            sells = sig.get("open_market_sells", 0)
-            lines.append(f"  • <b>{ticker}</b> — {label}  ({buys} buy / {sells} sell, net {net_fmt})")
+            n_buys  = sig.get("open_market_buys", 0)
             largest = sig.get("largest_single_transaction")
-            if largest:
-                name = largest.get("name", "Insider")
-                dv   = largest.get("dollar_fmt", _format_dollar(largest.get("dollar_value", 0)))
-                lines.append(f"    ↳ {name}: {largest['direction']} {dv} on {largest['date']}")
+            who = _clean_name(largest["name"]) if largest else "An insider"
+            lines.append(f"  • <b>{company} ({ticker})</b> — bought {net_fmt.lstrip('+')} on the open market")
+            lines.append(f"    ↳ {who} personally purchased shares — insiders buy when they believe the price will rise.")
+        lines.append("")
+    else:
+        lines.append("✅ <b>INSIDER BUYS</b> — None today.")
         lines.append("")
 
+    # ── SELLS ─────────────────────────────────────────────
+    if sell_hits:
+        lines.append("⚠️ <b>INSIDER SELLS</b> — Usually routine, not a warning")
+        for ticker, sig, _ in sell_hits[:5]:
+            company  = COMPANY_NAMES.get(ticker, ticker)
+            net_fmt  = sig.get("net_open_market_fmt", "$0").lstrip("+")
+            n_sells  = sig.get("open_market_sells", 0)
+            largest  = sig.get("largest_single_transaction")
+            txn_word = "transaction" if n_sells == 1 else "transactions"
+            lines.append(f"  • <b>{company} ({ticker})</b> — sold {net_fmt} across {n_sells} {txn_word}")
+            if largest:
+                who = _clean_name(largest["name"])
+                lines.append(f"    ↳ Largest: {who} sold {largest['dollar_fmt']} on {largest['date']}")
+        lines.append("  <i>Most insider sells are pre-scheduled. Only worry if the CEO starts selling large amounts with no prior pattern.</i>")
+        lines.append("")
+
+    # ── TRUMP / POLITICAL ─────────────────────────────────
     trump_hits = [
-        (ticker, sig, mentions) for ticker, sig, mentions in strong_signals
-        if has_recent_trump_mention(mentions, hours_back=48)
+        (t, s, m) for t, s, m in strong_signals
+        if has_recent_trump_mention(m, hours_back=48)
     ]
     if trump_hits:
-        lines.append("<b>Trump/Political Headlines (last 48h):</b>")
-        for ticker, _, mentions in trump_hits[:5]:
-            recent = next(
-                (m for m in mentions if _is_within_hours(m["date"], 48)), mentions[0]
-            )
-            emoji = "📈" if recent["sentiment_hint"] == "positive" else ("📉" if recent["sentiment_hint"] == "negative" else "⚠️")
-            headline = recent["headline"][:90]
-            lines.append(f"  {emoji} <b>{ticker}</b> — {headline}")
+        lines.append("🇺🇸 <b>TRUMP / POLITICAL NEWS</b>")
+        seen_headlines: set = set()
+        shown = 0
+        for ticker, _, mentions in trump_hits:
+            if shown >= 5:
+                break
+            recent = next((m for m in mentions if _is_within_hours(m["date"], 48)), mentions[0])
+            # Deduplicate: same headline may appear across multiple tickers
+            hl_key = recent["headline"][:60].lower()
+            if hl_key in seen_headlines:
+                continue
+            seen_headlines.add(hl_key)
+            company = COMPANY_NAMES.get(ticker, ticker)
+            sentiment = recent["sentiment_hint"]
+            if sentiment == "positive":
+                emoji, label = "🟢", "Bullish"
+            elif sentiment == "negative":
+                emoji, label = "🔴", "Bearish"
+            else:
+                emoji, label = "⚪", "Watch"
+            hl = recent["headline"]
+            if len(hl) > 75:
+                hl = hl[:72].rsplit(" ", 1)[0] + "…"
+            lines.append(f"  {emoji} <b>{company} ({ticker})</b> — {label}")
+            lines.append(f"    ↳ {hl}")
+            shown += 1
         lines.append("")
 
-    lines.append(f"<i>{len(STOCKS)} stocks scanned. Signals loaded for morning pipeline.</i>")
+    # ── BOTTOM LINE ───────────────────────────────────────
+    buy_tickers  = [COMPANY_NAMES.get(t, t) for t, _, __ in buy_hits]
+    sell_tickers = [COMPANY_NAMES.get(t, t) for t, _, __ in sell_hits]
+
+    if buy_tickers:
+        buy_str = ", ".join(buy_tickers[:3])
+        lines.append(f"📌 <b>Bottom line:</b> Real insider buying at {buy_str}. Worth watching.")
+    elif sell_tickers:
+        lines.append("📌 <b>Bottom line:</b> No insider buying today. Widespread selling but likely all routine.")
+    else:
+        lines.append("📌 <b>Bottom line:</b> Quiet day — no significant insider activity.")
+
     return "\n".join(lines)
 
 
