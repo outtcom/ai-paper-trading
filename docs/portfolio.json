@@ -1,10 +1,10 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 29,
+    "current_day": 30,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-02T21:24:06.796022+00:00",
+    "last_updated": "2026-06-02T22:00:04.256717+00:00",
     "session_number": 2
   },
   "cash": 4838.86,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 1.97,
-    "sortino": 5.91,
-    "calmar": 15.54,
+    "sharpe": 1.96,
+    "sortino": 5.81,
+    "calmar": 15.26,
     "spy_start_price": 686.1,
     "spy_current_price": 759.57,
     "benchmark_return_pct": 10.71,
@@ -803,6 +803,11 @@
     },
     {
       "day": 28,
+      "date": "2026-06-02",
+      "equity": 5268.82
+    },
+    {
+      "day": 29,
       "date": "2026-06-02",
       "equity": 5268.82
     }
@@ -2171,6 +2176,11 @@
       "day": 28,
       "date": "2026-06-02",
       "equity": 5535.42
+    },
+    {
+      "day": 29,
+      "date": "2026-06-02",
+      "equity": 5535.42
     }
   ],
   "dt_equity_curve": [
@@ -2263,6 +2273,11 @@
       "day": 28,
       "date": "2026-06-02",
       "equity": 5291.28
+    },
+    {
+      "day": 29,
+      "date": "2026-06-02",
+      "equity": 5291.28
     }
   ],
   "scalping_equity_curve": [
@@ -2353,6 +2368,11 @@
     },
     {
       "day": 28,
+      "date": "2026-06-02",
+      "equity": 4938.95
+    },
+    {
+      "day": 29,
       "date": "2026-06-02",
       "equity": 4938.95
     }
