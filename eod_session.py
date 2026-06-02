@@ -34,6 +34,7 @@ from tools.session_manager import (
     get_open_scalping_signals,
     get_portfolio,
     get_session_day,
+    open_position,
     partial_close_position,
     record_equity,
     record_spy_equity,
@@ -46,8 +47,8 @@ from tools.session_manager import (
 )
 from tools.telegram_bot import broadcast_message
 
-DEAD_MONEY_DAYS = 3      # close position if held this many days with no progress
-DEAD_MONEY_BAND = 0.01   # "flat" = within ±1% of entry
+DEAD_MONEY_DAYS      = 3     # close position if held this many days with no progress
+DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS days
 
 
 # ---------------------------------------------------------------------------
@@ -151,8 +152,9 @@ def _check_tp_sl(portfolio: dict) -> list:
 
 def _check_time_exits(portfolio: dict) -> list:
     """
-    Dead money rule: close positions held 3+ days that are within ±1% of entry.
-    These are tying up capital with no thesis follow-through.
+    Dead money rule: close positions held 3+ days with gain < +2%.
+    Catches both flat positions (not moving) and tiny gains (AMZN-style 18-day +0.7%).
+    Losers below -2% are handled by stop losses — only close the stagnant ones here.
     """
     exits = []
     for ticker, pos in list(portfolio["positions"].items()):
@@ -160,11 +162,13 @@ def _check_time_exits(portfolio: dict) -> list:
         if days < DEAD_MONEY_DAYS:
             continue
         try:
-            price = get_latest_price(ticker)
-            entry = pos["entry_price"]
-            pct_from_entry = abs(price - entry) / entry
-            if pct_from_entry <= DEAD_MONEY_BAND:
-                print(f"[eod] DEAD MONEY EXIT: {ticker} held {days}d, flat at {pct_from_entry*100:.1f}% from entry")
+            price     = get_latest_price(ticker)
+            entry     = pos["entry_price"]
+            direction = pos.get("direction", "long")
+            pnl_pct   = (price - entry) / entry if direction == "long" else (entry - price) / entry
+
+            if pnl_pct < DEAD_MONEY_THRESHOLD:
+                print(f"[eod] DEAD MONEY EXIT: {ticker} held {days}d, only {pnl_pct*100:+.1f}% — capital reassigned")
                 trade = close_position(ticker, price, "time_exit")
                 trade["current_price"] = price
                 trade["days_held"] = days
@@ -173,6 +177,72 @@ def _check_time_exits(portfolio: dict) -> list:
             print(f"[eod] Time exit check error for {ticker}: {e}")
 
     return exits
+
+
+def _scale_into_winners(portfolio: dict) -> list:
+    """
+    Scale 50% into positions that are +10%+ and still below partial-profit trigger.
+    Only fires if: (a) cash headroom exists, (b) partial not yet taken,
+    (c) position hasn't been scaled before, (d) NOT already at max position cap.
+    Returns list of (ticker, add_qty, price) tuples executed.
+    """
+    SCALE_TRIGGER  = 0.10    # scale in when +10% gain confirmed
+    MAX_SCALE_PCT  = 0.15    # cap add-on at 15% of current cash (conservative)
+    MIN_CASH_RATIO = 0.20    # need at least 20% cash remaining after add
+
+    scaled = []
+    cash   = portfolio.get("cash", 0)
+    equity = portfolio.get("equity", cash or 1)
+
+    for ticker, pos in list(portfolio["positions"].items()):
+        if pos.get("partial_taken"):
+            continue   # already took profit — don't add more
+        if pos.get("scale_taken"):
+            continue   # already scaled into this position
+
+        direction = pos.get("direction", "long")
+        entry     = pos["entry_price"]
+        orig_qty  = pos["qty"]
+
+        try:
+            price   = get_latest_price(ticker)
+            pnl_pct = (price - entry) / entry if direction == "long" else (entry - price) / entry
+
+            if pnl_pct < SCALE_TRIGGER:
+                continue
+
+            # How many shares to add (50% of original qty, minimum 1)
+            add_qty = max(1, orig_qty // 2)
+            cost    = add_qty * price
+
+            # Capital checks
+            if cost > cash * MAX_SCALE_PCT:
+                add_qty = max(1, int(cash * MAX_SCALE_PCT / price))
+                cost    = add_qty * price
+            if cost > cash or (cash - cost) / equity < MIN_CASH_RATIO:
+                print(f"[eod] SCALE {ticker}: insufficient cash (need ${cost:.0f}, have ${cash:.0f})")
+                continue
+
+            print(f"[eod] SCALE INTO {ticker}: adding {add_qty}sh @ ${price:.2f} "
+                  f"(+{pnl_pct:.1%} gain, orig {orig_qty}sh @ ${entry:.2f})")
+            open_position(
+                ticker          = ticker,
+                qty             = add_qty,
+                entry_price     = price,
+                stop_loss_pct   = pos.get("stop_loss_pct", 3) / 100,
+                take_profit_pct = pos.get("stop_loss_pct", 3) / 100 * 2,
+                journal_note    = f"Scale-in: +{add_qty}sh at +{pnl_pct:.1%} momentum confirmation",
+                direction       = direction,
+            )
+            # Mark original position as scaled so we don't double-add
+            portfolio["positions"][ticker]["scale_taken"] = True
+            cash -= cost
+            scaled.append({"ticker": ticker, "add_qty": add_qty, "price": price, "pnl_pct": pnl_pct})
+
+        except Exception as e:
+            print(f"[eod] Scale-in error for {ticker}: {e}")
+
+    return scaled
 
 
 def _agent_line(journal: list, ticker: str) -> str:
@@ -335,6 +405,7 @@ def _build_eod_message(
     session_day: int,
     total_days: int,
     resolved_signals: list = None,
+    scaled_positions: list = None,
 ) -> str:
     initial = portfolio["initial_capital"]
     total_return = round((equity - initial) / initial * 100, 2)
@@ -382,6 +453,13 @@ def _build_eod_message(
             f"Entry: ${trade['entry_price']:.2f} → Exit: ${trade['exit_price']:.2f}\n"
             f"P&amp;L: {sign}${trade['pnl']:.2f} ({sign}{trade['pnl_pct']:.1f}%)\n"
             + agent_line
+        )
+
+    # Scale-in notifications
+    for s in (scaled_positions or []):
+        lines.append(
+            f"📈 <b>SCALED IN — {s['ticker']}</b>  +{s['add_qty']} shares @ ${s['price']:.2f}\n"
+            f"Position up +{s['pnl_pct']*100:.1f}% — adding to winner\n"
         )
 
     # Dead money exits
@@ -524,6 +602,11 @@ def main():
     time_exits = _check_time_exits(portfolio)
     portfolio = get_portfolio()  # reload after time exits
 
+    # Step 4b: Scale into confirmed winners (+10% gain, partial not yet taken)
+    scaled_positions = _scale_into_winners(portfolio)
+    if scaled_positions:
+        portfolio = get_portfolio()  # reload after scale-ins
+
     # Step 5: Update SPY benchmark
     spy_price = None
     try:
@@ -565,6 +648,7 @@ def main():
         portfolio, closed_trades, partial_trades, time_exits,
         trailing_updates, equity, session_day, total_days,
         resolved_signals=resolved_signals,
+        scaled_positions=scaled_positions,
     )
     broadcast_message(msg)
     print(f"[eod] Summary sent. Equity: ${equity:,.2f}")

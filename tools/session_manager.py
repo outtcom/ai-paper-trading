@@ -480,45 +480,83 @@ def partial_close_position(ticker: str, qty_to_close: int, exit_price: float) ->
 
 def update_trailing_stop(ticker: str, current_price: float) -> bool:
     """
-    Ratchet the stop loss as price moves favorably.
-    - Long: stop rises when price makes new highs.
-    - Short: stop falls when price makes new lows.
+    Ratchet the stop loss as price moves favorably — with three tiers:
+
+    Tier 1 — Standard trail (sl_pct below new high):
+      Activates immediately on any new high.
+
+    Tier 2 — Breakeven promotion (+8% gain):
+      Once the position is up 8%, the stop is floored at entry price.
+      Can never turn a winner into a loser after this point.
+
+    Tier 3 — Tight trail (+15% gain):
+      Switches to sl_pct / 2 so gains are locked in more aggressively.
+      Lets big movers (like MU) run while protecting accumulated profit.
+
     Returns True if stop was updated.
     """
+    BREAKEVEN_TRIGGER = 0.08   # promote stop to entry when up 8%
+    TIGHT_TRAIL_TRIGGER = 0.15  # halve the trail percentage when up 15%
+
     p = _migrate(_load())
     pos = p["positions"].get(ticker)
     if not pos:
         return False
 
     p["positions"][ticker]["last_price"] = round(current_price, 2)
-    sl_pct = pos["stop_loss_pct"] / 100
+    sl_pct    = pos["stop_loss_pct"] / 100
     direction = pos.get("direction", "long")
+    entry     = pos["entry_price"]
+    old_sl    = pos["stop_loss"]
 
-    if direction == "short":
-        prev_low = pos.get("lowest_price", pos["entry_price"])
-        if current_price >= prev_low:
-            _save(p)
-            return False
-        p["positions"][ticker]["lowest_price"] = round(current_price, 2)
-        new_sl  = round(current_price * (1 + sl_pct), 2)
-        old_sl  = pos["stop_loss"]
-        if new_sl < old_sl:
-            p["positions"][ticker]["stop_loss"] = new_sl
-            _save(p)
-            print(f"[session] Trailing stop updated SHORT {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (low ${current_price:.2f})")
-            return True
-    else:
-        prev_high = pos.get("highest_price", pos["entry_price"])
-        if current_price <= prev_high:
-            _save(p)
-            return False
-        p["positions"][ticker]["highest_price"] = round(current_price, 2)
-        new_sl  = round(current_price * (1 - sl_pct), 2)
-        old_sl  = pos["stop_loss"]
+    if direction == "long":
+        pnl_pct   = (current_price - entry) / entry
+        prev_high = pos.get("highest_price", entry)
+
+        # Track new high
+        if current_price > prev_high:
+            p["positions"][ticker]["highest_price"] = round(current_price, 2)
+            prev_high = current_price
+
+        # Tier 3: tighter trail once deeply in profit
+        trail_pct = sl_pct / 2 if pnl_pct >= TIGHT_TRAIL_TRIGGER else sl_pct
+
+        # Trail at trail_pct below the highest price seen
+        new_sl = round(prev_high * (1 - trail_pct), 2)
+
+        # Tier 2: breakeven floor — stop can never go below entry once up 8%
+        if pnl_pct >= BREAKEVEN_TRIGGER:
+            new_sl = max(new_sl, entry)
+
         if new_sl > old_sl:
             p["positions"][ticker]["stop_loss"] = new_sl
             _save(p)
-            print(f"[session] Trailing stop updated {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (high ${current_price:.2f})")
+            if new_sl >= entry > old_sl:
+                print(f"[session] BREAKEVEN promoted {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (entry ${entry:.2f}, +{pnl_pct:.1%})")
+            elif pnl_pct >= TIGHT_TRAIL_TRIGGER:
+                print(f"[session] TIGHT trail {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (high ${prev_high:.2f}, +{pnl_pct:.1%})")
+            else:
+                print(f"[session] Trail {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (high ${prev_high:.2f}, +{pnl_pct:.1%})")
+            return True
+
+    else:  # short
+        pnl_pct  = (entry - current_price) / entry
+        prev_low = pos.get("lowest_price", entry)
+
+        if current_price < prev_low:
+            p["positions"][ticker]["lowest_price"] = round(current_price, 2)
+            prev_low = current_price
+
+        trail_pct = sl_pct / 2 if pnl_pct >= TIGHT_TRAIL_TRIGGER else sl_pct
+        new_sl    = round(prev_low * (1 + trail_pct), 2)
+
+        if pnl_pct >= BREAKEVEN_TRIGGER:
+            new_sl = min(new_sl, entry)
+
+        if new_sl < old_sl:
+            p["positions"][ticker]["stop_loss"] = new_sl
+            _save(p)
+            print(f"[session] Trail SHORT {ticker}: SL ${old_sl:.2f} → ${new_sl:.2f} (low ${prev_low:.2f}, +{pnl_pct:.1%})")
             return True
 
     _save(p)
