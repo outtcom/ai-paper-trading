@@ -1,22 +1,76 @@
 {
-  "date": "2026-06-02",
+  "date": "2026-06-03",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -87532032.31,
+        "net_open_market_fmt": "-$87.5M",
+        "largest_single_transaction": {
+          "name": "LEVINSON ARTHUR D",
+          "direction": "sell",
+          "dollar_value": 42550898.39,
+          "dollar_fmt": "$42.6M",
+          "date": "2026-05-06",
+          "shares_traded": 149527,
+          "price_per_share": 284.57
+        },
+        "notable_transactions": [
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 15551000.0,
+            "dollar_fmt": "$15.6M",
+            "date": "2026-05-27",
+            "shares_traded": 50000,
+            "price_per_share": 311.02
+          },
+          {
+            "name": "Borders Ben",
+            "direction": "sell",
+            "dollar_value": 369460,
+            "dollar_fmt": "$369K",
+            "date": "2026-05-08",
+            "shares_traded": 1274,
+            "price_per_share": 290
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 28638823.92,
+            "dollar_fmt": "$28.6M",
+            "date": "2026-05-06",
+            "shares_traded": 100473,
+            "price_per_share": 285.04
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 42550898.39,
+            "dollar_fmt": "$42.6M",
+            "date": "2026-05-06",
+            "shares_traded": 149527,
+            "price_per_share": 284.57
+          },
+          {
+            "name": "Parekh Kevan",
+            "direction": "sell",
+            "dollar_value": 421850,
+            "dollar_fmt": "$422K",
+            "date": "2026-04-23",
+            "shares_traded": 1534,
+            "price_per_share": 275
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:00:34.820110"
+      "scanned_at": "2026-06-03T15:59:34.718906"
     },
     "NVDA": {
       "insider_signal": {
@@ -51,27 +105,36 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:00:36.745477"
+      "scanned_at": "2026-06-03T15:59:35.648052"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
+        "open_market_sells": 6,
         "compensation_grants": 0,
-        "net_open_market_value": -1473108.19,
-        "net_open_market_fmt": "-$1.5M",
+        "net_open_market_value": -8618422.19,
+        "net_open_market_fmt": "-$8.6M",
         "largest_single_transaction": {
-          "name": "Coleman Amy",
+          "name": "Althoff Judson",
           "direction": "sell",
-          "dollar_value": 536202.04,
-          "dollar_fmt": "$536K",
-          "date": "2026-04-15",
-          "shares_traded": 1364,
-          "price_per_share": 393.11
+          "dollar_value": 7145314.0,
+          "dollar_fmt": "$7.1M",
+          "date": "2026-06-01",
+          "shares_traded": 15500,
+          "price_per_share": 460.988
         },
         "notable_transactions": [
+          {
+            "name": "Althoff Judson",
+            "direction": "sell",
+            "dollar_value": 7145314.0,
+            "dollar_fmt": "$7.1M",
+            "date": "2026-06-01",
+            "shares_traded": 15500,
+            "price_per_share": 460.988
+          },
           {
             "name": "Coleman Amy",
             "direction": "sell",
@@ -113,7 +176,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:00:48.144224"
+      "scanned_at": "2026-06-03T15:59:36.645022"
     },
     "MU": {
       "insider_signal": {
@@ -122,114 +185,123 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -3364588.73,
-        "net_open_market_fmt": "-$3.4M",
+        "net_open_market_value": -6808546.09,
+        "net_open_market_fmt": "-$6.8M",
         "largest_single_transaction": {
-          "name": "GOMO STEVEN J",
+          "name": "MEHROTRA SANJAY",
           "direction": "sell",
-          "dollar_value": 787600.0,
-          "dollar_fmt": "$788K",
-          "date": "2026-05-11",
-          "shares_traded": 1000,
-          "price_per_share": 787.6
+          "dollar_value": 1756767.9,
+          "dollar_fmt": "$1.8M",
+          "date": "2026-05-29",
+          "shares_traded": 1810,
+          "price_per_share": 970.59
         },
         "notable_transactions": [
           {
-            "name": "GOMO STEVEN J",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 787600.0,
-            "dollar_fmt": "$788K",
-            "date": "2026-05-11",
-            "shares_traded": 1000,
-            "price_per_share": 787.6
+            "dollar_value": 78349.6,
+            "dollar_fmt": "$78K",
+            "date": "2026-05-29",
+            "shares_traded": 80,
+            "price_per_share": 979.37
           },
           {
-            "name": "GOMO STEVEN J",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 786470.0,
-            "dollar_fmt": "$786K",
-            "date": "2026-05-11",
-            "shares_traded": 1000,
-            "price_per_share": 786.47
+            "dollar_value": 532004.8,
+            "dollar_fmt": "$532K",
+            "date": "2026-05-29",
+            "shares_traded": 544,
+            "price_per_share": 977.95
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 65367.6,
-            "dollar_fmt": "$65K",
-            "date": "2026-05-01",
-            "shares_traded": 120,
-            "price_per_share": 544.73
+            "dollar_value": 162140.5,
+            "dollar_fmt": "$162K",
+            "date": "2026-05-29",
+            "shares_traded": 166,
+            "price_per_share": 976.75
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 173968.0,
-            "dollar_fmt": "$174K",
-            "date": "2026-05-01",
-            "shares_traded": 320,
-            "price_per_share": 543.65
+            "dollar_value": 644851.77,
+            "dollar_fmt": "$645K",
+            "date": "2026-05-29",
+            "shares_traded": 661,
+            "price_per_share": 975.57
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 169874.49,
-            "dollar_fmt": "$170K",
-            "date": "2026-05-01",
-            "shares_traded": 313,
-            "price_per_share": 542.73
+            "dollar_value": 535942.0,
+            "dollar_fmt": "$536K",
+            "date": "2026-05-29",
+            "shares_traded": 550,
+            "price_per_share": 974.44
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 410593.44,
-            "dollar_fmt": "$411K",
-            "date": "2026-05-01",
-            "shares_traded": 758,
-            "price_per_share": 541.68
-          },
-          {
-            "name": "RAY MICHAEL CHARLES",
-            "direction": "sell",
-            "dollar_value": 302719.2,
-            "dollar_fmt": "$303K",
-            "date": "2026-05-01",
+            "dollar_value": 545300.0,
+            "dollar_fmt": "$545K",
+            "date": "2026-05-29",
             "shares_traded": 560,
-            "price_per_share": 540.57
+            "price_per_share": 973.75
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 366853.2,
-            "dollar_fmt": "$367K",
-            "date": "2026-05-01",
-            "shares_traded": 680,
-            "price_per_share": 539.49
+            "dollar_value": 610799.08,
+            "dollar_fmt": "$611K",
+            "date": "2026-05-29",
+            "shares_traded": 628,
+            "price_per_share": 972.61
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 150808.0,
-            "dollar_fmt": "$151K",
-            "date": "2026-05-01",
-            "shares_traded": 280,
-            "price_per_share": 538.6
+            "dollar_value": 1335308.16,
+            "dollar_fmt": "$1.3M",
+            "date": "2026-05-29",
+            "shares_traded": 1374,
+            "price_per_share": 971.84
           },
           {
-            "name": "RAY MICHAEL CHARLES",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 150334.8,
-            "dollar_fmt": "$150K",
-            "date": "2026-05-01",
-            "shares_traded": 280,
-            "price_per_share": 536.91
+            "dollar_value": 1756767.9,
+            "dollar_fmt": "$1.8M",
+            "date": "2026-05-29",
+            "shares_traded": 1810,
+            "price_per_share": 970.59
+          },
+          {
+            "name": "MEHROTRA SANJAY",
+            "direction": "sell",
+            "dollar_value": 607082.28,
+            "dollar_fmt": "$607K",
+            "date": "2026-05-29",
+            "shares_traded": 626,
+            "price_per_share": 969.78
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:01:02.760861"
+      "trump_mentions": [
+        {
+          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
+          "date": "2026-06-03 11:01",
+          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:37.386311"
     },
     "GOOGL": {
       "insider_signal": {
@@ -272,8 +344,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:01:14.236268"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Fall, Oil Prices Rise As Trump Sets New Hormuz Target Date; Palo Alto, Marvell Are Early Movers",
+          "date": "2026-06-03 11:54",
+          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:38.130525"
     },
     "META": {
       "insider_signal": {
@@ -335,41 +416,167 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:01:26.207797"
+      "scanned_at": "2026-06-03T15:59:38.888365"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
+        "open_market_sells": 6,
+        "compensation_grants": 4,
+        "net_open_market_value": -6563229.41,
+        "net_open_market_fmt": "-$6.6M",
+        "largest_single_transaction": {
+          "name": "Zapolsky David",
+          "direction": "sell",
+          "dollar_value": 2489273.1,
+          "dollar_fmt": "$2.5M",
+          "date": "2026-05-22",
+          "shares_traded": 9270,
+          "price_per_share": 268.53
+        },
+        "notable_transactions": [
+          {
+            "name": "Zapolsky David",
+            "direction": "sell",
+            "dollar_value": 2489273.1,
+            "dollar_fmt": "$2.5M",
+            "date": "2026-05-22",
+            "shares_traded": 9270,
+            "price_per_share": 268.53
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 115022.64,
+            "dollar_fmt": "$115K",
+            "date": "2026-05-21",
+            "shares_traded": 433,
+            "price_per_share": 265.6412
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 671374.43,
+            "dollar_fmt": "$671K",
+            "date": "2026-05-21",
+            "shares_traded": 2534,
+            "price_per_share": 264.9465
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 974009.99,
+            "dollar_fmt": "$974K",
+            "date": "2026-05-21",
+            "shares_traded": 3689,
+            "price_per_share": 264.0309
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 1198522.18,
+            "dollar_fmt": "$1.2M",
+            "date": "2026-05-21",
+            "shares_traded": 4554,
+            "price_per_share": 263.1801
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 1115027.07,
+            "dollar_fmt": "$1.1M",
+            "date": "2026-05-21",
+            "shares_traded": 4257,
+            "price_per_share": 261.9279
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:01:37.591774"
+      "scanned_at": "2026-06-03T15:59:39.629543"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
+        "open_market_buys": 2,
+        "open_market_sells": 5,
+        "compensation_grants": 3,
+        "net_open_market_value": -4831487.23,
+        "net_open_market_fmt": "-$4.8M",
+        "largest_single_transaction": {
+          "name": "Wilson-Thompson Kathleen",
+          "direction": "sell",
+          "dollar_value": 2631561.87,
+          "dollar_fmt": "$2.6M",
+          "date": "2026-04-30",
+          "shares_traded": 6896,
+          "price_per_share": 381.607
+        },
+        "notable_transactions": [
+          {
+            "name": "Taneja Vaibhav",
+            "direction": "sell",
+            "dollar_value": 1350000,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-05-13",
+            "shares_traded": 3000,
+            "price_per_share": 450
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 169084.96,
+            "dollar_fmt": "$169K",
+            "date": "2026-04-30",
+            "shares_traded": 440,
+            "price_per_share": 384.284
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 475678.88,
+            "dollar_fmt": "$476K",
+            "date": "2026-04-30",
+            "shares_traded": 1240,
+            "price_per_share": 383.612
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 260041.52,
+            "dollar_fmt": "$260K",
+            "date": "2026-04-30",
+            "shares_traded": 680,
+            "price_per_share": 382.414
+          },
+          {
+            "name": "Wilson-Thompson Kathleen",
+            "direction": "sell",
+            "dollar_value": 2631561.87,
+            "dollar_fmt": "$2.6M",
+            "date": "2026-04-30",
+            "shares_traded": 6896,
+            "price_per_share": 381.607
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:01:58.423515"
+      "trump_mentions": [
+        {
+          "headline": "Trump Criticized Canada's China EV Deal—Elon Musk's Tesla Could Be Among Its Biggest Winners",
+          "date": "2026-06-03 01:31",
+          "summary": "Tesla Inc. could be reaping the benefits of the China-Canada EV agreement despite earlier criticism from President Donald Trump following the deal. Tesla Accounts For More Than 10% Of Chinese Imports ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:40.332547"
     },
     "LLY": {
       "insider_signal": {
@@ -412,8 +619,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:02:09.386744"
+      "trump_mentions": [
+        {
+          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
+          "date": "2026-06-03 11:01",
+          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:41.076661"
     },
     "UNH": {
       "insider_signal": {
@@ -448,7 +664,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:02:20.308863"
+      "scanned_at": "2026-06-03T15:59:41.985224"
     },
     "JPM": {
       "insider_signal": {
@@ -545,25 +761,133 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:02:31.220410"
+      "trump_mentions": [
+        {
+          "headline": "Why Is IBM Up 30% In A Week? An Old Trump Clip May Have Something To Do With It",
+          "date": "2026-06-02 15:13",
+          "summary": "Trump&#39;s praise of IBM CEO helped power stock&#39;s biggest weekly move in years. IBM&#39;s $10B quantum investment &amp; AI initiatives also driving growth.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:42.712394"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
+        "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
+        "net_open_market_value": -18136177.88,
+        "net_open_market_fmt": "-$18.1M",
+        "largest_single_transaction": {
+          "name": "FREDMAN SHEARA J",
+          "direction": "sell",
+          "dollar_value": 7596094.86,
+          "dollar_fmt": "$7.6M",
+          "date": "2026-05-01",
+          "shares_traded": 8166,
+          "price_per_share": 930.21
+        },
+        "notable_transactions": [
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 1392599.88,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-05-14",
+            "shares_traded": 1428,
+            "price_per_share": 975.21
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 1325360.8,
+            "dollar_fmt": "$1.3M",
+            "date": "2026-05-14",
+            "shares_traded": 1360,
+            "price_per_share": 974.53
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 1518176.4,
+            "dollar_fmt": "$1.5M",
+            "date": "2026-05-14",
+            "shares_traded": 1560,
+            "price_per_share": 973.19
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 2439475.61,
+            "dollar_fmt": "$2.4M",
+            "date": "2026-05-14",
+            "shares_traded": 2509,
+            "price_per_share": 972.29
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 74428.0,
+            "dollar_fmt": "$74K",
+            "date": "2026-05-01",
+            "shares_traded": 80,
+            "price_per_share": 930.35
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 435104.28,
+            "dollar_fmt": "$435K",
+            "date": "2026-05-01",
+            "shares_traded": 468,
+            "price_per_share": 929.71
+          },
+          {
+            "name": "Ruemmler Kathryn H.",
+            "direction": "sell",
+            "dollar_value": 125394.75,
+            "dollar_fmt": "$125K",
+            "date": "2026-05-01",
+            "shares_traded": 135,
+            "price_per_share": 928.85
+          },
+          {
+            "name": "SOLOMON DAVID M",
+            "direction": "sell",
+            "dollar_value": 1080250.0,
+            "dollar_fmt": "$1.1M",
+            "date": "2026-05-01",
+            "shares_traded": 1160,
+            "price_per_share": 931.25
+          },
+          {
+            "name": "SOLOMON DAVID M",
+            "direction": "sell",
+            "dollar_value": 2149293.3,
+            "dollar_fmt": "$2.1M",
+            "date": "2026-05-01",
+            "shares_traded": 2310,
+            "price_per_share": 930.43
+          },
+          {
+            "name": "FREDMAN SHEARA J",
+            "direction": "sell",
+            "dollar_value": 7596094.86,
+            "dollar_fmt": "$7.6M",
+            "date": "2026-05-01",
+            "shares_traded": 8166,
+            "price_per_share": 930.21
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:02:52.094829"
+      "scanned_at": "2026-06-03T15:59:43.580772"
     },
     "XOM": {
       "insider_signal": {
@@ -589,7 +913,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T17:03:01.966780"
+      "scanned_at": "2026-06-03T15:59:44.309440"
     },
     "CVX": {
       "insider_signal": {
@@ -607,6 +931,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Bernie Sanders Says Trump Is Helping 'Big Oil' While The Planet Nears Dangerous Temperature Records",
+          "date": "2026-06-03 01:53",
+          "summary": "Sanders accuses Trump of downplaying climate crisis, says White House helping oil companies make money at the expense of rising temperatures.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "As Trump Predicts Gas Prices Will 'Drop Like A Rock,' Moody's Chief Economist Estimates $100 Billion Iran War Cost To Americans",
           "date": "2026-06-02 02:02",
           "summary": "Moody&#39;s warns Trump&#39;s Iran War costs US households $750, delivering a massive economic blow as surging gas prices erase recent tax refunds.",
@@ -623,7 +955,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T17:03:15.259804"
+      "scanned_at": "2026-06-03T15:59:45.014451"
     },
     "CAT": {
       "insider_signal": {
@@ -720,8 +1052,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:03:21.008692"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Fall, Oil Prices Rise As Trump Sets New Hormuz Target Date; Palo Alto, Marvell Are Early Movers",
+          "date": "2026-06-03 11:54",
+          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Dow Jones Futures: Oil Prices Rise, Palo Alto Falls On Earnings; New Trump Tariffs Coming",
+          "date": "2026-06-03 03:07",
+          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "US Lowers Tariffs to Boost Investment in Industrial Economy",
+          "date": "2026-06-02 10:00",
+          "summary": "(Bloomberg) -- The White House said it will reduce tariffs on farm and construction equipment such as harvesters and forklifts, in an effort to boost investment in the industrial economy through next ",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:45.763694"
     },
     "GE": {
       "insider_signal": {
@@ -773,7 +1130,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T17:03:25.946640"
+      "scanned_at": "2026-06-03T15:59:46.518907"
     },
     "WMT": {
       "insider_signal": {
@@ -870,8 +1227,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:03:33.562221"
+      "trump_mentions": [
+        {
+          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
+          "date": "2026-06-03 11:01",
+          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-03T15:59:47.252680"
     },
     "COST": {
       "insider_signal": {
@@ -897,7 +1263,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T17:03:38.168290"
+      "scanned_at": "2026-06-03T15:59:47.925329"
     },
     "FCX": {
       "insider_signal": {
@@ -905,7 +1271,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 0,
+        "compensation_grants": 9,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -914,7 +1280,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:03:41.524066"
+      "scanned_at": "2026-06-03T15:59:48.577095"
     },
     "NEE": {
       "insider_signal": {
@@ -948,7 +1314,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-02T17:03:47.740169"
+      "scanned_at": "2026-06-03T15:59:49.235172"
     },
     "PLD": {
       "insider_signal": {
@@ -983,7 +1349,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-02T17:03:55.491569"
+      "scanned_at": "2026-06-03T15:59:49.937730"
     }
   }
 }
