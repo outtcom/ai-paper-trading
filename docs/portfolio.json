@@ -4,7 +4,7 @@
     "current_day": 30,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-03T17:13:38.661734+00:00",
+    "last_updated": "2026-06-03T18:02:58.368550+00:00",
     "session_number": 2
   },
   "cash": 3363.32,
@@ -31,7 +31,7 @@
       "qty": 2,
       "entry_price": 201.05,
       "cost_basis": 402.1,
-      "last_price": 214.98,
+      "last_price": 210.96,
       "stop_loss": 204.23,
       "take_profit": 221.16,
       "partial_profit_price": 211.1,
@@ -48,7 +48,7 @@
       "qty": 3,
       "entry_price": 285.34,
       "cost_basis": 856.02,
-      "last_price": 285.34,
+      "last_price": 284.06,
       "stop_loss": 271.07,
       "take_profit": 313.87,
       "partial_profit_price": 299.61,
@@ -65,7 +65,7 @@
       "qty": 2,
       "entry_price": 309.76,
       "cost_basis": 619.52,
-      "last_price": 309.76,
+      "last_price": 309.86,
       "stop_loss": 288.08,
       "take_profit": 353.13,
       "partial_profit_price": 331.44,
@@ -2209,10 +2209,15 @@
       "rrr": 2.0,
       "rationale": "10AM Momentum LONG | OR: $600.27\u2013$614.30 (2.3% range) | Breakout @ $616.25 | Vol 2.0\u00d7 OR | TP=4.0% SL=2.0% RRR=2.0 | Auto-close noon ET",
       "generated_date": "2026-06-03",
-      "status": "open",
+      "status": "closed",
       "id": "META_2026-06-03_long",
       "qty": 4,
-      "allocated_usd": 2465.0
+      "allocated_usd": 2465.0,
+      "pnl_pct": -2.0,
+      "pnl_usd": -49.32,
+      "exit_price": 603.92,
+      "exit_date": "2026-06-03",
+      "outcome": "loss"
     },
     {
       "signal_type": "scalping_momentum",
@@ -2226,10 +2231,15 @@
       "rrr": 2.0,
       "rationale": "10AM Momentum SHORT | OR: $253.42\u2013$257.09 (1.4% range) | Breakout @ $252.72 | Vol 1.2\u00d7 OR | TP=3.5% SL=1.7% RRR=2.0 | Auto-close noon ET",
       "generated_date": "2026-06-03",
-      "status": "open",
+      "status": "closed",
       "id": "AMZN_2026-06-03_short",
       "qty": 4,
-      "allocated_usd": 1010.88
+      "allocated_usd": 1010.88,
+      "pnl_pct": 1.73,
+      "pnl_usd": 17.48,
+      "exit_price": 257.09,
+      "exit_date": "2026-06-03",
+      "outcome": "win"
     },
     {
       "signal_type": "scalping_momentum",
@@ -2243,10 +2253,15 @@
       "rrr": 2.0,
       "rationale": "10AM Momentum LONG | OR: $912.39\u2013$928.55 (1.8% range) | Breakout @ $930.38 | Vol 1.2\u00d7 OR | TP=3.9% SL=1.9% RRR=2.0 | Auto-close noon ET",
       "generated_date": "2026-06-03",
-      "status": "open",
+      "status": "closed",
       "id": "CAT_2026-06-03_long",
       "qty": 1,
-      "allocated_usd": 930.38
+      "allocated_usd": 930.38,
+      "pnl_pct": -1.93,
+      "pnl_usd": -17.99,
+      "exit_price": 912.39,
+      "exit_date": "2026-06-03",
+      "outcome": "loss"
     },
     {
       "signal_type": "scalping_momentum",
@@ -2260,10 +2275,15 @@
       "rrr": 2.0,
       "rationale": "10AM Momentum LONG | OR: $600.27\u2013$614.30 (2.3% range) | Breakout @ $616.25 | Vol 2.0\u00d7 OR | TP=4.0% SL=2.0% RRR=2.0 | Auto-close noon ET",
       "generated_date": "2026-06-03",
-      "status": "open",
+      "status": "closed",
       "id": "META_2026-06-03_long",
       "qty": 1,
-      "allocated_usd": 616.25
+      "allocated_usd": 616.25,
+      "pnl_pct": -2.0,
+      "pnl_usd": -12.33,
+      "exit_price": 603.92,
+      "exit_date": "2026-06-03",
+      "outcome": "loss"
     }
   ],
   "day_trade_capital": {
@@ -2273,8 +2293,8 @@
   },
   "scalping_capital": {
     "initial": 5000.0,
-    "cash": -83.56,
-    "equity": 4938.95,
+    "cash": 4876.79,
+    "equity": 4876.79,
     "signals_fired": 1,
     "closed_signals": 1
   },
