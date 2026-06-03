@@ -120,12 +120,13 @@ def _build_alert(strong_signals: list, date: str) -> str:
     if buy_hits:
         lines.append("✅ <b>INSIDER BUYS</b> — High-conviction signal")
         for ticker, sig, _ in buy_hits[:4]:
-            company = COMPANY_NAMES.get(ticker, ticker)
-            net_fmt = sig.get("net_open_market_fmt", "$0")
-            n_buys  = sig.get("open_market_buys", 0)
-            largest = sig.get("largest_single_transaction")
-            who = _clean_name(largest["name"]) if largest else "An insider"
-            lines.append(f"  • <b>{company} ({ticker})</b> — bought {net_fmt.lstrip('+')} on the open market")
+            company  = COMPANY_NAMES.get(ticker, ticker)
+            net_fmt  = sig.get("net_open_market_fmt", "$0")
+            largest  = sig.get("largest_single_transaction")
+            who      = _clean_name(largest["name"]) if largest else "An insider"
+            strength = sig.get("signal_strength", "buy")
+            sentiment_tag = "🟢 <b>Strongly Bullish</b>" if strength == "strong_buy" else "🟢 <b>Bullish</b>"
+            lines.append(f"  • <b>{company} ({ticker})</b> — {sentiment_tag} — bought {net_fmt.lstrip('+')} on the open market")
             lines.append(f"    ↳ {who} personally purchased shares — insiders buy when they believe the price will rise.")
         lines.append("")
     else:
@@ -141,7 +142,9 @@ def _build_alert(strong_signals: list, date: str) -> str:
             n_sells  = sig.get("open_market_sells", 0)
             largest  = sig.get("largest_single_transaction")
             txn_word = "transaction" if n_sells == 1 else "transactions"
-            lines.append(f"  • <b>{company} ({ticker})</b> — sold {net_fmt} across {n_sells} {txn_word}")
+            strength = sig.get("signal_strength", "sell")
+            sentiment_tag = "🔴 <b>Bearish signal</b>" if strength == "strong_sell" else "🟡 <b>Mildly bearish (likely routine)</b>"
+            lines.append(f"  • <b>{company} ({ticker})</b> — {sentiment_tag} — sold {net_fmt} across {n_sells} {txn_word}")
             if largest:
                 who = _clean_name(largest["name"])
                 lines.append(f"    ↳ Largest: {who} sold {largest['dollar_fmt']} on {largest['date']}")

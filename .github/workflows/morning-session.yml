@@ -69,7 +69,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GROUP_CHAT_ID: ${{ secrets.TELEGRAM_GROUP_CHAT_ID }}
         run: |
-          TEXT=$'⏰ <b>Morning Session starting</b> — '"$(date -u +'%Y-%m-%d')"$'\nAI pipeline running on 17 tickers. Trade card in ~15-20 min.'
+          TEXT=$'⏰ <b>Morning Session starting</b> — '"$(date -u +'%Y-%m-%d')"$'\nAI pipeline running on 21 stocks. Trade card in ~15-20 min.'
           curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${CHAT_ID}" \
             --data-urlencode "parse_mode=HTML" \

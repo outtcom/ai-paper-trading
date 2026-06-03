@@ -37,7 +37,7 @@ that is done by the specialized agents. Your job is to:
 | Fundamental, Sentiment, Technical Analysts | `groq/llama-3.3-70b-versatile` | Groq | Structured formatting, 5× cheaper than Haiku |
 | Bull/Bear Researchers | `openai/gpt-4o-mini` | OpenAI | Logical argumentation at low cost |
 | Trader | `claude-sonnet-4-6` | Anthropic | Best synthesis/cost balance |
-| Risk Manager | `groq/llama-3.1-70b-versatile` | Groq | Structured JSON output, no need for premium model |
+| Risk Manager | `groq/llama-3.3-70b-versatile` | Groq | Structured JSON output, no need for premium model |
 | Fund Manager | `claude-opus-4-6` | Anthropic | Non-negotiable — highest-stakes final gate |
 
 **Cost profile: ~$0.60/day (down from ~$5.00/day, 88% reduction)**
@@ -78,7 +78,8 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 |---|---|---|
 | Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
 | Morning Session | Mon–Fri 9:45 AM (cron 7:30 AM EDT + ~2h15min queue) | `morning_session.py` |
-| ICT FVG Scalping Scan | Mon–Fri 10:00 AM | `scalping_scan.py` |
+| ICT FVG Scalping Scan | Mon–Fri ~10:30 AM | `scalping_scan.py` |
+| Insider Activity + Political Signal Scan | Mon–Fri ~11:15 AM | `insider_scan.py` |
 | Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
 | End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
@@ -159,6 +160,10 @@ Served via GitHub Pages. Refreshes every 60 s from `portfolio.json`.
 | Same-sector filter blocked all candidates when severely under-deployed | `_is_same_sector_open()` fired even with 80%+ cash, locking out entire sectors (all 7 Session 2 trades were Tech, so second Tech trade was always blocked). Fix (2026-05-19): filter now only enforces when `cash_ratio < 0.60`. When critically under-deployed, same-sector is allowed; same-day dedup still prevents two new same-sector entries via `seen_sectors` in `_pick_top_n`. |
 | Strategy Consultant pacing threshold too loose, alpha urgency was label-only | 15% pacing gap threshold meant 13% behind said "on track". Alpha urgency was a string label, not a multiplier constraint. Fix (2026-05-19): threshold lowered to 10%; computed `min_multiplier` (1.0/1.2/1.4 based on pacing, up to 1.3 for critical alpha) passed into context as hard floor the model MUST NOT go below. |
 | Watchlist had only 1 ticker per sector — Energy/Healthcare never traded | SECTOR_MAP had 1 ticker for Energy (XOM), Healthcare (LLY), Financials (JPM), etc. With same-sector filter active, a single bad day for that ticker = zero candidates from that sector. Fix (2026-05-19): added CVX, UNH, GS, MU, TSLA, GE, COST — 2 tickers per major sector so the pipeline always has a fallback within each sector. |
+| All daily workflows lacked `timeout-minutes` — hung jobs blocked runners for up to 6h | Added `timeout-minutes: 30` to all 8 workflows that were missing it: `eod-session`, `premarket-check`, `midday-check`, `preclose-alert`, `scalping-scan`, `weekly-briefing`, `insider-scan`, `qa-analyst`. `morning-session` already had 60 min (needs market-open wait). |
+| Scalping scan and insider scan fired at identical cron times — competed for free-tier runners | Both used `30 11 * * 1-5` (EDT). Fixed (2026-06-03): insider scan offset to `45 11 * * 1-5` — fires 15 min later, arrives ~11:15 AM ET instead of 11:00 AM ET. |
+| Insider Telegram notification had no bullish/bearish sentiment label | Buy section showed amount and who bought but no sentiment signal. Fixed (2026-06-03): buys now show `🟢 Strongly Bullish` / `🟢 Bullish`; sells show `🔴 Bearish signal` / `🟡 Mildly bearish (likely routine)` based on `signal_strength` field. |
+| "17 tickers" hardcoded in morning-session.yml notification was stale | SECTOR_MAP now has 21 stocks (expanded in Session 4). Fixed (2026-06-03): updated to "21 stocks". |
 
 ## API Credit Notes
 
@@ -190,6 +195,10 @@ Configured in `C:\Users\Fahad\.claude\settings.json` (global, applies to all pro
 | `SessionStart` | Loads superpowers plugin context |
 
 Sound file: `C:\Windows\Media\chimes.wav` (async, non-blocking)
+
+**Env settings (also in `settings.json`):**
+- `CLAUDE_CODE_DISABLE_1M_CONTEXT=1` — blocks 1M context window; prevents unexpected billing
+- `autoCompactEnabled: true` — auto-compacts conversation when context fills, keeping model quality high
 
 ---
 
