@@ -4,7 +4,7 @@
     "current_day": 32,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-03T22:04:39.623958+00:00",
+    "last_updated": "2026-06-04T15:38:21.123513+00:00",
     "session_number": 2
   },
   "cash": 3363.32,
@@ -2294,6 +2294,23 @@
       "exit_price": 603.92,
       "exit_date": "2026-06-03",
       "outcome": "loss"
+    },
+    {
+      "signal_type": "scalping_momentum",
+      "ticker": "GOOGL",
+      "direction": "long",
+      "entry_price": 368.19,
+      "target_price": 382.92,
+      "stop_price": 360.83,
+      "target_pct": 4.0,
+      "stop_pct": 2.0,
+      "rrr": 2.0,
+      "rationale": "10AM Momentum LONG | OR: $358.30\u2013$367.14 (2.4% range) | Breakout @ $368.19 | Vol 1.6\u00d7 OR | TP=4.0% SL=2.0% RRR=2.0 | Auto-close noon ET",
+      "generated_date": "2026-06-04",
+      "status": "open",
+      "id": "GOOGL_2026-06-04_long",
+      "qty": 6,
+      "allocated_usd": 2209.14
     }
   ],
   "day_trade_capital": {
@@ -2303,7 +2320,7 @@
   },
   "scalping_capital": {
     "initial": 5000.0,
-    "cash": 4876.79,
+    "cash": 2667.65,
     "equity": 4876.79,
     "signals_fired": 1,
     "closed_signals": 1
