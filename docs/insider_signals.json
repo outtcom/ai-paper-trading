@@ -70,7 +70,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:23.699341"
+      "scanned_at": "2026-06-04T16:05:44.918225"
     },
     "NVDA": {
       "insider_signal": {
@@ -104,25 +104,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
-          "date": "2026-06-04 13:35",
-          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "When Trump Cuts Tariffs on Farm and Construction Equipment, These 5 Stocks Win Big",
-          "date": "2026-06-04 13:04",
-          "summary": "The Trump administration is about to hand five equipment makers a margin gift, and the window to position is closing fast. I’ve been tracking this tariff-relief setup across the industrial complex for",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-04T14:18:24.424215"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T16:05:47.289989"
     },
     "MSFT": {
       "insider_signal": {
@@ -202,7 +185,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:25.249318"
+      "scanned_at": "2026-06-04T16:05:48.047355"
     },
     "MU": {
       "insider_signal": {
@@ -318,7 +301,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:26.185449"
+      "scanned_at": "2026-06-04T16:05:51.284612"
     },
     "GOOGL": {
       "insider_signal": {
@@ -371,7 +354,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:26.947562"
+      "scanned_at": "2026-06-04T16:05:53.025947"
     },
     "META": {
       "insider_signal": {
@@ -469,7 +452,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:27.858760"
+      "scanned_at": "2026-06-04T16:05:58.630348"
     },
     "AMZN": {
       "insider_signal": {
@@ -558,7 +541,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:28.856009"
+      "scanned_at": "2026-06-04T16:06:00.646009"
     },
     "TSLA": {
       "insider_signal": {
@@ -629,7 +612,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:29.567275"
+      "scanned_at": "2026-06-04T16:06:02.672994"
     },
     "LLY": {
       "insider_signal": {
@@ -673,7 +656,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:30.308286"
+      "scanned_at": "2026-06-04T16:06:04.401308"
     },
     "UNH": {
       "insider_signal": {
@@ -708,7 +691,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:30.975615"
+      "scanned_at": "2026-06-04T16:06:07.230353"
     },
     "JPM": {
       "insider_signal": {
@@ -806,7 +789,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:31.731304"
+      "scanned_at": "2026-06-04T16:06:09.653920"
     },
     "GS": {
       "insider_signal": {
@@ -922,7 +905,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:32.419791"
+      "scanned_at": "2026-06-04T16:06:12.795414"
     },
     "XOM": {
       "insider_signal": {
@@ -939,7 +922,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:33.339915"
+      "scanned_at": "2026-06-04T16:06:16.701359"
     },
     "CVX": {
       "insider_signal": {
@@ -981,7 +964,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:34.437160"
+      "scanned_at": "2026-06-04T16:06:18.165208"
     },
     "CAT": {
       "insider_signal": {
@@ -1120,7 +1103,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:38.082712"
+      "scanned_at": "2026-06-04T16:06:19.564464"
     },
     "GE": {
       "insider_signal": {
@@ -1164,7 +1147,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:48.331487"
+      "scanned_at": "2026-06-04T16:06:22.811482"
     },
     "WMT": {
       "insider_signal": {
@@ -1262,7 +1245,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:18:55.783631"
+      "scanned_at": "2026-06-04T16:06:24.482337"
     },
     "COST": {
       "insider_signal": {
@@ -1288,7 +1271,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-04T14:18:58.217655"
+      "scanned_at": "2026-06-04T16:06:26.235666"
     },
     "FCX": {
       "insider_signal": {
@@ -1305,7 +1288,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:19:00.619755"
+      "scanned_at": "2026-06-04T16:06:29.510847"
     },
     "NEE": {
       "insider_signal": {
@@ -1339,7 +1322,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T14:19:03.031457"
+      "scanned_at": "2026-06-04T16:06:32.118554"
     },
     "PLD": {
       "insider_signal": {
@@ -1374,7 +1357,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T14:19:04.488666"
+      "scanned_at": "2026-06-04T16:06:34.157935"
     }
   }
 }
