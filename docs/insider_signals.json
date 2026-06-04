@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-03",
+  "date": "2026-06-04",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -70,7 +70,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:34.718906"
+      "scanned_at": "2026-06-04T14:18:23.699341"
     },
     "NVDA": {
       "insider_signal": {
@@ -104,8 +104,25 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:35.648052"
+      "trump_mentions": [
+        {
+          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
+          "date": "2026-06-04 13:35",
+          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "When Trump Cuts Tariffs on Farm and Construction Equipment, These 5 Stocks Win Big",
+          "date": "2026-06-04 13:04",
+          "summary": "The Trump administration is about to hand five equipment makers a margin gift, and the window to position is closing fast. I’ve been tracking this tariff-relief setup across the industrial complex for",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-04T14:18:24.424215"
     },
     "MSFT": {
       "insider_signal": {
@@ -175,8 +192,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:36.645022"
+      "trump_mentions": [
+        {
+          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
+          "date": "2026-06-04 13:35",
+          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-04T14:18:25.249318"
     },
     "MU": {
       "insider_signal": {
@@ -291,17 +317,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
-          "date": "2026-06-03 11:01",
-          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:37.386311"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:26.185449"
     },
     "GOOGL": {
       "insider_signal": {
@@ -346,15 +363,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Dow Jones Futures Fall, Oil Prices Rise As Trump Sets New Hormuz Target Date; Palo Alto, Marvell Are Early Movers",
-          "date": "2026-06-03 11:54",
-          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
+          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
+          "date": "2026-06-04 13:35",
+          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "white house",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:38.130525"
+      "scanned_at": "2026-06-04T14:18:26.947562"
     },
     "META": {
       "insider_signal": {
@@ -363,8 +380,8 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -2544069.51,
-        "net_open_market_fmt": "-$2.5M",
+        "net_open_market_value": -2840837.04,
+        "net_open_market_fmt": "-$2.8M",
         "largest_single_transaction": {
           "name": "Mahoney Curtis J.",
           "direction": "sell",
@@ -375,6 +392,51 @@
           "price_per_share": 609.92
         },
         "notable_transactions": [
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 256750.32,
+            "dollar_fmt": "$257K",
+            "date": "2026-06-01",
+            "shares_traded": 408,
+            "price_per_share": 629.29
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 51601.78,
+            "dollar_fmt": "$52K",
+            "date": "2026-06-01",
+            "shares_traded": 82,
+            "price_per_share": 629.29
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 51601.78,
+            "dollar_fmt": "$52K",
+            "date": "2026-06-01",
+            "shares_traded": 82,
+            "price_per_share": 629.29
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 526715.73,
+            "dollar_fmt": "$527K",
+            "date": "2026-06-01",
+            "shares_traded": 837,
+            "price_per_share": 629.29
+          },
+          {
+            "name": "KIMMITT ROBERT M",
+            "direction": "sell",
+            "dollar_value": 317162.16,
+            "dollar_fmt": "$317K",
+            "date": "2026-06-01",
+            "shares_traded": 504,
+            "price_per_share": 629.29
+          },
           {
             "name": "Mahoney Curtis J.",
             "direction": "sell",
@@ -392,31 +454,22 @@
             "date": "2026-05-26",
             "shares_traded": 408,
             "price_per_share": 608.98
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 509716.26,
-            "dollar_fmt": "$510K",
-            "date": "2026-05-26",
-            "shares_traded": 837,
-            "price_per_share": 608.98
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 248614.8,
-            "dollar_fmt": "$249K",
-            "date": "2026-05-18",
-            "shares_traded": 408,
-            "price_per_share": 609.35
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:38.888365"
+      "trump_mentions": [
+        {
+          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
+          "date": "2026-06-04 13:35",
+          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-04T14:18:27.858760"
     },
     "AMZN": {
       "insider_signal": {
@@ -425,8 +478,8 @@
         "open_market_buys": 0,
         "open_market_sells": 6,
         "compensation_grants": 4,
-        "net_open_market_value": -6563229.41,
-        "net_open_market_fmt": "-$6.6M",
+        "net_open_market_value": -5714392.34,
+        "net_open_market_fmt": "-$5.7M",
         "largest_single_transaction": {
           "name": "Zapolsky David",
           "direction": "sell",
@@ -437,6 +490,15 @@
           "price_per_share": 268.53
         },
         "notable_transactions": [
+          {
+            "name": "Herrington Douglas J",
+            "direction": "sell",
+            "dollar_value": 266190.0,
+            "dollar_fmt": "$266K",
+            "date": "2026-06-01",
+            "shares_traded": 1000,
+            "price_per_share": 266.19
+          },
           {
             "name": "Zapolsky David",
             "direction": "sell",
@@ -481,22 +543,22 @@
             "date": "2026-05-21",
             "shares_traded": 4554,
             "price_per_share": 263.1801
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 1115027.07,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-05-21",
-            "shares_traded": 4257,
-            "price_per_share": 261.9279
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:39.629543"
+      "trump_mentions": [
+        {
+          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
+          "date": "2026-06-04 13:35",
+          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-04T14:18:28.856009"
     },
     "TSLA": {
       "insider_signal": {
@@ -566,17 +628,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Criticized Canada's China EV Deal—Elon Musk's Tesla Could Be Among Its Biggest Winners",
-          "date": "2026-06-03 01:31",
-          "summary": "Tesla Inc. could be reaping the benefits of the China-Canada EV agreement despite earlier criticism from President Donald Trump following the deal. Tesla Accounts For More Than 10% Of Chinese Imports ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:40.332547"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:29.567275"
     },
     "LLY": {
       "insider_signal": {
@@ -619,17 +672,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
-          "date": "2026-06-03 11:01",
-          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:41.076661"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:30.308286"
     },
     "UNH": {
       "insider_signal": {
@@ -664,7 +708,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:41.985224"
+      "scanned_at": "2026-06-04T14:18:30.975615"
     },
     "JPM": {
       "insider_signal": {
@@ -761,17 +805,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Is IBM Up 30% In A Week? An Old Trump Clip May Have Something To Do With It",
-          "date": "2026-06-02 15:13",
-          "summary": "Trump&#39;s praise of IBM CEO helped power stock&#39;s biggest weekly move in years. IBM&#39;s $10B quantum investment &amp; AI initiatives also driving growth.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:42.712394"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:31.731304"
     },
     "GS": {
       "insider_signal": {
@@ -887,7 +922,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:43.580772"
+      "scanned_at": "2026-06-04T14:18:32.419791"
     },
     "XOM": {
       "insider_signal": {
@@ -903,33 +938,40 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil: Trump says peace talks are still on, but Iran says otherwise",
-          "date": "2026-06-01 19:34",
-          "summary": "Oil prices (CL=F, BZ=F) surged back above $90 per barrel on Monday after a confusing back-and-forth between US and Iranian officials, with President Trump affirming that peace talks are continuing \"at",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:44.309440"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:33.339915"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
-        "open_market_buys": 0,
+        "open_market_buys": 2,
         "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
+        "compensation_grants": 8,
+        "net_open_market_value": 42555.07,
+        "net_open_market_fmt": "+$43K",
+        "largest_single_transaction": {
+          "name": "HEWSON MARILLYN A",
+          "direction": "buy",
+          "dollar_value": 38838.47,
+          "dollar_fmt": "$39K",
+          "date": "2026-06-01",
+          "shares_traded": 209,
+          "price_per_share": 185.83
+        },
         "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
+        {
+          "headline": "NY AG Letitia James Sues Trump Admin Over TotalEnergies Deal, Calls It A 'Sham' That Destroys Union Jobs",
+          "date": "2026-06-03 05:17",
+          "summary": "New York AG Letitia James announced that the state is suing Trump admin over a &#34;sham&#34; deal with French energy company TotalEnergies.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
         {
           "headline": "Bernie Sanders Says Trump Is Helping 'Big Oil' While The Planet Nears Dangerous Temperature Records",
           "date": "2026-06-03 01:53",
@@ -937,25 +979,9 @@
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "As Trump Predicts Gas Prices Will 'Drop Like A Rock,' Moody's Chief Economist Estimates $100 Billion Iran War Cost To Americans",
-          "date": "2026-06-02 02:02",
-          "summary": "Moody&#39;s warns Trump&#39;s Iran War costs US households $750, delivering a massive economic blow as surging gas prices erase recent tax refunds.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Gavin Newsom Says Trump's Iran War Is Driving Up Gas Prices—'Trump Doesn't Even Bother To Care'",
-          "date": "2026-06-02 00:25",
-          "summary": "Gov. Gavin Newsom criticized Trump for causing disruptions in global energy supply chains as tensions grow between US and Iran.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:45.014451"
+      "scanned_at": "2026-06-04T14:18:34.437160"
     },
     "CAT": {
       "insider_signal": {
@@ -1054,6 +1080,30 @@
       },
       "trump_mentions": [
         {
+          "headline": "When Trump Cuts Tariffs on Farm and Construction Equipment, These 5 Stocks Win Big",
+          "date": "2026-06-04 13:04",
+          "summary": "The Trump administration is about to hand five equipment makers a margin gift, and the window to position is closing fast. I’ve been tracking this tariff-relief setup across the industrial complex for",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Bellwether Stock Surges Above Key Level. Trump Is Why.",
+          "date": "2026-06-03 18:47",
+          "summary": "Deere and heavy machinery stocks continued to rally on Wednesday after the White House announced lower metal tariffs on imported farm and industrial machinery.  Deere stock popped further above a key ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Bellwether Stock Deere Surges Above Key Level. Trump Is Why.",
+          "date": "2026-06-03 17:02",
+          "summary": "Deere and heavy machinery stocks continued to rally on Wednesday after the White House announced lower metal tariffs on imported farm and industrial machinery.  Deere stock popped further above a key ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Dow Jones Futures Fall, Oil Prices Rise As Trump Sets New Hormuz Target Date; Palo Alto, Marvell Are Early Movers",
           "date": "2026-06-03 11:54",
           "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
@@ -1068,17 +1118,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "US Lowers Tariffs to Boost Investment in Industrial Economy",
-          "date": "2026-06-02 10:00",
-          "summary": "(Bloomberg) -- The White House said it will reduce tariffs on farm and construction equipment such as harvesters and forklifts, in an effort to boost investment in the industrial economy through next ",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:45.763694"
+      "scanned_at": "2026-06-04T14:18:38.082712"
     },
     "GE": {
       "insider_signal": {
@@ -1120,17 +1162,9 @@
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Larry Kudlow: The ‘Trumpian Economy’ Is Booming Despite the Gas Price Noise",
-          "date": "2026-05-29 12:45",
-          "summary": "Larry Kudlow spent Wednesday evening on Fox Business arguing that the economy is stronger than headlines admit. “The Trumpian economy is absolutely booming as is the stock market,” he said, listing th",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:46.518907"
+      "scanned_at": "2026-06-04T14:18:48.331487"
     },
     "WMT": {
       "insider_signal": {
@@ -1227,17 +1261,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Said 'Micron's Great'—And Now Micron's Worth More Than Walmart, Eli Lilly, Berkshire Hathaway",
-          "date": "2026-06-03 11:01",
-          "summary": "Memory chipmaker Micron Technology leapfrogged South Korean rival SK Hynix to become the 12th most-valuable company in the world, in a rally that has more than tripled the stock this year. Shares jump",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-03T15:59:47.252680"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-04T14:18:55.783631"
     },
     "COST": {
       "insider_signal": {
@@ -1255,15 +1280,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Tariff-Driven Inflation Is Trapping Mortgage Rates, and the Fed Can’t Fix It with Rate Cuts",
-          "date": "2026-06-02 15:29",
-          "summary": "On a recent Rich Habits Podcast segment, market commentator Ron Santella put it bluntly: “The playbook from last week hasn’t changed. It’s actually gotten more entrenched. Higher for longer is the bas",
+          "headline": "Costco and UPS issue bold message on tariff refunds",
+          "date": "2026-06-04 09:03",
+          "summary": "Billions of dollars in tariffs are heading back to importers. And some of America's biggest companies are making clear they won't be keeping the money. Costco Wholesale and United Parcel Service are a",
           "source": "Yahoo",
           "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:47.925329"
+      "scanned_at": "2026-06-04T14:18:58.217655"
     },
     "FCX": {
       "insider_signal": {
@@ -1280,7 +1305,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:48.577095"
+      "scanned_at": "2026-06-04T14:19:00.619755"
     },
     "NEE": {
       "insider_signal": {
@@ -1314,7 +1339,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-03T15:59:49.235172"
+      "scanned_at": "2026-06-04T14:19:03.031457"
     },
     "PLD": {
       "insider_signal": {
@@ -1349,7 +1374,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-03T15:59:49.937730"
+      "scanned_at": "2026-06-04T14:19:04.488666"
     }
   }
 }
