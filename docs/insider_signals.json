@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-04",
+  "date": "2026-06-05",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -70,27 +70,54 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:05:44.918225"
+      "scanned_at": "2026-06-05T15:40:17.383410"
     },
     "NVDA": {
       "insider_signal": {
         "ticker": "NVDA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 0,
-        "net_open_market_value": -133750.0,
-        "net_open_market_fmt": "-$134K",
+        "open_market_sells": 4,
+        "compensation_grants": 1,
+        "net_open_market_value": -221236350.0,
+        "net_open_market_fmt": "-$221.2M",
         "largest_single_transaction": {
-          "name": "Dabiri John",
+          "name": "STEVENS MARK A",
           "direction": "sell",
-          "dollar_value": 133750,
-          "dollar_fmt": "$134K",
-          "date": "2026-05-27",
-          "shares_traded": 625,
-          "price_per_share": 214
+          "dollar_value": 111188700.0,
+          "dollar_fmt": "$111.2M",
+          "date": "2026-06-02",
+          "shares_traded": 500000,
+          "price_per_share": 222.3774
         },
         "notable_transactions": [
+          {
+            "name": "STEVENS MARK A",
+            "direction": "sell",
+            "dollar_value": 88148400.0,
+            "dollar_fmt": "$88.1M",
+            "date": "2026-06-04",
+            "shares_traded": 400000,
+            "price_per_share": 220.371
+          },
+          {
+            "name": "STEVENS MARK A",
+            "direction": "sell",
+            "dollar_value": 21765500.0,
+            "dollar_fmt": "$21.8M",
+            "date": "2026-06-04",
+            "shares_traded": 100000,
+            "price_per_share": 217.655
+          },
+          {
+            "name": "STEVENS MARK A",
+            "direction": "sell",
+            "dollar_value": 111188700.0,
+            "dollar_fmt": "$111.2M",
+            "date": "2026-06-02",
+            "shares_traded": 500000,
+            "price_per_share": 222.3774
+          },
           {
             "name": "Dabiri John",
             "direction": "sell",
@@ -101,11 +128,11 @@
             "price_per_share": 214
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:05:47.289989"
+      "scanned_at": "2026-06-05T15:40:19.324409"
     },
     "MSFT": {
       "insider_signal": {
@@ -175,17 +202,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
-          "date": "2026-06-04 13:35",
-          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-04T16:05:48.047355"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-05T15:40:20.031133"
     },
     "MU": {
       "insider_signal": {
@@ -301,7 +319,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:05:51.284612"
+      "scanned_at": "2026-06-05T15:40:20.769676"
     },
     "GOOGL": {
       "insider_signal": {
@@ -344,17 +362,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
-          "date": "2026-06-04 13:35",
-          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-04T16:05:53.025947"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-05T15:40:22.169539"
     },
     "META": {
       "insider_signal": {
@@ -442,17 +451,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
-          "date": "2026-06-04 13:35",
-          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-04T16:05:58.630348"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-05T15:40:23.498225"
     },
     "AMZN": {
       "insider_signal": {
@@ -531,17 +531,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Is Now Hoarding AI Tokens: How Government Compute Competition Reshapes the AI Trade",
-          "date": "2026-06-04 13:35",
-          "summary": "The hosts of The AI Daily Brief dropped a line this week that should reframe how every investor thinks about the AI capex cycle. “Part of the reason that they were opposing Anthropic’s plan to expand ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-04T16:06:00.646009"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-05T15:40:24.506759"
     },
     "TSLA": {
       "insider_signal": {
@@ -612,7 +603,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:02.672994"
+      "scanned_at": "2026-06-05T15:40:25.688465"
     },
     "LLY": {
       "insider_signal": {
@@ -656,17 +647,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:04.401308"
+      "scanned_at": "2026-06-05T15:40:26.653132"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 3,
         "compensation_grants": 0,
-        "net_open_market_value": -284000.0,
-        "net_open_market_fmt": "-$284K",
+        "net_open_market_value": -411613.68,
+        "net_open_market_fmt": "-$412K",
         "largest_single_transaction": {
           "name": "Conway Patrick Hugh",
           "direction": "sell",
@@ -677,6 +668,24 @@
           "price_per_share": 355
         },
         "notable_transactions": [
+          {
+            "name": "Zaetta Christopher R",
+            "direction": "sell",
+            "dollar_value": 50518,
+            "dollar_fmt": "$51K",
+            "date": "2026-06-03",
+            "shares_traded": 134,
+            "price_per_share": 377
+          },
+          {
+            "name": "Conway Patrick Hugh",
+            "direction": "sell",
+            "dollar_value": 77095.68,
+            "dollar_fmt": "$77K",
+            "date": "2026-06-02",
+            "shares_traded": 204,
+            "price_per_share": 377.92
+          },
           {
             "name": "Conway Patrick Hugh",
             "direction": "sell",
@@ -691,7 +700,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:07.230353"
+      "scanned_at": "2026-06-05T15:40:29.127220"
     },
     "JPM": {
       "insider_signal": {
@@ -789,7 +798,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:09.653920"
+      "scanned_at": "2026-06-05T15:40:30.349789"
     },
     "GS": {
       "insider_signal": {
@@ -905,7 +914,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:12.795414"
+      "scanned_at": "2026-06-05T15:40:31.414002"
     },
     "XOM": {
       "insider_signal": {
@@ -921,8 +930,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:16.701359"
+      "trump_mentions": [
+        {
+          "headline": "The Iranian regime fears its people more than the bombs or sanctions, says Richard Goldberg",
+          "date": "2026-06-04 07:42",
+          "summary": "Richard Goldberg, Foundation for Defense of Democracies senior advisor and former White House National Security Council director for countering Iranian weapons of mass destruction, joins 'Squawk Box' ",
+          "source": "CNBC",
+          "keyword_matched": "sanctions",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-05T15:40:32.313735"
     },
     "CVX": {
       "insider_signal": {
@@ -948,23 +966,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "NY AG Letitia James Sues Trump Admin Over TotalEnergies Deal, Calls It A 'Sham' That Destroys Union Jobs",
-          "date": "2026-06-03 05:17",
-          "summary": "New York AG Letitia James announced that the state is suing Trump admin over a &#34;sham&#34; deal with French energy company TotalEnergies.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Bernie Sanders Says Trump Is Helping 'Big Oil' While The Planet Nears Dangerous Temperature Records",
-          "date": "2026-06-03 01:53",
-          "summary": "Sanders accuses Trump of downplaying climate crisis, says White House helping oil companies make money at the expense of rising temperatures.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "headline": "The Iranian regime fears its people more than the bombs or sanctions, says Richard Goldberg",
+          "date": "2026-06-04 07:42",
+          "summary": "Richard Goldberg, Foundation for Defense of Democracies senior advisor and former White House National Security Council director for countering Iranian weapons of mass destruction, joins 'Squawk Box' ",
+          "source": "CNBC",
+          "keyword_matched": "sanctions",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T16:06:18.165208"
+      "scanned_at": "2026-06-05T15:40:33.357076"
     },
     "CAT": {
       "insider_signal": {
@@ -1063,6 +1073,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Just Gave Caterpillar Stock a Boost. What to Know.",
+          "date": "2026-06-04 15:58",
+          "summary": "Caterpillar stock rallies as Trump cuts Section 232 tariffs on its core products. But is there any further upside left in CAT shares?",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "When Trump Cuts Tariffs on Farm and Construction Equipment, These 5 Stocks Win Big",
           "date": "2026-06-04 13:04",
           "summary": "The Trump administration is about to hand five equipment makers a margin gift, and the window to position is closing fast. I’ve been tracking this tariff-relief setup across the industrial complex for",
@@ -1103,7 +1121,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T16:06:19.564464"
+      "scanned_at": "2026-06-05T15:40:34.875432"
     },
     "GE": {
       "insider_signal": {
@@ -1137,37 +1155,46 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Put Boeing Back In The China Game — And Now The Stock Is Racing Toward A Golden Cross",
-          "date": "2026-06-01 10:23",
-          "summary": "Boeing&#39;s China opportunity is back after a historic aircraft agreement, while FAA production approvals and a looming golden cross are strengthening the bull case for BA stock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-04T16:06:22.811482"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-05T15:40:36.012853"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 8,
-        "compensation_grants": 2,
-        "net_open_market_value": -122404245.26,
-        "net_open_market_fmt": "-$122.4M",
+        "open_market_sells": 9,
+        "compensation_grants": 1,
+        "net_open_market_value": -229146168.67,
+        "net_open_market_fmt": "-$229.1M",
         "largest_single_transaction": {
           "name": "Walton Family Holdings Trust",
           "direction": "sell",
-          "dollar_value": 60967023.07,
-          "dollar_fmt": "$61.0M",
-          "date": "2026-05-26",
-          "shares_traded": 511637,
-          "price_per_share": 119.1607
+          "dollar_value": 184394476.15,
+          "dollar_fmt": "$184.4M",
+          "date": "2026-06-02",
+          "shares_traded": 1628295,
+          "price_per_share": 113.2439
         },
         "notable_transactions": [
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 16328846.18,
+            "dollar_fmt": "$16.3M",
+            "date": "2026-06-02",
+            "shares_traded": 143038,
+            "price_per_share": 114.1574
+          },
+          {
+            "name": "Walton Family Holdings Trust",
+            "direction": "sell",
+            "dollar_value": 184394476.15,
+            "dollar_fmt": "$184.4M",
+            "date": "2026-06-02",
+            "shares_traded": 1628295,
+            "price_per_share": 113.2439
+          },
           {
             "name": "Watkins Latriece",
             "direction": "sell",
@@ -1194,58 +1221,22 @@
             "date": "2026-05-28",
             "shares_traded": 207649,
             "price_per_share": 119.0125
-          },
-          {
-            "name": "Walton Family Holdings Trust",
-            "direction": "sell",
-            "dollar_value": 30260907.61,
-            "dollar_fmt": "$30.3M",
-            "date": "2026-05-27",
-            "shares_traded": 254178,
-            "price_per_share": 119.054
-          },
-          {
-            "name": "Walton Family Holdings Trust",
-            "direction": "sell",
-            "dollar_value": 152594.87,
-            "dollar_fmt": "$153K",
-            "date": "2026-05-26",
-            "shares_traded": 1261,
-            "price_per_share": 121.011
-          },
-          {
-            "name": "Walton Family Holdings Trust",
-            "direction": "sell",
-            "dollar_value": 2342057.2,
-            "dollar_fmt": "$2.3M",
-            "date": "2026-05-26",
-            "shares_traded": 19442,
-            "price_per_share": 120.4638
-          },
-          {
-            "name": "Walton Family Holdings Trust",
-            "direction": "sell",
-            "dollar_value": 60967023.07,
-            "dollar_fmt": "$61.0M",
-            "date": "2026-05-26",
-            "shares_traded": 511637,
-            "price_per_share": 119.1607
-          },
-          {
-            "name": "Walton Family Holdings Trust",
-            "direction": "sell",
-            "dollar_value": 356913.77,
-            "dollar_fmt": "$357K",
-            "date": "2026-05-22",
-            "shares_traded": 2948,
-            "price_per_share": 121.0698
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:24.482337"
+      "trump_mentions": [
+        {
+          "headline": "Costco Slips on Plans to Refund Tariff Returns to Customers. The Negative Reaction May Be Deserved.",
+          "date": "2026-06-04 18:05",
+          "summary": "Costco is planning to return its tariff refunds in some form to customers.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-06-05T15:40:36.866941"
     },
     "COST": {
       "insider_signal": {
@@ -1263,6 +1254,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Costco Slips on Plans to Refund Tariff Returns to Customers. The Negative Reaction May Be Deserved.",
+          "date": "2026-06-04 18:05",
+          "summary": "Costco is planning to return its tariff refunds in some form to customers.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Costco and UPS issue bold message on tariff refunds",
           "date": "2026-06-04 09:03",
           "summary": "Billions of dollars in tariffs are heading back to importers. And some of America's biggest companies are making clear they won't be keeping the money. Costco Wholesale and United Parcel Service are a",
@@ -1271,7 +1270,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-04T16:06:26.235666"
+      "scanned_at": "2026-06-05T15:40:37.708236"
     },
     "FCX": {
       "insider_signal": {
@@ -1288,26 +1287,18 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:29.510847"
+      "scanned_at": "2026-06-05T15:40:38.445529"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
-        "open_market_buys": 1,
+        "open_market_buys": 0,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 36350.16,
-        "net_open_market_fmt": "+$36K",
-        "largest_single_transaction": {
-          "name": "Arnaboldi Nicole S",
-          "direction": "buy",
-          "dollar_value": 36350.16,
-          "dollar_fmt": "$36K",
-          "date": "2026-04-06",
-          "shares_traded": 392,
-          "price_per_share": 92.73
-        },
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
         "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
@@ -1322,7 +1313,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-04T16:06:32.118554"
+      "scanned_at": "2026-06-05T15:40:39.137102"
     },
     "PLD": {
       "insider_signal": {
@@ -1357,7 +1348,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-04T16:06:34.157935"
+      "scanned_at": "2026-06-05T15:40:39.927312"
     }
   }
 }
