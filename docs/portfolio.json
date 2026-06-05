@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 34,
+    "current_day": 35,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-05T16:29:02.476664+00:00",
+    "last_updated": "2026-06-05T20:53:44.523964+00:00",
     "session_number": 2
   },
-  "cash": 3363.32,
+  "cash": 3939.48,
   "initial_capital": 5000.0,
-  "equity": 5259.78,
+  "equity": 5207.48,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,13 +17,13 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 1.79,
-    "sortino": 5.2,
-    "calmar": 11.41,
+    "sharpe": 1.39,
+    "sortino": 3.22,
+    "calmar": 5.87,
     "spy_start_price": 686.1,
-    "spy_current_price": 757.09,
-    "benchmark_return_pct": 10.35,
-    "max_drawdown_pct": 1.81
+    "spy_current_price": 737.55,
+    "benchmark_return_pct": 7.5,
+    "max_drawdown_pct": 2.73
   },
   "positions": {
     "MS": {
@@ -31,7 +31,7 @@
       "qty": 2,
       "entry_price": 201.05,
       "cost_basis": 402.1,
-      "last_price": 212.65,
+      "last_price": 211.93,
       "stop_loss": 207.36,
       "take_profit": 221.16,
       "partial_profit_price": 211.1,
@@ -48,7 +48,7 @@
       "qty": 3,
       "entry_price": 285.34,
       "cost_basis": 856.02,
-      "last_price": 281.3,
+      "last_price": 281.38,
       "stop_loss": 271.07,
       "take_profit": 313.87,
       "partial_profit_price": 299.61,
@@ -59,23 +59,6 @@
       "partial_taken": false,
       "opened_date": "2026-06-03",
       "journal_note": "VMC broke above its 20-day EMA ($277.68) and 50-day EMA ($279.41) with a bullish MACD histogram crossover at +2.05, and RSI at 60.44 leaves significant room before overbought levels \u2014 this is the primary entry signal. The DOJ approval of VMC's $712M California asset sale is a concrete sentiment catalyst validating management's capital allocation. The risk-conservative perspective flagged the elevated P/E of 33.93x and slow revenue growth, which I acknowledge but don't find disqualifying given the strong balance sheet (D/E 0.51, current ratio 2.69) and the fact that VMC is a Materials sector name \u2014 one of our focus sectors where we are critically underdeployed at 8% vs 50% target. Upside target is upper Bollinger Band at $295.82 (~3.8% from entry), with stop loss at ~$270.64 (5% below entry, anchored just below the 50-day EMA), giving roughly a 0.76:1 reward-to-risk on the technical setup alone, though the DOJ catalyst could push beyond the Bollinger Band. Position size is intentionally modest at 4% given medium conviction, but the buy is mandatory under risk-on posture with high deployment priority."
-    },
-    "TXN": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 309.76,
-      "cost_basis": 619.52,
-      "last_price": 288.71,
-      "stop_loss": 288.08,
-      "take_profit": 353.13,
-      "partial_profit_price": 331.44,
-      "stop_loss_pct": 7.0,
-      "take_profit_pct": 14.0,
-      "highest_price": 309.76,
-      "lowest_price": 309.76,
-      "partial_taken": false,
-      "opened_date": "2026-06-03",
-      "journal_note": "The strategy brief mandates aggressive deployment into Technology with HIGH capital priority and RISK-ON posture \u2014 per the decision tree, this is a mandatory BUY regardless of trader's hold recommendation. TXN at ~$308 (implied from $280B market cap / ~910M shares) offers quality semiconductor exposure with 32.5% ROE and 57.3% gross margins, which are best-in-class fundamentals despite the elevated 55x P/E. The trader flagged missing technicals and sentiment due to rate limit errors, not actual negative signals \u2014 absence of data is not bearish data, and with only 24% deployed against a -5.3% alpha deficit, the cost of staying in cash is concrete and immediate. The risk team also errored out due to rate limits, so I'm sizing conservatively at ~15% of portfolio (~$1,400, roughly 5 shares) with a 7% stop-loss instead of a full-sized position to account for the P/E premium and lack of technical confirmation. Upside target is 10-12% riding the broader tech risk-on trend; downside is capped at ~$21/share via the stop."
     }
   },
   "open_orders": [
@@ -559,6 +542,21 @@
       "opened_date": "2026-05-26",
       "closed_date": "2026-06-02",
       "journal_note": "EQR is in a focus sector (Real Estate) with a RISK-ON posture and HIGH capital deployment priority at only 31% deployed with 6 days remaining \u2014 cash drag is the primary portfolio risk. The EQR/AVB merger catalyst with $125M projected synergies provides a concrete bullish asymmetry, and the stock trades above both its 20d EMA ($65.18) and 50d EMA ($63.82), confirming an intermediate uptrend. The risk team flagged the 0.055 current ratio as severe liquidity stress and bearish MACD crossover (histogram -0.0628) \u2014 I partially agree, which is why I'm sizing this at ~8% rather than the risk-seeking 12%, but REITs structurally carry low current ratios due to their cash flow model, so this is less alarming than it appears. Upside target near merger-driven re-rating toward $70-72 (~6-8% upside) versus 4.5% stop-loss at ~$63.90 near the 50d EMA support gives acceptable risk/reward. None of the four rejection conditions are met (VIX 16.9, Real Estate is a focus sector, no earnings within 3 days, beta within limits), so deploying capital here."
+    },
+    {
+      "ticker": "TXN",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 309.76,
+      "exit_price": 288.08,
+      "cost_basis": 619.52,
+      "proceeds": 576.16,
+      "pnl": -43.36,
+      "pnl_pct": -7.0,
+      "reason": "stop_loss",
+      "opened_date": "2026-06-03",
+      "closed_date": "2026-06-05",
+      "journal_note": "The strategy brief mandates aggressive deployment into Technology with HIGH capital priority and RISK-ON posture \u2014 per the decision tree, this is a mandatory BUY regardless of trader's hold recommendation. TXN at ~$308 (implied from $280B market cap / ~910M shares) offers quality semiconductor exposure with 32.5% ROE and 57.3% gross margins, which are best-in-class fundamentals despite the elevated 55x P/E. The trader flagged missing technicals and sentiment due to rate limit errors, not actual negative signals \u2014 absence of data is not bearish data, and with only 24% deployed against a -5.3% alpha deficit, the cost of staying in cash is concrete and immediate. The risk team also errored out due to rate limits, so I'm sizing conservatively at ~15% of portfolio (~$1,400, roughly 5 shares) with a 7% stop-loss instead of a full-sized position to account for the P/E premium and lack of technical confirmation. Upside target is 10-12% riding the broader tech risk-on trend; downside is capped at ~$21/share via the stop."
     }
   ],
   "equity_curve": [
@@ -901,6 +899,11 @@
       "day": 34,
       "date": "2026-06-05",
       "equity": 5259.78
+    },
+    {
+      "day": 34,
+      "date": "2026-06-05",
+      "equity": 5207.48
     }
   ],
   "journal": [
@@ -2460,6 +2463,11 @@
       "day": 33,
       "date": "2026-06-04",
       "equity": 5517.34
+    },
+    {
+      "day": 34,
+      "date": "2026-06-05",
+      "equity": 5374.95
     }
   ],
   "dt_equity_curve": [
@@ -2576,6 +2584,11 @@
     {
       "day": 33,
       "date": "2026-06-04",
+      "equity": 5291.28
+    },
+    {
+      "day": 34,
+      "date": "2026-06-05",
       "equity": 5291.28
     }
   ],
@@ -2694,28 +2707,33 @@
       "day": 33,
       "date": "2026-06-04",
       "equity": 4832.63
+    },
+    {
+      "day": 34,
+      "date": "2026-06-05",
+      "equity": 4832.63
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 757.09,
-      "return_pct": 10.35
+      "current_price": 737.55,
+      "return_pct": 7.5
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 740.61,
-      "return_pct": 17.82
+      "current_price": 705.06,
+      "return_pct": 12.16
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 292.01,
-      "return_pct": 8.67
+      "current_price": 281.65,
+      "return_pct": 4.81
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 411.27,
-      "return_pct": -7.6
+      "current_price": 396.24,
+      "return_pct": -10.98
     }
   },
   "sector_strength": {
