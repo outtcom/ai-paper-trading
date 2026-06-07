@@ -2,8 +2,7 @@ name: Pre-Market Gap Scanner
 
 on:
   schedule:
-    - cron: '30 7 * * 1-5'  # EDT (Mar-Nov): 3:30 AM EDT + 3h30min queue → 7:00 AM ET
-    - cron: '30 8 * * 1-5'  # EST (Nov-Mar): 3:30 AM EST + 3h30min queue → 7:00 AM ET
+    - cron: '30 7 * * 1-5'  # 3:30 AM UTC + ~3h30min queue → 7:00 AM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:

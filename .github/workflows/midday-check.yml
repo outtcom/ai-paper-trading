@@ -2,8 +2,7 @@ name: Midday Position Monitor
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'  # EDT (Mar-Nov): 9:00 AM EDT + 3h queue → 12:00 PM ET
-    - cron: '0 14 * * 1-5'  # EST (Nov-Mar): 9:00 AM EST + 3h queue → 12:00 PM ET
+    - cron: '0 13 * * 1-5'  # 9:00 AM UTC + ~3h queue → 12:00 PM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:

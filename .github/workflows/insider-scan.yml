@@ -2,8 +2,7 @@ name: Insider Activity + Political Signal Scan
 
 on:
   schedule:
-    - cron: '45 11 * * 1-5'  # EDT (Mar-Nov): 7:45 AM ET + ~3.5h queue → arrives ~11:15 AM ET
-    - cron: '45 12 * * 1-5'  # EST (Nov-Mar): 7:45 AM ET + ~3.5h queue → arrives ~11:15 AM ET
+    - cron: '45 11 * * 1-5'  # 7:45 AM UTC + ~3.5h queue → arrives ~11:15 AM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:

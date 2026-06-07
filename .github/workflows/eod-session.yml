@@ -2,8 +2,7 @@ name: End-of-Day Session
 
 on:
   schedule:
-    - cron: '10 18 * * 1-5'  # EDT (Mar-Nov): 2:10 PM EDT + 2h05min queue → 4:15 PM ET
-    - cron: '10 19 * * 1-5'  # EST (Nov-Mar): 2:10 PM EST + 2h05min queue → 4:15 PM ET
+    - cron: '10 18 * * 1-5'  # 2:10 PM UTC + ~2h05min queue → 4:15 PM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:

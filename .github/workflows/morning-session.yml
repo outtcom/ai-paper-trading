@@ -2,8 +2,7 @@ name: Morning Session
 
 on:
   schedule:
-    - cron: '10 10 * * 1-5'  # EDT (Mar-Nov): 6:10 AM EDT + 3h20min queue → 9:30 AM ET
-    - cron: '10 11 * * 1-5'  # EST (Nov-Mar): 6:10 AM EST + 3h20min queue → 9:30 AM ET
+    - cron: '10 10 * * 1-5'  # 6:10 AM UTC + ~3h20min queue → 9:30 AM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:

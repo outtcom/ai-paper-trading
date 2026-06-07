@@ -2,8 +2,7 @@ name: Pre-Close Alert
 
 on:
   schedule:
-    - cron: '0 17 * * 1-5'  # EDT (Mar-Nov): 1:00 PM EDT + 2h30min queue → 3:30 PM ET
-    - cron: '0 18 * * 1-5'  # EST (Nov-Mar): 1:00 PM EST + 2h30min queue → 3:30 PM ET
+    - cron: '0 17 * * 1-5'  # 1:00 PM UTC + ~2h30min queue → 3:30 PM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:
