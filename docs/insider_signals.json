@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-05",
+  "date": "2026-06-08",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -70,17 +70,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:17.383410"
+      "scanned_at": "2026-06-08T15:02:09.993084"
     },
     "NVDA": {
       "insider_signal": {
         "ticker": "NVDA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
+        "open_market_sells": 5,
         "compensation_grants": 1,
-        "net_open_market_value": -221236350.0,
-        "net_open_market_fmt": "-$221.2M",
+        "net_open_market_value": -224580213.05,
+        "net_open_market_fmt": "-$224.6M",
         "largest_single_transaction": {
           "name": "STEVENS MARK A",
           "direction": "sell",
@@ -110,6 +110,15 @@
             "price_per_share": 217.655
           },
           {
+            "name": "Neal Stephen C",
+            "direction": "sell",
+            "dollar_value": 3343863.05,
+            "dollar_fmt": "$3.3M",
+            "date": "2026-06-03",
+            "shares_traded": 15500,
+            "price_per_share": 215.7331
+          },
+          {
             "name": "STEVENS MARK A",
             "direction": "sell",
             "dollar_value": 111188700.0,
@@ -131,8 +140,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:19.324409"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Rallies On Trump, Iran Comments; Marvell Pops On S&P 500 Addition(Live Coverage)",
+          "date": "2026-06-08 13:48",
+          "summary": "Stock Market Today: The Dow Jones index rose Monday on Trump's latest Iran comments. Marvell stock surged on news that it'll join the S&P 500.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-08T15:02:12.441572"
     },
     "MSFT": {
       "insider_signal": {
@@ -203,7 +221,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:20.031133"
+      "scanned_at": "2026-06-08T15:02:14.549229"
     },
     "MU": {
       "insider_signal": {
@@ -318,8 +336,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:20.769676"
+      "trump_mentions": [
+        {
+          "headline": "AI-linked stocks advance as Trump explores public ownership model for AI firms",
+          "date": "2026-06-08 10:20",
+          "summary": "Shares of several artificial intelligence-related companies moved higher in premarket trading on Monday after U. S.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-08T15:02:16.238594"
     },
     "GOOGL": {
       "insider_signal": {
@@ -362,8 +389,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:22.169539"
+      "trump_mentions": [
+        {
+          "headline": "Tech stocks gain as Trump mulls government stake in AI companies",
+          "date": "2026-06-08 08:39",
+          "summary": "Investing.com -- U.S. President Donald Trump said Friday his team is exploring the idea of AI companies giving the American public a stake in their firms, and that he plans to host a meeting with AI e",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-08T15:02:18.367070"
     },
     "META": {
       "insider_signal": {
@@ -452,7 +488,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:23.498225"
+      "scanned_at": "2026-06-08T15:02:22.388625"
     },
     "AMZN": {
       "insider_signal": {
@@ -532,7 +568,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:24.506759"
+      "scanned_at": "2026-06-08T15:02:24.640062"
     },
     "TSLA": {
       "insider_signal": {
@@ -603,7 +639,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:25.688465"
+      "scanned_at": "2026-06-08T15:02:26.841239"
     },
     "LLY": {
       "insider_signal": {
@@ -646,8 +682,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:26.653132"
+      "trump_mentions": [
+        {
+          "headline": "US Equity Futures Higher Pre-Bell as Trump Tries to Keep Fragile Middle East Ceasefire Intact Amid New Israel-Iran Clashes",
+          "date": "2026-06-08 12:50",
+          "summary": "US equity futures were edging higher pre-bell Monday as President Donald Trump tried to hold togethe",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-08T15:02:28.872740"
     },
     "UNH": {
       "insider_signal": {
@@ -700,7 +745,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:29.127220"
+      "scanned_at": "2026-06-08T15:02:31.424464"
     },
     "JPM": {
       "insider_signal": {
@@ -798,7 +843,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:30.349789"
+      "scanned_at": "2026-06-08T15:02:34.112984"
     },
     "GS": {
       "insider_signal": {
@@ -913,8 +958,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:31.414002"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says Fed Rate Increase Would Be Wrong Ahead of Warsh Debut",
+          "date": "2026-06-07 16:16",
+          "summary": "(Bloomberg) -- President Donald Trump said the Federal Reserve would be wrong to raise interest rates as his nominee Kevin Warsh prepares to chair his first Fed policy meeting.Most Read from Bloomberg",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-08T15:02:35.887080"
     },
     "XOM": {
       "insider_signal": {
@@ -932,15 +986,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "The Iranian regime fears its people more than the bombs or sanctions, says Richard Goldberg",
-          "date": "2026-06-04 07:42",
-          "summary": "Richard Goldberg, Foundation for Defense of Democracies senior advisor and former White House National Security Council director for countering Iranian weapons of mass destruction, joins 'Squawk Box' ",
-          "source": "CNBC",
-          "keyword_matched": "sanctions",
+          "headline": "3 Unstoppable Energy Stocks on Washington's Short List as Trump Rewrites U.S. Oil and Gas Strategy",
+          "date": "2026-06-06 12:40",
+          "summary": "There's a lot brewing in the U.S. oil and gas sector, and some companies should directly benefit from the next leg of the government's targeted energy expansion.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-05T15:40:32.313735"
+      "scanned_at": "2026-06-08T15:02:37.673114"
     },
     "CVX": {
       "insider_signal": {
@@ -964,17 +1018,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The Iranian regime fears its people more than the bombs or sanctions, says Richard Goldberg",
-          "date": "2026-06-04 07:42",
-          "summary": "Richard Goldberg, Foundation for Defense of Democracies senior advisor and former White House National Security Council director for countering Iranian weapons of mass destruction, joins 'Squawk Box' ",
-          "source": "CNBC",
-          "keyword_matched": "sanctions",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-05T15:40:33.357076"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-08T15:02:39.392234"
     },
     "CAT": {
       "insider_signal": {
@@ -1073,55 +1118,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "Stock Market Today: Dow Rallies On Trump, Iran Comments; Marvell Pops On S&P 500 Addition(Live Coverage)",
+          "date": "2026-06-08 13:48",
+          "summary": "Stock Market Today: The Dow Jones index rose Monday on Trump's latest Iran comments. Marvell stock surged on news that it'll join the S&P 500.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump Just Gave Caterpillar Stock a Boost. What to Know.",
           "date": "2026-06-04 15:58",
           "summary": "Caterpillar stock rallies as Trump cuts Section 232 tariffs on its core products. But is there any further upside left in CAT shares?",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "When Trump Cuts Tariffs on Farm and Construction Equipment, These 5 Stocks Win Big",
-          "date": "2026-06-04 13:04",
-          "summary": "The Trump administration is about to hand five equipment makers a margin gift, and the window to position is closing fast. I’ve been tracking this tariff-relief setup across the industrial complex for",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Bellwether Stock Surges Above Key Level. Trump Is Why.",
-          "date": "2026-06-03 18:47",
-          "summary": "Deere and heavy machinery stocks continued to rally on Wednesday after the White House announced lower metal tariffs on imported farm and industrial machinery.  Deere stock popped further above a key ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Bellwether Stock Deere Surges Above Key Level. Trump Is Why.",
-          "date": "2026-06-03 17:02",
-          "summary": "Deere and heavy machinery stocks continued to rally on Wednesday after the White House announced lower metal tariffs on imported farm and industrial machinery.  Deere stock popped further above a key ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures Fall, Oil Prices Rise As Trump Sets New Hormuz Target Date; Palo Alto, Marvell Are Early Movers",
-          "date": "2026-06-03 11:54",
-          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures: Oil Prices Rise, Palo Alto Falls On Earnings; New Trump Tariffs Coming",
-          "date": "2026-06-03 03:07",
-          "summary": "Oil prices rose overnight while Palo Alto fell despite strong earnings. New Trump tariffs loom. AI and metals led stocks Tuesday.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-05T15:40:34.875432"
+      "scanned_at": "2026-06-08T15:02:41.812087"
     },
     "GE": {
       "insider_signal": {
@@ -1156,7 +1169,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:36.012853"
+      "scanned_at": "2026-06-08T15:02:43.611516"
     },
     "WMT": {
       "insider_signal": {
@@ -1226,17 +1239,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Costco Slips on Plans to Refund Tariff Returns to Customers. The Negative Reaction May Be Deserved.",
-          "date": "2026-06-04 18:05",
-          "summary": "Costco is planning to return its tariff refunds in some form to customers.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-06-05T15:40:36.866941"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-08T15:02:45.364275"
     },
     "COST": {
       "insider_signal": {
@@ -1254,23 +1258,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Costco Slips on Plans to Refund Tariff Returns to Customers. The Negative Reaction May Be Deserved.",
-          "date": "2026-06-04 18:05",
-          "summary": "Costco is planning to return its tariff refunds in some form to customers.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Costco and UPS issue bold message on tariff refunds",
-          "date": "2026-06-04 09:03",
-          "summary": "Billions of dollars in tariffs are heading back to importers. And some of America's biggest companies are making clear they won't be keeping the money. Costco Wholesale and United Parcel Service are a",
+          "headline": "Costco Tariff Refund Plan Links Trade Ruling To Member Value And Valuation",
+          "date": "2026-06-06 16:11",
+          "summary": "Costco Wholesale (NasdaqGS:COST) is preparing to file for tariff refunds following a Supreme Court ruling. The company plans to return those tariff refunds directly to members, creating a rare link be",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-05T15:40:37.708236"
+      "scanned_at": "2026-06-08T15:02:46.688740"
     },
     "FCX": {
       "insider_signal": {
@@ -1287,7 +1283,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:38.445529"
+      "scanned_at": "2026-06-08T15:02:48.400171"
     },
     "NEE": {
       "insider_signal": {
@@ -1313,7 +1309,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-05T15:40:39.137102"
+      "scanned_at": "2026-06-08T15:02:49.837986"
     },
     "PLD": {
       "insider_signal": {
@@ -1348,7 +1344,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-05T15:40:39.927312"
+      "scanned_at": "2026-06-08T15:02:51.019538"
     }
   }
 }
