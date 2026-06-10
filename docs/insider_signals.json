@@ -1,31 +1,76 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "HTTPSConnectionPool(host='api.finnhub.io', port=443): Read timed out. (read timeout=10)"
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -87532032.31,
+        "net_open_market_fmt": "-$87.5M",
+        "largest_single_transaction": {
+          "name": "LEVINSON ARTHUR D",
+          "direction": "sell",
+          "dollar_value": 42550898.39,
+          "dollar_fmt": "$42.6M",
+          "date": "2026-05-06",
+          "shares_traded": 149527,
+          "price_per_share": 284.57
+        },
+        "notable_transactions": [
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 15551000.0,
+            "dollar_fmt": "$15.6M",
+            "date": "2026-05-27",
+            "shares_traded": 50000,
+            "price_per_share": 311.02
+          },
+          {
+            "name": "Borders Ben",
+            "direction": "sell",
+            "dollar_value": 369460,
+            "dollar_fmt": "$369K",
+            "date": "2026-05-08",
+            "shares_traded": 1274,
+            "price_per_share": 290
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 28638823.92,
+            "dollar_fmt": "$28.6M",
+            "date": "2026-05-06",
+            "shares_traded": 100473,
+            "price_per_share": 285.04
+          },
+          {
+            "name": "LEVINSON ARTHUR D",
+            "direction": "sell",
+            "dollar_value": 42550898.39,
+            "dollar_fmt": "$42.6M",
+            "date": "2026-05-06",
+            "shares_traded": 149527,
+            "price_per_share": 284.57
+          },
+          {
+            "name": "Parekh Kevan",
+            "direction": "sell",
+            "dollar_value": 421850,
+            "dollar_fmt": "$422K",
+            "date": "2026-04-23",
+            "shares_traded": 1534,
+            "price_per_share": 275
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Rises On Trump Comments; Micron, Sandisk Continue To Rebound (Live Coverage)",
-          "date": "2026-06-09 12:02",
-          "summary": "Stock Market Today: The Dow Jones index rose Tuesday after Trump said a U.S.-Iran deal could be reached in \"two or three days.\"",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-09T14:04:11.538081"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-10T14:40:10.800207"
     },
     "NVDA": {
       "insider_signal": {
@@ -97,86 +142,32 @@
       },
       "trump_mentions": [
         {
-          "headline": "Stock Market Today: Dow Rises On Trump Comments; Micron, Sandisk Continue To Rebound (Live Coverage)",
-          "date": "2026-06-09 12:02",
-          "summary": "Stock Market Today: The Dow Jones index rose Tuesday after Trump said a U.S.-Iran deal could be reached in \"two or three days.\"",
+          "headline": "Stock Market Today: Dow Falls 500 Points On Trump Comments; CPI Inflation Data Next (Live Coverage)",
+          "date": "2026-06-10 12:08",
+          "summary": "Stock Market Today: The Dow Jones index sold off 500 points Wednesday on Trump's comments. The CPI inflation report is next.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-09T14:04:18.027372"
+      "scanned_at": "2026-06-10T14:40:12.573173"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 6,
-        "compensation_grants": 0,
-        "net_open_market_value": -8618422.19,
-        "net_open_market_fmt": "-$8.6M",
-        "largest_single_transaction": {
-          "name": "Althoff Judson",
-          "direction": "sell",
-          "dollar_value": 7145314.0,
-          "dollar_fmt": "$7.1M",
-          "date": "2026-06-01",
-          "shares_traded": 15500,
-          "price_per_share": 460.988
-        },
-        "notable_transactions": [
-          {
-            "name": "Althoff Judson",
-            "direction": "sell",
-            "dollar_value": 7145314.0,
-            "dollar_fmt": "$7.1M",
-            "date": "2026-06-01",
-            "shares_traded": 15500,
-            "price_per_share": 460.988
-          },
-          {
-            "name": "Coleman Amy",
-            "direction": "sell",
-            "dollar_value": 195404.16,
-            "dollar_fmt": "$195K",
-            "date": "2026-06-01",
-            "shares_traded": 434,
-            "price_per_share": 450.24
-          },
-          {
-            "name": "Jolla Alice L.",
-            "direction": "sell",
-            "dollar_value": 185949.12,
-            "dollar_fmt": "$186K",
-            "date": "2026-06-01",
-            "shares_traded": 413,
-            "price_per_share": 450.24
-          },
-          {
-            "name": "Coleman Amy",
-            "direction": "sell",
-            "dollar_value": 519113.6,
-            "dollar_fmt": "$519K",
-            "date": "2026-05-14",
-            "shares_traded": 1262,
-            "price_per_share": 411.342
-          },
-          {
-            "name": "Coleman Amy",
-            "direction": "sell",
-            "dollar_value": 536202.04,
-            "dollar_fmt": "$536K",
-            "date": "2026-04-15",
-            "shares_traded": 1364,
-            "price_per_share": 393.11
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 10,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:23.681418"
+      "scanned_at": "2026-06-10T14:40:15.652575"
     },
     "MU": {
       "insider_signal": {
@@ -291,17 +282,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Rises On Trump Comments; Micron, Sandisk Continue To Rebound (Live Coverage)",
-          "date": "2026-06-09 12:02",
-          "summary": "Stock Market Today: The Dow Jones index rose Tuesday after Trump said a U.S.-Iran deal could be reached in \"two or three days.\"",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-09T14:04:26.939608"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-10T14:40:18.440314"
     },
     "GOOGL": {
       "insider_signal": {
@@ -345,7 +327,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:30.008920"
+      "scanned_at": "2026-06-10T14:40:19.905544"
     },
     "META": {
       "insider_signal": {
@@ -433,8 +415,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:32.712869"
+      "trump_mentions": [
+        {
+          "headline": "Meta's AI Workforce Academy Wins Praise From Former Trump Adviser, Ex-Facebook Exec: 'Hope More Companies Follow Suit'",
+          "date": "2026-06-10 08:12",
+          "summary": "Meta’s America’s Workforce Academy (AWA), announced on Monday, will train trade workers such as electricians, plumbers, and technicians and offer jobs.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:23.516964"
     },
     "AMZN": {
       "insider_signal": {
@@ -513,37 +504,37 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Rises On Trump Comments; Micron, Sandisk Continue To Rebound (Live Coverage)",
-          "date": "2026-06-09 12:02",
-          "summary": "Stock Market Today: The Dow Jones index rose Tuesday after Trump said a U.S.-Iran deal could be reached in \"two or three days.\"",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-09T14:04:35.374326"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-10T14:40:26.188911"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 5,
-        "compensation_grants": 3,
-        "net_open_market_value": -4831487.23,
-        "net_open_market_fmt": "-$4.8M",
+        "open_market_sells": 3,
+        "compensation_grants": 5,
+        "net_open_market_value": -2512330.34,
+        "net_open_market_fmt": "-$2.5M",
         "largest_single_transaction": {
-          "name": "Wilson-Thompson Kathleen",
+          "name": "Taneja Vaibhav",
           "direction": "sell",
-          "dollar_value": 2631561.87,
-          "dollar_fmt": "$2.6M",
-          "date": "2026-04-30",
-          "shares_traded": 6896,
-          "price_per_share": 381.607
+          "dollar_value": 1350000,
+          "dollar_fmt": "$1.4M",
+          "date": "2026-05-13",
+          "shares_traded": 3000,
+          "price_per_share": 450
         },
         "notable_transactions": [
+          {
+            "name": "Taneja Vaibhav",
+            "direction": "sell",
+            "dollar_value": 1048125.38,
+            "dollar_fmt": "$1.0M",
+            "date": "2026-06-08",
+            "shares_traded": 2606,
+            "price_per_share": 402.197
+          },
           {
             "name": "Taneja Vaibhav",
             "direction": "sell",
@@ -561,33 +552,6 @@
             "date": "2026-04-30",
             "shares_traded": 440,
             "price_per_share": 384.284
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 475678.88,
-            "dollar_fmt": "$476K",
-            "date": "2026-04-30",
-            "shares_traded": 1240,
-            "price_per_share": 383.612
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 260041.52,
-            "dollar_fmt": "$260K",
-            "date": "2026-04-30",
-            "shares_traded": 680,
-            "price_per_share": 382.414
-          },
-          {
-            "name": "Wilson-Thompson Kathleen",
-            "direction": "sell",
-            "dollar_value": 2631561.87,
-            "dollar_fmt": "$2.6M",
-            "date": "2026-04-30",
-            "shares_traded": 6896,
-            "price_per_share": 381.607
           }
         ],
         "signal_strength": "strong_sell",
@@ -595,15 +559,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Dow Jones Futures: Trump, Iran Comments Spark Tech Rebound; Apple, Micron, Nvidia, Sandisk, Tesla Are Big Movers",
-          "date": "2026-06-08 21:16",
-          "summary": "Dow Jones Futures: President Trump and Iran's comments sparked a tech rebound Monday. Micron, Nvidia and Sandisk were big winners.",
+          "headline": "BYD threatens to sue Trump administration over Chinese military claims",
+          "date": "2026-06-10 09:02",
+          "summary": "BYD has threatened to sue the US government after the Pentagon accused the Chinese carmaker of aiding Beijing’s military.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-09T14:04:38.962885"
+      "scanned_at": "2026-06-10T14:40:27.395053"
     },
     "LLY": {
       "insider_signal": {
@@ -647,17 +611,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:41.504916"
+      "scanned_at": "2026-06-10T14:40:29.404401"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
+        "open_market_sells": 4,
         "compensation_grants": 0,
-        "net_open_market_value": -411613.68,
-        "net_open_market_fmt": "-$412K",
+        "net_open_market_value": -686049.57,
+        "net_open_market_fmt": "-$686K",
         "largest_single_transaction": {
           "name": "Conway Patrick Hugh",
           "direction": "sell",
@@ -668,6 +632,15 @@
           "price_per_share": 355
         },
         "notable_transactions": [
+          {
+            "name": "Conway Patrick Hugh",
+            "direction": "sell",
+            "dollar_value": 274435.89,
+            "dollar_fmt": "$274K",
+            "date": "2026-06-05",
+            "shares_traded": 687,
+            "price_per_share": 399.47
+          },
           {
             "name": "Zaetta Christopher R",
             "direction": "sell",
@@ -696,11 +669,20 @@
             "price_per_share": 355
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:43.722576"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Economy Hired Nearly 1 Million Healthcare Workers While Every Other Sector Lost Jobs. Here’s Where to Put Your Money",
+          "date": "2026-06-10 12:34",
+          "summary": "Economist Justin Wolfers dropped a number on the Prof G Markets podcast that should reorganize how you think about the 2026 economy. Since Trump took office, healthcare and social services has added r",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:31.823624"
     },
     "JPM": {
       "insider_signal": {
@@ -797,8 +779,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:45.989772"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Economy Hired Nearly 1 Million Healthcare Workers While Every Other Sector Lost Jobs. Here’s Where to Put Your Money",
+          "date": "2026-06-10 12:34",
+          "summary": "Economist Justin Wolfers dropped a number on the Prof G Markets podcast that should reorganize how you think about the 2026 economy. Since Trump took office, healthcare and social services has added r",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Oil Falls in Choppy Trading After Trump Vows Response to Attack",
+          "date": "2026-06-09 19:15",
+          "summary": "(Bloomberg) -- Oil fell in a choppy trading session, with US President Donald Trump vowing a response to the downing of an American military helicopter, reigniting fears of a return to clashes with Ir",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:33.916654"
     },
     "GS": {
       "insider_signal": {
@@ -913,17 +912,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Pushes Back As 172,000 Jobs Fuel Fed Rate-Hike Bets",
-          "date": "2026-06-08 19:47",
-          "summary": "Stronger labor data shifts market expectations as Trump argues higher rates could be the wrong move.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-09T14:04:48.574660"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-10T14:40:35.323372"
     },
     "XOM": {
       "insider_signal": {
@@ -939,8 +929,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:04:51.876078"
+      "trump_mentions": [
+        {
+          "headline": "Trump Has Predicted An Iran Deal 38 Times Since March: Prediction Markets Say It Won't Happen Soon",
+          "date": "2026-06-09 13:46",
+          "summary": "Trump has promised an Iran deal is imminent at least 38 times since March, per a new CNN count. Polymarket traders remain skeptical as oil markets watch.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:36.595488"
     },
     "CVX": {
       "insider_signal": {
@@ -972,9 +971,17 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Has Predicted An Iran Deal 38 Times Since March: Prediction Markets Say It Won't Happen Soon",
+          "date": "2026-06-09 13:46",
+          "summary": "Trump has promised an Iran deal is imminent at least 38 times since March, per a new CNN count. Polymarket traders remain skeptical as oil markets watch.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-09T14:04:54.374881"
+      "scanned_at": "2026-06-10T14:40:38.867884"
     },
     "CAT": {
       "insider_signal": {
@@ -1081,7 +1088,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-09T14:04:57.245504"
+      "scanned_at": "2026-06-10T14:40:41.040359"
     },
     "GE": {
       "insider_signal": {
@@ -1125,7 +1132,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-09T14:04:58.991216"
+      "scanned_at": "2026-06-10T14:40:41.968325"
     },
     "WMT": {
       "insider_signal": {
@@ -1141,8 +1148,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:05:01.989272"
+      "trump_mentions": [
+        {
+          "headline": "Avery Dennison (AVY) Draws Lower Target from Argus amid Tariff Concerns",
+          "date": "2026-06-10 03:55",
+          "summary": "With a TTM operating cash flow of $1.03 billion, Avery Dennison Corporation (NYSE:AVY) is included among the 12 Cash-Rich Stocks to Buy Right Now. On June 4, Argus lowered its price recommendation on ",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:43.230128"
     },
     "COST": {
       "insider_signal": {
@@ -1158,17 +1174,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Costco Tariff Refund Plan Links Trade Ruling To Member Value And Valuation",
-          "date": "2026-06-06 16:11",
-          "summary": "Costco Wholesale (NasdaqGS:COST) is preparing to file for tariff refunds following a Supreme Court ruling. The company plans to return those tariff refunds directly to members, creating a rare link be",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-06-09T14:05:04.346987"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-10T14:40:45.501547"
     },
     "FCX": {
       "insider_signal": {
@@ -1184,8 +1191,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:05:07.736879"
+      "trump_mentions": [
+        {
+          "headline": "Copper Price Rally Fades As Trump Tariff Bets Lose Steam; Mining Stocks Waver",
+          "date": "2026-06-09 16:09",
+          "summary": "The copper price rally continued early Tuesday morning, then lost momentum, amid hopes for a U.S.-Iran peace deal, easing dollar and market positioning for a near-term decision on expanding Trump tari",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-10T14:40:47.553423"
     },
     "NEE": {
       "insider_signal": {
@@ -1202,7 +1218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:05:10.220807"
+      "scanned_at": "2026-06-10T14:40:48.780926"
     },
     "PLD": {
       "insider_signal": {
@@ -1237,7 +1253,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-09T14:05:14.570190"
+      "scanned_at": "2026-06-10T14:40:50.298943"
     }
   }
 }
