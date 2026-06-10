@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 37,
+    "current_day": 38,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-10T16:39:42.515416+00:00",
+    "last_updated": "2026-06-10T20:44:29.973489+00:00",
     "session_number": 2
   },
-  "cash": 3584.23,
+  "cash": 3998.95,
   "initial_capital": 5000.0,
-  "equity": 5149.41,
+  "equity": 5135.32,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,38 +17,21 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.96,
-    "sortino": 2.03,
-    "calmar": 2.85,
+    "sharpe": 0.86,
+    "sortino": 1.85,
+    "calmar": 2.37,
     "spy_start_price": 686.1,
-    "spy_current_price": 737.05,
-    "benchmark_return_pct": 7.43,
-    "max_drawdown_pct": 3.81
+    "spy_current_price": 725.43,
+    "benchmark_return_pct": 5.73,
+    "max_drawdown_pct": 4.08
   },
   "positions": {
-    "MS": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 201.05,
-      "cost_basis": 402.1,
-      "last_price": 208.3,
-      "stop_loss": 207.36,
-      "take_profit": 221.16,
-      "partial_profit_price": 211.1,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 218.27,
-      "lowest_price": 201.05,
-      "partial_taken": true,
-      "opened_date": "2026-05-25",
-      "journal_note": "MS is in a confirmed uptrend with price at $201.03 above both 20d EMA ($192.30) and 50d EMA ($185.75), with a bullish MACD crossover \u2014 this is a clean momentum entry. P/E at 18.8x with 16.3% ROE makes this reasonably valued for a high-quality financial. The risk team reduced position size from 5% to 3.5% citing high debt-to-equity, but elevated leverage is structural for financials and not a valid standalone reason to undersize \u2014 I'm splitting the difference at ~4.2% given we are critically underdeployed at 21% vs 77% target with only 7 days left. MS is not in a focus sector but also not in an avoid sector, and with VIX at 16.6 and risk-on posture, deploying capital here beats holding cash. Upside target is ~$210-215 (5-7% from entry near $200), downside capped at $190 via the 5% stop, giving roughly 1.3:1 reward-to-risk on a trending name."
-    },
     "LLY": {
       "direction": "long",
       "qty": 1,
       "entry_price": 1168.46,
       "cost_basis": 1168.46,
-      "last_price": 1147.09,
+      "last_price": 1136.37,
       "stop_loss": 1074.98,
       "take_profit": 1355.41,
       "partial_profit_price": 1261.94,
@@ -583,6 +566,21 @@
       "opened_date": "2026-06-03",
       "closed_date": "2026-06-08",
       "journal_note": "VMC broke above its 20-day EMA ($277.68) and 50-day EMA ($279.41) with a bullish MACD histogram crossover at +2.05, and RSI at 60.44 leaves significant room before overbought levels \u2014 this is the primary entry signal. The DOJ approval of VMC's $712M California asset sale is a concrete sentiment catalyst validating management's capital allocation. The risk-conservative perspective flagged the elevated P/E of 33.93x and slow revenue growth, which I acknowledge but don't find disqualifying given the strong balance sheet (D/E 0.51, current ratio 2.69) and the fact that VMC is a Materials sector name \u2014 one of our focus sectors where we are critically underdeployed at 8% vs 50% target. Upside target is upper Bollinger Band at $295.82 (~3.8% from entry), with stop loss at ~$270.64 (5% below entry, anchored just below the 50-day EMA), giving roughly a 0.76:1 reward-to-risk on the technical setup alone, though the DOJ catalyst could push beyond the Bollinger Band. Position size is intentionally modest at 4% given medium conviction, but the buy is mandatory under risk-on posture with high deployment priority."
+    },
+    {
+      "ticker": "MS",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 201.05,
+      "exit_price": 207.36,
+      "cost_basis": 402.1,
+      "proceeds": 414.72,
+      "pnl": 12.62,
+      "pnl_pct": 3.14,
+      "reason": "stop_loss",
+      "opened_date": "2026-05-25",
+      "closed_date": "2026-06-10",
+      "journal_note": "MS is in a confirmed uptrend with price at $201.03 above both 20d EMA ($192.30) and 50d EMA ($185.75), with a bullish MACD crossover \u2014 this is a clean momentum entry. P/E at 18.8x with 16.3% ROE makes this reasonably valued for a high-quality financial. The risk team reduced position size from 5% to 3.5% citing high debt-to-equity, but elevated leverage is structural for financials and not a valid standalone reason to undersize \u2014 I'm splitting the difference at ~4.2% given we are critically underdeployed at 21% vs 77% target with only 7 days left. MS is not in a focus sector but also not in an avoid sector, and with VIX at 16.6 and risk-on posture, deploying capital here beats holding cash. Upside target is ~$210-215 (5-7% from entry near $200), downside capped at $190 via the 5% stop, giving roughly 1.3:1 reward-to-risk on a trending name."
     }
   ],
   "equity_curve": [
@@ -945,6 +943,11 @@
       "day": 36,
       "date": "2026-06-09",
       "equity": 5149.41
+    },
+    {
+      "day": 37,
+      "date": "2026-06-10",
+      "equity": 5135.32
     }
   ],
   "journal": [
@@ -2548,6 +2551,11 @@
       "day": 36,
       "date": "2026-06-09",
       "equity": 5371.3
+    },
+    {
+      "day": 37,
+      "date": "2026-06-10",
+      "equity": 5286.62
     }
   ],
   "dt_equity_curve": [
@@ -2679,6 +2687,11 @@
     {
       "day": 36,
       "date": "2026-06-09",
+      "equity": 5291.28
+    },
+    {
+      "day": 37,
+      "date": "2026-06-10",
       "equity": 5291.28
     }
   ],
@@ -2812,28 +2825,33 @@
       "day": 36,
       "date": "2026-06-09",
       "equity": 4832.63
+    },
+    {
+      "day": 37,
+      "date": "2026-06-10",
+      "equity": 4832.63
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 737.05,
-      "return_pct": 7.43
+      "current_price": 725.43,
+      "return_pct": 5.73
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 707.83,
-      "return_pct": 12.6
+      "current_price": 693.69,
+      "return_pct": 10.35
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 285.02,
-      "return_pct": 6.07
+      "current_price": 282.05,
+      "return_pct": 4.96
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 390.78,
-      "return_pct": -12.2
+      "current_price": 374.58,
+      "return_pct": -15.84
     }
   },
   "sector_strength": {
