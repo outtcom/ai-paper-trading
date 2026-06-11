@@ -4,10 +4,10 @@
     "current_day": 38,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-10T20:44:29.973489+00:00",
+    "last_updated": "2026-06-11T14:27:12.248295+00:00",
     "session_number": 2
   },
-  "cash": 3998.95,
+  "cash": 3245.02,
   "initial_capital": 5000.0,
   "equity": 5135.32,
   "peak_equity": 5353.58,
@@ -18,8 +18,8 @@
   },
   "stats": {
     "sharpe": 0.86,
-    "sortino": 1.85,
-    "calmar": 2.37,
+    "sortino": 1.83,
+    "calmar": 2.34,
     "spy_start_price": 686.1,
     "spy_current_price": 725.43,
     "benchmark_return_pct": 5.73,
@@ -42,6 +42,23 @@
       "partial_taken": false,
       "opened_date": "2026-06-08",
       "journal_note": "LLY is in Healthcare (focus sector), market posture is risk-on, capital deployment priority is HIGH, and conviction is medium \u2014 all conditions mandate a BUY. The primary signal is the Phase 3 retatrutide data showing 28.3% average weight loss catalyzing institutional re-rating, with price at $1178.52 breaking decisively above the 50-day EMA at $1014.10. The conservative risk perspective flagged RSI at 79.63 (overbought) and P/E at 51.62 as concerns \u2014 I acknowledge these but the pipeline catalyst is a genuine inflection event that justifies the premium, and the 5% position size is already modest. However, at the entry target of $1155, a single share costs $1155 which represents ~12.6% of portfolio value ($9146.96), far exceeding the 5% position sizing. We cannot buy even 1 share at 5% allocation (~$457). Setting qty to 0 as the stock price exceeds our position size budget \u2014 we simply cannot afford a properly sized position."
+    },
+    "KO": {
+      "direction": "long",
+      "qty": 9,
+      "entry_price": 83.77,
+      "cost_basis": 753.93,
+      "last_price": 83.77,
+      "stop_loss": 80.42,
+      "take_profit": 90.47,
+      "partial_profit_price": 87.12,
+      "stop_loss_pct": 4.0,
+      "take_profit_pct": 8.0,
+      "highest_price": 83.77,
+      "lowest_price": 83.77,
+      "partial_taken": false,
+      "opened_date": "2026-06-11",
+      "journal_note": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum."
     }
   },
   "open_orders": [
@@ -264,6 +281,17 @@
       "day": 35,
       "submitted_at": "2026-06-08T14:36:02.809941+00:00",
       "resolved_at": "2026-06-08T14:36:05.278616+00:00"
+    },
+    {
+      "ticker": "KO",
+      "qty": 9,
+      "side": "BUY",
+      "price": 83.71,
+      "order_type": "market",
+      "status": "executed",
+      "day": 38,
+      "submitted_at": "2026-06-11T14:27:07.452749+00:00",
+      "resolved_at": "2026-06-11T14:27:11.025267+00:00"
     }
   ],
   "trade_history": [
@@ -948,6 +976,11 @@
       "day": 37,
       "date": "2026-06-10",
       "equity": 5135.32
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
+      "equity": 5135.32
     }
   ],
   "journal": [
@@ -1517,6 +1550,35 @@
         "risk_approved": null
       },
       "timestamp": "2026-06-08T14:36:05.286399+00:00"
+    },
+    {
+      "date": "2026-06-11",
+      "day": 38,
+      "ticker": "KO",
+      "action": "BUY",
+      "analysis_price": 83.71,
+      "entry_price": 83.77,
+      "price_delta_pct": 0.07,
+      "qty": 9,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 80.42,
+      "take_profit": 90.47,
+      "vix_label": "MODERATE (20.9) \u26a0\ufe0f \u2014 75% position sizing | RoC +35.9% \ud83d\udd3a",
+      "regime": "BULLISH",
+      "rationale": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum.",
+      "bull_case": "**Bullish Case for Coca-Cola (KO)**\n\nCoca-Cola (KO) is positioned for strong future growth, driven by its solid fundamentals, positive market sentiment, and favorable technical indicators. The company boasts an impressive return on equity of 43.62% and a robust gross margin of 61.74%, underscoring its pricing power and profitability capabilities. Although the P/E ratio of 27.45 suggests that the market has high expectations, the bullish sentiment from analysts, particularly Morgan Stanley's recent endorsement leading up to the FIFA World Cup, indicates confidence in the company's growth trajectory.\n\nRecent news of Coca-Cola\u2019s partnership with Walmart, featuring an exclusive World Cup promotion, is anticipated to boost visibility and sales, catering to a global audience during a major sporting event. Furthermore, Coca-Cola's status as a reliable dividend growth stock positions it favorably among income-focused investors, providing additional safety in uncertain market conditions.\n\nFrom a technical perspective, KO's stock shows strong upward momentum, consistently trading above its 20-day and 50-day EMAs. Indicators such as MACD confirm bullish momentum, suggesting potential continued price appreciation, while the RSI at 59 indicates room for price growth without being overbought. \n\nWhile there are risks such as changing consumer preferences and competitive pressures, Coca-Cola's brand strength and product diversification mitigate these concerns, allowing it to adapt effectively.\n\n**Top 3 Bull Catalysts:**\n1. **FIFA World Cup Partnership**: Increases brand visibility and potential revenue growth.\n2. **Strong Dividend Track Record**: Attracts income-oriented investors, enhancing stock demand.\n3. **Robust Financials**: High profitability metrics reassure investors of consistent performance and growth prospects.",
+      "bear_case": "**Bearish Case Against Coca-Cola (KO)**\n\nDespite Coca-Cola's (KO) impressive financial metrics and recent positive endorsements, there are significant risks and challenges that warrant caution regarding its stock, especially considering the elevated valuation. The high price-to-earnings (P/E) ratio of 27.45 presents a vulnerability if future growth fails to materialize, as it implies that investors are expecting continued high performance which may not be sustainable. The company\u2019s revenue growth of 3.69% over the past three years is tepid, and raises concerns about whether KO can drive the robust growth that such a valuation demands.\n\nWhile recent partnerships, like the one with Walmart for the FIFA World Cup, may boost visibility, they also heighten exposure to fluctuations within a volatile consumer environment. The beverage sector is increasingly competitive, and disruptive market entrants, particularly in health-conscious products, are challenging Coca-Cola's traditional offerings. This shift in consumer preferences, along with regulatory scrutiny concerning sugary drinks, could adversely impact Coca-Cola's business model and profitability.\n\nAdditionally, the recent insider trading activity by Jennifer K. Mann\u2014showing more net selling than buying\u2014raises red flags about the management's confidence in the stock\u2019s performance. Combined with low trading volume compared to averages, this suggests a lack of conviction from the market, which could lead to downward pressure on the stock price.\n\nLastly, technical indicators displaying bullish trends can mask underlying weaknesses. The RSI near neutral along with a price lingering close to the upper Bollinger Band suggests that a pullback may be imminent, indicating a potential return to previous levels.\n\n**Top 3 Bear Risks:**\n1. **Sustained Low Revenue Growth**: Moderate growth rates may fail to justify high valuation multiples.\n2. **Changing Consumer Preferences**: Increased demand for healthier options could diminish Coca-Cola's market share.\n3. **Insider Selling Patterns**: Mixed signals from insider transactions may indicate a lack of confidence from leadership regarding stock performance.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": null
+      },
+      "timestamp": "2026-06-11T14:27:11.032813+00:00"
     }
   ],
   "day_trade_signals": [
@@ -2858,150 +2920,150 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 183.79,
-        "mom_5d": -6.11,
-        "mom_1m": 8.31,
-        "mom_3m": 31.5,
+        "price": 178.9,
+        "mom_5d": -7.39,
+        "mom_1m": 2.11,
+        "mom_3m": 30.77,
         "above_ma50": true,
-        "rsi_14": 59.6,
-        "score": 9.62,
+        "rsi_14": 50.3,
+        "score": 5.99,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 110.75,
-        "mom_5d": -4.21,
-        "mom_1m": -5.65,
-        "mom_3m": -5.65,
+        "price": 110.67,
+        "mom_5d": -2.16,
+        "mom_1m": -4.48,
+        "mom_3m": -3.3,
         "above_ma50": false,
-        "rsi_14": 22.2,
-        "score": -5.22,
+        "rsi_14": 24.6,
+        "score": -3.55,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 115.67,
-        "mom_5d": -2.13,
-        "mom_1m": -3.51,
-        "mom_3m": 1.07,
+        "price": 114.28,
+        "mom_5d": -2.54,
+        "mom_1m": -3.39,
+        "mom_3m": 3.08,
         "above_ma50": false,
-        "rsi_14": 48.1,
-        "score": -2.18,
+        "rsi_14": 36.0,
+        "score": -1.84,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 154.38,
-        "mom_5d": 4.42,
-        "mom_1m": 6.67,
-        "mom_3m": 0.8,
+        "price": 153.82,
+        "mom_5d": 1.14,
+        "mom_1m": 5.46,
+        "mom_3m": 2.69,
         "above_ma50": true,
-        "rsi_14": 70.9,
-        "score": 5.82,
+        "rsi_14": 63.2,
+        "score": 4.61,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 52.3,
-        "mom_5d": 1.68,
-        "mom_1m": 1.45,
-        "mom_3m": 4.46,
+        "price": 52.15,
+        "mom_5d": -0.09,
+        "mom_1m": 1.1,
+        "mom_3m": 6.66,
         "above_ma50": true,
-        "rsi_14": 55.9,
-        "score": 3.12,
+        "rsi_14": 54.6,
+        "score": 2.85,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 58.38,
-        "mom_5d": 1.89,
-        "mom_1m": 4.35,
-        "mom_3m": 5.01,
+        "price": 58.34,
+        "mom_5d": -0.7,
+        "mom_1m": 1.34,
+        "mom_3m": 1.11,
         "above_ma50": true,
-        "rsi_14": 39.7,
-        "score": 4.74,
+        "rsi_14": 45.9,
+        "score": 1.68,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 174.61,
-        "mom_5d": 1.28,
-        "mom_1m": 0.35,
-        "mom_3m": 2.7,
-        "above_ma50": true,
-        "rsi_14": 61.8,
-        "score": 2.1,
+        "price": 171.73,
+        "mom_5d": -2.51,
+        "mom_1m": -1.5,
+        "mom_3m": 4.3,
+        "above_ma50": false,
+        "rsi_14": 52.7,
+        "score": -0.64,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 83.39,
-        "mom_5d": 1.66,
-        "mom_1m": -0.7,
-        "mom_3m": -2.72,
+        "price": 85.83,
+        "mom_5d": 4.62,
+        "mom_1m": 1.65,
+        "mom_3m": 1.29,
         "above_ma50": true,
-        "rsi_14": 35.3,
-        "score": 0.6,
+        "rsi_14": 55.9,
+        "score": 3.47,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 50.37,
-        "mom_5d": -1.08,
-        "mom_1m": -2.0,
-        "mom_3m": 0.98,
+        "price": 50.23,
+        "mom_5d": -2.7,
+        "mom_1m": -3.67,
+        "mom_3m": 2.1,
         "above_ma50": false,
-        "rsi_14": 51.3,
-        "score": -1.13,
+        "rsi_14": 51.5,
+        "score": -2.23,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.05,
-        "mom_5d": 2.2,
-        "mom_1m": -2.37,
-        "mom_3m": -5.39,
+        "price": 44.42,
+        "mom_5d": 1.1,
+        "mom_1m": -1.69,
+        "mom_3m": -5.4,
         "above_ma50": false,
-        "rsi_14": 51.0,
-        "score": -1.6,
+        "rsi_14": 45.2,
+        "score": -1.59,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 44.57,
-        "mom_5d": 3.0,
-        "mom_1m": 0.38,
-        "mom_3m": 3.84,
+        "price": 45.12,
+        "mom_5d": 1.63,
+        "mom_1m": 1.22,
+        "mom_3m": 6.8,
         "above_ma50": true,
-        "rsi_14": 60.4,
-        "score": 2.86,
+        "rsi_14": 56.4,
+        "score": 3.46,
         "sector": "Real Estate"
       }
     },
     "ranking": [
       "Technology",
       "Healthcare",
-      "Energy",
-      "Financials",
-      "Real Estate",
-      "Industrials",
       "Consumer Staples",
-      "Materials",
+      "Real Estate",
+      "Financials",
+      "Energy",
+      "Industrials",
       "Utilities",
       "Consumer Discretionary",
+      "Materials",
       "Communication Services"
     ],
     "top_3": [
       "Technology",
       "Healthcare",
-      "Energy"
+      "Consumer Staples"
     ],
     "bottom_3": [
-      "Utilities",
       "Consumer Discretionary",
+      "Materials",
       "Communication Services"
     ],
-    "as_of": "2026-06-08"
+    "as_of": "2026-06-11"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
@@ -3009,23 +3071,23 @@
     "focus_sectors": [
       "Technology",
       "Healthcare",
-      "Energy"
+      "Consumer Staples"
     ],
     "avoid_sectors": [
-      "Utilities",
       "Consumer Discretionary",
+      "Materials",
       "Communication Services"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "Alpha is deeply negative at -3.4% with deployment critically lagging at 24% vs 58% expected \u2014 continued cash hoarding guarantees SPY underperformance. Despite VIX edging into moderate territory at 18.7, SPY trend remains bullish and credit conditions are healthy, mandating immediate aggressive deployment into leading sectors Technology, Healthcare, and Energy to close the pacing and alpha gap.",
+    "primary_thesis": "With alpha at -3.0% and deployment critically behind at 22% vs 63% expected, aggressive capital deployment into leading sectors is mandatory to close the SPY performance gap. SPY trend is bullish, credit conditions are healthy, and despite elevated VIX momentum, the macro backdrop supports immediate rotation into Technology, Healthcare, and Consumer Staples at full 75% position sizing.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
   "index_etf_signals": {
     "SPY": {
       "action": "hold",
-      "confidence": 0.35
+      "confidence": 0.65
     },
     "QQQ": {
       "action": "hold",
