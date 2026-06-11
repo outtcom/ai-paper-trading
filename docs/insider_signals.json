@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-10",
+  "date": "2026-06-11",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -70,7 +70,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:10.800207"
+      "scanned_at": "2026-06-11T15:05:39.408981"
     },
     "NVDA": {
       "insider_signal": {
@@ -78,7 +78,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 5,
-        "compensation_grants": 1,
+        "compensation_grants": 3,
         "net_open_market_value": -224580213.05,
         "net_open_market_fmt": "-$224.6M",
         "largest_single_transaction": {
@@ -140,34 +140,43 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Falls 500 Points On Trump Comments; CPI Inflation Data Next (Live Coverage)",
-          "date": "2026-06-10 12:08",
-          "summary": "Stock Market Today: The Dow Jones index sold off 500 points Wednesday on Trump's comments. The CPI inflation report is next.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-10T14:40:12.573173"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-11T15:05:40.650416"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "open_market_sells": 1,
+        "compensation_grants": 9,
+        "net_open_market_value": -1031125.0,
+        "net_open_market_fmt": "-$1.0M",
+        "largest_single_transaction": {
+          "name": "Numoto Takeshi",
+          "direction": "sell",
+          "dollar_value": 1031125.0,
+          "dollar_fmt": "$1.0M",
+          "date": "2026-06-08",
+          "shares_traded": 2500,
+          "price_per_share": 412.45
+        },
+        "notable_transactions": [
+          {
+            "name": "Numoto Takeshi",
+            "direction": "sell",
+            "dollar_value": 1031125.0,
+            "dollar_fmt": "$1.0M",
+            "date": "2026-06-08",
+            "shares_traded": 2500,
+            "price_per_share": 412.45
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:15.652575"
+      "scanned_at": "2026-06-11T15:05:41.874353"
     },
     "MU": {
       "insider_signal": {
@@ -282,8 +291,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:18.440314"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
+          "date": "2026-06-11 09:03",
+          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-11T15:05:43.016956"
     },
     "GOOGL": {
       "insider_signal": {
@@ -327,7 +345,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:19.905544"
+      "scanned_at": "2026-06-11T15:05:44.211469"
     },
     "META": {
       "insider_signal": {
@@ -417,15 +435,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Meta's AI Workforce Academy Wins Praise From Former Trump Adviser, Ex-Facebook Exec: 'Hope More Companies Follow Suit'",
-          "date": "2026-06-10 08:12",
-          "summary": "Meta’s America’s Workforce Academy (AWA), announced on Monday, will train trade workers such as electricians, plumbers, and technicians and offer jobs.",
-          "source": "Yahoo",
+          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
+          "date": "2026-06-11 09:03",
+          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
+          "source": "ChartMill",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:23.516964"
+      "scanned_at": "2026-06-11T15:05:45.519451"
     },
     "AMZN": {
       "insider_signal": {
@@ -504,8 +522,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:26.188911"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
+          "date": "2026-06-11 09:03",
+          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-11T15:05:46.697231"
     },
     "TSLA": {
       "insider_signal": {
@@ -557,17 +584,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "BYD threatens to sue Trump administration over Chinese military claims",
-          "date": "2026-06-10 09:02",
-          "summary": "BYD has threatened to sue the US government after the Pentagon accused the Chinese carmaker of aiding Beijing’s military.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-10T14:40:27.395053"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-11T15:05:47.863266"
     },
     "LLY": {
       "insider_signal": {
@@ -611,7 +629,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:29.404401"
+      "scanned_at": "2026-06-11T15:05:49.098065"
     },
     "UNH": {
       "insider_signal": {
@@ -682,7 +700,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:31.823624"
+      "scanned_at": "2026-06-11T15:05:50.179017"
     },
     "JPM": {
       "insider_signal": {
@@ -781,23 +799,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s Economy Hired Nearly 1 Million Healthcare Workers While Every Other Sector Lost Jobs. Here’s Where to Put Your Money",
-          "date": "2026-06-10 12:34",
-          "summary": "Economist Justin Wolfers dropped a number on the Prof G Markets podcast that should reorganize how you think about the 2026 economy. Since Trump took office, healthcare and social services has added r",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil Falls in Choppy Trading After Trump Vows Response to Attack",
-          "date": "2026-06-09 19:15",
-          "summary": "(Bloomberg) -- Oil fell in a choppy trading session, with US President Donald Trump vowing a response to the downing of an American military helicopter, reigniting fears of a return to clashes with Ir",
+          "headline": "Trump Credits Stealth Operations for Holding Oil Prices Down",
+          "date": "2026-06-10 22:09",
+          "summary": "The U.S. military has escorted ships carrying over 100 million barrels of oil through the Strait of Hormuz since last month, President Donald Trump told reporters in the Oval Office on Wednesday.  Tru",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:33.916654"
+      "scanned_at": "2026-06-11T15:05:51.266653"
     },
     "GS": {
       "insider_signal": {
@@ -912,8 +922,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:35.323372"
+      "trump_mentions": [
+        {
+          "headline": "Trump Lavishes Praise on Citi for M&A Ranking It Doesn’t Have",
+          "date": "2026-06-10 14:10",
+          "summary": "(Bloomberg) -- President Donald Trump turned into a M&A enthusiast, with a surprise shout-out for Citigroup Inc. Chief Executive Officer Jane Fraser.Most Read from BloombergHouse Republican Says Hegse",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-11T15:05:52.445060"
     },
     "XOM": {
       "insider_signal": {
@@ -929,17 +948,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Has Predicted An Iran Deal 38 Times Since March: Prediction Markets Say It Won't Happen Soon",
-          "date": "2026-06-09 13:46",
-          "summary": "Trump has promised an Iran deal is imminent at least 38 times since March, per a new CNN count. Polymarket traders remain skeptical as oil markets watch.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-10T14:40:36.595488"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-11T15:05:53.504494"
     },
     "CVX": {
       "insider_signal": {
@@ -963,25 +973,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Rises On Trump Comments; Micron, Sandisk Continue To Rebound (Live Coverage)",
-          "date": "2026-06-09 12:02",
-          "summary": "Stock Market Today: The Dow Jones index rose Tuesday after Trump said a U.S.-Iran deal could be reached in \"two or three days.\"",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Has Predicted An Iran Deal 38 Times Since March: Prediction Markets Say It Won't Happen Soon",
-          "date": "2026-06-09 13:46",
-          "summary": "Trump has promised an Iran deal is imminent at least 38 times since March, per a new CNN count. Polymarket traders remain skeptical as oil markets watch.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-10T14:40:38.867884"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-11T15:05:54.639777"
     },
     "CAT": {
       "insider_signal": {
@@ -1080,15 +1073,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Stock Market Today: Dow Rallies On Trump, Iran Comments; Marvell Pops On S&P 500 Addition(Live Coverage)",
-          "date": "2026-06-08 13:48",
-          "summary": "Stock Market Today: The Dow Jones index rose Monday on Trump's latest Iran comments. Marvell stock surged on news that it'll join the S&P 500.",
-          "source": "Yahoo",
+          "headline": "Caterpillar Stock Sinks As Oil Prices Rise Amid Trump Threats",
+          "date": "2026-06-10 14:53",
+          "summary": "Caterpillar Inc (NYSE: CAT) shares are moving lower on Wednesday as the broader industrial sector came under selling pressure.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:41.040359"
+      "scanned_at": "2026-06-11T15:05:55.761301"
     },
     "GE": {
       "insider_signal": {
@@ -1124,15 +1117,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "GE Aerospace (GE) Anticipates More China Deals Following Trump-Xi Summit",
-          "date": "2026-06-09 04:46",
-          "summary": "GE Aerospace (NYSE:GE) is among the 10 Best Aerospace and Defense Stocks to Buy According to Hedge Funds. On Sunday, the company’s CEO, Larry Culp, described China’s plan to acquire 200 Boeing jets as",
+          "headline": "Defense Stocks Fall Despite Trump’s Promise of More Iran Strikes",
+          "date": "2026-06-10 17:50",
+          "summary": "President Donald Trump said Wednesday the U.S. would resume attacks on Iran, after a Shahed drone downed a U.S. Apache helicopter.  “We’re gonna be attacking them, attacking them very hard,” Trump tol",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:41.968325"
+      "scanned_at": "2026-06-11T15:05:56.822380"
     },
     "WMT": {
       "insider_signal": {
@@ -1148,17 +1141,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Avery Dennison (AVY) Draws Lower Target from Argus amid Tariff Concerns",
-          "date": "2026-06-10 03:55",
-          "summary": "With a TTM operating cash flow of $1.03 billion, Avery Dennison Corporation (NYSE:AVY) is included among the 12 Cash-Rich Stocks to Buy Right Now. On June 4, Argus lowered its price recommendation on ",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-06-10T14:40:43.230128"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-11T15:05:57.968327"
     },
     "COST": {
       "insider_signal": {
@@ -1175,7 +1159,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:45.501547"
+      "scanned_at": "2026-06-11T15:05:59.051808"
     },
     "FCX": {
       "insider_signal": {
@@ -1201,7 +1185,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-10T14:40:47.553423"
+      "scanned_at": "2026-06-11T15:06:00.107177"
     },
     "NEE": {
       "insider_signal": {
@@ -1218,7 +1202,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:48.780926"
+      "scanned_at": "2026-06-11T15:06:01.344850"
     },
     "PLD": {
       "insider_signal": {
@@ -1253,7 +1237,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-10T14:40:50.298943"
+      "scanned_at": "2026-06-11T15:06:02.620062"
     }
   }
 }
