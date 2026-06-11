@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 38,
+    "current_day": 39,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-11T16:58:26.914865+00:00",
+    "last_updated": "2026-06-11T20:34:32.078769+00:00",
     "session_number": 2
   },
-  "cash": 3245.02,
+  "cash": 4405.97,
   "initial_capital": 5000.0,
-  "equity": 5135.32,
+  "equity": 5148.74,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,38 +17,21 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.86,
-    "sortino": 1.83,
-    "calmar": 2.34,
+    "sharpe": 0.94,
+    "sortino": 1.99,
+    "calmar": 2.54,
     "spy_start_price": 686.1,
-    "spy_current_price": 725.43,
-    "benchmark_return_pct": 5.73,
+    "spy_current_price": 737.76,
+    "benchmark_return_pct": 7.53,
     "max_drawdown_pct": 4.08
   },
   "positions": {
-    "LLY": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 1168.46,
-      "cost_basis": 1168.46,
-      "last_price": 1155.74,
-      "stop_loss": 1074.98,
-      "take_profit": 1355.41,
-      "partial_profit_price": 1261.94,
-      "stop_loss_pct": 8.0,
-      "take_profit_pct": 16.0,
-      "highest_price": 1168.46,
-      "lowest_price": 1168.46,
-      "partial_taken": false,
-      "opened_date": "2026-06-08",
-      "journal_note": "LLY is in Healthcare (focus sector), market posture is risk-on, capital deployment priority is HIGH, and conviction is medium \u2014 all conditions mandate a BUY. The primary signal is the Phase 3 retatrutide data showing 28.3% average weight loss catalyzing institutional re-rating, with price at $1178.52 breaking decisively above the 50-day EMA at $1014.10. The conservative risk perspective flagged RSI at 79.63 (overbought) and P/E at 51.62 as concerns \u2014 I acknowledge these but the pipeline catalyst is a genuine inflection event that justifies the premium, and the 5% position size is already modest. However, at the entry target of $1155, a single share costs $1155 which represents ~12.6% of portfolio value ($9146.96), far exceeding the 5% position sizing. We cannot buy even 1 share at 5% allocation (~$457). Setting qty to 0 as the stock price exceeds our position size budget \u2014 we simply cannot afford a properly sized position."
-    },
     "KO": {
       "direction": "long",
       "qty": 9,
       "entry_price": 83.77,
       "cost_basis": 753.93,
-      "last_price": 83.56,
+      "last_price": 82.53,
       "stop_loss": 80.42,
       "take_profit": 90.47,
       "partial_profit_price": 87.12,
@@ -609,6 +592,21 @@
       "opened_date": "2026-05-25",
       "closed_date": "2026-06-10",
       "journal_note": "MS is in a confirmed uptrend with price at $201.03 above both 20d EMA ($192.30) and 50d EMA ($185.75), with a bullish MACD crossover \u2014 this is a clean momentum entry. P/E at 18.8x with 16.3% ROE makes this reasonably valued for a high-quality financial. The risk team reduced position size from 5% to 3.5% citing high debt-to-equity, but elevated leverage is structural for financials and not a valid standalone reason to undersize \u2014 I'm splitting the difference at ~4.2% given we are critically underdeployed at 21% vs 77% target with only 7 days left. MS is not in a focus sector but also not in an avoid sector, and with VIX at 16.6 and risk-on posture, deploying capital here beats holding cash. Upside target is ~$210-215 (5-7% from entry near $200), downside capped at $190 via the 5% stop, giving roughly 1.3:1 reward-to-risk on a trending name."
+    },
+    {
+      "ticker": "LLY",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 1168.46,
+      "exit_price": 1160.95,
+      "cost_basis": 1168.46,
+      "proceeds": 1160.95,
+      "pnl": -7.51,
+      "pnl_pct": -0.64,
+      "reason": "time_exit",
+      "opened_date": "2026-06-08",
+      "closed_date": "2026-06-11",
+      "journal_note": "LLY is in Healthcare (focus sector), market posture is risk-on, capital deployment priority is HIGH, and conviction is medium \u2014 all conditions mandate a BUY. The primary signal is the Phase 3 retatrutide data showing 28.3% average weight loss catalyzing institutional re-rating, with price at $1178.52 breaking decisively above the 50-day EMA at $1014.10. The conservative risk perspective flagged RSI at 79.63 (overbought) and P/E at 51.62 as concerns \u2014 I acknowledge these but the pipeline catalyst is a genuine inflection event that justifies the premium, and the 5% position size is already modest. However, at the entry target of $1155, a single share costs $1155 which represents ~12.6% of portfolio value ($9146.96), far exceeding the 5% position sizing. We cannot buy even 1 share at 5% allocation (~$457). Setting qty to 0 as the stock price exceeds our position size budget \u2014 we simply cannot afford a properly sized position."
     }
   ],
   "equity_curve": [
@@ -981,6 +979,11 @@
       "day": 38,
       "date": "2026-06-11",
       "equity": 5135.32
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
+      "equity": 5148.74
     }
   ],
   "journal": [
@@ -2640,6 +2643,11 @@
       "day": 37,
       "date": "2026-06-10",
       "equity": 5286.62
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
+      "equity": 5376.48
     }
   ],
   "dt_equity_curve": [
@@ -2776,6 +2784,11 @@
     {
       "day": 37,
       "date": "2026-06-10",
+      "equity": 5291.28
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
       "equity": 5291.28
     }
   ],
@@ -2914,28 +2927,33 @@
       "day": 37,
       "date": "2026-06-10",
       "equity": 4832.63
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
+      "equity": 4861.07
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 725.43,
-      "return_pct": 5.73
+      "current_price": 737.76,
+      "return_pct": 7.53
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 693.69,
-      "return_pct": 10.35
+      "current_price": 717.12,
+      "return_pct": 14.08
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 282.05,
-      "return_pct": 4.96
+      "current_price": 290.41,
+      "return_pct": 8.07
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 374.58,
-      "return_pct": -15.84
+      "current_price": 386.32,
+      "return_pct": -13.2
     }
   },
   "sector_strength": {
