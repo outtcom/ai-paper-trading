@@ -1,5 +1,6 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-06-12",
+  "last_notified_date": "2026-06-12",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +18,8 @@
           "dollar_fmt": "$42.6M",
           "date": "2026-05-06",
           "shares_traded": 149527,
-          "price_per_share": 284.57
+          "price_per_share": 284.57,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -27,7 +29,8 @@
             "dollar_fmt": "$15.6M",
             "date": "2026-05-27",
             "shares_traded": 50000,
-            "price_per_share": 311.02
+            "price_per_share": 311.02,
+            "transaction_code": ""
           },
           {
             "name": "Borders Ben",
@@ -36,7 +39,8 @@
             "dollar_fmt": "$369K",
             "date": "2026-05-08",
             "shares_traded": 1274,
-            "price_per_share": 290
+            "price_per_share": 290,
+            "transaction_code": ""
           },
           {
             "name": "LEVINSON ARTHUR D",
@@ -45,7 +49,8 @@
             "dollar_fmt": "$28.6M",
             "date": "2026-05-06",
             "shares_traded": 100473,
-            "price_per_share": 285.04
+            "price_per_share": 285.04,
+            "transaction_code": ""
           },
           {
             "name": "LEVINSON ARTHUR D",
@@ -54,7 +59,8 @@
             "dollar_fmt": "$42.6M",
             "date": "2026-05-06",
             "shares_traded": 149527,
-            "price_per_share": 284.57
+            "price_per_share": 284.57,
+            "transaction_code": ""
           },
           {
             "name": "Parekh Kevan",
@@ -63,14 +69,15 @@
             "dollar_fmt": "$422K",
             "date": "2026-04-23",
             "shares_traded": 1534,
-            "price_per_share": 275
+            "price_per_share": 275,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:39.408981"
+      "scanned_at": "2026-06-12T14:22:34.167141"
     },
     "NVDA": {
       "insider_signal": {
@@ -88,7 +95,8 @@
           "dollar_fmt": "$111.2M",
           "date": "2026-06-02",
           "shares_traded": 500000,
-          "price_per_share": 222.3774
+          "price_per_share": 222.3774,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -98,7 +106,8 @@
             "dollar_fmt": "$88.1M",
             "date": "2026-06-04",
             "shares_traded": 400000,
-            "price_per_share": 220.371
+            "price_per_share": 220.371,
+            "transaction_code": ""
           },
           {
             "name": "STEVENS MARK A",
@@ -107,7 +116,8 @@
             "dollar_fmt": "$21.8M",
             "date": "2026-06-04",
             "shares_traded": 100000,
-            "price_per_share": 217.655
+            "price_per_share": 217.655,
+            "transaction_code": ""
           },
           {
             "name": "Neal Stephen C",
@@ -116,7 +126,8 @@
             "dollar_fmt": "$3.3M",
             "date": "2026-06-03",
             "shares_traded": 15500,
-            "price_per_share": 215.7331
+            "price_per_share": 215.7331,
+            "transaction_code": ""
           },
           {
             "name": "STEVENS MARK A",
@@ -125,7 +136,8 @@
             "dollar_fmt": "$111.2M",
             "date": "2026-06-02",
             "shares_traded": 500000,
-            "price_per_share": 222.3774
+            "price_per_share": 222.3774,
+            "transaction_code": ""
           },
           {
             "name": "Dabiri John",
@@ -134,14 +146,15 @@
             "dollar_fmt": "$134K",
             "date": "2026-05-27",
             "shares_traded": 625,
-            "price_per_share": 214
+            "price_per_share": 214,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:40.650416"
+      "scanned_at": "2026-06-12T14:22:35.480331"
     },
     "MSFT": {
       "insider_signal": {
@@ -159,7 +172,8 @@
           "dollar_fmt": "$1.0M",
           "date": "2026-06-08",
           "shares_traded": 2500,
-          "price_per_share": 412.45
+          "price_per_share": 412.45,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -169,24 +183,42 @@
             "dollar_fmt": "$1.0M",
             "date": "2026-06-08",
             "shares_traded": 2500,
-            "price_per_share": 412.45
+            "price_per_share": 412.45,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:41.874353"
+      "trump_mentions": [
+        {
+          "headline": "Alphabet Reveals Why It Rejected Trump's $2 Billion Quantum Funding Program",
+          "date": "2026-06-12 13:07",
+          "summary": "Google said government funding conditions did not align with its development timeline.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Google Reveals Why It Turned Down Trump Administration's Quantum Funding Deal: 'In This One Specific Case…'",
+          "date": "2026-06-12 04:13",
+          "summary": "Google rejected Trump administration quantum funding, citing restrictive conditions that could slow development.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:36.653853"
     },
     "MU": {
       "insider_signal": {
         "ticker": "MU",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 10,
-        "compensation_grants": 0,
-        "net_open_market_value": -6808546.09,
-        "net_open_market_fmt": "-$6.8M",
+        "open_market_sells": 9,
+        "compensation_grants": 1,
+        "net_open_market_value": -6201463.81,
+        "net_open_market_fmt": "-$6.2M",
         "largest_single_transaction": {
           "name": "MEHROTRA SANJAY",
           "direction": "sell",
@@ -194,7 +226,8 @@
           "dollar_fmt": "$1.8M",
           "date": "2026-05-29",
           "shares_traded": 1810,
-          "price_per_share": 970.59
+          "price_per_share": 970.59,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -204,7 +237,8 @@
             "dollar_fmt": "$78K",
             "date": "2026-05-29",
             "shares_traded": 80,
-            "price_per_share": 979.37
+            "price_per_share": 979.37,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -213,7 +247,8 @@
             "dollar_fmt": "$532K",
             "date": "2026-05-29",
             "shares_traded": 544,
-            "price_per_share": 977.95
+            "price_per_share": 977.95,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -222,7 +257,8 @@
             "dollar_fmt": "$162K",
             "date": "2026-05-29",
             "shares_traded": 166,
-            "price_per_share": 976.75
+            "price_per_share": 976.75,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -231,7 +267,8 @@
             "dollar_fmt": "$645K",
             "date": "2026-05-29",
             "shares_traded": 661,
-            "price_per_share": 975.57
+            "price_per_share": 975.57,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -240,7 +277,8 @@
             "dollar_fmt": "$536K",
             "date": "2026-05-29",
             "shares_traded": 550,
-            "price_per_share": 974.44
+            "price_per_share": 974.44,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -249,7 +287,8 @@
             "dollar_fmt": "$545K",
             "date": "2026-05-29",
             "shares_traded": 560,
-            "price_per_share": 973.75
+            "price_per_share": 973.75,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -258,7 +297,8 @@
             "dollar_fmt": "$611K",
             "date": "2026-05-29",
             "shares_traded": 628,
-            "price_per_share": 972.61
+            "price_per_share": 972.61,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -267,7 +307,8 @@
             "dollar_fmt": "$1.3M",
             "date": "2026-05-29",
             "shares_traded": 1374,
-            "price_per_share": 971.84
+            "price_per_share": 971.84,
+            "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
@@ -276,16 +317,8 @@
             "dollar_fmt": "$1.8M",
             "date": "2026-05-29",
             "shares_traded": 1810,
-            "price_per_share": 970.59
-          },
-          {
-            "name": "MEHROTRA SANJAY",
-            "direction": "sell",
-            "dollar_value": 607082.28,
-            "dollar_fmt": "$607K",
-            "date": "2026-05-29",
-            "shares_traded": 626,
-            "price_per_share": 969.78
+            "price_per_share": 970.59,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
@@ -293,15 +326,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
-          "date": "2026-06-11 09:03",
-          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
+          "headline": "Trump Pulls The Trigger Back, Nasdaq Rips 2.5% And SpaceX Books The Biggest IPO Ever",
+          "date": "2026-06-12 06:55",
+          "summary": "Trump cancelled the planned strikes on Iran and the Nasdaq tore back 2.5%, chips led the rebound, oil dropped under $88, and the 10-year yield gave back 10 basis points in a session. Oracle kept bleed",
           "source": "ChartMill",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-11T15:05:43.016956"
+      "scanned_at": "2026-06-12T14:22:37.978915"
     },
     "GOOGL": {
       "insider_signal": {
@@ -319,7 +352,8 @@
           "dollar_fmt": "$764K",
           "date": "2026-05-25",
           "shares_traded": 2013,
-          "price_per_share": 379.38
+          "price_per_share": 379.38,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -329,7 +363,8 @@
             "dollar_fmt": "$764K",
             "date": "2026-05-25",
             "shares_traded": 2013,
-            "price_per_share": 379.38
+            "price_per_share": 379.38,
+            "transaction_code": ""
           },
           {
             "name": "Ashkenazi Anat",
@@ -338,14 +373,40 @@
             "dollar_fmt": "$675K",
             "date": "2026-05-25",
             "shares_traded": 1780,
-            "price_per_share": 379.38
+            "price_per_share": 379.38,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:44.211469"
+      "trump_mentions": [
+        {
+          "headline": "Alphabet Reveals Why It Rejected Trump's $2 Billion Quantum Funding Program",
+          "date": "2026-06-12 13:07",
+          "summary": "Google said government funding conditions did not align with its development timeline.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Google Explains Why It Passed On Trump's $2 Billion Quantum Initiative",
+          "date": "2026-06-12 12:48",
+          "summary": "Alphabet cited funding conditions that could have slowed its quantum computing development pace.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Google Breaks Silence on Rejecting Trump's $2 Billion Quantum Deal",
+          "date": "2026-06-12 12:36",
+          "summary": "Google Chose Speed Over Trump's $2 Billion Quantum Deal",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:39.207383"
     },
     "META": {
       "insider_signal": {
@@ -363,7 +424,8 @@
           "dollar_fmt": "$1.3M",
           "date": "2026-05-27",
           "shares_traded": 2079,
-          "price_per_share": 609.92
+          "price_per_share": 609.92,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -373,7 +435,8 @@
             "dollar_fmt": "$257K",
             "date": "2026-06-01",
             "shares_traded": 408,
-            "price_per_share": 629.29
+            "price_per_share": 629.29,
+            "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
@@ -382,7 +445,8 @@
             "dollar_fmt": "$52K",
             "date": "2026-06-01",
             "shares_traded": 82,
-            "price_per_share": 629.29
+            "price_per_share": 629.29,
+            "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
@@ -391,7 +455,8 @@
             "dollar_fmt": "$52K",
             "date": "2026-06-01",
             "shares_traded": 82,
-            "price_per_share": 629.29
+            "price_per_share": 629.29,
+            "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
@@ -400,7 +465,8 @@
             "dollar_fmt": "$527K",
             "date": "2026-06-01",
             "shares_traded": 837,
-            "price_per_share": 629.29
+            "price_per_share": 629.29,
+            "transaction_code": ""
           },
           {
             "name": "KIMMITT ROBERT M",
@@ -409,7 +475,8 @@
             "dollar_fmt": "$317K",
             "date": "2026-06-01",
             "shares_traded": 504,
-            "price_per_share": 629.29
+            "price_per_share": 629.29,
+            "transaction_code": ""
           },
           {
             "name": "Mahoney Curtis J.",
@@ -418,7 +485,8 @@
             "dollar_fmt": "$1.3M",
             "date": "2026-05-27",
             "shares_traded": 2079,
-            "price_per_share": 609.92
+            "price_per_share": 609.92,
+            "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
@@ -427,23 +495,15 @@
             "dollar_fmt": "$248K",
             "date": "2026-05-26",
             "shares_traded": 408,
-            "price_per_share": 608.98
+            "price_per_share": 608.98,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
-          "date": "2026-06-11 09:03",
-          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-11T15:05:45.519451"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-12T14:22:40.469267"
     },
     "AMZN": {
       "insider_signal": {
@@ -461,7 +521,8 @@
           "dollar_fmt": "$2.5M",
           "date": "2026-05-22",
           "shares_traded": 9270,
-          "price_per_share": 268.53
+          "price_per_share": 268.53,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -471,7 +532,8 @@
             "dollar_fmt": "$266K",
             "date": "2026-06-01",
             "shares_traded": 1000,
-            "price_per_share": 266.19
+            "price_per_share": 266.19,
+            "transaction_code": ""
           },
           {
             "name": "Zapolsky David",
@@ -480,7 +542,8 @@
             "dollar_fmt": "$2.5M",
             "date": "2026-05-22",
             "shares_traded": 9270,
-            "price_per_share": 268.53
+            "price_per_share": 268.53,
+            "transaction_code": ""
           },
           {
             "name": "Garman Matthew S",
@@ -489,7 +552,8 @@
             "dollar_fmt": "$115K",
             "date": "2026-05-21",
             "shares_traded": 433,
-            "price_per_share": 265.6412
+            "price_per_share": 265.6412,
+            "transaction_code": ""
           },
           {
             "name": "Garman Matthew S",
@@ -498,7 +562,8 @@
             "dollar_fmt": "$671K",
             "date": "2026-05-21",
             "shares_traded": 2534,
-            "price_per_share": 264.9465
+            "price_per_share": 264.9465,
+            "transaction_code": ""
           },
           {
             "name": "Garman Matthew S",
@@ -507,7 +572,8 @@
             "dollar_fmt": "$974K",
             "date": "2026-05-21",
             "shares_traded": 3689,
-            "price_per_share": 264.0309
+            "price_per_share": 264.0309,
+            "transaction_code": ""
           },
           {
             "name": "Garman Matthew S",
@@ -516,23 +582,15 @@
             "dollar_fmt": "$1.2M",
             "date": "2026-05-21",
             "shares_traded": 4554,
-            "price_per_share": 263.1801
+            "price_per_share": 263.1801,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Iran Encore Sinks Nasdaq 2%, Oracle's Capex Tab Comes Due",
-          "date": "2026-06-11 09:03",
-          "summary": "The Nasdaq lost 2% after Trump promised another round of strikes on Iran. A cooler CPI print barely registered. Super Micro cratered 28% on a $7B raise. Oracle beat the quarter but the capex number wa",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-11T15:05:46.697231"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-12T14:22:41.647867"
     },
     "TSLA": {
       "insider_signal": {
@@ -550,7 +608,8 @@
           "dollar_fmt": "$1.4M",
           "date": "2026-05-13",
           "shares_traded": 3000,
-          "price_per_share": 450
+          "price_per_share": 450,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -560,7 +619,8 @@
             "dollar_fmt": "$1.0M",
             "date": "2026-06-08",
             "shares_traded": 2606,
-            "price_per_share": 402.197
+            "price_per_share": 402.197,
+            "transaction_code": ""
           },
           {
             "name": "Taneja Vaibhav",
@@ -569,7 +629,8 @@
             "dollar_fmt": "$1.4M",
             "date": "2026-05-13",
             "shares_traded": 3000,
-            "price_per_share": 450
+            "price_per_share": 450,
+            "transaction_code": ""
           },
           {
             "name": "Wilson-Thompson Kathleen",
@@ -578,24 +639,34 @@
             "dollar_fmt": "$169K",
             "date": "2026-04-30",
             "shares_traded": 440,
-            "price_per_share": 384.284
+            "price_per_share": 384.284,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:47.863266"
+      "trump_mentions": [
+        {
+          "headline": "SpaceX president Gwynne Shotwell floats Tesla merger on IPO day",
+          "date": "2026-06-12 13:14",
+          "summary": "Gwynne Shotwell said a tie-up \"might make Elon's life a little easier\" but added she is focused on current operations",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:42.821331"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 8,
-        "open_market_sells": 2,
+        "open_market_buys": 7,
+        "open_market_sells": 3,
         "compensation_grants": 0,
-        "net_open_market_value": -15668745.2,
-        "net_open_market_fmt": "-$15.7M",
+        "net_open_market_value": -18550269.7,
+        "net_open_market_fmt": "-$18.6M",
         "largest_single_transaction": {
           "name": "LILLY ENDOWMENT INC",
           "direction": "sell",
@@ -603,9 +674,20 @@
           "dollar_fmt": "$13.6M",
           "date": "2026-05-06",
           "shares_traded": 13620,
-          "price_per_share": 995.225
+          "price_per_share": 995.225,
+          "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Yuffa Ilya",
+            "direction": "sell",
+            "dollar_value": 2876925.0,
+            "dollar_fmt": "$2.9M",
+            "date": "2026-06-10",
+            "shares_traded": 2500,
+            "price_per_share": 1150.77,
+            "transaction_code": ""
+          },
           {
             "name": "LILLY ENDOWMENT INC",
             "direction": "sell",
@@ -613,7 +695,8 @@
             "dollar_fmt": "$2.2M",
             "date": "2026-05-06",
             "shares_traded": 2208,
-            "price_per_share": 996.183
+            "price_per_share": 996.183,
+            "transaction_code": ""
           },
           {
             "name": "LILLY ENDOWMENT INC",
@@ -622,14 +705,15 @@
             "dollar_fmt": "$13.6M",
             "date": "2026-05-06",
             "shares_traded": 13620,
-            "price_per_share": 995.225
+            "price_per_share": 995.225,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:49.098065"
+      "scanned_at": "2026-06-12T14:22:43.956056"
     },
     "UNH": {
       "insider_signal": {
@@ -647,7 +731,8 @@
           "dollar_fmt": "$284K",
           "date": "2026-04-23",
           "shares_traded": 800,
-          "price_per_share": 355
+          "price_per_share": 355,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -657,7 +742,8 @@
             "dollar_fmt": "$274K",
             "date": "2026-06-05",
             "shares_traded": 687,
-            "price_per_share": 399.47
+            "price_per_share": 399.47,
+            "transaction_code": ""
           },
           {
             "name": "Zaetta Christopher R",
@@ -666,7 +752,8 @@
             "dollar_fmt": "$51K",
             "date": "2026-06-03",
             "shares_traded": 134,
-            "price_per_share": 377
+            "price_per_share": 377,
+            "transaction_code": ""
           },
           {
             "name": "Conway Patrick Hugh",
@@ -675,7 +762,8 @@
             "dollar_fmt": "$77K",
             "date": "2026-06-02",
             "shares_traded": 204,
-            "price_per_share": 377.92
+            "price_per_share": 377.92,
+            "transaction_code": ""
           },
           {
             "name": "Conway Patrick Hugh",
@@ -684,7 +772,8 @@
             "dollar_fmt": "$284K",
             "date": "2026-04-23",
             "shares_traded": 800,
-            "price_per_share": 355
+            "price_per_share": 355,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
@@ -700,7 +789,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-11T15:05:50.179017"
+      "scanned_at": "2026-06-12T14:22:45.085505"
     },
     "JPM": {
       "insider_signal": {
@@ -718,7 +807,8 @@
           "dollar_fmt": "$2.0M",
           "date": "2026-05-15",
           "shares_traded": 6648,
-          "price_per_share": 298.3644
+          "price_per_share": 298.3644,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -728,7 +818,8 @@
             "dollar_fmt": "$1.6M",
             "date": "2026-05-20",
             "shares_traded": 5468,
-            "price_per_share": 300.2662
+            "price_per_share": 300.2662,
+            "transaction_code": ""
           },
           {
             "name": "Lake Marianne",
@@ -737,7 +828,8 @@
             "dollar_fmt": "$1.9M",
             "date": "2026-05-15",
             "shares_traded": 6427,
-            "price_per_share": 298.3555
+            "price_per_share": 298.3555,
+            "transaction_code": ""
           },
           {
             "name": "Petno Douglas B",
@@ -746,7 +838,8 @@
             "dollar_fmt": "$1.7M",
             "date": "2026-05-15",
             "shares_traded": 5659,
-            "price_per_share": 300.05
+            "price_per_share": 300.05,
+            "transaction_code": ""
           },
           {
             "name": "Erdoes Mary E.",
@@ -755,7 +848,8 @@
             "dollar_fmt": "$2.0M",
             "date": "2026-05-15",
             "shares_traded": 6648,
-            "price_per_share": 298.3644
+            "price_per_share": 298.3644,
+            "transaction_code": ""
           },
           {
             "name": "Beer Lori A",
@@ -764,7 +858,8 @@
             "dollar_fmt": "$950K",
             "date": "2026-05-15",
             "shares_traded": 3165,
-            "price_per_share": 300.05
+            "price_per_share": 300.05,
+            "transaction_code": ""
           },
           {
             "name": "Piepszak Jennifer",
@@ -773,7 +868,8 @@
             "dollar_fmt": "$1.5M",
             "date": "2026-05-05",
             "shares_traded": 4919,
-            "price_per_share": 309.4201
+            "price_per_share": 309.4201,
+            "transaction_code": ""
           },
           {
             "name": "BACON ASHLEY",
@@ -782,7 +878,8 @@
             "dollar_fmt": "$1.3M",
             "date": "2026-05-05",
             "shares_traded": 4070,
-            "price_per_share": 309.4242
+            "price_per_share": 309.4242,
+            "transaction_code": ""
           },
           {
             "name": "Barnum Jeremy",
@@ -791,23 +888,15 @@
             "dollar_fmt": "$935K",
             "date": "2026-05-05",
             "shares_traded": 3022,
-            "price_per_share": 309.4082
+            "price_per_share": 309.4082,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Credits Stealth Operations for Holding Oil Prices Down",
-          "date": "2026-06-10 22:09",
-          "summary": "The U.S. military has escorted ships carrying over 100 million barrels of oil through the Strait of Hormuz since last month, President Donald Trump told reporters in the Oval Office on Wednesday.  Tru",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-11T15:05:51.266653"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-12T14:22:46.214215"
     },
     "GS": {
       "insider_signal": {
@@ -825,7 +914,8 @@
           "dollar_fmt": "$7.6M",
           "date": "2026-05-01",
           "shares_traded": 8166,
-          "price_per_share": 930.21
+          "price_per_share": 930.21,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -835,7 +925,8 @@
             "dollar_fmt": "$1.4M",
             "date": "2026-05-14",
             "shares_traded": 1428,
-            "price_per_share": 975.21
+            "price_per_share": 975.21,
+            "transaction_code": ""
           },
           {
             "name": "COLEMAN DENIS P.",
@@ -844,7 +935,8 @@
             "dollar_fmt": "$1.3M",
             "date": "2026-05-14",
             "shares_traded": 1360,
-            "price_per_share": 974.53
+            "price_per_share": 974.53,
+            "transaction_code": ""
           },
           {
             "name": "COLEMAN DENIS P.",
@@ -853,7 +945,8 @@
             "dollar_fmt": "$1.5M",
             "date": "2026-05-14",
             "shares_traded": 1560,
-            "price_per_share": 973.19
+            "price_per_share": 973.19,
+            "transaction_code": ""
           },
           {
             "name": "COLEMAN DENIS P.",
@@ -862,7 +955,8 @@
             "dollar_fmt": "$2.4M",
             "date": "2026-05-14",
             "shares_traded": 2509,
-            "price_per_share": 972.29
+            "price_per_share": 972.29,
+            "transaction_code": ""
           },
           {
             "name": "Ruemmler Kathryn H.",
@@ -871,7 +965,8 @@
             "dollar_fmt": "$74K",
             "date": "2026-05-01",
             "shares_traded": 80,
-            "price_per_share": 930.35
+            "price_per_share": 930.35,
+            "transaction_code": ""
           },
           {
             "name": "Ruemmler Kathryn H.",
@@ -880,7 +975,8 @@
             "dollar_fmt": "$435K",
             "date": "2026-05-01",
             "shares_traded": 468,
-            "price_per_share": 929.71
+            "price_per_share": 929.71,
+            "transaction_code": ""
           },
           {
             "name": "Ruemmler Kathryn H.",
@@ -889,7 +985,8 @@
             "dollar_fmt": "$125K",
             "date": "2026-05-01",
             "shares_traded": 135,
-            "price_per_share": 928.85
+            "price_per_share": 928.85,
+            "transaction_code": ""
           },
           {
             "name": "SOLOMON DAVID M",
@@ -898,7 +995,8 @@
             "dollar_fmt": "$1.1M",
             "date": "2026-05-01",
             "shares_traded": 1160,
-            "price_per_share": 931.25
+            "price_per_share": 931.25,
+            "transaction_code": ""
           },
           {
             "name": "SOLOMON DAVID M",
@@ -907,7 +1005,8 @@
             "dollar_fmt": "$2.1M",
             "date": "2026-05-01",
             "shares_traded": 2310,
-            "price_per_share": 930.43
+            "price_per_share": 930.43,
+            "transaction_code": ""
           },
           {
             "name": "FREDMAN SHEARA J",
@@ -916,23 +1015,15 @@
             "dollar_fmt": "$7.6M",
             "date": "2026-05-01",
             "shares_traded": 8166,
-            "price_per_share": 930.21
+            "price_per_share": 930.21,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Lavishes Praise on Citi for M&A Ranking It Doesn’t Have",
-          "date": "2026-06-10 14:10",
-          "summary": "(Bloomberg) -- President Donald Trump turned into a M&A enthusiast, with a surprise shout-out for Citigroup Inc. Chief Executive Officer Jane Fraser.Most Read from BloombergHouse Republican Says Hegse",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-11T15:05:52.445060"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-12T14:22:47.296739"
     },
     "XOM": {
       "insider_signal": {
@@ -948,8 +1039,33 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:53.504494"
+      "trump_mentions": [
+        {
+          "headline": "Oil markets on edge as President Trump says U.S. will be hitting Iran 'very hard'",
+          "date": "2026-06-11 11:56",
+          "summary": "CNBC's Pippa Stevens joins 'Squawk on the Street' to talk how the latest comments from Pres. Trump on Iran are impacting oil markets.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Says Iran Will Get Hit 'Very Hard' Tonight, But What Do Prediction Markets Say About The Ceasefire?",
+          "date": "2026-06-11 10:51",
+          "summary": "Trump vows to take &#34;total control&#34; of Iran&#39;s Kharg Island oil hub as military strikes resume. See how prediction markets and oil traders are pricing the risk.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran",
+          "date": "2026-06-10 21:27",
+          "summary": "U.S. inflation reached a three-year high of 4.2%, with Trump arguing that ending the war will resolve both the conflict and rising prices.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:48.395513"
     },
     "CVX": {
       "insider_signal": {
@@ -967,121 +1083,75 @@
           "dollar_fmt": "$39K",
           "date": "2026-06-01",
           "shares_traded": 209,
-          "price_per_share": 185.83
+          "price_per_share": 185.83,
+          "transaction_code": ""
         },
         "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:54.639777"
+      "trump_mentions": [
+        {
+          "headline": "Oil markets on edge as President Trump says U.S. will be hitting Iran 'very hard'",
+          "date": "2026-06-11 11:56",
+          "summary": "CNBC's Pippa Stevens joins 'Squawk on the Street' to talk how the latest comments from Pres. Trump on Iran are impacting oil markets.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Says Iran Will Get Hit 'Very Hard' Tonight, But What Do Prediction Markets Say About The Ceasefire?",
+          "date": "2026-06-11 10:51",
+          "summary": "Trump vows to take &#34;total control&#34; of Iran&#39;s Kharg Island oil hub as military strikes resume. See how prediction markets and oil traders are pricing the risk.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran",
+          "date": "2026-06-10 21:27",
+          "summary": "U.S. inflation reached a three-year high of 4.2%, with Trump arguing that ending the war will resolve both the conflict and rising prices.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:49.471349"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 8,
-        "compensation_grants": 0,
-        "net_open_market_value": -12968208.1,
-        "net_open_market_fmt": "-$13.0M",
+        "open_market_sells": 0,
+        "compensation_grants": 8,
+        "net_open_market_value": 21805.2,
+        "net_open_market_fmt": "+$22K",
         "largest_single_transaction": {
-          "name": "Johnson Denise C",
-          "direction": "sell",
-          "dollar_value": 3162542.6,
-          "dollar_fmt": "$3.2M",
-          "date": "2026-05-14",
-          "shares_traded": 16078,
-          "price_per_share": 196.7
+          "name": "Creed Joseph E",
+          "direction": "buy",
+          "dollar_value": 16353.9,
+          "dollar_fmt": "$16K",
+          "date": "2026-05-26",
+          "shares_traded": 18,
+          "price_per_share": 908.55,
+          "transaction_code": ""
         },
-        "notable_transactions": [
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 3162542.6,
-            "dollar_fmt": "$3.2M",
-            "date": "2026-05-14",
-            "shares_traded": 16078,
-            "price_per_share": 196.7
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 1463631.6,
-            "dollar_fmt": "$1.5M",
-            "date": "2026-05-14",
-            "shares_traded": 1605,
-            "price_per_share": 911.92
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 366081.3,
-            "dollar_fmt": "$366K",
-            "date": "2026-05-14",
-            "shares_traded": 402,
-            "price_per_share": 910.65
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 1426409.6,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-14",
-            "shares_traded": 1568,
-            "price_per_share": 909.7
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 2091965.52,
-            "dollar_fmt": "$2.1M",
-            "date": "2026-05-14",
-            "shares_traded": 2302,
-            "price_per_share": 908.76
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 1081404.18,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-05-14",
-            "shares_traded": 1191,
-            "price_per_share": 907.98
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 1351934.43,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-14",
-            "shares_traded": 1491,
-            "price_per_share": 906.73
-          },
-          {
-            "name": "Johnson Denise C",
-            "direction": "sell",
-            "dollar_value": 2046044.07,
-            "dollar_fmt": "$2.0M",
-            "date": "2026-05-14",
-            "shares_traded": 2259,
-            "price_per_share": 905.73
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
         {
-          "headline": "Caterpillar Stock Sinks As Oil Prices Rise Amid Trump Threats",
-          "date": "2026-06-10 14:53",
-          "summary": "Caterpillar Inc (NYSE: CAT) shares are moving lower on Wednesday as the broader industrial sector came under selling pressure.",
-          "source": "Benzinga",
+          "headline": "Nasdaq semis stocks lead rebound rally despite Trump warning of new Iran strikes",
+          "date": "2026-06-11 12:37",
+          "summary": "Prices for finished consumer goods, excluding food and energy, rose by 0.3% in May",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-11T15:05:55.761301"
+      "scanned_at": "2026-06-12T14:22:50.560034"
     },
     "GE": {
       "insider_signal": {
@@ -1099,7 +1169,8 @@
           "dollar_fmt": "$160K",
           "date": "2026-05-01",
           "shares_traded": 558,
-          "price_per_share": 286.51
+          "price_per_share": 286.51,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -1109,7 +1180,8 @@
             "dollar_fmt": "$160K",
             "date": "2026-05-01",
             "shares_traded": 558,
-            "price_per_share": 286.51
+            "price_per_share": 286.51,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "sell",
@@ -1125,7 +1197,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-11T15:05:56.822380"
+      "scanned_at": "2026-06-12T14:22:51.621995"
     },
     "WMT": {
       "insider_signal": {
@@ -1141,8 +1213,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:57.968327"
+      "trump_mentions": [
+        {
+          "headline": "Trump administration appeals ruling blocking $100,000 H-1B fee",
+          "date": "2026-06-11 12:42",
+          "summary": "The appeal follows a ruling that President Donald Trump exceeded his authority by imposing a $100,000 H-1B visa application fee without approval from Congress.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-12T14:22:52.976433"
     },
     "COST": {
       "insider_signal": {
@@ -1159,7 +1240,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:05:59.051808"
+      "scanned_at": "2026-06-12T14:22:54.141554"
     },
     "FCX": {
       "insider_signal": {
@@ -1185,7 +1266,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-11T15:06:00.107177"
+      "scanned_at": "2026-06-12T14:22:55.144160"
     },
     "NEE": {
       "insider_signal": {
@@ -1202,7 +1283,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:06:01.344850"
+      "scanned_at": "2026-06-12T14:22:56.160503"
     },
     "PLD": {
       "insider_signal": {
@@ -1220,7 +1301,8 @@
           "dollar_fmt": "$6.2M",
           "date": "2026-04-28",
           "shares_traded": 43825,
-          "price_per_share": 141.53
+          "price_per_share": 141.53,
+          "transaction_code": ""
         },
         "notable_transactions": [
           {
@@ -1230,14 +1312,15 @@
             "dollar_fmt": "$6.2M",
             "date": "2026-04-28",
             "shares_traded": 43825,
-            "price_per_share": 141.53
+            "price_per_share": 141.53,
+            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-11T15:06:02.620062"
+      "scanned_at": "2026-06-12T14:22:57.264770"
     }
   }
 }
