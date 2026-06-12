@@ -4,7 +4,7 @@
     "current_day": 39,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-11T20:34:32.078769+00:00",
+    "last_updated": "2026-06-12T16:23:53.997279+00:00",
     "session_number": 2
   },
   "cash": 4405.97,
@@ -31,7 +31,7 @@
       "qty": 9,
       "entry_price": 83.77,
       "cost_basis": 753.93,
-      "last_price": 82.53,
+      "last_price": 82.11,
       "stop_loss": 80.42,
       "take_profit": 90.47,
       "partial_profit_price": 87.12,
@@ -1584,7 +1584,357 @@
       "timestamp": "2026-06-11T14:27:11.032813+00:00"
     }
   ],
-  "day_trade_signals": [
+  "spy_equity_curve": [
+    {
+      "day": 11,
+      "date": "2026-04-28",
+      "equity": 5186.49
+    },
+    {
+      "day": 12,
+      "date": "2026-04-29",
+      "equity": 5185.69
+    },
+    {
+      "day": 13,
+      "date": "2026-04-30",
+      "equity": 5237.28
+    },
+    {
+      "day": 14,
+      "date": "2026-05-01",
+      "equity": 5251.79
+    },
+    {
+      "day": 15,
+      "date": "2026-05-11",
+      "equity": 5387.7
+    },
+    {
+      "day": 16,
+      "date": "2026-05-12",
+      "equity": 5379.54
+    },
+    {
+      "day": 17,
+      "date": "2026-05-13",
+      "equity": 5409.63
+    },
+    {
+      "day": 18,
+      "date": "2026-05-18",
+      "equity": 5382.96
+    },
+    {
+      "day": 19,
+      "date": "2026-05-19",
+      "equity": 5347.11
+    },
+    {
+      "day": 20,
+      "date": "2026-05-20",
+      "equity": 5401.91
+    },
+    {
+      "day": 21,
+      "date": "2026-05-21",
+      "equity": 5412.62
+    },
+    {
+      "day": 22,
+      "date": "2026-05-22",
+      "equity": 5433.9
+    },
+    {
+      "day": 23,
+      "date": "2026-05-25",
+      "equity": 5433.9
+    },
+    {
+      "day": 24,
+      "date": "2026-05-26",
+      "equity": 5469.98
+    },
+    {
+      "day": 25,
+      "date": "2026-05-27",
+      "equity": 5469.03
+    },
+    {
+      "day": 26,
+      "date": "2026-05-28",
+      "equity": 5499.2
+    },
+    {
+      "day": 27,
+      "date": "2026-05-29",
+      "equity": 5512.9
+    },
+    {
+      "day": 28,
+      "date": "2026-06-02",
+      "equity": 5535.42
+    },
+    {
+      "day": 29,
+      "date": "2026-06-02",
+      "equity": 5535.42
+    },
+    {
+      "day": 30,
+      "date": "2026-06-03",
+      "equity": 5496.57
+    },
+    {
+      "day": 31,
+      "date": "2026-06-03",
+      "equity": 5496.57
+    },
+    {
+      "day": 32,
+      "date": "2026-06-04",
+      "equity": 5517.34
+    },
+    {
+      "day": 33,
+      "date": "2026-06-04",
+      "equity": 5517.34
+    },
+    {
+      "day": 34,
+      "date": "2026-06-05",
+      "equity": 5374.95
+    },
+    {
+      "day": 35,
+      "date": "2026-06-08",
+      "equity": 5387.12
+    },
+    {
+      "day": 36,
+      "date": "2026-06-09",
+      "equity": 5371.3
+    },
+    {
+      "day": 37,
+      "date": "2026-06-10",
+      "equity": 5286.62
+    },
+    {
+      "day": 38,
+      "date": "2026-06-11",
+      "equity": 5376.48
+    }
+  ],
+  "benchmark_indices": {
+    "SPY": {
+      "start_price": 686.1,
+      "current_price": 737.76,
+      "return_pct": 7.53
+    },
+    "QQQ": {
+      "start_price": 628.6,
+      "current_price": 717.12,
+      "return_pct": 14.08
+    },
+    "IWM": {
+      "start_price": 268.72,
+      "current_price": 290.41,
+      "return_pct": 8.07
+    },
+    "GLD": {
+      "start_price": 445.09,
+      "current_price": 386.32,
+      "return_pct": -13.2
+    }
+  },
+  "sector_strength": {
+    "sectors": {
+      "Technology": {
+        "etf": "XLK",
+        "price": 178.9,
+        "mom_5d": -7.39,
+        "mom_1m": 2.11,
+        "mom_3m": 30.77,
+        "above_ma50": true,
+        "rsi_14": 50.3,
+        "score": 5.99,
+        "sector": "Technology"
+      },
+      "Communication Services": {
+        "etf": "XLC",
+        "price": 110.67,
+        "mom_5d": -2.16,
+        "mom_1m": -4.48,
+        "mom_3m": -3.3,
+        "above_ma50": false,
+        "rsi_14": 24.6,
+        "score": -3.55,
+        "sector": "Communication Services"
+      },
+      "Consumer Discretionary": {
+        "etf": "XLY",
+        "price": 114.28,
+        "mom_5d": -2.54,
+        "mom_1m": -3.39,
+        "mom_3m": 3.08,
+        "above_ma50": false,
+        "rsi_14": 36.0,
+        "score": -1.84,
+        "sector": "Consumer Discretionary"
+      },
+      "Healthcare": {
+        "etf": "XLV",
+        "price": 153.82,
+        "mom_5d": 1.14,
+        "mom_1m": 5.46,
+        "mom_3m": 2.69,
+        "above_ma50": true,
+        "rsi_14": 63.2,
+        "score": 4.61,
+        "sector": "Healthcare"
+      },
+      "Financials": {
+        "etf": "XLF",
+        "price": 52.15,
+        "mom_5d": -0.09,
+        "mom_1m": 1.1,
+        "mom_3m": 6.66,
+        "above_ma50": true,
+        "rsi_14": 54.6,
+        "score": 2.85,
+        "sector": "Financials"
+      },
+      "Energy": {
+        "etf": "XLE",
+        "price": 58.34,
+        "mom_5d": -0.7,
+        "mom_1m": 1.34,
+        "mom_3m": 1.11,
+        "above_ma50": true,
+        "rsi_14": 45.9,
+        "score": 1.68,
+        "sector": "Energy"
+      },
+      "Industrials": {
+        "etf": "XLI",
+        "price": 171.73,
+        "mom_5d": -2.51,
+        "mom_1m": -1.5,
+        "mom_3m": 4.3,
+        "above_ma50": false,
+        "rsi_14": 52.7,
+        "score": -0.64,
+        "sector": "Industrials"
+      },
+      "Consumer Staples": {
+        "etf": "XLP",
+        "price": 85.83,
+        "mom_5d": 4.62,
+        "mom_1m": 1.65,
+        "mom_3m": 1.29,
+        "above_ma50": true,
+        "rsi_14": 55.9,
+        "score": 3.47,
+        "sector": "Consumer Staples"
+      },
+      "Materials": {
+        "etf": "XLB",
+        "price": 50.23,
+        "mom_5d": -2.7,
+        "mom_1m": -3.67,
+        "mom_3m": 2.1,
+        "above_ma50": false,
+        "rsi_14": 51.5,
+        "score": -2.23,
+        "sector": "Materials"
+      },
+      "Utilities": {
+        "etf": "XLU",
+        "price": 44.42,
+        "mom_5d": 1.1,
+        "mom_1m": -1.69,
+        "mom_3m": -5.4,
+        "above_ma50": false,
+        "rsi_14": 45.2,
+        "score": -1.59,
+        "sector": "Utilities"
+      },
+      "Real Estate": {
+        "etf": "XLRE",
+        "price": 45.12,
+        "mom_5d": 1.63,
+        "mom_1m": 1.22,
+        "mom_3m": 6.8,
+        "above_ma50": true,
+        "rsi_14": 56.4,
+        "score": 3.46,
+        "sector": "Real Estate"
+      }
+    },
+    "ranking": [
+      "Technology",
+      "Healthcare",
+      "Consumer Staples",
+      "Real Estate",
+      "Financials",
+      "Energy",
+      "Industrials",
+      "Utilities",
+      "Consumer Discretionary",
+      "Materials",
+      "Communication Services"
+    ],
+    "top_3": [
+      "Technology",
+      "Healthcare",
+      "Consumer Staples"
+    ],
+    "bottom_3": [
+      "Consumer Discretionary",
+      "Materials",
+      "Communication Services"
+    ],
+    "as_of": "2026-06-11"
+  },
+  "strategy_brief": {
+    "market_posture": "risk-on",
+    "risk_budget_multiplier": 1.4,
+    "focus_sectors": [
+      "Technology",
+      "Healthcare",
+      "Consumer Staples"
+    ],
+    "avoid_sectors": [
+      "Consumer Discretionary",
+      "Materials",
+      "Communication Services"
+    ],
+    "target_new_positions": 2,
+    "conviction_floor": "medium",
+    "primary_thesis": "With alpha at -3.0% and deployment critically behind at 22% vs 63% expected, aggressive capital deployment into leading sectors is mandatory to close the SPY performance gap. SPY trend is bullish, credit conditions are healthy, and despite elevated VIX momentum, the macro backdrop supports immediate rotation into Technology, Healthcare, and Consumer Staples at full 75% position sizing.",
+    "capital_deployment_priority": "high",
+    "day_trade_go": true
+  },
+  "index_etf_signals": {
+    "SPY": {
+      "action": "hold",
+      "confidence": 0.65
+    },
+    "QQQ": {
+      "action": "hold",
+      "confidence": 0.35
+    },
+    "IWM": {
+      "action": "hold",
+      "confidence": 0.35
+    },
+    "GLD": {
+      "action": "hold",
+      "confidence": 0.35
+    }
+  },
+  "day_trade_signals_archive": [
     {
       "id": "DTS-2026-04-23-AAPL-gap",
       "ticker": "AAPL",
@@ -2496,650 +2846,18 @@
       "outcome": "win"
     }
   ],
-  "day_trade_capital": {
+  "midcap_signals": [],
+  "midcap_capital": {
     "initial": 5000.0,
-    "cash": 5291.28,
-    "equity": 5291.28
+    "cash": 5000.0,
+    "equity": 5000.0
   },
-  "scalping_capital": {
+  "penny_signals": [],
+  "penny_capital": {
     "initial": 5000.0,
-    "cash": 4861.07,
-    "equity": 4861.07,
-    "signals_fired": 1,
-    "closed_signals": 1
+    "cash": 5000.0,
+    "equity": 5000.0
   },
-  "spy_equity_curve": [
-    {
-      "day": 11,
-      "date": "2026-04-28",
-      "equity": 5186.49
-    },
-    {
-      "day": 12,
-      "date": "2026-04-29",
-      "equity": 5185.69
-    },
-    {
-      "day": 13,
-      "date": "2026-04-30",
-      "equity": 5237.28
-    },
-    {
-      "day": 14,
-      "date": "2026-05-01",
-      "equity": 5251.79
-    },
-    {
-      "day": 15,
-      "date": "2026-05-11",
-      "equity": 5387.7
-    },
-    {
-      "day": 16,
-      "date": "2026-05-12",
-      "equity": 5379.54
-    },
-    {
-      "day": 17,
-      "date": "2026-05-13",
-      "equity": 5409.63
-    },
-    {
-      "day": 18,
-      "date": "2026-05-18",
-      "equity": 5382.96
-    },
-    {
-      "day": 19,
-      "date": "2026-05-19",
-      "equity": 5347.11
-    },
-    {
-      "day": 20,
-      "date": "2026-05-20",
-      "equity": 5401.91
-    },
-    {
-      "day": 21,
-      "date": "2026-05-21",
-      "equity": 5412.62
-    },
-    {
-      "day": 22,
-      "date": "2026-05-22",
-      "equity": 5433.9
-    },
-    {
-      "day": 23,
-      "date": "2026-05-25",
-      "equity": 5433.9
-    },
-    {
-      "day": 24,
-      "date": "2026-05-26",
-      "equity": 5469.98
-    },
-    {
-      "day": 25,
-      "date": "2026-05-27",
-      "equity": 5469.03
-    },
-    {
-      "day": 26,
-      "date": "2026-05-28",
-      "equity": 5499.2
-    },
-    {
-      "day": 27,
-      "date": "2026-05-29",
-      "equity": 5512.9
-    },
-    {
-      "day": 28,
-      "date": "2026-06-02",
-      "equity": 5535.42
-    },
-    {
-      "day": 29,
-      "date": "2026-06-02",
-      "equity": 5535.42
-    },
-    {
-      "day": 30,
-      "date": "2026-06-03",
-      "equity": 5496.57
-    },
-    {
-      "day": 31,
-      "date": "2026-06-03",
-      "equity": 5496.57
-    },
-    {
-      "day": 32,
-      "date": "2026-06-04",
-      "equity": 5517.34
-    },
-    {
-      "day": 33,
-      "date": "2026-06-04",
-      "equity": 5517.34
-    },
-    {
-      "day": 34,
-      "date": "2026-06-05",
-      "equity": 5374.95
-    },
-    {
-      "day": 35,
-      "date": "2026-06-08",
-      "equity": 5387.12
-    },
-    {
-      "day": 36,
-      "date": "2026-06-09",
-      "equity": 5371.3
-    },
-    {
-      "day": 37,
-      "date": "2026-06-10",
-      "equity": 5286.62
-    },
-    {
-      "day": 38,
-      "date": "2026-06-11",
-      "equity": 5376.48
-    }
-  ],
-  "dt_equity_curve": [
-    {
-      "day": 11,
-      "date": "2026-04-28",
-      "equity": 5099.73
-    },
-    {
-      "day": 12,
-      "date": "2026-04-29",
-      "equity": 5044.69
-    },
-    {
-      "day": 13,
-      "date": "2026-04-30",
-      "equity": 5217.93
-    },
-    {
-      "day": 14,
-      "date": "2026-05-01",
-      "equity": 5215.13
-    },
-    {
-      "day": 15,
-      "date": "2026-05-11",
-      "equity": 5230.61
-    },
-    {
-      "day": 16,
-      "date": "2026-05-12",
-      "equity": 5222.29
-    },
-    {
-      "day": 17,
-      "date": "2026-05-13",
-      "equity": 5222.29
-    },
-    {
-      "day": 18,
-      "date": "2026-05-18",
-      "equity": 5319.4
-    },
-    {
-      "day": 19,
-      "date": "2026-05-19",
-      "equity": 5319.4
-    },
-    {
-      "day": 20,
-      "date": "2026-05-20",
-      "equity": 5319.4
-    },
-    {
-      "day": 21,
-      "date": "2026-05-21",
-      "equity": 5319.4
-    },
-    {
-      "day": 22,
-      "date": "2026-05-22",
-      "equity": 5288.62
-    },
-    {
-      "day": 23,
-      "date": "2026-05-25",
-      "equity": 5291.28
-    },
-    {
-      "day": 24,
-      "date": "2026-05-26",
-      "equity": 5291.28
-    },
-    {
-      "day": 25,
-      "date": "2026-05-27",
-      "equity": 5291.28
-    },
-    {
-      "day": 26,
-      "date": "2026-05-28",
-      "equity": 5291.28
-    },
-    {
-      "day": 27,
-      "date": "2026-05-29",
-      "equity": 5291.28
-    },
-    {
-      "day": 28,
-      "date": "2026-06-02",
-      "equity": 5291.28
-    },
-    {
-      "day": 29,
-      "date": "2026-06-02",
-      "equity": 5291.28
-    },
-    {
-      "day": 30,
-      "date": "2026-06-03",
-      "equity": 5291.28
-    },
-    {
-      "day": 31,
-      "date": "2026-06-03",
-      "equity": 5291.28
-    },
-    {
-      "day": 32,
-      "date": "2026-06-04",
-      "equity": 5291.28
-    },
-    {
-      "day": 33,
-      "date": "2026-06-04",
-      "equity": 5291.28
-    },
-    {
-      "day": 34,
-      "date": "2026-06-05",
-      "equity": 5291.28
-    },
-    {
-      "day": 35,
-      "date": "2026-06-08",
-      "equity": 5291.28
-    },
-    {
-      "day": 36,
-      "date": "2026-06-09",
-      "equity": 5291.28
-    },
-    {
-      "day": 37,
-      "date": "2026-06-10",
-      "equity": 5291.28
-    },
-    {
-      "day": 38,
-      "date": "2026-06-11",
-      "equity": 5291.28
-    }
-  ],
-  "scalping_equity_curve": [
-    {
-      "day": 11,
-      "date": "2026-04-28",
-      "equity": 5000.0
-    },
-    {
-      "day": 12,
-      "date": "2026-04-29",
-      "equity": 5000.0
-    },
-    {
-      "day": 13,
-      "date": "2026-04-30",
-      "equity": 5000.0
-    },
-    {
-      "day": 14,
-      "date": "2026-05-01",
-      "equity": 5000.0
-    },
-    {
-      "day": 15,
-      "date": "2026-05-11",
-      "equity": 5000.0
-    },
-    {
-      "day": 16,
-      "date": "2026-05-12",
-      "equity": 5000.0
-    },
-    {
-      "day": 17,
-      "date": "2026-05-13",
-      "equity": 5000.0
-    },
-    {
-      "day": 18,
-      "date": "2026-05-18",
-      "equity": 4990.04
-    },
-    {
-      "day": 19,
-      "date": "2026-05-19",
-      "equity": 4990.04
-    },
-    {
-      "day": 20,
-      "date": "2026-05-20",
-      "equity": 4990.04
-    },
-    {
-      "day": 21,
-      "date": "2026-05-21",
-      "equity": 4990.04
-    },
-    {
-      "day": 22,
-      "date": "2026-05-22",
-      "equity": 4990.04
-    },
-    {
-      "day": 23,
-      "date": "2026-05-25",
-      "equity": 4990.04
-    },
-    {
-      "day": 24,
-      "date": "2026-05-26",
-      "equity": 4990.04
-    },
-    {
-      "day": 25,
-      "date": "2026-05-27",
-      "equity": 5005.64
-    },
-    {
-      "day": 26,
-      "date": "2026-05-28",
-      "equity": 5005.64
-    },
-    {
-      "day": 27,
-      "date": "2026-05-29",
-      "equity": 5005.64
-    },
-    {
-      "day": 28,
-      "date": "2026-06-02",
-      "equity": 4938.95
-    },
-    {
-      "day": 29,
-      "date": "2026-06-02",
-      "equity": 4938.95
-    },
-    {
-      "day": 30,
-      "date": "2026-06-03",
-      "equity": 4876.79
-    },
-    {
-      "day": 31,
-      "date": "2026-06-03",
-      "equity": 4876.79
-    },
-    {
-      "day": 32,
-      "date": "2026-06-04",
-      "equity": 4832.63
-    },
-    {
-      "day": 33,
-      "date": "2026-06-04",
-      "equity": 4832.63
-    },
-    {
-      "day": 34,
-      "date": "2026-06-05",
-      "equity": 4832.63
-    },
-    {
-      "day": 35,
-      "date": "2026-06-08",
-      "equity": 4832.63
-    },
-    {
-      "day": 36,
-      "date": "2026-06-09",
-      "equity": 4832.63
-    },
-    {
-      "day": 37,
-      "date": "2026-06-10",
-      "equity": 4832.63
-    },
-    {
-      "day": 38,
-      "date": "2026-06-11",
-      "equity": 4861.07
-    }
-  ],
-  "benchmark_indices": {
-    "SPY": {
-      "start_price": 686.1,
-      "current_price": 737.76,
-      "return_pct": 7.53
-    },
-    "QQQ": {
-      "start_price": 628.6,
-      "current_price": 717.12,
-      "return_pct": 14.08
-    },
-    "IWM": {
-      "start_price": 268.72,
-      "current_price": 290.41,
-      "return_pct": 8.07
-    },
-    "GLD": {
-      "start_price": 445.09,
-      "current_price": 386.32,
-      "return_pct": -13.2
-    }
-  },
-  "sector_strength": {
-    "sectors": {
-      "Technology": {
-        "etf": "XLK",
-        "price": 178.9,
-        "mom_5d": -7.39,
-        "mom_1m": 2.11,
-        "mom_3m": 30.77,
-        "above_ma50": true,
-        "rsi_14": 50.3,
-        "score": 5.99,
-        "sector": "Technology"
-      },
-      "Communication Services": {
-        "etf": "XLC",
-        "price": 110.67,
-        "mom_5d": -2.16,
-        "mom_1m": -4.48,
-        "mom_3m": -3.3,
-        "above_ma50": false,
-        "rsi_14": 24.6,
-        "score": -3.55,
-        "sector": "Communication Services"
-      },
-      "Consumer Discretionary": {
-        "etf": "XLY",
-        "price": 114.28,
-        "mom_5d": -2.54,
-        "mom_1m": -3.39,
-        "mom_3m": 3.08,
-        "above_ma50": false,
-        "rsi_14": 36.0,
-        "score": -1.84,
-        "sector": "Consumer Discretionary"
-      },
-      "Healthcare": {
-        "etf": "XLV",
-        "price": 153.82,
-        "mom_5d": 1.14,
-        "mom_1m": 5.46,
-        "mom_3m": 2.69,
-        "above_ma50": true,
-        "rsi_14": 63.2,
-        "score": 4.61,
-        "sector": "Healthcare"
-      },
-      "Financials": {
-        "etf": "XLF",
-        "price": 52.15,
-        "mom_5d": -0.09,
-        "mom_1m": 1.1,
-        "mom_3m": 6.66,
-        "above_ma50": true,
-        "rsi_14": 54.6,
-        "score": 2.85,
-        "sector": "Financials"
-      },
-      "Energy": {
-        "etf": "XLE",
-        "price": 58.34,
-        "mom_5d": -0.7,
-        "mom_1m": 1.34,
-        "mom_3m": 1.11,
-        "above_ma50": true,
-        "rsi_14": 45.9,
-        "score": 1.68,
-        "sector": "Energy"
-      },
-      "Industrials": {
-        "etf": "XLI",
-        "price": 171.73,
-        "mom_5d": -2.51,
-        "mom_1m": -1.5,
-        "mom_3m": 4.3,
-        "above_ma50": false,
-        "rsi_14": 52.7,
-        "score": -0.64,
-        "sector": "Industrials"
-      },
-      "Consumer Staples": {
-        "etf": "XLP",
-        "price": 85.83,
-        "mom_5d": 4.62,
-        "mom_1m": 1.65,
-        "mom_3m": 1.29,
-        "above_ma50": true,
-        "rsi_14": 55.9,
-        "score": 3.47,
-        "sector": "Consumer Staples"
-      },
-      "Materials": {
-        "etf": "XLB",
-        "price": 50.23,
-        "mom_5d": -2.7,
-        "mom_1m": -3.67,
-        "mom_3m": 2.1,
-        "above_ma50": false,
-        "rsi_14": 51.5,
-        "score": -2.23,
-        "sector": "Materials"
-      },
-      "Utilities": {
-        "etf": "XLU",
-        "price": 44.42,
-        "mom_5d": 1.1,
-        "mom_1m": -1.69,
-        "mom_3m": -5.4,
-        "above_ma50": false,
-        "rsi_14": 45.2,
-        "score": -1.59,
-        "sector": "Utilities"
-      },
-      "Real Estate": {
-        "etf": "XLRE",
-        "price": 45.12,
-        "mom_5d": 1.63,
-        "mom_1m": 1.22,
-        "mom_3m": 6.8,
-        "above_ma50": true,
-        "rsi_14": 56.4,
-        "score": 3.46,
-        "sector": "Real Estate"
-      }
-    },
-    "ranking": [
-      "Technology",
-      "Healthcare",
-      "Consumer Staples",
-      "Real Estate",
-      "Financials",
-      "Energy",
-      "Industrials",
-      "Utilities",
-      "Consumer Discretionary",
-      "Materials",
-      "Communication Services"
-    ],
-    "top_3": [
-      "Technology",
-      "Healthcare",
-      "Consumer Staples"
-    ],
-    "bottom_3": [
-      "Consumer Discretionary",
-      "Materials",
-      "Communication Services"
-    ],
-    "as_of": "2026-06-11"
-  },
-  "strategy_brief": {
-    "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.4,
-    "focus_sectors": [
-      "Technology",
-      "Healthcare",
-      "Consumer Staples"
-    ],
-    "avoid_sectors": [
-      "Consumer Discretionary",
-      "Materials",
-      "Communication Services"
-    ],
-    "target_new_positions": 2,
-    "conviction_floor": "medium",
-    "primary_thesis": "With alpha at -3.0% and deployment critically behind at 22% vs 63% expected, aggressive capital deployment into leading sectors is mandatory to close the SPY performance gap. SPY trend is bullish, credit conditions are healthy, and despite elevated VIX momentum, the macro backdrop supports immediate rotation into Technology, Healthcare, and Consumer Staples at full 75% position sizing.",
-    "capital_deployment_priority": "high",
-    "day_trade_go": true
-  },
-  "index_etf_signals": {
-    "SPY": {
-      "action": "hold",
-      "confidence": 0.65
-    },
-    "QQQ": {
-      "action": "hold",
-      "confidence": 0.35
-    },
-    "IWM": {
-      "action": "hold",
-      "confidence": 0.35
-    },
-    "GLD": {
-      "action": "hold",
-      "confidence": 0.35
-    }
-  }
+  "midcap_equity_curve": [],
+  "penny_equity_curve": []
 }
