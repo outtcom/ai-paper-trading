@@ -106,13 +106,14 @@ def compute_insider_signal(ticker: str, days_back: int = 60) -> dict:
                 net_open_buy   -= dollar_value
 
             txn_record = {
-                "name":        t.get("name", ""),
-                "direction":   direction,
-                "dollar_value": round(dollar_value, 2),
-                "dollar_fmt":  _fmt(dollar_value),
-                "date":        date_str,
-                "shares_traded": shares_txn,
-                "price_per_share": price,
+                "name":              t.get("name", ""),
+                "direction":         direction,
+                "dollar_value":      round(dollar_value, 2),
+                "dollar_fmt":        _fmt(dollar_value),
+                "date":              date_str,
+                "shares_traded":     shares_txn,
+                "price_per_share":   price,
+                "transaction_code":  t.get("transactionCode", ""),  # e.g. "S-Sale-10b5-1"
             }
 
             if largest is None or dollar_value > largest["dollar_value"]:
