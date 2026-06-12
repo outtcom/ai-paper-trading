@@ -61,22 +61,20 @@ def send_group_trade_signal(signal: dict) -> dict:
     if not _GROUP_ID:
         return {}
 
-    # Day trade / scalping signal card
+    # Mid-cap / penny signal card
     _DT_LABELS = {
-        "momentum_breakout":   "Momentum Breakout",
-        "scalping_orb":        "ORB Scalp",
-        "scalping_fvg":        "ICT FVG Scalp",
-        "scalping_momentum":   "10AM Momentum",
+        "midcap_breakout": "Mid-Cap Breakout",
+        "penny_breakout":  "Penny Breakout",
     }
     if signal.get("signal_type") in _DT_LABELS:
         label     = _DT_LABELS[signal["signal_type"]]
         qty       = signal.get("qty", 0)
         alloc     = signal.get("allocated_usd", 0)
         stype     = signal["signal_type"]
-        pool      = "$5K scalping pool" if stype.startswith("scalping_") else "$5K day trade pool"
+        pool      = "$5K penny pool" if stype == "penny_breakout" else "$5K mid-cap pool"
         size_line = (f"Size:   <b>{qty} shares (${alloc:,.0f})</b> from {pool}\n"
                      if qty > 0 else "Size:   calculating...\n")
-        closes = "12:00 PM ET" if stype.startswith("scalping_") else signal.get("auto_close_date", "EOD")
+        closes = signal.get("auto_close_date", "EOD")
 
         direction  = signal.get("direction", "long")
         tp_sign    = "+" if direction == "long" else "-"

@@ -429,14 +429,15 @@ def _print_results(name: str, metrics: dict, spy_ret: float, trades: list):
 def backtest_fvg_intraday(tickers: list) -> dict:
     """
     60-day ICT FVG + OTE backtest using real 5-min yfinance data.
-    Reuses the same detection logic as scalping_scan.py.
     Entry: FVG touch or OTE pullback after 9:30–10:00 AM displacement.
     Exit: TP (displacement high/low) or SL (below FVG) or noon auto-close.
+    NOTE: scalping_scan.py was removed (strategy replaced by midcap/penny scanners).
+    This function is kept for historical reference — returns empty results.
     """
     try:
         from scalping_scan import _find_fvgs, _mark_mitigated, _find_ote_zone, _find_fvg_entry
-    except ImportError as e:
-        print(f"  [FVG intraday] Cannot import scalping helpers: {e}")
+    except ImportError:
+        print("  [FVG intraday] scalping_scan.py removed — FVG backtest not available.")
         return {"cash": INITIAL_CAPITAL, "trades": [], "equity_curve": []}
 
     RANGE_BARS        = 6     # 9:30–10:00 AM at 5-min = 6 bars

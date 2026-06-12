@@ -69,8 +69,8 @@ def run(portfolio: dict) -> dict:
     # Build a rich context string for the LLM
     trade_history = portfolio.get("trade_history", [])
     equity_curve  = portfolio.get("equity_curve", [])
-    scalping_data = portfolio.get("scalping_capital", {})
-    dt_data       = portfolio.get("day_trade_capital", {})
+    midcap_data = portfolio.get("midcap_capital", {})
+    penny_data  = portfolio.get("penny_capital", {})
 
     wins  = [t for t in trade_history if t.get("pnl", 0) > 0]
     losses = [t for t in trade_history if t.get("pnl", 0) < 0]
@@ -97,16 +97,15 @@ Avg win P&L:   ${sum(t.get('pnl',0) for t in wins) / max(len(wins),1):.2f}
 Avg loss P&L:  ${sum(t.get('pnl',0) for t in losses) / max(len(losses),1):.2f}
 Holds/skipped by fund manager: {holds_skipped}
 
-SCALPING POOL
-Initial: ${scalping_data.get('initial', 5000):.2f}
-Current: ${scalping_data.get('equity', 5000):.2f}
-Return:  {round((scalping_data.get('equity', 5000) - scalping_data.get('initial', 5000)) / scalping_data.get('initial', 5000) * 100, 2):+.2f}%
-Signals fired: {scalping_data.get('signals_fired', 0)}
+MID-CAP POOL
+Initial: ${midcap_data.get('initial', 5000):.2f}
+Current: ${midcap_data.get('equity', 5000):.2f}
+Return:  {round((midcap_data.get('equity', 5000) - midcap_data.get('initial', 5000)) / midcap_data.get('initial', 5000) * 100, 2):+.2f}%
 
-DAY TRADE POOL
-Initial: ${dt_data.get('initial', 5000):.2f}
-Current: ${dt_data.get('equity', 5000):.2f}
-Return:  {round((dt_data.get('equity', 5000) - dt_data.get('initial', 5000)) / dt_data.get('initial', 5000) * 100, 2):+.2f}%
+PENNY STOCK POOL
+Initial: ${penny_data.get('initial', 5000):.2f}
+Current: ${penny_data.get('equity', 5000):.2f}
+Return:  {round((penny_data.get('equity', 5000) - penny_data.get('initial', 5000)) / penny_data.get('initial', 5000) * 100, 2):+.2f}%
 
 EQUITY CURVE (last 10 snapshots)
 {json.dumps(equity_curve[-10:], indent=2) if equity_curve else "No equity curve data"}

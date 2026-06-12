@@ -11,7 +11,7 @@ import json
 import math
 import os
 import statistics
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 # Absolute path to docs/portfolio.json, resolved relative to this file's location
 _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -69,15 +69,14 @@ def _default_portfolio() -> dict:
         "trade_history": [],
         "equity_curve": [],
         "journal": [],
-        "day_trade_signals": [],
-        "day_trade_capital": {
-            "initial":  5000.0,
-            "cash":     5000.0,
-            "equity":   5000.0,
-        },
-        "spy_equity_curve":      [],   # [{day, date, equity}] SPY normalized to $5000 start
-        "dt_equity_curve":       [],   # [{day, date, equity}] day trade pool daily snapshots
-        "scalping_equity_curve": [],   # [{day, date, equity}] scalping pool daily snapshots
+        "day_trade_signals_archive": [],  # historical day trade signals (pre-Session 3)
+        "midcap_signals":  [],
+        "midcap_capital":  {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0},
+        "penny_signals":   [],
+        "penny_capital":   {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0},
+        "spy_equity_curve":    [],   # [{day, date, equity}] SPY normalized to $5000 start
+        "midcap_equity_curve": [],   # [{day, date, equity}] mid-cap pool daily snapshots
+        "penny_equity_curve":  [],   # [{day, date, equity}] penny pool daily snapshots
         "benchmark_indices": {
             "SPY": {"start_price": None, "current_price": None, "return_pct": None},
             "QQQ": {"start_price": None, "current_price": None, "return_pct": None},
@@ -112,12 +111,23 @@ def _migrate(p: dict) -> dict:
     })
     p.setdefault("journal", [])
     p.setdefault("open_orders", [])
-    p.setdefault("day_trade_signals", [])
-    p.setdefault("day_trade_capital", {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
-    p.setdefault("scalping_capital",  {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
+    # Archive old day trade signals if they exist under the legacy key
+    if "day_trade_signals" in p and "day_trade_signals_archive" not in p:
+        p["day_trade_signals_archive"] = p.pop("day_trade_signals")
+    p.setdefault("day_trade_signals_archive", [])
+    # Remove stale capital pools from previous strategy
+    p.pop("day_trade_capital", None)
+    p.pop("scalping_capital",  None)
+    p.setdefault("midcap_signals",  [])
+    p.setdefault("midcap_capital",  {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
+    p.setdefault("penny_signals",   [])
+    p.setdefault("penny_capital",   {"initial": 5000.0, "cash": 5000.0, "equity": 5000.0})
     p.setdefault("spy_equity_curve", [])
-    p.setdefault("dt_equity_curve", [])
-    p.setdefault("scalping_equity_curve", [])
+    p.setdefault("midcap_equity_curve", [])
+    p.setdefault("penny_equity_curve",  [])
+    # Remove stale equity curves
+    p.pop("dt_equity_curve",       None)
+    p.pop("scalping_equity_curve", None)
     bi_default = p.setdefault("benchmark_indices", {})
     for _etf in ("SPY", "QQQ", "IWM", "GLD"):
         bi_default.setdefault(_etf, {"start_price": None, "current_price": None, "return_pct": None})
@@ -164,6 +174,28 @@ def start_session() -> dict:
 
 def get_session_day() -> int:
     return _load()["session"].get("current_day", 0)
+
+
+def already_ran_today(script: str) -> bool:
+    """
+    Idempotency guard — returns True if this script already completed today.
+    Prevents double-execution when both EDT and EST crons fire within the same window.
+    """
+    from datetime import timezone
+    today = datetime.now(timezone(timedelta(hours=-4))).strftime("%Y-%m-%d")  # ET date
+    p = _load()
+    return p.get("last_run_dates", {}).get(script) == today
+
+
+def mark_ran_today(script: str) -> None:
+    """Record that this script completed today so duplicate runs can be skipped."""
+    from datetime import timezone
+    today = datetime.now(timezone(timedelta(hours=-4))).strftime("%Y-%m-%d")
+    p = _migrate(_load())
+    if "last_run_dates" not in p:
+        p["last_run_dates"] = {}
+    p["last_run_dates"][script] = today
+    _save(p)
 
 
 def advance_day() -> int:
@@ -659,199 +691,15 @@ def update_open_order(ticker: str, status: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Day trade signal management ($5,000 separate capital pool)
+# Mid-Cap signal management ($5,000 separate capital pool)
 # ---------------------------------------------------------------------------
 
-DT_MAX_CONCURRENT   = 4      # max simultaneous open day trade positions
-DT_POSITION_PCT     = 0.50   # use up to 50% of available cash per signal
-
-
-def add_day_trade_signal(signal: dict) -> None:
-    """
-    Append a new day trade signal, allocating capital from the $5,000 day trade pool.
-    - Sizes position at 50% of available day trade cash (max 4 concurrent)
-    - Deducts allocated amount from day_trade_capital.cash
-    - Enriches signal with qty, allocated_usd
-    """
-    p = _migrate(_load())
-    open_signals = [s for s in p["day_trade_signals"] if s.get("status") == "open"]
-    if len(open_signals) >= DT_MAX_CONCURRENT:
-        print(f"[session] Day trade capital full ({DT_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
-        return
-
-    dt = p["day_trade_capital"]
-    cash = dt.get("cash", 0)
-    entry = signal.get("entry_price", 0)
-
-    if cash <= 0 or entry <= 0:
-        print(f"[session] Day trade capital exhausted or invalid entry, skipping {signal.get('ticker')}")
-        return
-
-    max_usd = cash * DT_POSITION_PCT
-    qty     = max(1, int(max_usd / entry))
-    allocated = round(qty * entry, 2)
-
-    if allocated > cash:
-        qty       = max(1, int(cash / entry))
-        allocated = round(qty * entry, 2)
-
-    if qty < 1:
-        print(f"[session] Day trade: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
-        return
-
-    signal["qty"]           = qty
-    signal["allocated_usd"] = allocated
-    dt["cash"]   = round(cash - allocated, 2)
-    dt["equity"] = round(dt["cash"] + sum(
-        s["entry_price"] * s.get("qty", 0)
-        for s in open_signals
-        if s.get("entry_price") and s.get("qty")
-    ) + allocated, 2)
-
-    p["day_trade_signals"].append(signal)
-    _save(p)
-    print(f"[session] Day trade signal: {signal.get('signal_type')} {signal.get('ticker')} "
-          f"qty={qty} @ ${entry:.2f} (${allocated:.0f}) | DT cash left: ${dt['cash']:.0f}")
-
-
-def get_open_day_trade_signals() -> list:
-    """Return all signals with status == 'open'."""
-    p = _migrate(_load())
-    return [s for s in p.get("day_trade_signals", []) if s.get("status") == "open"]
-
-
-def close_day_trade_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
-    """
-    Close a signal by ID. Computes pnl_pct/pnl_usd and credits proceeds back to day_trade_capital.
-    Returns the updated signal dict.
-    """
-    p = _migrate(_load())
-    for s in p.get("day_trade_signals", []):
+def _close_signal_generic(p: dict, signals_key: str, capital_key: str,
+                           signal_id: str, exit_price: float, exit_date: str,
+                           label: str) -> dict:
+    """Shared close logic for midcap and penny signal pools."""
+    for s in p.get(signals_key, []):
         if s.get("id") == signal_id and s.get("status") == "open":
-            entry  = s["entry_price"]
-            qty    = s.get("qty", 0)
-            exit_p = round(exit_price, 2)
-
-            if entry and entry > 0:
-                s["pnl_pct"] = round((exit_p - entry) / entry * 100, 2)
-            else:
-                s["pnl_pct"] = 0.0
-
-            s["pnl_usd"]    = round((exit_p - entry) * qty, 2) if qty > 0 else 0.0
-            s["exit_price"] = exit_p
-            s["exit_date"]  = exit_date
-            s["status"]     = "closed"
-
-            if s["pnl_pct"] >= s.get("target_pct", 0):
-                s["outcome"] = "win"
-            elif s["pnl_pct"] <= -s.get("stop_pct", 0):
-                s["outcome"] = "loss"
-            elif abs(s["pnl_pct"]) < 0.1:
-                s["outcome"] = "breakeven"
-            else:
-                s["outcome"] = "win" if s["pnl_pct"] > 0 else "loss"
-
-            # Credit exit proceeds back to day trade capital
-            if qty > 0:
-                proceeds = round(exit_p * qty, 2)
-                dt = p.get("day_trade_capital", {})
-                dt["cash"] = round(dt.get("cash", 0) + proceeds, 2)
-                # Recalculate equity: cash + mark remaining open positions at entry
-                remaining_open = [
-                    sig for sig in p["day_trade_signals"]
-                    if sig.get("status") == "open" and sig.get("id") != signal_id
-                ]
-                dt["equity"] = round(
-                    dt["cash"] + sum(
-                        sig["entry_price"] * sig.get("qty", 0)
-                        for sig in remaining_open
-                        if sig.get("entry_price") and sig.get("qty")
-                    ), 2
-                )
-                p["day_trade_capital"] = dt
-
-            _save(p)
-            print(f"[session] Day trade closed: {s['ticker']} {s['pnl_pct']:+.2f}% "
-                  f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | DT equity: ${p['day_trade_capital'].get('equity', 0):.0f}")
-            return s
-    print(f"[session] close_day_trade_signal: signal {signal_id} not found or already closed")
-    return {}
-
-
-# ---------------------------------------------------------------------------
-# ORB Scalping Signal helpers (separate $5,000 scalping_capital pool)
-# ---------------------------------------------------------------------------
-
-def add_scalping_signal(signal: dict) -> None:
-    """
-    Append a scalping signal, allocating capital from the $5,000 scalping pool.
-    Same 50% sizing and 4-concurrent-max logic as day trade signals.
-    Enriches signal with qty, allocated_usd.
-    """
-    p = _migrate(_load())
-    open_scalps = [
-        s for s in p["day_trade_signals"]
-        if s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_")
-    ]
-    if len(open_scalps) >= DT_MAX_CONCURRENT:
-        print(f"[session] Scalping pool full ({DT_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
-        return
-
-    sc = p["scalping_capital"]
-    cash  = sc.get("cash", 0)
-    entry = signal.get("entry_price", 0)
-
-    if cash <= 0 or entry <= 0:
-        print(f"[session] Scalping capital exhausted or invalid entry, skipping {signal.get('ticker')}")
-        return
-
-    max_usd   = cash * DT_POSITION_PCT
-    qty       = max(1, int(max_usd / entry))
-    allocated = round(qty * entry, 2)
-
-    if allocated > cash:
-        qty       = max(1, int(cash / entry))
-        allocated = round(qty * entry, 2)
-
-    if qty < 1:
-        print(f"[session] Scalping: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
-        return
-
-    signal["qty"]           = qty
-    signal["allocated_usd"] = allocated
-    sc["cash"]   = round(cash - allocated, 2)
-    sc["equity"] = round(sc["cash"] + sum(
-        s["entry_price"] * s.get("qty", 0)
-        for s in open_scalps
-        if s.get("entry_price") and s.get("qty")
-    ) + allocated, 2)
-
-    p["day_trade_signals"].append(signal)
-    _save(p)
-    print(f"[session] Scalping signal: {signal.get('ticker')} qty={qty} @ ${entry:.2f} "
-          f"(${allocated:.0f}) | scalping cash left: ${sc['cash']:.0f}")
-
-
-def get_open_scalping_signals() -> list:
-    """Return all open scalping/momentum signals."""
-    p = _migrate(_load())
-    return [
-        s for s in p.get("day_trade_signals", [])
-        if s.get("status") == "open" and (
-            s.get("signal_type", "").startswith("scalping_") or
-            s.get("signal_type") == "momentum_continuation"
-        )
-    ]
-
-
-def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
-    """
-    Close a scalping signal by ID. Computes P&L and credits proceeds back to scalping_capital.
-    Returns the updated signal dict. Skips silently if already closed.
-    """
-    p = _migrate(_load())
-    for s in p.get("day_trade_signals", []):
-        if s.get("id") == signal_id and s.get("status") == "open" and s.get("signal_type", "").startswith("scalping_"):
             entry  = s["entry_price"]
             qty    = s.get("qty", 0)
             exit_p = round(exit_price, 2)
@@ -873,29 +721,139 @@ def close_scalping_signal(signal_id: str, exit_price: float, exit_date: str) -> 
 
             if qty > 0:
                 proceeds = round(exit_p * qty, 2)
-                sc = p.get("scalping_capital", {})
-                sc["cash"] = round(sc.get("cash", 0) + proceeds, 2)
+                cap = p.get(capital_key, {})
+                cap["cash"] = round(cap.get("cash", 0) + proceeds, 2)
                 remaining = [
-                    sig for sig in p["day_trade_signals"]
-                    if sig.get("status") == "open"
-                    and sig.get("signal_type", "").startswith("scalping_")
-                    and sig.get("id") != signal_id
+                    sig for sig in p[signals_key]
+                    if sig.get("status") == "open" and sig.get("id") != signal_id
                 ]
-                sc["equity"] = round(
-                    sc["cash"] + sum(
+                cap["equity"] = round(
+                    cap["cash"] + sum(
                         sig["entry_price"] * sig.get("qty", 0)
                         for sig in remaining
                         if sig.get("entry_price") and sig.get("qty")
                     ), 2
                 )
-                p["scalping_capital"] = sc
+                p[capital_key] = cap
 
             _save(p)
-            print(f"[session] Scalping closed: {s['ticker']} {s['pnl_pct']:+.2f}% "
-                  f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | scalping equity: ${p['scalping_capital'].get('equity', 0):.0f}")
+            print(f"[session] {label} closed: {s['ticker']} {s['pnl_pct']:+.2f}% "
+                  f"(${s['pnl_usd']:+.2f}) → {s['outcome']} | equity: ${p[capital_key].get('equity', 0):.0f}")
             return s
-    print(f"[session] close_scalping_signal: {signal_id} not found or already closed")
+    print(f"[session] {label}: signal {signal_id} not found or already closed")
     return {}
+
+
+def add_midcap_signal(signal: dict) -> None:
+    """
+    Append a mid-cap signal, allocating from the $5,000 midcap_capital pool.
+    Sizes at 50% of available cash, max 4 concurrent.
+    """
+    from config import PENNY_MAX_CONCURRENT  # noqa — midcap uses same 4 limit
+    p = _migrate(_load())
+    open_mc = [s for s in p.get("midcap_signals", []) if s.get("status") == "open"]
+    if len(open_mc) >= 4:
+        print(f"[session] Midcap pool full (4 open), skipping {signal.get('ticker')}")
+        return
+
+    cap   = p["midcap_capital"]
+    cash  = cap.get("cash", 0)
+    entry = signal.get("entry_price", 0)
+    if cash <= 0 or entry <= 0:
+        print(f"[session] Midcap capital exhausted, skipping {signal.get('ticker')}")
+        return
+
+    max_usd   = cash * 0.50
+    qty       = max(1, int(max_usd / entry))
+    allocated = round(qty * entry, 2)
+    if allocated > cash:
+        qty       = max(1, int(cash / entry))
+        allocated = round(qty * entry, 2)
+    if qty < 1:
+        print(f"[session] Midcap: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
+        return
+
+    signal["qty"]           = qty
+    signal["allocated_usd"] = allocated
+    cap["cash"]   = round(cash - allocated, 2)
+    cap["equity"] = round(cap["cash"] + sum(
+        s["entry_price"] * s.get("qty", 0) for s in open_mc
+        if s.get("entry_price") and s.get("qty")
+    ) + allocated, 2)
+
+    p["midcap_signals"].append(signal)
+    _save(p)
+    print(f"[session] Midcap signal: {signal.get('ticker')} qty={qty} @ ${entry:.2f} "
+          f"(${allocated:.0f}) | midcap cash left: ${cap['cash']:.0f}")
+
+
+def get_open_midcap_signals() -> list:
+    p = _migrate(_load())
+    return [s for s in p.get("midcap_signals", []) if s.get("status") == "open"]
+
+
+def close_midcap_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
+    p = _migrate(_load())
+    return _close_signal_generic(p, "midcap_signals", "midcap_capital",
+                                 signal_id, exit_price, exit_date, "Midcap")
+
+
+# ---------------------------------------------------------------------------
+# Penny stock signal management ($5,000 separate capital pool)
+# ---------------------------------------------------------------------------
+
+def add_penny_signal(signal: dict) -> None:
+    """
+    Append a penny stock signal, allocating from the $5,000 penny_capital pool.
+    Sizes at PENNY_MAX_POSITION_PCT (20%) of available cash, max PENNY_MAX_CONCURRENT (5).
+    """
+    from config import PENNY_MAX_POSITION_PCT, PENNY_MAX_CONCURRENT
+    p = _migrate(_load())
+    open_penny = [s for s in p.get("penny_signals", []) if s.get("status") == "open"]
+    if len(open_penny) >= PENNY_MAX_CONCURRENT:
+        print(f"[session] Penny pool full ({PENNY_MAX_CONCURRENT} open), skipping {signal.get('ticker')}")
+        return
+
+    cap   = p["penny_capital"]
+    cash  = cap.get("cash", 0)
+    entry = signal.get("entry_price", 0)
+    if cash <= 0 or entry <= 0:
+        print(f"[session] Penny capital exhausted, skipping {signal.get('ticker')}")
+        return
+
+    max_usd   = cash * PENNY_MAX_POSITION_PCT
+    qty       = max(1, int(max_usd / entry))
+    allocated = round(qty * entry, 2)
+    if allocated > cash:
+        qty       = max(1, int(cash / entry))
+        allocated = round(qty * entry, 2)
+    if qty < 1:
+        print(f"[session] Penny: insufficient capital for {signal.get('ticker')} @ ${entry:.2f}")
+        return
+
+    signal["qty"]           = qty
+    signal["allocated_usd"] = allocated
+    cap["cash"]   = round(cash - allocated, 2)
+    cap["equity"] = round(cap["cash"] + sum(
+        s["entry_price"] * s.get("qty", 0) for s in open_penny
+        if s.get("entry_price") and s.get("qty")
+    ) + allocated, 2)
+
+    p["penny_signals"].append(signal)
+    _save(p)
+    print(f"[session] Penny signal: {signal.get('ticker')} qty={qty} @ ${entry:.2f} "
+          f"(${allocated:.0f}) | penny cash left: ${cap['cash']:.0f}")
+
+
+def get_open_penny_signals() -> list:
+    p = _migrate(_load())
+    return [s for s in p.get("penny_signals", []) if s.get("status") == "open"]
+
+
+def close_penny_signal(signal_id: str, exit_price: float, exit_date: str) -> dict:
+    p = _migrate(_load())
+    return _close_signal_generic(p, "penny_signals", "penny_capital",
+                                 signal_id, exit_price, exit_date, "Penny")
 
 
 # ---------------------------------------------------------------------------
@@ -917,26 +875,26 @@ def record_spy_equity(spy_price: float) -> None:
     _save(p)
 
 
-def record_dt_equity() -> None:
-    """Snapshot current day_trade_capital.equity into dt_equity_curve."""
+def record_midcap_equity() -> None:
+    """Snapshot current midcap_capital.equity into midcap_equity_curve."""
     p = _migrate(_load())
-    dt_equity = p.get("day_trade_capital", {}).get("equity", 5000.0)
-    p["dt_equity_curve"].append({
+    equity = p.get("midcap_capital", {}).get("equity", 5000.0)
+    p.setdefault("midcap_equity_curve", []).append({
         "day":    p["session"].get("current_day", 0),
         "date":   datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "equity": round(dt_equity, 2),
+        "equity": round(equity, 2),
     })
     _save(p)
 
 
-def record_scalping_equity() -> None:
-    """Snapshot current scalping_capital.equity into scalping_equity_curve."""
+def record_penny_equity() -> None:
+    """Snapshot current penny_capital.equity into penny_equity_curve."""
     p = _migrate(_load())
-    sc_equity = p.get("scalping_capital", {}).get("equity", 5000.0)
-    p["scalping_equity_curve"].append({
+    equity = p.get("penny_capital", {}).get("equity", 5000.0)
+    p.setdefault("penny_equity_curve", []).append({
         "day":    p["session"].get("current_day", 0),
         "date":   datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "equity": round(sc_equity, 2),
+        "equity": round(equity, 2),
     })
     _save(p)
 

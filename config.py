@@ -81,15 +81,27 @@ BEARISH_REGIME_MULTIPLIER = 0.5    # halve size when SPY < 200d MA
 SLIPPAGE_PCT = 0.0015        # 15 bps on every paper fill — buys higher, sells lower
 
 # ---------------------------------------------------------------------------
+# Beta-Scaled Minimum Stop Loss
+# ---------------------------------------------------------------------------
+# Minimum stop loss = ticker_beta × BETA_MIN_STOP_FACTOR.
+# Prevents tight stops on high-beta names (e.g. NVDA beta=1.8 → 7.2% min stop).
+# Set to 0.0 to disable.
+BETA_MIN_STOP_FACTOR = 0.04
+
+# ---------------------------------------------------------------------------
 # Portfolio Beta Cap
 # ---------------------------------------------------------------------------
 # Approximate 2-year trailing betas vs SPY (update manually each quarter)
 TICKER_BETA = {
-    "AAPL": 1.2, "NVDA": 1.8, "MSFT": 1.1,
+    "AAPL": 1.2, "NVDA": 1.8, "MSFT": 1.1, "MU":   1.4,
     "GOOGL": 1.2, "META": 1.3,
-    "AMZN": 1.3, "LLY": 0.5,  "JPM": 1.1,
-    "XOM":  0.8, "CAT": 1.2,  "WMT": 0.5,
-    "FCX":  1.6, "NEE": 0.4,  "PLD": 1.0,
+    "AMZN": 1.3, "TSLA": 1.9,
+    "LLY":  0.5, "UNH":  0.6,
+    "JPM":  1.1, "GS":   1.3,
+    "XOM":  0.8, "CVX":  0.8,
+    "CAT":  1.2, "GE":   1.2,
+    "WMT":  0.5, "COST": 0.7,
+    "FCX":  1.6, "NEE":  0.4, "PLD": 1.0,
 }
 TICKER_BETA.update({"SPY": 1.0, "QQQ": 1.2, "IWM": 1.3, "GLD": 0.1})
 MAX_PORTFOLIO_BETA = 1.5     # weighted avg beta cap (crypto excluded)
@@ -159,15 +171,6 @@ STATE_DIR = ".tmp/state"
 DASHBOARD_URL = "https://outtcom.github.io/ai-paper-trading/"
 
 # ---------------------------------------------------------------------------
-# Day Trade Signals (paper-only tracking, no capital allocated)
-# ---------------------------------------------------------------------------
-DAY_TRADE_GAP_MIN_PCT      = 2.0   # minimum pre-market gap % to flag in scanner
-DAY_TRADE_VOLUME_RATIO_MIN = 1.5   # volume vs 30-day avg required for confirmation
-MOMENTUM_NEAR_HIGH_PCT     = 2.0   # within 2% of 52-week high qualifies
-MOMENTUM_TARGET_PCT        = 2.0   # TP: target 2% gain over 1-2 days
-MOMENTUM_STOP_PCT          = 1.0   # SL: stop if falls 1% from entry
-
-# ---------------------------------------------------------------------------
 # Short Selling (bear regime — SPY < 200d MA)
 # ---------------------------------------------------------------------------
 ALLOW_SHORT_SELLING = True
@@ -181,15 +184,66 @@ SECTOR_TILT_TOP_MULT    = 1.25   # amplify size for trades in top-2 sectors
 SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors
 
 # ---------------------------------------------------------------------------
-# ICT FVG Scalping (paper-only, separate $5K pool, auto-close at noon)
-# Strategy: 10 AM Momentum Continuation (Opening Range Breakout)
-# Replaces ICT FVG which generated insufficient signals (1 in entire session)
+# Mid-Cap Universe — S&P 400 representative names, 2+ per GICS sector
+# Price range ~$15–$250, market cap $2B–$10B
 # ---------------------------------------------------------------------------
-MOMENTUM_CONT_OR_MINUTES          = 30     # opening range length (9:30–10:00 AM)
-MOMENTUM_CONT_MAX_EXTENSION_PCT   = 0.03   # max 3% above/below OR to avoid chasing
-MOMENTUM_CONT_MIN_OR_RANGE_PCT    = 0.003  # min 0.3% OR range (filter flat opens)
-MOMENTUM_CONT_VOL_RATIO           = 1.2    # confirmation bars vol must be >1.2x OR vol
-MOMENTUM_CONT_MAX_STOP_PCT        = 0.02   # max 2% stop (cap when OR is wide)
-MOMENTUM_CONT_MIN_RRR             = 1.8    # minimum risk:reward ratio
-MOMENTUM_CONT_MAX_SIGNALS         = 3      # max concurrent momentum signals per day
-SCALPING_CAPITAL_INIT             = 5000.0 # separate pool, never drawn from main portfolio
+MIDCAP_UNIVERSE = [
+    # Technology
+    "MANH", "EPAM", "PAYC", "FTNT", "WEX", "FFIV", "AKAM", "SAIC",
+    # Communication Services
+    "CABO", "LBRDK", "NWSA", "IPG",
+    # Consumer Discretionary
+    "POOL", "LKQ", "SIG", "GNTX", "BWA", "FOXF", "LEVI",
+    # Consumer Staples
+    "INGR", "POST", "SFM", "CHEF", "USFD",
+    # Healthcare
+    "PODD", "NTRA", "HOLX", "DVA", "HSIC", "PRGO", "PDCO",
+    # Financials
+    "CINF", "AIZ", "FHN", "SNV", "HWC", "WTFC", "ESNT",
+    # Industrials
+    "XPO", "RBC", "GNRC", "ITT", "GATX", "AIT", "AAON",
+    # Materials
+    "AXTA", "EMN", "FMC", "OLN", "TROX",
+    # Energy
+    "OVV", "SM", "CIVI", "RRC", "AR", "CNX",
+    # Utilities
+    "OGE", "NWE", "SR", "OTTR",
+    # Real Estate
+    "NNN", "OHI", "EPR", "STAG", "ROIC",
+]
+
+# Mid-Cap Signal Parameters
+MIDCAP_TARGET_PCT       = 5.0      # TP: 5% gain
+MIDCAP_STOP_PCT         = 3.0      # SL: 3% loss
+MIDCAP_HOLD_DAYS        = 5        # auto-close after 5 trading days
+MIDCAP_MIN_VOLUME_RATIO = 1.5      # 3d avg vol / 20d avg vol
+MIDCAP_MIN_RSI          = 45       # not in downtrend
+MIDCAP_MAX_RSI          = 78       # not overbought (relaxed from 72 — strong breakouts read 73–77)
+MIDCAP_CAPITAL_INIT     = 5000.0
+
+# ---------------------------------------------------------------------------
+# Penny Stock Universe — curated liquid sub-$10 names, price-filtered at scan time
+# Dynamic price filter applied at runtime: only $1.00–$10.00 tickers qualify
+# ---------------------------------------------------------------------------
+PENNY_UNIVERSE = [
+    "SNDL", "PLUG", "FCEL", "BLNK", "CLSK", "MVIS", "CLOV",
+    "AGEN", "BTBT", "HIMS", "NKLA", "SPWR", "RUN", "BETR",
+    "NNDM", "WKHS", "IDEX", "MMAT", "TRCH", "AMPE",
+    "CTRM", "GNUS", "EXPR", "BFIN", "EDTK", "TAOP",
+    "AEVA", "CGRN", "VVPR", "APGN", "BSFC", "PAVS",
+    "LKCO", "HPNN", "AEYE", "EDBL", "SIDU", "PNRG",
+    "GREE", "DFLI", "BMTM", "BFRI", "CYCC", "BRTX",
+    "GOVX", "LQDA", "ORIC", "ELME", "ARDS", "LRMR",
+]
+
+# Penny Stock Signal Parameters
+PENNY_MIN_PRICE         = 1.00     # filter below $1 (sub-penny trap)
+PENNY_MAX_PRICE         = 10.00    # filter above $10 (no longer penny)
+PENNY_MIN_AVG_DAILY_VOL = 500_000  # liquidity floor (30d avg shares/day)
+PENNY_VOLUME_SPIKE_RATIO = 3.0     # 3d avg vol / 30d avg vol
+PENNY_TARGET_PCT        = 8.0      # TP: 8% gain
+PENNY_STOP_PCT          = 5.0      # SL: 5% loss
+PENNY_HOLD_DAYS         = 2        # auto-close after 2 trading days
+PENNY_CAPITAL_INIT      = 5000.0
+PENNY_MAX_POSITION_PCT  = 0.20     # max 20% of pool per signal — gap risk mitigation
+PENNY_MAX_CONCURRENT    = 5        # up to 5 signals at 20% each

@@ -27,19 +27,21 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tools.market_data import get_latest_price, _yahoo_direct_ohlcv
 from tools.session_manager import (
     advance_day,
+    already_ran_today,
     close_position,
-    close_day_trade_signal,
-    close_scalping_signal,
-    get_open_day_trade_signals,
-    get_open_scalping_signals,
+    close_midcap_signal,
+    close_penny_signal,
+    get_open_midcap_signals,
+    get_open_penny_signals,
     get_portfolio,
     get_session_day,
+    mark_ran_today,
     open_position,
     partial_close_position,
     record_equity,
     record_spy_equity,
-    record_dt_equity,
-    record_scalping_equity,
+    record_midcap_equity,
+    record_penny_equity,
     update_benchmark_indices,
     update_last_price,
     update_spy_benchmark,
@@ -47,8 +49,8 @@ from tools.session_manager import (
 )
 from tools.telegram_bot import broadcast_message
 
-DEAD_MONEY_DAYS      = 3     # close position if held this many days with no progress
-DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS days
+DEAD_MONEY_DAYS      = 5     # close position if held this many days with no progress
+DEAD_MONEY_THRESHOLD = 0.01  # "not working" = gain < +1% after DEAD_MONEY_DAYS days
 
 
 # ---------------------------------------------------------------------------
@@ -292,67 +294,15 @@ def _total_equity(portfolio: dict) -> float:
     return round(equity, 2)
 
 
-def _resolve_day_trade_signals(today: str) -> list:
+def _resolve_signals_generic(today: str, open_signals: list, close_fn, label: str) -> list:
     """
-    Auto-close day trade signals whose auto_close_date has passed.
-    Also mark-to-market the day trade capital equity for still-open signals.
-    """
-    open_signals = get_open_day_trade_signals()
-    resolved = []
-    for signal in open_signals:
-        if signal.get("auto_close_date", "9999-99-99") <= today:
-            try:
-                ticker = signal["ticker"]
-                gen_date = signal.get("generated_date", today)
-                # Fetch OHLCV for the trade date to get actual open (execution price)
-                # and close (EOD exit price)
-                try:
-                    from datetime import datetime, timedelta
-                    day_after = (datetime.strptime(gen_date, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
-                    bars = _yahoo_direct_ohlcv(ticker, gen_date, day_after)
-                    trade_day = next((b for b in bars if b.get("date", "") >= gen_date), None)
-                    actual_open  = trade_day["open"]  if trade_day and trade_day.get("open")  else None
-                    actual_close = trade_day["close"] if trade_day and trade_day.get("close") else None
-                except Exception:
-                    actual_open  = None
-                    actual_close = None
-
-                # Use actual open as entry price if available (pre-market entry_price may differ).
-                # Shift TP/SL proportionally so R/R is preserved from the real execution price.
-                if actual_open and actual_open > 0:
-                    old_entry = signal.get("entry_price") or actual_open
-                    tp_pct = signal.get("target_pct", 1.5) / 100
-                    sl_pct = signal.get("stop_pct",   0.8) / 100
-                    direction = signal.get("direction", "long")
-                    signal["entry_price"]  = round(actual_open, 2)
-                    if direction == "short":
-                        signal["target_price"] = round(actual_open * (1 - tp_pct), 2)
-                        signal["stop_price"]   = round(actual_open * (1 + sl_pct), 2)
-                    else:
-                        signal["target_price"] = round(actual_open * (1 + tp_pct), 2)
-                        signal["stop_price"]   = round(actual_open * (1 - sl_pct), 2)
-
-                exit_price = actual_close if actual_close else get_latest_price(ticker)
-                closed = close_day_trade_signal(signal["id"], exit_price, today)
-                resolved.append(closed)
-                open_note = f" (open=${actual_open:.2f})" if actual_open else ""
-                print(f"[eod] Day trade resolved: {ticker} {closed.get('outcome')} "
-                      f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f}){open_note}")
-            except Exception as e:
-                print(f"[eod] Error resolving {signal['id']}: {e}")
-    return resolved
-
-
-def _resolve_scalping_signals_eod(today: str) -> list:
-    """
-    Fallback: close any scalping signals not resolved at noon.
-    Uses daily high/low to determine if TP or SL was hit during the session,
-    then exits at the daily close.
+    Shared resolution logic for mid-cap and penny signal pools.
+    Checks daily OHLCV to see if TP or SL was hit; exits at close otherwise.
+    Auto-closes signals whose auto_close_date has passed.
     """
     from datetime import timedelta
-    open_scalps = get_open_scalping_signals()
     resolved = []
-    for signal in open_scalps:
+    for signal in open_signals:
         if signal.get("auto_close_date", "9999-99-99") > today:
             continue
         try:
@@ -362,7 +312,6 @@ def _resolve_scalping_signals_eod(today: str) -> list:
             tp        = signal["target_price"]
             sl        = signal["stop_price"]
 
-            # Fetch daily bar for the trade date
             day_after = (datetime.strptime(gen_date, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
             bars      = _yahoo_direct_ohlcv(ticker, gen_date, day_after)
             trade_bar = next((b for b in bars if b.get("date", "") >= gen_date), None)
@@ -370,11 +319,11 @@ def _resolve_scalping_signals_eod(today: str) -> list:
             if trade_bar:
                 if direction == "long":
                     if trade_bar["high"] >= tp:
-                        exit_price = tp                    # TP hit during session
+                        exit_price = tp
                     elif trade_bar["low"] <= sl:
-                        exit_price = sl                    # SL hit during session
+                        exit_price = sl
                     else:
-                        exit_price = trade_bar["close"]    # exit at close
+                        exit_price = trade_bar["close"]
                 else:
                     if trade_bar["low"] <= tp:
                         exit_price = tp
@@ -385,14 +334,22 @@ def _resolve_scalping_signals_eod(today: str) -> list:
             else:
                 exit_price = get_latest_price(ticker)
 
-            closed = close_scalping_signal(signal["id"], exit_price, today)
+            closed = close_fn(signal["id"], exit_price, today)
             if closed:
                 resolved.append(closed)
-                print(f"[eod] Scalping fallback closed: {ticker} {closed.get('outcome')} "
+                print(f"[eod] {label} resolved: {ticker} {closed.get('outcome')} "
                       f"{closed.get('pnl_pct', 0):+.2f}% (${closed.get('pnl_usd', 0):+.2f})")
         except Exception as e:
-            print(f"[eod] Error resolving scalp {signal.get('id')}: {e}")
+            print(f"[eod] Error resolving {label} {signal.get('id')}: {e}")
     return resolved
+
+
+def _resolve_midcap_signals(today: str) -> list:
+    return _resolve_signals_generic(today, get_open_midcap_signals(), close_midcap_signal, "Midcap")
+
+
+def _resolve_penny_signals(today: str) -> list:
+    return _resolve_signals_generic(today, get_open_penny_signals(), close_penny_signal, "Penny")
 
 
 def _build_eod_message(
@@ -501,9 +458,9 @@ def _build_eod_message(
                 lines.append(f"  {ticker}: (price unavailable: {e})")
         lines.append("")
 
-    # Day trade signal resolutions
+    # Mid-cap / penny signal resolutions
     if resolved_signals:
-        lines.append("<b>Day Trades Closed:</b>")
+        lines.append("<b>Mid-Cap / Penny Signals Closed:</b>")
         for sig in resolved_signals:
             pct = sig.get("pnl_pct") or 0
             usd = sig.get("pnl_usd") or 0
@@ -514,12 +471,11 @@ def _build_eod_message(
                 f"  {emoji} {sig['ticker']} ({sig.get('signal_type','?')}): "
                 f"{sign}{pct:.2f}% ({sign}${usd:.2f}) → {outcome}"
             )
-        dt = portfolio.get("day_trade_capital", {})
-        dt_eq  = dt.get("equity", 5000)
-        dt_ret = round((dt_eq - 5000) / 5000 * 100, 2)
+        mc  = portfolio.get("midcap_capital", {})
+        pen = portfolio.get("penny_capital", {})
         lines.append(
-            f"  DT Pool: <b>${dt_eq:,.2f}</b> "
-            f"({'+'if dt_ret>=0 else ''}{dt_ret:.1f}% vs $5,000 start)"
+            f"  Mid-cap pool: <b>${mc.get('equity', 5000):,.2f}</b>  |  "
+            f"Penny pool: <b>${pen.get('equity', 5000):,.2f}</b>"
         )
         lines.append("")
 
@@ -581,10 +537,10 @@ def main():
     total_days = portfolio["session"]["total_days"]
     print(f"[eod] Day {session_day}/{total_days}")
 
-    # Step 0: Resolve expired day trade signals (paper only)
-    resolved_signals = _resolve_day_trade_signals(today)
-    # Step 0b: Fallback — close any scalping signals midday_check missed
-    _resolve_scalping_signals_eod(today)
+    # Step 0: Resolve expired mid-cap signals (5-day hold)
+    resolved_signals = _resolve_midcap_signals(today)
+    # Step 0b: Resolve expired penny signals (2-day hold; fallback if midday_check missed any)
+    resolved_signals += _resolve_penny_signals(today)
 
     # Step 1: Partial profit at 1:1 R/R (before checking full TP/SL)
     partial_trades = _check_partial_profit(portfolio)
@@ -616,12 +572,12 @@ def main():
     except Exception as e:
         print(f"[eod] Could not fetch SPY price: {e}")
 
-    # Step 5b: Record daily equity snapshots for all four curves
+    # Step 5b: Record daily equity snapshots
     try:
         if spy_price:
             record_spy_equity(spy_price)
-        record_dt_equity()
-        record_scalping_equity()
+        record_midcap_equity()
+        record_penny_equity()
     except Exception as e:
         print(f"[eod] Equity curve snapshot error: {e}")
 

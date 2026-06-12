@@ -1,7 +1,7 @@
 """
 Morning session entry point.
-Triggered by GitHub Actions at 7:30 AM EDT on weekdays (cron: 30 11 * * 1-5).
-Observed GHA queue delay: ~2h15min → actual execution ~9:45 AM ET.
+Triggered by GitHub Actions cron: 10 10 * * 1-5 UTC (6:10 AM ET).
+Observed GHA free-tier queue delay: 2h–4h → actual arrival 9:30–11:00 AM ET.
 Market-open guard sleeps up to 45 min if we land pre-9:30 AM.
 
 Flow:
@@ -39,11 +39,9 @@ from config import (
     WATCHLIST, STOCKS, CRYPTO, INDEX_ETFS, ETF_OVERLAP_THRESHOLD,
     MAX_CONCURRENT_POSITIONS, MAX_NEW_POSITIONS_PER_DAY, MAX_PORTFOLIO_HEAT, MIN_VOLUME_RATIO,
     BEARISH_REGIME_MULTIPLIER, TICKER_SECTOR, SECTOR_MAP,
-    TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD,
+    TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD, BETA_MIN_STOP_FACTOR,
     ALLOW_SHORT_SELLING, SHORT_TP_PCT, SHORT_SL_PCT,
     SECTOR_TILT_TOP_MULT, SECTOR_TILT_BOTTOM_MULT,
-    DAY_TRADE_VOLUME_RATIO_MIN, MOMENTUM_NEAR_HIGH_PCT,
-    MOMENTUM_TARGET_PCT, MOMENTUM_STOP_PCT,
 )
 from agents import strategy_consultant
 from orchestrator import run_pipeline
@@ -57,7 +55,6 @@ from tools.sector_analysis import get_sector_strength, get_sector_bonus, format_
 from tools.session_manager import (
     add_journal_entry,
     add_open_order,
-    add_day_trade_signal,
     check_circuit_breaker,
     get_portfolio,
     get_session_day,
@@ -76,7 +73,7 @@ from tools.session_manager import (
 from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
     send_trade_notification, send_full_agent_chain,
-    send_message, broadcast_message, send_group_trade_signal,
+    send_message, broadcast_message,
 )
 
 _CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
@@ -240,7 +237,13 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
             results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
             continue
 
-        if _is_same_sector_open(ticker, session_portfolio):
+        # Only enforce same-sector block when not critically under-deployed.
+        # Mirrors the relaxation in _pick_top_n — both gates must agree or the
+        # relaxation in _pick_top_n is dead code (ticker never makes it through here).
+        _pre_cash   = session_portfolio.get("cash", 0)
+        _pre_equity = session_portfolio.get("equity", max(_pre_cash, 1))
+        _pre_cash_ratio = _pre_cash / _pre_equity if _pre_equity > 0 else 1.0
+        if _is_same_sector_open(ticker, session_portfolio) and _pre_cash_ratio < 0.60:
             results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
             continue
 
@@ -327,6 +330,7 @@ def _size_position(
     direction: str = "long",
     sector_strength: dict = None,
     equity: float = None,
+    strat_mult: float = 1.0,
 ) -> dict:
     """
     Compute entry price, quantity, TP, SL, and dollar size.
@@ -347,6 +351,11 @@ def _size_position(
         sl_pct = float(order.get("stop_loss_pct") or trader.get("stop_loss_pct") or 0.03)
         if sl_pct > 1.0:   # model returned percentage (e.g. 5.0) not decimal (0.05) — normalise
             sl_pct /= 100
+        # Beta-scaled minimum stop: high-beta names need room to breathe.
+        # e.g. NVDA (beta 1.8) → min stop 7.2%, TSLA (1.9) → 7.6%, WMT (0.5) → 2%.
+        if BETA_MIN_STOP_FACTOR > 0:
+            beta = TICKER_BETA.get(ticker, 1.0)
+            sl_pct = max(sl_pct, round(beta * BETA_MIN_STOP_FACTOR, 4))
         tp_pct = sl_pct * 2   # 2:1 reward-to-risk
 
     # Sector momentum tilt
@@ -361,7 +370,10 @@ def _size_position(
             sector_mult = SECTOR_TILT_BOTTOM_MULT
 
     pos_frac   = float(order.get("position_size_pct") or 0.25)
-    macro_mult = min(vix_mult * regime_mult, 1.0)   # composite dampener (never amplifies)
+    # Dampener cap: VIX and regime multipliers can only reduce sizing, never amplify.
+    # strat_mult is applied afterwards so the strategy consultant can genuinely amplify
+    # sizing in calm markets (otherwise min(..., 1.0) silently cancels it).
+    macro_mult = min(vix_mult * regime_mult, 1.0) * strat_mult
 
     # Deployment urgency floor — override LLM timidity when behind on pacing.
     # When critically under-deployed, also bypass VIX/regime dampener so urgency
@@ -370,10 +382,10 @@ def _size_position(
     cash_ratio   = cash / total_equity
     if cash_ratio > 0.60:      # >60% cash = critically under-deployed
         pos_frac   = max(pos_frac, 0.20)
-        macro_mult = 1.0                    # urgency overrides VIX/regime dampener
+        macro_mult = max(strat_mult, 1.0)   # urgency overrides dampener; keep strat amplification
     elif cash_ratio > 0.40:    # >40% cash = behind pace
         pos_frac   = max(pos_frac, 0.15)
-        macro_mult = max(macro_mult, 0.80)  # partial override — cap the damage
+        macro_mult = max(macro_mult, 0.80 * strat_mult)  # partial override
 
     max_usd   = cash * pos_frac * macro_mult * sector_mult
     max_usd   = min(max_usd, cash * 0.30)   # hard cap: never > 30% of cash per position
@@ -420,77 +432,6 @@ def _size_position(
         "_full_why":         order.get("final_reasoning") or trader.get("reasoning") or "",
         "top_news":          top_news,
     }
-
-
-# ---------------------------------------------------------------------------
-# Momentum breakout scan (paper day trade signals)
-# ---------------------------------------------------------------------------
-
-def _scan_momentum_breakouts(watchlist: list, today: str, sector_strength: dict) -> list:
-    """
-    Scan watchlist for momentum breakout signals.
-    Triggers when price is within MOMENTUM_NEAR_HIGH_PCT% of 52-week high
-    AND 3-day avg volume >= DAY_TRADE_VOLUME_RATIO_MIN × 30-day avg.
-    Paper-only — no capital allocated.
-    """
-    signals = []
-    one_year_ago = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=370)).strftime("%Y-%m-%d")
-    auto_close   = (datetime.strptime(today, "%Y-%m-%d") + timedelta(days=2)).strftime("%Y-%m-%d")
-
-    for ticker in watchlist:
-        if ticker.endswith("-USD"):
-            continue
-        try:
-            bars = _yahoo_direct_ohlcv(ticker, one_year_ago, today)
-            if len(bars) < 30:
-                continue
-            highs = [b.get("high", b.get("close", 0)) for b in bars if b.get("high", 0) > 0]
-            high_52w = max(highs) if highs else 0
-            if high_52w <= 0:
-                continue
-            current_price = bars[-1].get("close", 0)
-            if current_price <= 0:
-                continue
-            near_high = current_price >= high_52w * (1 - MOMENTUM_NEAR_HIGH_PCT / 100)
-            if not near_high:
-                continue
-            volumes = [b.get("volume", 0) for b in bars if b.get("volume", 0) > 0]
-            if len(volumes) < 10:
-                continue
-            avg_30d   = sum(volumes[-30:]) / min(30, len(volumes))
-            avg_3d    = sum(volumes[-3:])  / 3
-            vol_ratio = (avg_3d / avg_30d) if avg_30d > 0 else 0
-            if vol_ratio < DAY_TRADE_VOLUME_RATIO_MIN:
-                print(f"[morning] {ticker} near 52w high — vol ratio {vol_ratio:.2f}x < {DAY_TRADE_VOLUME_RATIO_MIN}x, skipping")
-                continue
-            target = round(current_price * (1 + MOMENTUM_TARGET_PCT / 100), 2)
-            stop   = round(current_price * (1 - MOMENTUM_STOP_PCT   / 100), 2)
-            signal = {
-                "id":              f"DTS-{today}-{ticker}-momentum",
-                "ticker":          ticker,
-                "signal_type":     "momentum_breakout",
-                "generated_date":  today,
-                "entry_price":     round(current_price, 2),
-                "target_price":    target,
-                "target_pct":      MOMENTUM_TARGET_PCT,
-                "stop_price":      stop,
-                "stop_pct":        MOMENTUM_STOP_PCT,
-                "status":          "open",
-                "exit_price":      None,
-                "exit_date":       None,
-                "pnl_pct":         None,
-                "outcome":         None,
-                "auto_close_date": auto_close,
-                "rationale":       f"Near 52w high (${high_52w:.2f}) — vol ratio {vol_ratio:.1f}x",
-            }
-            add_day_trade_signal(signal)
-            send_group_trade_signal(signal)
-            signals.append(signal)
-            print(f"[morning] Momentum breakout: {ticker} @ ${current_price:.2f}  52wH=${high_52w:.2f}  vol={vol_ratio:.1f}x")
-        except Exception as e:
-            print(f"[morning] Momentum scan error {ticker}: {e}")
-
-    return signals
 
 
 # ---------------------------------------------------------------------------
@@ -680,9 +621,6 @@ def main():
     daily_watchlist = dynamic_stocks + INDEX_ETFS + CRYPTO
     print(f"[morning] Daily watchlist: {len(daily_watchlist)} tickers ({len(dynamic_stocks)} stocks + {len(INDEX_ETFS)} ETFs + {len(CRYPTO)} crypto)")
 
-    # ── Momentum breakout scan (paper day trade signals) ──────────────────
-    _scan_momentum_breakouts(daily_watchlist, today, sector_strength)
-
     # ── Strategy Consultant: daily macro brief ────────────────────────────
     print("[morning] Running Strategy Consultant...")
     vix_data_for_brief = {
@@ -699,11 +637,10 @@ def main():
         hyg_data        = hyg_data_for_brief,
     )
 
-    # Apply strategy multiplier on top of existing VIX/regime multipliers
+    # Strategy multiplier is kept separate — applied AFTER the vix/regime dampener cap
+    # in _size_position so it can genuinely amplify sizing in calm markets (not get capped to 1.0).
     strat_mult = float(strategy_brief.get("risk_budget_multiplier", 1.0))
-    if strat_mult != 1.0:
-        vix_multiplier = round(vix_multiplier * strat_mult, 2)
-        print(f"[morning] Strategy multiplier {strat_mult:.2f}× → vix_multiplier now {vix_multiplier:.2f}×")
+    print(f"[morning] Strategy multiplier: {strat_mult:.2f}× (applied post-dampener cap)")
 
     # Persist brief and sector data to portfolio.json for dashboard
     try:
@@ -803,7 +740,7 @@ def main():
         # ── Size the position ─────────────────────────────────────────────
         summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult,
                                  direction=trade_direction, sector_strength=sector_strength,
-                                 equity=equity)
+                                 equity=equity, strat_mult=strat_mult)
         summary["session_day"]  = session_day
         summary["total_days"]   = total_days
         summary["vix_label"]    = vix_label
@@ -824,9 +761,8 @@ def main():
         # ── Log order as pending ──────────────────────────────────────────
         add_open_order(ticker, summary["qty"], summary["current_price"], "BUY")
 
-        # ── Notify via Telegram (both private + group), then auto-execute ──
+        # ── Notify via Telegram, then auto-execute ───────────────────────
         send_trade_notification(summary)
-        send_group_trade_signal(summary)
         send_full_agent_chain(state)
 
         # Re-fetch live price at execution time

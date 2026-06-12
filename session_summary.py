@@ -45,12 +45,10 @@ def calculate_spy_return(start_date: str, end_date: str) -> float:
         return None
 
 
-def calculate_day_trade_stats(portfolio: dict) -> dict:
-    signals = portfolio.get("day_trade_signals", [])
+def _pool_stats(signals: list, capital: dict) -> dict:
     closed  = [s for s in signals if s.get("status") == "closed"]
-    dt_cap  = portfolio.get("day_trade_capital", {})
-    initial = dt_cap.get("initial", 5000)
-    final   = dt_cap.get("equity", initial)
+    initial = capital.get("initial", 5000)
+    final   = capital.get("equity", initial)
     if not closed:
         return {"count": 0, "win_rate": 0, "avg_pnl_pct": 0, "total_pnl_usd": 0,
                 "pool_return_pct": round((final - initial) / initial * 100, 2),
@@ -59,13 +57,21 @@ def calculate_day_trade_stats(portfolio: dict) -> dict:
     pnls    = [s.get("pnl_pct") or 0 for s in closed]
     usd_pnl = sum(s.get("pnl_usd") or 0 for s in closed)
     return {
-        "count":            len(closed),
-        "win_rate":         round(len(wins) / len(closed) * 100, 1),
-        "avg_pnl_pct":      round(sum(pnls) / len(pnls), 2),
-        "total_pnl_usd":    round(usd_pnl, 2),
-        "pool_return_pct":  round((final - initial) / initial * 100, 2),
-        "pool_final":       final,
+        "count":           len(closed),
+        "win_rate":        round(len(wins) / len(closed) * 100, 1),
+        "avg_pnl_pct":     round(sum(pnls) / len(pnls), 2),
+        "total_pnl_usd":   round(usd_pnl, 2),
+        "pool_return_pct": round((final - initial) / initial * 100, 2),
+        "pool_final":      final,
     }
+
+
+def calculate_midcap_stats(portfolio: dict) -> dict:
+    return _pool_stats(portfolio.get("midcap_signals", []), portfolio.get("midcap_capital", {}))
+
+
+def calculate_penny_stats(portfolio: dict) -> dict:
+    return _pool_stats(portfolio.get("penny_signals", []), portfolio.get("penny_capital", {}))
 
 
 def format_summary(swing: dict, spy_return, dt_stats: dict, session: dict) -> str:
@@ -102,23 +108,24 @@ def format_summary(swing: dict, spy_return, dt_stats: dict, session: dict) -> st
     else:
         lines += ["📊 <b>vs SPY Benchmark</b>", "SPY return unavailable."]
 
-    dt    = dt_stats
-    dt_r  = dt.get("pool_return_pct", 0)
-    dt_usd = dt.get("total_pnl_usd", 0)
-    rec = ""
-    if dt["count"] >= 5:
-        rec = "→ Scale up day trade allocation in session 2" if dt["win_rate"] >= 60 else "→ Refine entry filters before scaling"
+    mc   = dt_stats.get("midcap", {})
+    pen  = dt_stats.get("penny",  {})
+    mc_r = mc.get("pool_return_pct", 0)
+    pen_r = pen.get("pool_return_pct", 0)
     lines += [
         "",
-        "📡 <b>Day Trade Signals — $5,000 Pool</b>",
-        f"Signals: {dt['count']}  |  Win Rate: {dt['win_rate']:.0f}%",
-        f"Avg P&amp;L: {'+' if dt.get('avg_pnl_pct',0) >= 0 else ''}{dt.get('avg_pnl_pct',0):.2f}%  "
-        f"|  Total P&amp;L: {'+' if dt_usd >= 0 else ''}${dt_usd:,.2f}",
-        f"Pool: $5,000 → <b>${dt.get('pool_final', 5000):,.2f}</b> "
-        f"({'+' if dt_r >= 0 else ''}{dt_r:.2f}%)",
+        "📊 <b>Mid-Cap Signals — $5,000 Pool</b>",
+        f"Signals: {mc['count']}  |  Win Rate: {mc['win_rate']:.0f}%",
+        f"Avg P&amp;L: {'+' if mc.get('avg_pnl_pct',0) >= 0 else ''}{mc.get('avg_pnl_pct',0):.2f}%  "
+        f"|  Total P&amp;L: {'+' if mc.get('total_pnl_usd',0) >= 0 else ''}${mc.get('total_pnl_usd',0):,.2f}",
+        f"Pool: $5,000 → <b>${mc.get('pool_final', 5000):,.2f}</b> ({'+' if mc_r >= 0 else ''}{mc_r:.2f}%)",
+        "",
+        "🪙 <b>Penny Signals — $5,000 Pool</b>",
+        f"Signals: {pen['count']}  |  Win Rate: {pen['win_rate']:.0f}%",
+        f"Avg P&amp;L: {'+' if pen.get('avg_pnl_pct',0) >= 0 else ''}{pen.get('avg_pnl_pct',0):.2f}%  "
+        f"|  Total P&amp;L: {'+' if pen.get('total_pnl_usd',0) >= 0 else ''}${pen.get('total_pnl_usd',0):,.2f}",
+        f"Pool: $5,000 → <b>${pen.get('pool_final', 5000):,.2f}</b> ({'+' if pen_r >= 0 else ''}{pen_r:.2f}%)",
     ]
-    if rec:
-        lines.append(rec)
 
     return "\n".join(lines)
 
@@ -131,7 +138,10 @@ def run():
 
     swing       = calculate_swing_stats(portfolio)
     spy_return  = calculate_spy_return(start_date, end_date)
-    dt_stats    = calculate_day_trade_stats(portfolio)
+    dt_stats    = {
+        "midcap": calculate_midcap_stats(portfolio),
+        "penny":  calculate_penny_stats(portfolio),
+    }
     msg         = format_summary(swing, spy_return, dt_stats, session)
     broadcast_message(msg)
     print("[session_summary] Summary broadcast complete.")
