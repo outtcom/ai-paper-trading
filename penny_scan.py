@@ -222,12 +222,13 @@ def _scan(today: str, dry_run: bool = False) -> list:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Print signals without writing or alerting")
+    parser.add_argument("--force", action="store_true", help="Skip time-window gate (for manual/demo runs)")
     args = parser.parse_args()
 
     today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[penny] ========== Penny Stock Scan {today} ==========")
 
-    if not _within_dst_gate():
+    if not args.force and not _within_dst_gate():
         print("[penny] Outside operating window (8:30 AM–2 PM ET). Exiting.")
         return
 

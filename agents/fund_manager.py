@@ -8,6 +8,7 @@ from typing import Dict, Optional
 import json
 import os
 import sys
+import time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
@@ -119,16 +120,26 @@ Summary of Analysis:
 
 Make the final order decision for {ticker}."""
 
-        response = litellm.completion(
-            model=MODELS["decision"],
-            max_tokens=700,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": context},
-            ],
-        )
+        # Retry up to 2 times — Opus occasionally returns empty content under load
+        raw = ""
+        for attempt in range(3):
+            response = litellm.completion(
+                model=MODELS["decision"],
+                max_tokens=700,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": context},
+                ],
+            )
+            raw = (response.choices[0].message.content or "").strip()
+            if raw:
+                break
+            if attempt < 2:
+                time.sleep(3)
 
-        raw = response.choices[0].message.content.strip()
+        if not raw:
+            raise ValueError("Fund manager returned empty response after 3 attempts")
+
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
