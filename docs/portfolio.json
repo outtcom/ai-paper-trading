@@ -1,10 +1,10 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 40,
+    "current_day": 41,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-12T20:24:28.838954+00:00",
+    "last_updated": "2026-06-15T03:23:16.734314+00:00",
     "session_number": 2
   },
   "cash": 4405.97,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.94,
-    "sortino": 1.97,
-    "calmar": 2.52,
+    "sharpe": 0.93,
+    "sortino": 1.95,
+    "calmar": 2.48,
     "spy_start_price": 686.1,
     "spy_current_price": 741.75,
     "benchmark_return_pct": 8.11,
@@ -989,6 +989,11 @@
       "day": 39,
       "date": "2026-06-12",
       "equity": 5149.55
+    },
+    {
+      "day": 40,
+      "date": "2026-06-15",
+      "equity": 5149.55
     }
   ],
   "journal": [
@@ -1733,6 +1738,11 @@
     {
       "day": 39,
       "date": "2026-06-12",
+      "equity": 5405.55
+    },
+    {
+      "day": 40,
+      "date": "2026-06-15",
       "equity": 5405.55
     }
   ],
@@ -2873,12 +2883,22 @@
       "day": 39,
       "date": "2026-06-12",
       "equity": 5000.0
+    },
+    {
+      "day": 40,
+      "date": "2026-06-15",
+      "equity": 5000.0
     }
   ],
   "penny_equity_curve": [
     {
       "day": 39,
       "date": "2026-06-12",
+      "equity": 5000.0
+    },
+    {
+      "day": 40,
+      "date": "2026-06-15",
       "equity": 5000.0
     }
   ]
