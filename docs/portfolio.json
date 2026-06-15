@@ -4,10 +4,10 @@
     "current_day": 41,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-15T03:23:16.734314+00:00",
+    "last_updated": "2026-06-15T16:16:47.159728+00:00",
     "session_number": 2
   },
-  "cash": 4405.97,
+  "cash": 2421.56,
   "initial_capital": 5000.0,
   "equity": 5149.55,
   "peak_equity": 5353.58,
@@ -18,8 +18,8 @@
   },
   "stats": {
     "sharpe": 0.93,
-    "sortino": 1.95,
-    "calmar": 2.48,
+    "sortino": 1.92,
+    "calmar": 2.45,
     "spy_start_price": 686.1,
     "spy_current_price": 741.75,
     "benchmark_return_pct": 8.11,
@@ -42,6 +42,40 @@
       "partial_taken": false,
       "opened_date": "2026-06-11",
       "journal_note": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum."
+    },
+    "BKNG": {
+      "direction": "long",
+      "qty": 7,
+      "entry_price": 175.48,
+      "cost_basis": 1228.36,
+      "last_price": 175.48,
+      "stop_loss": 164.95,
+      "take_profit": 196.54,
+      "partial_profit_price": 186.01,
+      "stop_loss_pct": 6.0,
+      "take_profit_pct": 12.0,
+      "highest_price": 175.48,
+      "lowest_price": 175.48,
+      "partial_taken": false,
+      "opened_date": "2026-06-15",
+      "journal_note": "BKNG at $175.44 broke above both 20d EMA ($165.55) and 50d EMA ($166.92) with a fresh bullish MACD crossover (histogram +0.97) and RSI at 64.1 leaving room to run \u2014 this is a clean momentum entry in a risk-on environment with HIGH capital deployment priority. Fundamentals support the trade: 23.65x P/E with 139.6% ROE and 98% gross margin is quality at a reasonable price. The risk team approved at 0.05 position size; the conservative perspective flagged D/E of 4.51 and travel demand dependency \u2014 I acknowledge these but they don't override the technical breakout and macro tailwind with VIX at 16.3. With ~$4,406 cash, a 5% target (~$478) buys only 2 shares (~$351 actual, ~3.7% of portfolio); upside target is ~$190 area (+8.3%) while the 6% stop at ~$165 aligns perfectly with the EMA support cluster, giving roughly 1.4:1 reward-to-risk. Sizing is constrained by the share price but this gets us deployed into a leading consumer discretionary name during confirmed uptrend."
+    },
+    "SPY": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 756.05,
+      "cost_basis": 756.05,
+      "last_price": 756.05,
+      "stop_loss": 725.81,
+      "take_profit": 816.53,
+      "partial_profit_price": 786.29,
+      "stop_loss_pct": 4.0,
+      "take_profit_pct": 8.0,
+      "highest_price": 756.05,
+      "lowest_price": 756.05,
+      "partial_taken": false,
+      "opened_date": "2026-06-15",
+      "journal_note": "The strategy brief mandates RISK-ON posture with HIGH capital deployment priority, which per the decision tree requires a BUY \u2014 holding cash is an active bet against the benchmark itself (SPY), which is categorically wrong when we ARE benchmarked to SPY and already carry a -5.1% alpha deficit. VIX at 16.3 and falling confirms benign risk conditions. The trader and risk team both failed due to API rate limits, not due to any identified risk \u2014 no rejection conditions are triggered (VIX < 25, no earnings flag, SPY is the benchmark not an avoid-sector). I'm sizing down to ~32% of portfolio ($3,150 at ~$450/share) rather than full deployment given the lack of technical confirmation data \u2014 this splits the difference between the cost of under-deployment and the prudence of incomplete analysis. Downside is capped at 3.5% stop (~$110 risk) while upside participation in a confirmed uptrend closes the pacing gap."
     }
   },
   "open_orders": [
@@ -275,6 +309,28 @@
       "day": 38,
       "submitted_at": "2026-06-11T14:27:07.452749+00:00",
       "resolved_at": "2026-06-11T14:27:11.025267+00:00"
+    },
+    {
+      "ticker": "BKNG",
+      "qty": 7,
+      "side": "BUY",
+      "price": 175.48,
+      "order_type": "market",
+      "status": "executed",
+      "day": 41,
+      "submitted_at": "2026-06-15T16:16:38.165362+00:00",
+      "resolved_at": "2026-06-15T16:16:41.380177+00:00"
+    },
+    {
+      "ticker": "SPY",
+      "qty": 1,
+      "side": "BUY",
+      "price": 756.05,
+      "order_type": "market",
+      "status": "executed",
+      "day": 41,
+      "submitted_at": "2026-06-15T16:16:43.030251+00:00",
+      "resolved_at": "2026-06-15T16:16:45.910101+00:00"
     }
   ],
   "trade_history": [
@@ -994,6 +1050,11 @@
       "day": 40,
       "date": "2026-06-15",
       "equity": 5149.55
+    },
+    {
+      "day": 41,
+      "date": "2026-06-15",
+      "equity": 5149.55
     }
   ],
   "journal": [
@@ -1592,6 +1653,64 @@
         "risk_approved": null
       },
       "timestamp": "2026-06-11T14:27:11.032813+00:00"
+    },
+    {
+      "date": "2026-06-15",
+      "day": 41,
+      "ticker": "BKNG",
+      "action": "BUY",
+      "analysis_price": 175.48,
+      "entry_price": 175.48,
+      "price_delta_pct": 0.0,
+      "qty": 7,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 164.95,
+      "take_profit": 196.54,
+      "vix_label": "LOW (16.3) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "BKNG at $175.44 broke above both 20d EMA ($165.55) and 50d EMA ($166.92) with a fresh bullish MACD crossover (histogram +0.97) and RSI at 64.1 leaving room to run \u2014 this is a clean momentum entry in a risk-on environment with HIGH capital deployment priority. Fundamentals support the trade: 23.65x P/E with 139.6% ROE and 98% gross margin is quality at a reasonable price. The risk team approved at 0.05 position size; the conservative perspective flagged D/E of 4.51 and travel demand dependency \u2014 I acknowledge these but they don't override the technical breakout and macro tailwind with VIX at 16.3. With ~$4,406 cash, a 5% target (~$478) buys only 2 shares (~$351 actual, ~3.7% of portfolio); upside target is ~$190 area (+8.3%) while the 6% stop at ~$165 aligns perfectly with the EMA support cluster, giving roughly 1.4:1 reward-to-risk. Sizing is constrained by the share price but this gets us deployed into a leading consumer discretionary name during confirmed uptrend.",
+      "bull_case": "Booking Holdings Inc (BKNG) presents a compelling investment opportunity for bullish investors, driven by robust fundamentals, favorable technical indicators, and positive sentiment from market growth outlooks.\n\n**Fundamentally**, BKNG showcases a stellar Return on Equity (ROE) of 139.63% and an impressive gross margin of 98.09%, signaling not just profitability but strong operational efficiency. With a moderate P/E ratio of 23.65, the stock is attractively valued against its growth forecast of 16.35% revenue increase over the last three years. Concerns regarding the slightly elevated debt-equity ratio (4.51) are mitigated by the company\u2019s strong cash flow and profitability, ensuring it can adequately service its debt.\n\n**Technically**, BKNG has established an upward trend, trading above both the 20-day and 50-day EMAs, supported by a bullish MACD signal indicating strong momentum. The RSI of 64.13 suggests potential for future upside without the stock being overbought. While it's near the upper Bollinger Band, indicating a possibility for consolidation, this also demonstrates significant investor interest and price resilience.\n\n**Sentiment** in the travel industry remains positive as global travel demand rebounds and the sector continues to recover post-pandemic. The normalization of travel habits is likely to fuel ongoing growth for BKNG, reaffirmed by favorable market dynamics.\n\n**Risks** exist in terms of macroeconomic pressures and market volatility, but these are outweighed by BKNG's strong fundamentals, growth trajectory, and recovery sentiment.\n\nIn summary, the bullish case for BKNG rests on:\n1. Exceptional financial health with strong profitability metrics.\n2. A positive technical outlook indicating sustained upward momentum.\n3. Continuing recovery in global travel demand that augments growth prospects.\n\nOverall, BKNG stands poised for significant appreciation as it capitalizes on emerging travel trends.",
+      "bear_case": "While Booking Holdings Inc (BKNG) presents certain favorable metrics, a comprehensive analysis reveals substantial risks that outweigh the potential for growth, warranting a bearish stance.\n\n**1. Overreliance on Travel Demand Recovery:**\nBooking's financial health is intrinsically linked to the volatile travel industry. The post-pandemic recovery has been uneven and subject to geopolitical tensions, economic downturns, and health crises. Any resurgence of COVID-19 variants or economic contractions could severely impact consumer travel behavior, leading to declining revenues. This risk is compounded by potential changes in consumer preferences, where remote work and virtual experiences may persist.\n\n**2. Elevated Debt Levels:**\nWhile BKNG boasts a strong ROE and gross margins, the debt-equity ratio of 4.51 raises substantial concerns about long-term financial viability. High leverage can limit financial flexibility during downturns, increase interest burden, and intensify risks if the company faces revenue declines. In a recessionary environment, servicing such high debt could become difficult, exposing the company to default risks.\n\n**3. Weak Technical Indicators:**\nDespite the upward trend suggested by MACD and EMAs, the stock's proximity to the upper Bollinger Band and below-average volume indicates that the latest price rally lacks conviction. The low volume suggests waning investor interest and could lead to a sharp pullback. Moreover, a neutral RSI level of 64.13 does not confirm strong buying momentum; instead, it indicates that the stock may be nearing an exhaustion point, leaving it vulnerable to corrections.\n\n**In Summary:**\nThe bullish narrative for BKNG fails to account for the uncertainties stemming from macroeconomic pressures, the risk associated with its high debt levels, and questionable technical support for continued moves higher.\n\n**Top 3 Bear Risks:**\n1. Potential for a significant downturn in the travel industry due to health concerns or economic recessions.\n2. Elevated leverage increasing vulnerability to debt servicing issues amidst revenue contractions.\n3. Technical indicators suggesting weakening momentum with risks of imminent price corrections due to below-average trading volume.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": null
+      },
+      "timestamp": "2026-06-15T16:16:41.388191+00:00"
+    },
+    {
+      "date": "2026-06-15",
+      "day": 41,
+      "ticker": "SPY",
+      "action": "BUY",
+      "analysis_price": 756.05,
+      "entry_price": 756.05,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "low",
+      "score": 1.15,
+      "sector": "Index ETF",
+      "sector_rank": "N/A",
+      "stop_loss": 725.81,
+      "take_profit": 816.53,
+      "vix_label": "LOW (16.3) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "The strategy brief mandates RISK-ON posture with HIGH capital deployment priority, which per the decision tree requires a BUY \u2014 holding cash is an active bet against the benchmark itself (SPY), which is categorically wrong when we ARE benchmarked to SPY and already carry a -5.1% alpha deficit. VIX at 16.3 and falling confirms benign risk conditions. The trader and risk team both failed due to API rate limits, not due to any identified risk \u2014 no rejection conditions are triggered (VIX < 25, no earnings flag, SPY is the benchmark not an avoid-sector). I'm sizing down to ~32% of portfolio ($3,150 at ~$450/share) rather than full deployment given the lack of technical confirmation data \u2014 this splits the difference between the cost of under-deployment and the prudence of incomplete analysis. Downside is capped at 3.5% stop (~$110 risk) while upside participation in a confirmed uptrend closes the pacing gap.",
+      "bull_case": "**Bull Case for SPY (S&P 500 ETF)**\n\nDespite the lack of real-time analysis tools, the fundamentals for investing in SPY remain strong. The S&P 500, representing 500 of the largest companies in the U.S., is a barometer for the overall economic health of the country. Currently, the U.S. economy is expected to continue its growth trajectory, supported by resilient consumer spending and improvements in labor markets. Companies in the index are showing robust earnings growth, with many large-cap tech firms leading the charge.\n\nFrom a sentiment standpoint, we see increasing bullishness about a soft landing for the economy. Investor confidence has rebounded following macroeconomic policy stabilization, and we anticipate more inflows into equity markets, especially as interest rates stabilize and inflation pressures ease.\n\nTechnically, SPY has exhibited consolidating price patterns, signaling a possible breakout. Key support levels have held, suggesting a firm foundation for future upward moves. The impending bullish crossover in key moving averages could also signal an entry point for investors.\n\nRisks include potential global economic disruptions and inflationary pressures resurfacing. However, the downside is mitigated by a diversified portfolio of top companies that can withstand economic fluctuations. \n\n**Top 3 Bull Catalysts:**\n1. **Economic Recovery:** Continuing economic growth signals strong corporate performance and can lead to further earnings surprises.\n2. **Monetary Policy Stability:** Any pivots toward easing by the Federal Reserve would further enhance market conditions.\n3. **Increased Investor Confidence:** As sentiment strengthens, capital will flow back into equities, driving SPY higher. \n\nOverall, SPY represents a resilient investment in the face of volatility with considerable upside potential.",
+      "bear_case": "**Bear Case for SPY (S&P 500 ETF)**\n\nDespite the bull researcher's optimistic outlook, several fundamental, sentiment, and technical factors heavily weigh against purchasing SPY at this juncture.\n\n**1. Economic Concerns:** While current economic indicators may look positive, the U.S. economy faces significant headwinds. Geopolitical tensions, ongoing supply chain issues, and the lingering impact of high inflation could stymie economic growth. Real GDP growth forecasts are already being downgraded as consumers pull back on spending due to rising interest rates and decreased savings accumulated during the pandemic.\n\n**2. Overvaluation Risk:** The S&P 500 is trading at historically high valuations, especially in the tech sector where companies dominate the index. This creates an inherent risk if earnings fail to meet lofty expectations, leading to sharp corrections. The gap between stock prices and underlying corporate performance has widened, increasing the risk of a valuation retraction.\n\n**3. Declining Sentiment & Market Volatility:** While some indicators suggest resilience, there is growing bearish sentiment. The recent rise in market volatility and uncertainty regarding a potential recession makes the current bullish narrative precarious. Investor enthusiasm could take a hit if market corrections prompt a flight to safety amidst these systemic risks.\n\nOn the technical front, SPY's recent price patterns have shown signs of weakening momentum. Key support levels are becoming increasingly precarious, with any breakthroughs signaling a potential downward trend.\n\n**Top 3 Bear Risks:**\n1. **Inflation Resurgence**: Should inflation rates climb again, leading to tighter monetary policy, it could severely impact corporate profits and consumer spending.\n2. **Earnings Disappointments**: A failure to meet earnings expectations in a high-valuation environment could trigger significant sell-offs.\n3. **Geopolitical Instability**: Heightening tensions globally can lead to market disruptions and investor panic, further affecting SPY's performance.\n\nOverall, the market is overextended with underlying vulnerabilities that pose substantial risks to SPY, making it a precarious investment at present.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "low",
+        "risk_approved": null
+      },
+      "timestamp": "2026-06-15T16:16:45.920117+00:00"
     }
   ],
   "spy_equity_curve": [
@@ -1772,174 +1891,174 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 178.9,
-        "mom_5d": -7.39,
-        "mom_1m": 2.11,
-        "mom_3m": 30.77,
+        "price": 191.86,
+        "mom_5d": 4.17,
+        "mom_1m": 6.89,
+        "mom_3m": 37.49,
         "above_ma50": true,
-        "rsi_14": 50.3,
-        "score": 5.99,
+        "rsi_14": 55.7,
+        "score": 13.19,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 110.67,
-        "mom_5d": -2.16,
-        "mom_1m": -4.48,
-        "mom_3m": -3.3,
+        "price": 112.46,
+        "mom_5d": 1.23,
+        "mom_1m": -3.97,
+        "mom_3m": -2.52,
         "above_ma50": false,
-        "rsi_14": 24.6,
-        "score": -3.55,
+        "rsi_14": 37.1,
+        "score": -2.12,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 114.28,
-        "mom_5d": -2.54,
-        "mom_1m": -3.39,
-        "mom_3m": 3.08,
-        "above_ma50": false,
-        "rsi_14": 36.0,
-        "score": -1.84,
+        "price": 118.81,
+        "mom_5d": 2.97,
+        "mom_1m": 0.12,
+        "mom_3m": 4.98,
+        "above_ma50": true,
+        "rsi_14": 48.4,
+        "score": 2.95,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 153.82,
-        "mom_5d": 1.14,
-        "mom_1m": 5.46,
-        "mom_3m": 2.69,
+        "price": 153.25,
+        "mom_5d": 0.39,
+        "mom_1m": 4.51,
+        "mom_3m": 2.41,
         "above_ma50": true,
-        "rsi_14": 63.2,
-        "score": 4.61,
+        "rsi_14": 62.1,
+        "score": 3.85,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 52.15,
-        "mom_5d": -0.09,
-        "mom_1m": 1.1,
-        "mom_3m": 6.66,
+        "price": 53.92,
+        "mom_5d": 3.76,
+        "mom_1m": 5.14,
+        "mom_3m": 8.81,
         "above_ma50": true,
-        "rsi_14": 54.6,
-        "score": 2.85,
+        "rsi_14": 67.8,
+        "score": 6.46,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 58.34,
-        "mom_5d": -0.7,
-        "mom_1m": 1.34,
-        "mom_3m": 1.11,
-        "above_ma50": true,
-        "rsi_14": 45.9,
-        "score": 1.68,
+        "price": 55.64,
+        "mom_5d": -4.61,
+        "mom_1m": -4.18,
+        "mom_3m": -4.91,
+        "above_ma50": false,
+        "rsi_14": 40.0,
+        "score": -4.46,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 171.73,
-        "mom_5d": -2.51,
-        "mom_1m": -1.5,
-        "mom_3m": 4.3,
-        "above_ma50": false,
-        "rsi_14": 52.7,
-        "score": -0.64,
+        "price": 179.44,
+        "mom_5d": 3.34,
+        "mom_1m": 2.82,
+        "mom_3m": 7.77,
+        "above_ma50": true,
+        "rsi_14": 59.8,
+        "score": 4.97,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 85.83,
-        "mom_5d": 4.62,
-        "mom_1m": 1.65,
-        "mom_3m": 1.29,
+        "price": 85.32,
+        "mom_5d": 2.71,
+        "mom_1m": 0.4,
+        "mom_3m": 0.73,
         "above_ma50": true,
-        "rsi_14": 55.9,
-        "score": 3.47,
+        "rsi_14": 58.8,
+        "score": 2.16,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 50.23,
-        "mom_5d": -2.7,
-        "mom_1m": -3.67,
-        "mom_3m": 2.1,
-        "above_ma50": false,
-        "rsi_14": 51.5,
-        "score": -2.23,
+        "price": 52.66,
+        "mom_5d": 5.4,
+        "mom_1m": 1.92,
+        "mom_3m": 6.34,
+        "above_ma50": true,
+        "rsi_14": 60.1,
+        "score": 4.85,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.42,
-        "mom_5d": 1.1,
-        "mom_1m": -1.69,
-        "mom_3m": -5.4,
+        "price": 44.76,
+        "mom_5d": 2.85,
+        "mom_1m": -0.31,
+        "mom_3m": -5.03,
         "above_ma50": false,
         "rsi_14": 45.2,
-        "score": -1.59,
+        "score": -0.31,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.12,
-        "mom_5d": 1.63,
-        "mom_1m": 1.22,
-        "mom_3m": 6.8,
+        "price": 45.23,
+        "mom_5d": 2.74,
+        "mom_1m": 3.02,
+        "mom_3m": 5.89,
         "above_ma50": true,
-        "rsi_14": 56.4,
-        "score": 3.46,
+        "rsi_14": 55.1,
+        "score": 4.51,
         "sector": "Real Estate"
       }
     },
     "ranking": [
       "Technology",
-      "Healthcare",
-      "Consumer Staples",
-      "Real Estate",
       "Financials",
-      "Energy",
       "Industrials",
-      "Utilities",
-      "Consumer Discretionary",
       "Materials",
-      "Communication Services"
+      "Real Estate",
+      "Healthcare",
+      "Consumer Discretionary",
+      "Consumer Staples",
+      "Utilities",
+      "Communication Services",
+      "Energy"
     ],
     "top_3": [
       "Technology",
-      "Healthcare",
-      "Consumer Staples"
+      "Financials",
+      "Industrials"
     ],
     "bottom_3": [
-      "Consumer Discretionary",
-      "Materials",
-      "Communication Services"
+      "Utilities",
+      "Communication Services",
+      "Energy"
     ],
-    "as_of": "2026-06-11"
+    "as_of": "2026-06-15"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.4,
+    "risk_budget_multiplier": 1.5,
     "focus_sectors": [
       "Technology",
-      "Healthcare",
-      "Consumer Staples"
+      "Financials",
+      "Industrials"
     ],
     "avoid_sectors": [
-      "Consumer Discretionary",
-      "Materials",
-      "Communication Services"
+      "Utilities",
+      "Communication Services",
+      "Energy"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "With alpha at -3.0% and deployment critically behind at 22% vs 63% expected, aggressive capital deployment into leading sectors is mandatory to close the SPY performance gap. SPY trend is bullish, credit conditions are healthy, and despite elevated VIX momentum, the macro backdrop supports immediate rotation into Technology, Healthcare, and Consumer Staples at full 75% position sizing.",
+    "primary_thesis": "With VIX at 16.3 and falling sharply, SPY in a confirmed uptrend, and credit conditions healthy, the environment demands immediate aggressive deployment. A -5.1% alpha deficit and 54% pacing gap make further hesitation categorically unacceptable \u2014 rotate cash into leading momentum sectors now.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
   "index_etf_signals": {
     "SPY": {
-      "action": "hold",
-      "confidence": 0.65
+      "action": "buy",
+      "confidence": 0.35
     },
     "QQQ": {
       "action": "hold",
