@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-12",
-  "last_notified_date": "2026-06-12",
+  "date": "2026-06-15",
+  "last_notified_date": "2026-06-15",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -8,7 +8,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 5,
-        "compensation_grants": 5,
+        "compensation_grants": 2,
         "net_open_market_value": -87532032.31,
         "net_open_market_fmt": "-$87.5M",
         "largest_single_transaction": {
@@ -77,7 +77,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:34.167141"
+      "scanned_at": "2026-06-15T16:32:06.072371"
     },
     "NVDA": {
       "insider_signal": {
@@ -154,61 +154,24 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:35.480331"
+      "scanned_at": "2026-06-15T16:32:07.246916"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 9,
-        "net_open_market_value": -1031125.0,
-        "net_open_market_fmt": "-$1.0M",
-        "largest_single_transaction": {
-          "name": "Numoto Takeshi",
-          "direction": "sell",
-          "dollar_value": 1031125.0,
-          "dollar_fmt": "$1.0M",
-          "date": "2026-06-08",
-          "shares_traded": 2500,
-          "price_per_share": 412.45,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Numoto Takeshi",
-            "direction": "sell",
-            "dollar_value": 1031125.0,
-            "dollar_fmt": "$1.0M",
-            "date": "2026-06-08",
-            "shares_traded": 2500,
-            "price_per_share": 412.45,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 10,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Alphabet Reveals Why It Rejected Trump's $2 Billion Quantum Funding Program",
-          "date": "2026-06-12 13:07",
-          "summary": "Google said government funding conditions did not align with its development timeline.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Google Reveals Why It Turned Down Trump Administration's Quantum Funding Deal: 'In This One Specific Case…'",
-          "date": "2026-06-12 04:13",
-          "summary": "Google rejected Trump administration quantum funding, citing restrictive conditions that could slow development.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-12T14:22:36.653853"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-15T16:32:08.478236"
     },
     "MU": {
       "insider_signal": {
@@ -324,17 +287,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Pulls The Trigger Back, Nasdaq Rips 2.5% And SpaceX Books The Biggest IPO Ever",
-          "date": "2026-06-12 06:55",
-          "summary": "Trump cancelled the planned strikes on Iran and the Nasdaq tore back 2.5%, chips led the rebound, oil dropped under $88, and the 10-year yield gave back 10 basis points in a session. Oracle kept bleed",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-12T14:22:37.978915"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-15T16:32:09.622075"
     },
     "GOOGL": {
       "insider_signal": {
@@ -380,33 +334,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Alphabet Reveals Why It Rejected Trump's $2 Billion Quantum Funding Program",
-          "date": "2026-06-12 13:07",
-          "summary": "Google said government funding conditions did not align with its development timeline.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Google Explains Why It Passed On Trump's $2 Billion Quantum Initiative",
-          "date": "2026-06-12 12:48",
-          "summary": "Alphabet cited funding conditions that could have slowed its quantum computing development pace.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Google Breaks Silence on Rejecting Trump's $2 Billion Quantum Deal",
-          "date": "2026-06-12 12:36",
-          "summary": "Google Chose Speed Over Trump's $2 Billion Quantum Deal",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-12T14:22:39.207383"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-15T16:32:10.835518"
     },
     "META": {
       "insider_signal": {
@@ -503,7 +432,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:40.469267"
+      "scanned_at": "2026-06-15T16:32:12.171695"
     },
     "AMZN": {
       "insider_signal": {
@@ -589,8 +518,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:41.647867"
+      "trump_mentions": [
+        {
+          "headline": "Update: Market Chatter: Amazon CEO Raised Concerns About Anthropic Models Before Trump Export Restrictions",
+          "date": "2026-06-15 14:30",
+          "summary": "(Update with Amazon's response to a request for comment in the final paragraph.) Amazon (AMZN) Ch",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-15T16:32:13.392622"
     },
     "TSLA": {
       "insider_signal": {
@@ -646,17 +584,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "SpaceX president Gwynne Shotwell floats Tesla merger on IPO day",
-          "date": "2026-06-12 13:14",
-          "summary": "Gwynne Shotwell said a tie-up \"might make Elon's life a little easier\" but added she is focused on current operations",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-12T14:22:42.821331"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-15T16:32:14.548716"
     },
     "LLY": {
       "insider_signal": {
@@ -713,7 +642,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:43.956056"
+      "scanned_at": "2026-06-15T16:32:15.659920"
     },
     "UNH": {
       "insider_signal": {
@@ -789,7 +718,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:45.085505"
+      "scanned_at": "2026-06-15T16:32:16.746337"
     },
     "JPM": {
       "insider_signal": {
@@ -896,7 +825,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:46.214215"
+      "scanned_at": "2026-06-15T16:32:17.797258"
     },
     "GS": {
       "insider_signal": {
@@ -1023,7 +952,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:47.296739"
+      "scanned_at": "2026-06-15T16:32:18.853700"
     },
     "XOM": {
       "insider_signal": {
@@ -1041,31 +970,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Oil markets on edge as President Trump says U.S. will be hitting Iran 'very hard'",
-          "date": "2026-06-11 11:56",
-          "summary": "CNBC's Pippa Stevens joins 'Squawk on the Street' to talk how the latest comments from Pres. Trump on Iran are impacting oil markets.",
-          "source": "CNBC",
+          "headline": "Oil Prices Slump, Exxon and Chevron Stocks Drop After Trump Iran Deal",
+          "date": "2026-06-15 12:26",
+          "summary": "Oil prices slumped to three-month lows of just above $80 a barrel early Monday after the U.S. and Iran reached an interim deal that includes plans to reopen the Strait of Hormuz.  Exxon Mobil Chevron ",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Says Iran Will Get Hit 'Very Hard' Tonight, But What Do Prediction Markets Say About The Ceasefire?",
-          "date": "2026-06-11 10:51",
-          "summary": "Trump vows to take &#34;total control&#34; of Iran&#39;s Kharg Island oil hub as military strikes resume. See how prediction markets and oil traders are pricing the risk.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran",
-          "date": "2026-06-10 21:27",
-          "summary": "U.S. inflation reached a three-year high of 4.2%, with Trump arguing that ending the war will resolve both the conflict and rising prices.",
-          "source": "CNBC",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:48.395513"
+      "scanned_at": "2026-06-15T16:32:19.969401"
     },
     "CVX": {
       "insider_signal": {
@@ -1092,31 +1005,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Oil markets on edge as President Trump says U.S. will be hitting Iran 'very hard'",
-          "date": "2026-06-11 11:56",
-          "summary": "CNBC's Pippa Stevens joins 'Squawk on the Street' to talk how the latest comments from Pres. Trump on Iran are impacting oil markets.",
-          "source": "CNBC",
+          "headline": "Oil Prices Slump, Exxon and Chevron Stocks Drop After Trump Iran Deal",
+          "date": "2026-06-15 12:26",
+          "summary": "Oil prices slumped to three-month lows of just above $80 a barrel early Monday after the U.S. and Iran reached an interim deal that includes plans to reopen the Strait of Hormuz.  Exxon Mobil Chevron ",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         },
         {
-          "headline": "Trump Says Iran Will Get Hit 'Very Hard' Tonight, But What Do Prediction Markets Say About The Ceasefire?",
-          "date": "2026-06-11 10:51",
-          "summary": "Trump vows to take &#34;total control&#34; of Iran&#39;s Kharg Island oil hub as military strikes resume. See how prediction markets and oil traders are pricing the risk.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "CNBC Daily Open: Trump expresses 'love' for inflation print and anger at Iran",
-          "date": "2026-06-10 21:27",
-          "summary": "U.S. inflation reached a three-year high of 4.2%, with Trump arguing that ending the war will resolve both the conflict and rising prices.",
-          "source": "CNBC",
-          "keyword_matched": "trump",
+          "headline": "Jim Cramer Discusses Chevron During Presidential War Related Talks",
+          "date": "2026-06-15 08:04",
+          "summary": "Chevron Corporation (NYSE:CVX) was one of the stocks on Jim Cramer’s radar as he cautioned that SpaceX could blow past its opening price. Cramer discussed the stock in light of the President’s comment",
+          "source": "Yahoo",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:49.471349"
+      "scanned_at": "2026-06-15T16:32:21.057679"
     },
     "CAT": {
       "insider_signal": {
@@ -1151,7 +1056,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:50.560034"
+      "scanned_at": "2026-06-15T16:32:22.135323"
     },
     "GE": {
       "insider_signal": {
@@ -1197,33 +1102,44 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:51.621995"
+      "scanned_at": "2026-06-15T16:32:23.146328"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "open_market_sells": 1,
+        "compensation_grants": 9,
+        "net_open_market_value": -1435203.96,
+        "net_open_market_fmt": "-$1.4M",
+        "largest_single_transaction": {
+          "name": "Guggina David W",
+          "direction": "sell",
+          "dollar_value": 1435203.96,
+          "dollar_fmt": "$1.4M",
+          "date": "2026-06-10",
+          "shares_traded": 11978,
+          "price_per_share": 119.82,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Guggina David W",
+            "direction": "sell",
+            "dollar_value": 1435203.96,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-06-10",
+            "shares_traded": 11978,
+            "price_per_share": 119.82,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump administration appeals ruling blocking $100,000 H-1B fee",
-          "date": "2026-06-11 12:42",
-          "summary": "The appeal follows a ruling that President Donald Trump exceeded his authority by imposing a $100,000 H-1B visa application fee without approval from Congress.",
-          "source": "CNBC",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-12T14:22:52.976433"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-15T16:32:24.210623"
     },
     "COST": {
       "insider_signal": {
@@ -1240,7 +1156,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:54.141554"
+      "scanned_at": "2026-06-15T16:32:25.300285"
     },
     "FCX": {
       "insider_signal": {
@@ -1266,7 +1182,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-12T14:22:55.144160"
+      "scanned_at": "2026-06-15T16:32:26.310078"
     },
     "NEE": {
       "insider_signal": {
@@ -1283,7 +1199,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:56.160503"
+      "scanned_at": "2026-06-15T16:32:27.380840"
     },
     "PLD": {
       "insider_signal": {
@@ -1320,7 +1236,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-12T14:22:57.264770"
+      "scanned_at": "2026-06-15T16:32:28.399082"
     }
   }
 }
