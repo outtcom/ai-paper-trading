@@ -87,7 +87,7 @@ def run(state: dict, portfolio: Optional[Dict] = None, strategy_brief: Optional[
 
         # Use provided portfolio or estimate from initial capital
         if portfolio is None:
-            portfolio = {"cash": INITIAL_CAPITAL, "equity": INITIAL_CAPITAL, "positions": []}
+            portfolio = {"cash": INITIAL_CAPITAL, "equity": INITIAL_CAPITAL, "positions": {}}
 
         # Build strategy brief context if provided
         brief_context = ""
@@ -150,10 +150,9 @@ Make the final order decision for {ticker}."""
         # Enforce ETF allocation cap (max 40% of portfolio equity in ETFs combined)
         if ticker in INDEX_ETFS and final_order.get("action") == "buy":
             portfolio_equity = portfolio.get("equity", INITIAL_CAPITAL)
-            etf_positions = {
-                k: v for k, v in portfolio.get("positions", {}).items()
-                if isinstance(portfolio.get("positions", {}), dict) and k in INDEX_ETFS
-            }
+            raw_positions = portfolio.get("positions", {})
+            positions_dict = raw_positions if isinstance(raw_positions, dict) else {}
+            etf_positions = {k: v for k, v in positions_dict.items() if k in INDEX_ETFS}
             current_etf_exposure = sum(
                 v.get("cost_basis", 0)
                 for v in etf_positions.values()
