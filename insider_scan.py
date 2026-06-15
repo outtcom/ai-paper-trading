@@ -65,7 +65,7 @@ def _save_signals(all_signals: dict, date: str, last_notified_date: str) -> None
     }
     with open(SIGNALS_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
-    print(f"[insider_scan] Signals saved → {SIGNALS_PATH}")
+    print(f"[insider_scan] Signals saved -> {SIGNALS_PATH}")
 
 
 def _format_dollar(value: float) -> str:
