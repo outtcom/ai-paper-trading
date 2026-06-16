@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 42,
+    "current_day": 43,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-16T18:07:07.514457+00:00",
+    "last_updated": "2026-06-16T21:17:45.361659+00:00",
     "session_number": 2
   },
-  "cash": 2421.56,
+  "cash": 3145.34,
   "initial_capital": 5000.0,
-  "equity": 5127.06,
+  "equity": 5125.71,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,44 +17,27 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.77,
-    "sortino": 1.62,
-    "calmar": 1.94,
+    "sharpe": 0.76,
+    "sortino": 1.59,
+    "calmar": 1.89,
     "spy_start_price": 686.1,
-    "spy_current_price": 754.83,
-    "benchmark_return_pct": 10.02,
-    "max_drawdown_pct": 4.23
+    "spy_current_price": 750.33,
+    "benchmark_return_pct": 9.36,
+    "max_drawdown_pct": 4.26
   },
   "positions": {
-    "KO": {
-      "direction": "long",
-      "qty": 9,
-      "entry_price": 83.77,
-      "cost_basis": 753.93,
-      "last_price": 80.13,
-      "stop_loss": 80.42,
-      "take_profit": 90.47,
-      "partial_profit_price": 87.12,
-      "stop_loss_pct": 4.0,
-      "take_profit_pct": 8.0,
-      "highest_price": 83.77,
-      "lowest_price": 83.77,
-      "partial_taken": false,
-      "opened_date": "2026-06-11",
-      "journal_note": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum."
-    },
     "BKNG": {
       "direction": "long",
       "qty": 7,
       "entry_price": 175.48,
       "cost_basis": 1228.36,
-      "last_price": 175.56,
-      "stop_loss": 164.95,
+      "last_price": 175.72,
+      "stop_loss": 165.18,
       "take_profit": 196.54,
       "partial_profit_price": 186.01,
       "stop_loss_pct": 6.0,
       "take_profit_pct": 12.0,
-      "highest_price": 175.48,
+      "highest_price": 175.72,
       "lowest_price": 175.48,
       "partial_taken": false,
       "opened_date": "2026-06-15",
@@ -65,7 +48,7 @@
       "qty": 1,
       "entry_price": 756.05,
       "cost_basis": 756.05,
-      "last_price": 752.15,
+      "last_price": 750.33,
       "stop_loss": 725.81,
       "take_profit": 816.53,
       "partial_profit_price": 786.29,
@@ -663,6 +646,21 @@
       "opened_date": "2026-06-08",
       "closed_date": "2026-06-11",
       "journal_note": "LLY is in Healthcare (focus sector), market posture is risk-on, capital deployment priority is HIGH, and conviction is medium \u2014 all conditions mandate a BUY. The primary signal is the Phase 3 retatrutide data showing 28.3% average weight loss catalyzing institutional re-rating, with price at $1178.52 breaking decisively above the 50-day EMA at $1014.10. The conservative risk perspective flagged RSI at 79.63 (overbought) and P/E at 51.62 as concerns \u2014 I acknowledge these but the pipeline catalyst is a genuine inflection event that justifies the premium, and the 5% position size is already modest. However, at the entry target of $1155, a single share costs $1155 which represents ~12.6% of portfolio value ($9146.96), far exceeding the 5% position sizing. We cannot buy even 1 share at 5% allocation (~$457). Setting qty to 0 as the stock price exceeds our position size budget \u2014 we simply cannot afford a properly sized position."
+    },
+    {
+      "ticker": "KO",
+      "direction": "long",
+      "qty": 9,
+      "entry_price": 83.77,
+      "exit_price": 80.42,
+      "cost_basis": 753.93,
+      "proceeds": 723.78,
+      "pnl": -30.15,
+      "pnl_pct": -4.0,
+      "reason": "stop_loss",
+      "opened_date": "2026-06-11",
+      "closed_date": "2026-06-16",
+      "journal_note": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum."
     }
   ],
   "equity_curve": [
@@ -1065,6 +1063,11 @@
       "day": 42,
       "date": "2026-06-16",
       "equity": 5127.06
+    },
+    {
+      "day": 42,
+      "date": "2026-06-16",
+      "equity": 5125.71
     }
   ],
   "journal": [
@@ -1878,28 +1881,33 @@
       "day": 41,
       "date": "2026-06-15",
       "equity": 5500.87
+    },
+    {
+      "day": 42,
+      "date": "2026-06-16",
+      "equity": 5468.08
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 754.83,
-      "return_pct": 10.02
+      "current_price": 750.33,
+      "return_pct": 9.36
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 744.0,
-      "return_pct": 18.36
+      "current_price": 729.86,
+      "return_pct": 16.11
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 294.64,
-      "return_pct": 9.65
+      "current_price": 292.08,
+      "return_pct": 8.69
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 396.55,
-      "return_pct": -10.91
+      "current_price": 397.63,
+      "return_pct": -10.66
     }
   },
   "sector_strength": {
@@ -3027,6 +3035,11 @@
       "day": 41,
       "date": "2026-06-15",
       "equity": 5000.0
+    },
+    {
+      "day": 42,
+      "date": "2026-06-16",
+      "equity": 5000.0
     }
   ],
   "penny_equity_curve": [
@@ -3043,6 +3056,11 @@
     {
       "day": 41,
       "date": "2026-06-15",
+      "equity": 5000.0
+    },
+    {
+      "day": 42,
+      "date": "2026-06-16",
       "equity": 5000.0
     }
   ]
