@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-15",
-  "last_notified_date": "2026-06-15",
+  "date": "2026-06-16",
+  "last_notified_date": "2026-06-16",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -77,7 +77,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:06.072371"
+      "scanned_at": "2026-06-16T16:12:56.297941"
     },
     "NVDA": {
       "insider_signal": {
@@ -154,7 +154,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:07.246916"
+      "scanned_at": "2026-06-16T16:12:57.362909"
     },
     "MSFT": {
       "insider_signal": {
@@ -171,7 +171,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:08.478236"
+      "scanned_at": "2026-06-16T16:12:58.483446"
     },
     "MU": {
       "insider_signal": {
@@ -287,8 +287,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:09.622075"
+      "trump_mentions": [
+        {
+          "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
+          "date": "2026-06-15 23:50",
+          "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-16T16:12:59.627916"
     },
     "GOOGL": {
       "insider_signal": {
@@ -335,7 +344,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:10.835518"
+      "scanned_at": "2026-06-16T16:13:00.685412"
     },
     "META": {
       "insider_signal": {
@@ -432,7 +441,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:12.171695"
+      "scanned_at": "2026-06-16T16:13:01.925216"
     },
     "AMZN": {
       "insider_signal": {
@@ -518,17 +527,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Update: Market Chatter: Amazon CEO Raised Concerns About Anthropic Models Before Trump Export Restrictions",
-          "date": "2026-06-15 14:30",
-          "summary": "(Update with Amazon's response to a request for comment in the final paragraph.) Amazon (AMZN) Ch",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-15T16:32:13.392622"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-16T16:13:02.986235"
     },
     "TSLA": {
       "insider_signal": {
@@ -585,7 +585,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:14.548716"
+      "scanned_at": "2026-06-16T16:13:04.063581"
     },
     "LLY": {
       "insider_signal": {
@@ -641,8 +641,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:15.659920"
+      "trump_mentions": [
+        {
+          "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
+          "date": "2026-06-15 23:50",
+          "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-16T16:13:05.022158"
     },
     "UNH": {
       "insider_signal": {
@@ -708,17 +717,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s Economy Hired Nearly 1 Million Healthcare Workers While Every Other Sector Lost Jobs. Here’s Where to Put Your Money",
-          "date": "2026-06-10 12:34",
-          "summary": "Economist Justin Wolfers dropped a number on the Prof G Markets podcast that should reorganize how you think about the 2026 economy. Since Trump took office, healthcare and social services has added r",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-15T16:32:16.746337"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-16T16:13:05.956875"
     },
     "JPM": {
       "insider_signal": {
@@ -825,7 +825,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:17.797258"
+      "scanned_at": "2026-06-16T16:13:06.912562"
     },
     "GS": {
       "insider_signal": {
@@ -952,7 +952,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:18.853700"
+      "scanned_at": "2026-06-16T16:13:07.875970"
     },
     "XOM": {
       "insider_signal": {
@@ -968,17 +968,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil Prices Slump, Exxon and Chevron Stocks Drop After Trump Iran Deal",
-          "date": "2026-06-15 12:26",
-          "summary": "Oil prices slumped to three-month lows of just above $80 a barrel early Monday after the U.S. and Iran reached an interim deal that includes plans to reopen the Strait of Hormuz.  Exxon Mobil Chevron ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-15T16:32:19.969401"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-16T16:13:08.828170"
     },
     "CVX": {
       "insider_signal": {
@@ -1005,23 +996,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Oil Prices Slump, Exxon and Chevron Stocks Drop After Trump Iran Deal",
-          "date": "2026-06-15 12:26",
-          "summary": "Oil prices slumped to three-month lows of just above $80 a barrel early Monday after the U.S. and Iran reached an interim deal that includes plans to reopen the Strait of Hormuz.  Exxon Mobil Chevron ",
+          "headline": "Stock Market Today: Dow Pops On Trump-Iran Deal; Elon Musk's SpaceX Rockets, Tesla Does This",
+          "date": "2026-06-15 20:43",
+          "summary": "The Dow Jones index jumps Monday with a U.S.-Iran peace agreement. SpaceX flies on the stock market today. An AI stock tests an entry.",
           "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Jim Cramer Discusses Chevron During Presidential War Related Talks",
-          "date": "2026-06-15 08:04",
-          "summary": "Chevron Corporation (NYSE:CVX) was one of the stocks on Jim Cramer’s radar as he cautioned that SpaceX could blow past its opening price. Cramer discussed the stock in light of the President’s comment",
-          "source": "Yahoo",
-          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-15T16:32:21.057679"
+      "scanned_at": "2026-06-16T16:13:09.806350"
     },
     "CAT": {
       "insider_signal": {
@@ -1046,17 +1029,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Nasdaq semis stocks lead rebound rally despite Trump warning of new Iran strikes",
-          "date": "2026-06-11 12:37",
-          "summary": "Prices for finished consumer goods, excluding food and energy, rose by 0.3% in May",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-15T16:32:22.135323"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-16T16:13:10.765743"
     },
     "GE": {
       "insider_signal": {
@@ -1102,7 +1076,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-15T16:32:23.146328"
+      "scanned_at": "2026-06-16T16:13:11.754072"
     },
     "WMT": {
       "insider_signal": {
@@ -1139,7 +1113,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:24.210623"
+      "scanned_at": "2026-06-16T16:13:12.888422"
     },
     "COST": {
       "insider_signal": {
@@ -1156,7 +1130,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:25.300285"
+      "scanned_at": "2026-06-16T16:13:14.019837"
     },
     "FCX": {
       "insider_signal": {
@@ -1182,7 +1156,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-15T16:32:26.310078"
+      "scanned_at": "2026-06-16T16:13:14.958125"
     },
     "NEE": {
       "insider_signal": {
@@ -1199,7 +1173,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:27.380840"
+      "scanned_at": "2026-06-16T16:13:15.908742"
     },
     "PLD": {
       "insider_signal": {
@@ -1236,7 +1210,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-15T16:32:28.399082"
+      "scanned_at": "2026-06-16T16:13:17.085429"
     }
   }
 }
