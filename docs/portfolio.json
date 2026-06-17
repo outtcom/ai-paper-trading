@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 43,
+    "current_day": 44,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-17T16:41:15.048631+00:00",
+    "last_updated": "2026-06-17T20:29:40.820926+00:00",
     "session_number": 2
   },
   "cash": 3145.34,
   "initial_capital": 5000.0,
-  "equity": 5125.71,
+  "equity": 5087.71,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,13 +17,13 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.76,
-    "sortino": 1.59,
-    "calmar": 1.89,
+    "sharpe": 0.52,
+    "sortino": 1.06,
+    "calmar": 1.11,
     "spy_start_price": 686.1,
-    "spy_current_price": 750.33,
-    "benchmark_return_pct": 9.36,
-    "max_drawdown_pct": 4.26
+    "spy_current_price": 740.96,
+    "benchmark_return_pct": 8.0,
+    "max_drawdown_pct": 4.97
   },
   "positions": {
     "BKNG": {
@@ -31,7 +31,7 @@
       "qty": 7,
       "entry_price": 175.48,
       "cost_basis": 1228.36,
-      "last_price": 174.11,
+      "last_price": 171.63,
       "stop_loss": 165.18,
       "take_profit": 196.54,
       "partial_profit_price": 186.01,
@@ -48,7 +48,7 @@
       "qty": 1,
       "entry_price": 756.05,
       "cost_basis": 756.05,
-      "last_price": 750.07,
+      "last_price": 740.96,
       "stop_loss": 725.81,
       "take_profit": 816.53,
       "partial_profit_price": 786.29,
@@ -1068,6 +1068,11 @@
       "day": 42,
       "date": "2026-06-16",
       "equity": 5125.71
+    },
+    {
+      "day": 43,
+      "date": "2026-06-17",
+      "equity": 5087.71
     }
   ],
   "journal": [
@@ -1886,28 +1891,33 @@
       "day": 42,
       "date": "2026-06-16",
       "equity": 5468.08
+    },
+    {
+      "day": 43,
+      "date": "2026-06-17",
+      "equity": 5399.8
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 750.33,
-      "return_pct": 9.36
+      "current_price": 740.96,
+      "return_pct": 8.0
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 729.86,
-      "return_pct": 16.11
+      "current_price": 722.51,
+      "return_pct": 14.94
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 292.08,
-      "return_pct": 8.69
+      "current_price": 289.88,
+      "return_pct": 7.87
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 397.63,
-      "return_pct": -10.66
+      "current_price": 388.6,
+      "return_pct": -12.69
     }
   },
   "sector_strength": {
@@ -3040,6 +3050,11 @@
       "day": 42,
       "date": "2026-06-16",
       "equity": 5000.0
+    },
+    {
+      "day": 43,
+      "date": "2026-06-17",
+      "equity": 5000.0
     }
   ],
   "penny_equity_curve": [
@@ -3061,6 +3076,11 @@
     {
       "day": 42,
       "date": "2026-06-16",
+      "equity": 5000.0
+    },
+    {
+      "day": 43,
+      "date": "2026-06-17",
       "equity": 5000.0
     }
   ]
