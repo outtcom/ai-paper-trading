@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-16",
-  "last_notified_date": "2026-06-16",
+  "date": "2026-06-17",
+  "last_notified_date": "2026-06-17",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -76,8 +76,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:12:56.297941"
+      "trump_mentions": [
+        {
+          "headline": "The Trump Phone Is More Novelty Than Serious Smartphone Contender",
+          "date": "2026-06-17 12:45",
+          "summary": "(Bloomberg) -- The Trump phone is finally here — sort of — and it bears little resemblance to the original pitch.Most Read from BloombergRead the 14-Point Draft Memorandum Between the US and IranIran’",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-17T14:40:18.710756"
     },
     "NVDA": {
       "insider_signal": {
@@ -154,24 +163,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:12:57.362909"
+      "scanned_at": "2026-06-17T14:40:19.933469"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
+        "open_market_sells": 1,
+        "compensation_grants": 9,
+        "net_open_market_value": -14066.64,
+        "net_open_market_fmt": "-$14K",
+        "largest_single_transaction": {
+          "name": "Coleman Amy",
+          "direction": "sell",
+          "dollar_value": 14066.64,
+          "dollar_fmt": "$14K",
+          "date": "2026-06-15",
+          "shares_traded": 36,
+          "price_per_share": 390.74,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:12:58.483446"
+      "scanned_at": "2026-06-17T14:40:21.527514"
     },
     "MU": {
       "insider_signal": {
@@ -287,17 +305,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
-          "date": "2026-06-15 23:50",
-          "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-16T16:12:59.627916"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-17T14:40:22.706206"
     },
     "GOOGL": {
       "insider_signal": {
@@ -343,8 +352,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:00.685412"
+      "trump_mentions": [
+        {
+          "headline": "The Trump Phone Is More Novelty Than Serious Smartphone Contender",
+          "date": "2026-06-17 12:45",
+          "summary": "(Bloomberg) -- The Trump phone is finally here — sort of — and it bears little resemblance to the original pitch.Most Read from BloombergRead the 14-Point Draft Memorandum Between the US and IranIran’",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Dow Jones Futures: Techs Rebound, SpaceX Rises Despite Trump's Iran Threat; Warsh's Fed Debut Due",
+          "date": "2026-06-17 11:34",
+          "summary": "The Dow Jones hit a new high and SpaceX kept rising. But chips and most AI stocks fell. Fed chief Kevin Warsh's comments will be in focus Wednesday.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-17T14:40:23.962473"
     },
     "META": {
       "insider_signal": {
@@ -440,8 +466,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:01.925216"
+      "trump_mentions": [
+        {
+          "headline": "CyrusOne Appoints Bob Hennegan as Senior Vice President, U.S. Operations",
+          "date": "2026-06-17 13:30",
+          "summary": "DALLAS, June 17, 2026--CyrusOne, a leading global data center developer and operator, recently announced Bob Hennegan as its new Senior Vice President, U.S. Operations.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-17T14:40:25.319298"
     },
     "AMZN": {
       "insider_signal": {
@@ -528,7 +563,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:02.986235"
+      "scanned_at": "2026-06-17T14:40:26.523502"
     },
     "TSLA": {
       "insider_signal": {
@@ -585,7 +620,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:04.063581"
+      "scanned_at": "2026-06-17T14:40:27.738668"
     },
     "LLY": {
       "insider_signal": {
@@ -641,17 +676,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
-          "date": "2026-06-15 23:50",
-          "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-16T16:13:05.022158"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-17T14:40:28.832807"
     },
     "UNH": {
       "insider_signal": {
@@ -718,7 +744,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:05.956875"
+      "scanned_at": "2026-06-17T14:40:29.866181"
     },
     "JPM": {
       "insider_signal": {
@@ -825,7 +851,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:06.912562"
+      "scanned_at": "2026-06-17T14:40:30.955455"
     },
     "GS": {
       "insider_signal": {
@@ -951,8 +977,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:07.875970"
+      "trump_mentions": [
+        {
+          "headline": "Trump Warns Iran Deal Is Not Final, U.S. Could Resume ‘Dropping Bombs.’ Oil Prices Rise.",
+          "date": "2026-06-17 11:34",
+          "summary": "Brent crude and WTI prices were gaining after President Donald Trump warned the U.S.-Iran peace deal is still subject to change.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-17T14:40:32.045849"
     },
     "XOM": {
       "insider_signal": {
@@ -968,8 +1003,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:08.828170"
+      "trump_mentions": [
+        {
+          "headline": "TAE Technologies Appoints Jeff Woodbury as President and COO",
+          "date": "2026-06-17 13:00",
+          "summary": "TAE Technologies, Inc. (\"TAE\" or the \"Company\"), a leading fusion energy company, announced today the appointment of Jeff Woodbury as President and Chief Operating Officer. Woodbury joins TAE as the c",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-17T14:40:33.139764"
     },
     "CVX": {
       "insider_signal": {
@@ -1004,7 +1048,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-16T16:13:09.806350"
+      "scanned_at": "2026-06-17T14:40:34.328420"
     },
     "CAT": {
       "insider_signal": {
@@ -1030,7 +1074,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:10.765743"
+      "scanned_at": "2026-06-17T14:40:35.437464"
     },
     "GE": {
       "insider_signal": {
@@ -1066,17 +1110,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Defense Stocks Fall Despite Trump’s Promise of More Iran Strikes",
-          "date": "2026-06-10 17:50",
-          "summary": "President Donald Trump said Wednesday the U.S. would resume attacks on Iran, after a Shahed drone downed a U.S. Apache helicopter.  “We’re gonna be attacking them, attacking them very hard,” Trump tol",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-16T16:13:11.754072"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-17T14:40:36.468360"
     },
     "WMT": {
       "insider_signal": {
@@ -1113,7 +1148,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:12.888422"
+      "scanned_at": "2026-06-17T14:40:37.566384"
     },
     "COST": {
       "insider_signal": {
@@ -1130,7 +1165,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:14.019837"
+      "scanned_at": "2026-06-17T14:40:38.600662"
     },
     "FCX": {
       "insider_signal": {
@@ -1148,15 +1183,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Copper Price Rally Fades As Trump Tariff Bets Lose Steam; Mining Stocks Waver",
-          "date": "2026-06-09 16:09",
-          "summary": "The copper price rally continued early Tuesday morning, then lost momentum, amid hopes for a U.S.-Iran peace deal, easing dollar and market positioning for a near-term decision on expanding Trump tari",
+          "headline": "Copper Tariff Uncertainty Returns As Hudbay Minerals (HBM) And Peers Face Policy Risk Ahead Of U.S. Decision",
+          "date": "2026-06-16 18:27",
+          "summary": "Hudbay Minerals Inc. (NYSE:HBM) carries a forward P/E of 15.20x, securing its place on our list of the most undervalued silver mining stocks to buy now. Meanwhile, analysts see 12.90% upside for the s",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-16T16:13:14.958125"
+      "scanned_at": "2026-06-17T14:40:39.609690"
     },
     "NEE": {
       "insider_signal": {
@@ -1173,7 +1208,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:15.908742"
+      "scanned_at": "2026-06-17T14:40:40.619318"
     },
     "PLD": {
       "insider_signal": {
@@ -1210,7 +1245,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-16T16:13:17.085429"
+      "scanned_at": "2026-06-17T14:40:41.635175"
     }
   }
 }
