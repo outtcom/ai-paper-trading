@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-17",
-  "last_notified_date": "2026-06-17",
+  "date": "2026-06-18",
+  "last_notified_date": "2026-06-18",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -78,15 +78,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "The Trump Phone Is More Novelty Than Serious Smartphone Contender",
-          "date": "2026-06-17 12:45",
-          "summary": "(Bloomberg) -- The Trump phone is finally here — sort of — and it bears little resemblance to the original pitch.Most Read from BloombergRead the 14-Point Draft Memorandum Between the US and IranIran’",
+          "headline": "Tim Cook says iPhone prices will rise. Trump says Apple will make US chips with Intel",
+          "date": "2026-06-18 12:11",
+          "summary": "President Donald Trump said Thursday that Intel has struck a deal with Apple to start producing computer chips in the United States.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Intel stock surges on Trump Apple chip manufacturing announcement",
+          "date": "2026-06-18 11:27",
+          "summary": "Trump said Apple agreed to work with Intel on chip design and production, extending Intel's string of high-profile foundry wins",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-17T14:40:18.710756"
+      "scanned_at": "2026-06-18T14:34:22.537146"
     },
     "NVDA": {
       "insider_signal": {
@@ -163,7 +171,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:19.933469"
+      "scanned_at": "2026-06-18T14:34:23.805544"
     },
     "MSFT": {
       "insider_signal": {
@@ -189,7 +197,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:21.527514"
+      "scanned_at": "2026-06-18T14:34:24.982648"
     },
     "MU": {
       "insider_signal": {
@@ -306,7 +314,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:22.706206"
+      "scanned_at": "2026-06-18T14:34:26.146410"
     },
     "GOOGL": {
       "insider_signal": {
@@ -352,25 +360,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The Trump Phone Is More Novelty Than Serious Smartphone Contender",
-          "date": "2026-06-17 12:45",
-          "summary": "(Bloomberg) -- The Trump phone is finally here — sort of — and it bears little resemblance to the original pitch.Most Read from BloombergRead the 14-Point Draft Memorandum Between the US and IranIran’",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures: Techs Rebound, SpaceX Rises Despite Trump's Iran Threat; Warsh's Fed Debut Due",
-          "date": "2026-06-17 11:34",
-          "summary": "The Dow Jones hit a new high and SpaceX kept rising. But chips and most AI stocks fell. Fed chief Kevin Warsh's comments will be in focus Wednesday.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-17T14:40:23.962473"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-18T14:34:27.381566"
     },
     "META": {
       "insider_signal": {
@@ -466,17 +457,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "CyrusOne Appoints Bob Hennegan as Senior Vice President, U.S. Operations",
-          "date": "2026-06-17 13:30",
-          "summary": "DALLAS, June 17, 2026--CyrusOne, a leading global data center developer and operator, recently announced Bob Hennegan as its new Senior Vice President, U.S. Operations.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-17T14:40:25.319298"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-18T14:34:29.114605"
     },
     "AMZN": {
       "insider_signal": {
@@ -563,7 +545,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:26.523502"
+      "scanned_at": "2026-06-18T14:34:30.309315"
     },
     "TSLA": {
       "insider_signal": {
@@ -620,25 +602,25 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:27.738668"
+      "scanned_at": "2026-06-18T14:34:31.482294"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 7,
-        "open_market_sells": 3,
+        "open_market_buys": 8,
+        "open_market_sells": 2,
         "compensation_grants": 0,
-        "net_open_market_value": -18550269.7,
-        "net_open_market_fmt": "-$18.6M",
+        "net_open_market_value": -4990105.8,
+        "net_open_market_fmt": "-$5.0M",
         "largest_single_transaction": {
-          "name": "LILLY ENDOWMENT INC",
+          "name": "Yuffa Ilya",
           "direction": "sell",
-          "dollar_value": 13554964.5,
-          "dollar_fmt": "$13.6M",
-          "date": "2026-05-06",
-          "shares_traded": 13620,
-          "price_per_share": 995.225,
+          "dollar_value": 2876925.0,
+          "dollar_fmt": "$2.9M",
+          "date": "2026-06-10",
+          "shares_traded": 2500,
+          "price_per_share": 1150.77,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -661,23 +643,13 @@
             "shares_traded": 2208,
             "price_per_share": 996.183,
             "transaction_code": ""
-          },
-          {
-            "name": "LILLY ENDOWMENT INC",
-            "direction": "sell",
-            "dollar_value": 13554964.5,
-            "dollar_fmt": "$13.6M",
-            "date": "2026-05-06",
-            "shares_traded": 13620,
-            "price_per_share": 995.225,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:28.832807"
+      "scanned_at": "2026-06-18T14:34:32.606547"
     },
     "UNH": {
       "insider_signal": {
@@ -744,7 +716,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:29.866181"
+      "scanned_at": "2026-06-18T14:34:33.647271"
     },
     "JPM": {
       "insider_signal": {
@@ -850,8 +822,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:30.955455"
+      "trump_mentions": [
+        {
+          "headline": "Inside the Chaotic Iran Talks That Let Trump Claim Victory",
+          "date": "2026-06-18 08:20",
+          "summary": "(Bloomberg) -- It was fight night on the White House lawn. Beneath a great steel canopy nicknamed \"the Claw,\" Justin Gaethje did a backflip off the caged ring in the center of the South Lawn after win",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Inside the Chaotic Iran Talks That Let Trump Claim Victory, But Not Yet Peace",
+          "date": "2026-06-18 08:20",
+          "summary": "(Bloomberg) -- It was fight night on the White House lawn. Beneath a great steel canopy nicknamed “the Claw,” Justin Gaethje did a backflip off the caged ring in the center of the South Lawn after win",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-18T14:34:34.725055"
     },
     "GS": {
       "insider_signal": {
@@ -979,6 +968,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Oil Prices Fall After Trump Signs Iran Peace Deal, Strait of Hormuz to Open",
+          "date": "2026-06-18 08:24",
+          "summary": "Brent crude and WTI were dropping after the signing of the U.S.-Iran peace deal, with markets focusing on the prospect for a swift reopening of the Strait of Hormuz.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump Warns Iran Deal Is Not Final, U.S. Could Resume ‘Dropping Bombs.’ Oil Prices Rise.",
           "date": "2026-06-17 11:34",
           "summary": "Brent crude and WTI prices were gaining after President Donald Trump warned the U.S.-Iran peace deal is still subject to change.",
@@ -987,7 +984,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-17T14:40:32.045849"
+      "scanned_at": "2026-06-18T14:34:35.807000"
     },
     "XOM": {
       "insider_signal": {
@@ -1013,7 +1010,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-17T14:40:33.139764"
+      "scanned_at": "2026-06-18T14:34:36.932404"
     },
     "CVX": {
       "insider_signal": {
@@ -1038,17 +1035,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Pops On Trump-Iran Deal; Elon Musk's SpaceX Rockets, Tesla Does This",
-          "date": "2026-06-15 20:43",
-          "summary": "The Dow Jones index jumps Monday with a U.S.-Iran peace agreement. SpaceX flies on the stock market today. An AI stock tests an entry.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-17T14:40:34.328420"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-18T14:34:38.083017"
     },
     "CAT": {
       "insider_signal": {
@@ -1074,7 +1062,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:35.437464"
+      "scanned_at": "2026-06-18T14:34:39.082838"
     },
     "GE": {
       "insider_signal": {
@@ -1110,8 +1098,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:36.468360"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Iran Peace Deal Could Ignite A 'Relief Rally,' Says Ben Emons, Flags 4 'Cheap' Stocks Beyond Tech",
+          "date": "2026-06-17 02:32",
+          "summary": "Trump&#39;s Middle East ceasefire sparks a market relief rally. FedWatch&#39;s Ben Emons reveals 4 cheap value stocks and key AI names to buy now.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-06-18T14:34:40.094011"
     },
     "WMT": {
       "insider_signal": {
@@ -1148,7 +1145,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:37.566384"
+      "scanned_at": "2026-06-18T14:34:41.182327"
     },
     "COST": {
       "insider_signal": {
@@ -1165,7 +1162,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:38.600662"
+      "scanned_at": "2026-06-18T14:34:42.199588"
     },
     "FCX": {
       "insider_signal": {
@@ -1191,24 +1188,33 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-17T14:40:39.609690"
+      "scanned_at": "2026-06-18T14:34:43.200282"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
-        "open_market_buys": 0,
+        "open_market_buys": 3,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
+        "net_open_market_value": 33414.56,
+        "net_open_market_fmt": "+$33K",
+        "largest_single_transaction": {
+          "name": "CAMAREN JAMES LAWRENCE",
+          "direction": "buy",
+          "dollar_value": 23510.76,
+          "dollar_fmt": "$24K",
+          "date": "2026-06-15",
+          "shares_traded": 273,
+          "price_per_share": 86.12,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:40.619318"
+      "scanned_at": "2026-06-18T14:34:44.203159"
     },
     "PLD": {
       "insider_signal": {
@@ -1245,7 +1251,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-17T14:40:41.635175"
+      "scanned_at": "2026-06-18T14:34:45.232631"
     }
   }
 }
