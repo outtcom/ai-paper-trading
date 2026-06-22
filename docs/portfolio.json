@@ -7,7 +7,7 @@
     "last_updated": "2026-06-22T15:59:20.366741+00:00",
     "session_number": 2
   },
-  "cash": 3145.34,
+  "cash": 2028.8,
   "initial_capital": 5000.0,
   "equity": 5094.54,
   "peak_equity": 5353.58,
@@ -18,8 +18,8 @@
   },
   "stats": {
     "sharpe": 0.55,
-    "sortino": 1.11,
-    "calmar": 1.16,
+    "sortino": 1.1,
+    "calmar": 1.15,
     "spy_start_price": 686.1,
     "spy_current_price": 746.74,
     "benchmark_return_pct": 8.84,
@@ -59,6 +59,40 @@
       "partial_taken": false,
       "opened_date": "2026-06-15",
       "journal_note": "The strategy brief mandates RISK-ON posture with HIGH capital deployment priority, which per the decision tree requires a BUY \u2014 holding cash is an active bet against the benchmark itself (SPY), which is categorically wrong when we ARE benchmarked to SPY and already carry a -5.1% alpha deficit. VIX at 16.3 and falling confirms benign risk conditions. The trader and risk team both failed due to API rate limits, not due to any identified risk \u2014 no rejection conditions are triggered (VIX < 25, no earnings flag, SPY is the benchmark not an avoid-sector). I'm sizing down to ~32% of portfolio ($3,150 at ~$450/share) rather than full deployment given the lack of technical confirmation data \u2014 this splits the difference between the cost of under-deployment and the prudence of incomplete analysis. Downside is capped at 3.5% stop (~$110 risk) while upside participation in a confirmed uptrend closes the pacing gap."
+    },
+    "HD": {
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 330.55,
+      "cost_basis": 661.1,
+      "last_price": 330.55,
+      "stop_loss": 310.72,
+      "take_profit": 370.22,
+      "partial_profit_price": 350.38,
+      "stop_loss_pct": 6.0,
+      "take_profit_pct": 12.0,
+      "highest_price": 330.55,
+      "lowest_price": 330.55,
+      "partial_taken": false,
+      "opened_date": "2026-06-22",
+      "journal_note": "HD is a buy driven by the residential recovery catalyst and strong fundamentals \u2014 P/E of 23.5x with 113.3% ROE represents quality at a reasonable price. The strategy brief mandates aggressive deployment (38% deployed vs 77% target) in a risk-on market with VIX at 17.6, and HD fits as a quasi-Industrial/housing-cycle play aligned with focus sectors. Risk team approved at 5% sizing; the conservative perspective flagged 4.35x debt-equity, but I agree with the neutral view that 5% is appropriately sized for medium conviction without technical confirmation. Upside target is ~10-12% on residential renovation tailwinds with 6% stop-loss providing roughly 2:1 reward-to-risk. With HD likely trading around $400+, 1 share (~$400) represents approximately 5% of portfolio equity, keeping us within limits while deploying idle cash."
+    },
+    "MS": {
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 227.72,
+      "cost_basis": 455.44,
+      "last_price": 227.72,
+      "stop_loss": 216.33,
+      "take_profit": 250.49,
+      "partial_profit_price": 239.11,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 227.72,
+      "lowest_price": 227.72,
+      "partial_taken": false,
+      "opened_date": "2026-06-22",
+      "journal_note": "MS is a Financials sector momentum leader trading at $227.22, well above EMA-20 ($213.05) and EMA-50 ($203.93), with a fresh MACD crossover (histogram +$0.94) and RSI at 65.2 leaving room before overbought territory. The insider cluster buy on June 1 ($130K from two executives) provides a near-term catalyst with typical 30-60 day follow-through. Risk team approved at 0.05 position size \u2014 the conservative flag on 7.9x debt-to-equity is standard for a major bank and not a concern given 16.3% ROE and 22% revenue CAGR. Upside target is Bollinger Band ceiling at $228.09 near-term with further room if momentum continues; downside is capped at 5% stop-loss (~$215.86). With only $3,145 cash and portfolio critically under-deployed, even a 1-share position (~$227) deploys capital into a high-conviction sector per the strategy brief mandate."
     }
   },
   "open_orders": [
@@ -314,6 +348,28 @@
       "day": 41,
       "submitted_at": "2026-06-15T16:16:43.030251+00:00",
       "resolved_at": "2026-06-15T16:16:45.910101+00:00"
+    },
+    {
+      "ticker": "HD",
+      "qty": 2,
+      "side": "BUY",
+      "price": 330.55,
+      "order_type": "market",
+      "status": "executed",
+      "day": 46,
+      "submitted_at": "2026-06-22T16:00:54.810526+00:00",
+      "resolved_at": "2026-06-22T16:00:56.965890+00:00"
+    },
+    {
+      "ticker": "MS",
+      "qty": 2,
+      "side": "BUY",
+      "price": 227.72,
+      "order_type": "market",
+      "status": "executed",
+      "day": 46,
+      "submitted_at": "2026-06-22T16:00:58.177860+00:00",
+      "resolved_at": "2026-06-22T16:01:00.354260+00:00"
     }
   ],
   "trade_history": [
@@ -1083,6 +1139,11 @@
       "day": 45,
       "date": "2026-06-19",
       "equity": 5094.54
+    },
+    {
+      "day": 46,
+      "date": "2026-06-22",
+      "equity": 5094.54
     }
   ],
   "journal": [
@@ -1739,6 +1800,64 @@
         "risk_approved": null
       },
       "timestamp": "2026-06-15T16:16:45.920117+00:00"
+    },
+    {
+      "date": "2026-06-22",
+      "day": 46,
+      "ticker": "HD",
+      "action": "BUY",
+      "analysis_price": 330.55,
+      "entry_price": 330.55,
+      "price_delta_pct": 0.0,
+      "qty": 2,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 310.72,
+      "take_profit": 370.22,
+      "vix_label": "LOW (17.6) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "HD is a buy driven by the residential recovery catalyst and strong fundamentals \u2014 P/E of 23.5x with 113.3% ROE represents quality at a reasonable price. The strategy brief mandates aggressive deployment (38% deployed vs 77% target) in a risk-on market with VIX at 17.6, and HD fits as a quasi-Industrial/housing-cycle play aligned with focus sectors. Risk team approved at 5% sizing; the conservative perspective flagged 4.35x debt-equity, but I agree with the neutral view that 5% is appropriately sized for medium conviction without technical confirmation. Upside target is ~10-12% on residential renovation tailwinds with 6% stop-loss providing roughly 2:1 reward-to-risk. With HD likely trading around $400+, 1 share (~$400) represents approximately 5% of portfolio equity, keeping us within limits while deploying idle cash.",
+      "bull_case": "Home Depot (HD) presents a compelling investment opportunity despite current market volatility. With a market cap of $333 billion, the company demonstrates robust financial health characterized by a staggering return on equity (ROE) of 113.3% and strong pricing power, as indicated by a stable gross margin of 33.13%. While the debt-equity ratio is higher at 4.35, this is manageable given the retail sector's capital requirements, allowing for growth investments that can drive future revenues.\n\nThe sentiment surrounding Home Depot is stabilizing as the housing market begins to recover. A recent decrease in home prices is likely to encourage homeowners to invest in renovations, a fundamental catalyst for Home Depot\u2019s revenue increase. Although Q1 earnings reflected a beat, weak guidance highlighted potential risks, including FX headwinds. However, the relatively low short interest (1.21% of shares outstanding) suggests that the market is not heavily betting against Home Depot, reflecting a resilient underlying confidence.\n\nTechnically, despite recent volatilities, Home Depot's stock remains within a historically supportive range, positioning it well for a rebound as the market stabilizes and housing activity ramps up. Additionally, with continued insider buying and a stable operational framework, Home Depot stands poised to capitalize on the anticipated increase in home improvement spending.\n\nIn conclusion, the upside potential, supported by fundamental strengths, market recovery sentiment, and a historical trading backdrop, outweighs the present risks.\n\n**Top 3 Bull Catalysts:**\n1. **Residential Recovery:** Increased home renovations driven by improving home prices.\n2. **Strong Profitability:** High ROE and stable margins enabling sustained market leadership.\n3. **Low Short Interest:** Indicating cautious bearish sentiment; an upward price shift can induce short covering.",
+      "bear_case": "While the bullish case for Home Depot (HD) highlights attractive profitability metrics and potential benefits from a recovering housing market, several critical factors raise significant red flags for investors contemplating a buy or holding position.\n\nFirst, despite Home Depot's impressive ROE of 113.3%, this metric can be misleading due to the company\u2019s substantial leverage, exemplified by its debt-equity ratio of 4.35. High leverage increases financial risk, especially in a rising interest rate environment where borrowing costs could eat into profits and squeeze cash flow. A downturn in the housing market or a further slowdown in consumer spending could severely limit Home Depot\u2019s ability to service its debt, triggering liquidity issues.\n\nSecond, while Q1 results beat estimates, they came with weak forward guidance, underscored by adverse foreign exchange effects and caution regarding the overall market climate. This suggests potential headwinds that could compromise future earnings. Moreover, a revenue growth rate of just 1.52% over the past three years is indicative of stagnation in a sector that should be experiencing robust expansion. This lack of momentum can deter investors seeking growth, as falling home prices and reduced consumer confidence may deter renovation spending, which is critical for Home Depot's growth trajectory.\n\nFinally, the sentiment indicators present a mixed picture. The market may exhibit low short interest, but this does not equate to strong confidence; rather, it indicates neutrality amid uncertainty. The absence of a clear bullish sentiment, coupled with market instability, suggests caution among institutional investors.\n\nIn summary, the risks associated with Home Depot's high leverage, stagnating revenue growth, and weak forward guidance overshadow the positives.\n\n**Top 3 Bear Risks:**\n1. **High Leverage:** Significant debt could lead to liquidity issues, especially amidst rising interest rates.\n2. **Weak Revenue Growth:** Stagnant growth suggests an inability to capitalize on market potential, limiting future profitability.\n3. **Mixed Sentiment:** Neutral market sentiment and weak future guidance indicate investor uncertainty regarding the company\u2019s ability to navigate challenging conditions.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": null
+      },
+      "timestamp": "2026-06-22T16:00:56.974390+00:00"
+    },
+    {
+      "date": "2026-06-22",
+      "day": 46,
+      "ticker": "MS",
+      "action": "BUY",
+      "analysis_price": 227.72,
+      "entry_price": 227.72,
+      "price_delta_pct": 0.0,
+      "qty": 2,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "",
+      "sector_rank": "N/A",
+      "stop_loss": 216.33,
+      "take_profit": 250.49,
+      "vix_label": "LOW (17.6) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "MS is a Financials sector momentum leader trading at $227.22, well above EMA-20 ($213.05) and EMA-50 ($203.93), with a fresh MACD crossover (histogram +$0.94) and RSI at 65.2 leaving room before overbought territory. The insider cluster buy on June 1 ($130K from two executives) provides a near-term catalyst with typical 30-60 day follow-through. Risk team approved at 0.05 position size \u2014 the conservative flag on 7.9x debt-to-equity is standard for a major bank and not a concern given 16.3% ROE and 22% revenue CAGR. Upside target is Bollinger Band ceiling at $228.09 near-term with further room if momentum continues; downside is capped at 5% stop-loss (~$215.86). With only $3,145 cash and portfolio critically under-deployed, even a 1-share position (~$227) deploys capital into a high-conviction sector per the strategy brief mandate.",
+      "bull_case": "Morgan Stanley (MS) presents a strong buy opportunity, demonstrating solid fundamentals, positive technical indicators, and optimistic insider activity.\n\n**Fundamentals:** Despite a moderately high debt-to-equity ratio of 7.90, Morgan Stanley\u2019s profitability, evident through a return on equity (ROE) of 16.32% and a significant revenue growth rate of 21.98% over three years, reinforces investor confidence. The P/E ratio at 20.87 may initially appear high; however, it reflects the company's strong market position and growth trajectory, with room for future earnings expansion.\n\n**Sentiment:** Recent insider transactions indicate confidence in Morgan Stanley\u2019s future. Notably, significant open-market purchases by executives signal bullish sentiment from those who understand the company best. This measured insider optimism aligns with a growing financial landscape in which major financial institutions are likely to benefit from higher interest rates and increased trading volumes.\n\n**Technical Indicators:** The stock is currently on an upward trend, with its price above both the 20-day and 50-day EMAs, and a bullish MACD signal supporting ongoing momentum. While the RSI at 65 indicates the stock is approaching overbought territory, it suggests continued strength rather than an immediate reversal. Furthermore, while the current volume has dipped below its 20-day average, the underlying bullish trend remains intact.\n\n**Risks:** The primary risks include potential market corrections and high leverage, which could affect profitability during downturns. However, Morgan Stanley's robust operational framework and historical performance indicate resilience against economic fluctuations.\n\n**Bull Catalysts:**\n1. **Continued Revenue Growth**: Ongoing market demand for financial services and investment banking is likely to sustain Morgan Stanley\u2019s impressive revenue trajectory.\n2. **Execution on Cost Management**: Effective management and operational efficiency can improve profitability, even amid volatile market conditions.\n3. **Enhanced Interest Income**: Rising interest rates could lead to significant growth in net interest income, bolstering earnings significantly.\n\nIn summary, the blend of solid financials, positive sentiment from insider transactions, and advantageous technicals presents a compelling case for buying Morgan Stanley (MS) at this juncture.",
+      "bear_case": "While the bullish narrative surrounding Morgan Stanley (MS) highlights many strengths, the potential risks and underlying concerns ultimately warrant a bearish perspective on this stock.\n\n**High Leverage and Financial Health Risks:** The debt-to-equity ratio of 7.90 raises serious concerns about Morgan Stanley\u2019s financial stability. Such high leverage makes the firm extremely vulnerable during economic downturns or periods of rising interest rates. If global markets falter or credit conditions tighten, the company may struggle to service its debt, putting shareholder value at risk. Additionally, the low current ratio of 0.2963 suggests inadequate short-term liquidity, raising questions about its ability to meet immediate obligations without additional financing, potentially leading to liquidity issues in a stressed market.\n\n**Valuation Concerns:** The P/E ratio of 20.87 indicates that the stock is priced for perfection. This high valuation leaves little room for errors or any unforeseen economic disruption. Should Morgan Stanley's earnings fail to meet optimistic expectations, a significant downturn in stock price is likely. Moreover, the recent revenue growth of 21.98%, while impressive, may not be sustainable given economic headwinds, raising concerns about future performance.\n\n**Mixed Insider Activity:** Although there have been some open-market purchases by insiders, the majority of recent transactions are related to equity compensation rather than significant net purchases of stock. This tells a different story, as it implies insiders are cashing in rather than indicating a strong conviction about future price increases.\n\n**Technical Indicators & Market Sentiment Risks:** While the stock exhibits bullish technical signals now, reliance on momentum can be dangerous, especially given that volumes are below average, indicating potential lack of conviction among traders. The proximity of the price to the upper Bollinger Band also hints at an overdue pullback, raising the risk of a sudden price correction.\n\n**Top 3 Bear Risks:** \n1. **Economic Downturn Impact:** High debt levels and low liquidity could lead to severe challenges in a recession, risking profitability and stock price.\n2. **Valuation Compression:** If earnings do not grow as expected, the stock may face revaluation, leading to sharp declines.\n3. **Market Sentiment Shift:** A change in market sentiment or a significant bear market could lead to increased selling pressure, particularly from a leveraged position.\n\nIn conclusion, despite Morgan Stanley's current performance, the underlying risks related to leverage, valuation, and mixed indicators suggest caution is warranted for investors considering a long position in this stock.",
+      "agent_signals": {
+        "fundamental": "",
+        "technical": "",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": null
+      },
+      "timestamp": "2026-06-22T16:01:00.363307+00:00"
     }
   ],
   "spy_equity_curve": [
@@ -1944,173 +2063,173 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 188.32,
-        "mom_5d": 2.25,
-        "mom_1m": 4.91,
-        "mom_3m": 34.96,
+        "price": 191.72,
+        "mom_5d": 3.74,
+        "mom_1m": 8.23,
+        "mom_3m": 39.99,
         "above_ma50": true,
-        "rsi_14": 52.9,
-        "score": 11.12,
+        "rsi_14": 46.6,
+        "score": 14.24,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 111.96,
-        "mom_5d": 0.43,
-        "mom_1m": -3.55,
-        "mom_3m": -1.5,
+        "price": 106.67,
+        "mom_5d": -4.46,
+        "mom_1m": -8.12,
+        "mom_3m": -5.36,
         "above_ma50": false,
-        "rsi_14": 30.9,
-        "score": -1.95,
+        "rsi_14": 21.8,
+        "score": -6.47,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 119.06,
-        "mom_5d": 3.18,
-        "mom_1m": 0.33,
-        "mom_3m": 5.2,
-        "above_ma50": true,
-        "rsi_14": 49.0,
-        "score": 3.16,
+        "price": 115.87,
+        "mom_5d": -0.63,
+        "mom_1m": -1.76,
+        "mom_3m": 5.22,
+        "above_ma50": false,
+        "rsi_14": 43.9,
+        "score": -0.02,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 152.65,
-        "mom_5d": -0.0,
-        "mom_1m": 4.1,
-        "mom_3m": 2.01,
+        "price": 149.5,
+        "mom_5d": -2.81,
+        "mom_1m": 1.61,
+        "mom_3m": 3.26,
         "above_ma50": true,
-        "rsi_14": 60.3,
-        "score": 3.45,
+        "rsi_14": 54.6,
+        "score": 1.61,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 54.23,
-        "mom_5d": 4.35,
-        "mom_1m": 5.73,
-        "mom_3m": 9.42,
+        "price": 53.8,
+        "mom_5d": 0.85,
+        "mom_1m": 4.13,
+        "mom_3m": 9.18,
         "above_ma50": true,
-        "rsi_14": 69.4,
-        "score": 7.05,
+        "rsi_14": 69.0,
+        "score": 5.16,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 55.2,
-        "mom_5d": -5.37,
-        "mom_1m": -4.95,
-        "mom_3m": -5.67,
+        "price": 53.51,
+        "mom_5d": -7.03,
+        "mom_1m": -10.53,
+        "mom_3m": -10.27,
         "above_ma50": false,
-        "rsi_14": 38.4,
-        "score": -5.22,
+        "rsi_14": 32.1,
+        "score": -9.43,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 180.24,
-        "mom_5d": 3.8,
-        "mom_1m": 3.28,
-        "mom_3m": 8.25,
+        "price": 181.74,
+        "mom_5d": 3.15,
+        "mom_1m": 6.45,
+        "mom_3m": 11.46,
         "above_ma50": true,
-        "rsi_14": 61.0,
-        "score": 5.43,
+        "rsi_14": 67.3,
+        "score": 7.46,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 85.81,
-        "mom_5d": 3.3,
-        "mom_1m": 0.98,
-        "mom_3m": 1.31,
-        "above_ma50": true,
-        "rsi_14": 62.0,
-        "score": 2.74,
+        "price": 82.94,
+        "mom_5d": -3.36,
+        "mom_1m": -3.02,
+        "mom_3m": 2.17,
+        "above_ma50": false,
+        "rsi_14": 55.2,
+        "score": -2.08,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 52.72,
-        "mom_5d": 5.51,
-        "mom_1m": 2.02,
-        "mom_3m": 6.45,
+        "price": 51.75,
+        "mom_5d": -0.82,
+        "mom_1m": 4.08,
+        "mom_3m": 8.83,
         "above_ma50": true,
-        "rsi_14": 60.4,
-        "score": 4.95,
+        "rsi_14": 54.9,
+        "score": 4.56,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 45.23,
-        "mom_5d": 3.93,
-        "mom_1m": 0.73,
-        "mom_3m": -4.03,
+        "price": 44.86,
+        "mom_5d": 0.74,
+        "mom_1m": 0.79,
+        "mom_3m": 0.18,
         "above_ma50": false,
-        "rsi_14": 49.2,
-        "score": 0.74,
+        "rsi_14": 67.6,
+        "score": 0.65,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.06,
-        "mom_5d": 0.21,
-        "mom_1m": 4.24,
-        "mom_3m": 7.25,
-        "above_ma50": true,
-        "rsi_14": 54.0,
-        "score": 4.63,
+        "price": 44.02,
+        "mom_5d": -2.97,
+        "mom_1m": -0.93,
+        "mom_3m": 8.36,
+        "above_ma50": false,
+        "rsi_14": 56.8,
+        "score": 0.32,
         "sector": "Real Estate"
       }
     },
     "ranking": [
       "Technology",
-      "Financials",
       "Industrials",
+      "Financials",
       "Materials",
-      "Real Estate",
       "Healthcare",
+      "Utilities",
+      "Real Estate",
       "Consumer Discretionary",
       "Consumer Staples",
-      "Utilities",
       "Communication Services",
       "Energy"
     ],
     "top_3": [
       "Technology",
-      "Financials",
-      "Industrials"
+      "Industrials",
+      "Financials"
     ],
     "bottom_3": [
-      "Utilities",
+      "Consumer Staples",
       "Communication Services",
       "Energy"
     ],
-    "as_of": "2026-06-16"
+    "as_of": "2026-06-22"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
     "risk_budget_multiplier": 1.5,
     "focus_sectors": [
       "Technology",
-      "Financials",
-      "Industrials"
+      "Industrials",
+      "Financials"
     ],
     "avoid_sectors": [
-      "Utilities",
+      "Consumer Staples",
       "Communication Services",
       "Energy"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "With alpha at -7.5% vs SPY and only 53% deployed on day 42 of 60, aggressive capital deployment into momentum leaders \u2014 Technology, Financials, and Industrials \u2014 is non-negotiable; VIX at 15.9 with a -16.1% 5-day RoC and healthy credit conditions provide a clear green light for maximum risk posture. Every hour in cash compounds underperformance \u2014 deploy remaining $2,421 immediately into high-beta sector leaders to close the alpha gap.",
+    "primary_thesis": "With VIX at 17.6, SPY in a confirmed uptrend, and credit conditions healthy, the portfolio is critically under-deployed at 38% vs a 77% target \u2014 a -6.9% alpha deficit demands immediate and aggressive capital deployment into momentum leaders in Technology, Industrials, and Financials. Every hour of inaction compounds underperformance; full capital commitment into high-conviction sector leaders is the only path to closing the gap with 14 days remaining.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
   "index_etf_signals": {
     "SPY": {
-      "action": "hold",
+      "action": "buy",
       "confidence": 0.35
     },
     "QQQ": {
