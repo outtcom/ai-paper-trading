@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-04-14",
-    "current_day": 46,
+    "current_day": 47,
     "total_days": 60,
     "active": true,
-    "last_updated": "2026-06-22T17:43:07.443891+00:00",
+    "last_updated": "2026-06-22T21:12:42.407697+00:00",
     "session_number": 2
   },
-  "cash": 2028.8,
+  "cash": 3947.58,
   "initial_capital": 5000.0,
-  "equity": 5094.54,
+  "equity": 5055.0,
   "peak_equity": 5353.58,
   "circuit_breaker": {
     "triggered": false,
@@ -17,55 +17,21 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": 0.55,
-    "sortino": 1.1,
-    "calmar": 1.15,
+    "sharpe": 0.31,
+    "sortino": 0.6,
+    "calmar": 0.58,
     "spy_start_price": 686.1,
-    "spy_current_price": 746.74,
-    "benchmark_return_pct": 8.84,
-    "max_drawdown_pct": 4.97
+    "spy_current_price": 744.39,
+    "benchmark_return_pct": 8.5,
+    "max_drawdown_pct": 5.58
   },
   "positions": {
-    "BKNG": {
-      "direction": "long",
-      "qty": 7,
-      "entry_price": 175.48,
-      "cost_basis": 1228.36,
-      "last_price": 169.19,
-      "stop_loss": 165.18,
-      "take_profit": 196.54,
-      "partial_profit_price": 186.01,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 175.72,
-      "lowest_price": 175.48,
-      "partial_taken": false,
-      "opened_date": "2026-06-15",
-      "journal_note": "BKNG at $175.44 broke above both 20d EMA ($165.55) and 50d EMA ($166.92) with a fresh bullish MACD crossover (histogram +0.97) and RSI at 64.1 leaving room to run \u2014 this is a clean momentum entry in a risk-on environment with HIGH capital deployment priority. Fundamentals support the trade: 23.65x P/E with 139.6% ROE and 98% gross margin is quality at a reasonable price. The risk team approved at 0.05 position size; the conservative perspective flagged D/E of 4.51 and travel demand dependency \u2014 I acknowledge these but they don't override the technical breakout and macro tailwind with VIX at 16.3. With ~$4,406 cash, a 5% target (~$478) buys only 2 shares (~$351 actual, ~3.7% of portfolio); upside target is ~$190 area (+8.3%) while the 6% stop at ~$165 aligns perfectly with the EMA support cluster, giving roughly 1.4:1 reward-to-risk. Sizing is constrained by the share price but this gets us deployed into a leading consumer discretionary name during confirmed uptrend."
-    },
-    "SPY": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 756.05,
-      "cost_basis": 756.05,
-      "last_price": 744.44,
-      "stop_loss": 725.81,
-      "take_profit": 816.53,
-      "partial_profit_price": 786.29,
-      "stop_loss_pct": 4.0,
-      "take_profit_pct": 8.0,
-      "highest_price": 756.05,
-      "lowest_price": 756.05,
-      "partial_taken": false,
-      "opened_date": "2026-06-15",
-      "journal_note": "The strategy brief mandates RISK-ON posture with HIGH capital deployment priority, which per the decision tree requires a BUY \u2014 holding cash is an active bet against the benchmark itself (SPY), which is categorically wrong when we ARE benchmarked to SPY and already carry a -5.1% alpha deficit. VIX at 16.3 and falling confirms benign risk conditions. The trader and risk team both failed due to API rate limits, not due to any identified risk \u2014 no rejection conditions are triggered (VIX < 25, no earnings flag, SPY is the benchmark not an avoid-sector). I'm sizing down to ~32% of portfolio ($3,150 at ~$450/share) rather than full deployment given the lack of technical confirmation data \u2014 this splits the difference between the cost of under-deployment and the prudence of incomplete analysis. Downside is capped at 3.5% stop (~$110 risk) while upside participation in a confirmed uptrend closes the pacing gap."
-    },
     "HD": {
       "direction": "long",
       "qty": 2,
       "entry_price": 330.55,
       "cost_basis": 661.1,
-      "last_price": 328.83,
+      "last_price": 326.62,
       "stop_loss": 310.72,
       "take_profit": 370.22,
       "partial_profit_price": 350.38,
@@ -82,7 +48,7 @@
       "qty": 2,
       "entry_price": 227.72,
       "cost_basis": 455.44,
-      "last_price": 227.35,
+      "last_price": 227.09,
       "stop_loss": 216.33,
       "take_profit": 250.49,
       "partial_profit_price": 239.11,
@@ -717,6 +683,36 @@
       "opened_date": "2026-06-11",
       "closed_date": "2026-06-16",
       "journal_note": "KO is a Consumer Staples name in a focus sector with market posture risk-on and capital deployment priority HIGH \u2014 buying is mandatory per decision tree. Entry thesis: KO trading at ~$83.50 with bullish MACD crossover (0.788 vs 0.480 signal), above both 20d EMA ($80.31) and 50d EMA ($79.27), with RSI at 59 leaving room to run before overbought territory. Fundamentals support the premium: ROE of 43.62% and gross margin of 61.74% justify the 27.5x P/E for a Dividend Aristocrat, and the Morgan Stanley top-pick catalyst plus FIFA World Cup Walmart exclusive partnership provide near-term revenue upside. Risk team approved at 0.05 position size \u2014 the conservative view flagged elevated P/E and sentiment-driven volatility, but I agree with the neutral assessment that 5% sizing appropriately balances these risks given medium conviction. Upside target is ~$85 (~1.8% from entry) with downside stop at ~$80.16 (4% loss, aligned with 20d EMA support), giving roughly a 1:0.45 risk/reward on this initial leg but with potential for continuation beyond $85 if the World Cup narrative builds momentum."
+    },
+    {
+      "ticker": "BKNG",
+      "direction": "long",
+      "qty": 7,
+      "entry_price": 175.48,
+      "exit_price": 167.77,
+      "cost_basis": 1228.36,
+      "proceeds": 1174.39,
+      "pnl": -53.97,
+      "pnl_pct": -4.39,
+      "reason": "time_exit",
+      "opened_date": "2026-06-15",
+      "closed_date": "2026-06-22",
+      "journal_note": "BKNG at $175.44 broke above both 20d EMA ($165.55) and 50d EMA ($166.92) with a fresh bullish MACD crossover (histogram +0.97) and RSI at 64.1 leaving room to run \u2014 this is a clean momentum entry in a risk-on environment with HIGH capital deployment priority. Fundamentals support the trade: 23.65x P/E with 139.6% ROE and 98% gross margin is quality at a reasonable price. The risk team approved at 0.05 position size; the conservative perspective flagged D/E of 4.51 and travel demand dependency \u2014 I acknowledge these but they don't override the technical breakout and macro tailwind with VIX at 16.3. With ~$4,406 cash, a 5% target (~$478) buys only 2 shares (~$351 actual, ~3.7% of portfolio); upside target is ~$190 area (+8.3%) while the 6% stop at ~$165 aligns perfectly with the EMA support cluster, giving roughly 1.4:1 reward-to-risk. Sizing is constrained by the share price but this gets us deployed into a leading consumer discretionary name during confirmed uptrend."
+    },
+    {
+      "ticker": "SPY",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 756.05,
+      "exit_price": 744.39,
+      "cost_basis": 756.05,
+      "proceeds": 744.39,
+      "pnl": -11.66,
+      "pnl_pct": -1.54,
+      "reason": "time_exit",
+      "opened_date": "2026-06-15",
+      "closed_date": "2026-06-22",
+      "journal_note": "The strategy brief mandates RISK-ON posture with HIGH capital deployment priority, which per the decision tree requires a BUY \u2014 holding cash is an active bet against the benchmark itself (SPY), which is categorically wrong when we ARE benchmarked to SPY and already carry a -5.1% alpha deficit. VIX at 16.3 and falling confirms benign risk conditions. The trader and risk team both failed due to API rate limits, not due to any identified risk \u2014 no rejection conditions are triggered (VIX < 25, no earnings flag, SPY is the benchmark not an avoid-sector). I'm sizing down to ~32% of portfolio ($3,150 at ~$450/share) rather than full deployment given the lack of technical confirmation data \u2014 this splits the difference between the cost of under-deployment and the prudence of incomplete analysis. Downside is capped at 3.5% stop (~$110 risk) while upside participation in a confirmed uptrend closes the pacing gap."
     }
   ],
   "equity_curve": [
@@ -1144,6 +1140,11 @@
       "day": 46,
       "date": "2026-06-22",
       "equity": 5094.54
+    },
+    {
+      "day": 46,
+      "date": "2026-06-22",
+      "equity": 5055.0
     }
   ],
   "journal": [
@@ -2035,28 +2036,33 @@
       "day": 45,
       "date": "2026-06-19",
       "equity": 5441.92
+    },
+    {
+      "day": 46,
+      "date": "2026-06-22",
+      "equity": 5424.79
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 686.1,
-      "current_price": 746.74,
-      "return_pct": 8.84
+      "current_price": 744.39,
+      "return_pct": 8.5
     },
     "QQQ": {
       "start_price": 628.6,
-      "current_price": 740.62,
-      "return_pct": 17.82
+      "current_price": 737.95,
+      "return_pct": 17.4
     },
     "IWM": {
       "start_price": 268.72,
-      "current_price": 295.59,
-      "return_pct": 10.0
+      "current_price": 298.18,
+      "return_pct": 10.96
     },
     "GLD": {
       "start_price": 445.09,
-      "current_price": 387.12,
-      "return_pct": -13.02
+      "current_price": 384.59,
+      "return_pct": -13.59
     }
   },
   "sector_strength": {
@@ -3274,6 +3280,11 @@
       "day": 45,
       "date": "2026-06-19",
       "equity": 5000.0
+    },
+    {
+      "day": 46,
+      "date": "2026-06-22",
+      "equity": 5000.0
     }
   ],
   "penny_equity_curve": [
@@ -3310,6 +3321,11 @@
     {
       "day": 45,
       "date": "2026-06-19",
+      "equity": 5000.0
+    },
+    {
+      "day": 46,
+      "date": "2026-06-22",
       "equity": 5000.0
     }
   ]
