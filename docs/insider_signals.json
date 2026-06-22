@@ -1,16 +1,16 @@
 {
-  "date": "2026-06-19",
-  "last_notified_date": "2026-06-19",
+  "date": "2026-06-22",
+  "last_notified_date": "2026-06-22",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
+        "open_market_sells": 4,
         "compensation_grants": 2,
-        "net_open_market_value": -87532032.31,
-        "net_open_market_fmt": "-$87.5M",
+        "net_open_market_value": -87110182.31,
+        "net_open_market_fmt": "-$87.1M",
         "largest_single_transaction": {
           "name": "LEVINSON ARTHUR D",
           "direction": "sell",
@@ -61,16 +61,6 @@
             "shares_traded": 149527,
             "price_per_share": 284.57,
             "transaction_code": ""
-          },
-          {
-            "name": "Parekh Kevan",
-            "direction": "sell",
-            "dollar_value": 421850,
-            "dollar_fmt": "$422K",
-            "date": "2026-04-23",
-            "shares_traded": 1534,
-            "price_per_share": 275,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
@@ -78,39 +68,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "“They Forgot to Protect Our Industries With TARIFFS!” — Does a Trump Trade War 2.0 Loom?",
-          "date": "2026-06-19 13:45",
-          "summary": "There have been renewed talks about whether tariffs could send us into another phase of trade wars. And while it’s up for debate as to whether a trade war 2.0, so to speak, has already arrived, I do t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
-          "date": "2026-06-19 12:57",
-          "summary": "Intel stock jumped 10% on Trump's Apple chip claim, but short bets, put hedges, and flat money flow show markets staying cautious.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Apple to work with Intel on US chip design and production, Trump says",
-          "date": "2026-06-19 05:37",
-          "summary": "President Donald Trump announced an Apple-Intel chip partnership as his administration pushes to bring semiconductor manufacturing back to the U.S. and reduce China reliance.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Intel Stock Soared After Trump Said Apple Will Build Chips With It. Is It a Buy?",
-          "date": "2026-06-19 02:36",
-          "summary": "A single presidential social-media post sent the chipmaker's shares higher. But neither company has confirmed it.",
-          "source": "Yahoo",
+          "headline": "Stock Market Today: S&P 500, Dow Futures Gain As Trump Threatens 'Toll' Collection At Strait Of Hormuz— Getty, Intel, Hyperscale In Focus (UPDATED)",
+          "date": "2026-06-22 08:43",
+          "summary": "U.S. stock futures down as Nasdaq 100, Dow Jones, and S&amp;P 500 fall following previous gains. Critical peace talks encounter intense strain.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-19T14:27:57.252748"
+      "scanned_at": "2026-06-22T16:17:24.950772"
     },
     "NVDA": {
       "insider_signal": {
@@ -186,33 +152,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "“They Forgot to Protect Our Industries With TARIFFS!” — Does a Trump Trade War 2.0 Loom?",
-          "date": "2026-06-19 13:45",
-          "summary": "There have been renewed talks about whether tariffs could send us into another phase of trade wars. And while it’s up for debate as to whether a trade war 2.0, so to speak, has already arrived, I do t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "This Is Trump’s Most Controversial Trade of 2026",
-          "date": "2026-06-19 13:44",
-          "summary": "President Donald Trump purchased between $1 million and $5 million in Dell shares on February 10, 2026, nine days before telling a crowd in Rome, Georgia, to “go out and buy a Dell computer” on Februa",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
-          "date": "2026-06-19 12:57",
-          "summary": "Intel stock jumped 10% on Trump's Apple chip claim, but short bets, put hedges, and flat money flow show markets staying cautious.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-19T14:27:58.265933"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-22T16:17:25.683238"
     },
     "MSFT": {
       "insider_signal": {
@@ -238,7 +179,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:27:59.161977"
+      "scanned_at": "2026-06-22T16:17:26.568358"
     },
     "MU": {
       "insider_signal": {
@@ -355,7 +296,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:00.126715"
+      "scanned_at": "2026-06-22T16:17:27.530646"
     },
     "GOOGL": {
       "insider_signal": {
@@ -402,7 +343,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:01.188343"
+      "scanned_at": "2026-06-22T16:17:28.413700"
     },
     "META": {
       "insider_signal": {
@@ -499,7 +440,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:02.343187"
+      "scanned_at": "2026-06-22T16:17:29.362394"
     },
     "AMZN": {
       "insider_signal": {
@@ -586,7 +527,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:03.436871"
+      "scanned_at": "2026-06-22T16:17:30.100237"
     },
     "TSLA": {
       "insider_signal": {
@@ -644,15 +585,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Handed Intel Stock a 10% Pop, but Markets Are Hedging",
-          "date": "2026-06-19 12:57",
-          "summary": "Intel stock jumped 10% on Trump's Apple chip claim, but short bets, put hedges, and flat money flow show markets staying cautious.",
+          "headline": "JD Vance Says Trump Backs Government Stakes In AI Giants, But Musk And Cuban Push Back: 'Better Just To Send Money Directly'",
+          "date": "2026-06-22 12:30",
+          "summary": "Vice President JD Vance said that President Donald Trump supports the U.S. government taking ownership stakes in major artificial intelligence companies, likening the idea to a sovereign wealth fund-s",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-19T14:28:04.420135"
+      "scanned_at": "2026-06-22T16:17:30.803239"
     },
     "LLY": {
       "insider_signal": {
@@ -699,25 +640,25 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:05.256573"
+      "scanned_at": "2026-06-22T16:17:31.490701"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
+        "open_market_sells": 3,
         "compensation_grants": 0,
-        "net_open_market_value": -686049.57,
-        "net_open_market_fmt": "-$686K",
+        "net_open_market_value": -402049.57,
+        "net_open_market_fmt": "-$402K",
         "largest_single_transaction": {
           "name": "Conway Patrick Hugh",
           "direction": "sell",
-          "dollar_value": 284000,
-          "dollar_fmt": "$284K",
-          "date": "2026-04-23",
-          "shares_traded": 800,
-          "price_per_share": 355,
+          "dollar_value": 274435.89,
+          "dollar_fmt": "$274K",
+          "date": "2026-06-05",
+          "shares_traded": 687,
+          "price_per_share": 399.47,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -750,23 +691,13 @@
             "shares_traded": 204,
             "price_per_share": 377.92,
             "transaction_code": ""
-          },
-          {
-            "name": "Conway Patrick Hugh",
-            "direction": "sell",
-            "dollar_value": 284000,
-            "dollar_fmt": "$284K",
-            "date": "2026-04-23",
-            "shares_traded": 800,
-            "price_per_share": 355,
-            "transaction_code": ""
           }
         ],
-        "signal_strength": "strong_sell",
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:06.124618"
+      "scanned_at": "2026-06-22T16:17:32.179265"
     },
     "JPM": {
       "insider_signal": {
@@ -873,7 +804,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:07.010735"
+      "scanned_at": "2026-06-22T16:17:32.861334"
     },
     "GS": {
       "insider_signal": {
@@ -1000,7 +931,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:07.931393"
+      "scanned_at": "2026-06-22T16:17:33.530065"
     },
     "XOM": {
       "insider_signal": {
@@ -1016,17 +947,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Unveils Iran Peace Framework As Questions Remain Over Long-Term Stability",
-          "date": "2026-06-17 18:51",
-          "summary": "Trump defends Iran agreement to reopen shipping lanes, end conflict and blockades, while Iran pledges no nukes and U.S. eases sanctions, with $300B fund.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-19T14:28:08.798926"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-22T16:17:34.187103"
     },
     "CVX": {
       "insider_signal": {
@@ -1051,17 +973,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Unveils Iran Peace Framework As Questions Remain Over Long-Term Stability",
-          "date": "2026-06-17 18:51",
-          "summary": "Trump defends Iran agreement to reopen shipping lanes, end conflict and blockades, while Iran pledges no nukes and U.S. eases sanctions, with $300B fund.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-19T14:28:09.706002"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-22T16:17:34.941652"
     },
     "CAT": {
       "insider_signal": {
@@ -1087,7 +1000,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:10.557222"
+      "scanned_at": "2026-06-22T16:17:35.836439"
     },
     "GE": {
       "insider_signal": {
@@ -1123,17 +1036,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Iran Peace Deal Could Ignite A 'Relief Rally,' Says Ben Emons, Flags 4 'Cheap' Stocks Beyond Tech",
-          "date": "2026-06-17 02:32",
-          "summary": "Trump&#39;s Middle East ceasefire sparks a market relief rally. FedWatch&#39;s Ben Emons reveals 4 cheap value stocks and key AI names to buy now.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-06-19T14:28:11.370265"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-22T16:17:36.581299"
     },
     "WMT": {
       "insider_signal": {
@@ -1170,7 +1074,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:12.294752"
+      "scanned_at": "2026-06-22T16:17:37.620958"
     },
     "COST": {
       "insider_signal": {
@@ -1187,7 +1091,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:13.154201"
+      "scanned_at": "2026-06-22T16:17:38.277746"
     },
     "FCX": {
       "insider_signal": {
@@ -1213,7 +1117,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-19T14:28:13.959671"
+      "scanned_at": "2026-06-22T16:17:38.926928"
     },
     "NEE": {
       "insider_signal": {
@@ -1239,7 +1143,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:14.798451"
+      "scanned_at": "2026-06-22T16:17:39.598842"
     },
     "PLD": {
       "insider_signal": {
@@ -1276,7 +1180,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-19T14:28:15.576616"
+      "scanned_at": "2026-06-22T16:17:40.255454"
     }
   }
 }
