@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-22",
-  "last_notified_date": "2026-06-22",
+  "date": "2026-06-23",
+  "last_notified_date": "2026-06-23",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -68,15 +68,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Stock Market Today: S&P 500, Dow Futures Gain As Trump Threatens 'Toll' Collection At Strait Of Hormuz— Getty, Intel, Hyperscale In Focus (UPDATED)",
-          "date": "2026-06-22 08:43",
-          "summary": "U.S. stock futures down as Nasdaq 100, Dow Jones, and S&amp;P 500 fall following previous gains. Critical peace talks encounter intense strain.",
-          "source": "Benzinga",
+          "headline": "Jim Cramer Discusses President Trump’s Big Announcement For Apple (AAPL)",
+          "date": "2026-06-23 06:55",
+          "summary": "We recently published Jim Cramer Discussed Expensive Phones, A Cheap Stock Sector & These 18 Stocks. Apple Inc. (NASDAQ:AAPL) is one of the stocks discussed by Jim Cramer. Consumer electronics giant A",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-22T16:17:24.950772"
+      "scanned_at": "2026-06-23T14:04:35.980788"
     },
     "NVDA": {
       "insider_signal": {
@@ -153,7 +153,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:25.683238"
+      "scanned_at": "2026-06-23T14:04:37.198028"
     },
     "MSFT": {
       "insider_signal": {
@@ -179,7 +179,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:26.568358"
+      "scanned_at": "2026-06-23T14:04:38.277367"
     },
     "MU": {
       "insider_signal": {
@@ -296,7 +296,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:27.530646"
+      "scanned_at": "2026-06-23T14:04:39.303423"
     },
     "GOOGL": {
       "insider_signal": {
@@ -343,7 +343,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:28.413700"
+      "scanned_at": "2026-06-23T14:04:40.514741"
     },
     "META": {
       "insider_signal": {
@@ -440,7 +440,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:29.362394"
+      "scanned_at": "2026-06-23T14:04:41.708000"
     },
     "AMZN": {
       "insider_signal": {
@@ -527,7 +527,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:30.100237"
+      "scanned_at": "2026-06-23T14:04:42.801438"
     },
     "TSLA": {
       "insider_signal": {
@@ -583,17 +583,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "JD Vance Says Trump Backs Government Stakes In AI Giants, But Musk And Cuban Push Back: 'Better Just To Send Money Directly'",
-          "date": "2026-06-22 12:30",
-          "summary": "Vice President JD Vance said that President Donald Trump supports the U.S. government taking ownership stakes in major artificial intelligence companies, likening the idea to a sovereign wealth fund-s",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-06-22T16:17:30.803239"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-23T14:04:43.855156"
     },
     "LLY": {
       "insider_signal": {
@@ -640,7 +631,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:31.490701"
+      "scanned_at": "2026-06-23T14:04:44.944714"
     },
     "UNH": {
       "insider_signal": {
@@ -697,7 +688,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:32.179265"
+      "scanned_at": "2026-06-23T14:04:45.856740"
     },
     "JPM": {
       "insider_signal": {
@@ -803,8 +794,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:32.861334"
+      "trump_mentions": [
+        {
+          "headline": "Jamie Dimon Says He'd Consider Treasury Secretary Role Today— But His Response When Trump Ruled Him Out In 2024 Was Priceless: 'I  Haven't Had...'",
+          "date": "2026-06-23 02:30",
+          "summary": "A few days after winning the 2024 elections, President Donald Trump ruled out offering a post to JPMorgan Chase & Co.’s CEO Jamie Dimon in his second-term administration. At the APEC CEO Summit in 202",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-23T14:04:46.841488"
     },
     "GS": {
       "insider_signal": {
@@ -931,7 +931,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:33.530065"
+      "scanned_at": "2026-06-23T14:04:47.824728"
     },
     "XOM": {
       "insider_signal": {
@@ -948,7 +948,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:34.187103"
+      "scanned_at": "2026-06-23T14:04:48.761363"
     },
     "CVX": {
       "insider_signal": {
@@ -974,7 +974,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:34.941652"
+      "scanned_at": "2026-06-23T14:04:49.715142"
     },
     "CAT": {
       "insider_signal": {
@@ -1000,7 +1000,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:35.836439"
+      "scanned_at": "2026-06-23T14:04:50.671648"
     },
     "GE": {
       "insider_signal": {
@@ -1036,8 +1036,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:36.581299"
+      "trump_mentions": [
+        {
+          "headline": "Watch CNBC's full interview with White House National Economic Council Director Kevin Hassett",
+          "date": "2026-06-22 09:07",
+          "summary": "White House National Economic Council Director Kevin Hassett joins 'Squawk Box' to discuss the life and legacy of former Federal Reserve Chairman Alan Greenspan, state of the economy, impact of the Ir",
+          "source": "CNBC",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-23T14:04:51.557537"
     },
     "WMT": {
       "insider_signal": {
@@ -1074,7 +1083,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:37.620958"
+      "scanned_at": "2026-06-23T14:04:52.544441"
     },
     "COST": {
       "insider_signal": {
@@ -1091,7 +1100,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:38.277746"
+      "scanned_at": "2026-06-23T14:04:53.490171"
     },
     "FCX": {
       "insider_signal": {
@@ -1117,7 +1126,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-22T16:17:38.926928"
+      "scanned_at": "2026-06-23T14:04:54.457318"
     },
     "NEE": {
       "insider_signal": {
@@ -1143,7 +1152,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:39.598842"
+      "scanned_at": "2026-06-23T14:04:55.348892"
     },
     "PLD": {
       "insider_signal": {
@@ -1180,7 +1189,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-22T16:17:40.255454"
+      "scanned_at": "2026-06-23T14:04:56.244831"
     }
   }
 }
