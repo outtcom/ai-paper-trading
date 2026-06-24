@@ -1,0 +1,63 @@
+name: System Health Report
+
+# Fires twice daily — mode (preflight vs recap) is inferred by ET time of day in the script.
+# Pre-flight: cron at 08:00 UTC + ~3h queue → arrives ~11 AM ET (before/around market open)
+# EOD recap:  cron at 20:30 UTC + ~2h queue → arrives ~6:30 PM ET (after market close)
+#
+# ALL output goes to PRIVATE Telegram ONLY. Never the group.
+# This workflow is read-only — it never commits to the repo.
+
+on:
+  schedule:
+    - cron: '00 8 * * 1-5'    # pre-flight target (arrives ~11 AM ET)
+    - cron: '30 20 * * 1-5'   # EOD recap target  (arrives ~6:30 PM ET)
+  workflow_dispatch:            # manual trigger for testing
+
+permissions:
+  contents: read   # read-only — health checks never commit
+
+jobs:
+  health-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create .env
+        run: |
+          cat > .env << 'EOF'
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY=${{ secrets.FINNHUB_API_KEY }}
+          GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          EOF
+
+      - name: Run health check
+        run: python system_health_report.py
+
+      - name: Notify on workflow failure
+        if: failure()
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TEXT=$'🔴 <b>Health Report Workflow FAILED</b>\n\nThe health check script itself crashed. Investigate:\n'"${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}" || true

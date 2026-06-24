@@ -27,6 +27,11 @@ _BASE     = f"https://api.telegram.org/bot{_TOKEN}"
 _FOOTER = '\n\n📊 <a href="https://outtcom.github.io/ai-paper-trading/">Live Dashboard</a>'
 
 
+def send_private_only(text: str) -> dict:
+    """Send to private chat ONLY — never the group. Used for health reports and sensitive alerts."""
+    return send_message(text, chat_id=_CHAT_ID)
+
+
 def send_message(text: str, chat_id: str = None) -> dict:
     """Send a plain HTML-formatted message to the given chat (defaults to private chat)."""
     target = chat_id or _CHAT_ID
