@@ -6,7 +6,7 @@ Market-open guard sleeps up to 45 min if we land pre-9:30 AM.
 
 Flow:
   0.  Market open guard — sleep until 9:30 AM ET if pre-market (max 45 min)
-  1.  Start/check the 30-day session
+  1.  Start/check the 90-day session
   2.  Circuit breaker — halt if peak drawdown > 15% or daily loss > 3%
   3.  FOMC / CPI / NFP auto-block — no trades on macro event days
   4.  VIX check — EXTREME → skip. Apply VIX sizing multiplier.
@@ -524,7 +524,7 @@ def main():
 
     # ── Start new session if none active ───────────────────────────────────
     if not portfolio["session"]["active"]:
-        print("[morning] No active session — starting a new 10-day session.")
+        print("[morning] No active session — starting a new 90-day session.")
         portfolio = start_session()
 
     if not is_session_active():

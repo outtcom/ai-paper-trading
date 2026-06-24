@@ -30,7 +30,7 @@ Key principles:
 - HYG above 20d MA = credit conditions healthy = favour equities.
 - The PRIMARY mandate is to OUTPERFORM SPY. Negative and worsening alpha is CRITICAL —
   holding cash guarantees continued underperformance. Every 1% of uninvested capital costs
-  approximately 0.5% alpha over a 30-day session.
+  approximately 0.5% alpha over a 90-day session.
 - If alpha vs SPY is worse than -2%, override caution: risk_budget_multiplier must be ≥ 1.2
   and capital_deployment_priority must be "high" unless VIX ≥ 25 or credit is stressed.
 

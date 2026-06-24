@@ -56,7 +56,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add docs/portfolio.json docs/portfolio_session*.json
-          git diff --staged --quiet || git commit -m "auto: session reset $(date +%Y-%m-%d) — 30-day forward test begins"
+          git diff --staged --quiet || git commit -m "auto: session reset $(date +%Y-%m-%d) — 90-day forward test begins"
           git pull --rebase -X ours
           git push
 

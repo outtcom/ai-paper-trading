@@ -1,5 +1,5 @@
 """
-Session manager for the 30-day paper trading session.
+Session manager for the 90-day paper trading session.
 Manages all portfolio state in docs/portfolio.json, which is:
   - tracked by git (committed after each GitHub Actions run)
   - served by GitHub Pages (powers the live dashboard)
@@ -160,7 +160,7 @@ def is_session_active() -> bool:
 
 def start_session() -> dict:
     """
-    Initialise a fresh 10-day session.
+    Initialise a fresh session (TOTAL_DAYS trading days).
     Resets cash and positions to starting values.
     """
     p = _default_portfolio()
@@ -199,7 +199,7 @@ def mark_ran_today(script: str) -> None:
 
 
 def advance_day() -> int:
-    """Increment the session day counter. Marks session inactive after day 10."""
+    """Increment the session day counter. Marks session inactive after day TOTAL_DAYS."""
     p = _load()
     new_day = p["session"].get("current_day", 0) + 1
     p["session"]["current_day"] = new_day
