@@ -27,6 +27,7 @@ Flow:
 Usage:
   python morning_session.py
 """
+import json
 import os
 import sys
 import time
@@ -42,6 +43,7 @@ from config import (
     TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD, BETA_MIN_STOP_FACTOR,
     ALLOW_SHORT_SELLING, SHORT_TP_PCT, SHORT_SL_PCT,
     SECTOR_TILT_TOP_MULT, SECTOR_TILT_BOTTOM_MULT,
+    CONVICTION_FLOOR_OVERRIDE,
 )
 from agents import strategy_consultant
 from orchestrator import run_pipeline
@@ -145,13 +147,14 @@ def _has_volume_confirmation(ticker: str) -> bool:
         return True   # never block on error
 
 
-def _quick_prescreen(ticker: str) -> bool:
+def _quick_prescreen(ticker: str) -> tuple:
     """Volume + RSI pre-screen in a single get_ohlcv call — runs before the 7-agent pipeline.
-    Returns False if volume is too low OR RSI signals a deep downtrend/extreme overbought.
+    Returns (pass: bool, reason: str|None).
     Crypto always passes (24h market, different RSI dynamics).
+    RSI bounds widened to 35–80 to avoid filtering valid momentum breakouts.
     """
     if "-USD" in ticker:
-        return True
+        return True, None
     try:
         _now  = datetime.now(ZoneInfo("America/New_York"))
         end   = _now.strftime("%Y-%m-%d")
@@ -164,7 +167,7 @@ def _quick_prescreen(ticker: str) -> bool:
             avg_3d  = sum(volumes[-3:]) / 3
             if avg_3d < avg_20d * MIN_VOLUME_RATIO:
                 print(f"[morning] {ticker} prescreen: volume {avg_3d:,.0f} < {MIN_VOLUME_RATIO}× {avg_20d:,.0f}")
-                return False
+                return False, "volume"
 
         closes = [b["close"] for b in bars if b.get("close")]
         if len(closes) >= 16:
@@ -174,16 +177,16 @@ def _quick_prescreen(ticker: str) -> bool:
             avg_gain = sum(gains) / 14
             avg_loss = sum(losses) / 14
             rsi = round(100 - (100 / (1 + avg_gain / avg_loss)), 1) if avg_loss > 0 else 100.0
-            if rsi < 40:
+            if rsi < 35:
                 print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — downtrend, skipping")
-                return False
-            if rsi > 78:
+                return False, "rsi_low"
+            if rsi > 80:
                 print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — overbought, skipping")
-                return False
+                return False, "rsi_high"
 
-        return True
+        return True, None
     except Exception:
-        return True   # never block on error
+        return True, None   # never block on error
 
 
 def _is_same_sector_open(ticker: str, portfolio: dict) -> bool:
@@ -266,7 +269,7 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
         # ── Pre-filter: skip definitionally ineligible tickers ────────────
         if ticker in earnings_blocked:
             print(f"[morning] {ticker} skipped (earnings block)")
-            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}, "_audit_skip": "earnings_block"}
             continue
 
         # Skip avoid-sector tickers before any LLM calls — Fund Manager would
@@ -275,7 +278,7 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
         ticker_sector = TICKER_SECTOR.get(ticker, "")
         if avoid_sectors and ticker_sector and ticker_sector in avoid_sectors:
             print(f"[morning] {ticker} skipped (avoid sector: {ticker_sector})")
-            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}, "_audit_skip": "avoid_sector"}
             continue
 
         # Only enforce same-sector block when not critically under-deployed.
@@ -285,12 +288,13 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
         _pre_equity = session_portfolio.get("equity", max(_pre_cash, 1))
         _pre_cash_ratio = _pre_cash / _pre_equity if _pre_equity > 0 else 1.0
         if _is_same_sector_open(ticker, session_portfolio) and _pre_cash_ratio < 0.60:
-            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}, "_audit_skip": "same_sector"}
             continue
 
-        if not _quick_prescreen(ticker):
-            print(f"[morning] {ticker} skipped (prescreen: volume or RSI)")
-            results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
+        _ps_ok, _ps_reason = _quick_prescreen(ticker)
+        if not _ps_ok:
+            print(f"[morning] {ticker} skipped (prescreen: {_ps_reason})")
+            results[ticker] = {"final_order": {"action": "hold", "qty": 0}, "_audit_skip": f"pre_screen_{_ps_reason}"}
             continue
 
         try:
@@ -299,27 +303,32 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
             results[ticker] = state
         except Exception as e:
             print(f"[morning] Pipeline error for {ticker}: {e}")
-            results[ticker] = {"error": str(e), "final_order": {"action": "hold", "qty": 0}}
+            results[ticker] = {"error": str(e), "final_order": {"action": "hold", "qty": 0}, "_audit_skip": "pipeline_error"}
     return results
 
 
-def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_strength: dict, strategy_brief: dict = None) -> list:
+def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_strength: dict, strategy_brief: dict = None, audit: dict = None) -> list:
     """
     Score all BUY candidates and return the top-n by score.
     Score = conviction_rank + sector_bonus + volume_bonus
     Skips: earnings-blocked, same-sector-as-open, volume-filtered, below conviction_floor.
     Deduplicates by sector across the returned list.
     Returns list of (ticker, state, score); empty list if no candidates.
+    audit: optional mutable dict keyed by ticker — populated with ranking rejection reasons.
     """
     # Compute cash ratio once — used to relax same-sector filter when under-deployed
     _port_cash   = portfolio.get("cash", 0)
     _port_equity = portfolio.get("equity", _port_cash or 1)
     _cash_ratio  = _port_cash / _port_equity if _port_equity > 0 else 1.0
 
-    # Conviction floor from strategy brief — skip low-conviction buys when market demands quality
-    _FLOOR_RANK      = {"low": 1, "medium": 2, "high": 3}
-    _conviction_floor = (strategy_brief or {}).get("conviction_floor", "low")
+    # CONVICTION_FLOOR_OVERRIDE takes priority over strategy brief — set to None to restore normal behaviour
+    _FLOOR_RANK       = {"low": 1, "medium": 2, "high": 3}
+    _conviction_floor = CONVICTION_FLOOR_OVERRIDE if CONVICTION_FLOOR_OVERRIDE else (strategy_brief or {}).get("conviction_floor", "low")
     _min_conv_rank    = _FLOOR_RANK.get(str(_conviction_floor).lower(), 1)
+
+    def _audit_set(ticker: str, key: str, value) -> None:
+        if audit and ticker in audit:
+            audit[ticker][key] = value
 
     raw = []
     for ticker, state in results.items():
@@ -328,6 +337,7 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
         # Relax same-sector filter when critically under-deployed (≥60% cash).
         # Still deduped by sector within the returned list via seen_sectors below.
         if _is_same_sector_open(ticker, portfolio) and _cash_ratio < 0.60:
+            _audit_set(ticker, "ranking_skip_reason", "same_sector_ranking")
             continue
 
         order = state.get("final_order", {})
@@ -339,15 +349,17 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
         conviction_str = state.get("trader_decision", {}).get("conviction", "low")
         base_score = float(_CONVICTION_RANK.get(str(conviction_str).lower(), 1))
 
-        # Drop any buy below the strategy brief's conviction floor
+        # Drop any buy below the conviction floor
         if _FLOOR_RANK.get(str(conviction_str).lower(), 1) < _min_conv_rank:
             print(f"[morning] {ticker} skipped — conviction '{conviction_str}' below floor '{_conviction_floor}'")
+            _audit_set(ticker, "ranking_skip_reason", "conviction_floor")
             continue
 
         sector_bonus = get_sector_bonus(ticker, sector_strength) if not is_crypto else 0.0
 
         vol_ok = _has_volume_confirmation(ticker)
         if not vol_ok:
+            _audit_set(ticker, "ranking_skip_reason", "volume_fail")
             continue
         vol_bonus = 0.15
 
@@ -363,8 +375,10 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
     for score, ticker, state in raw:
         sector = TICKER_SECTOR.get(ticker, "")
         if sector and sector in seen_sectors:
+            _audit_set(ticker, "ranking_skip_reason", "sector_dedup")
             continue
         seen_sectors.add(sector)
+        _audit_set(ticker, "selected_for_trade", True)
         top.append((ticker, state, score))
         if len(top) >= n:
             break
@@ -733,6 +747,36 @@ def main():
     # ── Alert on widespread agent failures ────────────────────────────────
     check_pipeline_errors(results, today)
 
+    # ── Build decision audit log from pipeline results ─────────────────────
+    audit_log = {}
+    for _t, _s in results.items():
+        _skip      = _s.get("_audit_skip")
+        _llm_ran   = _skip is None
+        _fm_order  = _s.get("final_order", {})
+        _trader    = _s.get("trader_decision", {})
+        _risk      = _s.get("risk_assessment", {})
+        _fm_action = _fm_order.get("action")
+        audit_log[_t] = {
+            "date":               today,
+            "ticker":             _t,
+            "skip_reason":        _skip,
+            "pre_screen_pass":    not (_skip or "").startswith("pre_screen"),
+            "llm_started":        _llm_ran,
+            "trader_action":      _trader.get("action")      if _llm_ran else None,
+            "trader_conviction":  _trader.get("conviction")  if _llm_ran else None,
+            "risk_approved":      _risk.get("approved")      if _llm_ran else None,
+            "fm_action":          _fm_action                 if _llm_ran else None,
+            "fm_rejection_reason": (
+                _fm_order.get("final_reasoning") or _fm_order.get("reasoning")
+            ) if (_llm_ran and _fm_action in ("hold", None)) else None,
+            "ranking_skip_reason": None,
+            "selected_for_trade":  False,
+            "beta_cap_blocked":    False,
+            "qty_zero":            False,
+            "executed":            False,
+        }
+    print(f"[morning] Audit log initialised for {len(audit_log)} tickers")
+
     # Extract ETF pipeline signals and persist to portfolio.json
     # Trader outputs "conviction" (low/medium/high string), not "confidence" (float)
     _CONVICTION_CONF = {"high": 0.85, "medium": 0.65, "low": 0.35}
@@ -761,7 +805,7 @@ def main():
     print(f"[morning] Deployed: {deployed_pct:.1%}  |  Open: {open_count}  |  Targeting {max_new} new trade(s)")
 
     # ── Pick top candidates ────────────────────────────────────────────────
-    top_candidates = _pick_top_n(max_new, results, earnings_blocked, portfolio, sector_strength, strategy_brief)
+    top_candidates = _pick_top_n(max_new, results, earnings_blocked, portfolio, sector_strength, strategy_brief, audit=audit_log)
 
     if not top_candidates:
         blocked_note = f"\nEarnings-blocked: {', '.join(earnings_blocked)}" if earnings_blocked else ""
@@ -789,6 +833,8 @@ def main():
             port_beta     = _portfolio_beta(portfolio, ticker, estimated_usd)
             print(f"[morning] Portfolio beta (incl {ticker}): {port_beta:.2f}  cap={MAX_PORTFOLIO_BETA}")
             if port_beta > MAX_PORTFOLIO_BETA:
+                if ticker in audit_log:
+                    audit_log[ticker]["beta_cap_blocked"] = True
                 broadcast_message(
                     f"📊 <b>Beta Cap — {ticker} — Day {session_day}/{total_days}</b>\n\n"
                     f"Adding {ticker} would push portfolio β to {port_beta:.2f} "
@@ -810,6 +856,8 @@ def main():
                                   if summary["sector"] in sector_strength.get("ranking", []) else "N/A"
 
         if summary["qty"] <= 0:
+            if ticker in audit_log:
+                audit_log[ticker]["qty_zero"] = True
             broadcast_message(
                 f"📭 <b>No Trade — {ticker} — Day {session_day}/{total_days}</b>\n\n"
                 f"Ticker selected but position size rounds to 0 (price too high for available capital).\n"
@@ -851,6 +899,8 @@ def main():
             journal_note    = summary["_full_why"],
             direction       = summary.get("direction", "long"),
         )
+        if ticker in audit_log:
+            audit_log[ticker]["executed"] = True
 
         agent_signals = {
             "fundamental":       state.get("fundamental_analysis", {}).get("recommendation", ""),
@@ -902,6 +952,26 @@ def main():
     # Reload final equity for record after all trades
     final_portfolio = get_portfolio()
     record_equity(final_portfolio.get("equity", equity))
+
+    # ── Save decision audit to .tmp/state/YYYY-MM-DD/decision_audit.json ─
+    try:
+        audit_dir  = os.path.join(".tmp", "state", today)
+        os.makedirs(audit_dir, exist_ok=True)
+        audit_path = os.path.join(audit_dir, "decision_audit.json")
+        audit_list = sorted(audit_log.values(), key=lambda x: x.get("ticker", ""))
+        with open(audit_path, "w", encoding="utf-8") as _f:
+            json.dump(audit_list, _f, indent=2, default=str)
+        executed_count  = sum(1 for r in audit_list if r.get("executed"))
+        selected_count  = sum(1 for r in audit_list if r.get("selected_for_trade"))
+        llm_count       = sum(1 for r in audit_list if r.get("llm_started"))
+        prescreen_count = sum(1 for r in audit_list if r.get("pre_screen_pass"))
+        print(
+            f"[morning] Audit saved → {audit_path}\n"
+            f"  {len(audit_list)} tickers | {prescreen_count} pre-screen pass | "
+            f"{llm_count} LLM ran | {selected_count} selected | {executed_count} executed"
+        )
+    except Exception as _e:
+        print(f"[morning] Failed to save decision audit: {_e}")
 
     print(f"[morning] Day {session_day} complete. {trades_executed} trade(s) executed.")
 
