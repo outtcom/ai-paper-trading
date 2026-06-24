@@ -50,7 +50,7 @@ from tools.session_manager import (
 from tools.telegram_bot import broadcast_message
 
 DEAD_MONEY_DAYS      = 5     # close position if held this many days with no progress
-DEAD_MONEY_THRESHOLD = 0.01  # "not working" = gain < +1% after DEAD_MONEY_DAYS days
+DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS days
 
 
 # ---------------------------------------------------------------------------

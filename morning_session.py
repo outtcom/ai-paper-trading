@@ -145,6 +145,47 @@ def _has_volume_confirmation(ticker: str) -> bool:
         return True   # never block on error
 
 
+def _quick_prescreen(ticker: str) -> bool:
+    """Volume + RSI pre-screen in a single get_ohlcv call — runs before the 7-agent pipeline.
+    Returns False if volume is too low OR RSI signals a deep downtrend/extreme overbought.
+    Crypto always passes (24h market, different RSI dynamics).
+    """
+    if "-USD" in ticker:
+        return True
+    try:
+        _now  = datetime.now(ZoneInfo("America/New_York"))
+        end   = _now.strftime("%Y-%m-%d")
+        start = (_now - timedelta(days=35)).strftime("%Y-%m-%d")
+        bars  = get_ohlcv(ticker, start, end)
+
+        volumes = [b.get("volume", 0) for b in bars if b.get("volume", 0) > 0]
+        if len(volumes) >= 10 and MIN_VOLUME_RATIO > 0:
+            avg_20d = sum(volumes[-20:]) / min(20, len(volumes))
+            avg_3d  = sum(volumes[-3:]) / 3
+            if avg_3d < avg_20d * MIN_VOLUME_RATIO:
+                print(f"[morning] {ticker} prescreen: volume {avg_3d:,.0f} < {MIN_VOLUME_RATIO}× {avg_20d:,.0f}")
+                return False
+
+        closes = [b["close"] for b in bars if b.get("close")]
+        if len(closes) >= 16:
+            deltas   = [closes[i] - closes[i - 1] for i in range(1, len(closes))]
+            gains    = [max(d, 0) for d in deltas[-14:]]
+            losses   = [-min(d, 0) for d in deltas[-14:]]
+            avg_gain = sum(gains) / 14
+            avg_loss = sum(losses) / 14
+            rsi = round(100 - (100 / (1 + avg_gain / avg_loss)), 1) if avg_loss > 0 else 100.0
+            if rsi < 40:
+                print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — downtrend, skipping")
+                return False
+            if rsi > 78:
+                print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — overbought, skipping")
+                return False
+
+        return True
+    except Exception:
+        return True   # never block on error
+
+
 def _is_same_sector_open(ticker: str, portfolio: dict) -> bool:
     """
     Return True if an open position already exists in the same sector.
@@ -247,8 +288,8 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
             results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
             continue
 
-        if not _has_volume_confirmation(ticker):
-            print(f"[morning] {ticker} skipped (volume filter)")
+        if not _quick_prescreen(ticker):
+            print(f"[morning] {ticker} skipped (prescreen: volume or RSI)")
             results[ticker] = {"final_order": {"action": "hold", "qty": 0}}
             continue
 
@@ -262,11 +303,11 @@ def _analyze_all(date: str, session_portfolio: dict, earnings_blocked: set = Non
     return results
 
 
-def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_strength: dict) -> list:
+def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_strength: dict, strategy_brief: dict = None) -> list:
     """
     Score all BUY candidates and return the top-n by score.
     Score = conviction_rank + sector_bonus + volume_bonus
-    Skips: earnings-blocked, same-sector-as-open, volume-filtered.
+    Skips: earnings-blocked, same-sector-as-open, volume-filtered, below conviction_floor.
     Deduplicates by sector across the returned list.
     Returns list of (ticker, state, score); empty list if no candidates.
     """
@@ -274,6 +315,11 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
     _port_cash   = portfolio.get("cash", 0)
     _port_equity = portfolio.get("equity", _port_cash or 1)
     _cash_ratio  = _port_cash / _port_equity if _port_equity > 0 else 1.0
+
+    # Conviction floor from strategy brief — skip low-conviction buys when market demands quality
+    _FLOOR_RANK      = {"low": 1, "medium": 2, "high": 3}
+    _conviction_floor = (strategy_brief or {}).get("conviction_floor", "low")
+    _min_conv_rank    = _FLOOR_RANK.get(str(_conviction_floor).lower(), 1)
 
     raw = []
     for ticker, state in results.items():
@@ -292,6 +338,11 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
 
         conviction_str = state.get("trader_decision", {}).get("conviction", "low")
         base_score = float(_CONVICTION_RANK.get(str(conviction_str).lower(), 1))
+
+        # Drop any buy below the strategy brief's conviction floor
+        if _FLOOR_RANK.get(str(conviction_str).lower(), 1) < _min_conv_rank:
+            print(f"[morning] {ticker} skipped — conviction '{conviction_str}' below floor '{_conviction_floor}'")
+            continue
 
         sector_bonus = get_sector_bonus(ticker, sector_strength) if not is_crypto else 0.0
 
@@ -356,7 +407,10 @@ def _size_position(
         if BETA_MIN_STOP_FACTOR > 0:
             beta = TICKER_BETA.get(ticker, 1.0)
             sl_pct = max(sl_pct, round(beta * BETA_MIN_STOP_FACTOR, 4))
-        tp_pct = sl_pct * 2   # 2:1 reward-to-risk
+        # Conviction-based R:R — high-conviction trades get room to run (3:1), low get 1.5:1.
+        _conviction = state.get("trader_decision", {}).get("conviction", "medium")
+        _tp_mult    = {"high": 3.0, "medium": 2.0, "low": 1.5}.get(str(_conviction).lower(), 2.0)
+        tp_pct = sl_pct * _tp_mult
 
     # Sector momentum tilt
     sector_mult = 1.0
@@ -396,7 +450,11 @@ def _size_position(
         if qty < 0.0001:
             qty = 0
     else:
-        qty = max(1, int(max_usd / price))
+        qty = int(max_usd / price)
+        # Allow 1 share if price is within 50% of the budget; otherwise skip (price too high).
+        # Prevents the old max(1, 0) forcing a $755 SPY buy on a $300 budget.
+        if qty <= 0 and price <= max_usd * 1.5:
+            qty = 1
 
     actual_usd = round(qty * price, 2)
 
@@ -695,12 +753,15 @@ def main():
     # ── Determine how many trades to run today ────────────────────────────
     open_count   = len(portfolio.get("positions", {}))
     deployed_pct = (equity - cash) / equity if equity > 0 else 0.0
-    max_new      = MAX_NEW_POSITIONS_PER_DAY if deployed_pct < 0.50 else 1
-    max_new      = min(max_new, MAX_CONCURRENT_POSITIONS - open_count)
+    # Use strategy consultant's target if available; urgency floor activates at 70% (not 50%)
+    # so we still push 2 trades/day when 53–69% deployed and slots are open.
+    target_from_brief = int(strategy_brief.get("target_new_positions", 1))
+    urgency_new = MAX_NEW_POSITIONS_PER_DAY if deployed_pct < 0.70 else 1
+    max_new     = min(max(urgency_new, target_from_brief), MAX_CONCURRENT_POSITIONS - open_count)
     print(f"[morning] Deployed: {deployed_pct:.1%}  |  Open: {open_count}  |  Targeting {max_new} new trade(s)")
 
     # ── Pick top candidates ────────────────────────────────────────────────
-    top_candidates = _pick_top_n(max_new, results, earnings_blocked, portfolio, sector_strength)
+    top_candidates = _pick_top_n(max_new, results, earnings_blocked, portfolio, sector_strength, strategy_brief)
 
     if not top_candidates:
         blocked_note = f"\nEarnings-blocked: {', '.join(earnings_blocked)}" if earnings_blocked else ""
