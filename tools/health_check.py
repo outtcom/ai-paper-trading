@@ -42,18 +42,26 @@ def _test_provider(model_key: str) -> tuple[bool, str]:
         return False, str(e)[:300]
 
 
-def _send_alert(failed: list[tuple[str, str, str, str]]) -> None:
-    """Send a Telegram alert listing each failed provider and affected agents."""
+def _send_alert(failed: list, anthropic_down: bool) -> None:
+    """Send a Telegram alert to PRIVATE chat only. Severity depends on which providers are down."""
     if not _TELEGRAM_TOKEN or not _TELEGRAM_CHAT:
         return
 
-    lines = ["🚨 <b>LLM Health Check — Provider(s) DOWN</b>\n"]
+    if anthropic_down:
+        header = "🔴 <b>CRITICAL — Anthropic API Down</b>"
+        impact = "Trading <b>HALTED today</b> — Trader and Fund Manager cannot run. Session equity recorded; no new positions."
+    else:
+        header = "⚠️ <b>WARNING — Analysis Provider Down</b>"
+        impact = "Pipeline will run with stub outputs. Trades may still execute with incomplete analysis."
+
+    lines = [header, "", impact, ""]
     for model_key, display, agents, error in failed:
         lines.append(f"❌ <b>{display}</b>")
         lines.append(f"   Agents: {agents}")
-        lines.append(f"   Error:  <code>{error[:200]}</code>\n")
+        lines.append(f"   Error: <code>{error[:200]}</code>")
+        lines.append("")
 
-    lines.append("⚠️ Trading pipeline will run with degraded analysis. Check API keys and credits.")
+    lines.append("Check API keys and credits.")
     lines.append(f'\n📊 <a href="{_DASHBOARD}">Live Dashboard</a>')
 
     requests.post(
@@ -70,9 +78,18 @@ def _send_alert(failed: list[tuple[str, str, str, str]]) -> None:
 
 def run() -> dict:
     """
-    Test all LLM providers. Sends a Telegram alert for any failures.
-    Returns {"groq": True, "openai": True, "anthropic_sonnet": True, "anthropic_opus": True,
-             "all_healthy": bool, "failed_count": int}
+    Test all LLM providers. Sends a private Telegram alert for any failures.
+
+    Returns:
+      {
+        "groq_fast": bool, "openai_debate": bool,
+        "anthropic_analyst": bool, "anthropic_decision": bool,
+        "groq_ok":      bool,   # Fundamental / Sentiment / Technical / Risk Manager
+        "openai_ok":    bool,   # Bull & Bear Researchers
+        "anthropic_ok": bool,   # Trader + Fund Manager (CRITICAL — halt if False)
+        "all_healthy":  bool,
+        "failed_count": int,
+      }
     """
     print("[health_check] Testing LLM providers...")
     results = {}
@@ -88,12 +105,17 @@ def run() -> dict:
             failed.append((model_key, display, agents, err))
         time.sleep(0.5)   # avoid rate-limit burst
 
+    # Structured provider flags for routing decisions in morning_session.py
+    results["groq_ok"]      = bool(results.get("groq_fast"))
+    results["openai_ok"]    = bool(results.get("openai_debate"))
+    results["anthropic_ok"] = bool(results.get("anthropic_analyst")) and bool(results.get("anthropic_decision"))
     results["all_healthy"]  = len(failed) == 0
     results["failed_count"] = len(failed)
 
     if failed:
-        _send_alert(failed)
-        print(f"[health_check] ⚠️  {len(failed)} provider(s) down — alert sent to Telegram.")
+        anthropic_down = not results["anthropic_ok"]
+        _send_alert(failed, anthropic_down)
+        print(f"[health_check] ⚠️  {len(failed)} provider(s) down — alert sent to private Telegram.")
     else:
         print("[health_check] All providers healthy.")
 

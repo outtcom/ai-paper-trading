@@ -75,7 +75,7 @@ from tools.session_manager import (
 from tools.universe_scanner import get_top_movers_by_sector, format_universe_summary
 from tools.telegram_bot import (
     send_trade_notification, send_full_agent_chain,
-    send_message, broadcast_message,
+    send_message, broadcast_message, send_private_only,
 )
 
 _CONVICTION_RANK = {"high": 3, "medium": 2, "low": 1}
@@ -520,7 +520,21 @@ def main():
     _wait_for_market_open(max_wait_minutes=75)
 
     # ── LLM provider health check ──────────────────────────────────────────
-    run_health_check()
+    _health = run_health_check()
+
+    # Anthropic down = Trader + Fund Manager cannot run → no safe trades today
+    if not _health.get("anthropic_ok"):
+        send_private_only(
+            f"🔴 <b>Trading Halted — Day {get_session_day()}/{portfolio['session'].get('total_days', 90)}</b>\n\n"
+            f"Anthropic API unreachable — Trader and Fund Manager agents cannot run.\n"
+            f"No new positions opened. Session equity recorded.\n\n"
+            f"<i>Check API key / credits at: anthropic.com</i>"
+        )
+        record_equity(portfolio.get("equity", portfolio["initial_capital"]))
+        return
+
+    if not _health.get("groq_ok"):
+        print("[morning] WARNING: Groq is down — analysis agents will return stub outputs.")
 
     # ── Start new session if none active ───────────────────────────────────
     if not portfolio["session"]["active"]:
