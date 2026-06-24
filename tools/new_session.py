@@ -6,7 +6,7 @@ Run this ONCE after a session ends to:
   2. Run the performance analyst LLM to generate a post-mortem review
   3. Send the review + recommendations to Telegram (private chat)
   4. Archive the completed portfolio to docs/portfolio_session<N>_<start_date>.json
-  5. Reset portfolio.json to a fresh 30-day session
+  5. Reset portfolio.json to a fresh 90-day session
   6. Send a "Session N+1 started" confirmation to Telegram
 
 SAFE TRIGGER WINDOW:
@@ -121,7 +121,7 @@ def main() -> None:
     next_day = new_portfolio["session"].get("current_day", 1)
     started_msg = (
         f"🚀 <b>Session {new_session_num} Started</b>\n\n"
-        f"Day {next_day} of {TOTAL_DAYS} — 60-day forward test\n"
+        f"Day {next_day} of {TOTAL_DAYS} — {TOTAL_DAYS}-day forward test\n"
         f"Capital: ${INITIAL_CAPITAL:,.2f}\n\n"
         f"🎯 Target: Beat SPY\n"
         f"📊 Watch: outtcom.github.io/ai-paper-trading"

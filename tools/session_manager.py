@@ -18,7 +18,7 @@ _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 _SYSTEM_DIR = os.path.dirname(_TOOLS_DIR)
 PORTFOLIO_FILE = os.path.join(_SYSTEM_DIR, "docs", "portfolio.json")
 
-TOTAL_DAYS = 60   # 60-day forward test session
+from config import SESSION_DAYS as TOTAL_DAYS   # single source of truth — edit config.py
 INITIAL_CAPITAL = 5_000.0
 
 # Circuit breaker thresholds

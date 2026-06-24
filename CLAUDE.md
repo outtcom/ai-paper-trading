@@ -94,7 +94,7 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 
 ## Session Configuration
 
-- **Session length**: 30 trading days (≈ 6 calendar weeks). Configured in `tools/session_manager.py` → `TOTAL_DAYS` and `config.py` → `SESSION_DAYS`.
+- **Session length**: 90 trading days (≈ 18 calendar weeks). Configured in `config.py` → `SESSION_DAYS` (single source of truth — `session_manager.py` imports it).
 - **Benchmark**: SPY. Alpha calculated daily at EOD and tracked in weekly briefing.
 - **Session 1**: 2026-04-14 → 2026-05-15 (22 days). Return: +0.36%, SPY: +5.04%, alpha: -4.68%. Root cause: only 16% capital deployed (target 68%).
 - **Session 2 start**: 2026-05-15. Target: beat SPY over 30 days.
