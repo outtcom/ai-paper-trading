@@ -535,6 +535,12 @@ def main():
         print("[eod] No active session. Exiting.")
         return
 
+    if portfolio["session"].get("paused"):
+        _pause_reason = portfolio["session"].get("pause_reason", "no reason given")
+        send_private_only(f"⏸️ <b>EOD skipped — PAUSED</b>\n\nReason: {_pause_reason}\n\nRun <code>python resume_session.py</code> to resume.")
+        print(f"[eod] Session is paused ({_pause_reason}). Skipping.")
+        return
+
     session_day = get_session_day()
     total_days = portfolio["session"]["total_days"]
     print(f"[eod] Day {session_day}/{total_days}")

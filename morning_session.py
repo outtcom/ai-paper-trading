@@ -547,6 +547,12 @@ def main():
         broadcast_message(f"🏁 <b>Paper trading session complete!</b>\n\nAll {_done_days} days are done. Check the dashboard.")
         return
 
+    if portfolio["session"].get("paused"):
+        _pause_reason = portfolio["session"].get("pause_reason", "no reason given")
+        send_private_only(f"⏸️ <b>Morning session skipped — PAUSED</b>\n\nReason: {_pause_reason}\n\nRun <code>python resume_session.py</code> to resume trading.")
+        print(f"[morning] Session is paused ({_pause_reason}). Skipping.")
+        return
+
     session_day = get_session_day()
     total_days  = portfolio["session"]["total_days"]
     equity      = portfolio.get("equity", portfolio["initial_capital"])
