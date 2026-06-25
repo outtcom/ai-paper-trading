@@ -17,6 +17,7 @@ Flow:
 Usage:
   python eod_session.py
 """
+import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -47,7 +48,8 @@ from tools.session_manager import (
     update_spy_benchmark,
     update_trailing_stop,
 )
-from tools.telegram_bot import broadcast_message
+from tools.telegram_bot import broadcast_message, send_private_only
+from tools.agent_tracker import update_portfolio_tracker, format_ic_report
 
 DEAD_MONEY_DAYS      = 5     # close position if held this many days with no progress
 DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS days
@@ -598,6 +600,22 @@ def main():
 
     # Reload one more time for the message (equity_curve + stats updated)
     portfolio = get_portfolio()
+
+    # Step 6b: Update agent accuracy tracker with today's closed trades
+    try:
+        portfolio = update_portfolio_tracker(portfolio)
+        # Persist tracker stats back to portfolio.json
+        _pf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "portfolio.json")
+        with open(_pf_path, "w") as _f:
+            json.dump(portfolio, _f, indent=2)
+        # Send IC report to private Telegram every 5 closed trades
+        total_closed = portfolio.get("agent_tracker", {}).get("total_closed", 0)
+        if total_closed > 0 and total_closed % 5 == 0:
+            ic_report = format_ic_report(portfolio)
+            if ic_report:
+                send_private_only(ic_report)
+    except Exception as _e:
+        print(f"[eod] Agent tracker update failed (non-critical): {_e}")
 
     # Step 7: Build and send EOD summary
     msg = _build_eod_message(

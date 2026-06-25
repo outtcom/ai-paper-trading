@@ -138,7 +138,8 @@ DEFAULT_RISK_PROFILE = "moderate"      # aggressive | moderate | conservative
 # ---------------------------------------------------------------------------
 # Session Settings
 # ---------------------------------------------------------------------------
-SESSION_DAYS = 90                  # total trading days in the session (90-day forward test)
+SESSION_DAYS   = 90                # total trading days in the session (90-day forward test)
+PROMPT_VERSION = "1.0.0"          # bump when any agent prompt changes — isolates IC data per prompt era
 
 # ---------------------------------------------------------------------------
 # Telegram Notifications

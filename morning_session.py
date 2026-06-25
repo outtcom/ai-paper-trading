@@ -44,6 +44,7 @@ from config import (
     ALLOW_SHORT_SELLING, SHORT_TP_PCT, SHORT_SL_PCT,
     SECTOR_TILT_TOP_MULT, SECTOR_TILT_BOTTOM_MULT,
     CONVICTION_FLOOR_OVERRIDE,
+    PROMPT_VERSION,
 )
 from agents import strategy_consultant
 from orchestrator import run_pipeline
@@ -945,6 +946,7 @@ def main():
             "bull_case":       summary["bull_case"],
             "bear_case":       summary["bear_case"],
             "agent_signals":   agent_signals,
+            "prompt_version":  PROMPT_VERSION,
         })
         is_short = summary.get("direction") == "short"
         dir_tag  = "SHORT 🔻" if is_short else "BUY"
