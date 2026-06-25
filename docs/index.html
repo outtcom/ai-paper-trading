@@ -220,6 +220,34 @@
     .circuit-banner .cb-title { color: var(--red); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
     .circuit-banner .cb-reason { color: var(--muted); font-size: 0.82rem; }
 
+    /* ── Paused banner ── */
+    .paused-banner {
+      background: rgba(168,85,247,0.08);
+      border: 1px solid var(--purple);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .paused-banner .cb-title { color: var(--purple); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+    .paused-banner .cb-reason { color: var(--muted); font-size: 0.82rem; }
+
+    /* ── Agent IC section ── */
+    .ic-badge {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: rgba(59,130,246,0.12);
+      color: var(--blue);
+      border: 1px solid rgba(59,130,246,0.3);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .ic-bar { font-size: 0.68rem; letter-spacing: -1px; margin-left: 5px; }
+
     /* ── Strategy brief as <details> ── */
     .strategy-brief {
       background: var(--surface);
@@ -363,6 +391,12 @@
 <div class="circuit-banner" id="circuit-banner">
   <div class="cb-title">🚨 Circuit Breaker Triggered</div>
   <div class="cb-reason" id="circuit-reason"></div>
+</div>
+
+<!-- Paused banner (hidden unless session is paused) -->
+<div class="paused-banner" id="paused-banner">
+  <div class="cb-title">⏸️ Session Paused — No New Trades</div>
+  <div class="cb-reason" id="paused-reason"></div>
 </div>
 
 <header>
@@ -635,6 +669,26 @@
   <div class="grid" id="etf-panel-grid" style="grid-template-columns: repeat(4, 1fr)"></div>
 </div>
 
+<!-- Agent IC Tracker (visible after first closed trades) -->
+<div class="section" id="agent-ic-section" style="display:none">
+  <h2>Agent Accuracy <span class="ic-badge" id="agent-ic-badge">0 trades</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Agent Signal</th>
+          <th style="text-align:right">Trades</th>
+          <th style="text-align:right">Win Rate</th>
+          <th style="text-align:right">Avg P&amp;L</th>
+        </tr>
+      </thead>
+      <tbody id="agent-ic-tbody">
+        <tr><td class="empty" colspan="4">No closed trades yet — accumulates automatically</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <!-- Trade journal (collapsed by default) -->
 <details class="journal-details">
   <summary id="journal-summary">Trade Journal</summary>
@@ -771,6 +825,14 @@
     if (cb.triggered) {
       document.getElementById('circuit-banner').style.display = 'block';
       document.getElementById('circuit-reason').textContent = cb.reason || 'Trading halted.';
+    }
+
+    // ── Paused banner ────────────────────────────────────────────────────────
+    if (session.paused) {
+      document.getElementById('paused-banner').style.display = 'block';
+      document.getElementById('paused-reason').textContent =
+        (session.pause_reason || 'No reason given') +
+        (session.paused_at ? ` · Paused ${new Date(session.paused_at).toLocaleDateString()}` : '');
     }
 
     // ── Header badge ─────────────────────────────────────────────────────────
@@ -1277,6 +1339,51 @@
         document.getElementById('etf-panel-section').style.display = 'block';
         etfGrid.innerHTML = cards;
       }
+    }
+
+    // ── Agent IC Tracker ─────────────────────────────────────────────────────
+    const tracker    = data.agent_tracker || {};
+    const icTotal    = tracker.total_closed || 0;
+    const icSection  = document.getElementById('agent-ic-section');
+    if (icTotal > 0 && icSection) {
+      icSection.style.display = 'block';
+      document.getElementById('agent-ic-badge').textContent = `${icTotal} trade${icTotal === 1 ? '' : 's'}`;
+      const by = tracker.by_agent || {};
+      const IC_ROWS = [
+        ['Fundamental — Bullish', 'fundamental', 'bullish'],
+        ['Fundamental — Neutral', 'fundamental', 'neutral'],
+        ['Fundamental — Bearish', 'fundamental', 'bearish'],
+        ['Technical — Bullish',   'technical',   'bullish'],
+        ['Technical — Neutral',   'technical',   'neutral'],
+        ['Sentiment — Positive',  'sentiment',   'bullish'],
+        ['Sentiment — Neutral',   'sentiment',   'neutral'],
+        ['Conviction: High',      'conviction',  'high'],
+        ['Conviction: Medium',    'conviction',  'medium'],
+        ['Conviction: Low',       'conviction',  'low'],
+        ['Risk: Approved',        'risk',        'approved'],
+        ['Risk: Overridden',      'risk',        'overridden'],
+      ];
+      const icRows = IC_ROWS.map(([label, group, key]) => {
+        const b = (by[group] || {})[key] || {};
+        const n = b.n || 0;
+        if (n === 0) return '';
+        const wr     = b.wins / n * 100;
+        const avgPnl = b.pnl_sum / n;
+        const wrColor   = wr >= 60 ? 'var(--green)' : wr >= 50 ? 'var(--yellow)' : 'var(--red)';
+        const pnlColor  = avgPnl >= 0 ? 'var(--green)' : 'var(--red)';
+        const dots      = '●'.repeat(Math.round(wr / 20)) + '○'.repeat(5 - Math.round(wr / 20));
+        return `<tr>
+          <td style="color:var(--muted); font-size:0.83rem">${label}</td>
+          <td style="text-align:right; color:var(--muted); font-size:0.83rem">${n}</td>
+          <td style="text-align:right">
+            <span style="color:${wrColor}; font-weight:600">${Math.round(wr)}%</span>
+            <span class="ic-bar" style="color:${wrColor}">${dots}</span>
+          </td>
+          <td style="text-align:right; color:${pnlColor}">${avgPnl >= 0 ? '+' : ''}${fmt(avgPnl)}%</td>
+        </tr>`;
+      }).filter(Boolean).join('');
+      document.getElementById('agent-ic-tbody').innerHTML =
+        icRows || '<tr><td class="empty" colspan="4">Accumulating data…</td></tr>';
     }
 
     // ── Sector heatmap ────────────────────────────────────────────────────────
