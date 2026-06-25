@@ -21,7 +21,7 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          MINS=$(( $(TZ=America/New_York date +%H) * 60 + $(TZ=America/New_York date +%M) ))
+          MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
           # Target: 7:30 AM ET. Accept: 5:00 AM–2:00 PM (300–840 min). Wide window handles up to 8h GHA queue delays.
           if [ $MINS -ge 300 ] && [ $MINS -le 840 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
