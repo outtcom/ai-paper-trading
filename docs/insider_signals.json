@@ -1,6 +1,6 @@
 {
-  "date": "2026-06-29",
-  "last_notified_date": "2026-06-29",
+  "date": "2026-06-30",
+  "last_notified_date": "2026-06-30",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -68,15 +68,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Apple Defies U.S. Ban, Begs Trump for Access to Blacklisted Chinese Chips",
-          "date": "2026-06-29 12:40",
-          "summary": "Trump Administration Faces Apple Pressure Over Blacklisted Chinese Memory Maker",
+          "headline": "Trump Threatens 100% Tariffs Over Digital Taxes. These 5 Tech Stocks Are Most at Risk",
+          "date": "2026-06-30 10:11",
+          "summary": "Trade tensions appeared to cool after the U.S. and European Union reached a trade agreement capping most EU exports to the U.S. with a 15% tariff ceiling. For investors, that looked like a welcome ste",
           "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-29T15:03:11.493454"
+      "scanned_at": "2026-06-30T13:28:58.673961"
     },
     "NVDA": {
       "insider_signal": {
@@ -173,7 +173,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:12.180227"
+      "scanned_at": "2026-06-30T13:28:59.755284"
     },
     "MSFT": {
       "insider_signal": {
@@ -198,8 +198,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:12.843615"
+      "trump_mentions": [
+        {
+          "headline": "Trump Threatens 100% Tariffs Over Digital Taxes. These 5 Tech Stocks Are Most at Risk",
+          "date": "2026-06-30 10:11",
+          "summary": "Trade tensions appeared to cool after the U.S. and European Union reached a trade agreement capping most EU exports to the U.S. with a 15% tariff ceiling. For investors, that looked like a welcome ste",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:00.795209"
     },
     "MU": {
       "insider_signal": {
@@ -316,7 +325,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:13.541146"
+      "scanned_at": "2026-06-30T13:29:01.798626"
     },
     "GOOGL": {
       "insider_signal": {
@@ -332,8 +341,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:14.788287"
+      "trump_mentions": [
+        {
+          "headline": "Trump Threatens 100% Tariffs Over Digital Taxes. These 5 Tech Stocks Are Most at Risk",
+          "date": "2026-06-30 10:11",
+          "summary": "Trade tensions appeared to cool after the U.S. and European Union reached a trade agreement capping most EU exports to the U.S. with a 15% tariff ceiling. For investors, that looked like a welcome ste",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:03.009881"
     },
     "META": {
       "insider_signal": {
@@ -371,15 +389,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Is Meta (META) Still One of Billionaire Dan Loeb’s Best Growth Stocks to Buy While It Holds Out on Trump’s AI Review?",
-          "date": "2026-06-29 11:57",
-          "summary": "Meta Platforms, Inc. (NASDAQ:META) is one of the best growth stocks to buy according to billionaire Dan Loeb. On June 23, the New York Times reported that the Trump administration has been pressing Me",
+          "headline": "Trump Threatens 100% Tariffs Over Digital Taxes. These 5 Tech Stocks Are Most at Risk",
+          "date": "2026-06-30 10:11",
+          "summary": "Trade tensions appeared to cool after the U.S. and European Union reached a trade agreement capping most EU exports to the U.S. with a 15% tariff ceiling. For investors, that looked like a welcome ste",
           "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-06-29T15:03:16.077554"
+      "scanned_at": "2026-06-30T13:29:04.287042"
     },
     "AMZN": {
       "insider_signal": {
@@ -465,8 +483,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:16.770618"
+      "trump_mentions": [
+        {
+          "headline": "Trump Threatens 100% Tariffs Over Digital Taxes. These 5 Tech Stocks Are Most at Risk",
+          "date": "2026-06-30 10:11",
+          "summary": "Trade tensions appeared to cool after the U.S. and European Union reached a trade agreement capping most EU exports to the U.S. with a 15% tariff ceiling. For investors, that looked like a welcome ste",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:05.353559"
     },
     "TSLA": {
       "insider_signal": {
@@ -533,7 +560,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:17.438768"
+      "scanned_at": "2026-06-30T13:29:06.361421"
     },
     "LLY": {
       "insider_signal": {
@@ -580,7 +607,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:18.068402"
+      "scanned_at": "2026-06-30T13:29:07.508067"
     },
     "UNH": {
       "insider_signal": {
@@ -596,8 +623,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:18.818305"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Rises; Trump Fed Firing Blocked; Nvidia Tests Key Level Amid Slide (Live Coverage)",
+          "date": "2026-06-29 16:53",
+          "summary": "The Dow Jones index rises on the stock market today. The Supreme Court rejects President Trump's firing of Lisa Cook. Alphabet shines but Nvidia tests a key level.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Stock Market Today: Dow Pops As Trump Fed Firing Is Blocked; Google Parent, Amazon Shine (Live Coverage)",
+          "date": "2026-06-29 15:25",
+          "summary": "The Dow Jones index rises on the stock market today. The Supreme Court rejects President Trump's firing of Lisa Cook. Alphabet shines.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:08.403493"
     },
     "JPM": {
       "insider_signal": {
@@ -683,26 +727,35 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:19.483517"
+      "trump_mentions": [
+        {
+          "headline": "Supreme Court Makes It Harder for Trump to Meddle With the Fed",
+          "date": "2026-06-29 21:22",
+          "summary": "The Supreme Court upheld the lower courts’ rulings that Fed Governor Lisa Cook could continue serving as her legal case challenging her potential termination moves forward.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:09.429717"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 10,
+        "open_market_sells": 4,
         "compensation_grants": 0,
-        "net_open_market_value": -18136177.88,
-        "net_open_market_fmt": "-$18.1M",
+        "net_open_market_value": -6675612.69,
+        "net_open_market_fmt": "-$6.7M",
         "largest_single_transaction": {
-          "name": "FREDMAN SHEARA J",
+          "name": "COLEMAN DENIS P.",
           "direction": "sell",
-          "dollar_value": 7596094.86,
-          "dollar_fmt": "$7.6M",
-          "date": "2026-05-01",
-          "shares_traded": 8166,
-          "price_per_share": 930.21,
+          "dollar_value": 2439475.61,
+          "dollar_fmt": "$2.4M",
+          "date": "2026-05-14",
+          "shares_traded": 2509,
+          "price_per_share": 972.29,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -745,73 +798,13 @@
             "shares_traded": 2509,
             "price_per_share": 972.29,
             "transaction_code": ""
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 74428.0,
-            "dollar_fmt": "$74K",
-            "date": "2026-05-01",
-            "shares_traded": 80,
-            "price_per_share": 930.35,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 435104.28,
-            "dollar_fmt": "$435K",
-            "date": "2026-05-01",
-            "shares_traded": 468,
-            "price_per_share": 929.71,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ruemmler Kathryn H.",
-            "direction": "sell",
-            "dollar_value": 125394.75,
-            "dollar_fmt": "$125K",
-            "date": "2026-05-01",
-            "shares_traded": 135,
-            "price_per_share": 928.85,
-            "transaction_code": ""
-          },
-          {
-            "name": "SOLOMON DAVID M",
-            "direction": "sell",
-            "dollar_value": 1080250.0,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-05-01",
-            "shares_traded": 1160,
-            "price_per_share": 931.25,
-            "transaction_code": ""
-          },
-          {
-            "name": "SOLOMON DAVID M",
-            "direction": "sell",
-            "dollar_value": 2149293.3,
-            "dollar_fmt": "$2.1M",
-            "date": "2026-05-01",
-            "shares_traded": 2310,
-            "price_per_share": 930.43,
-            "transaction_code": ""
-          },
-          {
-            "name": "FREDMAN SHEARA J",
-            "direction": "sell",
-            "dollar_value": 7596094.86,
-            "dollar_fmt": "$7.6M",
-            "date": "2026-05-01",
-            "shares_traded": 8166,
-            "price_per_share": 930.21,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:20.112442"
+      "scanned_at": "2026-06-30T13:29:10.396174"
     },
     "XOM": {
       "insider_signal": {
@@ -837,7 +830,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-06-29T15:03:20.788034"
+      "scanned_at": "2026-06-30T13:29:11.371245"
     },
     "CVX": {
       "insider_signal": {
@@ -864,6 +857,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Says Iran Has 'Requested' Emergency Talks With US After Military Strikes — High-Stakes Meeting Set For Tomorrow In Doha",
+          "date": "2026-06-29 09:06",
+          "summary": "Trump announces June 30 Iran talks in Doha as oil and gas prices ease, signaling renewed diplomatic efforts.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Why Aren’t Gas Prices Falling Faster? Chevron CFO Responds As Trump Turns Up The Heat On Big Oil: 'Doing Everything That We Can...'",
           "date": "2026-06-28 19:31",
           "summary": "Chevron Corp.‘s Chief Financial Officer Eimear Bonner has forecasted a gradual but eventual drop in U.S. gasoline prices as the situation in the Middle East stabilizes. Bonner, addressing criticism fr",
@@ -878,17 +879,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Kicks Off Sales Pitch for Iran Deal Few Americans Like",
-          "date": "2026-06-27 12:00",
-          "summary": "(Bloomberg) -- As US officials hammered out an agreement weeks ago to end the war in Iran, President Donald Trump faced a dilemma: How to sell a provision that unlocked billions of dollars in frozen f",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-06-29T15:03:21.469347"
+      "scanned_at": "2026-06-30T13:29:12.312063"
     },
     "CAT": {
       "insider_signal": {
@@ -913,8 +906,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:22.147192"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Rises; Trump Fed Firing Blocked; Nvidia Tests Key Level Amid Slide (Live Coverage)",
+          "date": "2026-06-29 19:21",
+          "summary": "The Dow Jones index rises on the stock market today. The Supreme Court rejects President Trump's firing of Lisa Cook. Alphabet shines but Nvidia tests a key level.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-06-30T13:29:13.445883"
     },
     "GE": {
       "insider_signal": {
@@ -922,7 +924,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 10,
+        "compensation_grants": 9,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -931,7 +933,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:22.769442"
+      "scanned_at": "2026-06-30T13:29:14.344263"
     },
     "WMT": {
       "insider_signal": {
@@ -1028,7 +1030,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:23.412282"
+      "scanned_at": "2026-06-30T13:29:15.338202"
     },
     "COST": {
       "insider_signal": {
@@ -1064,17 +1066,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Retailers Are Getting Billions in Tariff Refunds. Will It Save the Stocks?",
-          "date": "2026-06-25 18:02",
-          "summary": "Retailers including Walmart and Dollar Tree are beginning to receive tariff refunds, but Bernstein says the payments are unlikely to provide a meaningful boost to consumer stocks.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-06-29T15:03:24.042988"
+      "trump_mentions": [],
+      "scanned_at": "2026-06-30T13:29:16.313535"
     },
     "FCX": {
       "insider_signal": {
@@ -1091,7 +1084,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:24.661415"
+      "scanned_at": "2026-06-30T13:29:17.193077"
     },
     "NEE": {
       "insider_signal": {
@@ -1117,7 +1110,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:25.313060"
+      "scanned_at": "2026-06-30T13:29:18.074900"
     },
     "PLD": {
       "insider_signal": {
@@ -1154,7 +1147,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-06-29T15:03:25.949021"
+      "scanned_at": "2026-06-30T13:29:18.964994"
     }
   }
 }
