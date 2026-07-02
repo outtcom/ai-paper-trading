@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-01",
-  "last_notified_date": "2026-07-01",
+  "date": "2026-07-02",
+  "last_notified_date": "2026-07-02",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -68,15 +68,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s Crypto Billions, Apple Stock, and More From His Latest Financial Filing",
-          "date": "2026-07-01 10:50",
-          "summary": "President Donald Trump made more than $1 billion from his crypto ventures last year, according to his latest financial disclosure filing.",
+          "headline": "Trump’s 927-page disclosure is just a normal Tuesday for direct indexing and crypto wealth managers",
+          "date": "2026-07-01 22:18",
+          "summary": "Trump’s excessive trades look like those of an automated, direct indexing, tax-loss harvesting portfolio, not one individual in the know.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "The ETFs behind Trump's new child investment accounts",
+          "date": "2026-07-01 21:10",
+          "summary": "Trump Accounts are here. Yahoo Finance Senior Reporter Jennifer Schonberger joins Market Domination Overtime to break down the key ETFs expected to play a central role in the new child savings account",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-01T13:54:21.389065"
+      "scanned_at": "2026-07-02T13:21:21.978816"
     },
     "NVDA": {
       "insider_signal": {
@@ -173,7 +181,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:22.150584"
+      "scanned_at": "2026-07-02T13:21:22.994527"
     },
     "MSFT": {
       "insider_signal": {
@@ -199,7 +207,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:22.902556"
+      "scanned_at": "2026-07-02T13:21:24.316607"
     },
     "MU": {
       "insider_signal": {
@@ -317,15 +325,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "MU Stock Eases After Record Run: Micron Backs Trump Accounts With $250M Commitment",
-          "date": "2026-07-01 07:04",
-          "summary": "Micron shares increased four times in the first half of 2026.",
+          "headline": "Trump Just Called Micron the ‘Hottest’ Company in the World. The Market Yawned and Dumped It 10%",
+          "date": "2026-07-01 23:40",
+          "summary": "As MU stock was falling, President Trump posted on Truth Social calling Micron Technology (NASDAQ:MU) “one of the HOTTEST anywhere in the World” and celebrating a “HISTORIC $250 MILLION Investment in ",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-01T13:54:23.614275"
+      "scanned_at": "2026-07-02T13:21:25.271690"
     },
     "GOOGL": {
       "insider_signal": {
@@ -342,7 +350,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:24.330727"
+      "scanned_at": "2026-07-02T13:21:26.139565"
     },
     "META": {
       "insider_signal": {
@@ -379,7 +387,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:25.417740"
+      "scanned_at": "2026-07-02T13:21:27.141024"
     },
     "AMZN": {
       "insider_signal": {
@@ -466,7 +474,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:26.311913"
+      "scanned_at": "2026-07-02T13:21:28.097488"
     },
     "TSLA": {
       "insider_signal": {
@@ -533,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:27.124983"
+      "scanned_at": "2026-07-02T13:21:29.008832"
     },
     "LLY": {
       "insider_signal": {
@@ -580,7 +588,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:27.953058"
+      "scanned_at": "2026-07-02T13:21:29.773300"
     },
     "UNH": {
       "insider_signal": {
@@ -596,25 +604,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Rises; Trump Fed Firing Blocked; Nvidia Tests Key Level Amid Slide (Live Coverage)",
-          "date": "2026-06-29 16:53",
-          "summary": "The Dow Jones index rises on the stock market today. The Supreme Court rejects President Trump's firing of Lisa Cook. Alphabet shines but Nvidia tests a key level.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Stock Market Today: Dow Pops As Trump Fed Firing Is Blocked; Google Parent, Amazon Shine (Live Coverage)",
-          "date": "2026-06-29 15:25",
-          "summary": "The Dow Jones index rises on the stock market today. The Supreme Court rejects President Trump's firing of Lisa Cook. Alphabet shines.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-01T13:54:28.617396"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-02T13:21:30.521706"
     },
     "JPM": {
       "insider_signal": {
@@ -701,7 +692,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:29.253398"
+      "scanned_at": "2026-07-02T13:21:31.307565"
     },
     "GS": {
       "insider_signal": {
@@ -768,7 +759,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:29.890130"
+      "scanned_at": "2026-07-02T13:21:32.057711"
     },
     "XOM": {
       "insider_signal": {
@@ -785,7 +776,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:30.508252"
+      "scanned_at": "2026-07-02T13:21:32.792302"
     },
     "CVX": {
       "insider_signal": {
@@ -811,7 +802,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:31.162215"
+      "scanned_at": "2026-07-02T13:21:33.956180"
     },
     "CAT": {
       "insider_signal": {
@@ -836,17 +827,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Tariff Defeat Is Market Tailwind ‘No One Is Talking About’",
-          "date": "2026-06-30 11:54",
-          "summary": "(Bloomberg) -- The sweeping tariffs underpinning President Donald Trump’s economic policy may have gone from a headwind to a tailwind for the stock market, with the Supreme Court’s decision to unwind ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-01T13:54:31.988129"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-02T13:21:35.485544"
     },
     "GE": {
       "insider_signal": {
@@ -863,7 +845,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:32.631496"
+      "scanned_at": "2026-07-02T13:21:36.275513"
     },
     "WMT": {
       "insider_signal": {
@@ -960,7 +942,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:33.407702"
+      "scanned_at": "2026-07-02T13:21:37.049206"
     },
     "COST": {
       "insider_signal": {
@@ -997,7 +979,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:34.054702"
+      "scanned_at": "2026-07-02T13:21:37.950292"
     },
     "FCX": {
       "insider_signal": {
@@ -1014,7 +996,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:34.672278"
+      "scanned_at": "2026-07-02T13:21:38.660233"
     },
     "NEE": {
       "insider_signal": {
@@ -1040,7 +1022,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:35.294511"
+      "scanned_at": "2026-07-02T13:21:39.411719"
     },
     "PLD": {
       "insider_signal": {
@@ -1077,7 +1059,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-01T13:54:35.924112"
+      "scanned_at": "2026-07-02T13:21:40.127938"
     }
   }
 }
