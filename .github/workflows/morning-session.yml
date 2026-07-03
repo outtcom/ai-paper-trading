@@ -34,7 +34,7 @@ jobs:
     needs: dst-gate
     if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 60       # includes up to 30min market-open wait + pipeline run
+    timeout-minutes: 120      # covers up to 75min market-open wait + ~30min pipeline + buffer
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:

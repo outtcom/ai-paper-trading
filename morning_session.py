@@ -2,10 +2,10 @@
 Morning session entry point.
 Triggered by GitHub Actions cron: 10 10 * * 1-5 UTC (6:10 AM ET).
 Observed GHA free-tier queue delay: 2h–4h → actual arrival 9:30–11:00 AM ET.
-Market-open guard sleeps up to 45 min if we land pre-9:30 AM.
+Market-open guard sleeps up to 75 min if we land pre-9:30 AM.
 
 Flow:
-  0.  Market open guard — sleep until 9:30 AM ET if pre-market (max 45 min)
+  0.  Market open guard — sleep until 9:30 AM ET if pre-market (max 75 min)
   1.  Start/check the 90-day session
   2.  Circuit breaker — halt if peak drawdown > 15% or daily loss > 3%
   3.  FOMC / CPI / NFP auto-block — no trades on macro event days
