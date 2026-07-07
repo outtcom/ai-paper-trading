@@ -4,7 +4,7 @@
     "current_day": 9,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-07T13:34:58.106627+00:00",
+    "last_updated": "2026-07-07T15:45:33.083488+00:00",
     "session_number": 3
   },
   "cash": 3753.41,
@@ -31,7 +31,7 @@
       "qty": 3,
       "entry_price": 416.99,
       "cost_basis": 1250.97,
-      "last_price": 416.99,
+      "last_price": 406.63,
       "stop_loss": 385.3,
       "take_profit": 480.37,
       "partial_profit_price": 448.68,
