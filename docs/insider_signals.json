@@ -1,16 +1,16 @@
 {
-  "date": "2026-07-06",
-  "last_notified_date": "2026-07-06",
+  "date": "2026-07-07",
+  "last_notified_date": "2026-07-07",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 2,
+        "open_market_sells": 1,
         "compensation_grants": 1,
-        "net_open_market_value": -15920460.0,
-        "net_open_market_fmt": "-$15.9M",
+        "net_open_market_value": -15551000.0,
+        "net_open_market_fmt": "-$15.6M",
         "largest_single_transaction": {
           "name": "LEVINSON ARTHUR D",
           "direction": "sell",
@@ -31,23 +31,13 @@
             "shares_traded": 50000,
             "price_per_share": 311.02,
             "transaction_code": ""
-          },
-          {
-            "name": "Borders Ben",
-            "direction": "sell",
-            "dollar_value": 369460,
-            "dollar_fmt": "$369K",
-            "date": "2026-05-08",
-            "shares_traded": 1274,
-            "price_per_share": 290,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:10.306754"
+      "scanned_at": "2026-07-07T13:51:25.646963"
     },
     "NVDA": {
       "insider_signal": {
@@ -144,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:11.141387"
+      "scanned_at": "2026-07-07T13:51:26.785174"
     },
     "MSFT": {
       "insider_signal": {
@@ -169,8 +159,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:11.918623"
+      "trump_mentions": [
+        {
+          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
+          "date": "2026-07-07 08:23",
+          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-07T13:51:27.952774"
     },
     "MU": {
       "insider_signal": {
@@ -287,7 +286,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:12.629934"
+      "scanned_at": "2026-07-07T13:51:29.040347"
     },
     "GOOGL": {
       "insider_signal": {
@@ -305,15 +304,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump vs. Pelosi: Who Made More Money in the Stock Market Last Year?",
-          "date": "2026-07-06 12:09",
-          "summary": "Two of the most-watched retail trading proxies in America filed very different sets of paperwork last year. Nancy Pelosi averaged roughly one trade every 22 days over the past 12 years. Donald Trump l",
-          "source": "Yahoo",
+          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
+          "date": "2026-07-07 08:23",
+          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
+          "source": "ChartMill",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-06T14:45:13.767130"
+      "scanned_at": "2026-07-07T13:51:30.287562"
     },
     "META": {
       "insider_signal": {
@@ -350,7 +349,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:16.056897"
+      "scanned_at": "2026-07-07T13:51:31.550328"
     },
     "AMZN": {
       "insider_signal": {
@@ -438,15 +437,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Mediacom Communications Appoints Troy Griffin as Senior Vice President, Customer Operations and Customer Experience",
-          "date": "2026-07-06 13:00",
-          "summary": "MEDIACOM PARK, N.Y., July 06, 2026--Mediacom Communications today announced the appointment of Troy Griffin as Senior Vice President, Customer Operations and Customer Experience. Griffin succeeds Jon ",
-          "source": "Yahoo",
-          "keyword_matched": "president",
+          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
+          "date": "2026-07-07 08:23",
+          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-06T14:45:16.756184"
+      "scanned_at": "2026-07-07T13:51:32.637589"
     },
     "TSLA": {
       "insider_signal": {
@@ -513,7 +512,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:17.432925"
+      "scanned_at": "2026-07-07T13:51:33.747448"
     },
     "LLY": {
       "insider_signal": {
@@ -550,7 +549,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:18.329254"
+      "scanned_at": "2026-07-07T13:51:34.806111"
     },
     "UNH": {
       "insider_signal": {
@@ -567,7 +566,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:18.963515"
+      "scanned_at": "2026-07-07T13:51:35.766776"
     },
     "JPM": {
       "insider_signal": {
@@ -655,15 +654,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "What JPMorgan Chase (JPM)'s Bigger Dividend, US$50B Buyback and New Co-Presidents Mean For Shareholders",
-          "date": "2026-07-04 01:09",
-          "summary": "In late June 2026, JPMorgan Chase & Co. announced a planned increase in its quarterly common dividend to US$1.65 per share from US$1.50, alongside Board authorization for a new US$50.00 billion share ",
-          "source": "Yahoo",
+          "headline": "'New MUFG President Targets ROE On Par With JPMorgan; Hanzawa Seeks To Lift Japanese Bank Into Top Global 5, Eyes Growth In SE Asia' - Nikkei Asia",
+          "date": "2026-07-06 14:36",
+          "summary": "https://asia.nikkei.com/editor-s-picks/interview/new-mufg-president-targets-roe-on-par-with-jpmorgan",
+          "source": "Benzinga",
           "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-06T14:45:19.746020"
+      "scanned_at": "2026-07-07T13:51:36.781205"
     },
     "GS": {
       "insider_signal": {
@@ -729,17 +728,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Goldman Sachs (GS) Launches Trump Account Match For Employees’ Children",
-          "date": "2026-07-04 14:10",
-          "summary": "Goldman Sachs Group (NYSE:GS) has introduced a new benefit that matches the federal seed contribution for employees' children in recently launched \"Trump Accounts.\" The initiative is part of a public ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-06T14:45:20.412145"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-07T13:51:37.850096"
     },
     "XOM": {
       "insider_signal": {
@@ -755,8 +745,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:21.393676"
+      "trump_mentions": [
+        {
+          "headline": "Big Oil Heads for Record Profits as Trump Turns Up the Heat on Gas Prices",
+          "date": "2026-07-06 22:00",
+          "summary": "The earnings surge is intensifying political pressure, with President Trump demanding gasoline prices fall to $2.25–$2.50 per gallon and launching price-gouging investigations despite industry claims ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-07T13:51:38.851836"
     },
     "CVX": {
       "insider_signal": {
@@ -781,8 +780,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:22.072647"
+      "trump_mentions": [
+        {
+          "headline": "Big Oil Heads for Record Profits as Trump Turns Up the Heat on Gas Prices",
+          "date": "2026-07-06 22:00",
+          "summary": "The earnings surge is intensifying political pressure, with President Trump demanding gasoline prices fall to $2.25–$2.50 per gallon and launching price-gouging investigations despite industry claims ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Gavin Newsom Slams Chevron, Says Gas Prices Still 'Elevated' Due to Trump's 'Reckless' Iran War: 'Skip the Brand Names'",
+          "date": "2026-07-06 00:50",
+          "summary": "Gov. Gavin Newsom urges residents to avoid Chevron and other big oil brands due to high gas prices caused by Trump&#39;s Iran war.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-07T13:51:40.154763"
     },
     "CAT": {
       "insider_signal": {
@@ -807,8 +823,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:22.712447"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Dips, Nasdaq Jumps While Trump Says This; Micron Bounces, Chips Pop (Live Coverage)",
+          "date": "2026-07-06 15:29",
+          "summary": "The Dow Jones index fell but other indexes rallied as President Trump made bullish comments. Micron was up on the stock market today.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-07T13:51:41.240614"
     },
     "GE": {
       "insider_signal": {
@@ -825,7 +850,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:23.529649"
+      "scanned_at": "2026-07-07T13:51:42.195211"
     },
     "WMT": {
       "insider_signal": {
@@ -921,8 +946,49 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:24.192151"
+      "trump_mentions": [
+        {
+          "headline": "Walmart cuts prices on barbecue essentials after Trump highlights retailer’s move (WMT)",
+          "date": "2026-07-07 10:45",
+          "summary": "Walmart lowers prices on key summer food itemsWalmart (NYSE:WMT) announced on Monday that it is reducing prices on a range of popular summer barbecue products, including beef, soft drinks and snack fo",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "WMT Stock Climbs Premarket: Trump's Price-Cut Claim Sparks 'White House Funding' Speculation, Retail Buzz Soars",
+          "date": "2026-07-07 08:45",
+          "summary": "Walmart plans broad price cuts after Trump said it agreed to lower costs for America's 250th birthday.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump claims credit as Walmart drops prices on barbecue staples",
+          "date": "2026-07-07 07:24",
+          "summary": "STORY: Walmart said Monday it would cut prices on many summer barbecue favorites, including meat, chips and soda.The move comes after U.S. President Donald Trump said the retailer was acting at his ad",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Touts Walmart Price Cuts on White House Request to Mark America 250, Pushes Other Retailers to Follow 'Absolute Patriots'",
+          "date": "2026-07-07 06:49",
+          "summary": "President Donald Trump announced that Walmart Inc. (NASDAQ:WMT) will be significantly reducing prices at the request of his administration. In a Truth Social post on Monday, Trump announced the move t",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "WMT Stock In Focus As Trump Says Walmart Will Cut Prices To Celebrate America’s 250th Birthday",
+          "date": "2026-07-06 22:38",
+          "summary": "The president said the retailer agreed to broad price reductions, while Walmart separately detailed rollbacks across hundreds of products.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-07T13:51:43.387094"
     },
     "COST": {
       "insider_signal": {
@@ -959,7 +1025,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:24.908613"
+      "scanned_at": "2026-07-07T13:51:44.361619"
     },
     "FCX": {
       "insider_signal": {
@@ -976,7 +1042,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:25.542125"
+      "scanned_at": "2026-07-07T13:51:45.295851"
     },
     "NEE": {
       "insider_signal": {
@@ -1002,7 +1068,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:26.350752"
+      "scanned_at": "2026-07-07T13:51:46.300045"
     },
     "PLD": {
       "insider_signal": {
@@ -1039,7 +1105,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-06T14:45:27.503971"
+      "scanned_at": "2026-07-07T13:51:47.238477"
     }
   }
 }
