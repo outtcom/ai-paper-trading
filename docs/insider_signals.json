@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-07",
-  "last_notified_date": "2026-07-07",
+  "date": "2026-07-08",
+  "last_notified_date": "2026-07-08",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:25.646963"
+      "scanned_at": "2026-07-08T13:15:20.188681"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:26.785174"
+      "scanned_at": "2026-07-08T13:15:21.509612"
     },
     "MSFT": {
       "insider_signal": {
@@ -159,17 +159,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
-          "date": "2026-07-07 08:23",
-          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-07T13:51:27.952774"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-08T13:15:23.182725"
     },
     "MU": {
       "insider_signal": {
@@ -285,8 +276,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:29.040347"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Tumble, Oil Prices Soar As Trump Says U.S.-Iran Ceasefire 'Over'",
+          "date": "2026-07-08 11:56",
+          "summary": "Dow Jones futures tumbled as President Donald Trump said the U.S.-Iran ceasefire is \"over.\" Crude oil prices soared.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Nasdaq, Dow Futures Crack After Trump Says Iran Ceasefire ‘Over’ – Why MU, SNDK, DJT, USO Are In Focus",
+          "date": "2026-07-08 10:04",
+          "summary": "Oil prices surged on Wednesday, following resumption of hostilities between the U.S. and Iran following attacks on oil tankers in the Strait of Hormuz.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-08T13:15:24.631604"
     },
     "GOOGL": {
       "insider_signal": {
@@ -302,17 +310,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
-          "date": "2026-07-07 08:23",
-          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-07T13:51:30.287562"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-08T13:15:25.805370"
     },
     "META": {
       "insider_signal": {
@@ -349,7 +348,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:31.550328"
+      "scanned_at": "2026-07-08T13:15:27.095743"
     },
     "AMZN": {
       "insider_signal": {
@@ -435,17 +434,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chips Get Their Confidence Back, the Dow Cracks 53,000, and Trump Moonlights as a Dell Salesman",
-          "date": "2026-07-07 08:23",
-          "summary": "Chip and memory stocks broadly rebounded Monday after last week's selloff, helping the Dow close above 53,000 for the first time as Microsoft's latest round of job cuts failed to reassure investors. A",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-07T13:51:32.637589"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-08T13:15:28.220733"
     },
     "TSLA": {
       "insider_signal": {
@@ -511,8 +501,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:33.747448"
+      "trump_mentions": [
+        {
+          "headline": "Jason Calacanis Calls Sundar Pichai 'an Amazing American,' Thanks Trump for Backing High-Skilled Immigration",
+          "date": "2026-07-07 18:31",
+          "summary": "Angel investor and All-In Podcast host Jason Calacanis publicly praised Alphabet Inc. CEO Sundar Pichai, calling him “an amazing American” and crediting immigration policy for the tech sector’s rise. ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-08T13:15:30.698531"
     },
     "LLY": {
       "insider_signal": {
@@ -548,8 +547,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:34.806111"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Tumble, Oil Prices Soar As Trump Says U.S.-Iran Ceasefire 'Over'",
+          "date": "2026-07-08 11:56",
+          "summary": "Dow Jones futures tumbled as President Donald Trump said the U.S.-Iran ceasefire is \"over.\" Crude oil prices soared.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-08T13:15:31.801409"
     },
     "UNH": {
       "insider_signal": {
@@ -566,7 +574,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:35.766776"
+      "scanned_at": "2026-07-08T13:15:32.982423"
     },
     "JPM": {
       "insider_signal": {
@@ -652,17 +660,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "'New MUFG President Targets ROE On Par With JPMorgan; Hanzawa Seeks To Lift Japanese Bank Into Top Global 5, Eyes Growth In SE Asia' - Nikkei Asia",
-          "date": "2026-07-06 14:36",
-          "summary": "https://asia.nikkei.com/editor-s-picks/interview/new-mufg-president-targets-roe-on-par-with-jpmorgan",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-07T13:51:36.781205"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-08T13:15:34.250554"
     },
     "GS": {
       "insider_signal": {
@@ -729,7 +728,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:37.850096"
+      "scanned_at": "2026-07-08T13:15:35.263026"
     },
     "XOM": {
       "insider_signal": {
@@ -755,7 +754,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-07T13:51:38.851836"
+      "scanned_at": "2026-07-08T13:15:36.139258"
     },
     "CVX": {
       "insider_signal": {
@@ -782,23 +781,31 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Says Iran Cease-Fire Is ‘Over’ Sending Oil Prices and Energy Stocks Soaring",
+          "date": "2026-07-08 09:06",
+          "summary": "The U.S. launched strikes on more than 80 Iranian targets, including air defense systems, radar sites and small boats.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Big Oil's Windfall Earnings Threaten to Reignite Trump's Price-Gouging Push",
+          "date": "2026-07-07 20:00",
+          "summary": "Trump is escalating pressure on oil companies, accusing them of price gouging and demanding gasoline prices fall toward $2.50 per gallon.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Big Oil Heads for Record Profits as Trump Turns Up the Heat on Gas Prices",
           "date": "2026-07-06 22:00",
           "summary": "The earnings surge is intensifying political pressure, with President Trump demanding gasoline prices fall to $2.25–$2.50 per gallon and launching price-gouging investigations despite industry claims ",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Gavin Newsom Slams Chevron, Says Gas Prices Still 'Elevated' Due to Trump's 'Reckless' Iran War: 'Skip the Brand Names'",
-          "date": "2026-07-06 00:50",
-          "summary": "Gov. Gavin Newsom urges residents to avoid Chevron and other big oil brands due to high gas prices caused by Trump&#39;s Iran war.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-07T13:51:40.154763"
+      "scanned_at": "2026-07-08T13:15:37.293884"
     },
     "CAT": {
       "insider_signal": {
@@ -823,17 +830,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Dips, Nasdaq Jumps While Trump Says This; Micron Bounces, Chips Pop (Live Coverage)",
-          "date": "2026-07-06 15:29",
-          "summary": "The Dow Jones index fell but other indexes rallied as President Trump made bullish comments. Micron was up on the stock market today.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-07T13:51:41.240614"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-08T13:15:38.552565"
     },
     "GE": {
       "insider_signal": {
@@ -849,8 +847,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:42.195211"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says US Will Consider Selling Turkey F-35 Fighter Jets",
+          "date": "2026-07-07 13:30",
+          "summary": "(Bloomberg) -- President Donald Trump gave another strong indication that he may soon try to reverse his own ban on Turkey buying F-35 fighter jets from the US.Most Read from BloombergGreece Offers Bo",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-08T13:15:40.072754"
     },
     "WMT": {
       "insider_signal": {
@@ -948,47 +955,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Walmart cuts prices on barbecue essentials after Trump highlights retailer’s move (WMT)",
-          "date": "2026-07-07 10:45",
-          "summary": "Walmart lowers prices on key summer food itemsWalmart (NYSE:WMT) announced on Monday that it is reducing prices on a range of popular summer barbecue products, including beef, soft drinks and snack fo",
+          "headline": "Walmart's Price Cuts Get A Presidential Assist",
+          "date": "2026-07-07 18:25",
+          "summary": "Trump claims credit for the retailer's summer rollbacks -- a reversal from May, when he told Walmart to \"eat the tariffs\" instead.",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "WMT Stock Climbs Premarket: Trump's Price-Cut Claim Sparks 'White House Funding' Speculation, Retail Buzz Soars",
-          "date": "2026-07-07 08:45",
-          "summary": "Walmart plans broad price cuts after Trump said it agreed to lower costs for America's 250th birthday.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump claims credit as Walmart drops prices on barbecue staples",
-          "date": "2026-07-07 07:24",
-          "summary": "STORY: Walmart said Monday it would cut prices on many summer barbecue favorites, including meat, chips and soda.The move comes after U.S. President Donald Trump said the retailer was acting at his ad",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Touts Walmart Price Cuts on White House Request to Mark America 250, Pushes Other Retailers to Follow 'Absolute Patriots'",
-          "date": "2026-07-07 06:49",
-          "summary": "President Donald Trump announced that Walmart Inc. (NASDAQ:WMT) will be significantly reducing prices at the request of his administration. In a Truth Social post on Monday, Trump announced the move t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "WMT Stock In Focus As Trump Says Walmart Will Cut Prices To Celebrate America’s 250th Birthday",
-          "date": "2026-07-06 22:38",
-          "summary": "The president said the retailer agreed to broad price reductions, while Walmart separately detailed rollbacks across hundreds of products.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-07-07T13:51:43.387094"
+      "scanned_at": "2026-07-08T13:15:41.034859"
     },
     "COST": {
       "insider_signal": {
@@ -1025,7 +1000,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:44.361619"
+      "scanned_at": "2026-07-08T13:15:42.049385"
     },
     "FCX": {
       "insider_signal": {
@@ -1042,7 +1017,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:45.295851"
+      "scanned_at": "2026-07-08T13:15:43.037110"
     },
     "NEE": {
       "insider_signal": {
@@ -1068,7 +1043,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:46.300045"
+      "scanned_at": "2026-07-08T13:15:44.281522"
     },
     "PLD": {
       "insider_signal": {
@@ -1105,7 +1080,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-07T13:51:47.238477"
+      "scanned_at": "2026-07-08T13:15:45.573736"
     }
   }
 }
