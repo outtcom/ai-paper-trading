@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-09",
-  "last_notified_date": "2026-07-09",
+  "date": "2026-07-10",
+  "last_notified_date": "2026-07-10",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -38,15 +38,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Apple Hands Broadcom a $30 Billion Lifeline as Trump Declares the Iran Ceasefire Dead",
-          "date": "2026-07-09 05:54",
-          "summary": "Broadcom rallied on a $30 billion Apple chip commitment and Nvidia climbed on a value case, while a weak Amazon bond sale hinted at cooling AI-capex appetite. Overnight, Trump declared the Iran ceasef",
-          "source": "ChartMill",
+          "headline": "Trump Made 327 Stock Trades in Apple, Nvidia, and Other Tech Giants Before His Tariff Pause",
+          "date": "2026-07-10 10:45",
+          "summary": "It appears that the president did very well in his trades.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-07-09T14:14:33.875886"
+      "scanned_at": "2026-07-10T13:33:58.697430"
     },
     "NVDA": {
       "insider_signal": {
@@ -142,8 +142,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:34.797786"
+      "trump_mentions": [
+        {
+          "headline": "Trump Made 327 Stock Trades in Apple, Nvidia, and Other Tech Giants Before His Tariff Pause",
+          "date": "2026-07-10 10:45",
+          "summary": "It appears that the president did very well in his trades.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-10T13:33:59.948483"
     },
     "MSFT": {
       "insider_signal": {
@@ -168,17 +177,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Announced His AI Action Plan Declaring  ‘America Is Going to Win’ — The Same Day He Bought Millions in Nvidia, Apple and Microsoft",
-          "date": "2026-07-09 00:01",
-          "summary": "Artificial intelligence has become the world’s newest gold rush, with countries racing to stake their claim before someone else strikes it rich. \"America is the country that started the AI race,\" Pres",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-09T14:14:35.668387"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-10T13:34:01.221531"
     },
     "MU": {
       "insider_signal": {
@@ -304,17 +304,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chip stocks rise as Trump says Iran called for a deal",
-          "date": "2026-07-09 11:37",
-          "summary": "S&P 500 and Nasdaq futures pointed higher Thursday after Trump said Iran reached out, even as U.S.-Iran fighting continued overnight",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-07-09T14:14:36.377172"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-10T13:34:02.387987"
     },
     "GOOGL": {
       "insider_signal": {
@@ -331,7 +322,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:37.227801"
+      "scanned_at": "2026-07-10T13:34:03.723953"
     },
     "META": {
       "insider_signal": {
@@ -368,7 +359,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:38.433848"
+      "scanned_at": "2026-07-10T13:34:05.083978"
     },
     "AMZN": {
       "insider_signal": {
@@ -455,7 +446,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:39.301734"
+      "scanned_at": "2026-07-10T13:34:06.507281"
     },
     "TSLA": {
       "insider_signal": {
@@ -522,7 +513,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:40.123041"
+      "scanned_at": "2026-07-10T13:34:07.640251"
     },
     "LLY": {
       "insider_signal": {
@@ -559,7 +550,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:40.868963"
+      "scanned_at": "2026-07-10T13:34:08.692969"
     },
     "UNH": {
       "insider_signal": {
@@ -575,8 +566,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:41.573398"
+      "trump_mentions": [
+        {
+          "headline": "Pharmacy Benefit Manager Suit Shows Trump Admin's Keenness For Deals",
+          "date": "2026-07-10 06:00",
+          "summary": "Healthcare space has been a perennial target for US antitrust enforcers, but Trump's second administration has been much more willing than its predecessor to settle with insurers.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-10T13:34:09.661694"
     },
     "JPM": {
       "insider_signal": {
@@ -633,7 +633,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:42.318982"
+      "scanned_at": "2026-07-10T13:34:10.798299"
     },
     "GS": {
       "insider_signal": {
@@ -700,7 +700,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:43.004677"
+      "scanned_at": "2026-07-10T13:34:11.930252"
     },
     "XOM": {
       "insider_signal": {
@@ -740,17 +740,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Futures Fall Pre-Bell as Middle East Hostilities Restart, President Trump Declares US-Iran Ceasefire 'Over'",
-          "date": "2026-07-08 12:51",
-          "summary": "(Updates with economic data, recent oil price movement, world markets' overview and corporate stock",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-09T14:14:43.660008"
+      "scanned_at": "2026-07-10T13:34:13.286190"
     },
     "CVX": {
       "insider_signal": {
@@ -775,49 +767,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Apple Hands Broadcom a $30 Billion Lifeline as Trump Declares the Iran Ceasefire Dead",
-          "date": "2026-07-09 05:54",
-          "summary": "Broadcom rallied on a $30 billion Apple chip commitment and Nvidia climbed on a value case, while a weak Amazon bond sale hinted at cooling AI-capex appetite. Overnight, Trump declared the Iran ceasef",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Iran war windfall puts Big Oil on collision course with Trump",
-          "date": "2026-07-09 04:00",
-          "summary": "America’s Big Oil groups are set to post record profits stemming from Donald Trump’s Iran war, setting them on a collision course with the US...",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Indexes Decline, Crude Oil Jumps as Trump's Threats to Strike Iran Again Elevate Geopolitical Risk",
-          "date": "2026-07-08 17:01",
-          "summary": "(Updates with index/price moves, macroeconomic data, and political news from the first paragraph.)",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Today's Market: Dow Plunges 800 Points, Nasdaq and S&P 500 Fall 1% After Trump's Iran Warning",
-          "date": "2026-07-08 16:31",
-          "summary": "Wall Street Slides After Trump's Iran Warning Ignites Oil Rally",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Indexes Slide, Crude Oil Surges After Trump Threatens More Strikes on Iran",
-          "date": "2026-07-08 16:08",
-          "summary": "(Updates with index/price moves and political news from the first paragraph.) US equity indexes s",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-09T14:14:44.320341"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-10T13:34:14.298742"
     },
     "CAT": {
       "insider_signal": {
@@ -843,7 +794,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:45.119612"
+      "scanned_at": "2026-07-10T13:34:15.304952"
     },
     "GE": {
       "insider_signal": {
@@ -870,15 +821,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says US Will Consider Selling Turkey F-35 Fighter Jets",
-          "date": "2026-07-07 13:30",
-          "summary": "(Bloomberg) -- President Donald Trump gave another strong indication that he may soon try to reverse his own ban on Turkey buying F-35 fighter jets from the US.Most Read from BloombergGreece Offers Bo",
-          "source": "Yahoo",
+          "headline": "White House Says Adjusting Imports Of Commercial Aircraft, Jet Engines, And Aircraft And Engine Parts Into United States; Secretary Of Commerce Found U.S. Aircraft Industry Is Facing Challenges To Adequately Meet Economic And National Security Demands; Secretary Of Commerce Found That The United States Aircraft Industry Is Too Reliant On Foreign Supply Chains; Trump Directs Commerce Secretary And USTR To Negotiate Agreements With Trading Partners To Address Threatened Impairment Of National Security",
+          "date": "2026-07-09 16:28",
+          "summary": "- Reuters",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-09T14:14:45.943548"
+      "scanned_at": "2026-07-10T13:34:16.263828"
     },
     "WMT": {
       "insider_signal": {
@@ -926,23 +877,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump admin. reportedly pressured grocers on beef prices ahead of July 4th: What to know",
-          "date": "2026-07-08 15:00",
-          "summary": "According to the Wall Street Journal, the Trump administration pressured several grocers to lower beef prices ahead of the July 4th weekend. Morning Brief host Julie Hyman is joined by Yahoo Finance S",
+          "headline": "Greenworks Names Kevin Holzworth President of North America as Company Accelerates Retail Growth, Next-Generation Product Innovation and Battery-Powered Adoption",
+          "date": "2026-07-09 12:31",
+          "summary": "Greenworks, the pioneer and proven leader in battery-powered outdoor power equipment, announced Kevin Holzworth as President of North America as the company powers the future of next-generation batter",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Futures Fall Pre-Bell as Middle East Hostilities Restart, President Trump Declares US-Iran Ceasefire 'Over'",
-          "date": "2026-07-08 12:51",
-          "summary": "(Updates with economic data, recent oil price movement, world markets' overview and corporate stock",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-09T14:14:46.938625"
+      "scanned_at": "2026-07-10T13:34:17.283566"
     },
     "COST": {
       "insider_signal": {
@@ -978,25 +921,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Costco: A Small June Swoon, But Sales Still Solid, Tariffs In Focus",
-          "date": "2026-07-09 08:56",
-          "summary": "Costco Wholesale Corporation June comps softened, but e-commerce and membership renewals stay strong. Click for this COST stock update.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "'White House Pressures Top U.S. Grocers on Beef Prices' - WSJ",
-          "date": "2026-07-08 04:01",
-          "summary": "https://www.wsj.com/business/retail/white-house-pressures-top-u-s-grocers-on-beef-prices-ae7f4822 ",
-          "source": "Benzinga",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-09T14:14:47.630355"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-10T13:34:18.289661"
     },
     "FCX": {
       "insider_signal": {
@@ -1022,7 +948,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:48.261098"
+      "scanned_at": "2026-07-10T13:34:19.253072"
     },
     "NEE": {
       "insider_signal": {
@@ -1048,7 +974,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:49.209075"
+      "scanned_at": "2026-07-10T13:34:20.193868"
     },
     "PLD": {
       "insider_signal": {
@@ -1065,7 +991,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-09T14:14:49.857277"
+      "scanned_at": "2026-07-10T13:34:21.233327"
     }
   }
 }
