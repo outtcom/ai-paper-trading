@@ -508,6 +508,20 @@ def _size_position(
 
 
 # ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _extract_signal(text: str) -> str:
+    if not text:
+        return ""
+    first = text.strip().split('\n')[0].upper()
+    for kw in ("BUY", "BULLISH", "SELL", "BEARISH", "HOLD", "NEUTRAL"):
+        if kw in first:
+            return kw.lower()
+    return ""
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -562,7 +576,7 @@ def main():
     print(f"[morning] Day {session_day}/{total_days}  |  Equity: ${equity:,.2f}  |  Cash: ${cash:,.2f}  |  Open: {open_count}")
 
     # ── SPY benchmark anchor ───────────────────────────────────────────────
-    if session_day == 1 and not portfolio.get("stats", {}).get("spy_start_price"):
+    if not portfolio.get("stats", {}).get("spy_start_price"):
         try:
             set_spy_start_price(get_latest_price("SPY"))
         except Exception as e:
@@ -924,11 +938,11 @@ def main():
             audit_log[ticker]["executed"] = True
 
         agent_signals = {
-            "fundamental":       state.get("fundamental_analysis", {}).get("recommendation", ""),
-            "technical":         state.get("technical_analysis",   {}).get("signal", ""),
-            "sentiment":         state.get("sentiment_analysis",   {}).get("sentiment", ""),
-            "trader_conviction": state.get("trader_decision",      {}).get("conviction", ""),
-            "risk_approved":     state.get("risk_assessment",      {}).get("approved", None),
+            "fundamental":       _extract_signal(state.get("fundamental_report", "")),
+            "technical":         _extract_signal(state.get("technical_report", "")),
+            "sentiment":         _extract_signal(state.get("sentiment_report", "")),
+            "trader_conviction": state.get("trader_decision", {}).get("conviction", ""),
+            "risk_approved":     state.get("risk_adjusted_decision", {}).get("risk_assessment", None),
         }
 
         add_journal_entry({
