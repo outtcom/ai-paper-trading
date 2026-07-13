@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-10",
-  "last_notified_date": "2026-07-10",
+  "date": "2026-07-13",
+  "last_notified_date": "2026-07-13",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -36,17 +36,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Made 327 Stock Trades in Apple, Nvidia, and Other Tech Giants Before His Tariff Pause",
-          "date": "2026-07-10 10:45",
-          "summary": "It appears that the president did very well in his trades.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-10T13:33:58.697430"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-13T13:48:30.783020"
     },
     "NVDA": {
       "insider_signal": {
@@ -142,17 +133,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Made 327 Stock Trades in Apple, Nvidia, and Other Tech Giants Before His Tariff Pause",
-          "date": "2026-07-10 10:45",
-          "summary": "It appears that the president did very well in his trades.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-10T13:33:59.948483"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-13T13:48:31.910940"
     },
     "MSFT": {
       "insider_signal": {
@@ -178,7 +160,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:01.221531"
+      "scanned_at": "2026-07-13T13:48:33.293042"
     },
     "MU": {
       "insider_signal": {
@@ -305,7 +287,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:02.387987"
+      "scanned_at": "2026-07-13T13:48:34.745120"
     },
     "GOOGL": {
       "insider_signal": {
@@ -322,7 +304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:03.723953"
+      "scanned_at": "2026-07-13T13:48:35.904826"
     },
     "META": {
       "insider_signal": {
@@ -359,7 +341,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:05.083978"
+      "scanned_at": "2026-07-13T13:48:37.236527"
     },
     "AMZN": {
       "insider_signal": {
@@ -446,17 +428,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:06.507281"
+      "scanned_at": "2026-07-13T13:48:38.333222"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 3,
-        "compensation_grants": 5,
-        "net_open_market_value": -2361685.38,
-        "net_open_market_fmt": "-$2.4M",
+        "open_market_buys": 1,
+        "open_market_sells": 2,
+        "compensation_grants": 3,
+        "net_open_market_value": -1048125.38,
+        "net_open_market_fmt": "-$1.0M",
         "largest_single_transaction": {
           "name": "Musk Elon",
           "direction": "sell",
@@ -497,23 +479,13 @@
             "shares_traded": 2606,
             "price_per_share": 402.197,
             "transaction_code": ""
-          },
-          {
-            "name": "Taneja Vaibhav",
-            "direction": "sell",
-            "dollar_value": 1350000,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-13",
-            "shares_traded": 3000,
-            "price_per_share": 450,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:07.640251"
+      "scanned_at": "2026-07-13T13:48:39.509464"
     },
     "LLY": {
       "insider_signal": {
@@ -550,7 +522,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:08.692969"
+      "scanned_at": "2026-07-13T13:48:40.575801"
     },
     "UNH": {
       "insider_signal": {
@@ -566,17 +538,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Pharmacy Benefit Manager Suit Shows Trump Admin's Keenness For Deals",
-          "date": "2026-07-10 06:00",
-          "summary": "Healthcare space has been a perennial target for US antitrust enforcers, but Trump's second administration has been much more willing than its predecessor to settle with insurers.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-10T13:34:09.661694"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-13T13:48:41.576339"
     },
     "JPM": {
       "insider_signal": {
@@ -633,74 +596,24 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:10.798299"
+      "scanned_at": "2026-07-13T13:48:42.590270"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -6675612.69,
-        "net_open_market_fmt": "-$6.7M",
-        "largest_single_transaction": {
-          "name": "COLEMAN DENIS P.",
-          "direction": "sell",
-          "dollar_value": 2439475.61,
-          "dollar_fmt": "$2.4M",
-          "date": "2026-05-14",
-          "shares_traded": 2509,
-          "price_per_share": 972.29,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1392599.88,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-05-14",
-            "shares_traded": 1428,
-            "price_per_share": 975.21,
-            "transaction_code": ""
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1325360.8,
-            "dollar_fmt": "$1.3M",
-            "date": "2026-05-14",
-            "shares_traded": 1360,
-            "price_per_share": 974.53,
-            "transaction_code": ""
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 1518176.4,
-            "dollar_fmt": "$1.5M",
-            "date": "2026-05-14",
-            "shares_traded": 1560,
-            "price_per_share": 973.19,
-            "transaction_code": ""
-          },
-          {
-            "name": "COLEMAN DENIS P.",
-            "direction": "sell",
-            "dollar_value": 2439475.61,
-            "dollar_fmt": "$2.4M",
-            "date": "2026-05-14",
-            "shares_traded": 2509,
-            "price_per_share": 972.29,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:11.930252"
+      "scanned_at": "2026-07-13T13:48:43.589484"
     },
     "XOM": {
       "insider_signal": {
@@ -742,7 +655,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-10T13:34:13.286190"
+      "scanned_at": "2026-07-13T13:48:44.572824"
     },
     "CVX": {
       "insider_signal": {
@@ -768,7 +681,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:14.298742"
+      "scanned_at": "2026-07-13T13:48:45.583651"
     },
     "CAT": {
       "insider_signal": {
@@ -794,7 +707,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:15.304952"
+      "scanned_at": "2026-07-13T13:48:46.603009"
     },
     "GE": {
       "insider_signal": {
@@ -819,17 +732,8 @@
         "signal_strength": "buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "White House Says Adjusting Imports Of Commercial Aircraft, Jet Engines, And Aircraft And Engine Parts Into United States; Secretary Of Commerce Found U.S. Aircraft Industry Is Facing Challenges To Adequately Meet Economic And National Security Demands; Secretary Of Commerce Found That The United States Aircraft Industry Is Too Reliant On Foreign Supply Chains; Trump Directs Commerce Secretary And USTR To Negotiate Agreements With Trading Partners To Address Threatened Impairment Of National Security",
-          "date": "2026-07-09 16:28",
-          "summary": "- Reuters",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-10T13:34:16.263828"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-13T13:48:47.632026"
     },
     "WMT": {
       "insider_signal": {
@@ -875,17 +779,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Greenworks Names Kevin Holzworth President of North America as Company Accelerates Retail Growth, Next-Generation Product Innovation and Battery-Powered Adoption",
-          "date": "2026-07-09 12:31",
-          "summary": "Greenworks, the pioneer and proven leader in battery-powered outdoor power equipment, announced Kevin Holzworth as President of North America as the company powers the future of next-generation batter",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-10T13:34:17.283566"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-13T13:48:48.630790"
     },
     "COST": {
       "insider_signal": {
@@ -922,7 +817,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:18.289661"
+      "scanned_at": "2026-07-13T13:48:49.640824"
     },
     "FCX": {
       "insider_signal": {
@@ -948,7 +843,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:19.253072"
+      "scanned_at": "2026-07-13T13:48:50.549439"
     },
     "NEE": {
       "insider_signal": {
@@ -974,7 +869,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:20.193868"
+      "scanned_at": "2026-07-13T13:48:51.478864"
     },
     "PLD": {
       "insider_signal": {
@@ -991,7 +886,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-10T13:34:21.233327"
+      "scanned_at": "2026-07-13T13:48:52.402329"
     }
   }
 }
