@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 13,
+    "current_day": 14,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-13T15:44:48.828716+00:00",
+    "last_updated": "2026-07-13T19:46:14.170106+00:00",
     "session_number": 3
   },
-  "cash": 1192.34,
+  "cash": 3667.29,
   "initial_capital": 5000.0,
-  "equity": 4950.85,
+  "equity": 4925.73,
   "peak_equity": 5033.78,
   "circuit_breaker": {
     "triggered": false,
@@ -17,72 +17,21 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.13,
-    "sortino": -2.47,
-    "calmar": -5.42,
+    "sharpe": -3.06,
+    "sortino": -3.98,
+    "calmar": -7.58,
     "max_drawdown_pct": 2.27,
     "spy_start_price": 754.99,
-    "spy_current_price": 755.09,
-    "benchmark_return_pct": null
+    "spy_current_price": 748.99,
+    "benchmark_return_pct": -0.79
   },
   "positions": {
-    "TSLA": {
-      "direction": "long",
-      "qty": 3,
-      "entry_price": 416.99,
-      "cost_basis": 1250.97,
-      "last_price": 397.25,
-      "stop_loss": 385.3,
-      "take_profit": 480.37,
-      "partial_profit_price": 448.68,
-      "stop_loss_pct": 7.6,
-      "take_profit_pct": 15.2,
-      "highest_price": 416.99,
-      "lowest_price": 416.99,
-      "partial_taken": false,
-      "opened_date": "2026-07-07",
-      "journal_note": "TSLA is in the Consumer Discretionary sector, which is not in the focus sectors (Financials, Healthcare, Industrials) but more importantly is not in the avoid list either. However, stepping through the decision tree: market posture is risk-on and capital deployment priority is HIGH, which mandates a BUY. But I need to reconsider \u2014 TSLA at a 415x P/E with Musk's $500M insider sell is a real concern, yet the decision tree is non-negotiable when risk-on + HIGH deployment priority. Let me re-evaluate and follow the framework."
-    },
-    "UNH": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 428.19,
-      "cost_basis": 856.38,
-      "last_price": 428.8,
-      "stop_loss": 409.99,
-      "take_profit": 471.01,
-      "partial_profit_price": 449.6,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 431.57,
-      "lowest_price": 428.19,
-      "partial_taken": false,
-      "opened_date": "2026-07-08",
-      "journal_note": "UNH is in a confirmed uptrend, trading at $428 above both 20d EMA ($412) and 50d EMA ($399) with MACD bullish crossover (9.11 > 8.59) and RSI at 59.7 \u2014 momentum without overbought conditions. The strategy brief explicitly targets Healthcare as a focus sector with risk-on posture and HIGH capital deployment priority, making this a mandatory buy. Risk team approved at 0.05 position size; the conservative view flagged liquidity concerns but was outvoted \u2014 I agree with the majority since UNH is among the most liquid healthcare names. Entry target of $425 provides better risk/reward vs. chasing at $428, with upside toward $445-450 (upper channel extension ~4-5%) against downside stop at ~$404 (5% below entry), giving roughly 1:1 risk/reward that improves if analyst upgrades follow the Shield blood test coverage catalyst. With only $3,753 cash and a $425 target, position is limited to 1 share (~$425, ~4.9% of portfolio), which fits the 5% allocation."
-    },
-    "BA": {
-      "direction": "long",
-      "qty": 2,
-      "entry_price": 231.68,
-      "cost_basis": 463.36,
-      "last_price": 218.03,
-      "stop_loss": 220.1,
-      "take_profit": 254.85,
-      "partial_profit_price": 243.26,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 231.68,
-      "lowest_price": 231.68,
-      "partial_taken": false,
-      "opened_date": "2026-07-08",
-      "journal_note": "BA is in the Industrials focus sector with a confirmed MACD bullish crossover (histogram +1.62) and price at $231.68 breaking above both the 20-day and 50-day EMAs (~$222.50). Insider Bradley Tilden's $299K open-market buy at $218.50 adds conviction. The risk team approved at 0.05 position size \u2014 I agree given the stretched fundamentals (PE 82x, D/E 9.92) make this a momentum trade not a value play, warranting disciplined sizing. With a 5% stop at ~$220 and upside resistance at $234.54 as the near-term target with potential for further breakout on the 737 MAX production ramp catalyst, the risk/reward is acceptable. Capital deployment priority is HIGH in a risk-on market targeting Industrials, so deploying despite the valuation stretch \u2014 the portfolio's limited cash ($3,753) constrains us to 1 share (~$231.68, roughly 2.7% of portfolio)."
-    },
     "BTC-USD": {
       "direction": "long",
       "qty": 0.011374,
       "entry_price": 64198.8,
       "cost_basis": 730.2,
-      "last_price": 62570.75,
+      "last_price": 64198.72,
       "stop_loss": 60988.86,
       "take_profit": 70618.68,
       "partial_profit_price": 67408.74,
@@ -99,13 +48,13 @@
       "qty": 0.28817,
       "entry_price": 1773.7,
       "cost_basis": 511.13,
-      "last_price": 1776.26,
-      "stop_loss": 1667.28,
+      "last_price": 1833.09,
+      "stop_loss": 1723.1,
       "take_profit": 1986.54,
       "partial_profit_price": 1880.12,
       "stop_loss_pct": 6.0,
       "take_profit_pct": 12.0,
-      "highest_price": 1773.7,
+      "highest_price": 1833.09,
       "lowest_price": 1773.7,
       "partial_taken": false,
       "opened_date": "2026-07-13",
@@ -221,6 +170,51 @@
       "opened_date": "2026-06-29",
       "closed_date": "2026-07-06",
       "journal_note": "HD is a BUY driven primarily by a cluster of five insider open-market purchases totaling $355K with zero sells, which is the strongest near-term conviction signal, combined with a bullish MACD crossover (histogram +$2.62) and price at $346.81 trading above both the 20-day EMA ($330.33) and 50-day EMA ($325.17). The risk team approved at 5% position size \u2014 the conservative perspective flagged high debt-to-equity, which I acknowledge but note is structural for HD given its 113.3% ROE and consistent cash generation, so it doesn't change the view. RSI at 71.85 is overbought, which is the main near-term risk, but the 5% stop at ~$329 sits just below the 20-day EMA support, giving a defined downside of ~$17/share versus upside toward $365-$370 (analyst targets up to $400), offering roughly 1.2:1 risk/reward on a moderate position. With market posture neutral and medium conviction, this meets the deployment criteria \u2014 I'm sizing at 1 share (~$347) given the $5,000 cash constraint, representing the 5% allocation."
+    },
+    {
+      "ticker": "BA",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 231.68,
+      "exit_price": 220.1,
+      "cost_basis": 463.36,
+      "proceeds": 440.2,
+      "pnl": -23.16,
+      "pnl_pct": -5.0,
+      "reason": "stop_loss",
+      "opened_date": "2026-07-08",
+      "closed_date": "2026-07-13",
+      "journal_note": "BA is in the Industrials focus sector with a confirmed MACD bullish crossover (histogram +1.62) and price at $231.68 breaking above both the 20-day and 50-day EMAs (~$222.50). Insider Bradley Tilden's $299K open-market buy at $218.50 adds conviction. The risk team approved at 0.05 position size \u2014 I agree given the stretched fundamentals (PE 82x, D/E 9.92) make this a momentum trade not a value play, warranting disciplined sizing. With a 5% stop at ~$220 and upside resistance at $234.54 as the near-term target with potential for further breakout on the 737 MAX production ramp catalyst, the risk/reward is acceptable. Capital deployment priority is HIGH in a risk-on market targeting Industrials, so deploying despite the valuation stretch \u2014 the portfolio's limited cash ($3,753) constrains us to 1 share (~$231.68, roughly 2.7% of portfolio)."
+    },
+    {
+      "ticker": "TSLA",
+      "direction": "long",
+      "qty": 3,
+      "entry_price": 416.99,
+      "exit_price": 392.83,
+      "cost_basis": 1250.97,
+      "proceeds": 1178.49,
+      "pnl": -72.48,
+      "pnl_pct": -5.79,
+      "reason": "time_exit",
+      "opened_date": "2026-07-07",
+      "closed_date": "2026-07-13",
+      "journal_note": "TSLA is in the Consumer Discretionary sector, which is not in the focus sectors (Financials, Healthcare, Industrials) but more importantly is not in the avoid list either. However, stepping through the decision tree: market posture is risk-on and capital deployment priority is HIGH, which mandates a BUY. But I need to reconsider \u2014 TSLA at a 415x P/E with Musk's $500M insider sell is a real concern, yet the decision tree is non-negotiable when risk-on + HIGH deployment priority. Let me re-evaluate and follow the framework."
+    },
+    {
+      "ticker": "UNH",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 428.19,
+      "exit_price": 428.13,
+      "cost_basis": 856.38,
+      "proceeds": 856.26,
+      "pnl": -0.12,
+      "pnl_pct": -0.01,
+      "reason": "time_exit",
+      "opened_date": "2026-07-08",
+      "closed_date": "2026-07-13",
+      "journal_note": "UNH is in a confirmed uptrend, trading at $428 above both 20d EMA ($412) and 50d EMA ($399) with MACD bullish crossover (9.11 > 8.59) and RSI at 59.7 \u2014 momentum without overbought conditions. The strategy brief explicitly targets Healthcare as a focus sector with risk-on posture and HIGH capital deployment priority, making this a mandatory buy. Risk team approved at 0.05 position size; the conservative view flagged liquidity concerns but was outvoted \u2014 I agree with the majority since UNH is among the most liquid healthcare names. Entry target of $425 provides better risk/reward vs. chasing at $428, with upside toward $445-450 (upper channel extension ~4-5%) against downside stop at ~$404 (5% below entry), giving roughly 1:1 risk/reward that improves if analyst upgrades follow the Shield blood test coverage catalyst. With only $3,753 cash and a $425 target, position is limited to 1 share (~$425, ~4.9% of portfolio), which fits the 5% allocation."
     }
   ],
   "equity_curve": [
@@ -318,6 +312,11 @@
       "day": 13,
       "date": "2026-07-13",
       "equity": 4950.85
+    },
+    {
+      "day": 13,
+      "date": "2026-07-13",
+      "equity": 4925.73
     }
   ],
   "journal": [
@@ -594,7 +593,13 @@
     "cash": 5000.0,
     "equity": 5000.0
   },
-  "spy_equity_curve": [],
+  "spy_equity_curve": [
+    {
+      "day": 13,
+      "date": "2026-07-13",
+      "equity": 4960.26
+    }
+  ],
   "midcap_equity_curve": [
     {
       "day": 1,
@@ -654,6 +659,11 @@
     {
       "day": 12,
       "date": "2026-07-10",
+      "equity": 4999.53
+    },
+    {
+      "day": 13,
+      "date": "2026-07-13",
       "equity": 4999.53
     }
   ],
@@ -717,28 +727,33 @@
       "day": 12,
       "date": "2026-07-10",
       "equity": 5000.0
+    },
+    {
+      "day": 13,
+      "date": "2026-07-13",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 755.09,
-      "return_pct": null
+      "current_price": 748.99,
+      "return_pct": -0.79
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 725.73,
-      "return_pct": 1.31
+      "current_price": 711.52,
+      "return_pct": -0.68
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 296.01,
-      "return_pct": -0.97
+      "current_price": 293.27,
+      "return_pct": -1.89
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 376.71,
-      "return_pct": 1.96
+      "current_price": 366.93,
+      "return_pct": -0.68
     }
   },
   "sector_strength": {
@@ -931,38 +946,41 @@
     "by_agent": {
       "fundamental": {
         "neutral": {
-          "n": 2,
+          "n": 5,
           "wins": 1,
-          "pnl_sum": 0.7100000000000001
+          "pnl_sum": -10.09
         }
       },
       "technical": {
         "neutral": {
-          "n": 2,
+          "n": 5,
           "wins": 1,
-          "pnl_sum": 0.7100000000000001
+          "pnl_sum": -10.09
         }
       },
       "sentiment": {
         "neutral": {
-          "n": 2,
+          "n": 5,
           "wins": 1,
-          "pnl_sum": 0.7100000000000001
+          "pnl_sum": -10.09
         }
       },
       "conviction": {
         "medium": {
-          "n": 2,
+          "n": 5,
           "wins": 1,
-          "pnl_sum": 0.7100000000000001
+          "pnl_sum": -10.09
         }
       }
     },
     "_counted_trades": [
       "UNH_2026-06-29",
-      "HD_2026-06-29"
+      "HD_2026-06-29",
+      "BA_2026-07-08",
+      "TSLA_2026-07-07",
+      "UNH_2026-07-08"
     ],
-    "last_updated": "2026-07-06",
-    "total_closed": 2
+    "last_updated": "2026-07-13",
+    "total_closed": 5
   }
 }
