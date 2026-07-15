@@ -4,7 +4,7 @@
     "current_day": 15,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-14T19:41:35.776233+00:00",
+    "last_updated": "2026-07-15T13:11:36.658526+00:00",
     "session_number": 3
   },
   "cash": 3667.29,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.23,
-    "sortino": -2.82,
-    "calmar": -5.56,
+    "sharpe": -2.18,
+    "sortino": -2.69,
+    "calmar": -5.33,
     "max_drawdown_pct": 2.27,
     "spy_start_price": 754.99,
     "spy_current_price": 752.03,
@@ -326,6 +326,11 @@
     {
       "day": 14,
       "date": "2026-07-14",
+      "equity": 4941.52
+    },
+    {
+      "day": 15,
+      "date": "2026-07-15",
       "equity": 4941.52
     }
   ],
@@ -785,46 +790,46 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 183.15,
-        "mom_5d": -0.23,
-        "mom_1m": 3.69,
-        "mom_3m": 25.78,
-        "above_ma50": true,
-        "rsi_14": 41.0,
-        "score": 7.93,
+        "price": 181.28,
+        "mom_5d": -1.25,
+        "mom_1m": 2.63,
+        "mom_3m": 24.5,
+        "above_ma50": false,
+        "rsi_14": 39.5,
+        "score": 5.84,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 112.08,
-        "mom_5d": 1.7,
-        "mom_1m": 0.96,
-        "mom_3m": -2.39,
+        "price": 111.45,
+        "mom_5d": 0.39,
+        "mom_1m": -0.6,
+        "mom_3m": -4.38,
         "above_ma50": false,
-        "rsi_14": 69.3,
-        "score": 0.51,
+        "rsi_14": 66.3,
+        "score": -1.06,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 117.28,
-        "mom_5d": -0.62,
-        "mom_1m": 3.34,
-        "mom_3m": 2.95,
+        "price": 116.04,
+        "mom_5d": -1.67,
+        "mom_1m": 2.25,
+        "mom_3m": 1.86,
         "above_ma50": false,
-        "rsi_14": 57.5,
-        "score": 2.07,
+        "rsi_14": 53.3,
+        "score": 1.0,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 160.78,
-        "mom_5d": -0.73,
-        "mom_1m": 5.19,
-        "mom_3m": 8.66,
+        "price": 161.41,
+        "mom_5d": -0.34,
+        "mom_1m": 5.6,
+        "mom_3m": 9.08,
         "above_ma50": true,
-        "rsi_14": 70.8,
-        "score": 5.11,
+        "rsi_14": 71.6,
+        "score": 5.51,
         "sector": "Healthcare"
       },
       "Financials": {
@@ -840,112 +845,112 @@
       },
       "Energy": {
         "etf": "XLE",
-        "price": 55.99,
-        "mom_5d": 5.38,
-        "mom_1m": -3.88,
-        "mom_3m": -1.96,
-        "above_ma50": false,
-        "rsi_14": 62.0,
-        "score": -0.72,
+        "price": 56.74,
+        "mom_5d": 6.79,
+        "mom_1m": -2.59,
+        "mom_3m": -0.65,
+        "above_ma50": true,
+        "rsi_14": 65.3,
+        "score": 1.61,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 181.34,
-        "mom_5d": -2.27,
-        "mom_1m": 6.89,
-        "mom_3m": 4.99,
+        "price": 180.37,
+        "mom_5d": -2.8,
+        "mom_1m": 6.31,
+        "mom_3m": 4.42,
         "above_ma50": true,
-        "rsi_14": 49.2,
-        "score": 4.76,
+        "rsi_14": 47.5,
+        "score": 4.2,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 84.58,
-        "mom_5d": 0.57,
-        "mom_1m": -1.06,
-        "mom_3m": 3.72,
+        "price": 84.59,
+        "mom_5d": 0.58,
+        "mom_1m": -1.05,
+        "mom_3m": 3.73,
         "above_ma50": true,
         "rsi_14": 60.2,
-        "score": 1.39,
+        "score": 1.4,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 51.08,
-        "mom_5d": -1.73,
-        "mom_1m": 2.98,
-        "mom_3m": -2.13,
+        "price": 50.58,
+        "mom_5d": -2.69,
+        "mom_1m": 1.98,
+        "mom_3m": -3.08,
         "above_ma50": false,
-        "rsi_14": 46.2,
-        "score": 0.54,
+        "rsi_14": 42.7,
+        "score": -0.43,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 45.48,
-        "mom_5d": 0.4,
-        "mom_1m": 3.36,
-        "mom_3m": -1.96,
+        "price": 45.72,
+        "mom_5d": 0.93,
+        "mom_1m": 3.91,
+        "mom_3m": -1.44,
         "above_ma50": true,
-        "rsi_14": 56.7,
-        "score": 2.41,
+        "rsi_14": 58.4,
+        "score": 2.95,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 44.65,
-        "mom_5d": 0.81,
-        "mom_1m": -0.76,
-        "mom_3m": 3.79,
+        "price": 44.48,
+        "mom_5d": -0.91,
+        "mom_1m": -0.98,
+        "mom_3m": 2.42,
         "above_ma50": true,
-        "rsi_14": 55.7,
-        "score": 1.62,
+        "rsi_14": 48.5,
+        "score": 0.72,
         "sector": "Real Estate"
       }
     },
     "ranking": [
-      "Technology",
       "Financials",
+      "Technology",
       "Healthcare",
       "Industrials",
       "Utilities",
+      "Energy",
+      "Consumer Staples",
       "Consumer Discretionary",
       "Real Estate",
-      "Consumer Staples",
       "Materials",
-      "Communication Services",
-      "Energy"
+      "Communication Services"
     ],
     "top_3": [
-      "Technology",
       "Financials",
+      "Technology",
       "Healthcare"
     ],
     "bottom_3": [
+      "Real Estate",
       "Materials",
-      "Communication Services",
-      "Energy"
+      "Communication Services"
     ],
-    "as_of": "2026-07-13"
+    "as_of": "2026-07-15"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
     "risk_budget_multiplier": 1.3,
     "focus_sectors": [
-      "Technology",
       "Financials",
+      "Technology",
       "Healthcare"
     ],
     "avoid_sectors": [
+      "Real Estate",
       "Materials",
-      "Communication Services",
-      "Energy"
+      "Communication Services"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "VIX at 15 with a falling trajectory, bullish SPY trend, and healthy credit conditions create a strong green-light environment for aggressive deployment; with 66% already deployed and alpha at -1.0% vs SPY, we must rotate into leading sectors \u2014 Technology, Financials, and Healthcare \u2014 to close the performance gap and avoid cash drag compounding the underperformance.",
+    "primary_thesis": "VIX at 16.2 with a bullish SPY trend and healthy credit conditions provides a green light for full positioning; we are ahead on deployment but trailing SPY by -0.8%, so adding 2 high-conviction positions in leading sectors \u2014 Financials, Technology, and Healthcare \u2014 is the priority to close the alpha gap before it compounds over the remaining 75 sessions.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
