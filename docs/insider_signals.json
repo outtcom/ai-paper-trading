@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-14",
-  "last_notified_date": "2026-07-14",
+  "date": "2026-07-15",
+  "last_notified_date": "2026-07-15",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:43.431590"
+      "scanned_at": "2026-07-15T12:57:26.559573"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:44.239376"
+      "scanned_at": "2026-07-15T12:57:27.974437"
     },
     "MSFT": {
       "insider_signal": {
@@ -160,7 +160,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:45.059623"
+      "scanned_at": "2026-07-15T12:57:29.598875"
     },
     "MU": {
       "insider_signal": {
@@ -286,17 +286,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "President Trump Sells Micron Stock and Buys an AI Stock Up 1,340% Since 2023",
-          "date": "2026-07-14 08:44",
-          "summary": "The president has been a net seller of Micron and a net buyer of Nvidia this year.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-14T12:51:45.859317"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-15T12:57:30.736989"
     },
     "GOOGL": {
       "insider_signal": {
@@ -313,7 +304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:46.708177"
+      "scanned_at": "2026-07-15T12:57:31.972742"
     },
     "META": {
       "insider_signal": {
@@ -350,7 +341,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:47.734634"
+      "scanned_at": "2026-07-15T12:57:33.595536"
     },
     "AMZN": {
       "insider_signal": {
@@ -437,7 +428,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:48.472542"
+      "scanned_at": "2026-07-15T12:57:34.773326"
     },
     "TSLA": {
       "insider_signal": {
@@ -493,25 +484,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dongfeng eyes Canada EV entry via reduced tariff quota",
-          "date": "2026-07-14 10:11",
-          "summary": "The Chinese state-owned manufacturer will display EV models at a Montreal event this week and is currently pursuing certification for its vehicles with Canadian regulators.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Elon Musk Is So Rich The President Would Need To Hold Office For 2.37 Million Years To Catch Up",
-          "date": "2026-07-13 20:31",
-          "summary": "The recent IPO of SpaceX and the continued success of Tesla Inc stock have made Elon Musk the world’s first trillionaire. While he is no longer a trillionaire, a wealth of $947 billion is so large tha",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-14T12:51:49.319643"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-15T12:57:35.914893"
     },
     "LLY": {
       "insider_signal": {
@@ -548,7 +522,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:50.003770"
+      "scanned_at": "2026-07-15T12:57:37.023924"
     },
     "UNH": {
       "insider_signal": {
@@ -574,7 +548,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-14T12:51:50.673567"
+      "scanned_at": "2026-07-15T12:57:38.204432"
     },
     "JPM": {
       "insider_signal": {
@@ -631,7 +605,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:51.386224"
+      "scanned_at": "2026-07-15T12:57:39.323154"
     },
     "GS": {
       "insider_signal": {
@@ -648,7 +622,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:52.143477"
+      "scanned_at": "2026-07-15T12:57:40.439588"
     },
     "XOM": {
       "insider_signal": {
@@ -665,7 +639,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:52.793842"
+      "scanned_at": "2026-07-15T12:57:41.527258"
     },
     "CVX": {
       "insider_signal": {
@@ -692,6 +666,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Gavin Newsom Unveils $3,500 California EV Rebate, Says State Is Filling 'Void Left by Trump'",
+          "date": "2026-07-14 04:12",
+          "summary": "Gavin Newsom&#39;s new EV rebate program targets first-time buyers with a $3,500 discount, pushing back against Trump&#39;s anti-EV stance.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Oil Surges As Trump Asserts Control Over Strait Of Hormuz; What Happens Now",
           "date": "2026-07-13 21:35",
           "summary": "Oil prices surged on Monday as President Donald Trump said the U.S. will reimpose a blockade on Iranian ports on Tuesday and provide other countries safe passage —for a fee — through the Strait of Hor",
@@ -706,41 +688,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Indexes Slump as Trump's Plan to Reinstate Iran Blockade, Impose 20% Toll on Hormuz Cargo Sends Crude Oil Higher",
-          "date": "2026-07-13 19:22",
-          "summary": "(Updates with index/price moves and company/geopolitical news from the first paragraph.) US equit",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Indexes Fall, Crude Oil Surges as Trump Plans to Reinstate Iran Blockade, Proposes 20% Toll on Hormuz Cargo",
-          "date": "2026-07-13 17:30",
-          "summary": "(Updates with index/price moves and company/geopolitical news from the first paragraph.) US equit",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil Jumps As Trump Makes U.S. 'Guardian' Of Hormuz; What Happens Now",
-          "date": "2026-07-13 15:46",
-          "summary": "Oil prices jumped on Monday as President Donald Trump said the U.S. will reimpose a blockade on Iranian ports and provide other countries safe passage —for a fee — through the Strait of Hormuz.  The a",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Makes U.S. The 'Guardian' Of Hormuz; What Happens Now",
-          "date": "2026-07-13 15:46",
-          "summary": "Oil prices jumped on Monday as President Donald Trump said the U.S. will reimpose a blockade on Iranian ports and provide other countries safe passage —for a fee — through the Strait of Hormuz.  The a",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-14T12:51:53.443473"
+      "scanned_at": "2026-07-15T12:57:42.798948"
     },
     "CAT": {
       "insider_signal": {
@@ -775,7 +725,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-14T12:51:54.134195"
+      "scanned_at": "2026-07-15T12:57:43.795514"
     },
     "GE": {
       "insider_signal": {
@@ -801,7 +751,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:54.811112"
+      "scanned_at": "2026-07-15T12:57:44.840344"
     },
     "WMT": {
       "insider_signal": {
@@ -848,7 +798,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:55.859561"
+      "scanned_at": "2026-07-15T12:57:45.984778"
     },
     "COST": {
       "insider_signal": {
@@ -885,7 +835,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:56.705496"
+      "scanned_at": "2026-07-15T12:57:47.047341"
     },
     "FCX": {
       "insider_signal": {
@@ -911,7 +861,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:57.336783"
+      "scanned_at": "2026-07-15T12:57:48.035693"
     },
     "NEE": {
       "insider_signal": {
@@ -937,7 +887,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:57.981145"
+      "scanned_at": "2026-07-15T12:57:49.022836"
     },
     "PLD": {
       "insider_signal": {
@@ -954,7 +904,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-14T12:51:58.651134"
+      "scanned_at": "2026-07-15T12:57:50.000767"
     }
   }
 }
