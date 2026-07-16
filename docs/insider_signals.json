@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-15",
-  "last_notified_date": "2026-07-15",
+  "date": "2026-07-16",
+  "last_notified_date": "2026-07-16",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -36,8 +36,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:26.559573"
+      "trump_mentions": [
+        {
+          "headline": "illumynt Appoints Anthony Giannetti as Senior Vice President of Global Operations",
+          "date": "2026-07-16 11:00",
+          "summary": "BOSTON, July 16, 2026--illumynt, a technology-driven leader in AI hardware lifecycle recovery and IT asset disposition (ITAD), today announced that Anthony \"Tony\" Giannetti has joined the company as S",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "US lawmakers urge Trump administration to ban Chinese memory chips",
+          "date": "2026-07-16 10:00",
+          "summary": "The US House China committee chair has urged the Trump administration to ban US companies from buying memory chips from CXMT and YMTC to avoid...",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:04.224261"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +151,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:27.974437"
+      "scanned_at": "2026-07-16T13:06:05.282242"
     },
     "MSFT": {
       "insider_signal": {
@@ -159,8 +176,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:29.598875"
+      "trump_mentions": [
+        {
+          "headline": "illumynt Appoints Anthony Giannetti as Senior Vice President of Global Operations",
+          "date": "2026-07-16 11:00",
+          "summary": "BOSTON, July 16, 2026--illumynt, a technology-driven leader in AI hardware lifecycle recovery and IT asset disposition (ITAD), today announced that Anthony \"Tony\" Giannetti has joined the company as S",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
+          "date": "2026-07-16 05:21",
+          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:06.406921"
     },
     "MU": {
       "insider_signal": {
@@ -287,7 +321,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:30.736989"
+      "scanned_at": "2026-07-16T13:06:07.413202"
     },
     "GOOGL": {
       "insider_signal": {
@@ -303,45 +337,143 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:31.972742"
+      "trump_mentions": [
+        {
+          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
+          "date": "2026-07-16 05:21",
+          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:08.827218"
     },
     "META": {
       "insider_signal": {
         "ticker": "META",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 9,
-        "net_open_market_value": -303875.0,
-        "net_open_market_fmt": "-$304K",
+        "open_market_sells": 10,
+        "compensation_grants": 0,
+        "net_open_market_value": -3145421.83,
+        "net_open_market_fmt": "-$3.1M",
         "largest_single_transaction": {
-          "name": "KIMMITT ROBERT M",
+          "name": "Olivan Javier",
           "direction": "sell",
-          "dollar_value": 303875.0,
-          "dollar_fmt": "$304K",
-          "date": "2026-07-01",
-          "shares_traded": 500,
-          "price_per_share": 607.75,
+          "dollar_value": 1246437.25,
+          "dollar_fmt": "$1.2M",
+          "date": "2026-07-06",
+          "shares_traded": 2076,
+          "price_per_share": 600.4033,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "KIMMITT ROBERT M",
+            "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 303875.0,
-            "dollar_fmt": "$304K",
-            "date": "2026-07-01",
-            "shares_traded": 500,
-            "price_per_share": 607.75,
+            "dollar_value": 104877.91,
+            "dollar_fmt": "$105K",
+            "date": "2026-07-06",
+            "shares_traded": 174,
+            "price_per_share": 602.7466,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 188853.04,
+            "dollar_fmt": "$189K",
+            "date": "2026-07-06",
+            "shares_traded": 314,
+            "price_per_share": 601.4428,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 441834.71,
+            "dollar_fmt": "$442K",
+            "date": "2026-07-06",
+            "shares_traded": 736,
+            "price_per_share": 600.3189,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 147600,
+            "dollar_fmt": "$148K",
+            "date": "2026-07-06",
+            "shares_traded": 246,
+            "price_per_share": 600,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 102600,
+            "dollar_fmt": "$103K",
+            "date": "2026-07-06",
+            "shares_traded": 171,
+            "price_per_share": 600,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 147600,
+            "dollar_fmt": "$148K",
+            "date": "2026-07-06",
+            "shares_traded": 246,
+            "price_per_share": 600,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 226588.28,
+            "dollar_fmt": "$227K",
+            "date": "2026-07-06",
+            "shares_traded": 376,
+            "price_per_share": 602.6284,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 490779.45,
+            "dollar_fmt": "$491K",
+            "date": "2026-07-06",
+            "shares_traded": 816,
+            "price_per_share": 601.4454,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 1246437.25,
+            "dollar_fmt": "$1.2M",
+            "date": "2026-07-06",
+            "shares_traded": 2076,
+            "price_per_share": 600.4033,
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:33.595536"
+      "trump_mentions": [
+        {
+          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
+          "date": "2026-07-16 05:21",
+          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:10.113978"
     },
     "AMZN": {
       "insider_signal": {
@@ -427,8 +559,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:34.773326"
+      "trump_mentions": [
+        {
+          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
+          "date": "2026-07-16 05:21",
+          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:11.036939"
     },
     "TSLA": {
       "insider_signal": {
@@ -485,7 +626,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:35.914893"
+      "scanned_at": "2026-07-16T13:06:12.199192"
     },
     "LLY": {
       "insider_signal": {
@@ -522,7 +663,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:37.023924"
+      "scanned_at": "2026-07-16T13:06:13.110468"
     },
     "UNH": {
       "insider_signal": {
@@ -538,17 +679,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Equities Fall Intraday, Oil Soars as Trump Reinstates Iranian Shipping Blockade in Hormuz",
-          "date": "2026-07-13 18:21",
-          "summary": "US benchmark equity indexes were lower intraday, while oil prices jumped as President Donald Trump s",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-15T12:57:38.204432"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-16T13:06:14.074518"
     },
     "JPM": {
       "insider_signal": {
@@ -604,8 +736,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:39.323154"
+      "trump_mentions": [
+        {
+          "headline": "Jamie Dimon Rules Out White House Run: 'I'm a Banker, I'm a New Yorker'",
+          "date": "2026-07-16 09:46",
+          "summary": "Jamie Dimon said the next chapter of his career after serving as CEO of JPMorgan Chase & Co could include writing books, teaching, and public policy, but ruled out any possibility of a future in polit",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-16T13:06:15.271584"
     },
     "GS": {
       "insider_signal": {
@@ -622,7 +763,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:40.439588"
+      "scanned_at": "2026-07-16T13:06:16.529508"
     },
     "XOM": {
       "insider_signal": {
@@ -639,7 +780,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:41.527258"
+      "scanned_at": "2026-07-16T13:06:18.007151"
     },
     "CVX": {
       "insider_signal": {
@@ -664,33 +805,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Gavin Newsom Unveils $3,500 California EV Rebate, Says State Is Filling 'Void Left by Trump'",
-          "date": "2026-07-14 04:12",
-          "summary": "Gavin Newsom&#39;s new EV rebate program targets first-time buyers with a $3,500 discount, pushing back against Trump&#39;s anti-EV stance.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil Surges As Trump Asserts Control Over Strait Of Hormuz; What Happens Now",
-          "date": "2026-07-13 21:35",
-          "summary": "Oil prices surged on Monday as President Donald Trump said the U.S. will reimpose a blockade on Iranian ports on Tuesday and provide other countries safe passage —for a fee — through the Strait of Hor",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Update: US Equity Indexes Slump, Crude Oil Soars as Trump Plans to Reinstate Iran Blockade, Impose 20% Toll on Hormuz Cargo",
-          "date": "2026-07-13 21:09",
-          "summary": "(Updates with index/price moves, analyst comments, and geopolitical news from the first paragraph.)",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-15T12:57:42.798948"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-16T13:06:18.868054"
     },
     "CAT": {
       "insider_signal": {
@@ -717,15 +833,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "FTSE 100 Live: Stocks flat as Trump says US to be 'guardian of Hormuz strait'",
-          "date": "2026-07-13 06:19",
-          "summary": "FTSE 100 up 1 point at 10,498 Oil prices hit 3-week high amid new US-Iran strikes Plus500, PageGroup, Oxford Nanopore post numbers 5.15pm: Investors cautious As investors eyed geopolitical development",
+          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
+          "date": "2026-07-16 05:21",
+          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-15T12:57:43.795514"
+      "scanned_at": "2026-07-16T13:06:19.748512"
     },
     "GE": {
       "insider_signal": {
@@ -751,7 +867,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:44.840344"
+      "scanned_at": "2026-07-16T13:06:20.609263"
     },
     "WMT": {
       "insider_signal": {
@@ -798,7 +914,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:45.984778"
+      "scanned_at": "2026-07-16T13:06:21.486925"
     },
     "COST": {
       "insider_signal": {
@@ -806,7 +922,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 1,
-        "compensation_grants": 0,
+        "compensation_grants": 1,
         "net_open_market_value": -847345.46,
         "net_open_market_fmt": "-$847K",
         "largest_single_transaction": {
@@ -835,7 +951,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:47.047341"
+      "scanned_at": "2026-07-16T13:06:22.327686"
     },
     "FCX": {
       "insider_signal": {
@@ -861,33 +977,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:48.035693"
+      "scanned_at": "2026-07-16T13:06:23.159135"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
-        "open_market_buys": 3,
+        "open_market_buys": 4,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 33414.56,
-        "net_open_market_fmt": "+$33K",
+        "net_open_market_value": 69598.79,
+        "net_open_market_fmt": "+$70K",
         "largest_single_transaction": {
-          "name": "CAMAREN JAMES LAWRENCE",
+          "name": "Arnaboldi Nicole S",
           "direction": "buy",
-          "dollar_value": 23510.76,
-          "dollar_fmt": "$24K",
-          "date": "2026-06-15",
-          "shares_traded": 273,
-          "price_per_share": 86.12,
+          "dollar_value": 36184.23,
+          "dollar_fmt": "$36K",
+          "date": "2026-07-07",
+          "shares_traded": 409,
+          "price_per_share": 88.47,
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:49.022836"
+      "scanned_at": "2026-07-16T13:06:23.986068"
     },
     "PLD": {
       "insider_signal": {
@@ -904,7 +1020,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-15T12:57:50.000767"
+      "scanned_at": "2026-07-16T13:06:24.847437"
     }
   }
 }
