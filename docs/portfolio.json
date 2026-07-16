@@ -648,7 +648,7 @@
       "qty": 2,
       "conviction": "low",
       "score": 1.15,
-      "sector": "",
+      "sector": "Healthcare",
       "sector_rank": "N/A",
       "stop_loss": 508.53,
       "take_profit": 575.44,

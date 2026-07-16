@@ -29,6 +29,7 @@ Usage:
 """
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta
@@ -514,9 +515,9 @@ def _size_position(
 def _extract_signal(text: str) -> str:
     if not text:
         return ""
-    first = text.strip().split('\n')[0].upper()
-    for kw in ("BUY", "BULLISH", "SELL", "BEARISH", "HOLD", "NEUTRAL"):
-        if kw in first:
+    upper = text.upper()
+    for kw in ("BULLISH", "BUY", "BEARISH", "SELL", "NEUTRAL", "HOLD"):
+        if re.search(r'\b' + kw + r'\b', upper):
             return kw.lower()
     return ""
 
@@ -720,6 +721,7 @@ def main():
     try:
         universe_picks = get_top_movers_by_sector(n_per_sector=2)
         dynamic_stocks = list(dict.fromkeys(t for tickers in universe_picks.values() for t in tickers))
+        TICKER_SECTOR.update({t: sec for sec, tickers in universe_picks.items() for t in tickers})
         universe_note = format_universe_summary(universe_picks)
     except Exception as e:
         print(f"[morning] Universe scan failed: {e} — falling back to static WATCHLIST")
