@@ -24,6 +24,7 @@ from tools.market_regime import get_full_regime
 from tools.sector_analysis import get_sector_strength, format_sector_heatmap
 from tools.session_manager import get_portfolio, get_session_day
 from tools.telegram_bot import broadcast_message
+from tools.agent_tracker import update_portfolio_tracker, format_ic_report
 
 from datetime import timedelta
 
@@ -199,6 +200,15 @@ def main():
         lines.append(format_sector_heatmap(sector_strength))
     except Exception as e:
         print(f"[weekly] Sector strength error: {e}")
+
+    # Agent IC report — appended when data is available (Phase 3+)
+    try:
+        update_portfolio_tracker(portfolio)
+        ic_report = format_ic_report(portfolio)
+        if ic_report:
+            lines.append("\n" + ic_report)
+    except Exception as e:
+        print(f"[weekly] IC report error: {e}")
 
     broadcast_message("\n".join(lines))
     print("[weekly] Briefing sent.")
