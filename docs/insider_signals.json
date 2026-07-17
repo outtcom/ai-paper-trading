@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-16",
-  "last_notified_date": "2026-07-16",
+  "date": "2026-07-17",
+  "last_notified_date": "2026-07-17",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -36,25 +36,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "illumynt Appoints Anthony Giannetti as Senior Vice President of Global Operations",
-          "date": "2026-07-16 11:00",
-          "summary": "BOSTON, July 16, 2026--illumynt, a technology-driven leader in AI hardware lifecycle recovery and IT asset disposition (ITAD), today announced that Anthony \"Tony\" Giannetti has joined the company as S",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "US lawmakers urge Trump administration to ban Chinese memory chips",
-          "date": "2026-07-16 10:00",
-          "summary": "The US House China committee chair has urged the Trump administration to ban US companies from buying memory chips from CXMT and YMTC to avoid...",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-16T13:06:04.224261"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-17T12:47:10.465128"
     },
     "NVDA": {
       "insider_signal": {
@@ -151,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:05.282242"
+      "scanned_at": "2026-07-17T12:47:11.300354"
     },
     "MSFT": {
       "insider_signal": {
@@ -176,25 +159,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "illumynt Appoints Anthony Giannetti as Senior Vice President of Global Operations",
-          "date": "2026-07-16 11:00",
-          "summary": "BOSTON, July 16, 2026--illumynt, a technology-driven leader in AI hardware lifecycle recovery and IT asset disposition (ITAD), today announced that Anthony \"Tony\" Giannetti has joined the company as S",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
-          "date": "2026-07-16 05:21",
-          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-16T13:06:06.406921"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-17T12:47:12.105332"
     },
     "MU": {
       "insider_signal": {
@@ -321,7 +287,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:07.413202"
+      "scanned_at": "2026-07-17T12:47:12.802589"
     },
     "GOOGL": {
       "insider_signal": {
@@ -337,17 +303,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
-          "date": "2026-07-16 05:21",
-          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-16T13:06:08.827218"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-17T12:47:13.607865"
     },
     "META": {
       "insider_signal": {
@@ -463,17 +420,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
-          "date": "2026-07-16 05:21",
-          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-16T13:06:10.113978"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-17T12:47:14.536685"
     },
     "AMZN": {
       "insider_signal": {
@@ -559,17 +507,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
-          "date": "2026-07-16 05:21",
-          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-16T13:06:11.036939"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-17T12:47:15.241908"
     },
     "TSLA": {
       "insider_signal": {
@@ -626,16 +565,16 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:12.199192"
+      "scanned_at": "2026-07-17T12:47:16.023292"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 8,
+        "open_market_buys": 4,
         "open_market_sells": 1,
         "compensation_grants": 0,
-        "net_open_market_value": -2790533.74,
+        "net_open_market_value": -2834009.7,
         "net_open_market_fmt": "-$2.8M",
         "largest_single_transaction": {
           "name": "Yuffa Ilya",
@@ -663,7 +602,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:13.110468"
+      "scanned_at": "2026-07-17T12:47:16.696542"
     },
     "UNH": {
       "insider_signal": {
@@ -680,7 +619,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:14.074518"
+      "scanned_at": "2026-07-17T12:47:17.475595"
     },
     "JPM": {
       "insider_signal": {
@@ -738,15 +677,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Jamie Dimon Rules Out White House Run: 'I'm a Banker, I'm a New Yorker'",
-          "date": "2026-07-16 09:46",
-          "summary": "Jamie Dimon said the next chapter of his career after serving as CEO of JPMorgan Chase & Co could include writing books, teaching, and public policy, but ruled out any possibility of a future in polit",
+          "headline": "Trump Presses General Dynamics as $1.5 Trillion Defense Budget Advances",
+          "date": "2026-07-16 19:38",
+          "summary": "President urges faster weapons production while highlighting defense investment and manufacturing expansion.",
           "source": "Yahoo",
-          "keyword_matched": "white house",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-16T13:06:15.271584"
+      "scanned_at": "2026-07-17T12:47:18.198737"
     },
     "GS": {
       "insider_signal": {
@@ -763,7 +702,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:16.529508"
+      "scanned_at": "2026-07-17T12:47:18.945838"
     },
     "XOM": {
       "insider_signal": {
@@ -780,7 +719,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:18.007151"
+      "scanned_at": "2026-07-17T12:47:19.594180"
     },
     "CVX": {
       "insider_signal": {
@@ -806,7 +745,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:18.868054"
+      "scanned_at": "2026-07-17T12:47:20.257427"
     },
     "CAT": {
       "insider_signal": {
@@ -841,7 +780,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-16T13:06:19.748512"
+      "scanned_at": "2026-07-17T12:47:20.925499"
     },
     "GE": {
       "insider_signal": {
@@ -867,7 +806,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:20.609263"
+      "scanned_at": "2026-07-17T12:47:21.605016"
     },
     "WMT": {
       "insider_signal": {
@@ -914,7 +853,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:21.486925"
+      "scanned_at": "2026-07-17T12:47:22.304523"
     },
     "COST": {
       "insider_signal": {
@@ -951,7 +890,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:22.327686"
+      "scanned_at": "2026-07-17T12:47:22.955301"
     },
     "FCX": {
       "insider_signal": {
@@ -977,7 +916,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:23.159135"
+      "scanned_at": "2026-07-17T12:47:23.607120"
     },
     "NEE": {
       "insider_signal": {
@@ -1003,7 +942,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:23.986068"
+      "scanned_at": "2026-07-17T12:47:24.266525"
     },
     "PLD": {
       "insider_signal": {
@@ -1020,7 +959,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-16T13:06:24.847437"
+      "scanned_at": "2026-07-17T12:47:24.937492"
     }
   }
 }
