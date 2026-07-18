@@ -2,14 +2,37 @@ name: Weekly Intelligence Briefing
 
 on:
   schedule:
-    - cron: '0 21 * * 0'   # triggers 5:00 PM EDT; ~60 min GHA queue → arrives ~6:00 PM ET
+    - cron: '0 21 * * 0'   # 5:00 PM EDT Sunday; ~1–7h GHA queue → arrives ~6 PM–midnight ET
   workflow_dispatch:         # allow manual trigger
 
 permissions:
   contents: write
 
 jobs:
+  dst-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - name: Check DST window
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
+          # Target: 6:00 PM ET. Accept: 9:00 AM–midnight (540–1440 min). Wide window for 1h–7h GHA queue.
+          if [ $MINS -ge 540 ] && [ $MINS -le 1440 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 9:00 AM–midnight window, skipping."
+          fi
+
   weekly-briefing:
+    needs: dst-gate
+    if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:

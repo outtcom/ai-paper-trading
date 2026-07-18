@@ -12,6 +12,7 @@ import math
 import os
 import statistics
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 
 # Absolute path to docs/portfolio.json, resolved relative to this file's location
 _TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -387,7 +388,7 @@ def open_position(
         "highest_price": round(entry_price, 2),  # for trailing stop (longs)
         "lowest_price": round(entry_price, 2),   # for trailing stop (shorts)
         "partial_taken": False,
-        "opened_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "opened_date": datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d"),
         "journal_note": journal_note,
     }
     _save(p)

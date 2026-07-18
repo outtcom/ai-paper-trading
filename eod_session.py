@@ -124,8 +124,11 @@ def _check_tp_sl(portfolio: dict) -> list:
     for ticker, pos in list(portfolio["positions"].items()):
         try:
             price     = get_latest_price(ticker)
-            tp        = pos["take_profit"]
-            sl        = pos["stop_loss"]
+            tp        = pos.get("take_profit")
+            sl        = pos.get("stop_loss")
+            if tp is None or sl is None:
+                print(f"[eod] {ticker}: no TP/SL stored — holding (legacy position)")
+                continue
             direction = pos.get("direction", "long")
 
             if direction == "short":
@@ -264,7 +267,7 @@ def _agent_line(journal: list, ticker: str) -> str:
     if not signals:
         return ""
     aligned = []
-    if "buy" in str(signals.get("fundamental", "")).lower():
+    if any(k in str(signals.get("fundamental", "")).lower() for k in ("buy", "bullish")):
         aligned.append("Fund ✓")
     if any(k in str(signals.get("technical", "")).lower() for k in ("bullish", "buy")):
         aligned.append("Tech ✓")

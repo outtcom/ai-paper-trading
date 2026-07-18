@@ -22,12 +22,12 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: ~10:30 AM ET. Accept: 8:00 AM–3:00 PM (480–900 min). Wide for GHA queue variance.
-          if [ $MINS -ge 480 ] && [ $MINS -le 900 ]; then
+          # Target: ~10:30 AM ET. Accept: 8:00 AM–4:00 PM (480–960 min). Wide for GHA queue variance.
+          if [ $MINS -ge 480 ] && [ $MINS -le 960 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:00 AM–3:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:00 AM–4:00 PM window, skipping."
           fi
 
   midcap-scan:
@@ -69,6 +69,13 @@ jobs:
 
       - name: Run mid-cap scan
         run: python midcap_scan.py
+
+      - name: Commit portfolio changes
+        run: |
+          git add docs/portfolio.json || true
+          git diff --staged --quiet || git commit -m "auto: midcap_scan $(date +%Y-%m-%d)"
+          git pull --rebase -X ours
+          git push
 
       - name: Notify failure
         if: failure()

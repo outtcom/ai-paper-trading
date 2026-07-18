@@ -13,20 +13,18 @@ This is the Sunday evening brief — read it before Monday open.
 """
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import WATCHLIST, STOCKS, CRYPTO
-from tools.market_data import get_latest_price, get_ohlcv
+from tools.market_data import get_ohlcv
 from tools.market_regime import get_full_regime
 from tools.sector_analysis import get_sector_strength, format_sector_heatmap
 from tools.session_manager import get_portfolio, get_session_day
 from tools.telegram_bot import broadcast_message
 from tools.agent_tracker import update_portfolio_tracker, format_ic_report
-
-from datetime import timedelta
 
 
 def _trend_emoji(above_ma50, above_ma200):
@@ -203,7 +201,7 @@ def main():
 
     # Agent IC report — appended when data is available (Phase 3+)
     try:
-        update_portfolio_tracker(portfolio)
+        portfolio = update_portfolio_tracker(portfolio)
         ic_report = format_ic_report(portfolio)
         if ic_report:
             lines.append("\n" + ic_report)

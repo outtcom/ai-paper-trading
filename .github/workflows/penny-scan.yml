@@ -24,12 +24,12 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: 9:30 AM ET. Accept: 8:30 AM–2:00 PM (510–840 min).
-          if [ $MINS -ge 510 ] && [ $MINS -le 840 ]; then
+          # Target: 9:30 AM ET. Accept: 5:00 AM–1:00 PM (300–780 min). Wide window for 2h–10h GHA queue.
+          if [ $MINS -ge 300 ] && [ $MINS -le 780 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:30 AM–2:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 5:00 AM–1:00 PM window, skipping."
           fi
 
   penny-scan:
@@ -71,6 +71,13 @@ jobs:
 
       - name: Run penny stock scan
         run: python penny_scan.py
+
+      - name: Commit portfolio changes
+        run: |
+          git add docs/portfolio.json || true
+          git diff --staged --quiet || git commit -m "auto: penny_scan $(date +%Y-%m-%d)"
+          git pull --rebase -X ours
+          git push
 
       - name: Notify failure
         if: failure()

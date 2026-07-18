@@ -46,9 +46,9 @@ def _parse_directional(sig: str) -> str:
 
 def _parse_sentiment(sig: str) -> str:
     s = sig.lower()
-    if any(k in s for k in ("positive", "bullish", "optimistic")):
+    if any(k in s for k in ("positive", "bullish", "optimistic", "buy")):
         return "bullish"
-    if any(k in s for k in ("negative", "bearish", "pessimistic")):
+    if any(k in s for k in ("negative", "bearish", "pessimistic", "sell")):
         return "bearish"
     return "neutral"
 

@@ -50,7 +50,7 @@ from config import (
 from agents import strategy_consultant
 from orchestrator import run_pipeline
 from tools.health_check import run as run_health_check, check_pipeline_errors
-from tools.market_data import get_latest_price, get_ohlcv, _yahoo_direct_ohlcv
+from tools.market_data import get_latest_price, get_ohlcv
 from tools.market_regime import (
     get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked,
     get_vix_roc, get_hyg_signal, had_earnings_recently,
@@ -730,6 +730,17 @@ def main():
     daily_watchlist = dynamic_stocks + INDEX_ETFS + CRYPTO
     print(f"[morning] Daily watchlist: {len(daily_watchlist)} tickers ({len(dynamic_stocks)} stocks + {len(INDEX_ETFS)} ETFs + {len(CRYPTO)} crypto)")
 
+    # Earnings check for dynamic universe picks (static WATCHLIST was already checked above)
+    for _dt in dynamic_stocks:
+        if _dt not in earnings_blocked:
+            _e = has_earnings_soon(_dt, days=5)
+            if _e.get("has_earnings"):
+                earnings_blocked.add(_dt)
+                print(f"[morning] {_dt}: earnings soon — blocked (dynamic pick)")
+            elif had_earnings_recently(_dt, days=2):
+                earnings_blocked.add(_dt)
+                print(f"[morning] {_dt}: recent earnings — blocked (dynamic pick)")
+
     # ── Strategy Consultant: daily macro brief ────────────────────────────
     print("[morning] Running Strategy Consultant...")
     vix_data_for_brief = {
@@ -791,7 +802,7 @@ def main():
         _llm_ran   = _skip is None
         _fm_order  = _s.get("final_order", {})
         _trader    = _s.get("trader_decision", {})
-        _risk      = _s.get("risk_assessment", {})
+        _risk      = _s.get("risk_adjusted_decision", {})
         _fm_action = _fm_order.get("action")
         audit_log[_t] = {
             "date":               today,
@@ -801,7 +812,7 @@ def main():
             "llm_started":        _llm_ran,
             "trader_action":      _trader.get("action")      if _llm_ran else None,
             "trader_conviction":  _trader.get("conviction")  if _llm_ran else None,
-            "risk_approved":      _risk.get("approved")      if _llm_ran else None,
+            "risk_approved":      (_risk.get("risk_assessment") == "approved") if _llm_ran else None,
             "fm_action":          _fm_action                 if _llm_ran else None,
             "fm_rejection_reason": (
                 _fm_order.get("final_reasoning") or _fm_order.get("reasoning")
@@ -939,12 +950,13 @@ def main():
         if ticker in audit_log:
             audit_log[ticker]["executed"] = True
 
+        _ra = state.get("risk_adjusted_decision", {}).get("risk_assessment")
         agent_signals = {
             "fundamental":       _extract_signal(state.get("fundamental_report", "")),
             "technical":         _extract_signal(state.get("technical_report", "")),
             "sentiment":         _extract_signal(state.get("sentiment_report", "")),
             "trader_conviction": state.get("trader_decision", {}).get("conviction", ""),
-            "risk_approved":     state.get("risk_adjusted_decision", {}).get("risk_assessment", None),
+            "risk_approved":     (_ra == "approved") if _ra is not None else None,
         }
 
         add_journal_entry({
