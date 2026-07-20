@@ -4,10 +4,10 @@
     "current_day": 18,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-17T19:30:55.620231+00:00",
+    "last_updated": "2026-07-20T13:39:34.496264+00:00",
     "session_number": 3
   },
-  "cash": 3807.93,
+  "cash": 2438.49,
   "initial_capital": 5000.0,
   "equity": 4875.37,
   "peak_equity": 5033.78,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -3.51,
-    "sortino": -4.65,
-    "calmar": -6.46,
+    "sharpe": -3.45,
+    "sortino": -4.49,
+    "calmar": -6.26,
     "max_drawdown_pct": 3.15,
     "spy_start_price": 754.99,
     "spy_current_price": 743.3,
@@ -42,6 +42,40 @@
       "partial_taken": false,
       "opened_date": "2026-07-16",
       "journal_note": "STEP 2 mandates BUY: market posture is risk-on and capital deployment priority is HIGH. TMO is in the Healthcare focus sector with the portfolio 100% cash on Day 16 and -0.6% alpha drag \u2014 HOLD is an active bet against equities that is losing daily. The trader flags valid concerns: RSI at 73.15 (overbought), price ~8.4% above 50-day EMA at $493.91, and PE of 29.79x above peers. I agree the technical setup is stretched, so I'm sizing this as a small starter position (~4.3% of portfolio, ~4 shares near $535) rather than full deployment \u2014 the risk_seeking perspective's 5% recommendation is the right framework here. Stop-loss at 5% (~$508, near the 20-day EMA support at $509.88) gives a clean technical exit. Upside target is $553+ resistance breakout (potential +3-4%), while downside is capped at ~$27/share loss with the stop. This gets capital working in a leading sector while respecting the overbought condition with minimal sizing."
+    },
+    "BAC": {
+      "direction": "long",
+      "qty": 13,
+      "entry_price": 60.99,
+      "cost_basis": 792.87,
+      "last_price": 60.99,
+      "stop_loss": 57.94,
+      "take_profit": 67.09,
+      "partial_profit_price": 64.04,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 60.99,
+      "lowest_price": 60.99,
+      "partial_taken": false,
+      "opened_date": "2026-07-20",
+      "journal_note": "BAC is in a confirmed uptrend at $61.11, trading above both 20d EMA ($59.15) and 50d EMA ($57.04) with a fresh bullish MACD crossover (1.57 vs signal 1.51), and the stock sits in Financials \u2014 a focus sector per the strategy brief. At a P/E of 14.09 vs sector average ~16x, there's valuation re-rating room of ~14% to fair value, while downside is capped at ~$58.05 (5% stop below the 20d EMA support), giving roughly 2:1 upside/downside asymmetry targeting the upper Bollinger Band at $62.10 near-term and beyond. The risk team approved at 5% with all three perspectives aligned on a buy; the conservative view flagged modest revenue growth but that doesn't override the technical momentum and sector tailwind. Sizing at 5% (~$434 / 7 shares) is appropriate given the 75% position sizing discipline and our need to close the -0.9% alpha gap with high-conviction Financials exposure."
+    },
+    "PM": {
+      "direction": "long",
+      "qty": 3,
+      "entry_price": 192.19,
+      "cost_basis": 576.57,
+      "last_price": 192.19,
+      "stop_loss": 182.58,
+      "take_profit": 211.41,
+      "partial_profit_price": 201.8,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 192.19,
+      "lowest_price": 192.19,
+      "partial_taken": false,
+      "opened_date": "2026-07-20",
+      "journal_note": "PM is trading at $192.78, having broken above both the 20-day EMA ($183.81) and 50-day EMA ($181.70) with RSI at 60.9 \u2014 trending bullish but not overbought, providing room for continuation. The primary signal is the MACD histogram positive at 1.11 with price coiling just below the upper Bollinger Band at $193.05, where a clean breakout would accelerate momentum. The risk-conservative perspective flagged PM's high debt-to-equity ratio, but I agree with the neutral and risk-seeking perspectives that the 575% ROE and 8.57% 3-year revenue growth reflect PM's asset-light tobacco model rather than distress, and insider purchases at $169.93 in May confirm management conviction. Upside target is a breakout above $193 toward $200+ (3.7%+ move), while the 5% stop at ~$183.11 aligns with the 20-day EMA support zone, giving roughly 1:1 risk/reward on the initial move with potential for trend continuation. Position sized at 5% of portfolio (~$434) per the strategy brief's 75% sizing discipline in a neutral market posture with medium conviction."
     }
   },
   "open_orders": [
@@ -143,6 +177,28 @@
       "day": 16,
       "submitted_at": "2026-07-16T13:19:47.498701+00:00",
       "resolved_at": "2026-07-16T13:19:50.369755+00:00"
+    },
+    {
+      "ticker": "BAC",
+      "qty": 13,
+      "side": "BUY",
+      "price": 60.99,
+      "order_type": "market",
+      "status": "executed",
+      "day": 18,
+      "submitted_at": "2026-07-20T13:39:28.353602+00:00",
+      "resolved_at": "2026-07-20T13:39:30.400110+00:00"
+    },
+    {
+      "ticker": "PM",
+      "qty": 3,
+      "side": "BUY",
+      "price": 192.19,
+      "order_type": "market",
+      "status": "executed",
+      "day": 18,
+      "submitted_at": "2026-07-20T13:39:31.465790+00:00",
+      "resolved_at": "2026-07-20T13:39:33.612663+00:00"
     }
   ],
   "trade_history": [
@@ -406,6 +462,11 @@
     {
       "day": 17,
       "date": "2026-07-17",
+      "equity": 4875.37
+    },
+    {
+      "day": 18,
+      "date": "2026-07-20",
       "equity": 4875.37
     }
   ],
@@ -679,6 +740,66 @@
       },
       "prompt_version": "1.0.0",
       "timestamp": "2026-07-16T13:19:50.373490+00:00"
+    },
+    {
+      "date": "2026-07-20",
+      "day": 18,
+      "ticker": "BAC",
+      "action": "BUY",
+      "analysis_price": 60.99,
+      "entry_price": 60.99,
+      "price_delta_pct": 0.0,
+      "qty": 13,
+      "conviction": "medium",
+      "score": 2.4,
+      "sector": "Financials",
+      "sector_rank": 3,
+      "stop_loss": 57.94,
+      "take_profit": 67.09,
+      "vix_label": "MODERATE (18.1) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "BAC is in a confirmed uptrend at $61.11, trading above both 20d EMA ($59.15) and 50d EMA ($57.04) with a fresh bullish MACD crossover (1.57 vs signal 1.51), and the stock sits in Financials \u2014 a focus sector per the strategy brief. At a P/E of 14.09 vs sector average ~16x, there's valuation re-rating room of ~14% to fair value, while downside is capped at ~$58.05 (5% stop below the 20d EMA support), giving roughly 2:1 upside/downside asymmetry targeting the upper Bollinger Band at $62.10 near-term and beyond. The risk team approved at 5% with all three perspectives aligned on a buy; the conservative view flagged modest revenue growth but that doesn't override the technical momentum and sector tailwind. Sizing at 5% (~$434 / 7 shares) is appropriate given the 75% position sizing discipline and our need to close the -0.9% alpha gap with high-conviction Financials exposure.",
+      "bull_case": "Bank of America Corp (BAC) presents a compelling buy opportunity as it strategically positions itself amid the evolving banking landscape, especially with advancements in AI and operational efficiencies. \n\n**Fundamental Set Up**: With a P/E ratio of 14.09 and a solid return on equity (ROE) of 11.13%, BAC remains reasonably valued relative to its peers. Despite relatively stable revenue growth at 6.18%, the bank has consistently returned value to shareholders through dividends, with recent cash dividends affirming its commitment to rewarding investors.\n\n**Sentiment Shift**: Recently, BAC's executives have been vocal about successfully integrating AI, a trend that enhances operational prowess and potential profitability. This forward-thinking approach is echoed by the bullish outlook observed among Wall Street analysts following strong earnings in other banks, suggesting potential upward re-ratings for BAC alongside its peers.\n\n**Technical Catalysts**: Technically, BAC exhibits a bullish trend with its current price surpassing both the 20-day and 50-day EMAs. Additionally, the MACD signal and positioning near the upper Bollinger Band indicate a likely continuation of upward momentum, albeit with awareness of potential resistance levels. The aforementioned indicators highlight an environment favorable for breakout trading.\n\n### Key Risks:\nWhile there are risks, including insider selling and moderate liquidity concerns, these are not uncommon in a volatile market, particularly for a bank of BAC\u2019s stature. The high-level sell by CEO Moynihan requires attention but is mitigated by the absence of significant broader negativity.\n\n### Bull Catalysts:\n1. **AI Integration**: Enhanced efficiency from AI adoption can lead to improved margins and competitive positioning.\n2. **Stable Dividend Policy**: Ongoing dividend payments reflect strong cash flow management, attracting yield-seeking investors.\n3. **Positive Technical Momentum**: Bullish technical indicators suggest potential price appreciation, offering entry points for savvy investors.\n\nIn conclusion, BAC\u2019s budding AI initiatives, stable financial health, and favorable technical positioning collectively lay a strong foundation for growth, warranting a bullish outlook on its stock price in the near future.",
+      "bear_case": "While the bullish outlook for Bank of America Corp (BAC) presents several positive aspects, a closer examination reveals substantial risks that outweigh these potential benefits.\n\n**Fundamental Concerns**: Despite a P/E ratio of 14.09 and an ROE of 11.13%, the modest revenue growth of 0.62% raises red flags about the company\u2019s ability to accelerate earnings. The lack of detailed liquidity measurements, such as the current ratio, exacerbates concerns regarding short-term financial health, particularly as economic conditions may tighten. High leverage with a debt-to-equity ratio of 2.33 indicates an increased risk profile, especially if interest rates rise further or economic conditions worsen.\n\n**Sentiment Risks**: While the executives tout AI initiatives, the banking sector is notorious for amplifying economic downturns, and any missteps in technology integration could expose BAC to operational inefficiencies and reputational damage. The mixed insider activity\u2014especially the notable sell by CEO Moynihan\u2014suggests internal caution about near-term performance. This lack of faith from insiders can often be a precursor to negative sentiment among retail investors.\n\n**Technical Dangers**: Although BAC exhibits bullish momentum through technical indicators, this environment can be deceptive. Trading volume is significantly below average, indicating a lack of conviction in the stock\u2019s price movements\u2014suggesting that the recent upward trend might not sustain itself. The proximity to the upper Bollinger Band indicates potential overbought conditions, making it ripe for a price correction, especially given the heightened volatility.\n\n**In summary**: \n1. **Modest Revenue Growth**: Insufficient growth trajectory raises concerns about long-term earnings potential.\n2. **High Leverage**: Elevated debt levels increase financial vulnerability in uncertain economic conditions.\n3. **Weak Insider Confidence**: Notable insider selling hints at potential risks ahead, undermining overall market confidence.\n\nTaking these factors into account, the risks associated with BAC far outweigh the perceived positives, making a bearish stance more prudent at this juncture.",
+      "agent_signals": {
+        "fundamental": "neutral",
+        "technical": "bullish",
+        "sentiment": "bullish",
+        "trader_conviction": "medium",
+        "risk_approved": true
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-20T13:39:30.404593+00:00"
+    },
+    {
+      "date": "2026-07-20",
+      "day": 18,
+      "ticker": "PM",
+      "action": "BUY",
+      "analysis_price": 192.19,
+      "entry_price": 192.19,
+      "price_delta_pct": 0.0,
+      "qty": 3,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "Consumer Staples",
+      "sector_rank": 5,
+      "stop_loss": 182.58,
+      "take_profit": 211.41,
+      "vix_label": "MODERATE (18.1) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "PM is trading at $192.78, having broken above both the 20-day EMA ($183.81) and 50-day EMA ($181.70) with RSI at 60.9 \u2014 trending bullish but not overbought, providing room for continuation. The primary signal is the MACD histogram positive at 1.11 with price coiling just below the upper Bollinger Band at $193.05, where a clean breakout would accelerate momentum. The risk-conservative perspective flagged PM's high debt-to-equity ratio, but I agree with the neutral and risk-seeking perspectives that the 575% ROE and 8.57% 3-year revenue growth reflect PM's asset-light tobacco model rather than distress, and insider purchases at $169.93 in May confirm management conviction. Upside target is a breakout above $193 toward $200+ (3.7%+ move), while the 5% stop at ~$183.11 aligns with the 20-day EMA support zone, giving roughly 1:1 risk/reward on the initial move with potential for trend continuation. Position sized at 5% of portfolio (~$434) per the strategy brief's 75% sizing discipline in a neutral market posture with medium conviction.",
+      "bull_case": "Philip Morris International Inc. (PM) represents a compelling investment opportunity in the tobacco industry, given its strong fundamentals and favorable technical indicators. The company showcases outstanding profitability, reflected in an astonishing Return on Equity (ROE) of 575.44% and a robust gross margin of 67.3%, indicating its dominant pricing power. PM\u2019s steady revenue growth of 8.57% over the past three years solidifies its ongoing expansion in an evolving market.\n\nWhile the elevated debt-to-equity ratio of 80.98 does raise concerns about financial leverage, it is not atypical for the industry, and PM\u2019s strong cash flow generation can mitigate liquidity risks. Recent insider activities, particularly share acquisitions by key executives, signal confidence in the company\u2019s future, suggesting insiders are bullish on anticipated growth.\n\nTechnically, PM has established a bullish trend, trading above both its 20-day and 50-day EMAs, supported by a positive MACD signal. The RSI is currently neutral, suggesting room for upside movement without being overbought, while the current pricing near the upper Bollinger Band indicates potential for breakout momentum if volume picks up.\n\nWhile risks related to regulatory scrutiny and a general decline in traditional tobacco product demand persist, PM\u2019s committed transition towards reduced-risk products places it well to adapt and capture new market share.\n\n**Top 3 Bull Catalysts:**\n1. Continued revenue growth from reduced-risk products, aligning with evolving consumer preferences.\n2. Positive insider activity reflecting management\u2019s confidence and commitment to company performance.\n3. Technical indicators suggesting potential breakout opportunities, supported by momentum shifts when volume increases.",
+      "bear_case": "While the bull case for Philip Morris International Inc. (PM) might seem compelling on the surface, a closer examination reveals significant risks that outweigh these positives. \n\nFirst, the financial health metrics, despite showing strong profitability with a ROE of 575.44% and a gross margin of 67.3%, are undermined by a concerning debt-to-equity ratio of 80.98. Such high leverage increases PM\u2019s financial risk, especially in a climate of rising interest rates and potential economic downturns. Furthermore, the current ratio is below 1, highlighting potential liquidity issues that cast doubts on the company's ability to meet its short-term obligations.\n\nSecond, while revenue growth of 8.57% over the past three years appears steady, this growth is increasingly threatened by shifting consumer preferences away from traditional tobacco products. Regulatory pressures aimed at combustible products, especially with increasing public health advocacy, pose significant risks to future sales. Transitioning to reduced-risk products is not a guaranteed success, as market competition intensifies and consumer acceptance remains uncertain.\n\nTechnically, the current position of PM near the upper Bollinger Band indicates the stock may be overvalued, showing potential for a sharp correction. Coupled with a low volume of trading\u2014indicating weak investor conviction\u2014there's a heightened risk of sell-offs as market sentiment shifts. \n\nOverall, while the company has exhibited stellar historical performance, the looming threats from regulation, liquidity concerns, and market dynamics surrounding traditional tobacco demand significantly overshadow its growth narrative.\n\n**Top 3 Bear Risks:**\n1. Regulatory challenges could severely impact sales of traditional products, risking profitability.\n2. High financial leverage and liquidity risks may lead to unsustainable operations amidst economic downturns.\n3. Slowing demand for core products and increased competition in the reduced-risk segment could stymie growth prospects.",
+      "agent_signals": {
+        "fundamental": "bullish",
+        "technical": "bullish",
+        "sentiment": "",
+        "trader_conviction": "medium",
+        "risk_approved": true
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-20T13:39:33.618325+00:00"
     }
   ],
   "day_trade_signals_archive": [],
@@ -993,167 +1114,167 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 177.52,
-        "mom_5d": -4.22,
-        "mom_1m": -7.44,
-        "mom_3m": 16.77,
+        "price": 177.51,
+        "mom_5d": -2.08,
+        "mom_1m": -4.46,
+        "mom_3m": 14.85,
         "above_ma50": false,
-        "rsi_14": 42.9,
-        "score": -1.63,
+        "rsi_14": 41.4,
+        "score": 0.12,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 112.65,
-        "mom_5d": 1.94,
-        "mom_1m": 0.41,
-        "mom_3m": -5.2,
-        "above_ma50": true,
-        "rsi_14": 75.6,
-        "score": 0.75,
+        "price": 110.7,
+        "mom_5d": -0.8,
+        "mom_1m": 1.37,
+        "mom_3m": -6.78,
+        "above_ma50": false,
+        "rsi_14": 60.4,
+        "score": -0.91,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 117.34,
-        "mom_5d": 0.42,
-        "mom_1m": -1.04,
-        "mom_3m": -0.25,
-        "above_ma50": true,
-        "rsi_14": 64.2,
-        "score": 0.56,
+        "price": 115.98,
+        "mom_5d": -0.05,
+        "mom_1m": 0.42,
+        "mom_3m": -3.25,
+        "above_ma50": false,
+        "rsi_14": 45.5,
+        "score": -0.46,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 161.8,
+        "price": 161.04,
         "mom_5d": -0.23,
-        "mom_1m": 5.83,
-        "mom_3m": 10.36,
+        "mom_1m": 6.86,
+        "mom_3m": 9.24,
         "above_ma50": true,
-        "rsi_14": 61.3,
-        "score": 5.92,
+        "rsi_14": 50.7,
+        "score": 6.21,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 56.75,
-        "mom_5d": 2.18,
-        "mom_1m": 5.96,
-        "mom_3m": 9.07,
+        "price": 56.26,
+        "mom_5d": 0.34,
+        "mom_1m": 4.09,
+        "mom_3m": 6.9,
         "above_ma50": true,
-        "rsi_14": 78.2,
-        "score": 6.45,
+        "rsi_14": 70.9,
+        "score": 4.53,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 57.02,
-        "mom_5d": 4.01,
-        "mom_1m": 2.65,
-        "mom_3m": 0.78,
+        "price": 57.51,
+        "mom_5d": 1.36,
+        "mom_1m": 5.19,
+        "mom_3m": 4.43,
         "above_ma50": true,
-        "rsi_14": 68.0,
-        "score": 3.68,
+        "rsi_14": 73.3,
+        "score": 4.89,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 180.15,
-        "mom_5d": -0.53,
-        "mom_1m": 0.82,
-        "mom_3m": 5.77,
+        "price": 180.84,
+        "mom_5d": 0.26,
+        "mom_1m": 0.69,
+        "mom_3m": 3.99,
         "above_ma50": true,
-        "rsi_14": 40.0,
-        "score": 2.4,
+        "rsi_14": 44.5,
+        "score": 2.22,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 85.81,
-        "mom_5d": 3.14,
-        "mom_1m": 0.39,
-        "mom_3m": 5.38,
+        "price": 85.2,
+        "mom_5d": 0.72,
+        "mom_1m": 1.82,
+        "mom_3m": 3.41,
         "above_ma50": true,
-        "rsi_14": 57.4,
-        "score": 3.21,
+        "rsi_14": 53.4,
+        "score": 2.81,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 50.89,
-        "mom_5d": 1.25,
-        "mom_1m": -3.07,
-        "mom_3m": -1.66,
+        "price": 50.58,
+        "mom_5d": 0.01,
+        "mom_1m": -2.76,
+        "mom_3m": -3.15,
         "above_ma50": false,
-        "rsi_14": 42.1,
-        "score": -1.49,
+        "rsi_14": 49.3,
+        "score": -2.01,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 45.47,
-        "mom_5d": 0.75,
-        "mom_1m": 1.63,
-        "mom_3m": -1.9,
+        "price": 45.45,
+        "mom_5d": -0.59,
+        "mom_1m": 2.23,
+        "mom_3m": -0.66,
         "above_ma50": true,
-        "rsi_14": 46.6,
-        "score": 1.66,
+        "rsi_14": 44.9,
+        "score": 1.81,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.46,
-        "mom_5d": 2.78,
-        "mom_1m": 1.04,
-        "mom_3m": 3.77,
+        "price": 45.38,
+        "mom_5d": 1.52,
+        "mom_1m": 3.21,
+        "mom_3m": 1.66,
         "above_ma50": true,
-        "rsi_14": 57.3,
-        "score": 3.11,
+        "rsi_14": 54.5,
+        "score": 3.39,
         "sector": "Real Estate"
       }
     },
     "ranking": [
-      "Financials",
       "Healthcare",
       "Energy",
-      "Consumer Staples",
+      "Financials",
       "Real Estate",
+      "Consumer Staples",
       "Industrials",
       "Utilities",
-      "Communication Services",
+      "Technology",
       "Consumer Discretionary",
-      "Materials",
-      "Technology"
+      "Communication Services",
+      "Materials"
     ],
     "top_3": [
-      "Financials",
       "Healthcare",
-      "Energy"
+      "Energy",
+      "Financials"
     ],
     "bottom_3": [
       "Consumer Discretionary",
-      "Materials",
-      "Technology"
+      "Communication Services",
+      "Materials"
     ],
-    "as_of": "2026-07-17"
+    "as_of": "2026-07-20"
   },
   "strategy_brief": {
     "market_posture": "neutral",
     "risk_budget_multiplier": 1.1,
     "focus_sectors": [
-      "Financials",
       "Healthcare",
-      "Energy"
+      "Energy",
+      "Financials"
     ],
     "avoid_sectors": [
       "Consumer Discretionary",
-      "Materials",
-      "Technology"
+      "Communication Services",
+      "Materials"
     ],
-    "target_new_positions": 1,
+    "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "SPY trend remains bullish with credit conditions healthy, but the sharp 22.9% VIX RoC warrants measured sizing at 75% \u2014 lean into existing momentum leaders (Financials, Healthcare, Energy) while selectively adding one high-conviction position to close the -1.0% alpha gap. Existing GS and TMO are well-aligned with leading sectors; new capital should reinforce sector leadership rather than chase laggards.",
+    "primary_thesis": "SPY trend remains bullish with credit conditions intact, but VIX sits just above the 18 green-light threshold with accelerating upside momentum (+5.7% RoC), warranting 75% position sizing discipline while deploying into leading sectors to close the -0.9% alpha gap. Priority is adding 1-2 high-conviction names in Healthcare, Energy, or Financials to build exposure efficiently without chasing volatility.",
     "capital_deployment_priority": "normal",
     "day_trade_go": false
   },
@@ -1164,7 +1285,7 @@
     },
     "QQQ": {
       "action": "hold",
-      "confidence": 0.65
+      "confidence": 0.35
     },
     "IWM": {
       "action": "hold",
