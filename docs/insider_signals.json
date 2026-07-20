@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-17",
-  "last_notified_date": "2026-07-17",
+  "date": "2026-07-20",
+  "last_notified_date": "2026-07-20",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:10.465128"
+      "scanned_at": "2026-07-20T13:29:34.218511"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:11.300354"
+      "scanned_at": "2026-07-20T13:29:35.418741"
     },
     "MSFT": {
       "insider_signal": {
@@ -160,7 +160,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:12.105332"
+      "scanned_at": "2026-07-20T13:29:36.605051"
     },
     "MU": {
       "insider_signal": {
@@ -287,7 +287,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:12.802589"
+      "scanned_at": "2026-07-20T13:29:37.754583"
     },
     "GOOGL": {
       "insider_signal": {
@@ -304,7 +304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:13.607865"
+      "scanned_at": "2026-07-20T13:29:38.919204"
     },
     "META": {
       "insider_signal": {
@@ -420,18 +420,27 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:14.536685"
+      "trump_mentions": [
+        {
+          "headline": "Marco Rubio Says President Lula 'Put His Ego Ahead of Making a Deal' as Trump Slaps Brazil With 25% Tariffs",
+          "date": "2026-07-18 23:31",
+          "summary": "The Trump Administration announced a 25% tariff on most Brazilian imports late Wednesday, effective July 22. The U.S. has invoked Section 301 of the Trade Act of 1974, targeting certain Brazilian prac",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-20T13:29:40.249298"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 6,
-        "compensation_grants": 4,
-        "net_open_market_value": -4755640.16,
-        "net_open_market_fmt": "-$4.8M",
+        "open_market_sells": 3,
+        "compensation_grants": 0,
+        "net_open_market_value": -2995233.1,
+        "net_open_market_fmt": "-$3.0M",
         "largest_single_transaction": {
           "name": "Zapolsky David",
           "direction": "sell",
@@ -472,43 +481,13 @@
             "shares_traded": 9270,
             "price_per_share": 268.53,
             "transaction_code": ""
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 115022.64,
-            "dollar_fmt": "$115K",
-            "date": "2026-05-21",
-            "shares_traded": 433,
-            "price_per_share": 265.6412,
-            "transaction_code": ""
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 671374.43,
-            "dollar_fmt": "$671K",
-            "date": "2026-05-21",
-            "shares_traded": 2534,
-            "price_per_share": 264.9465,
-            "transaction_code": ""
-          },
-          {
-            "name": "Garman Matthew S",
-            "direction": "sell",
-            "dollar_value": 974009.99,
-            "dollar_fmt": "$974K",
-            "date": "2026-05-21",
-            "shares_traded": 3689,
-            "price_per_share": 264.0309,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:15.241908"
+      "scanned_at": "2026-07-20T13:29:41.403814"
     },
     "TSLA": {
       "insider_signal": {
@@ -565,7 +544,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:16.023292"
+      "scanned_at": "2026-07-20T13:29:42.576434"
     },
     "LLY": {
       "insider_signal": {
@@ -602,7 +581,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:16.696542"
+      "scanned_at": "2026-07-20T13:29:43.687097"
     },
     "UNH": {
       "insider_signal": {
@@ -619,17 +598,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:17.475595"
+      "scanned_at": "2026-07-20T13:29:44.751943"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 2,
+        "open_market_sells": 1,
         "compensation_grants": 4,
-        "net_open_market_value": -3268963.23,
-        "net_open_market_fmt": "-$3.3M",
+        "net_open_market_value": -1627107.65,
+        "net_open_market_fmt": "-$1.6M",
         "largest_single_transaction": {
           "name": "Friedman Stacey",
           "direction": "sell",
@@ -660,16 +639,6 @@
             "shares_traded": 5467,
             "price_per_share": 330.7337,
             "transaction_code": ""
-          },
-          {
-            "name": "Friedman Stacey",
-            "direction": "sell",
-            "dollar_value": 1641855.58,
-            "dollar_fmt": "$1.6M",
-            "date": "2026-05-20",
-            "shares_traded": 5468,
-            "price_per_share": 300.2662,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
@@ -677,15 +646,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Presses General Dynamics as $1.5 Trillion Defense Budget Advances",
-          "date": "2026-07-16 19:38",
-          "summary": "President urges faster weapons production while highlighting defense investment and manufacturing expansion.",
+          "headline": "Bernie Sanders Says Trump 'Lied' About 10% Credit Card Rate Cap, Points to Big Banks Making Billions Charging 25-30% Interest Rates",
+          "date": "2026-07-19 01:31",
+          "summary": "Sen. Bernie Sanders (I-Vt) on Wednesday said President Donald Trump lied about his promise to cap credit card interest rates at 10% while major banks continued to earn billions from consumer lending. ",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-17T12:47:18.198737"
+      "scanned_at": "2026-07-20T13:29:45.852060"
     },
     "GS": {
       "insider_signal": {
@@ -702,7 +671,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:18.945838"
+      "scanned_at": "2026-07-20T13:29:46.992725"
     },
     "XOM": {
       "insider_signal": {
@@ -719,7 +688,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:19.594180"
+      "scanned_at": "2026-07-20T13:29:47.996885"
     },
     "CVX": {
       "insider_signal": {
@@ -745,7 +714,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:20.257427"
+      "scanned_at": "2026-07-20T13:29:49.038632"
     },
     "CAT": {
       "insider_signal": {
@@ -770,17 +739,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Michael Burry Mocks Data Center 'Fantasy’ In ORCL, NVDA, AMZN — But Trump Sees ‘Big, Strong, Bold’ Money Machines",
-          "date": "2026-07-16 05:21",
-          "summary": "Burry has previously said that Nvidia’s $117 billion in inventory and supplier commitments leave it exposed to an AI spending slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-17T12:47:20.925499"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-20T13:29:50.051017"
     },
     "GE": {
       "insider_signal": {
@@ -806,7 +766,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:21.605016"
+      "scanned_at": "2026-07-20T13:29:51.296563"
     },
     "WMT": {
       "insider_signal": {
@@ -853,7 +813,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:22.304523"
+      "scanned_at": "2026-07-20T13:29:52.366314"
     },
     "COST": {
       "insider_signal": {
@@ -890,7 +850,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:22.955301"
+      "scanned_at": "2026-07-20T13:29:53.421108"
     },
     "FCX": {
       "insider_signal": {
@@ -916,7 +876,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:23.607120"
+      "scanned_at": "2026-07-20T13:29:54.393888"
     },
     "NEE": {
       "insider_signal": {
@@ -942,7 +902,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:24.266525"
+      "scanned_at": "2026-07-20T13:29:55.444764"
     },
     "PLD": {
       "insider_signal": {
@@ -959,7 +919,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-17T12:47:24.937492"
+      "scanned_at": "2026-07-20T13:29:56.439782"
     }
   }
 }
