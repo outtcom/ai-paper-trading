@@ -14,7 +14,6 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import WATCHLIST
-from tools.market_data import _yahoo_direct_ohlcv
 from tools.market_regime import get_premarket_gaps, is_event_blocked
 from tools.session_manager import get_portfolio
 from tools.telegram_bot import broadcast_message

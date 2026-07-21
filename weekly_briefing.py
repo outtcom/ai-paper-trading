@@ -22,7 +22,7 @@ from config import WATCHLIST, STOCKS, CRYPTO
 from tools.market_data import get_ohlcv
 from tools.market_regime import get_full_regime
 from tools.sector_analysis import get_sector_strength, format_sector_heatmap
-from tools.session_manager import get_portfolio, get_session_day
+from tools.session_manager import get_portfolio, get_session_day, save_portfolio
 from tools.telegram_bot import broadcast_message
 from tools.agent_tracker import update_portfolio_tracker, format_ic_report
 
@@ -202,6 +202,7 @@ def main():
     # Agent IC report — appended when data is available (Phase 3+)
     try:
         portfolio = update_portfolio_tracker(portfolio)
+        save_portfolio(portfolio)
         ic_report = format_ic_report(portfolio)
         if ic_report:
             lines.append("\n" + ic_report)

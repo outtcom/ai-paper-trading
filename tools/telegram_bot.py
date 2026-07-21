@@ -35,13 +35,17 @@ def send_private_only(text: str) -> dict:
 def send_message(text: str, chat_id: str = None) -> dict:
     """Send a plain HTML-formatted message to the given chat (defaults to private chat)."""
     target = chat_id or _CHAT_ID
-    resp = requests.post(
-        f"{_BASE}/sendMessage",
-        json={"chat_id": target, "text": text + _FOOTER, "parse_mode": "HTML",
-              "disable_web_page_preview": True},
-        timeout=15,
-    )
-    return resp.json()
+    try:
+        resp = requests.post(
+            f"{_BASE}/sendMessage",
+            json={"chat_id": target, "text": text + _FOOTER, "parse_mode": "HTML",
+                  "disable_web_page_preview": True},
+            timeout=15,
+        )
+        return resp.json()
+    except Exception as e:
+        print(f"[telegram] send_message failed: {e}")
+        return {"ok": False, "error": str(e)}
 
 
 def broadcast_message(text: str) -> dict:
@@ -277,34 +281,34 @@ def send_full_agent_chain(state: dict) -> None:
             return f"<code>{_json.dumps(text, indent=2)[:3000]}</code>"
         return str(text).strip()
 
-    # Message 1/3 — Fundamental + Sentiment
+    # Message 1/3 — Fundamental + Sentiment (capped at ~3080 chars + footer headroom)
     fund_text = _safe(state.get("fundamental_report"))
     sent_text = _safe(state.get("sentiment_report"))
     msg1 = (
         f"{header} <i>(1/3)</i>\n\n"
         f"━━ <b>[1/7] Fundamental Analyst</b> ━━\n"
-        f"{fund_text[:3000]}\n\n"
+        f"{fund_text[:1400]}\n\n"
         f"━━ <b>[2/7] Sentiment Analyst</b> ━━\n"
-        f"{sent_text[:3000]}"
+        f"{sent_text[:1400]}"
     )
     send_message(msg1, chat_id=_CHAT_ID)
 
-    # Message 2/3 — Technical + Bull/Bear Researcher
+    # Message 2/3 — Technical + Bull/Bear Researcher (~3220 chars + footer headroom)
     tech_text = _safe(state.get("technical_report"))
     bull_text = _safe(state.get("bull_case"))
     bear_text = _safe(state.get("bear_case"))
     msg2 = (
         f"{header} <i>(2/3)</i>\n\n"
         f"━━ <b>[3/7] Technical Analyst</b> ━━\n"
-        f"{tech_text[:2500]}\n\n"
+        f"{tech_text[:1100]}\n\n"
         f"━━ <b>[4/7] Bull Researcher</b> ━━\n"
-        f"{bull_text[:1200]}\n\n"
+        f"{bull_text[:900]}\n\n"
         f"━━ <b>[5/7] Bear Researcher</b> ━━\n"
-        f"{bear_text[:1200]}"
+        f"{bear_text[:900]}"
     )
     send_message(msg2, chat_id=_CHAT_ID)
 
-    # Message 3/3 — Trader + Risk Manager + Fund Manager
+    # Message 3/3 — Trader + Risk Manager + Fund Manager (~3420 chars + footer headroom)
     trader  = state.get("trader_decision", {})
     risk    = state.get("risk_adjusted_decision", {})
     fm      = state.get("final_order", {})
@@ -329,11 +333,11 @@ def send_full_agent_chain(state: dict) -> None:
     msg3 = (
         f"{header} <i>(3/3)</i>\n\n"
         f"━━ <b>[6/7] Trader Decision</b> ━━\n"
-        f"{trader_text[:2000]}\n\n"
+        f"{trader_text[:1100]}\n\n"
         f"━━ <b>[7a] Risk Manager</b> ━━\n"
-        f"{risk_text[:2000]}\n\n"
+        f"{risk_text[:1000]}\n\n"
         f"━━ <b>[7b] Fund Manager (Final Gate)</b> ━━\n"
-        f"{fm_text[:2000]}"
+        f"{fm_text[:1000]}"
     )
     send_message(msg3, chat_id=_CHAT_ID)
 

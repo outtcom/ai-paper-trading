@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS, RESEARCHER_DEBATE_ROUNDS
 from tools.state_manager import save_state, write_log, log_error
 

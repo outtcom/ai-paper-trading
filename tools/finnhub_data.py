@@ -16,6 +16,22 @@ def _client():
     return finnhub.Client(api_key=os.environ["FINNHUB_API_KEY"])
 
 
+def _fh_call(func, *args, max_retries: int = 3, **kwargs):
+    """Call a Finnhub API function with exponential backoff on rate-limit errors."""
+    for attempt in range(max_retries):
+        try:
+            return func(*args, **kwargs)
+        except Exception as e:
+            err = str(e).lower()
+            if "429" in err or "rate limit" in err or "too many" in err:
+                wait = 2 ** attempt  # 1s, 2s, 4s
+                print(f"[finnhub] Rate limit hit — retrying in {wait}s (attempt {attempt + 1}/{max_retries})")
+                time.sleep(wait)
+            else:
+                raise
+    return None
+
+
 def get_news(ticker: str, days_back: int = 7) -> List[Dict]:
     """
     Fetch recent news articles for a ticker.
@@ -24,7 +40,7 @@ def get_news(ticker: str, days_back: int = 7) -> List[Dict]:
     client = _client()
     end = datetime.today().strftime("%Y-%m-%d")
     start = (datetime.today() - timedelta(days=days_back)).strftime("%Y-%m-%d")
-    articles = client.company_news(ticker, _from=start, to=end)
+    articles = _fh_call(client.company_news, ticker, _from=start, to=end) or []
     results = []
     for a in articles[:20]:  # cap at 20 to stay within token budget
         results.append({
@@ -43,7 +59,7 @@ def get_financials(ticker: str) -> dict:
     Returns dict of key metrics.
     """
     client = _client()
-    metrics = client.company_basic_financials(ticker, "all")
+    metrics = _fh_call(client.company_basic_financials, ticker, "all") or {}
     metric = metrics.get("metric", {})
     return {
         "pe_ratio": metric.get("peNormalizedAnnual"),
@@ -64,7 +80,7 @@ def get_insider_transactions(ticker: str) -> List[Dict]:
     Returns list of {name, share, change, transaction_date, transaction_price}.
     """
     client = _client()
-    data = client.stock_insider_transactions(ticker)
+    data = _fh_call(client.stock_insider_transactions, ticker) or {}
     transactions = data.get("data", [])[:10]
     results = []
     for t in transactions:
@@ -81,7 +97,7 @@ def get_insider_transactions(ticker: str) -> List[Dict]:
 def get_company_profile(ticker: str) -> dict:
     """Fetch company profile: name, industry, market cap, description."""
     client = _client()
-    profile = client.company_profile2(symbol=ticker)
+    profile = _fh_call(client.company_profile2, symbol=ticker) or {}
     return {
         "name": profile.get("name", ""),
         "industry": profile.get("finnhubIndustry", ""),
@@ -101,7 +117,7 @@ def get_news_sentiment(ticker: str) -> dict:
     """
     client = _client()
     try:
-        data = client.news_sentiment(ticker)
+        data = _fh_call(client.news_sentiment, ticker) or {}
         sentiment = data.get("sentiment", {})
         buzz = data.get("buzz", {})
         return {

@@ -603,7 +603,7 @@ def main():
                 try:
                     set_benchmark_start_prices(anchor_prices)
                 except Exception as e:
-                    print(f"[morning] Failed to save {etf} anchor: {e}")
+                    print(f"[morning] Failed to save benchmark anchors: {e}")
 
     # ── Circuit breaker ────────────────────────────────────────────────────
     halt, halt_reason = check_circuit_breaker(equity)
@@ -893,9 +893,18 @@ def main():
                 continue
 
         # ── Size the position ─────────────────────────────────────────────
-        summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult,
-                                 direction=trade_direction, sector_strength=sector_strength,
-                                 equity=equity, strat_mult=strat_mult)
+        try:
+            summary = _size_position(ticker, state, cash, vix_multiplier, regime_mult,
+                                     direction=trade_direction, sector_strength=sector_strength,
+                                     equity=equity, strat_mult=strat_mult)
+        except Exception as _sz_e:
+            print(f"[morning] {ticker}: _size_position error — {_sz_e}, skipping")
+            broadcast_message(
+                f"⚠️ <b>Size Error — {ticker}</b>\n"
+                f"Could not size position: {_sz_e}\n"
+                f"Skipping to next candidate."
+            )
+            continue
         summary["session_day"]  = session_day
         summary["total_days"]   = total_days
         summary["vix_label"]    = vix_label

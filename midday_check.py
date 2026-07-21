@@ -109,12 +109,22 @@ def main():
             tp         = pos["take_profit"]
             sl         = pos["stop_loss"]
             qty        = pos["qty"]
+            direction     = pos.get("direction", "long")
             partial_taken = pos.get("partial_taken", False)
-            partial_price = pos.get("partial_profit_price", round(entry * (1 + pos.get("stop_loss_pct", 3) / 100), 2))
+            partial_price = pos.get("partial_profit_price")
+            if not partial_price:
+                sl_pct_val = pos.get("stop_loss_pct", 3) / 100
+                partial_price = round(
+                    entry * (1 - sl_pct_val) if direction == "short" else entry * (1 + sl_pct_val), 2
+                )
 
-            unr     = round((price - entry) * qty, 2)
-            unr_pct = round((price - entry) / entry * 100, 2)
-            sign    = "+" if unr >= 0 else ""
+            if direction == "short":
+                unr     = round((entry - price) * qty, 2)
+                unr_pct = round((entry - price) / entry * 100, 2)
+            else:
+                unr     = round((price - entry) * qty, 2)
+                unr_pct = round((price - entry) / entry * 100, 2)
+            sign = "+" if unr >= 0 else ""
 
             tp_range    = abs(tp - entry)
             sl_range    = abs(sl - entry)
@@ -123,19 +133,22 @@ def main():
 
             pct_to_tp = (tp_range - to_tp) / tp_range if tp_range > 0 else 0
             pct_to_sl = (sl_range - to_sl) / sl_range if sl_range > 0 else 0
-            pct_to_partial = 0
-            if not partial_taken and partial_price > entry:
-                partial_range = abs(partial_price - entry)
+            if not partial_taken:
+                partial_range  = abs(partial_price - entry)
                 pct_to_partial = (partial_range - abs(partial_price - price)) / partial_range if partial_range > 0 else 0
+            else:
+                pct_to_partial = 0
 
             flags = []
-            if price >= tp:
-                flags.append("🎯 AT/ABOVE TAKE PROFIT")
+            tp_hit = (price <= tp) if direction == "short" else (price >= tp)
+            if tp_hit:
+                flags.append("🎯 AT/NEAR TAKE PROFIT")
             elif pct_to_tp >= PROXIMITY_THRESHOLD:
                 flags.append(f"🎯 {pct_to_tp*100:.0f}% of way to TP — almost there!")
 
-            if price <= sl:
-                flags.append("🛑 AT/BELOW STOP LOSS")
+            sl_hit = (price >= sl) if direction == "short" else (price <= sl)
+            if sl_hit:
+                flags.append("🛑 AT/NEAR STOP LOSS")
             elif pct_to_sl >= PROXIMITY_THRESHOLD:
                 flags.append(f"🚨 {pct_to_sl*100:.0f}% of way to SL — danger zone!")
 

@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS, RISK_PERSPECTIVES
 from tools.state_manager import save_state, write_log, log_error
 
@@ -79,20 +80,28 @@ Bear Case Summary:
 
         for perspective in RISK_PERSPECTIVES:
             perspective_system = SYSTEM_PROMPT + f"\n\nYour perspective: {perspective}. {PERSPECTIVES[perspective]}"
-            response = litellm.completion(
-                model=MODELS["fast"],
-                max_tokens=250,
-                messages=[
-                    {"role": "system", "content": perspective_system},
-                    {"role": "user", "content": f"{context}\n\nEvaluate from the {perspective} perspective."},
-                ],
-            )
-            raw = response.choices[0].message.content.strip()
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
-            perspective_outputs.append(json.loads(raw))
+            try:
+                response = litellm.completion(
+                    model=MODELS["fast"],
+                    max_tokens=250,
+                    messages=[
+                        {"role": "system", "content": perspective_system},
+                        {"role": "user", "content": f"{context}\n\nEvaluate from the {perspective} perspective."},
+                    ],
+                )
+                raw = response.choices[0].message.content.strip()
+                if raw.startswith("```"):
+                    raw = raw.split("```")[1]
+                    if raw.startswith("json"):
+                        raw = raw[4:]
+                perspective_outputs.append(json.loads(raw))
+            except Exception as _pe:
+                print(f"[risk_manager] Perspective '{perspective}' failed: {_pe} — using neutral stub")
+                perspective_outputs.append({"perspective": perspective, "_failed": True, "assessment": "neutral"})
+
+        # Abort to fallback if all three perspectives failed
+        if all(p.get("_failed") for p in perspective_outputs):
+            raise RuntimeError("All three risk perspectives failed")
 
         # Facilitator synthesizes the three perspectives
         facilitator_input = f"""{context}

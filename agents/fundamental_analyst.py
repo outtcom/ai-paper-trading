@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS
 from tools.finnhub_data import get_financials, get_company_profile, get_insider_transactions
 from tools.state_manager import save_state, write_log, log_error

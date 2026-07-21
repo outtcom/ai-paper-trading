@@ -182,16 +182,14 @@ def already_ran_today(script: str) -> bool:
     Idempotency guard — returns True if this script already completed today.
     Prevents double-execution when both EDT and EST crons fire within the same window.
     """
-    from datetime import timezone
-    today = datetime.now(timezone(timedelta(hours=-4))).strftime("%Y-%m-%d")  # ET date
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     p = _load()
     return p.get("last_run_dates", {}).get(script) == today
 
 
 def mark_ran_today(script: str) -> None:
     """Record that this script completed today so duplicate runs can be skipped."""
-    from datetime import timezone
-    today = datetime.now(timezone(timedelta(hours=-4))).strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     p = _migrate(_load())
     if "last_run_dates" not in p:
         p["last_run_dates"] = {}
@@ -396,6 +394,39 @@ def open_position(
     print(f"[session] Opened {dir_tag} {ticker}: {qty} shares @ ${entry_price:.2f}  TP=${tp_price:.2f}  SL=${sl_price:.2f}  Partial@${partial_price:.2f}")
 
 
+def scale_into_position(ticker: str, add_qty: int, price: float, journal_note: str = "") -> None:
+    """Merge add-on shares into an existing position (weighted avg entry, recalculate TP/SL/partial)."""
+    p = _migrate(_load())
+    pos = p["positions"].get(ticker)
+    if not pos:
+        print(f"[session] scale_into_position: no open position for {ticker}")
+        return
+    direction  = pos.get("direction", "long")
+    orig_qty   = pos["qty"]
+    orig_entry = pos["entry_price"]
+    new_qty    = orig_qty + add_qty
+    new_entry  = round((orig_entry * orig_qty + price * add_qty) / new_qty, 2)
+    sl_pct     = pos.get("stop_loss_pct", 3) / 100
+    tp_pct     = pos.get("take_profit_pct", 6) / 100
+    if direction == "long":
+        pos["stop_loss"]            = round(new_entry * (1 - sl_pct), 2)
+        pos["take_profit"]          = round(new_entry * (1 + tp_pct), 2)
+        pos["partial_profit_price"] = round(new_entry * (1 + sl_pct), 2)
+    else:
+        pos["stop_loss"]            = round(new_entry * (1 + sl_pct), 2)
+        pos["take_profit"]          = round(new_entry * (1 - tp_pct), 2)
+        pos["partial_profit_price"] = round(new_entry * (1 - sl_pct), 2)
+    pos["qty"]         = new_qty
+    pos["entry_price"] = new_entry
+    pos["cost_basis"]  = round(pos.get("cost_basis", 0) + add_qty * price, 2)
+    pos["scale_taken"] = True
+    if journal_note:
+        pos["journal_note"] = (pos.get("journal_note") or "") + f" | {journal_note}"
+    p["cash"] = round(p["cash"] - add_qty * price, 2)
+    _save(p)
+    print(f"[session] Scaled into {ticker}: +{add_qty}sh @ ${price:.2f}, avg ${new_entry:.2f}, total {new_qty}sh")
+
+
 def close_position(ticker: str, exit_price: float, reason: str) -> dict:
     """
     Close an open position at exit_price and add proceeds to cash.
@@ -440,6 +471,11 @@ def close_position(ticker: str, exit_price: float, reason: str) -> dict:
     }
     del p["positions"][ticker]
     p["trade_history"].append(trade)
+    # Prune filled/cancelled orders for this ticker so open_orders doesn't grow unbounded
+    p["open_orders"] = [
+        o for o in p.get("open_orders", [])
+        if not (o.get("ticker") == ticker and o.get("status") in ("filled", "cancelled", "closed"))
+    ]
     _save(p)
     dir_tag = "SHORT" if direction == "short" else "LONG"
     print(f"[session] Closed {dir_tag} {ticker} @ ${exit_price:.2f}  P&L: ${pnl:+.2f} ({pnl_pct:+.1f}%)  Reason: {reason}")

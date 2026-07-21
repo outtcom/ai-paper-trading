@@ -34,6 +34,11 @@ bet that cash outperforms equities. In a bull market, cash always loses.
 
 DECISION TREE (non-negotiable — follow exactly in order):
 
+STEP 0 — Upstream failure check (HIGHEST PRIORITY — overrides all other steps):
+  → If trader_decision._failed is True → output HOLD immediately. Do NOT proceed further.
+    The Trader agent experienced an API or parsing error. There is no analysis to act on.
+    Executing without Trader analysis is irresponsible regardless of deployment priority.
+
 STEP 1 — Check rejection conditions. If ANY of these apply → output HOLD immediately:
   1. VIX ≥ 25 AND explicitly flagged as elevated in the strategy brief
   2. Adding this position would push portfolio beta above the maximum limit
@@ -41,6 +46,7 @@ STEP 1 — Check rejection conditions. If ANY of these apply → output HOLD imm
   4. Earnings are within 3 days for this ticker (mentioned in the analysis)
 
 STEP 2 — If no rejection condition applies, use this logic:
+  (STEP 0 takes absolute precedence over the rules below — even over capital deployment urgency.)
   → market_posture "risk-on"  OR  capital_deployment_priority "HIGH" or "CRITICAL" → BUY. This is mandatory.
   → market_posture "neutral"  AND  trader conviction ≥ "medium"                    → BUY.
   → market_posture "risk-off" AND  capital_deployment_priority "HIGH"               → BUY (urgency overrides caution).

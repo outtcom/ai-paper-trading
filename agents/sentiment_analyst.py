@@ -9,6 +9,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS, NEWS_LOOKBACK_DAYS, REDDIT_POST_LIMIT
 from tools.finnhub_data import get_news
 from tools.reddit_sentiment import get_sentiment_summary

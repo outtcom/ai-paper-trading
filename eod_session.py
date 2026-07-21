@@ -38,6 +38,7 @@ from tools.session_manager import (
     get_session_day,
     mark_ran_today,
     open_position,
+    scale_into_position,
     partial_close_position,
     record_equity,
     record_spy_equity,
@@ -77,15 +78,15 @@ def _check_partial_profit(portfolio: dict) -> list:
     for ticker, pos in list(portfolio["positions"].items()):
         if pos.get("partial_taken"):
             continue
+        direction     = pos.get("direction", "long")
         partial_price = pos.get("partial_profit_price")
         if not partial_price:
-            # Derive from entry + sl_pct if missing (backward compat)
             sl_pct = pos.get("stop_loss_pct", 3) / 100
-            partial_price = round(pos["entry_price"] * (1 + sl_pct), 2)
+            entry  = pos["entry_price"]
+            partial_price = round(entry * (1 - sl_pct) if direction == "short" else entry * (1 + sl_pct), 2)
 
         try:
-            price     = get_latest_price(ticker)
-            direction = pos.get("direction", "long")
+            price = get_latest_price(ticker)
             triggered = (price <= partial_price) if direction == "short" else (price >= partial_price)
             if triggered:
                 qty_to_close = max(1, pos["qty"] // 2)
@@ -232,17 +233,12 @@ def _scale_into_winners(portfolio: dict) -> list:
 
             print(f"[eod] SCALE INTO {ticker}: adding {add_qty}sh @ ${price:.2f} "
                   f"(+{pnl_pct:.1%} gain, orig {orig_qty}sh @ ${entry:.2f})")
-            open_position(
-                ticker          = ticker,
-                qty             = add_qty,
-                entry_price     = price,
-                stop_loss_pct   = pos.get("stop_loss_pct", 3) / 100,
-                take_profit_pct = pos.get("stop_loss_pct", 3) / 100 * 2,
-                journal_note    = f"Scale-in: +{add_qty}sh at +{pnl_pct:.1%} momentum confirmation",
-                direction       = direction,
+            scale_into_position(
+                ticker       = ticker,
+                add_qty      = add_qty,
+                price        = price,
+                journal_note = f"Scale-in: +{add_qty}sh at +{pnl_pct:.1%} momentum confirmation",
             )
-            # Mark original position as scaled so we don't double-add
-            portfolio["positions"][ticker]["scale_taken"] = True
             cash -= cost
             scaled.append({"ticker": ticker, "add_qty": add_qty, "price": price, "pnl_pct": pnl_pct})
 
@@ -317,27 +313,26 @@ def _resolve_signals_generic(today: str, open_signals: list, close_fn, label: st
             tp        = signal["target_price"]
             sl        = signal["stop_price"]
 
-            day_after = (datetime.strptime(gen_date, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y-%m-%d")
-            bars      = _yahoo_direct_ohlcv(ticker, gen_date, day_after)
-            trade_bar = next((b for b in bars if b.get("date", "") >= gen_date), None)
+            bars = _yahoo_direct_ohlcv(ticker, gen_date, today)
 
-            if trade_bar:
+            # Scan bars chronologically from gen_date for first TP/SL hit
+            exit_price = None
+            for bar in sorted(bars, key=lambda b: b.get("date", "")):
+                if bar.get("date", "") < gen_date:
+                    continue
                 if direction == "long":
-                    if trade_bar["high"] >= tp:
-                        exit_price = tp
-                    elif trade_bar["low"] <= sl:
-                        exit_price = sl
-                    else:
-                        exit_price = trade_bar["close"]
+                    if bar["high"] >= tp:
+                        exit_price = tp; break
+                    elif bar["low"] <= sl:
+                        exit_price = sl; break
                 else:
-                    if trade_bar["low"] <= tp:
-                        exit_price = tp
-                    elif trade_bar["high"] >= sl:
-                        exit_price = sl
-                    else:
-                        exit_price = trade_bar["close"]
-            else:
-                exit_price = get_latest_price(ticker)
+                    if bar["low"] <= tp:
+                        exit_price = tp; break
+                    elif bar["high"] >= sl:
+                        exit_price = sl; break
+
+            if exit_price is None:
+                exit_price = bars[-1]["close"] if bars else get_latest_price(ticker)
 
             closed = close_fn(signal["id"], exit_price, today)
             if closed:

@@ -5,7 +5,6 @@ on:
     workflows:
       - "Pre-Market Gap Scanner"
       - "Morning Session"
-      - "ICT FVG Scalping Scan"
       - "Midday Position Monitor"
       - "Pre-Close Alert"
       - "End-of-Day Session"

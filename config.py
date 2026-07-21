@@ -186,10 +186,10 @@ SECTOR_TILT_BOTTOM_MULT = 0.75   # reduce size for trades in bottom-2 sectors
 
 # ---------------------------------------------------------------------------
 # Conviction Floor Override
-# "low" forces all signals through regardless of strategy brief's floor.
-# Set to None to let the strategy consultant control the floor normally.
+# "" lets the strategy consultant control the floor (recommended).
+# Set to "medium" or "high" to override for debugging.
 # ---------------------------------------------------------------------------
-CONVICTION_FLOOR_OVERRIDE = "low"
+CONVICTION_FLOOR_OVERRIDE = ""
 
 # ---------------------------------------------------------------------------
 # Mid-Cap Universe — S&P 400 representative names, 2+ per GICS sector

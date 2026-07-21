@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS, TECHNICAL_INDICATOR_PERIOD
 from tools.market_data import get_ohlcv
 from tools.technical_indicators import compute_indicators

@@ -11,6 +11,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
+litellm.num_retries = 3
 from config import MODELS, DEFAULT_RISK_PROFILE, MAX_POSITION_SIZE
 from tools.state_manager import save_state, write_log, log_error
 
@@ -121,6 +122,13 @@ Based on all of the above, what is your trading decision for {ticker}?"""
 
     except Exception as e:
         state = log_error(state, "trader", str(e))
-        state["trader_decision"] = {"action": "hold", "reasoning": f"Trader error: {e}", "risk_profile": profile}
+        state["trader_decision"] = {
+            "action": "hold",
+            "reasoning": f"Trader error: {e}",
+            "risk_profile": profile,
+            "_failed": True,
+            "conviction": "low",
+            "position_size": 0.0,
+        }
 
     return state
