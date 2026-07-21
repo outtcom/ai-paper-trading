@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-20",
-  "last_notified_date": "2026-07-20",
+  "date": "2026-07-21",
+  "last_notified_date": "2026-07-21",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:34.218511"
+      "scanned_at": "2026-07-21T13:04:24.965711"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:35.418741"
+      "scanned_at": "2026-07-21T13:04:25.784317"
     },
     "MSFT": {
       "insider_signal": {
@@ -160,7 +160,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:36.605051"
+      "scanned_at": "2026-07-21T13:04:26.462751"
     },
     "MU": {
       "insider_signal": {
@@ -287,7 +287,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:37.754583"
+      "scanned_at": "2026-07-21T13:04:27.167787"
     },
     "GOOGL": {
       "insider_signal": {
@@ -304,7 +304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:38.919204"
+      "scanned_at": "2026-07-21T13:04:28.164916"
     },
     "META": {
       "insider_signal": {
@@ -420,35 +420,26 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Marco Rubio Says President Lula 'Put His Ego Ahead of Making a Deal' as Trump Slaps Brazil With 25% Tariffs",
-          "date": "2026-07-18 23:31",
-          "summary": "The Trump Administration announced a 25% tariff on most Brazilian imports late Wednesday, effective July 22. The U.S. has invoked Section 301 of the Trade Act of 1974, targeting certain Brazilian prac",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-20T13:29:40.249298"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-21T13:04:29.129295"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
+        "open_market_sells": 2,
         "compensation_grants": 0,
-        "net_open_market_value": -2995233.1,
-        "net_open_market_fmt": "-$3.0M",
+        "net_open_market_value": -505960.0,
+        "net_open_market_fmt": "-$506K",
         "largest_single_transaction": {
-          "name": "Zapolsky David",
+          "name": "Herrington Douglas J",
           "direction": "sell",
-          "dollar_value": 2489273.1,
-          "dollar_fmt": "$2.5M",
-          "date": "2026-05-22",
-          "shares_traded": 9270,
-          "price_per_share": 268.53,
+          "dollar_value": 266190.0,
+          "dollar_fmt": "$266K",
+          "date": "2026-06-01",
+          "shares_traded": 1000,
+          "price_per_share": 266.19,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -471,23 +462,13 @@
             "shares_traded": 1000,
             "price_per_share": 266.19,
             "transaction_code": ""
-          },
-          {
-            "name": "Zapolsky David",
-            "direction": "sell",
-            "dollar_value": 2489273.1,
-            "dollar_fmt": "$2.5M",
-            "date": "2026-05-22",
-            "shares_traded": 9270,
-            "price_per_share": 268.53,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:41.403814"
+      "scanned_at": "2026-07-21T13:04:29.831801"
     },
     "TSLA": {
       "insider_signal": {
@@ -544,7 +525,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:42.576434"
+      "scanned_at": "2026-07-21T13:04:30.510158"
     },
     "LLY": {
       "insider_signal": {
@@ -580,8 +561,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:43.687097"
+      "trump_mentions": [
+        {
+          "headline": "Claude AI Disagrees With President Trump on Eli Lilly (LLY)",
+          "date": "2026-07-20 22:02",
+          "summary": "President Donald Trump recently praised Eli Lily at a public event and called it “a great company” and highlighted its planned $3.5 billion investment for a manufacturing plant in Pennsylvania. Howeve",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-21T13:04:31.159619"
     },
     "UNH": {
       "insider_signal": {
@@ -598,7 +588,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:44.751943"
+      "scanned_at": "2026-07-21T13:04:31.803227"
     },
     "JPM": {
       "insider_signal": {
@@ -646,15 +636,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Bernie Sanders Says Trump 'Lied' About 10% Credit Card Rate Cap, Points to Big Banks Making Billions Charging 25-30% Interest Rates",
-          "date": "2026-07-19 01:31",
-          "summary": "Sen. Bernie Sanders (I-Vt) on Wednesday said President Donald Trump lied about his promise to cap credit card interest rates at 10% while major banks continued to earn billions from consumer lending. ",
+          "headline": "Trump Lawsuits Reach Key Stages After Pair of Recent Setbacks",
+          "date": "2026-07-20 12:19",
+          "summary": "(Bloomberg) -- Lawyers for President Donald Trump and his sprawling business interests are heading to court this week in Florida for high-stakes hearings that follow a pair of major setbacks in their ",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-20T13:29:45.852060"
+      "scanned_at": "2026-07-21T13:04:32.458295"
     },
     "GS": {
       "insider_signal": {
@@ -671,7 +661,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:46.992725"
+      "scanned_at": "2026-07-21T13:04:33.230770"
     },
     "XOM": {
       "insider_signal": {
@@ -688,7 +678,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:47.996885"
+      "scanned_at": "2026-07-21T13:04:34.237205"
     },
     "CVX": {
       "insider_signal": {
@@ -714,7 +704,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:49.038632"
+      "scanned_at": "2026-07-21T13:04:34.879358"
     },
     "CAT": {
       "insider_signal": {
@@ -740,7 +730,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:50.051017"
+      "scanned_at": "2026-07-21T13:04:35.518645"
     },
     "GE": {
       "insider_signal": {
@@ -766,7 +756,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:51.296563"
+      "scanned_at": "2026-07-21T13:04:36.360563"
     },
     "WMT": {
       "insider_signal": {
@@ -812,8 +802,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:52.366314"
+      "trump_mentions": [
+        {
+          "headline": "Trump Praises Giant Eagle's Price Cuts, Urges Other Grocery Chains to Follow: 'Stepping Up in a Big and Bold Way'",
+          "date": "2026-07-20 03:12",
+          "summary": "Trump says Giant Eagle’s price cuts on 300+ products show his cost-cutting push is working and urges other grocery chains to follow.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-21T13:04:37.033091"
     },
     "COST": {
       "insider_signal": {
@@ -850,7 +849,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:53.421108"
+      "scanned_at": "2026-07-21T13:04:37.677054"
     },
     "FCX": {
       "insider_signal": {
@@ -876,7 +875,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:54.393888"
+      "scanned_at": "2026-07-21T13:04:38.301180"
     },
     "NEE": {
       "insider_signal": {
@@ -902,7 +901,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:55.444764"
+      "scanned_at": "2026-07-21T13:04:38.935719"
     },
     "PLD": {
       "insider_signal": {
@@ -919,7 +918,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-20T13:29:56.439782"
+      "scanned_at": "2026-07-21T13:04:39.580226"
     }
   }
 }
