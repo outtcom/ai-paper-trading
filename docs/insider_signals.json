@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-21",
-  "last_notified_date": "2026-07-21",
+  "date": "2026-07-22",
+  "last_notified_date": "2026-07-22",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:24.965711"
+      "scanned_at": "2026-07-22T13:09:16.286993"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:25.784317"
+      "scanned_at": "2026-07-22T13:09:17.838201"
     },
     "MSFT": {
       "insider_signal": {
@@ -159,8 +159,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:26.462751"
+      "trump_mentions": [
+        {
+          "headline": "Is Washington Building a Tariff Wall Around American AI?",
+          "date": "2026-07-22 06:20",
+          "summary": "Moonshot AI’s July 17 release of Kimi K3 has confronted Washington with an awkward fact: a Chinese open-weight model can approach leading American systems in coding and agentic tasks while charging le",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "OKLO, XE Stocks Jump After-Hours — Trump Administration Taps Oklo, X-Energy In $200M Push To Power AI Data Centers",
+          "date": "2026-07-21 22:58",
+          "summary": "The Trump administration is partnering with advanced nuclear reactor developers and major tech firms in a $200-million initiative to accelerate nuclear power deployment for energy-intensive AI data ce",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-22T13:09:19.016472"
     },
     "MU": {
       "insider_signal": {
@@ -287,7 +304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:27.167787"
+      "scanned_at": "2026-07-22T13:09:20.189866"
     },
     "GOOGL": {
       "insider_signal": {
@@ -304,7 +321,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:28.164916"
+      "scanned_at": "2026-07-22T13:09:21.436887"
     },
     "META": {
       "insider_signal": {
@@ -421,7 +438,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:29.129295"
+      "scanned_at": "2026-07-22T13:09:23.557993"
     },
     "AMZN": {
       "insider_signal": {
@@ -467,8 +484,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:29.831801"
+      "trump_mentions": [
+        {
+          "headline": "Is Washington Building a Tariff Wall Around American AI?",
+          "date": "2026-07-22 06:20",
+          "summary": "Moonshot AI’s July 17 release of Kimi K3 has confronted Washington with an awkward fact: a Chinese open-weight model can approach leading American systems in coding and agentic tasks while charging le",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-22T13:09:25.063047"
     },
     "TSLA": {
       "insider_signal": {
@@ -525,7 +551,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:30.510158"
+      "scanned_at": "2026-07-22T13:09:26.223433"
     },
     "LLY": {
       "insider_signal": {
@@ -561,17 +587,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Claude AI Disagrees With President Trump on Eli Lilly (LLY)",
-          "date": "2026-07-20 22:02",
-          "summary": "President Donald Trump recently praised Eli Lily at a public event and called it “a great company” and highlighted its planned $3.5 billion investment for a manufacturing plant in Pennsylvania. Howeve",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-21T13:04:31.159619"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-22T13:09:27.363626"
     },
     "UNH": {
       "insider_signal": {
@@ -588,7 +605,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:31.803227"
+      "scanned_at": "2026-07-22T13:09:28.441692"
     },
     "JPM": {
       "insider_signal": {
@@ -636,15 +653,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Lawsuits Reach Key Stages After Pair of Recent Setbacks",
-          "date": "2026-07-20 12:19",
-          "summary": "(Bloomberg) -- Lawyers for President Donald Trump and his sprawling business interests are heading to court this week in Florida for high-stakes hearings that follow a pair of major setbacks in their ",
+          "headline": "Anthony Scaramucci Explains Why He's Long Bitcoin and Gold: 'Imagine an American President...Sitting in Front of a $55 Trillion Deficit'",
+          "date": "2026-07-22 04:41",
+          "summary": "SkyBridge Capital founder Anthony Scaramucci positioned Bitcoin (CRYPTO: BTC) and gold as “part of the answer” to a changing monetary system under strain from fiscal pressures and declining purchasing",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-21T13:04:32.458295"
+      "scanned_at": "2026-07-22T13:09:29.663911"
     },
     "GS": {
       "insider_signal": {
@@ -661,7 +678,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:33.230770"
+      "scanned_at": "2026-07-22T13:09:30.741686"
     },
     "XOM": {
       "insider_signal": {
@@ -677,8 +694,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:34.237205"
+      "trump_mentions": [
+        {
+          "headline": "Trump Went to War Convinced Iran Would 'Fold Really Quickly,' New Book Claims. Polymarket Prices a Ground Invasion at 27%",
+          "date": "2026-07-21 11:27",
+          "summary": "A new book claims Trump went to war expecting Iran to fold fast. Five months in, Polymarket traders price a US ground invasion at 27%.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-22T13:09:31.737458"
     },
     "CVX": {
       "insider_signal": {
@@ -703,8 +729,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:34.879358"
+      "trump_mentions": [
+        {
+          "headline": "Trump Went to War Convinced Iran Would 'Fold Really Quickly,' New Book Claims. Polymarket Prices a Ground Invasion at 27%",
+          "date": "2026-07-21 11:27",
+          "summary": "A new book claims Trump went to war expecting Iran to fold fast. Five months in, Polymarket traders price a US ground invasion at 27%.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-22T13:09:32.959970"
     },
     "CAT": {
       "insider_signal": {
@@ -730,7 +765,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:35.518645"
+      "scanned_at": "2026-07-22T13:09:34.046932"
     },
     "GE": {
       "insider_signal": {
@@ -756,7 +791,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:36.360563"
+      "scanned_at": "2026-07-22T13:09:35.126987"
     },
     "WMT": {
       "insider_signal": {
@@ -802,17 +837,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Praises Giant Eagle's Price Cuts, Urges Other Grocery Chains to Follow: 'Stepping Up in a Big and Bold Way'",
-          "date": "2026-07-20 03:12",
-          "summary": "Trump says Giant Eagle’s price cuts on 300+ products show his cost-cutting push is working and urges other grocery chains to follow.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-21T13:04:37.033091"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-22T13:09:36.224206"
     },
     "COST": {
       "insider_signal": {
@@ -849,7 +875,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:37.677054"
+      "scanned_at": "2026-07-22T13:09:37.378933"
     },
     "FCX": {
       "insider_signal": {
@@ -875,7 +901,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:38.301180"
+      "scanned_at": "2026-07-22T13:09:38.366611"
     },
     "NEE": {
       "insider_signal": {
@@ -901,7 +927,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:38.935719"
+      "scanned_at": "2026-07-22T13:09:39.501140"
     },
     "PLD": {
       "insider_signal": {
@@ -918,7 +944,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-21T13:04:39.580226"
+      "scanned_at": "2026-07-22T13:09:40.510462"
     }
   }
 }
