@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import litellm
 litellm.num_retries = 3
 from tools.state_manager import save_state, write_log, log_error
-from tools.groq_quota import track_tokens, get_effective_fast_model
+from tools.groq_quota import groq_completion, get_effective_fast_model
 
 SYSTEM_PROMPT = """You are a risk management team at a trading firm.
 Evaluate the proposed trade from THREE distinct perspectives simultaneously,
@@ -64,15 +64,13 @@ def run(state: dict) -> dict:
         )
 
         model    = get_effective_fast_model()
-        response = litellm.completion(
-            model    = model,
+        response = groq_completion(
             max_tokens = 400,
             messages = [
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user",   "content": user_content},
             ],
         )
-        track_tokens(response)
 
         raw = response.choices[0].message.content.strip()
         if raw.startswith("```"):
@@ -82,7 +80,7 @@ def run(state: dict) -> dict:
         risk_decision = json.loads(raw)
 
         state["risk_adjusted_decision"] = risk_decision
-        write_log(ticker, date, f"[RISK MANAGEMENT]\nModel: {model}\n{json.dumps(risk_decision, indent=2)}")
+        write_log(ticker, date, f"[RISK MANAGEMENT]\nModel: {get_effective_fast_model()}\n{json.dumps(risk_decision, indent=2)}")
         save_state(state)
 
     except Exception as e:

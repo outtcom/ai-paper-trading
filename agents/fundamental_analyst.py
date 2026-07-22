@@ -13,7 +13,7 @@ import litellm
 litellm.num_retries = 3
 from tools.finnhub_data import get_financials, get_company_profile, get_insider_transactions
 from tools.state_manager import save_state, write_log, log_error
-from tools.groq_quota import track_tokens, get_effective_fast_model
+from tools.groq_quota import groq_completion
 
 SYSTEM_PROMPT = """You are a senior fundamental analyst at a trading firm.
 Your job is to analyze a company's financial health and produce a concise,
@@ -54,15 +54,13 @@ Recent Insider Transactions (last 10):
 
 Produce your fundamental analysis report."""
 
-        response = litellm.completion(
-            model=get_effective_fast_model(),
+        response = groq_completion(
             max_tokens=1500,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_content},
             ],
         )
-        track_tokens(response)
 
         report = response.choices[0].message.content
         state["fundamental_report"] = report
