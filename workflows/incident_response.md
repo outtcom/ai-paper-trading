@@ -54,6 +54,26 @@ Cancel any pending orders via the Alpaca paper trading dashboard if needed.
 2. Wait and retry — most are transient
 3. If persistent, the agent will log the error and return a HOLD decision
 
+### Groq TPD (tokens/day) exhaustion
+**Symptom:** `GroqException: Rate limit reached for model llama-3.3-70b-versatile ... tokens per day Limit 100000, Used 99XXX` in agent logs. Multiple tickers at the end of the analysis order fail across all 5 Groq agents simultaneously.
+
+**Why it happens:** Groq free tier caps at 100,000 tokens/day. The morning session can consume 90k–100k tokens across 20+ tickers at 4 Groq calls/ticker (now reduced to 1 call/ticker for risk_manager). Once the budget is exhausted mid-run, every remaining Groq call for that day fails.
+
+**Automatic mitigation (already in place):**
+- `tools/groq_quota.py` tracks cumulative tokens via `response.usage.total_tokens` after each call.
+- At 85,000 tokens (85% of cap), `get_effective_fast_model()` automatically routes to `openai/gpt-4o-mini` instead of Groq. No manual intervention needed.
+- `check_groq_quota(date)` sends a private Telegram alert when failover activates.
+
+**If the automatic failover didn't catch it (old pipeline or counter file missing):**
+1. Check `.tmp/state/groq_quota_YYYY-MM-DD.json` — what was the `total_tokens` value?
+2. The affected tickers are the ones processed last in `WATCHLIST` order (crypto + Index ETFs).
+3. Re-run just those tickers manually: `python main.py --ticker BTC-USD --dry-run`
+4. The re-run will use gpt-4o-mini since the quota file already shows failover_active=true.
+
+**Prevention going forward:**
+- `risk_manager.py` now uses 1 call/ticker (down from 4) — 43% reduction in daily Groq volume.
+- If the session watchlist grows beyond ~30 tickers, consider requesting a Groq paid tier or further reducing max_tokens per analyst.
+
 ## After Incident
 1. Fix the root cause in the tool or agent
 2. Verify the fix with a dry-run

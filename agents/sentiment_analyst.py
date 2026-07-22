@@ -10,10 +10,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
 litellm.num_retries = 3
-from config import MODELS, NEWS_LOOKBACK_DAYS, REDDIT_POST_LIMIT
+from config import NEWS_LOOKBACK_DAYS, REDDIT_POST_LIMIT
 from tools.finnhub_data import get_news
 from tools.reddit_sentiment import get_sentiment_summary
 from tools.state_manager import save_state, write_log, log_error
+from tools.groq_quota import track_tokens, get_effective_fast_model
 
 SYSTEM_PROMPT = """You are a senior sentiment analyst at a trading firm.
 Your job is to analyze news articles and social media sentiment for a stock
@@ -50,13 +51,14 @@ Reddit Social Sentiment:
 Produce your sentiment analysis report."""
 
         response = litellm.completion(
-            model=MODELS["fast"],
+            model=get_effective_fast_model(),
             max_tokens=1200,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_content},
             ],
         )
+        track_tokens(response)
 
         report = response.choices[0].message.content
         state["sentiment_report"] = report

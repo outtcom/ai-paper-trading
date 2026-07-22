@@ -11,10 +11,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import litellm
 litellm.num_retries = 3
-from config import MODELS, TECHNICAL_INDICATOR_PERIOD
+from config import TECHNICAL_INDICATOR_PERIOD
 from tools.market_data import get_ohlcv
 from tools.technical_indicators import compute_indicators
 from tools.state_manager import save_state, write_log, log_error
+from tools.groq_quota import track_tokens, get_effective_fast_model
 from datetime import datetime, timedelta
 
 SYSTEM_PROMPT = """You are a senior technical analyst at a trading firm.
@@ -60,13 +61,14 @@ Recent 10-Day Price Action:
 Produce your technical analysis report."""
 
         response = litellm.completion(
-            model=MODELS["fast"],
+            model=get_effective_fast_model(),
             max_tokens=1200,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_content},
             ],
         )
+        track_tokens(response)
 
         report = response.choices[0].message.content
         state["technical_report"] = report

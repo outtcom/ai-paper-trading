@@ -49,7 +49,7 @@ from config import (
 )
 from agents import strategy_consultant
 from orchestrator import run_pipeline
-from tools.health_check import run as run_health_check, check_pipeline_errors
+from tools.health_check import run as run_health_check, check_pipeline_errors, check_groq_quota
 from tools.market_data import get_latest_price, get_ohlcv
 from tools.market_regime import (
     get_vix_multiplier, get_market_trend, has_earnings_soon, is_event_blocked,
@@ -792,8 +792,9 @@ def main():
     # ── Run full AI pipeline ───────────────────────────────────────────────
     results = _analyze_all(today, portfolio, earnings_blocked, strategy_brief=strategy_brief, watchlist=daily_watchlist)
 
-    # ── Alert on widespread agent failures ────────────────────────────────
+    # ── Alert on widespread agent failures + Groq quota status ───────────
     check_pipeline_errors(results, today)
+    check_groq_quota(today)
 
     # ── Build decision audit log from pipeline results ─────────────────────
     audit_log = {}
