@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 21,
+    "current_day": 22,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-23T15:14:07.359627+00:00",
+    "last_updated": "2026-07-23T19:43:31.916264+00:00",
     "session_number": 3
   },
   "cash": 2479.59,
   "initial_capital": 5000.0,
-  "equity": 4865.71,
+  "equity": 4849.34,
   "peak_equity": 5033.78,
   "circuit_breaker": {
     "triggered": false,
@@ -17,13 +17,13 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -3.08,
-    "sortino": -4.23,
-    "calmar": -4.38,
+    "sharpe": -3.39,
+    "sortino": -4.73,
+    "calmar": -4.75,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
-    "spy_current_price": 747.47,
-    "benchmark_return_pct": -1.0
+    "spy_current_price": 736.8,
+    "benchmark_return_pct": -2.41
   },
   "positions": {
     "BAC": {
@@ -31,7 +31,7 @@
       "qty": 13,
       "entry_price": 60.99,
       "cost_basis": 792.87,
-      "last_price": 60.89,
+      "last_price": 61.31,
       "stop_loss": 58.64,
       "take_profit": 67.09,
       "partial_profit_price": 64.04,
@@ -48,7 +48,7 @@
       "qty": 3,
       "entry_price": 192.19,
       "cost_basis": 576.57,
-      "last_price": 193.1,
+      "last_price": 190.12,
       "stop_loss": 184.54,
       "take_profit": 211.41,
       "partial_profit_price": 201.8,
@@ -65,7 +65,7 @@
       "qty": 4,
       "entry_price": 101.66,
       "cost_basis": 406.64,
-      "last_price": 101.47,
+      "last_price": 101.08,
       "stop_loss": 94.54,
       "take_profit": 115.89,
       "partial_profit_price": 108.78,
@@ -82,13 +82,13 @@
       "qty": 2,
       "entry_price": 141.09,
       "cost_basis": 282.18,
-      "last_price": 146.99,
-      "stop_loss": 137.22,
+      "last_price": 145.9,
+      "stop_loss": 138.6,
       "take_profit": 155.2,
       "partial_profit_price": 148.14,
       "stop_loss_pct": 5.0,
       "take_profit_pct": 10.0,
-      "highest_price": 144.44,
+      "highest_price": 145.9,
       "lowest_price": 141.09,
       "partial_taken": false,
       "opened_date": "2026-07-21",
@@ -99,7 +99,7 @@
       "qty": 1,
       "entry_price": 310.92,
       "cost_basis": 310.92,
-      "last_price": 312.82,
+      "last_price": 306.24,
       "stop_loss": 289.16,
       "take_profit": 354.45,
       "partial_profit_price": 332.68,
@@ -585,6 +585,11 @@
       "day": 21,
       "date": "2026-07-23",
       "equity": 4865.71
+    },
+    {
+      "day": 21,
+      "date": "2026-07-23",
+      "equity": 4849.34
     }
   ],
   "journal": [
@@ -1158,6 +1163,11 @@
       "day": 20,
       "date": "2026-07-22",
       "equity": 4950.2
+    },
+    {
+      "day": 21,
+      "date": "2026-07-23",
+      "equity": 4879.53
     }
   ],
   "midcap_equity_curve": [
@@ -1259,6 +1269,11 @@
     {
       "day": 20,
       "date": "2026-07-22",
+      "equity": 4925.85
+    },
+    {
+      "day": 21,
+      "date": "2026-07-23",
       "equity": 4925.85
     }
   ],
@@ -1362,28 +1377,33 @@
       "day": 20,
       "date": "2026-07-22",
       "equity": 5000.0
+    },
+    {
+      "day": 21,
+      "date": "2026-07-23",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 747.47,
-      "return_pct": -1.0
+      "current_price": 736.8,
+      "return_pct": -2.41
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 706.26,
-      "return_pct": -1.41
+      "current_price": 690.11,
+      "return_pct": -3.67
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 293.5,
-      "return_pct": -1.81
+      "current_price": 291.75,
+      "return_pct": -2.4
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 379.34,
-      "return_pct": 2.67
+      "current_price": 371.34,
+      "return_pct": 0.51
     }
   },
   "sector_strength": {
