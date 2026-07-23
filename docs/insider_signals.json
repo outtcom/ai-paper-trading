@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-22",
-  "last_notified_date": "2026-07-22",
+  "date": "2026-07-23",
+  "last_notified_date": "2026-07-23",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:16.286993"
+      "scanned_at": "2026-07-23T13:12:05.733467"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:17.838201"
+      "scanned_at": "2026-07-23T13:12:06.559960"
     },
     "MSFT": {
       "insider_signal": {
@@ -161,23 +161,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Is Washington Building a Tariff Wall Around American AI?",
-          "date": "2026-07-22 06:20",
-          "summary": "Moonshot AI’s July 17 release of Kimi K3 has confronted Washington with an awkward fact: a Chinese open-weight model can approach leading American systems in coding and agentic tasks while charging le",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "OKLO, XE Stocks Jump After-Hours — Trump Administration Taps Oklo, X-Energy In $200M Push To Power AI Data Centers",
-          "date": "2026-07-21 22:58",
-          "summary": "The Trump administration is partnering with advanced nuclear reactor developers and major tech firms in a $200-million initiative to accelerate nuclear power deployment for energy-intensive AI data ce",
+          "headline": "The Trump Administration Just Gave Oklo Stock a Big Boost. Here's What to Know.",
+          "date": "2026-07-22 19:52",
+          "summary": "OKLO stock inches higher on reports of $200 million US nuclear power initiative. But does that warrant buying OKLO shares at current levels?",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-22T13:09:19.016472"
+      "scanned_at": "2026-07-23T13:12:07.337664"
     },
     "MU": {
       "insider_signal": {
@@ -304,7 +296,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:20.189866"
+      "scanned_at": "2026-07-23T13:12:08.127617"
     },
     "GOOGL": {
       "insider_signal": {
@@ -321,7 +313,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:21.436887"
+      "scanned_at": "2026-07-23T13:12:08.867311"
     },
     "META": {
       "insider_signal": {
@@ -438,7 +430,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:23.557993"
+      "scanned_at": "2026-07-23T13:12:09.775494"
     },
     "AMZN": {
       "insider_signal": {
@@ -484,17 +476,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Is Washington Building a Tariff Wall Around American AI?",
-          "date": "2026-07-22 06:20",
-          "summary": "Moonshot AI’s July 17 release of Kimi K3 has confronted Washington with an awkward fact: a Chinese open-weight model can approach leading American systems in coding and agentic tasks while charging le",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-22T13:09:25.063047"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-23T13:12:10.440866"
     },
     "TSLA": {
       "insider_signal": {
@@ -551,16 +534,16 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:26.223433"
+      "scanned_at": "2026-07-23T13:12:11.447221"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 8,
         "open_market_sells": 1,
         "compensation_grants": 0,
-        "net_open_market_value": -2834009.7,
+        "net_open_market_value": -2790427.5,
         "net_open_market_fmt": "-$2.8M",
         "largest_single_transaction": {
           "name": "Yuffa Ilya",
@@ -588,7 +571,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:27.363626"
+      "scanned_at": "2026-07-23T13:12:12.161623"
     },
     "UNH": {
       "insider_signal": {
@@ -605,7 +588,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:28.441692"
+      "scanned_at": "2026-07-23T13:12:12.870154"
     },
     "JPM": {
       "insider_signal": {
@@ -651,17 +634,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Anthony Scaramucci Explains Why He's Long Bitcoin and Gold: 'Imagine an American President...Sitting in Front of a $55 Trillion Deficit'",
-          "date": "2026-07-22 04:41",
-          "summary": "SkyBridge Capital founder Anthony Scaramucci positioned Bitcoin (CRYPTO: BTC) and gold as “part of the answer” to a changing monetary system under strain from fiscal pressures and declining purchasing",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-22T13:09:29.663911"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-23T13:12:13.616701"
     },
     "GS": {
       "insider_signal": {
@@ -669,7 +643,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 0,
+        "compensation_grants": 4,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -678,7 +652,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:30.741686"
+      "scanned_at": "2026-07-23T13:12:14.266283"
     },
     "XOM": {
       "insider_signal": {
@@ -704,7 +678,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-22T13:09:31.737458"
+      "scanned_at": "2026-07-23T13:12:14.878302"
     },
     "CVX": {
       "insider_signal": {
@@ -731,15 +705,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Went to War Convinced Iran Would 'Fold Really Quickly,' New Book Claims. Polymarket Prices a Ground Invasion at 27%",
-          "date": "2026-07-21 11:27",
-          "summary": "A new book claims Trump went to war expecting Iran to fold fast. Five months in, Polymarket traders price a US ground invasion at 27%.",
-          "source": "Benzinga",
+          "headline": "Donald Trump's Iran Blockade Announcement Sent Oil Prices Surging and the Dow Falling",
+          "date": "2026-07-23 02:35",
+          "summary": "The conflict in the Middle East is raging again, which highlights an important fact that energy investors ignore at their own risk.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-22T13:09:32.959970"
+      "scanned_at": "2026-07-23T13:12:15.653868"
     },
     "CAT": {
       "insider_signal": {
@@ -765,7 +739,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:34.046932"
+      "scanned_at": "2026-07-23T13:12:16.350643"
     },
     "GE": {
       "insider_signal": {
@@ -791,17 +765,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:35.126987"
+      "scanned_at": "2026-07-23T13:12:16.994153"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
-        "open_market_buys": 9,
-        "open_market_sells": 1,
+        "open_market_buys": 3,
+        "open_market_sells": 7,
         "compensation_grants": 0,
-        "net_open_market_value": -104464.68,
-        "net_open_market_fmt": "-$104K",
+        "net_open_market_value": -765212.86,
+        "net_open_market_fmt": "-$765K",
         "largest_single_transaction": {
           "name": "Bartlett Daniel J",
           "direction": "sell",
@@ -814,6 +788,26 @@
         },
         "notable_transactions": [
           {
+            "name": "Nicholas Christopher James",
+            "direction": "sell",
+            "dollar_value": 144357.64,
+            "dollar_fmt": "$144K",
+            "date": "2026-07-16",
+            "shares_traded": 1261,
+            "price_per_share": 114.4787,
+            "transaction_code": ""
+          },
+          {
+            "name": "Nicholas Christopher James",
+            "direction": "sell",
+            "dollar_value": 186639.98,
+            "dollar_fmt": "$187K",
+            "date": "2026-07-16",
+            "shares_traded": 1639,
+            "price_per_share": 113.8743,
+            "transaction_code": ""
+          },
+          {
             "name": "Bartlett Daniel J",
             "direction": "sell",
             "dollar_value": 413891.0,
@@ -822,23 +816,13 @@
             "shares_traded": 3775,
             "price_per_share": 109.64,
             "transaction_code": ""
-          },
-          {
-            "name": "Penner Gregory Boyd",
-            "direction": "buy",
-            "dollar_value": 56856.52,
-            "dollar_fmt": "$57K",
-            "date": "2026-06-30",
-            "shares_traded": 502,
-            "price_per_share": 113.26,
-            "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:36.224206"
+      "scanned_at": "2026-07-23T13:12:17.765089"
     },
     "COST": {
       "insider_signal": {
@@ -875,7 +859,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:37.378933"
+      "scanned_at": "2026-07-23T13:12:18.404532"
     },
     "FCX": {
       "insider_signal": {
@@ -901,7 +885,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:38.366611"
+      "scanned_at": "2026-07-23T13:12:19.027942"
     },
     "NEE": {
       "insider_signal": {
@@ -926,25 +910,54 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:39.501140"
+      "trump_mentions": [
+        {
+          "headline": "Reported July 21, 2026: 'Utilities Join Trump Pledge To Limit AI-Driven Increases In Electricity Bills' - WSJ",
+          "date": "2026-07-22 11:33",
+          "summary": "https://www.wsj.com/politics/policy/trump-pledge-to-limit-ai-driven-electric-bill-increases-attracts-big-utilities-ae408981",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-23T13:12:19.651030"
     },
     "PLD": {
       "insider_signal": {
         "ticker": "PLD",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "open_market_buys": 6,
+        "open_market_sells": 1,
+        "compensation_grants": 3,
+        "net_open_market_value": -7494895.31,
+        "net_open_market_fmt": "-$7.5M",
+        "largest_single_transaction": {
+          "name": "Moghadam Hamid",
+          "direction": "sell",
+          "dollar_value": 7495500.0,
+          "dollar_fmt": "$7.5M",
+          "date": "2026-07-16",
+          "shares_traded": 50000,
+          "price_per_share": 149.91,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Moghadam Hamid",
+            "direction": "sell",
+            "dollar_value": 7495500.0,
+            "dollar_fmt": "$7.5M",
+            "date": "2026-07-16",
+            "shares_traded": 50000,
+            "price_per_share": 149.91,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-22T13:09:40.510462"
+      "scanned_at": "2026-07-23T13:12:20.278520"
     }
   }
 }
