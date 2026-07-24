@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -3.39,
-    "sortino": -4.73,
-    "calmar": -4.75,
+    "sharpe": -3.35,
+    "sortino": -4.6,
+    "calmar": -4.63,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
     "spy_current_price": 736.8,
@@ -589,6 +589,11 @@
     {
       "day": 21,
       "date": "2026-07-23",
+      "equity": 4849.34
+    },
+    {
+      "day": 22,
+      "date": "2026-07-24",
       "equity": 4849.34
     }
   ],
