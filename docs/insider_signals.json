@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-23",
-  "last_notified_date": "2026-07-23",
+  "date": "2026-07-24",
+  "last_notified_date": "2026-07-24",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:05.733467"
+      "scanned_at": "2026-07-24T13:05:35.164638"
     },
     "NVDA": {
       "insider_signal": {
@@ -133,8 +133,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:06.559960"
+      "trump_mentions": [
+        {
+          "headline": "The Trump Administration Launches \"Project Prometheus\" With These Nuclear Energy Stocks (Hint: NuScale Didn't Make the Cut)",
+          "date": "2026-07-24 10:54",
+          "summary": "3 nuclear start-ups are partners in the AI-focused nuclear program.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:35.827774"
     },
     "MSFT": {
       "insider_signal": {
@@ -161,15 +170,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "The Trump Administration Just Gave Oklo Stock a Big Boost. Here's What to Know.",
-          "date": "2026-07-22 19:52",
-          "summary": "OKLO stock inches higher on reports of $200 million US nuclear power initiative. But does that warrant buying OKLO shares at current levels?",
+          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
+          "date": "2026-07-24 08:49",
+          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-23T13:12:07.337664"
+      "scanned_at": "2026-07-24T13:05:36.525928"
     },
     "MU": {
       "insider_signal": {
@@ -296,7 +305,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:08.127617"
+      "scanned_at": "2026-07-24T13:05:37.280124"
     },
     "GOOGL": {
       "insider_signal": {
@@ -312,8 +321,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:08.867311"
+      "trump_mentions": [
+        {
+          "headline": "Stock market today: Dow, S&P 500, Nasdaq futures rise after tech rout as new Trump tariffs take effect",
+          "date": "2026-07-24 08:18",
+          "summary": "Stocks stabilized on Friday but were on track for weekly losses as investors assessed a new set of global tariffs against a backdrop of AI jitters, rising oil prices, and elevated bond yields.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:38.289019"
     },
     "META": {
       "insider_signal": {
@@ -322,19 +340,59 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -3145421.83,
-        "net_open_market_fmt": "-$3.1M",
+        "net_open_market_value": -1932581.76,
+        "net_open_market_fmt": "-$1.9M",
         "largest_single_transaction": {
           "name": "Olivan Javier",
           "direction": "sell",
-          "dollar_value": 1246437.25,
-          "dollar_fmt": "$1.2M",
-          "date": "2026-07-06",
-          "shares_traded": 2076,
-          "price_per_share": 600.4033,
+          "dollar_value": 540576.45,
+          "dollar_fmt": "$541K",
+          "date": "2026-07-20",
+          "shares_traded": 837,
+          "price_per_share": 645.85,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 263506.8,
+            "dollar_fmt": "$264K",
+            "date": "2026-07-20",
+            "shares_traded": 408,
+            "price_per_share": 645.85,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 52959.7,
+            "dollar_fmt": "$53K",
+            "date": "2026-07-20",
+            "shares_traded": 82,
+            "price_per_share": 645.85,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 52959.7,
+            "dollar_fmt": "$53K",
+            "date": "2026-07-20",
+            "shares_traded": 82,
+            "price_per_share": 645.85,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 540576.45,
+            "dollar_fmt": "$541K",
+            "date": "2026-07-20",
+            "shares_traded": 837,
+            "price_per_share": 645.85,
+            "transaction_code": ""
+          },
           {
             "name": "Olivan Javier",
             "direction": "sell",
@@ -384,53 +442,22 @@
             "shares_traded": 171,
             "price_per_share": 600,
             "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 147600,
-            "dollar_fmt": "$148K",
-            "date": "2026-07-06",
-            "shares_traded": 246,
-            "price_per_share": 600,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 226588.28,
-            "dollar_fmt": "$227K",
-            "date": "2026-07-06",
-            "shares_traded": 376,
-            "price_per_share": 602.6284,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 490779.45,
-            "dollar_fmt": "$491K",
-            "date": "2026-07-06",
-            "shares_traded": 816,
-            "price_per_share": 601.4454,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 1246437.25,
-            "dollar_fmt": "$1.2M",
-            "date": "2026-07-06",
-            "shares_traded": 2076,
-            "price_per_share": 600.4033,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:09.775494"
+      "trump_mentions": [
+        {
+          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
+          "date": "2026-07-24 08:49",
+          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:39.314865"
     },
     "AMZN": {
       "insider_signal": {
@@ -477,7 +504,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:10.440866"
+      "scanned_at": "2026-07-24T13:05:40.138729"
     },
     "TSLA": {
       "insider_signal": {
@@ -533,8 +560,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:11.447221"
+      "trump_mentions": [
+        {
+          "headline": "Tesla just lost a near-free money stream worth $2.76 billion a year after Trump rolled back fuel economy standards",
+          "date": "2026-07-24 10:00",
+          "summary": "Tesla’s carbon credit gravy train is gone. See just how much the EV automaker is losing as regulations reduce demand for this previously profitable business.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
+          "date": "2026-07-24 08:49",
+          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Stock market today: Dow, S&P 500, Nasdaq futures rise after tech rout as new Trump tariffs take effect",
+          "date": "2026-07-24 08:18",
+          "summary": "Stocks stabilized on Friday but were on track for weekly losses as investors assessed a new set of global tariffs against a backdrop of AI jitters, rising oil prices, and elevated bond yields.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:40.791815"
     },
     "LLY": {
       "insider_signal": {
@@ -571,7 +623,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:12.161623"
+      "scanned_at": "2026-07-24T13:05:41.448380"
     },
     "UNH": {
       "insider_signal": {
@@ -588,7 +640,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:12.870154"
+      "scanned_at": "2026-07-24T13:05:42.093312"
     },
     "JPM": {
       "insider_signal": {
@@ -634,8 +686,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:13.616701"
+      "trump_mentions": [
+        {
+          "headline": "Why Teva Pharmaceutical Stock Is a Buy Despite Trump Tariff Threat",
+          "date": "2026-07-23 17:27",
+          "summary": "President Donald Trump’s threat of 100% tariffs on generic drugs would seem to be a problem for Teva Pharmaceutical. It might not be.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:42.816990"
     },
     "GS": {
       "insider_signal": {
@@ -651,8 +712,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:14.266283"
+      "trump_mentions": [
+        {
+          "headline": "Why Teva Pharmaceutical Stock Is a Buy Despite Trump Tariff Threat",
+          "date": "2026-07-23 17:27",
+          "summary": "President Donald Trump’s threat of 100% tariffs on generic drugs would seem to be a problem for Teva Pharmaceutical. It might not be.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-07-24T13:05:43.445617"
     },
     "XOM": {
       "insider_signal": {
@@ -670,15 +740,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Went to War Convinced Iran Would 'Fold Really Quickly,' New Book Claims. Polymarket Prices a Ground Invasion at 27%",
-          "date": "2026-07-21 11:27",
-          "summary": "A new book claims Trump went to war expecting Iran to fold fast. Five months in, Polymarket traders price a US ground invasion at 27%.",
-          "source": "Benzinga",
+          "headline": "BATL, CVX, XOM Stocks Rise As Brent Crude Tops $100 – Trump Threatens Iran With 'Major Military Punishment' After Houthi Attack On Saudi Ships",
+          "date": "2026-07-23 14:14",
+          "summary": "Brent crude futures extended gains for a fifth straight session, crossing the triple-digit mark for the first time since May 26, 2026.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Donald Trump's Iran Blockade Announcement Sent Oil Prices Surging and the Dow Falling",
+          "date": "2026-07-23 02:35",
+          "summary": "The conflict in the Middle East is raging again, which highlights an important fact that energy investors ignore at their own risk.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-23T13:12:14.878302"
+      "scanned_at": "2026-07-24T13:05:44.251367"
     },
     "CVX": {
       "insider_signal": {
@@ -705,15 +783,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Donald Trump's Iran Blockade Announcement Sent Oil Prices Surging and the Dow Falling",
-          "date": "2026-07-23 02:35",
-          "summary": "The conflict in the Middle East is raging again, which highlights an important fact that energy investors ignore at their own risk.",
+          "headline": "Trump Official Buys ETF Version of 'Keep Your Enemies Closer'",
+          "date": "2026-07-23 15:46",
+          "summary": "A Trump DHS official bought the Pelosi-tracking NANC ETF, despite its Republican rival GOP outperforming in 2026. Why is NANC more popular?",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "BATL, CVX, XOM Stocks Rise As Brent Crude Tops $100 – Trump Threatens Iran With 'Major Military Punishment' After Houthi Attack On Saudi Ships",
+          "date": "2026-07-23 14:14",
+          "summary": "Brent crude futures extended gains for a fifth straight session, crossing the triple-digit mark for the first time since May 26, 2026.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-23T13:12:15.653868"
+      "scanned_at": "2026-07-24T13:05:44.882389"
     },
     "CAT": {
       "insider_signal": {
@@ -739,7 +825,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:16.350643"
+      "scanned_at": "2026-07-24T13:05:45.612011"
     },
     "GE": {
       "insider_signal": {
@@ -765,7 +851,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:16.994153"
+      "scanned_at": "2026-07-24T13:05:46.331838"
     },
     "WMT": {
       "insider_signal": {
@@ -822,7 +908,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:17.765089"
+      "scanned_at": "2026-07-24T13:05:47.042672"
     },
     "COST": {
       "insider_signal": {
@@ -859,7 +945,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:18.404532"
+      "scanned_at": "2026-07-24T13:05:47.694043"
     },
     "FCX": {
       "insider_signal": {
@@ -885,7 +971,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:19.027942"
+      "scanned_at": "2026-07-24T13:05:48.328955"
     },
     "NEE": {
       "insider_signal": {
@@ -912,6 +998,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Is Expanding a Pledge That Could Stop AI Data Centers From Hiking Your Electricity Bill— Here's Who Just Signed On",
+          "date": "2026-07-23 08:29",
+          "summary": "White House expands AI data center ratepayer protection pledge, adding utilities and governors to help shield consumers from higher electricity costs.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Reported July 21, 2026: 'Utilities Join Trump Pledge To Limit AI-Driven Increases In Electricity Bills' - WSJ",
           "date": "2026-07-22 11:33",
           "summary": "https://www.wsj.com/politics/policy/trump-pledge-to-limit-ai-driven-electric-bill-increases-attracts-big-utilities-ae408981",
@@ -920,7 +1014,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-23T13:12:19.651030"
+      "scanned_at": "2026-07-24T13:05:49.194629"
     },
     "PLD": {
       "insider_signal": {
@@ -957,7 +1051,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-23T13:12:20.278520"
+      "scanned_at": "2026-07-24T13:05:49.819237"
     }
   }
 }
