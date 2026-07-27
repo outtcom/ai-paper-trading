@@ -1,43 +1,40 @@
 {
-  "date": "2026-07-24",
-  "last_notified_date": "2026-07-24",
+  "date": "2026-07-27",
+  "last_notified_date": "2026-07-27",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 1,
-        "net_open_market_value": -15551000.0,
-        "net_open_market_fmt": "-$15.6M",
-        "largest_single_transaction": {
-          "name": "LEVINSON ARTHUR D",
-          "direction": "sell",
-          "dollar_value": 15551000.0,
-          "dollar_fmt": "$15.6M",
-          "date": "2026-05-27",
-          "shares_traded": 50000,
-          "price_per_share": 311.02,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "LEVINSON ARTHUR D",
-            "direction": "sell",
-            "dollar_value": 15551000.0,
-            "dollar_fmt": "$15.6M",
-            "date": "2026-05-27",
-            "shares_traded": 50000,
-            "price_per_share": 311.02,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:35.164638"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says 660-Mile Highway in Disputed Sahara to Bear His Name",
+          "date": "2026-07-27 11:01",
+          "summary": "(Bloomberg) -- US President Donald Trump said Morocco is naming a 1,055-kilometer (660 mile) highway in the Western Sahara after him, seemingly reflecting his landmark recognition of the kingdom’s rul",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-27T13:57:03.383198"
     },
     "NVDA": {
       "insider_signal": {
@@ -135,15 +132,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "The Trump Administration Launches \"Project Prometheus\" With These Nuclear Energy Stocks (Hint: NuScale Didn't Make the Cut)",
-          "date": "2026-07-24 10:54",
-          "summary": "3 nuclear start-ups are partners in the AI-focused nuclear program.",
+          "headline": "China Vows Response to US Sanctions Threat Against AI Firms",
+          "date": "2026-07-27 11:02",
+          "summary": "(Bloomberg) -- China warned it would take “all necessary measures” if the US moves to sanction Chinese artificial intelligence companies over allegations they improperly used American models to train ",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "keyword_matched": "sanctions",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:35.827774"
+      "scanned_at": "2026-07-27T13:57:04.582695"
     },
     "MSFT": {
       "insider_signal": {
@@ -170,15 +167,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
-          "date": "2026-07-24 08:49",
-          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
+          "headline": "China Vows Response to US Sanctions Threat Against AI Firms",
+          "date": "2026-07-27 11:02",
+          "summary": "(Bloomberg) -- China warned it would take “all necessary measures” if the US moves to sanction Chinese artificial intelligence companies over allegations they improperly used American models to train ",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "sanctions",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:36.525928"
+      "scanned_at": "2026-07-27T13:57:06.042241"
     },
     "MU": {
       "insider_signal": {
@@ -304,8 +309,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:37.280124"
+      "trump_mentions": [
+        {
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-27T13:57:07.396999"
     },
     "GOOGL": {
       "insider_signal": {
@@ -321,17 +335,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock market today: Dow, S&P 500, Nasdaq futures rise after tech rout as new Trump tariffs take effect",
-          "date": "2026-07-24 08:18",
-          "summary": "Stocks stabilized on Friday but were on track for weekly losses as investors assessed a new set of global tariffs against a backdrop of AI jitters, rising oil prices, and elevated bond yields.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-24T13:05:38.289019"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-27T13:57:08.713984"
     },
     "META": {
       "insider_signal": {
@@ -449,15 +454,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
-          "date": "2026-07-24 08:49",
-          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:39.314865"
+      "scanned_at": "2026-07-27T13:57:10.101283"
     },
     "AMZN": {
       "insider_signal": {
@@ -503,8 +508,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:40.138729"
+      "trump_mentions": [
+        {
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-27T13:57:11.263178"
     },
     "TSLA": {
       "insider_signal": {
@@ -562,31 +576,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Tesla just lost a near-free money stream worth $2.76 billion a year after Trump rolled back fuel economy standards",
-          "date": "2026-07-24 10:00",
-          "summary": "Tesla’s carbon credit gravy train is gone. See just how much the EV automaker is losing as regulations reduce demand for this previously profitable business.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Nasdaq, S&P 500 Futures Mixed As Oil Surge, Trump Tariffs Cloud Market Outlook: Why INTC, TSLA, SPCX, ORCL, SLS Are In Focus",
-          "date": "2026-07-24 08:49",
-          "summary": "Stocktwits data showed retail sentiment is weak, with a shift toward ‘extremely bearish’ on SPY and QQQ.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Stock market today: Dow, S&P 500, Nasdaq futures rise after tech rout as new Trump tariffs take effect",
-          "date": "2026-07-24 08:18",
-          "summary": "Stocks stabilized on Friday but were on track for weekly losses as investors assessed a new set of global tariffs against a backdrop of AI jitters, rising oil prices, and elevated bond yields.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
+          "headline": "Wall Street Limps Into a Loaded Week: Iran Risk, Fresh Tariffs and a Chip-Sector Wobble",
+          "date": "2026-07-27 05:53",
+          "summary": "Friday closed mixed with chips under pressure, oil volatile and yields at a 2026 high. Ahead: an FOMC decision, Q2 GDP and earnings from four of the Magnificent 7. Here's how I'm reading it.",
+          "source": "ChartMill",
+          "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:40.791815"
+      "scanned_at": "2026-07-27T13:57:12.438941"
     },
     "LLY": {
       "insider_signal": {
@@ -623,7 +621,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:41.448380"
+      "scanned_at": "2026-07-27T13:57:13.552544"
     },
     "UNH": {
       "insider_signal": {
@@ -640,7 +638,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:42.093312"
+      "scanned_at": "2026-07-27T13:57:14.653899"
     },
     "JPM": {
       "insider_signal": {
@@ -686,17 +684,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Teva Pharmaceutical Stock Is a Buy Despite Trump Tariff Threat",
-          "date": "2026-07-23 17:27",
-          "summary": "President Donald Trump’s threat of 100% tariffs on generic drugs would seem to be a problem for Teva Pharmaceutical. It might not be.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-07-24T13:05:42.816990"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-27T13:57:15.738829"
     },
     "GS": {
       "insider_signal": {
@@ -714,15 +703,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Why Teva Pharmaceutical Stock Is a Buy Despite Trump Tariff Threat",
-          "date": "2026-07-23 17:27",
-          "summary": "President Donald Trump’s threat of 100% tariffs on generic drugs would seem to be a problem for Teva Pharmaceutical. It might not be.",
+          "headline": "Global Inflation Angst Is Back With $100 Oil and More Tariffs",
+          "date": "2026-07-24 11:26",
+          "summary": "(Bloomberg) -- Spiking energy prices, more US tariffs and mushrooming spending on artificial intelligence are reawakening investors’ inflation fears.Most Read from BloombergRetina Chip Designed to Res",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:43.445617"
+      "scanned_at": "2026-07-27T13:57:16.819406"
     },
     "XOM": {
       "insider_signal": {
@@ -746,17 +735,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Donald Trump's Iran Blockade Announcement Sent Oil Prices Surging and the Dow Falling",
-          "date": "2026-07-23 02:35",
-          "summary": "The conflict in the Middle East is raging again, which highlights an important fact that energy investors ignore at their own risk.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:44.251367"
+      "scanned_at": "2026-07-27T13:57:17.903361"
     },
     "CVX": {
       "insider_signal": {
@@ -764,7 +745,7 @@
         "days_back": 60,
         "open_market_buys": 2,
         "open_market_sells": 0,
-        "compensation_grants": 8,
+        "compensation_grants": 0,
         "net_open_market_value": 42555.07,
         "net_open_market_fmt": "+$43K",
         "largest_single_transaction": {
@@ -783,33 +764,33 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Official Buys ETF Version of 'Keep Your Enemies Closer'",
-          "date": "2026-07-23 15:46",
-          "summary": "A Trump DHS official bought the Pelosi-tracking NANC ETF, despite its Republican rival GOP outperforming in 2026. Why is NANC more popular?",
-          "source": "Benzinga",
+          "headline": "Exxon, Chevron Stocks Drop Alongside Oil Prices as Trump Delays Iran Operation",
+          "date": "2026-07-27 11:12",
+          "summary": "The price of crude was dropping sharply alongside oil-related stocks after President Donald Trump paused a major escalation in the military campaign against Iran.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         },
         {
-          "headline": "BATL, CVX, XOM Stocks Rise As Brent Crude Tops $100 – Trump Threatens Iran With 'Major Military Punishment' After Houthi Attack On Saudi Ships",
-          "date": "2026-07-23 14:14",
-          "summary": "Brent crude futures extended gains for a fifth straight session, crossing the triple-digit mark for the first time since May 26, 2026.",
+          "headline": "Every Time President Trump Talks About Iran, Oil Prices Move. Here's the Pattern Investors Should Watch.",
+          "date": "2026-07-26 00:35",
+          "summary": "There are U.S. political implications to the geopolitical conflict in the Middle East, but most investors should play the long game.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:44.882389"
+      "scanned_at": "2026-07-27T13:57:18.978052"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 2,
+        "open_market_buys": 1,
         "open_market_sells": 0,
         "compensation_grants": 8,
-        "net_open_market_value": 28668.56,
-        "net_open_market_fmt": "+$29K",
+        "net_open_market_value": 23217.26,
+        "net_open_market_fmt": "+$23K",
         "largest_single_transaction": {
           "name": "MacLennan David",
           "direction": "buy",
@@ -825,7 +806,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:45.612011"
+      "scanned_at": "2026-07-27T13:57:19.992957"
     },
     "GE": {
       "insider_signal": {
@@ -851,7 +832,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:46.331838"
+      "scanned_at": "2026-07-27T13:57:21.229562"
     },
     "WMT": {
       "insider_signal": {
@@ -908,7 +889,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:47.042672"
+      "scanned_at": "2026-07-27T13:57:22.356610"
     },
     "COST": {
       "insider_signal": {
@@ -945,7 +926,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:47.694043"
+      "scanned_at": "2026-07-27T13:57:23.377077"
     },
     "FCX": {
       "insider_signal": {
@@ -971,7 +952,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:48.328955"
+      "scanned_at": "2026-07-27T13:57:24.370829"
     },
     "NEE": {
       "insider_signal": {
@@ -999,22 +980,14 @@
       "trump_mentions": [
         {
           "headline": "Trump Is Expanding a Pledge That Could Stop AI Data Centers From Hiking Your Electricity Bill— Here's Who Just Signed On",
-          "date": "2026-07-23 08:29",
-          "summary": "White House expands AI data center ratepayer protection pledge, adding utilities and governors to help shield consumers from higher electricity costs.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Reported July 21, 2026: 'Utilities Join Trump Pledge To Limit AI-Driven Increases In Electricity Bills' - WSJ",
-          "date": "2026-07-22 11:33",
-          "summary": "https://www.wsj.com/politics/policy/trump-pledge-to-limit-ai-driven-electric-bill-increases-attracts-big-utilities-ae408981",
-          "source": "Benzinga",
+          "date": "2026-07-24 22:31",
+          "summary": "The White House is expanding its voluntary Ratepayer Protection Pledge for AI data centers, adding nearly 200 utilities, governors, electricity cooperatives, public power providers and developers to t",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-24T13:05:49.194629"
+      "scanned_at": "2026-07-27T13:57:25.476279"
     },
     "PLD": {
       "insider_signal": {
@@ -1051,7 +1024,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-24T13:05:49.819237"
+      "scanned_at": "2026-07-27T13:57:26.464362"
     }
   }
 }
