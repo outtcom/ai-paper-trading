@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 24,
+    "current_day": 25,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-07-28T15:25:02.453781+00:00",
+    "last_updated": "2026-07-28T19:50:13.006815+00:00",
     "session_number": 3
   },
-  "cash": 2992.83,
+  "cash": 3293.78,
   "initial_capital": 5000.0,
-  "equity": 4878.89,
+  "equity": 4897.03,
   "peak_equity": 5033.78,
   "circuit_breaker": {
     "triggered": false,
@@ -17,13 +17,13 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.47,
-    "sortino": -3.32,
-    "calmar": -3.45,
+    "sharpe": -2.03,
+    "sortino": -2.74,
+    "calmar": -2.9,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
-    "spy_current_price": 738.84,
-    "benchmark_return_pct": -2.14
+    "spy_current_price": 741.09,
+    "benchmark_return_pct": -1.84
   },
   "positions": {
     "PM": {
@@ -31,13 +31,13 @@
       "qty": 3,
       "entry_price": 192.19,
       "cost_basis": 576.57,
-      "last_price": 205.46,
-      "stop_loss": 186.66,
+      "last_price": 200.01,
+      "stop_loss": 190.01,
       "take_profit": 211.41,
       "partial_profit_price": 201.8,
       "stop_loss_pct": 5.0,
       "take_profit_pct": 10.0,
-      "highest_price": 196.48,
+      "highest_price": 200.01,
       "lowest_price": 192.19,
       "partial_taken": false,
       "opened_date": "2026-07-20",
@@ -48,41 +48,24 @@
       "qty": 4,
       "entry_price": 101.66,
       "cost_basis": 406.64,
-      "last_price": 108.0,
-      "stop_loss": 97.42,
+      "last_price": 107.34,
+      "stop_loss": 99.83,
       "take_profit": 115.89,
       "partial_profit_price": 108.78,
       "stop_loss_pct": 7.0,
       "take_profit_pct": 14.0,
-      "highest_price": 104.75,
+      "highest_price": 107.34,
       "lowest_price": 101.66,
       "partial_taken": false,
       "opened_date": "2026-07-21",
       "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
-    },
-    "VLO": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 310.92,
-      "cost_basis": 310.92,
-      "last_price": 300.26,
-      "stop_loss": 289.16,
-      "take_profit": 354.45,
-      "partial_profit_price": 332.68,
-      "stop_loss_pct": 7.0,
-      "take_profit_pct": 14.0,
-      "highest_price": 310.92,
-      "lowest_price": 310.92,
-      "partial_taken": false,
-      "opened_date": "2026-07-23",
-      "journal_note": "VLO is in the Energy focus sector with a live catalyst \u2014 the 3-2-1 crack spread hitting ~$70/barrel directly boosts refining margins, and the stock broke above its 20-day EMA at $287.28 with a bullish MACD crossover (histogram +$3.17). However, RSI at 75 signals overbought conditions and the P/E of 40.3x is elevated for a refiner, so I'm sizing conservatively at ~4% rather than the 5% recommendation \u2014 the strategy brief calls for 75% position sizing given rising VIX, and the risk-conservative perspective flagged the stretched technicals. TD Cowen's $338 target implies ~9% upside from current levels against a 7% stop-loss, giving roughly 1.3:1 reward-to-risk \u2014 acceptable but not generous, justifying the smaller size. With only ~$2,790 cash and existing Energy exposure via EOG, one share at ~$308-311 keeps concentration manageable while participating in the crack spread catalyst ahead of Q2 earnings."
     },
     "TMO": {
       "direction": "long",
       "qty": 1,
       "entry_price": 574.8,
       "cost_basis": 574.8,
-      "last_price": 577.75,
+      "last_price": 573.86,
       "stop_loss": 540.31,
       "take_profit": 643.78,
       "partial_profit_price": 609.29,
@@ -427,6 +410,21 @@
       "opened_date": "2026-07-21",
       "closed_date": "2026-07-27",
       "journal_note": "EOG is a high-conviction Energy sector rotation candidate aligned with the strategy brief's explicit call to scout Energy names with strong relative strength to close the -1.2% alpha deficit. The primary signal is a fresh MACD bullish crossover with price at $141.09 trading above both the 50-day EMA ($135.79) and 20-day EMA ($136.16), with RSI at 64.7 \u2014 momentum confirmed but not overbought. The risk team approved at 5% position size with a 5% stop-loss (~$134), which sits just below the 50-day EMA cluster providing solid technical support; I agree this is well-structured risk management despite the conservative view citing -4.01% revenue decline, because the P/E of 15.1x below sector average and 18.28% ROE demonstrate operational quality that offsets the top-line softness. Upside target is the upper Bollinger Band at $142.01 near-term with potential for further extension on Hormuz geopolitical catalyst, while downside is capped at ~$7/share to the stop \u2014 a favorable asymmetry for a defined-risk trade."
+    },
+    {
+      "ticker": "VLO",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 310.92,
+      "exit_price": 300.95,
+      "cost_basis": 310.92,
+      "proceeds": 300.95,
+      "pnl": -9.97,
+      "pnl_pct": -3.21,
+      "reason": "time_exit",
+      "opened_date": "2026-07-23",
+      "closed_date": "2026-07-28",
+      "journal_note": "VLO is in the Energy focus sector with a live catalyst \u2014 the 3-2-1 crack spread hitting ~$70/barrel directly boosts refining margins, and the stock broke above its 20-day EMA at $287.28 with a bullish MACD crossover (histogram +$3.17). However, RSI at 75 signals overbought conditions and the P/E of 40.3x is elevated for a refiner, so I'm sizing conservatively at ~4% rather than the 5% recommendation \u2014 the strategy brief calls for 75% position sizing given rising VIX, and the risk-conservative perspective flagged the stretched technicals. TD Cowen's $338 target implies ~9% upside from current levels against a 7% stop-loss, giving roughly 1.3:1 reward-to-risk \u2014 acceptable but not generous, justifying the smaller size. With only ~$2,790 cash and existing Energy exposure via EOG, one share at ~$308-311 keeps concentration manageable while participating in the crack spread catalyst ahead of Q2 earnings."
     }
   ],
   "equity_curve": [
@@ -639,6 +637,11 @@
       "day": 24,
       "date": "2026-07-28",
       "equity": 4878.89
+    },
+    {
+      "day": 24,
+      "date": "2026-07-28",
+      "equity": 4897.03
     }
   ],
   "journal": [
@@ -1180,15 +1183,16 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 38.12,
+      "exit_date": "2026-07-28",
+      "pnl_pct": -1.63,
+      "outcome": "loss",
       "auto_close_date": "2026-07-28",
       "rationale": "20d high $38.75 | stock +7.0% vs ETF +0.0% (5d) | vol 1.5x | RSI 58",
       "qty": 63,
-      "allocated_usd": 2441.25
+      "allocated_usd": 2441.25,
+      "pnl_usd": -39.69
     },
     {
       "id": "MC-2026-07-24-WEX",
@@ -1216,8 +1220,8 @@
   ],
   "midcap_capital": {
     "initial": 5000.0,
-    "cash": 1284.31,
-    "equity": 4925.85
+    "cash": 3685.87,
+    "equity": 4886.16
   },
   "penny_signals": [],
   "penny_capital": {
@@ -1280,6 +1284,11 @@
       "day": 23,
       "date": "2026-07-27",
       "equity": 4893.04
+    },
+    {
+      "day": 24,
+      "date": "2026-07-28",
+      "equity": 4907.95
     }
   ],
   "midcap_equity_curve": [
@@ -1397,6 +1406,11 @@
       "day": 23,
       "date": "2026-07-27",
       "equity": 4925.85
+    },
+    {
+      "day": 24,
+      "date": "2026-07-28",
+      "equity": 4886.16
     }
   ],
   "penny_equity_curve": [
@@ -1514,28 +1528,33 @@
       "day": 23,
       "date": "2026-07-27",
       "equity": 5000.0
+    },
+    {
+      "day": 24,
+      "date": "2026-07-28",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 738.84,
-      "return_pct": -2.14
+      "current_price": 741.09,
+      "return_pct": -1.84
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 681.62,
-      "return_pct": -4.85
+      "current_price": 676.13,
+      "return_pct": -5.62
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 293.11,
-      "return_pct": -1.94
+      "current_price": 293.15,
+      "return_pct": -1.93
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 375.03,
-      "return_pct": 1.51
+      "current_price": 369.44,
+      "return_pct": -0.01
     }
   },
   "sector_strength": {
@@ -1733,9 +1752,9 @@
           "pnl_sum": -8.559999999999999
         },
         "bullish": {
-          "n": 1,
+          "n": 2,
           "wins": 0,
-          "pnl_sum": -0.6
+          "pnl_sum": -3.81
         }
       },
       "technical": {
@@ -1745,9 +1764,9 @@
           "pnl_sum": -10.409999999999998
         },
         "bullish": {
-          "n": 2,
+          "n": 3,
           "wins": 1,
-          "pnl_sum": 1.25
+          "pnl_sum": -1.96
         }
       },
       "sentiment": {
@@ -1757,16 +1776,16 @@
           "pnl_sum": -10.409999999999998
         },
         "bullish": {
-          "n": 2,
+          "n": 3,
           "wins": 1,
-          "pnl_sum": 1.25
+          "pnl_sum": -1.96
         }
       },
       "conviction": {
         "medium": {
-          "n": 10,
+          "n": 11,
           "wins": 4,
-          "pnl_sum": -6.379999999999999
+          "pnl_sum": -9.59
         },
         "low": {
           "n": 1,
@@ -1776,26 +1795,27 @@
       },
       "risk": {
         "approved": {
-          "n": 5,
+          "n": 6,
           "wins": 2,
-          "pnl_sum": -0.06999999999999884
+          "pnl_sum": -3.279999999999999
         }
       }
     },
     "_counted_trades": [
-      "TMO_2026-07-16",
       "GS_2026-07-16",
       "ETH-USD_2026-07-13",
-      "HD_2026-06-29",
-      "TSLA_2026-07-07",
       "BA_2026-07-08",
-      "BTC-USD_2026-07-10",
       "UNH_2026-07-08",
+      "BTC-USD_2026-07-10",
+      "EOG_2026-07-21",
       "UNH_2026-06-29",
+      "HD_2026-06-29",
+      "TMO_2026-07-16",
       "BAC_2026-07-20",
-      "EOG_2026-07-21"
+      "TSLA_2026-07-07",
+      "VLO_2026-07-23"
     ],
-    "last_updated": "2026-07-27",
-    "total_closed": 11
+    "last_updated": "2026-07-28",
+    "total_closed": 12
   }
 }
