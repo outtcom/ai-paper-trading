@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-28",
-  "last_notified_date": "2026-07-28",
+  "date": "2026-07-29",
+  "last_notified_date": "2026-07-29",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +17,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:12.292839"
+      "scanned_at": "2026-07-29T13:21:56.280525"
     },
     "NVDA": {
       "insider_signal": {
@@ -114,7 +114,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:13.463593"
+      "scanned_at": "2026-07-29T13:21:57.466958"
     },
     "MSFT": {
       "insider_signal": {
@@ -140,7 +140,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:14.612053"
+      "scanned_at": "2026-07-29T13:21:58.631282"
     },
     "MU": {
       "insider_signal": {
@@ -267,7 +267,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:15.757151"
+      "scanned_at": "2026-07-29T13:21:59.881394"
     },
     "GOOGL": {
       "insider_signal": {
@@ -284,7 +284,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:16.988783"
+      "scanned_at": "2026-07-29T13:22:01.236279"
     },
     "META": {
       "insider_signal": {
@@ -391,7 +391,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:18.493144"
+      "scanned_at": "2026-07-29T13:22:03.738506"
     },
     "AMZN": {
       "insider_signal": {
@@ -438,7 +438,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:19.844518"
+      "scanned_at": "2026-07-29T13:22:04.894859"
     },
     "TSLA": {
       "insider_signal": {
@@ -495,7 +495,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:20.985744"
+      "scanned_at": "2026-07-29T13:22:06.043070"
     },
     "LLY": {
       "insider_signal": {
@@ -532,7 +532,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:22.088989"
+      "scanned_at": "2026-07-29T13:22:07.153740"
     },
     "UNH": {
       "insider_signal": {
@@ -548,8 +548,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:23.090171"
+      "trump_mentions": [
+        {
+          "headline": "'Trump Administration To End Medicare Drug Plan Subsidy; Program That Held Down Premiums Not Renewed For 2027, Resulting In Higher Costs For Some Seniors' - WSJ Exclusive",
+          "date": "2026-07-28 16:02",
+          "summary": "https://www.wsj.com/health/healthcare/trump-administration-to-end-medicare-drug-plan-subsidy-76d255d1",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-29T13:22:08.323155"
     },
     "JPM": {
       "insider_signal": {
@@ -595,8 +604,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:24.148534"
+      "trump_mentions": [
+        {
+          "headline": "CLARITY Act Vote Delayed as Senate Turns to Russia Sanctions: What Do Prediction Markets Forecast?",
+          "date": "2026-07-28 16:35",
+          "summary": "The Senate shelved the CLARITY Act for Russia sanctions, and with Mitch McConnell sidelined, the crypto bill may need eight Democrats instead of seven.",
+          "source": "Benzinga",
+          "keyword_matched": "sanctions",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Elizabeth Warren Says Trump's Unfulfilled 10% Credit Card Rate Promise Has Cost Families $55B: The President Is 'Letting Wall Street Pad Its Profits'",
+          "date": "2026-07-28 00:14",
+          "summary": "Sen. Elizabeth Warren says President Donald Trump has cost families $55 billion by delaying the 10% credit card cap. ",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-29T13:22:09.387815"
     },
     "GS": {
       "insider_signal": {
@@ -643,7 +669,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:25.286533"
+      "scanned_at": "2026-07-29T13:22:10.422794"
     },
     "XOM": {
       "insider_signal": {
@@ -659,17 +685,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil Prices Slide as Trump Touts Possible Negotiations With Iran",
-          "date": "2026-07-27 20:07",
-          "summary": "Oil prices fell sharply Monday as strikes between the U.S. and Iran remained paused for a third day and President Donald Trump told reporters aboard Air Force One there was a “good chance that somethi",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-28T13:18:26.358483"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-29T13:22:11.488923"
     },
     "CVX": {
       "insider_signal": {
@@ -694,17 +711,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil Prices Slide as Trump Touts Possible Negotiations With Iran",
-          "date": "2026-07-27 20:07",
-          "summary": "Oil prices fell sharply Monday as strikes between the U.S. and Iran remained paused for a third day and President Donald Trump told reporters aboard Air Force One there was a “good chance that somethi",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-28T13:18:27.431627"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-29T13:22:12.553950"
     },
     "CAT": {
       "insider_signal": {
@@ -730,7 +738,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:28.439194"
+      "scanned_at": "2026-07-29T13:22:13.564563"
     },
     "GE": {
       "insider_signal": {
@@ -756,7 +764,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:29.489602"
+      "scanned_at": "2026-07-29T13:22:14.554394"
     },
     "WMT": {
       "insider_signal": {
@@ -813,7 +821,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:30.563431"
+      "scanned_at": "2026-07-29T13:22:16.043613"
     },
     "COST": {
       "insider_signal": {
@@ -850,7 +858,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:31.577195"
+      "scanned_at": "2026-07-29T13:22:17.115398"
     },
     "FCX": {
       "insider_signal": {
@@ -876,7 +884,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:32.571469"
+      "scanned_at": "2026-07-29T13:22:18.299081"
     },
     "NEE": {
       "insider_signal": {
@@ -911,7 +919,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-28T13:18:33.650637"
+      "scanned_at": "2026-07-29T13:22:19.294656"
     },
     "PLD": {
       "insider_signal": {
@@ -948,7 +956,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-28T13:18:34.635557"
+      "scanned_at": "2026-07-29T13:22:20.296183"
     }
   }
 }
