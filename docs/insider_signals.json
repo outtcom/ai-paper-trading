@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-29",
-  "last_notified_date": "2026-07-29",
+  "date": "2026-07-30",
+  "last_notified_date": "2026-07-30",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +17,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:21:56.280525"
+      "scanned_at": "2026-07-30T13:13:27.673655"
     },
     "NVDA": {
       "insider_signal": {
@@ -114,7 +114,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:21:57.466958"
+      "scanned_at": "2026-07-30T13:13:28.693569"
     },
     "MSFT": {
       "insider_signal": {
@@ -140,7 +140,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:21:58.631282"
+      "scanned_at": "2026-07-30T13:13:29.722232"
     },
     "MU": {
       "insider_signal": {
@@ -149,117 +149,107 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -10418443.44,
-        "net_open_market_fmt": "-$10.4M",
+        "net_open_market_value": -6712697.38,
+        "net_open_market_fmt": "-$6.7M",
         "largest_single_transaction": {
-          "name": "ARNZEN APRIL S",
+          "name": "MEHROTRA SANJAY",
           "direction": "sell",
-          "dollar_value": 2742626.8,
-          "dollar_fmt": "$2.7M",
-          "date": "2026-07-01",
-          "shares_traded": 2510,
-          "price_per_share": 1092.68,
+          "dollar_value": 1456262.14,
+          "dollar_fmt": "$1.5M",
+          "date": "2026-07-24",
+          "shares_traded": 1523,
+          "price_per_share": 956.18,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "ALLEN SCOTT R.",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 244796.88,
-            "dollar_fmt": "$245K",
-            "date": "2026-07-15",
-            "shares_traded": 249,
-            "price_per_share": 983.12,
+            "dollar_value": 967781.7,
+            "dollar_fmt": "$968K",
+            "date": "2026-07-24",
+            "shares_traded": 1002,
+            "price_per_share": 965.85,
             "transaction_code": ""
           },
           {
-            "name": "ALLEN SCOTT R.",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 651808.56,
-            "dollar_fmt": "$652K",
-            "date": "2026-07-15",
-            "shares_traded": 663,
-            "price_per_share": 983.12,
+            "dollar_value": 303360,
+            "dollar_fmt": "$303K",
+            "date": "2026-07-24",
+            "shares_traded": 316,
+            "price_per_share": 960,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 306846.4,
-            "dollar_fmt": "$307K",
-            "date": "2026-07-01",
-            "shares_traded": 280,
-            "price_per_share": 1095.88,
+            "dollar_value": 387455.4,
+            "dollar_fmt": "$387K",
+            "date": "2026-07-24",
+            "shares_traded": 405,
+            "price_per_share": 956.68,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 2327406.25,
-            "dollar_fmt": "$2.3M",
-            "date": "2026-07-01",
-            "shares_traded": 2125,
-            "price_per_share": 1095.25,
+            "dollar_value": 1456262.14,
+            "dollar_fmt": "$1.5M",
+            "date": "2026-07-24",
+            "shares_traded": 1523,
+            "price_per_share": 956.18,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 771213.6,
-            "dollar_fmt": "$771K",
-            "date": "2026-07-01",
-            "shares_traded": 705,
-            "price_per_share": 1093.92,
+            "dollar_value": 691787.75,
+            "dollar_fmt": "$692K",
+            "date": "2026-07-24",
+            "shares_traded": 725,
+            "price_per_share": 954.19,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 2742626.8,
-            "dollar_fmt": "$2.7M",
-            "date": "2026-07-01",
-            "shares_traded": 2510,
-            "price_per_share": 1092.68,
+            "dollar_value": 102683.16,
+            "dollar_fmt": "$103K",
+            "date": "2026-07-24",
+            "shares_traded": 108,
+            "price_per_share": 950.77,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 2529492.07,
-            "dollar_fmt": "$2.5M",
-            "date": "2026-07-01",
-            "shares_traded": 2317,
-            "price_per_share": 1091.71,
+            "dollar_value": 1144525.68,
+            "dollar_fmt": "$1.1M",
+            "date": "2026-07-24",
+            "shares_traded": 1207,
+            "price_per_share": 948.24,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 314092.8,
-            "dollar_fmt": "$314K",
-            "date": "2026-07-01",
-            "shares_traded": 288,
-            "price_per_share": 1090.6,
+            "dollar_value": 754583.66,
+            "dollar_fmt": "$755K",
+            "date": "2026-07-24",
+            "shares_traded": 797,
+            "price_per_share": 946.78,
             "transaction_code": ""
           },
           {
-            "name": "ARNZEN APRIL S",
+            "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 290773.68,
-            "dollar_fmt": "$291K",
-            "date": "2026-07-01",
-            "shares_traded": 267,
-            "price_per_share": 1089.04,
-            "transaction_code": ""
-          },
-          {
-            "name": "ARNZEN APRIL S",
-            "direction": "sell",
-            "dollar_value": 239386.4,
-            "dollar_fmt": "$239K",
-            "date": "2026-07-01",
-            "shares_traded": 220,
-            "price_per_share": 1088.12,
+            "dollar_value": 903305.85,
+            "dollar_fmt": "$903K",
+            "date": "2026-07-24",
+            "shares_traded": 955,
+            "price_per_share": 945.87,
             "transaction_code": ""
           }
         ],
@@ -267,24 +257,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:21:59.881394"
+      "scanned_at": "2026-07-30T13:13:30.795304"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -63498.91,
+        "net_open_market_fmt": "-$63K",
+        "largest_single_transaction": {
+          "name": "Saraci Marsida",
+          "direction": "sell",
+          "dollar_value": 33823.54,
+          "dollar_fmt": "$34K",
+          "date": "2026-07-25",
+          "shares_traded": 106,
+          "price_per_share": 319.09,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:01.236279"
+      "scanned_at": "2026-07-30T13:13:32.125973"
     },
     "META": {
       "insider_signal": {
@@ -391,7 +390,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:03.738506"
+      "scanned_at": "2026-07-30T13:13:33.481310"
     },
     "AMZN": {
       "insider_signal": {
@@ -438,7 +437,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:04.894859"
+      "scanned_at": "2026-07-30T13:13:34.554259"
     },
     "TSLA": {
       "insider_signal": {
@@ -494,8 +493,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:06.043070"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s FCC Just Cleared the Field for Tesla’s Robots",
+          "date": "2026-07-30 09:44",
+          "summary": "Tesla and Nvidia gained market share this week without shipping anything, courtesy of Brendan Carr’s expanding Covered List.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump FCC gives Tesla a leg up in critical technology race",
+          "date": "2026-07-30 03:33",
+          "summary": "Tesla CEO Elon Musk believes that the future is robotic, and he is willing to spend $25 billion of his company's money this year to prove it. Musk already says Tesla (TSLA) is much more than a car com",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-30T13:13:35.499291"
     },
     "LLY": {
       "insider_signal": {
@@ -532,7 +548,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:07.153740"
+      "scanned_at": "2026-07-30T13:13:36.412596"
     },
     "UNH": {
       "insider_signal": {
@@ -550,33 +566,33 @@
       },
       "trump_mentions": [
         {
-          "headline": "'Trump Administration To End Medicare Drug Plan Subsidy; Program That Held Down Premiums Not Renewed For 2027, Resulting In Higher Costs For Some Seniors' - WSJ Exclusive",
-          "date": "2026-07-28 16:02",
-          "summary": "https://www.wsj.com/health/healthcare/trump-administration-to-end-medicare-drug-plan-subsidy-76d255d1",
+          "headline": "Trump Administration Pulls the Plug on a Medicare Subsidy That Cut Drug Premiums— Oz Says the 'Bailout' Is Over as Seniors Brace for 2027 Hikes",
+          "date": "2026-07-29 06:50",
+          "summary": "Trump administration will end Medicare Part D subsidies after 2026, potentially raising premiums for some seniors in 2027.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-07-29T13:22:08.323155"
+      "scanned_at": "2026-07-30T13:13:37.285361"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 1,
-        "compensation_grants": 4,
-        "net_open_market_value": -1627107.65,
-        "net_open_market_fmt": "-$1.6M",
+        "open_market_sells": 0,
+        "compensation_grants": 6,
+        "net_open_market_value": 181013.49,
+        "net_open_market_fmt": "+$181K",
         "largest_single_transaction": {
-          "name": "Friedman Stacey",
-          "direction": "sell",
-          "dollar_value": 1808121.14,
-          "dollar_fmt": "$1.8M",
-          "date": "2026-06-22",
-          "shares_traded": 5467,
-          "price_per_share": 330.7337,
+          "name": "BURKE STEPHEN B",
+          "direction": "buy",
+          "dollar_value": 56300.76,
+          "dollar_fmt": "$56K",
+          "date": "2026-06-30",
+          "shares_traded": 172,
+          "price_per_share": 327.33,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -589,40 +605,13 @@
             "shares_traded": 172,
             "price_per_share": 327.33,
             "transaction_code": ""
-          },
-          {
-            "name": "Friedman Stacey",
-            "direction": "sell",
-            "dollar_value": 1808121.14,
-            "dollar_fmt": "$1.8M",
-            "date": "2026-06-22",
-            "shares_traded": 5467,
-            "price_per_share": 330.7337,
-            "transaction_code": ""
           }
         ],
-        "signal_strength": "strong_sell",
+        "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "CLARITY Act Vote Delayed as Senate Turns to Russia Sanctions: What Do Prediction Markets Forecast?",
-          "date": "2026-07-28 16:35",
-          "summary": "The Senate shelved the CLARITY Act for Russia sanctions, and with Mitch McConnell sidelined, the crypto bill may need eight Democrats instead of seven.",
-          "source": "Benzinga",
-          "keyword_matched": "sanctions",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Elizabeth Warren Says Trump's Unfulfilled 10% Credit Card Rate Promise Has Cost Families $55B: The President Is 'Letting Wall Street Pad Its Profits'",
-          "date": "2026-07-28 00:14",
-          "summary": "Sen. Elizabeth Warren says President Donald Trump has cost families $55 billion by delaying the 10% credit card cap. ",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-29T13:22:09.387815"
+      "trump_mentions": [],
+      "scanned_at": "2026-07-30T13:13:38.215735"
     },
     "GS": {
       "insider_signal": {
@@ -669,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:10.422794"
+      "scanned_at": "2026-07-30T13:13:39.051151"
     },
     "XOM": {
       "insider_signal": {
@@ -685,8 +674,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:11.488923"
+      "trump_mentions": [
+        {
+          "headline": "Exxon Mobil (XOM): President Trump’s Top Energy Stock Pick?",
+          "date": "2026-07-29 14:29",
+          "summary": "ExxonMobil (NYSE:XOM) is one of the top energy names in President Donald Trump’s financial disclosures from earlier this year. The stock is up about 27% so far this year. But does a presidential trade",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-30T13:13:40.006220"
     },
     "CVX": {
       "insider_signal": {
@@ -711,8 +709,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:12.553950"
+      "trump_mentions": [
+        {
+          "headline": "Dow Leader Rides Surging Oil Prices And Trump's Venezuela Spoils",
+          "date": "2026-07-29 16:16",
+          "summary": "Shares of energy giant Chevron rode climbing oil prices and rising oil production levels in Venezuela, following President Donald Trump's January takeover, to outpace most other Dow Jones stocks on We",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Exxon Mobil (XOM): President Trump’s Top Energy Stock Pick?",
+          "date": "2026-07-29 14:29",
+          "summary": "ExxonMobil (NYSE:XOM) is one of the top energy names in President Donald Trump’s financial disclosures from earlier this year. The stock is up about 27% so far this year. But does a presidential trade",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-07-30T13:13:40.858077"
     },
     "CAT": {
       "insider_signal": {
@@ -738,33 +753,94 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:13.564563"
+      "scanned_at": "2026-07-30T13:13:41.750076"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 0,
-        "compensation_grants": 1,
-        "net_open_market_value": 72947.08,
-        "net_open_market_fmt": "+$73K",
+        "open_market_buys": 4,
+        "open_market_sells": 4,
+        "compensation_grants": 2,
+        "net_open_market_value": -2165493.21,
+        "net_open_market_fmt": "-$2.2M",
         "largest_single_transaction": {
-          "name": "Bazin Sebastien",
-          "direction": "buy",
-          "dollar_value": 36473.54,
-          "dollar_fmt": "$36K",
-          "date": "2026-06-30",
-          "shares_traded": 106,
-          "price_per_share": 344.09,
+          "name": "Ali Mohamed",
+          "direction": "sell",
+          "dollar_value": 984049.04,
+          "dollar_fmt": "$984K",
+          "date": "2026-07-24",
+          "shares_traded": 2782,
+          "price_per_share": 353.72,
           "transaction_code": ""
         },
-        "notable_transactions": [],
-        "signal_strength": "buy",
+        "notable_transactions": [
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 805945.56,
+            "dollar_fmt": "$806K",
+            "date": "2026-07-24",
+            "shares_traded": 2279,
+            "price_per_share": 353.64,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 984049.04,
+            "dollar_fmt": "$984K",
+            "date": "2026-07-24",
+            "shares_traded": 2782,
+            "price_per_share": 353.72,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "buy",
+            "dollar_value": 351992.55,
+            "dollar_fmt": "$352K",
+            "date": "2026-07-24",
+            "shares_traded": 5061,
+            "price_per_share": 69.55,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 447834.84,
+            "dollar_fmt": "$448K",
+            "date": "2026-07-24",
+            "shares_traded": 1266,
+            "price_per_share": 353.74,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 625783.75,
+            "dollar_fmt": "$626K",
+            "date": "2026-07-24",
+            "shares_traded": 1769,
+            "price_per_share": 353.75,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "buy",
+            "dollar_value": 273180.35,
+            "dollar_fmt": "$273K",
+            "date": "2026-07-24",
+            "shares_traded": 3035,
+            "price_per_share": 90.01,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:14.554394"
+      "scanned_at": "2026-07-30T13:13:42.588251"
     },
     "WMT": {
       "insider_signal": {
@@ -821,7 +897,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:16.043613"
+      "scanned_at": "2026-07-30T13:13:43.464942"
     },
     "COST": {
       "insider_signal": {
@@ -858,7 +934,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:17.115398"
+      "scanned_at": "2026-07-30T13:13:44.373055"
     },
     "FCX": {
       "insider_signal": {
@@ -884,7 +960,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:18.299081"
+      "scanned_at": "2026-07-30T13:13:45.196155"
     },
     "NEE": {
       "insider_signal": {
@@ -911,15 +987,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Is Expanding a Pledge That Could Stop AI Data Centers From Hiking Your Electricity Bill— Here's Who Just Signed On",
-          "date": "2026-07-24 22:31",
-          "summary": "The White House is expanding its voluntary Ratepayer Protection Pledge for AI data centers, adding nearly 200 utilities, governors, electricity cooperatives, public power providers and developers to t",
+          "headline": "Top Midday Stories: Stocks Down, Oil Up as Trump Vows Strong Response to Iran Attacks; Vertiv Q2 Revenue Misses Estimates",
+          "date": "2026-07-29 15:40",
+          "summary": "All three major US stock indexes were down in late-morning trading Wednesday after President Trump v",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-07-29T13:22:19.294656"
+      "scanned_at": "2026-07-30T13:13:46.000924"
     },
     "PLD": {
       "insider_signal": {
@@ -956,7 +1032,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-29T13:22:20.296183"
+      "scanned_at": "2026-07-30T13:13:46.993599"
     }
   }
 }
