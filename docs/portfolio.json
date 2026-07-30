@@ -7,7 +7,7 @@
     "last_updated": "2026-07-30T12:51:32.041307+00:00",
     "session_number": 3
   },
-  "cash": 3293.78,
+  "cash": 2163.04,
   "initial_capital": 5000.0,
   "equity": 4892.47,
   "peak_equity": 5033.78,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.08,
-    "sortino": -2.58,
-    "calmar": -2.89,
+    "sharpe": -2.05,
+    "sortino": -2.52,
+    "calmar": -2.83,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
     "spy_current_price": 731.6,
@@ -63,19 +63,36 @@
     "TMO": {
       "direction": "long",
       "qty": 1,
-      "entry_price": 574.8,
-      "cost_basis": 574.8,
-      "last_price": 572.45,
-      "stop_loss": 540.31,
-      "take_profit": 643.78,
-      "partial_profit_price": 609.29,
+      "entry_price": 566.41,
+      "cost_basis": 566.41,
+      "last_price": 566.41,
+      "stop_loss": 532.43,
+      "take_profit": 634.38,
+      "partial_profit_price": 600.39,
       "stop_loss_pct": 6.0,
       "take_profit_pct": 12.0,
-      "highest_price": 574.8,
-      "lowest_price": 574.8,
+      "highest_price": 566.41,
+      "lowest_price": 566.41,
       "partial_taken": false,
-      "opened_date": "2026-07-28",
-      "journal_note": "Decision tree: market posture is NEUTRAL, trader conviction is medium \u2192 BUY is mandatory. However, TMO currently trades at $559.53 and the trader's entry target is $555, so I'm setting qty to 0 as a limit-order placeholder \u2014 we should not chase at current price when the pullback entry is only ~0.8% away. The thesis is strong: Q2 EPS beat at $6.03, Morgan Stanley PT raised to $650 (16% upside from here), MACD histogram positive at 2.42, and RSI 67.74 showing momentum without being overbought. Risk team approved at 0.05 position size with 6% stop \u2014 I agree, as the 31x P/E is elevated but justified by 10% revenue growth inflection and 40.9% gross margins. At 5% of portfolio (~$422), that's less than 1 share of TMO at ~$555, which is impractical. Let me recalculate: total portfolio = $8,446.52, 5% = $422.33, at $555/share that's 0 full shares. Portfolio is too small for a meaningful TMO position at this price. HOLD is the practical outcome."
+      "opened_date": "2026-07-30",
+      "journal_note": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD."
+    },
+    "LMT": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 564.33,
+      "cost_basis": 564.33,
+      "last_price": 564.33,
+      "stop_loss": 530.47,
+      "take_profit": 632.05,
+      "partial_profit_price": 598.19,
+      "stop_loss_pct": 6.0,
+      "take_profit_pct": 12.0,
+      "highest_price": 564.33,
+      "lowest_price": 564.33,
+      "partial_taken": false,
+      "opened_date": "2026-07-30",
+      "journal_note": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment."
     }
   },
   "open_orders": [
@@ -243,6 +260,28 @@
       "day": 24,
       "submitted_at": "2026-07-28T13:37:01.286162+00:00",
       "resolved_at": "2026-07-28T13:37:03.565896+00:00"
+    },
+    {
+      "ticker": "TMO",
+      "qty": 1,
+      "side": "BUY",
+      "price": 566.41,
+      "order_type": "market",
+      "status": "executed",
+      "day": 26,
+      "submitted_at": "2026-07-30T13:37:19.998170+00:00",
+      "resolved_at": "2026-07-30T13:37:22.367526+00:00"
+    },
+    {
+      "ticker": "LMT",
+      "qty": 1,
+      "side": "BUY",
+      "price": 564.33,
+      "order_type": "market",
+      "status": "executed",
+      "day": 26,
+      "submitted_at": "2026-07-30T13:37:24.059378+00:00",
+      "resolved_at": "2026-07-30T13:37:26.453741+00:00"
     }
   ],
   "trade_history": [
@@ -651,6 +690,11 @@
     {
       "day": 25,
       "date": "2026-07-29",
+      "equity": 4892.47
+    },
+    {
+      "day": 26,
+      "date": "2026-07-30",
       "equity": 4892.47
     }
   ],
@@ -1104,6 +1148,66 @@
       },
       "prompt_version": "1.0.0",
       "timestamp": "2026-07-28T13:37:03.571516+00:00"
+    },
+    {
+      "date": "2026-07-30",
+      "day": 26,
+      "ticker": "TMO",
+      "action": "BUY",
+      "analysis_price": 566.41,
+      "entry_price": 566.41,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "medium",
+      "score": 2.65,
+      "sector": "Healthcare",
+      "sector_rank": 1,
+      "stop_loss": 532.43,
+      "take_profit": 634.38,
+      "vix_label": "MODERATE (18.9) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD.",
+      "bull_case": "**Bull Case for Thermo Fisher Scientific Inc (TMO)**\n\nThermo Fisher Scientific (TMO) is well-positioned for significant price appreciation in the coming months due to its robust fundamental, sentiment, and technical indicators. \n\n**Fundamentally**, TMO's profitability is evident through its gross margin of 40.93% and a solid ROE of 13.33%. While the 3-year revenue growth may seem concerning, the recent Q2 earnings and revenue of $11.99 billion\u2014a 10.5% year-on-year increase\u2014highlight a strong recovery trajectory, proving the company's resilience. Furthermore, strategic partnerships, like the collaboration with ImmuPharma, enhance growth avenues and diversify revenue.\n\n**From a sentiment perspective**, the market is becoming increasingly bullish, with multiple analysts raising their price targets to between $580 and $650. This consensus reflects a growing belief in TMO's improvement and market share expansion. Additionally, despite neutral social media sentiment, the positive analyst revisions and strong earnings create a strong tailwind for the stock.\n\n**Technically**, TMO boasts a bullish outlook, trading above both the 20-day and 50-day EMAs, confirming strong upward momentum. A volume well above average indicates heightened trader interest, while the MACD supports continued bullish momentum. Although the RSI is in overbought territory, this rarely signals an immediate downturn in a strong uptrend, suggesting that any potential consolidation will set up for further gains.\n\n**Top 3 Bull Catalysts**:\n1. Continued strong financial performance and operational execution, as evidenced by recent earnings exceeding expectations.\n2. Increased analyst upgrades with higher price targets reflecting a consensus on improved growth prospects.\n3. Strategic partnerships enhancing revenue diversification and positioning TMO for ongoing growth in emerging markets. \n\nGiven these catalysts and a favorable market environment, TMO presents an attractive investment opportunity for both short- and long-term investors.",
+      "bear_case": "While there are positive aspects to Thermo Fisher Scientific Inc. (TMO), a thorough analysis reveals significant risks that warrant caution and suggest that the stock may not be a prudent investment at this time.\n\n**Fundamentally**, despite the strong Q2 figures and partnerships like the one with ImmuPharma, the company's 3-year revenue growth rate of -0.27% is alarming. A decline in revenue over three years raises serious questions about TMO's long-term growth trajectory, indicating potential structural issues in its business. Additionally, the current P/E ratio of 32.112 suggests the stock is significantly overvalued compared to its earnings, which may lead to a sharp correction as market expectations shift or if earnings fail to keep pace with the lofty valuations.\n\n**From a sentiment perspective**, the mixed insider trading activity, including recent sales from insiders (like Gianluca Pettiti), casts doubts on the long-term optimism around TMO. Insider selling can often indicate a lack of confidence in future performance, and the reported neutral social media sentiment suggests that retail investors are not overwhelmingly convinced by the bullish narrative presented by analysts. \n\n**Technically**, while current indicators show bullish trends, the RSI at 72.15 indicates that TMO is overbought and susceptible to a pullback. Price action near the upper Bollinger Band also signifies that the stock may be due for a correction, especially given the recent volatility. Overbought conditions often precede sudden reversals; caution is warranted if the market sentiment shifts even slightly.\n\n**Top 3 Bear Risks**:\n1. Persistent revenue decline could indicate deeper structural problems, leading to potential downward revisions and erosion of market confidence.\n2. High P/E ratio presents risks for valuation compression, especially if earnings do not grow as expected, which could result in sharp sell-offs.\n3. Mixed insider activity and neutral social sentiment point to potential caution among key stakeholders, increasing the risk that any negative news could trigger significant selling pressure. \n\nIn summary, while TMO has moments of strong performance, the underlying fundamentals and potential vulnerabilities call for a more bearish outlook.",
+      "agent_signals": {
+        "fundamental": "bullish",
+        "technical": "bullish",
+        "sentiment": "bullish",
+        "trader_conviction": "medium",
+        "risk_approved": true
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-30T13:37:22.525339+00:00"
+    },
+    {
+      "date": "2026-07-30",
+      "day": 26,
+      "ticker": "LMT",
+      "action": "BUY",
+      "analysis_price": 564.33,
+      "entry_price": 564.33,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "Industrials",
+      "sector_rank": 8,
+      "stop_loss": 530.47,
+      "take_profit": 632.05,
+      "vix_label": "MODERATE (18.9) \u26a0\ufe0f \u2014 75% position sizing",
+      "regime": "BULLISH",
+      "rationale": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment.",
+      "bull_case": "Lockheed Martin (LMT) presents a compelling investment opportunity driven by a robust fundamental outlook, bullish sentiment from the defense sector, and supportive technical indicators.\n\n**Fundamental Strength**: Lockheed exhibits strong profit metrics with a high return on equity (ROE) of 86.24%, underpinning its ability to effectively convert equity into profits. Recent financial disclosures reveal a notable contract win of $58.62 billion for missile production, highlighting the company\u2019s critical role in defense spending amid heightened geopolitical tensions. Despite some concerns regarding leverage (debt-to-equity ratio of 3.23), this debt can amplify growth in an environment of rising defense budgets.\n\n**Sentiment Momentum**: Favorable sector dynamics enhance LMT's outlook. The defense sector is witnessing accelerated demand, driven largely by geopolitical instability, particularly in the Middle East. The government\u2019s substantial budget allocations to national defense create a fertile ground for ongoing revenue growth. Recent Q2 earnings reports that exceeded expectations further bolster sentiment, indicating investor confidence in sustained performance.\n\n**Technical Indicators**: The technical analysis shows LMT currently in an uptrend, as indicated by the EMA indicators and a positive MACD reading. Even with a short-term RSI suggesting overbought conditions, sustained volume and positive price action point towards continued upward momentum, making any potential pullbacks ideal entry points for investors.\n\n**Risks**: While high leverage and potential corrections due to overbought indicators are concerns, the upside potential driven by government contracts and sector growth significantly mitigates these risks.\n\n**Top 3 Bull Catalysts**:\n1. **Significant Multi-billion Dollar Contracts**: Recent and future government contracts are expected to drive revenue and earnings growth.\n2. **Increasing Defense Budgets**: Geopolitical tensions necessitate increased spending, directly benefiting Lockheed Martin.\n3. **Strong Technical Momentum**: Continued bullish trends in price and strong trading volume suggest an underlying strength for further price appreciation.\n\nGiven these factors, Lockheed Martin stands as a strong buy amidst a favorable landscape for defense contractors.",
+      "bear_case": "Lockheed Martin (LMT), while presenting strengths in financial performance, sentiment, and technical indicators, reveals significant risks that outweigh its potential upside, particularly in light of a changing economic landscape and inherent industry vulnerabilities.\n\n**Fundamental Weakness**: The high P/E ratio of 26.53 suggests that LMT is overvalued compared to its historical averages and the industry, making it less attractive despite impressive ROE figures. The elevated debt-to-equity ratio of 3.23 raises severe concerns about financial health, particularly in a rising interest rate environment where servicing debt can become increasingly burdensome. Any downturn in government defense spending or economic slowdown could severely impact profitability, especially when the company relies heavily on government contracts as proof of resiliency.\n\n**Sentiment Risks**: Despite apparent sector momentum driven by geopolitical tensions, widespread government contracts hinge on political stability and budget allocations, which can be unpredictable. Any shifts in U.S. political priorities or policy changes under future administrations could result in funding cuts or contract renegotiations, which would adversely affect Lockheed's revenue stream. Moreover, the mixed insider activity, where notable insiders have sold significant stakes, raises alarms about confidence in the company\u2019s real growth trajectory.\n\n**Technical Overextension**: The technical indicators, while currently bullish, highlight concerning overbought conditions as indicated by an RSI of 72.31 and proximity to the upper Bollinger Band, which typically signals a forthcoming price correction. If profit-taking occurs, the stock may face a rapid decline from its current highs, and the lack of substantial retail sentiment underlines possible thin support for strong price action.\n\nIn conclusion, while Lockheed Martin benefits from immediate contract wins and sector growth, underlying risks associated with valuation, dependence on governmental stability, and market conditions could constrain future performance.\n\n**Top 3 Bear Risks**:\n1. **High Valuation with Diminishing Returns**: The stock\u2019s elevated P/E ratio signals that any underperformance against expectations could lead to significant declines.\n2. **Volatility of Government Spending**: Changes in political landscape or defense budgets can lead to contract losses or reduced spending, directly impacting revenues.\n3. **Market Corrections**: Overbought technical conditions may lead to sudden price pullbacks, undermining recent gains and investor confidence.",
+      "agent_signals": {
+        "fundamental": "bullish",
+        "technical": "bullish",
+        "sentiment": "bullish",
+        "trader_conviction": "medium",
+        "risk_approved": false
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-30T13:37:26.458432+00:00"
     }
   ],
   "day_trade_signals_archive": [],
@@ -1633,123 +1737,123 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 174.3,
-        "mom_5d": -0.8,
-        "mom_1m": -5.56,
-        "mom_3m": 8.55,
+        "price": 166.57,
+        "mom_5d": -7.6,
+        "mom_1m": -10.16,
+        "mom_3m": 4.69,
         "above_ma50": false,
-        "rsi_14": 42.6,
-        "score": -1.31,
+        "rsi_14": 22.9,
+        "score": -6.42,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 107.66,
-        "mom_5d": -2.83,
-        "mom_1m": 1.97,
-        "mom_3m": -7.04,
+        "price": 109.51,
+        "mom_5d": 0.28,
+        "mom_1m": 1.51,
+        "mom_3m": -5.01,
         "above_ma50": false,
-        "rsi_14": 39.8,
-        "score": -1.27,
+        "rsi_14": 46.9,
+        "score": -0.16,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 110.84,
-        "mom_5d": -3.29,
-        "mom_1m": -2.21,
-        "mom_3m": -5.94,
+        "price": 111.61,
+        "mom_5d": -2.11,
+        "mom_1m": -4.7,
+        "mom_3m": -4.48,
         "above_ma50": false,
-        "rsi_14": 31.8,
-        "score": -3.28,
+        "rsi_14": 34.5,
+        "score": -3.88,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 163.4,
-        "mom_5d": 2.61,
-        "mom_1m": 4.99,
-        "mom_3m": 13.9,
+        "price": 166.24,
+        "mom_5d": 4.27,
+        "mom_1m": 3.42,
+        "mom_3m": 16.38,
         "above_ma50": true,
-        "rsi_14": 47.3,
-        "score": 7.06,
+        "rsi_14": 59.4,
+        "score": 7.27,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 56.88,
-        "mom_5d": 1.5,
-        "mom_1m": 6.42,
-        "mom_3m": 9.79,
+        "price": 56.68,
+        "mom_5d": 1.12,
+        "mom_1m": 5.51,
+        "mom_3m": 9.17,
         "above_ma50": true,
-        "rsi_14": 58.4,
-        "score": 6.62,
+        "rsi_14": 61.5,
+        "score": 5.92,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 58.36,
-        "mom_5d": 0.72,
-        "mom_1m": 7.89,
-        "mom_3m": 2.8,
+        "price": 58.65,
+        "mom_5d": -0.93,
+        "mom_1m": 9.46,
+        "mom_3m": -0.64,
         "above_ma50": true,
-        "rsi_14": 71.4,
-        "score": 5.72,
+        "rsi_14": 71.7,
+        "score": 5.32,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 183.2,
-        "mom_5d": 2.85,
-        "mom_1m": -0.5,
-        "mom_3m": 6.2,
-        "above_ma50": true,
-        "rsi_14": 53.2,
-        "score": 2.85,
+        "price": 176.66,
+        "mom_5d": -1.22,
+        "mom_1m": -3.34,
+        "mom_3m": 3.96,
+        "above_ma50": false,
+        "rsi_14": 36.6,
+        "score": -1.24,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 85.36,
-        "mom_5d": 0.59,
-        "mom_1m": 1.69,
-        "mom_3m": 3.67,
+        "price": 87.36,
+        "mom_5d": 3.53,
+        "mom_1m": 3.54,
+        "mom_3m": 5.35,
         "above_ma50": true,
-        "rsi_14": 52.1,
-        "score": 2.76,
+        "rsi_14": 66.9,
+        "score": 4.9,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 51.39,
-        "mom_5d": 2.72,
-        "mom_1m": -0.87,
-        "mom_3m": -0.75,
+        "price": 51.74,
+        "mom_5d": 1.81,
+        "mom_1m": 2.13,
+        "mom_3m": 1.53,
         "above_ma50": true,
-        "rsi_14": 49.0,
-        "score": 1.23,
+        "rsi_14": 61.6,
+        "score": 2.91,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 45.68,
-        "mom_5d": 1.65,
-        "mom_1m": -0.37,
-        "mom_3m": -1.1,
-        "above_ma50": true,
-        "rsi_14": 49.8,
-        "score": 1.09,
+        "price": 44.91,
+        "mom_5d": -2.22,
+        "mom_1m": -2.41,
+        "mom_3m": -1.69,
+        "above_ma50": false,
+        "rsi_14": 47.6,
+        "score": -2.21,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.76,
-        "mom_5d": 1.17,
-        "mom_1m": 2.62,
-        "mom_3m": 5.22,
+        "price": 45.96,
+        "mom_5d": 2.11,
+        "mom_1m": 2.32,
+        "mom_3m": 5.32,
         "above_ma50": true,
-        "rsi_14": 60.4,
-        "score": 3.71,
+        "rsi_14": 73.6,
+        "score": 3.86,
         "sector": "Real Estate"
       }
     },
@@ -1757,14 +1861,14 @@
       "Healthcare",
       "Financials",
       "Energy",
-      "Real Estate",
-      "Industrials",
       "Consumer Staples",
+      "Real Estate",
       "Materials",
-      "Utilities",
       "Communication Services",
-      "Technology",
-      "Consumer Discretionary"
+      "Industrials",
+      "Utilities",
+      "Consumer Discretionary",
+      "Technology"
     ],
     "top_3": [
       "Healthcare",
@@ -1772,28 +1876,28 @@
       "Energy"
     ],
     "bottom_3": [
-      "Communication Services",
-      "Technology",
-      "Consumer Discretionary"
+      "Utilities",
+      "Consumer Discretionary",
+      "Technology"
     ],
-    "as_of": "2026-07-28"
+    "as_of": "2026-07-30"
   },
   "strategy_brief": {
     "market_posture": "neutral",
-    "risk_budget_multiplier": 1.1,
+    "risk_budget_multiplier": 1.0,
     "focus_sectors": [
       "Healthcare",
       "Financials",
       "Energy"
     ],
     "avoid_sectors": [
-      "Communication Services",
-      "Technology",
-      "Consumer Discretionary"
+      "Utilities",
+      "Consumer Discretionary",
+      "Technology"
     ],
     "target_new_positions": 1,
     "conviction_floor": "medium",
-    "primary_thesis": "VIX at 18.7 with rising momentum (+9.5% 5d) and a bearish SPY trend warrants measured caution, but sector leadership in Healthcare, Financials, and Energy \u2014 all aligned with existing holdings \u2014 provides selective opportunity to close the modest -0.3% alpha gap without overextending into deteriorating macro conditions.",
+    "primary_thesis": "SPY trend has turned bearish with VIX rising toward the caution threshold, warranting disciplined selectivity rather than aggressive deployment \u2014 however, existing alpha of +0.9% and healthy credit conditions support holding current positions and opportunistically adding one high-conviction name in leading sectors. Sector momentum in Healthcare, Financials, and Energy provides the best risk-adjusted runway for incremental exposure.",
     "capital_deployment_priority": "normal",
     "day_trade_go": false
   },
@@ -1808,11 +1912,11 @@
     },
     "IWM": {
       "action": "hold",
-      "confidence": 0.35
+      "confidence": 0.65
     },
     "GLD": {
       "action": "hold",
-      "confidence": 0.35
+      "confidence": 0.65
     }
   },
   "agent_tracker": {
