@@ -7,7 +7,7 @@
     "last_updated": "2026-07-31T13:11:04.564757+00:00",
     "session_number": 3
   },
-  "cash": 2740.84,
+  "cash": 1739.62,
   "initial_capital": 5000.0,
   "equity": 4308.26,
   "peak_equity": 5033.78,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.71,
-    "sortino": -1.53,
-    "calmar": -3.82,
+    "sharpe": -2.68,
+    "sortino": -1.49,
+    "calmar": -3.76,
     "max_drawdown_pct": 14.41,
     "spy_start_price": 754.99,
     "spy_current_price": 741.63,
@@ -76,6 +76,40 @@
       "partial_taken": false,
       "opened_date": "2026-07-30",
       "journal_note": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment."
+    },
+    "MA": {
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 577.39,
+      "cost_basis": 577.39,
+      "last_price": 577.39,
+      "stop_loss": 548.52,
+      "take_profit": 635.13,
+      "partial_profit_price": 606.26,
+      "stop_loss_pct": 5.0,
+      "take_profit_pct": 10.0,
+      "highest_price": 577.39,
+      "lowest_price": 577.39,
+      "partial_taken": false,
+      "opened_date": "2026-07-31",
+      "journal_note": "MA is a Financials sector name \u2014 one of the strategy brief's focus sectors \u2014 with strong post-earnings momentum: Q2 revenue of $9.28B (+14% YoY) and EPS of $5.04 beating estimates by 5.66%, triggering a bullish MACD crossover (14.49 vs signal 12.02) with RSI at 66.14, comfortably below overbought. Risk team approved at 5% sizing; the conservative perspective flagged debt levels but MA's 206% ROE and 13.82% revenue CAGR justify the 34.3x P/E premium in digital payments. Entry near $570.67 targets $577 resistance (upper Bollinger Band $574.38 and recent high $577.35) for ~1.2% near-term upside, with a 5% stop at ~$542 near the middle Bollinger Band limiting downside to ~$28/share \u2014 favorable risk/reward given risk-on posture and HIGH capital deployment priority to close the -12% alpha deficit."
+    },
+    "CMG": {
+      "direction": "long",
+      "qty": 11,
+      "entry_price": 38.53,
+      "cost_basis": 423.83,
+      "last_price": 38.53,
+      "stop_loss": 35.45,
+      "take_profit": 44.69,
+      "partial_profit_price": 41.61,
+      "stop_loss_pct": 8.0,
+      "take_profit_pct": 16.0,
+      "highest_price": 38.53,
+      "lowest_price": 38.53,
+      "partial_taken": false,
+      "opened_date": "2026-07-31",
+      "journal_note": "CMG is a Consumer Discretionary name \u2014 not in any avoided sector \u2014 with a clean technical breakout above both 20d EMA ($34.31) and 50d EMA ($33.52), currently at $37.80 consolidating below the $38.52 resistance with a bullish MACD crossover (histogram +0.35). Fundamentals are exceptional: 48.45% ROE, zero debt, 11.36% 3-year revenue CAGR, and a Q2 earnings beat with 9.3% revenue growth to $3.35B. The risk team approved at 5% position size with an 8% stop-loss; the conservative perspective flagged high P/E valuation, but I agree with the majority that the growth trajectory and insider buying cluster ($215K each across five executives) justify the entry. Upside target is the $38.52 breakout level and beyond (~2% near-term, with potential for re-rating higher), while the 8% stop at ~$34.77 limits downside to roughly $27 on this position \u2014 an asymmetric setup given the risk-on posture and HIGH capital deployment priority."
     }
   },
   "open_orders": [
@@ -265,6 +299,28 @@
       "day": 26,
       "submitted_at": "2026-07-30T13:37:24.059378+00:00",
       "resolved_at": "2026-07-30T13:37:26.453741+00:00"
+    },
+    {
+      "ticker": "MA",
+      "qty": 1,
+      "side": "BUY",
+      "price": 577.39,
+      "order_type": "market",
+      "status": "executed",
+      "day": 27,
+      "submitted_at": "2026-07-31T13:45:42.767391+00:00",
+      "resolved_at": "2026-07-31T13:45:45.218433+00:00"
+    },
+    {
+      "ticker": "CMG",
+      "qty": 11,
+      "side": "BUY",
+      "price": 38.53,
+      "order_type": "market",
+      "status": "executed",
+      "day": 27,
+      "submitted_at": "2026-07-31T13:45:46.480594+00:00",
+      "resolved_at": "2026-07-31T13:45:48.884191+00:00"
     }
   ],
   "trade_history": [
@@ -698,6 +754,11 @@
     {
       "day": 26,
       "date": "2026-07-30",
+      "equity": 4308.26
+    },
+    {
+      "day": 27,
+      "date": "2026-07-31",
       "equity": 4308.26
     }
   ],
@@ -1211,6 +1272,66 @@
       },
       "prompt_version": "1.0.0",
       "timestamp": "2026-07-30T13:37:26.458432+00:00"
+    },
+    {
+      "date": "2026-07-31",
+      "day": 27,
+      "ticker": "MA",
+      "action": "BUY",
+      "analysis_price": 577.39,
+      "entry_price": 577.39,
+      "price_delta_pct": 0.0,
+      "qty": 1,
+      "conviction": "medium",
+      "score": 2.65,
+      "sector": "Financials",
+      "sector_rank": 2,
+      "stop_loss": 548.52,
+      "take_profit": 635.13,
+      "vix_label": "LOW (17.1) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "MA is a Financials sector name \u2014 one of the strategy brief's focus sectors \u2014 with strong post-earnings momentum: Q2 revenue of $9.28B (+14% YoY) and EPS of $5.04 beating estimates by 5.66%, triggering a bullish MACD crossover (14.49 vs signal 12.02) with RSI at 66.14, comfortably below overbought. Risk team approved at 5% sizing; the conservative perspective flagged debt levels but MA's 206% ROE and 13.82% revenue CAGR justify the 34.3x P/E premium in digital payments. Entry near $570.67 targets $577 resistance (upper Bollinger Band $574.38 and recent high $577.35) for ~1.2% near-term upside, with a 5% stop at ~$542 near the middle Bollinger Band limiting downside to ~$28/share \u2014 favorable risk/reward given risk-on posture and HIGH capital deployment priority to close the -12% alpha deficit.",
+      "bull_case": "**Bull Case for Mastercard (MA):** \n\nMastercard Inc. stands as a stalwart within the financial services sector, poised for significant growth driven by robust fundamentals, positive market sentiment, and strong technical indicators. \n\n**Fundamentally**, the company is showing impressive profitability with a staggering ROE of 206.14%, hinting at its exceptional ability to generate returns. Its recent earnings report, which beat expectations with a 14% revenue increase year-over-year, reflects strong transaction volumes, particularly in cross-border payments, which are set to expand further as global travel recovers. Although concerns over a high P/E ratio (34.27) exist, the ongoing revenue growth of 13.82% over the past three years indicates that the market is willing to pay a premium for growth, particularly in an evolving economic landscape where digital payment solutions are increasingly necessary.\n\n**From a sentiment standpoint**, the positive reception of Mastercard's Q2 earnings and its focus on agentic commerce reflect strong investor confidence. While insider sales appear concerning, they could merely represent typical portfolio rebalancing rather than a lack of confidence in the company's long-term prospects. The overall bullish sentiment in the financial sector supports a favorable outlook for Mastercard.\n\n**Technically**, the stock is in a bullish trend, with prices above both the 20-day and 50-day EMAs, and a positive MACD indicator reinforces momentum. Despite low trading volumes, which may suggest caution, the overall momentum supports further upside.\n\n**Catalysts for Growth:**\n1. **Continued Revenue Growth**: Due to increasing transaction volumes and the recovery of global travel, creating potential for even higher earnings.\n2. **Strategic Expansion into Digital and Agentic Commerce**: This positions Mastercard to capture emerging payment methods and expand its footprint in high-growth markets.\n3. **Favorable Market Sentiment**: Continued positive trends in the broader financial sector and ongoing investor optimism about fintech provide a conducive environment for stock appreciation.\n\nIn conclusion, despite some risks, the underlying strengths and positive market trends suggest Mastercard is poised for further growth, making it a compelling buy.",
+      "bear_case": "**Bear Case for Mastercard (MA):**\n\nWhile Mastercard presents an image of a strong performer in the financial services sector, substantial risks loom that could jeopardize its attractive facade, outweighing the positives highlighted by the bull camp.\n\n**Fundamentally**, despite an impressive ROE of 206.14%, the company\u2019s significant debt-to-equity ratio of 2.46 raises alarms about over-leverage, which could hinder growth in economic downturns. Moreover, the current ratio of 1.035 suggests tight liquidity, meaning Mastercard may struggle to meet short-term obligations. Coupled with a high P/E ratio of 34.27, the valuation seems inflated, indicating that the company's stock may be trading at a premium without solid backing from underlying financials. Any blip in growth could trigger a sharp price correction.\n\n**From a sentiment perspective**, while there has been a positive response to Q2 earnings, sentiment metrics depict a balanced outlook (50% bullish, 50% bearish). The apparent lack of enthusiasm reflected in social media and investment forums indicates a potential cooling of interest among retail investors, often a precursor to stock stagnation. Furthermore, the mixed insider activity\u2014exhibiting a strong sell signal with multiple large transactions by insiders\u2014cannot be dismissed as mere rebalancing; rather, it raises questions about their confidence in the company's future performance.\n\n**Technically**, although indicators like the EMA and MACD provide bullish readings, caution is warranted. The current price is trading near its upper Bollinger Band, suggesting potential overextension and imminent pullbacks. The significant divergence in trading volume against recent price increases highlights the risk that momentum is lacking, calling the sustainability of the current trend into question.\n\n**In summary**, while Mastercard demonstrates several strengths, the combination of high leverage, precarious liquidity, a high valuation, mixed insider signals, and overbought technical indicators presents significant risks that could outweigh potential gains.\n\n**Top 3 Bear Risks:**\n1. **High Leverage and Liquidity Issues**: Increased risk during economic downturns or unexpected downturns in transaction volumes.\n2. **Insider Selling and Mixed Sentiment**: Potential signal of a lack of confidence among those closest to the company about future performance.\n3. **Overbought Condition Leading to Pullbacks**: Risk of price corrections as technical indicators suggest unsustainable momentum.",
+      "agent_signals": {
+        "fundamental": "neutral",
+        "technical": "bullish",
+        "sentiment": "bullish",
+        "trader_conviction": "medium",
+        "risk_approved": true
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-31T13:45:45.225650+00:00"
+    },
+    {
+      "date": "2026-07-31",
+      "day": 27,
+      "ticker": "CMG",
+      "action": "BUY",
+      "analysis_price": 38.53,
+      "entry_price": 38.53,
+      "price_delta_pct": 0.0,
+      "qty": 11,
+      "conviction": "medium",
+      "score": 2.15,
+      "sector": "Consumer Discretionary",
+      "sector_rank": 8,
+      "stop_loss": 35.45,
+      "take_profit": 44.69,
+      "vix_label": "LOW (17.1) \u2705 \u2014 full position sizing",
+      "regime": "BULLISH",
+      "rationale": "CMG is a Consumer Discretionary name \u2014 not in any avoided sector \u2014 with a clean technical breakout above both 20d EMA ($34.31) and 50d EMA ($33.52), currently at $37.80 consolidating below the $38.52 resistance with a bullish MACD crossover (histogram +0.35). Fundamentals are exceptional: 48.45% ROE, zero debt, 11.36% 3-year revenue CAGR, and a Q2 earnings beat with 9.3% revenue growth to $3.35B. The risk team approved at 5% position size with an 8% stop-loss; the conservative perspective flagged high P/E valuation, but I agree with the majority that the growth trajectory and insider buying cluster ($215K each across five executives) justify the entry. Upside target is the $38.52 breakout level and beyond (~2% near-term, with potential for re-rating higher), while the 8% stop at ~$34.77 limits downside to roughly $27 on this position \u2014 an asymmetric setup given the risk-on posture and HIGH capital deployment priority.",
+      "bull_case": "Chipotle Mexican Grill Inc. (CMG) presents a compelling investment opportunity due to its robust financial health, positive market sentiment, and favorable technical indicators. \n\nFundamentally, CMG boasts an impressive return on equity of 48.45% and a debt-free balance sheet, which mitigates financial risk significantly. The company has exhibited strong revenue growth at 11.36% over the past three years and recently reported a second-quarter revenue increase of 9.3%, surpassing Wall Street expectations. Insider activity further demonstrates confidence in CMG's future, with multiple executives making substantial stock purchases, reflecting a bullish outlook on the company's potential.\n\nSentiment analysis is encouraging, with an acceleration in same-store sales of 2.2%, coupled with a significant 12.7% surge in stock price following its earnings report. Although the sentiment remains mixed, the overall trend is improving, indicating a growing belief in CMG's recovery and further growth.\n\nTechnically, CMG is currently in a solid bullish trend, with its price above both the 20-day and 50-day EMAs. A recent MACD bullish crossover supports this momentum. Although the RSI is neutral and the stock is slightly extended, historically strong fundamentals and a cohesive management outlook outweigh any immediate technical caution.\n\nRisks include industry competition and potential economic downturns affecting discretionary spending. Nevertheless, CMG's zero-debt status, proven profitability, and solid management decisions position it well for resilient growth.\n\n**Top 3 Bull Catalysts:**\n1. Continued revenue growth driven by successful execution of the Recipe for Growth plan.\n2. Strong insider buying signaling confidence in long-term stock performance.\n3. Resilient fundamentals coupled with positive technical indicators, paving the way for price appreciation.",
+      "bear_case": "While Chipotle Mexican Grill Inc. (CMG) displays some commendable metrics, the risks associated with its investment case significantly outweigh the positives. \n\n**1. Overvaluation Concerns:** The current P/E ratio of 32.49 suggests that CMG is trading at a premium compared to its earnings potential. Investors are priced in for extraordinary growth that may not materialize, particularly in a highly competitive market where consumer preferences can rapidly shift. A significant earnings miss or supply chain disruption could expose this overvaluation and lead to severe price corrections.\n\n**2. Insider Activity Signals Mixed Confidence:** Despite recent insider purchases, the presence of sales by other insiders, particularly the notable transaction by Albert S. Baldocchi, raises questions about the overall conviction from CMG's leadership. Such mixed signals create uncertainty about the company's true operational health and strategic direction, hinting at possible internal concerns about future performance.\n\n**3. Market Sentiment is Fragile:** While there was a temporary surge in stock price post-earnings, the general market sentiment remains mixed, reflected by the 50/50 bullish and bearish sentiment split. The absence of consistent positive analysis, alongside the aforementioned mixed insider activity, indicates a lack of strong conviction in the stock's upward trajectory. Furthermore, the significant drop in trading volume after the earnings rally signals a potential lack of confidence among institutional investors, suggesting that the price action may not hold.\n\n**4. Economic Sensitivity:** The restaurant sector, particularly fast-casual dining, is especially vulnerable to economic downturns. As inflationary pressures persist and consumer spending tightens, discretionary dining could take a hit, impacting CMG's revenue growth. Investors should be wary of external economic shifts that could adversely affect the company's financial stability.\n\nIn summary, while CMG has underlying strengths, its high valuation, mixed insider sentiment, fragile market confidence, and vulnerability to economic shifts present substantial risks that overshadow its bullish narrative.\n\n**Top 3 Bear Risks:**\n1. Potential economic downturn causing reduced discretionary spending on dining.\n2. Overvaluation due to inflated growth expectations that may lead to significant stock price corrections.\n3. Mixed insider activity that raises doubts on management's confidence in the company's performance.",
+      "agent_signals": {
+        "fundamental": "bullish",
+        "technical": "bullish",
+        "sentiment": "bullish",
+        "trader_conviction": "medium",
+        "risk_approved": true
+      },
+      "prompt_version": "1.0.0",
+      "timestamp": "2026-07-31T13:45:48.896312+00:00"
     }
   ],
   "day_trade_signals_archive": [],
@@ -1778,178 +1899,178 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 166.57,
-        "mom_5d": -7.6,
-        "mom_1m": -10.16,
-        "mom_3m": 4.69,
+        "price": 177.32,
+        "mom_5d": 0.82,
+        "mom_1m": -4.47,
+        "mom_3m": 9.54,
         "above_ma50": false,
-        "rsi_14": 22.9,
-        "score": -6.42,
+        "rsi_14": 45.1,
+        "score": -0.08,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 109.51,
-        "mom_5d": 0.28,
-        "mom_1m": 1.51,
-        "mom_3m": -5.01,
+        "price": 107.1,
+        "mom_5d": 0.75,
+        "mom_1m": -2.41,
+        "mom_3m": -8.24,
         "above_ma50": false,
-        "rsi_14": 46.9,
-        "score": -0.16,
+        "rsi_14": 37.7,
+        "score": -2.63,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 111.61,
-        "mom_5d": -2.11,
-        "mom_1m": -4.7,
-        "mom_3m": -4.48,
+        "price": 115.26,
+        "mom_5d": 5.35,
+        "mom_1m": -2.4,
+        "mom_3m": -2.84,
         "above_ma50": false,
-        "rsi_14": 34.5,
-        "score": -3.88,
+        "rsi_14": 47.9,
+        "score": -0.16,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 166.24,
-        "mom_5d": 4.27,
-        "mom_1m": 3.42,
-        "mom_3m": 16.38,
+        "price": 162.03,
+        "mom_5d": -0.33,
+        "mom_1m": 1.56,
+        "mom_3m": 11.62,
         "above_ma50": true,
-        "rsi_14": 59.4,
-        "score": 7.27,
+        "rsi_14": 51.3,
+        "score": 4.0,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 56.68,
-        "mom_5d": 1.12,
-        "mom_1m": 5.51,
-        "mom_3m": 9.17,
+        "price": 56.97,
+        "mom_5d": 1.17,
+        "mom_1m": 4.0,
+        "mom_3m": 9.73,
         "above_ma50": true,
-        "rsi_14": 61.5,
-        "score": 5.92,
+        "rsi_14": 59.4,
+        "score": 5.3,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 58.65,
-        "mom_5d": -0.93,
-        "mom_1m": 9.46,
-        "mom_3m": -0.64,
+        "price": 59.05,
+        "mom_5d": -0.96,
+        "mom_1m": 11.82,
+        "mom_3m": 0.34,
         "above_ma50": true,
-        "rsi_14": 71.7,
-        "score": 5.32,
+        "rsi_14": 65.8,
+        "score": 6.69,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 176.66,
-        "mom_5d": -1.22,
-        "mom_1m": -3.34,
-        "mom_3m": 3.96,
-        "above_ma50": false,
-        "rsi_14": 36.6,
-        "score": -1.24,
+        "price": 180.13,
+        "mom_5d": -1.39,
+        "mom_1m": -1.76,
+        "mom_3m": 4.15,
+        "above_ma50": true,
+        "rsi_14": 49.3,
+        "score": 0.53,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 87.36,
-        "mom_5d": 3.53,
-        "mom_1m": 3.54,
-        "mom_3m": 5.35,
+        "price": 84.83,
+        "mom_5d": 0.83,
+        "mom_1m": 1.84,
+        "mom_3m": 0.78,
         "above_ma50": true,
-        "rsi_14": 66.9,
-        "score": 4.9,
+        "rsi_14": 50.9,
+        "score": 2.33,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 51.74,
-        "mom_5d": 1.81,
-        "mom_1m": 2.13,
-        "mom_3m": 1.53,
-        "above_ma50": true,
-        "rsi_14": 61.6,
-        "score": 2.91,
+        "price": 50.84,
+        "mom_5d": -0.82,
+        "mom_1m": -0.35,
+        "mom_3m": -0.99,
+        "above_ma50": false,
+        "rsi_14": 52.1,
+        "score": -0.62,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.91,
-        "mom_5d": -2.22,
-        "mom_1m": -2.41,
-        "mom_3m": -1.69,
+        "price": 44.67,
+        "mom_5d": -3.5,
+        "mom_1m": -0.22,
+        "mom_3m": -4.04,
         "above_ma50": false,
-        "rsi_14": 47.6,
-        "score": -2.21,
+        "rsi_14": 37.8,
+        "score": -1.97,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.96,
-        "mom_5d": 2.11,
-        "mom_1m": 2.32,
-        "mom_3m": 5.32,
+        "price": 45.22,
+        "mom_5d": -1.59,
+        "mom_1m": 2.35,
+        "mom_3m": 2.03,
         "above_ma50": true,
-        "rsi_14": 73.6,
-        "score": 3.86,
+        "rsi_14": 56.6,
+        "score": 2.1,
         "sector": "Real Estate"
       }
     },
     "ranking": [
-      "Healthcare",
-      "Financials",
       "Energy",
+      "Financials",
+      "Healthcare",
       "Consumer Staples",
       "Real Estate",
-      "Materials",
-      "Communication Services",
       "Industrials",
-      "Utilities",
+      "Technology",
       "Consumer Discretionary",
-      "Technology"
+      "Materials",
+      "Utilities",
+      "Communication Services"
     ],
     "top_3": [
-      "Healthcare",
+      "Energy",
       "Financials",
-      "Energy"
+      "Healthcare"
     ],
     "bottom_3": [
+      "Materials",
       "Utilities",
-      "Consumer Discretionary",
-      "Technology"
+      "Communication Services"
     ],
-    "as_of": "2026-07-30"
+    "as_of": "2026-07-31"
   },
   "strategy_brief": {
-    "market_posture": "neutral",
-    "risk_budget_multiplier": 1.0,
+    "market_posture": "risk-on",
+    "risk_budget_multiplier": 1.4,
     "focus_sectors": [
-      "Healthcare",
+      "Energy",
       "Financials",
-      "Energy"
+      "Healthcare"
     ],
     "avoid_sectors": [
+      "Materials",
       "Utilities",
-      "Consumer Discretionary",
-      "Technology"
+      "Communication Services"
     ],
-    "target_new_positions": 1,
+    "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "SPY trend has turned bearish with VIX rising toward the caution threshold, warranting disciplined selectivity rather than aggressive deployment \u2014 however, existing alpha of +0.9% and healthy credit conditions support holding current positions and opportunistically adding one high-conviction name in leading sectors. Sector momentum in Healthcare, Financials, and Energy provides the best risk-adjusted runway for incremental exposure.",
-    "capital_deployment_priority": "normal",
-    "day_trade_go": false
+    "primary_thesis": "Alpha deficit of -12% vs SPY is critical and demands aggressive capital deployment into leading sectors immediately \u2014 VIX at 17.1 with a falling trajectory, bullish SPY trend, and healthy credit conditions provide a green light for full positioning with no macro justification for restraint. Rotate cash into high-momentum Energy and Financials names to close the performance gap before week's end.",
+    "capital_deployment_priority": "high",
+    "day_trade_go": true
   },
   "index_etf_signals": {
     "SPY": {
-      "action": "hold",
+      "action": "buy",
       "confidence": 0.35
     },
     "QQQ": {
       "action": "hold",
-      "confidence": 0.35
+      "confidence": 0.65
     },
     "IWM": {
       "action": "hold",
