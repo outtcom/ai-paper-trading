@@ -44,6 +44,7 @@ STEP 1 — Check rejection conditions. If ANY of these apply → output HOLD imm
   2. Adding this position would push portfolio beta above the maximum limit
   3. Ticker is in an "avoid" sector listed in the strategy brief
   4. Earnings are within 3 days for this ticker (mentioned in the analysis)
+  5. Risk management team's consolidated risk_assessment is "rejected" (majority of the 3 perspectives voted reject) — this is an absolute veto regardless of market posture or capital deployment priority
 
 STEP 2 — If no rejection condition applies, use this logic:
   (STEP 0 takes absolute precedence over the rules below — even over capital deployment urgency.)
@@ -152,6 +153,17 @@ Make the final order decision for {ticker}."""
                 raw = raw[4:]
         final_order = json.loads(raw)
         final_order["ticker"] = ticker  # ensure ticker is set
+
+        # Hard block: risk-team majority-reject is an absolute veto, independent of
+        # deployment urgency. Reduced size is allowed through; a full reject is not.
+        if final_order.get("action") == "buy" and risk_decision.get("risk_assessment") == "rejected":
+            final_order["action"] = "hold"
+            final_order["qty"] = 0
+            final_order["override"] = "rejected"
+            final_order["final_reasoning"] = (
+                "Risk team majority-rejected this trade — hard-blocked regardless of "
+                "deployment posture. " + (final_order.get("final_reasoning") or "")
+            )
 
         # Enforce ETF allocation cap (max 40% of portfolio equity in ETFs combined)
         if ticker in INDEX_ETFS and final_order.get("action") == "buy":
