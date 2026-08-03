@@ -1,5 +1,7 @@
 # Hedge Fund Upgrades Implementation Plan
 
+> **Status (2026-08-03):** All 32 steps verified as implemented in the current codebase — reconciled by reading `config.py`, `tools/paper_broker.py`, `tools/market_regime.py`, `morning_session.py`, and `eod_session.py` directly rather than trusting the (unchecked) checkboxes. Checkboxes below were stale from before the `Car Cleaning Gel Amazon` → `ai-paper-trading` folder migration and had never been ticked despite the work being done and committed. Implementation deviated from spec in a few places, all improvements: `had_earnings_recently()` defaults to 2 days back instead of 1; `config.py` adds `BETA_MIN_STOP_FACTOR` beyond the original spec; `morning_session.py`'s exec-price re-fetch branches for both long and short; EOD agent attribution was refactored into a shared `_agent_line()` helper used by both the TP/SL and time-exit loops instead of duplicated inline blocks.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Add 7 risk/realism improvements to the paper trading system — slippage, portfolio beta cap, execution-time price re-fetch, VIX rate-of-change filter, agent performance attribution, post-earnings blackout, and HYG credit spread signal.
@@ -27,7 +29,7 @@
 **Files:**
 - Modify: `config.py`
 
-- [ ] **Step 1: Add slippage, beta, and VIX RoC constants to `config.py`**
+- [x] **Step 1: Add slippage, beta, and VIX RoC constants to `config.py`**
 
   Open `config.py`. After the `BEARISH_REGIME_MULTIPLIER` line (line 68), insert:
 
@@ -56,7 +58,7 @@
   VIX_ROC_THRESHOLD = 20.0    # % rise in VIX over 5 days → additional 0.5× size cut
   ```
 
-- [ ] **Step 2: Verify the file is importable**
+- [x] **Step 2: Verify the file is importable**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -68,7 +70,7 @@
   SLIPPAGE_PCT: 0.0015 | MAX_PORTFOLIO_BETA: 1.5
   ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
   ```bash
   git add config.py
@@ -82,7 +84,7 @@
 **Files:**
 - Modify: `tools/paper_broker.py`
 
-- [ ] **Step 1: Apply slippage inside `submit_order()`**
+- [x] **Step 1: Apply slippage inside `submit_order()`**
 
   Open `tools/paper_broker.py`. Find this block near line 81:
 
@@ -104,7 +106,7 @@
       exec_price = round(exec_price * (1 - SLIPPAGE_PCT), 4)
   ```
 
-- [ ] **Step 2: Add `slippage_pct` to the order record**
+- [x] **Step 2: Add `slippage_pct` to the order record**
 
   Find the `order = { ... }` dict (around line 112). Add one field:
 
@@ -122,7 +124,7 @@
   }
   ```
 
-- [ ] **Step 3: Verify slippage is applied**
+- [x] **Step 3: Verify slippage is applied**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -149,13 +151,13 @@
 
   > Note: This writes to `.tmp/portfolio.json`. Run `python -c "from tools.paper_broker import reset_portfolio; reset_portfolio()"` afterward to clean up.
 
-- [ ] **Step 4: Reset portfolio after test**
+- [x] **Step 4: Reset portfolio after test**
 
   ```bash
   python -c "from tools.paper_broker import reset_portfolio; reset_portfolio()"
   ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
   ```bash
   git add tools/paper_broker.py
@@ -171,7 +173,7 @@
 
 Three functions are added at the bottom of the file (before the `if __name__ == "__main__":` block if one exists, otherwise at end of file). They are independent of each other.
 
-- [ ] **Step 1: Add `get_vix_roc()` function**
+- [x] **Step 1: Add `get_vix_roc()` function**
 
   Append to `tools/market_regime.py`:
 
@@ -200,7 +202,7 @@ Three functions are added at the bottom of the file (before the `if __name__ == 
           return None, "VIX RoC unavailable"
   ```
 
-- [ ] **Step 2: Add `get_hyg_signal()` function**
+- [x] **Step 2: Add `get_hyg_signal()` function**
 
   Append to `tools/market_regime.py`:
 
@@ -232,7 +234,7 @@ Three functions are added at the bottom of the file (before the `if __name__ == 
           return False, None, "HYG unavailable"
   ```
 
-- [ ] **Step 3: Add `had_earnings_recently()` function**
+- [x] **Step 3: Add `had_earnings_recently()` function**
 
   Append to `tools/market_regime.py`:
 
@@ -285,7 +287,7 @@ Three functions are added at the bottom of the file (before the `if __name__ == 
       return False
   ```
 
-- [ ] **Step 4: Verify all three functions are importable and return expected types**
+- [x] **Step 4: Verify all three functions are importable and return expected types**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -315,7 +317,7 @@ Three functions are added at the bottom of the file (before the `if __name__ == 
   All assertions passed.
   ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
   ```bash
   git add tools/market_regime.py
@@ -333,7 +335,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4a: Update imports
 
-- [ ] **Step 1: Expand the `from config import` line**
+- [x] **Step 1: Expand the `from config import` line**
 
   Find the existing import (lines 32–35):
   ```python
@@ -354,7 +356,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
   )
   ```
 
-- [ ] **Step 2: Expand the `from tools.market_regime import` line**
+- [x] **Step 2: Expand the `from tools.market_regime import` line**
 
   Find:
   ```python
@@ -369,7 +371,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
   )
   ```
 
-- [ ] **Step 3: Verify imports work**
+- [x] **Step 3: Verify imports work**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -380,7 +382,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4b: Add `_portfolio_beta()` helper
 
-- [ ] **Step 4: Add `_portfolio_beta()` after the `_is_same_sector_open()` function**
+- [x] **Step 4: Add `_portfolio_beta()` after the `_is_same_sector_open()` function**
 
   Find the line (around line 109):
   ```python
@@ -434,7 +436,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4c: VIX Rate-of-Change + HYG checks in `main()`
 
-- [ ] **Step 5: Add VIX RoC check immediately after the VIX extreme check**
+- [x] **Step 5: Add VIX RoC check immediately after the VIX extreme check**
 
   Find this block in `main()` (around line 310):
   ```python
@@ -458,7 +460,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
       spy_trend    = get_market_trend("SPY")
   ```
 
-- [ ] **Step 6: Add HYG check immediately after the regime overlay block**
+- [x] **Step 6: Add HYG check immediately after the regime overlay block**
 
   Find (around line 325):
   ```python
@@ -479,7 +481,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
       # ── Concurrent position limit ──────────────────────────────────────────
   ```
 
-- [ ] **Step 7: Include VIX RoC and HYG in the analysis-starting Telegram message**
+- [x] **Step 7: Include VIX RoC and HYG in the analysis-starting Telegram message**
 
   Find the `send_message(...)` call around line 371 that reads:
   ```python
@@ -506,7 +508,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4d: Post-earnings blackout (both sides)
 
-- [ ] **Step 8: Expand earnings loop to check 5 days forward and 1 day backward**
+- [x] **Step 8: Expand earnings loop to check 5 days forward and 1 day backward**
 
   Find the earnings loop (around line 350):
   ```python
@@ -535,7 +537,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4e: Portfolio beta cap check
 
-- [ ] **Step 9: Add beta cap check after `_pick_best()` and before `_size_position()`**
+- [x] **Step 9: Add beta cap check after `_pick_best()` and before `_size_position()`**
 
   Find this block (around line 395):
   ```python
@@ -568,7 +570,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ### 4f: Re-fetch execution price after approval
 
-- [ ] **Step 10: Replace the `response == "approved"` block's price usage**
+- [x] **Step 10: Replace the `response == "approved"` block's price usage**
 
   Find the block starting with `if response == "approved":` (around line 425):
   ```python
@@ -658,7 +660,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
           record_equity(equity)
   ```
 
-- [ ] **Step 11: Verify `morning_session.py` is importable and `main()` is callable (dry run check)**
+- [x] **Step 11: Verify `morning_session.py` is importable and `main()` is callable (dry run check)**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -680,7 +682,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
   morning_session imports OK
   ```
 
-- [ ] **Step 12: Commit**
+- [x] **Step 12: Commit**
 
   ```bash
   git add morning_session.py
@@ -694,7 +696,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 **Files:**
 - Modify: `eod_session.py`
 
-- [ ] **Step 1: Add agent signal lookup inside `_build_eod_message()` for closed trades**
+- [x] **Step 1: Add agent signal lookup inside `_build_eod_message()` for closed trades**
 
   Open `eod_session.py`. Find the closed trade loop inside `_build_eod_message()` (around line 209):
 
@@ -753,7 +755,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
           )
   ```
 
-- [ ] **Step 2: Apply the same agent attribution to the dead money (time_exits) loop**
+- [x] **Step 2: Apply the same agent attribution to the dead money (time_exits) loop**
 
   Find the time exits loop (around line 222):
   ```python
@@ -802,7 +804,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
   > Note: `journal` was already extracted from `portfolio` in the closed_trades loop above. Both loops share it — no need to re-declare.
 
-- [ ] **Step 3: Verify `eod_session.py` is importable**
+- [x] **Step 3: Verify `eod_session.py` is importable**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -811,7 +813,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
   Expected: `eod_session imports OK`
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
   ```bash
   git add eod_session.py
@@ -822,7 +824,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 
 ## Task 6: Final Smoke Test
 
-- [ ] **Step 1: Verify all five modified files import cleanly**
+- [x] **Step 1: Verify all five modified files import cleanly**
 
   ```bash
   cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
@@ -859,7 +861,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
   All assertions passed. System ready.
   ```
 
-- [ ] **Step 2: Push to remote**
+- [x] **Step 2: Push to remote**
 
   ```bash
   git pull --rebase
