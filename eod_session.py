@@ -52,16 +52,27 @@ from tools.session_manager import (
 from tools.telegram_bot import broadcast_message, send_private_only
 from tools.agent_tracker import update_portfolio_tracker, format_ic_report
 
-DEAD_MONEY_DAYS      = 5     # close position if held this many days with no progress
-DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS days
+DEAD_MONEY_DAYS      = 10    # close position if held this many TRADING days with no progress
+DEAD_MONEY_FLOOR      = -0.02  # below this, it's a loser for the stop-loss to handle, not dead money
+DEAD_MONEY_THRESHOLD = 0.02  # "not working" = gain < +2% after DEAD_MONEY_DAYS trading days
 
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _days_held(pos: dict) -> int:
-    """Return how many calendar days the position has been open."""
+def _days_held(pos: dict, current_session_day: int) -> int:
+    """
+    Return how many TRADING days the position has been open, using the session
+    day counter (incremented once per EOD run, i.e. once per trading day this
+    pipeline actually ran) rather than raw calendar days — a 3-calendar-day
+    weekend gap should not count as 3 days toward the dead-money clock.
+    Falls back to calendar-day math for legacy positions opened before
+    opened_session_day was tracked.
+    """
+    opened_day = pos.get("opened_session_day")
+    if opened_day is not None:
+        return max(0, current_session_day - opened_day)
     try:
         opened = datetime.strptime(pos["opened_date"], "%Y-%m-%d")
         return (datetime.now(timezone.utc).replace(tzinfo=None) - opened).days
@@ -160,13 +171,16 @@ def _check_tp_sl(portfolio: dict) -> list:
 
 def _check_time_exits(portfolio: dict) -> list:
     """
-    Dead money rule: close positions held 3+ days with gain < +2%.
-    Catches both flat positions (not moving) and tiny gains (AMZN-style 18-day +0.7%).
-    Losers below -2% are handled by stop losses — only close the stagnant ones here.
+    Dead money rule: close positions held DEAD_MONEY_DAYS+ trading days that are
+    flat-to-slightly-up (DEAD_MONEY_FLOOR < pnl_pct < DEAD_MONEY_THRESHOLD).
+    Catches genuinely stagnant positions (not moving, or tiny-gain AMZN-style
+    18-day +0.7%) without preempting the stop-loss: real losers below the floor
+    are a risk decision for the stop-loss to make, not an arbitrary clock.
     """
+    current_session_day = get_session_day()
     exits = []
     for ticker, pos in list(portfolio["positions"].items()):
-        days = _days_held(pos)
+        days = _days_held(pos, current_session_day)
         if days < DEAD_MONEY_DAYS:
             continue
         try:
@@ -175,8 +189,8 @@ def _check_time_exits(portfolio: dict) -> list:
             direction = pos.get("direction", "long")
             pnl_pct   = (price - entry) / entry if direction == "long" else (entry - price) / entry
 
-            if pnl_pct < DEAD_MONEY_THRESHOLD:
-                print(f"[eod] DEAD MONEY EXIT: {ticker} held {days}d, only {pnl_pct*100:+.1f}% — capital reassigned")
+            if DEAD_MONEY_FLOOR < pnl_pct < DEAD_MONEY_THRESHOLD:
+                print(f"[eod] DEAD MONEY EXIT: {ticker} held {days}td, only {pnl_pct*100:+.1f}% — capital reassigned")
                 trade = close_position(ticker, price, "time_exit")
                 trade["current_price"] = price
                 trade["days_held"] = days
@@ -293,6 +307,44 @@ def _total_equity(portfolio: dict) -> float:
             else:
                 equity += pos.get("cost_basis", 0)
     return round(equity, 2)
+
+
+def _reconcile_equity(portfolio: dict, equity: float) -> None:
+    """
+    Assert equity == initial_capital + realized P&L + unrealized P&L, within $1.
+    Catches silent ledger corruption (e.g. a position overwrite that drains cash
+    without a matching trade_history entry) the same day it happens instead of
+    letting it run for days undetected.
+    """
+    initial = portfolio.get("initial_capital", 0)
+    realized = sum(t.get("pnl", 0) for t in portfolio.get("trade_history", []))
+
+    unrealized = 0.0
+    for ticker, pos in portfolio.get("positions", {}).items():
+        price = pos.get("last_price", pos.get("entry_price", 0))
+        direction = pos.get("direction", "long")
+        if direction == "short":
+            unrealized += (pos.get("entry_price", price) - price) * pos.get("qty", 0)
+        else:
+            unrealized += (price - pos.get("entry_price", price)) * pos.get("qty", 0)
+
+    expected = round(initial + realized + unrealized, 2)
+    discrepancy = round(equity - expected, 2)
+
+    if abs(discrepancy) >= 1.0:
+        msg = (
+            f"🚨 <b>EQUITY RECONCILIATION FAILED</b>\n\n"
+            f"Reported equity: ${equity:,.2f}\n"
+            f"Expected (initial + realized + unrealized): ${expected:,.2f}\n"
+            f"Discrepancy: ${discrepancy:+,.2f}\n\n"
+            f"This means cash/positions moved without a matching trade_history entry — "
+            f"likely a ledger bug, not a trading loss. Investigate before trusting today's "
+            f"equity, stats, or strategy brief."
+        )
+        print(f"[eod] RECONCILIATION FAILED: discrepancy ${discrepancy:+,.2f}")
+        send_private_only(msg)
+    else:
+        print(f"[eod] Reconciliation OK: equity ${equity:,.2f} vs expected ${expected:,.2f} (diff ${discrepancy:+,.2f})")
 
 
 def _resolve_signals_generic(today: str, open_signals: list, close_fn, label: str) -> list:
@@ -604,6 +656,12 @@ def main():
 
     # Reload one more time for the message (equity_curve + stats updated)
     portfolio = get_portfolio()
+
+    # Step 6a: Reconciliation invariant — catch silent ledger corruption same-day
+    try:
+        _reconcile_equity(portfolio, equity)
+    except Exception as e:
+        print(f"[eod] Reconciliation check error (non-critical): {e}")
 
     # Step 6b: Update agent accuracy tracker with today's closed trades
     try:

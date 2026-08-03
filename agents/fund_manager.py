@@ -154,6 +154,21 @@ Make the final order decision for {ticker}."""
         final_order = json.loads(raw)
         final_order["ticker"] = ticker  # ensure ticker is set
 
+        # Guard: the model has been observed emitting action="buy"/qty>0 while its own
+        # final_reasoning text argues for HOLD (e.g. "setting qty to 0 as HOLD"). Nothing
+        # upstream validates that action and reasoning agree, so a self-contradictory
+        # response was previously executed as a live buy. Force consistency here.
+        _reasoning_lower = (final_order.get("final_reasoning") or "").lower()
+        _hold_phrases = ("setting qty to 0", "as hold", "prudent move is to hold", "recommend hold")
+        if final_order.get("action") == "buy" and final_order.get("qty", 0) > 0 \
+                and any(p in _reasoning_lower for p in _hold_phrases):
+            final_order["action"] = "hold"
+            final_order["qty"] = 0
+            final_order["final_reasoning"] = (
+                "Output consistency guard: action was 'buy' but reasoning argued for HOLD — "
+                "forced to HOLD. Original reasoning: " + (final_order.get("final_reasoning") or "")
+            )
+
         # Hard block: risk-team majority-reject is an absolute veto, independent of
         # deployment urgency. Reduced size is allowed through; a full reject is not.
         if final_order.get("action") == "buy" and risk_decision.get("risk_assessment") == "rejected":

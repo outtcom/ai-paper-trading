@@ -22,6 +22,7 @@ from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tools.market_data import get_ohlcv, get_intraday_ohlcv_history
+from config import TICKER_BETA, BETA_MIN_STOP_FACTOR, SLIPPAGE_PCT
 
 # -- Config -------------------------------------------------------------------
 
@@ -30,13 +31,21 @@ SCALP_TICKERS  = ["AAPL", "GOOGL", "NVDA", "MSFT", "AMZN", "META", "TSLA"]
 INITIAL_CAPITAL = 5000.0
 
 # Swing rules
-SWING_SL_PCT        = 0.05   # 5% stop loss
-SWING_TP_PCT        = 0.10   # 10% take profit
+SWING_SL_PCT        = 0.05   # 5% base stop loss (floored by beta — see BETA_MIN_STOP_FACTOR)
 SWING_POSITION_PCT  = 0.20   # 20% of cash per trade
 MAX_POSITIONS       = 5
 RSI_ENTRY_MIN       = 45
 RSI_ENTRY_MAX       = 65
-RSI_EXIT_THRESHOLD  = 38
+
+# Live exit ruleset — mirrors eod_session.py / tools/session_manager.py.
+# Duplicated (not imported) to avoid pulling in eod_session.py's agent/API imports;
+# keep these in sync manually if the live constants change.
+DEAD_MONEY_DAYS      = 10     # trading days
+DEAD_MONEY_FLOOR     = -0.02
+DEAD_MONEY_THRESHOLD = 0.02
+BREAKEVEN_TRIGGER    = 0.08
+TIGHT_TRAIL_TRIGGER  = 0.15
+TP_MULT_BY_CONVICTION = {"high": 3.0, "medium": 2.0, "low": 1.5}
 
 # ICT FVG proxy rules (daily approximation)
 FVG_PULLBACK_MIN    = 0.382  # Fib retracement minimum (38.2%)
@@ -112,55 +121,95 @@ def _avg_volume(volumes: list, i: int, window: int = 20) -> float:
 
 def backtest_swing(tickers: list, bars_map: dict, spy_bars: list) -> dict:
     """
-    Approximated swing strategy:
-    - Buy when: price > 50d SMA, RSI 45-65, MACD histogram > 0, vol > avg
-    - Sell when: TP +10%, SL -5%, RSI < 38
-    - Max 5 concurrent positions, 20% per position
+    Swing strategy, entry proxy + the actual live exit ruleset:
+    - Entry: price > 50d & 200d SMA, RSI 45-65, MACD histogram > 0, vol > avg
+      (proxy for the 7-agent pipeline's technical trigger)
+    - Stop loss: beta-floored (max(5%, ticker_beta * BETA_MIN_STOP_FACTOR))
+    - Take profit: conviction-scaled R:R off the stop (high=3x, medium=2x)
+    - 3-tier trailing stop: standard trail, breakeven at +8%, tight trail at +15%
+      (mirrors tools/session_manager.py::update_trailing_stop)
+    - Dead-money time exit: close if held >= DEAD_MONEY_DAYS trading days and
+      flat-to-slightly-up (DEAD_MONEY_FLOOR < pnl_pct < DEAD_MONEY_THRESHOLD) —
+      real losers below the floor are left to the stop-loss (mirrors eod_session.py)
+    - Exit fills use daily close crossing the TP/SL level (not intraday hi/lo),
+      matching the once-daily EOD cron that evaluates live positions
+    - SLIPPAGE_PCT applied on every entry and exit fill
+    - Max 5 concurrent positions, 20% of cash per position
     """
     cash      = INITIAL_CAPITAL
-    positions = {}   # ticker -> {qty, entry, sl, tp}
+    positions = {}   # ticker -> {qty, entry, sl, tp, sl_pct, highest, opened_idx, opened, conviction}
     trades    = []
     equity_curve = []
-    date_index = {b["date"]: i for i, b in enumerate(spy_bars)}
 
+    idx_map = {t: {b["date"]: i for i, b in enumerate(bars)} for t, bars in bars_map.items()}
     all_dates = sorted(set(d for bars in bars_map.values() for d in [b["date"] for b in bars]))
 
     for date in all_dates:
         day_equity = cash
 
-        # Mark open positions to market
+        # Mark open positions to market, apply trailing stop, check exits
         for ticker, pos in list(positions.items()):
-            ticker_bars = bars_map.get(ticker, [])
-            today_bar   = next((b for b in ticker_bars if b["date"] == date), None)
-            if not today_bar:
+            bars = bars_map.get(ticker, [])
+            idx  = idx_map.get(ticker, {}).get(date)
+            if idx is None:
                 continue
-            price = today_bar["close"]
-            lo    = today_bar["low"]
-            hi    = today_bar["high"]
+            close = bars[idx]["close"]
 
-            # Check SL first (intraday low)
-            if lo <= pos["sl"]:
-                exit_price = pos["sl"]
-                pnl = (exit_price - pos["entry"]) * pos["qty"]
-                cash += pos["qty"] * exit_price
-                trades.append({"ticker": ticker, "date": date, "entry": pos["entry"],
-                               "exit": exit_price, "pnl": pnl, "reason": "stop_loss",
-                               "days_held": (datetime.strptime(date, "%Y-%m-%d") - datetime.strptime(pos["opened"], "%Y-%m-%d")).days})
-                del positions[ticker]
-                continue
+            # Trailing stop ratchet (close-price based — mirrors update_trailing_stop)
+            if close > pos["highest"]:
+                pos["highest"] = close
+            pnl_pct   = (close - pos["entry"]) / pos["entry"]
+            trail_pct = pos["sl_pct"] / 2 if pnl_pct >= TIGHT_TRAIL_TRIGGER else pos["sl_pct"]
+            new_sl    = round(pos["highest"] * (1 - trail_pct), 2)
+            if pnl_pct >= BREAKEVEN_TRIGGER:
+                new_sl = max(new_sl, pos["entry"])
+            if new_sl > pos["sl"]:
+                pos["sl"] = new_sl
 
-            # Check TP (intraday high)
-            if hi >= pos["tp"]:
-                exit_price = pos["tp"]
+            days_held = idx - pos["opened_idx"]
+
+            if close >= pos["tp"]:
+                exit_price = round(pos["tp"] * (1 - SLIPPAGE_PCT), 4)
                 pnl = (exit_price - pos["entry"]) * pos["qty"]
                 cash += pos["qty"] * exit_price
                 trades.append({"ticker": ticker, "date": date, "entry": pos["entry"],
                                "exit": exit_price, "pnl": pnl, "reason": "take_profit",
-                               "days_held": (datetime.strptime(date, "%Y-%m-%d") - datetime.strptime(pos["opened"], "%Y-%m-%d")).days})
+                               "conviction": pos["conviction"], "days_held": days_held})
                 del positions[ticker]
                 continue
 
-            day_equity += pos["qty"] * price
+            if close <= pos["sl"]:
+                exit_price = round(pos["sl"] * (1 - SLIPPAGE_PCT), 4)
+                pnl = (exit_price - pos["entry"]) * pos["qty"]
+                cash += pos["qty"] * exit_price
+                trades.append({"ticker": ticker, "date": date, "entry": pos["entry"],
+                               "exit": exit_price, "pnl": pnl, "reason": "stop_loss",
+                               "conviction": pos["conviction"], "days_held": days_held})
+                del positions[ticker]
+                continue
+
+            if days_held >= DEAD_MONEY_DAYS and DEAD_MONEY_FLOOR < pnl_pct < DEAD_MONEY_THRESHOLD:
+                exit_price = round(close * (1 - SLIPPAGE_PCT), 4)
+                pnl = (exit_price - pos["entry"]) * pos["qty"]
+                cash += pos["qty"] * exit_price
+                dm_trade = {"ticker": ticker, "date": date, "entry": pos["entry"],
+                            "exit": exit_price, "pnl": pnl, "reason": "dead_money",
+                            "conviction": pos["conviction"], "days_held": days_held}
+                # Counterfactual: what would this position be worth if we'd kept
+                # holding instead of dead-money-closing it? Validates whether the
+                # time-exit rule preserves or destroys value (plan item 3.2).
+                for offset in (5, 10, 20):
+                    fut_idx = idx + offset
+                    if fut_idx < len(bars):
+                        fut_price = bars[fut_idx]["close"]
+                        dm_trade[f"price_plus{offset}d"] = fut_price
+                        dm_trade[f"counterfactual_pnl_plus{offset}d"] = round(
+                            (fut_price - pos["entry"]) * pos["qty"], 2)
+                trades.append(dm_trade)
+                del positions[ticker]
+                continue
+
+            day_equity += pos["qty"] * close
 
         # Entry scan (only if room for more positions)
         if len(positions) < MAX_POSITIONS:
@@ -168,14 +217,12 @@ def backtest_swing(tickers: list, bars_map: dict, spy_bars: list) -> dict:
                 if ticker in positions:
                     continue
                 bars = bars_map.get(ticker, [])
-                idx  = next((i for i, b in enumerate(bars) if b["date"] == date), None)
+                idx  = idx_map.get(ticker, {}).get(date)
                 if idx is None or idx < 210:   # need enough history
                     continue
 
                 closes  = [b["close"] for b in bars[:idx+1]]
                 volumes = [b["volume"] for b in bars[:idx+1]]
-                highs   = [b["high"] for b in bars[:idx+1]]
-                lows    = [b["low"] for b in bars[:idx+1]]
                 price   = closes[-1]
                 vol     = volumes[-1]
 
@@ -198,57 +245,52 @@ def backtest_swing(tickers: list, bars_map: dict, spy_bars: list) -> dict:
                         and hist[-1] > 0           # MACD bullish
                         and vol_ratio >= 1.2       # above-avg volume
                         and cash > price * 2):     # can afford at least 2 shares
-                    alloc = cash * SWING_POSITION_PCT
-                    qty   = max(1, int(alloc / price))
-                    cost  = qty * price
+
+                    # Conviction proxy: tight RSI centering + strong volume confluence
+                    # approximates a clean 3-analyst-agreement trigger (see agents/trader.py)
+                    conviction = "high" if (50 <= rsi <= 60 and vol_ratio >= 1.5) else "medium"
+                    tp_mult    = TP_MULT_BY_CONVICTION[conviction]
+
+                    beta   = TICKER_BETA.get(ticker, 1.0)
+                    sl_pct = max(SWING_SL_PCT, round(beta * BETA_MIN_STOP_FACTOR, 4))
+                    tp_pct = sl_pct * tp_mult
+
+                    entry_raw = price
+                    entry     = round(entry_raw * (1 + SLIPPAGE_PCT), 4)
+                    alloc     = cash * SWING_POSITION_PCT
+                    qty       = max(1, int(alloc / entry))
+                    cost      = qty * entry
                     if cost > cash:
                         continue
                     cash -= cost
                     positions[ticker] = {
-                        "qty": qty, "entry": price,
-                        "sl": round(price * (1 - SWING_SL_PCT), 2),
-                        "tp": round(price * (1 + SWING_TP_PCT), 2),
-                        "opened": date,
+                        "qty": qty, "entry": entry, "sl_pct": sl_pct,
+                        "sl": round(entry * (1 - sl_pct), 2),
+                        "tp": round(entry * (1 + tp_pct), 2),
+                        "highest": entry, "opened_idx": idx, "opened": date,
+                        "conviction": conviction,
                     }
                     if len(positions) >= MAX_POSITIONS:
                         break
-
-        # RSI-based exit for existing positions
-        for ticker in list(positions.keys()):
-            bars = bars_map.get(ticker, [])
-            idx  = next((i for i, b in enumerate(bars) if b["date"] == date), None)
-            if idx is None or idx < 15:
-                continue
-            closes  = [b["close"] for b in bars[:idx+1]]
-            rsi_vals = _rsi(closes)
-            if rsi_vals[-1] is not None and rsi_vals[-1] < RSI_EXIT_THRESHOLD:
-                price  = closes[-1]
-                pos    = positions[ticker]
-                pnl    = (price - pos["entry"]) * pos["qty"]
-                cash  += pos["qty"] * price
-                trades.append({"ticker": ticker, "date": date, "entry": pos["entry"],
-                               "exit": price, "pnl": pnl, "reason": "rsi_exit",
-                               "days_held": (datetime.strptime(date, "%Y-%m-%d") - datetime.strptime(pos["opened"], "%Y-%m-%d")).days})
-                del positions[ticker]
 
         # Total equity on this day
         total_eq = cash
         for ticker, pos in positions.items():
             bars = bars_map.get(ticker, [])
-            bar  = next((b for b in bars if b["date"] == date), None)
-            if bar:
-                total_eq += pos["qty"] * bar["close"]
+            idx  = idx_map.get(ticker, {}).get(date)
+            if idx is not None:
+                total_eq += pos["qty"] * bars[idx]["close"]
         equity_curve.append({"date": date, "equity": round(total_eq, 2)})
 
     # Close remaining positions at last price
     for ticker, pos in positions.items():
         bars = bars_map.get(ticker, [])
         if bars:
-            price = bars[-1]["close"]
-            cash += pos["qty"] * price
+            exit_price = round(bars[-1]["close"] * (1 - SLIPPAGE_PCT), 4)
+            cash += pos["qty"] * exit_price
             trades.append({"ticker": ticker, "date": bars[-1]["date"], "entry": pos["entry"],
-                           "exit": price, "pnl": (price - pos["entry"]) * pos["qty"], "reason": "session_end",
-                           "days_held": 0})
+                           "exit": exit_price, "pnl": (exit_price - pos["entry"]) * pos["qty"],
+                           "reason": "session_end", "conviction": pos["conviction"], "days_held": 0})
 
     return {"cash": cash, "trades": trades, "equity_curve": equity_curve}
 
@@ -424,6 +466,42 @@ def _print_results(name: str, metrics: dict, spy_ret: float, trades: list):
         print(f"  Exit breakdown: " + "  |  ".join(f"{k}: {v}" for k, v in sorted(reasons.items(), key=lambda x: -x[1])))
 
 
+def _dead_money_counterfactual(trades: list) -> dict:
+    """
+    Summarize whether the dead-money time exit preserves or destroys value:
+    compares actual exit P&L against what P&L would have been at +5/+10/+20
+    trading days if the position had been held instead (plan item 3.2).
+    """
+    dm_trades = [t for t in trades if t.get("reason") == "dead_money"]
+    if not dm_trades:
+        return {"count": 0}
+
+    summary = {"count": len(dm_trades), "avg_actual_pnl": round(
+        sum(t["pnl"] for t in dm_trades) / len(dm_trades), 2)}
+    for offset in (5, 10, 20):
+        key = f"counterfactual_pnl_plus{offset}d"
+        pairs = [(t["pnl"], t[key]) for t in dm_trades if key in t]
+        if pairs:
+            summary[f"avg_pnl_plus{offset}d"] = round(
+                sum(cf for _, cf in pairs) / len(pairs), 2)
+            summary[f"would_have_beaten_exit_plus{offset}d_pct"] = round(
+                100 * sum(1 for actual, cf in pairs if cf > actual) / len(pairs), 1)
+    return summary
+
+
+def _print_dead_money_counterfactual(summary: dict):
+    if summary.get("count", 0) == 0:
+        return
+    print(f"\n  Dead-money exit counterfactual ({summary['count']} closures):")
+    print(f"    Avg actual exit P&L:   ${summary.get('avg_actual_pnl', 0):+.2f}")
+    for offset in (5, 10, 20):
+        avg_key = f"avg_pnl_plus{offset}d"
+        beat_key = f"would_have_beaten_exit_plus{offset}d_pct"
+        if avg_key in summary:
+            print(f"    Avg P&L if held +{offset}d: ${summary[avg_key]:+.2f}"
+                  f"  ({summary.get(beat_key, 0):.0f}% of closures would have done better)")
+
+
 # -- Strategy 3 (real): ICT FVG Intraday Backtest (60 days, 5-min bars) --------
 
 def backtest_fvg_intraday(tickers: list) -> dict:
@@ -529,8 +607,8 @@ def backtest_fvg_intraday(tickers: list) -> dict:
             # Simulate exit using post-entry bars
             entry_idx = next(
                 (i for i, b in enumerate(post_range_bars)
-                 if b["open"] >= entry_price if direction == "long"
-                 else b["open"] <= entry_price),
+                 if (b["open"] >= entry_price if direction == "long"
+                     else b["open"] <= entry_price)),
                 0
             )
             exit_price = range_close
@@ -630,6 +708,8 @@ def main(start: str, end: str):
 
     # Print results
     _print_results("SWING STRATEGY (7-agent pipeline proxy)", swing_metrics, spy_ret, swing_result["trades"])
+    dead_money_summary = _dead_money_counterfactual(swing_result["trades"])
+    _print_dead_money_counterfactual(dead_money_summary)
     _print_results("ICT FVG SCALPING (daily proxy -- real uses 5-min)", fvg_metrics, spy_ret, fvg_result["trades"])
 
     # Combined portfolio
@@ -653,6 +733,7 @@ def main(start: str, end: str):
         "period": {"start": start, "end": end},
         "spy_return_pct": round(spy_ret, 2),
         "swing": {**swing_metrics, "trade_count": len(swing_result["trades"])},
+        "swing_dead_money_counterfactual": dead_money_summary,
         "ict_fvg_proxy": {**fvg_metrics, "trade_count": len(fvg_result["trades"])},
         "combined_return_pct": round(total_ret, 2),
         "combined_alpha_pct": round(combined_alpha, 2),

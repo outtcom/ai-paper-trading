@@ -22,6 +22,12 @@ evidence-based fundamental analysis report.
 Be objective. Cite specific numbers. Conclude with a clear fundamental outlook:
 BULLISH, BEARISH, or NEUTRAL, with your confidence level (low/medium/high).
 
+REJECTION MANDATE: Most companies screened do NOT deserve a BULLISH verdict. As a base
+rate, only about 30-40% of screened tickers should come back BULLISH — richly-valued or
+structurally weak names should get NEUTRAL or BEARISH. A verdict that never disagrees
+with the setup carries no information — treat NEUTRAL/BEARISH as equally valid, equally
+common outcomes, not a fallback for when you can't find a story.
+
 Format your report in these sections:
 1. Company Overview
 2. Financial Health (profitability, leverage, liquidity)

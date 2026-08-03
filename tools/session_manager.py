@@ -20,6 +20,7 @@ _SYSTEM_DIR = os.path.dirname(_TOOLS_DIR)
 PORTFOLIO_FILE = os.path.join(_SYSTEM_DIR, "docs", "portfolio.json")
 
 from config import SESSION_DAYS as TOTAL_DAYS   # single source of truth — edit config.py
+from config import SLIPPAGE_PCT
 INITIAL_CAPITAL = 5_000.0
 
 # Circuit breaker thresholds
@@ -352,6 +353,16 @@ def open_position(
     For shorts: cash increases (proceeds received); reversed TP/SL levels.
     """
     p = _migrate(_load())
+
+    if ticker in p["positions"]:
+        print(f"[session] REFUSING to open {ticker}: position already exists "
+              f"(qty={p['positions'][ticker].get('qty')}). Use scale_into_position() to add on.")
+        return
+
+    # Simulate realistic fill: buys execute slightly above quote, short-sells slightly below
+    entry_price = round(entry_price * (1 + SLIPPAGE_PCT), 4) if direction == "long" \
+        else round(entry_price * (1 - SLIPPAGE_PCT), 4)
+
     notional = round(entry_price * qty, 2)
 
     if direction == "long":
@@ -387,6 +398,7 @@ def open_position(
         "lowest_price": round(entry_price, 2),   # for trailing stop (shorts)
         "partial_taken": False,
         "opened_date": datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d"),
+        "opened_session_day": p["session"].get("current_day", 0),
         "journal_note": journal_note,
     }
     _save(p)
@@ -440,6 +452,10 @@ def close_position(ticker: str, exit_price: float, reason: str) -> dict:
         return {}
 
     direction = pos.get("direction", "long")
+    # Simulate realistic fill: selling to close executes slightly below quote,
+    # buying to cover a short executes slightly above.
+    exit_price = round(exit_price * (1 + SLIPPAGE_PCT), 4) if direction == "short" \
+        else round(exit_price * (1 - SLIPPAGE_PCT), 4)
     cover_cost = round(exit_price * pos["qty"], 2)
 
     if direction == "short":
@@ -499,6 +515,8 @@ def partial_close_position(ticker: str, qty_to_close: int, exit_price: float) ->
         return {}
 
     direction = pos.get("direction", "long")
+    exit_price = round(exit_price * (1 + SLIPPAGE_PCT), 4) if direction == "short" \
+        else round(exit_price * (1 - SLIPPAGE_PCT), 4)
     partial_cost = round(pos["entry_price"] * qty_to_close, 2)
     cover_cost   = round(exit_price * qty_to_close, 2)
 

@@ -25,6 +25,13 @@ the near-term technical setup of a stock.
 Be specific about what the indicators are telling you.
 Look for confluence between signals.
 
+REJECTION MANDATE: Most setups do NOT deserve a BULLISH verdict. As a base rate, only
+about 30-40% of screened tickers should come back BULLISH — the rest should be NEUTRAL
+or BEARISH. An extended move (RSI > 68, price far above the 20d EMA with no pullback)
+is a reason to say NEUTRAL/BEARISH, not a reason to be more excited. A verdict that
+never disagrees with the setup carries no information — treat NEUTRAL/BEARISH as
+equally valid, equally common outcomes, not a fallback for when you can't find a story.
+
 Format your report in these sections:
 1. Trend Analysis (EMA 20/50 relationship, price position)
 2. Momentum (RSI reading and what it signals)

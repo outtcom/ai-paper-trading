@@ -149,18 +149,35 @@ def _has_volume_confirmation(ticker: str) -> bool:
         return True   # never block on error
 
 
+def _ema(values: list, period: int):
+    """Plain EMA seeded with the SMA of the first `period` values. Returns None if
+    there isn't enough history to seed it."""
+    if len(values) < period:
+        return None
+    k = 2 / (period + 1)
+    ema = sum(values[:period]) / period
+    for price in values[period:]:
+        ema = price * k + ema * (1 - k)
+    return ema
+
+
 def _quick_prescreen(ticker: str) -> tuple:
-    """Volume + RSI pre-screen in a single get_ohlcv call — runs before the 7-agent pipeline.
-    Returns (pass: bool, reason: str|None).
-    Crypto always passes (24h market, different RSI dynamics).
-    RSI bounds widened to 35–80 to avoid filtering valid momentum breakouts.
+    """
+    Volume + RSI + trend pre-screen in a single get_ohlcv call — runs before the
+    7-agent pipeline so we don't burn LLM/Groq quota on candidates that are already
+    disqualified by price action alone.
+    Returns (pass: bool, reason: str|None). Crypto always passes (24h market,
+    different RSI dynamics).
+    Fails CLOSED on data errors: an unscored candidate should not silently fall
+    through to the LLM pipeline — skip the day for that ticker instead of trading
+    blind on missing data.
     """
     if "-USD" in ticker:
         return True, None
     try:
         _now  = datetime.now(ZoneInfo("America/New_York"))
         end   = _now.strftime("%Y-%m-%d")
-        start = (_now - timedelta(days=35)).strftime("%Y-%m-%d")
+        start = (_now - timedelta(days=80)).strftime("%Y-%m-%d")   # ~55+ trading days, needed for 50d EMA
         bars  = get_ohlcv(ticker, start, end)
 
         volumes = [b.get("volume", 0) for b in bars if b.get("volume", 0) > 0]
@@ -172,6 +189,8 @@ def _quick_prescreen(ticker: str) -> tuple:
                 return False, "volume"
 
         closes = [b["close"] for b in bars if b.get("close")]
+        price  = closes[-1] if closes else None
+
         if len(closes) >= 16:
             deltas   = [closes[i] - closes[i - 1] for i in range(1, len(closes))]
             gains    = [max(d, 0) for d in deltas[-14:]]
@@ -182,13 +201,27 @@ def _quick_prescreen(ticker: str) -> tuple:
             if rsi < 35:
                 print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — downtrend, skipping")
                 return False, "rsi_low"
-            if rsi > 80:
+            if rsi > 68:
                 print(f"[morning] {ticker} prescreen: RSI {rsi:.0f} — overbought, skipping")
                 return False, "rsi_high"
 
+        # Hard veto: too extended above the 20d EMA (no room left before mean reversion)
+        ema20 = _ema(closes, 20)
+        if price and ema20 and price > ema20 * 1.04:
+            pct_above = (price / ema20 - 1) * 100
+            print(f"[morning] {ticker} prescreen: price ${price:.2f} is {pct_above:.1f}% above 20d EMA ${ema20:.2f} — too extended, skipping")
+            return False, "extended_above_20ema"
+
+        # Trend filter: must be in a confirmed uptrend, not just a bounce
+        ema50 = _ema(closes, 50)
+        if price and ema50 and price < ema50:
+            print(f"[morning] {ticker} prescreen: price ${price:.2f} below 50d EMA ${ema50:.2f} — not in an uptrend, skipping")
+            return False, "below_50ema"
+
         return True, None
-    except Exception:
-        return True, None   # never block on error
+    except Exception as e:
+        print(f"[morning] {ticker} prescreen error for {ticker} — failing CLOSED: {e}")
+        return False, "prescreen_error"
 
 
 def _is_same_sector_open(ticker: str, portfolio: dict) -> bool:
@@ -336,6 +369,13 @@ def _pick_top_n(n: int, results: dict, blocked: set, portfolio: dict, sector_str
     for ticker, state in results.items():
         if ticker in blocked:
             continue
+        # Never treat an already-held ticker as a fresh buy candidate — open_position()
+        # refuses duplicates outright, but this keeps the reason visible in the audit log
+        # instead of it silently falling through as a no-op. Add-ons go through the
+        # dedicated _scale_into_winners() path in eod_session.py, not here.
+        if ticker in portfolio.get("positions", {}):
+            _audit_set(ticker, "ranking_skip_reason", "already_held")
+            continue
         # Relax same-sector filter when critically under-deployed (≥60% cash).
         # Still deduped by sector within the returned list via seen_sectors below.
         if _is_same_sector_open(ticker, portfolio) and _cash_ratio < 0.60:
@@ -457,8 +497,18 @@ def _size_position(
         pos_frac   = max(pos_frac, 0.15)
         macro_mult = max(macro_mult, 0.80 * strat_mult)  # partial override
 
-    max_usd   = cash * pos_frac * macro_mult * sector_mult
-    max_usd   = min(max_usd, cash * 0.30)   # hard cap: never > 30% of cash per position
+    # Risk team's final_position_size is a genuine cap, not just Telegram display text —
+    # a "reduced" risk_assessment must actually execute smaller, even under deployment
+    # urgency, or the risk team's vote is purely decorative.
+    risk_size = state.get("risk_adjusted_decision", {}).get("final_position_size")
+    if risk_size:
+        pos_frac = min(pos_frac, float(risk_size) * 1.25)
+
+    # Size off equity, not cash — otherwise each successive trade in a multi-buy day
+    # sizes off a shrinking cash base, silently fighting the deployment-urgency logic
+    # above (which is itself computed against total_equity/cash_ratio).
+    max_usd   = total_equity * pos_frac * macro_mult * sector_mult
+    max_usd   = min(max_usd, cash * 0.95, total_equity * 0.30)   # affordable + never > 30% of equity
 
     is_crypto = "-USD" in ticker
     if is_crypto:

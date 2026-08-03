@@ -28,11 +28,13 @@ Key principles:
 - Sector rotation matters: follow momentum into leading sectors.
 - VIX below 18 = green light for full positioning.
 - HYG above 20d MA = credit conditions healthy = favour equities.
-- The PRIMARY mandate is to OUTPERFORM SPY. Negative and worsening alpha is CRITICAL —
-  holding cash guarantees continued underperformance. Every 1% of uninvested capital costs
-  approximately 0.5% alpha over a 90-day session.
-- If alpha vs SPY is worse than -2%, override caution: risk_budget_multiplier must be ≥ 1.2
-  and capital_deployment_priority must be "high" unless VIX ≥ 25 or credit is stressed.
+- The PRIMARY mandate is to OUTPERFORM SPY, but negative alpha is only a cash-drag problem
+  when deployment is genuinely low. If deployment is already adequate (>=50%) and alpha is
+  still negative, that's a signal-quality problem — more capital deployment will not fix it,
+  and pushing risk_budget_multiplier higher in that case just compounds losing trades.
+- If alpha vs SPY is worse than -2% AND deployment is under 50%, override caution:
+  risk_budget_multiplier must be >= 1.2 and capital_deployment_priority must be "high"
+  unless VIX >= 25 or credit is stressed.
 
 When setting risk_budget_multiplier:
   1.3 to 1.5: Risk-on — VIX low, trend bullish, session behind on deployment
@@ -104,19 +106,27 @@ def run(
             pacing_note    = "on track"
             min_multiplier = 1.0
 
-        # Alpha vs SPY awareness — also raises multiplier floor if alpha is negative
+        # Alpha vs SPY awareness — only raises the multiplier floor when the alpha gap is
+        # actually attributable to cash drag (deployment genuinely low). Negative alpha with
+        # adequate deployment is a signal-quality problem, not a sizing problem — escalating
+        # risk_budget_multiplier in that case just compounds losing trades (this was the
+        # mechanism behind Session 3's doom loop: corrupted equity -> phantom alpha deficit ->
+        # forced deployment -> more trades -> more capital at risk).
         session_return_pct = round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 1)
         spy_return_pct     = round(portfolio.get("stats", {}).get("benchmark_return_pct", 0) or 0, 1)
         alpha_pct          = round(session_return_pct - spy_return_pct, 1)
         alpha_label        = f"{alpha_pct:+.1f}% vs SPY"
-        if alpha_pct < -2:
-            alpha_urgency  = "CRITICAL — widen deployment immediately"
-            min_multiplier = max(min_multiplier, 1.3)
-        elif alpha_pct < 0:
-            alpha_urgency  = "behind — increase urgency"
+        if alpha_pct < -2 and deployed_pct < 50:
+            alpha_urgency  = "CRITICAL — alpha gap attributable to cash drag, widen deployment"
+            min_multiplier = max(min_multiplier, 1.2)
+        elif alpha_pct < 0 and deployed_pct < 50:
+            alpha_urgency  = "behind on deployment — increase urgency"
             min_multiplier = max(min_multiplier, 1.1)
+        elif alpha_pct < 0:
+            alpha_urgency  = "alpha behind but deployment already adequate — signal-quality issue, not cash drag; not escalating"
         else:
             alpha_urgency  = "on track"
+        min_multiplier = min(min_multiplier, 1.2)
 
         context = f"""DATE: {date} ({day_of_week})
 SESSION PACING: Day {session_day}/{total_days} — {days_remaining} days remaining
