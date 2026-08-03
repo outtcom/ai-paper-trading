@@ -59,7 +59,7 @@
 - [ ] **Step 2: Verify the file is importable**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "from config import SLIPPAGE_PCT, TICKER_BETA, MAX_PORTFOLIO_BETA, VIX_ROC_THRESHOLD; print('SLIPPAGE_PCT:', SLIPPAGE_PCT, '| MAX_PORTFOLIO_BETA:', MAX_PORTFOLIO_BETA)"
   ```
 
@@ -125,7 +125,7 @@
 - [ ] **Step 3: Verify slippage is applied**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "
   from tools.paper_broker import submit_order
   from config import SLIPPAGE_PCT
@@ -288,7 +288,7 @@ Three functions are added at the bottom of the file (before the `if __name__ == 
 - [ ] **Step 4: Verify all three functions are importable and return expected types**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "
   from tools.market_regime import get_vix_roc, get_hyg_signal, had_earnings_recently
 
@@ -372,7 +372,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 - [ ] **Step 3: Verify imports work**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "import morning_session; print('imports OK')"
   ```
 
@@ -661,7 +661,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 - [ ] **Step 11: Verify `morning_session.py` is importable and `main()` is callable (dry run check)**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "
   import morning_session
   import inspect
@@ -805,7 +805,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 - [ ] **Step 3: Verify `eod_session.py` is importable**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "import eod_session; print('eod_session imports OK')"
   ```
 
@@ -825,7 +825,7 @@ This task has five sub-changes. Apply them in the order listed — each builds o
 - [ ] **Step 1: Verify all five modified files import cleanly**
 
   ```bash
-  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/Car Cleaning Gel Amazon/trading-system"
+  cd "c:/Users/Fahad/OneDrive/Desktop/Claude Projects/ai-paper-trading"
   python -c "
   import config
   import tools.paper_broker

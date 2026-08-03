@@ -78,15 +78,20 @@ All scripts run automatically via `.github/workflows/`. No manual triggering nee
 | Workflow | Schedule (ET) | Script |
 |---|---|---|
 | Pre-Market Gap Scanner | Mon–Fri 7:00 AM | `premarket_check.py` |
+| Penny Stock Scan | Mon–Fri ~3:00–8:00 AM (cron 3:00 AM ET, widened DST gate) | `penny_scan.py` |
 | Morning Session | Mon–Fri 9:45 AM (cron 7:30 AM EDT + ~2h15min queue) | `morning_session.py` |
-| ICT FVG Scalping Scan | Mon–Fri ~10:30 AM | `scalping_scan.py` |
+| Midcap Scan | Mon–Fri ~10:30–11:30 AM (cron 7:10 AM UTC + GHA queue) | `midcap_scan.py` |
 | Insider Activity + Political Signal Scan | Mon–Fri ~11:15 AM | `insider_scan.py` |
 | Midday Position Monitor | Mon–Fri 12:00 PM | `midday_check.py` |
 | Pre-Close Alert | Mon–Fri 3:30 PM | `preclose_alert.py` |
 | End-of-Day Session | Mon–Fri 4:15 PM | `eod_session.py` |
+| System Health Report | Mon–Fri ~11 AM & ~6:30 PM ET (pre-flight + EOD recap, Telegram-only, read-only) | `system_health_report.py` |
 | Weekly Intelligence Briefing | Sunday 6:00 PM | `weekly_briefing.py` |
 | QA Analyst | After any workflow failure | `qa_analyst.py` |
 | New Session Reset | Manual only (after 22:00 UTC weekdays / anytime weekends) | `tools/new_session.py` |
+| Session Summary | Manual only (`workflow_dispatch`) | `session_summary.py` |
+
+**Retired:** ICT FVG Scalping Scan — `scalping_scan.py` and `.github/workflows/scalping-scan.yml` removed 2026-06-12 (commit `24d7275`, "ICT FVG strategy sunset").
 
 - Secrets (`ANTHROPIC_API_KEY`, `FINNHUB_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) are stored in GitHub repo secrets — never in code.
 - Each workflow commits updated `docs/portfolio.json` back to the repo after running.
