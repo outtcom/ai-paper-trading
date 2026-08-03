@@ -51,6 +51,7 @@ from tools.session_manager import (
 )
 from tools.telegram_bot import broadcast_message, send_private_only
 from tools.agent_tracker import update_portfolio_tracker, format_ic_report
+from config import TURNAROUND_FIX_DATE, PHASE4_EVIDENCE_TRADE_COUNT
 
 DEAD_MONEY_DAYS      = 10    # close position if held this many TRADING days with no progress
 DEAD_MONEY_FLOOR      = -0.02  # below this, it's a loser for the stop-loss to handle, not dead money
@@ -345,6 +346,45 @@ def _reconcile_equity(portfolio: dict, equity: float) -> None:
         send_private_only(msg)
     else:
         print(f"[eod] Reconciliation OK: equity ${equity:,.2f} vs expected ${expected:,.2f} (diff ${discrepancy:+,.2f})")
+
+
+def _check_phase4_evidence(portfolio: dict) -> bool:
+    """
+    One-time Telegram alert once enough trades opened under the post-turnaround-plan
+    rules (Phase 0-3, shipped TURNAROUND_FIX_DATE) have closed to give a real read on
+    whether the Phase 4 structural decision (systematic candidates + LLM-as-veto) is
+    worth pursuing, instead of guessing from backtest alone. Fires once; returns True
+    if it fired (so the caller knows to persist the flag).
+    """
+    if portfolio.get("phase4_checkpoint_sent"):
+        return False
+
+    post_fix = [
+        t for t in portfolio.get("trade_history", [])
+        if t.get("opened_date", "") >= TURNAROUND_FIX_DATE
+    ]
+    if len(post_fix) < PHASE4_EVIDENCE_TRADE_COUNT:
+        return False
+
+    wins = [t for t in post_fix if t.get("pnl", 0) > 0]
+    win_rate = len(wins) / len(post_fix) * 100
+    avg_pnl_pct = sum(t.get("pnl_pct", 0) for t in post_fix) / len(post_fix)
+    total_pnl = sum(t.get("pnl", 0) for t in post_fix)
+
+    send_private_only(
+        f"📊 <b>Phase 4 Evidence Checkpoint</b>\n\n"
+        f"{len(post_fix)} trades have closed since the turnaround-plan fix "
+        f"({TURNAROUND_FIX_DATE}) — enough for a first meaningful read.\n\n"
+        f"Win rate: {win_rate:.0f}%\n"
+        f"Avg P&L: {avg_pnl_pct:+.2f}%\n"
+        f"Total P&L: ${total_pnl:+,.2f}\n\n"
+        f"Time to revisit the Phase 4 structural decision (systematic candidate "
+        f"generation + LLM-as-veto) with real post-fix evidence instead of backtest "
+        f"alone. See CLAUDE.md turnaround plan notes."
+    )
+    print(f"[eod] Phase 4 evidence checkpoint fired — {len(post_fix)} post-fix trades closed.")
+    portfolio["phase4_checkpoint_sent"] = True
+    return True
 
 
 def _resolve_signals_generic(today: str, open_signals: list, close_fn, label: str) -> list:
@@ -678,6 +718,16 @@ def main():
                 send_private_only(ic_report)
     except Exception as _e:
         print(f"[eod] Agent tracker update failed (non-critical): {_e}")
+
+    # Step 6c: Phase 4 evidence checkpoint (one-time alert once enough post-fix trades close)
+    try:
+        portfolio = get_portfolio()
+        if _check_phase4_evidence(portfolio):
+            _pf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "portfolio.json")
+            with open(_pf_path, "w") as _f:
+                json.dump(portfolio, _f, indent=2)
+    except Exception as _e:
+        print(f"[eod] Phase 4 checkpoint check failed (non-critical): {_e}")
 
     # Step 7: Build and send EOD summary
     msg = _build_eod_message(

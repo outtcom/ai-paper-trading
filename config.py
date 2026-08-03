@@ -144,6 +144,12 @@ PROMPT_VERSION = "1.1.0"          # bump when any agent prompt changes — isola
 # analyst prompts changed — deployment-urgency gating, conviction discrimination
 # criteria, and rejection-mandate base rates. See CLAUDE.md Known Issues.
 
+# Turnaround plan (Phase 0-3, shipped 2026-08-03, commits 8a18b3f/f3eb469) evidence checkpoint.
+# Phase 4 (structural rethink) is deliberately deferred until this many trades opened on/after
+# TURNAROUND_FIX_DATE have closed — see CLAUDE.md Known Issues and project memory.
+TURNAROUND_FIX_DATE       = "2026-08-03"
+PHASE4_EVIDENCE_TRADE_COUNT = 20
+
 # ---------------------------------------------------------------------------
 # Telegram Notifications
 # ---------------------------------------------------------------------------
