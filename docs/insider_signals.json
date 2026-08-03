@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-31",
-  "last_notified_date": "2026-07-31",
+  "date": "2026-08-03",
+  "last_notified_date": "2026-08-03",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +17,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:21.992136"
+      "scanned_at": "2026-08-03T14:01:41.754910"
     },
     "NVDA": {
       "insider_signal": {
@@ -114,7 +114,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:22.795530"
+      "scanned_at": "2026-08-03T14:01:51.407179"
     },
     "MSFT": {
       "insider_signal": {
@@ -140,7 +140,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:23.647347"
+      "scanned_at": "2026-08-03T14:01:53.724719"
     },
     "MU": {
       "insider_signal": {
@@ -257,7 +257,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:24.435806"
+      "scanned_at": "2026-08-03T14:01:57.222344"
     },
     "GOOGL": {
       "insider_signal": {
@@ -266,16 +266,16 @@
         "open_market_buys": 0,
         "open_market_sells": 5,
         "compensation_grants": 5,
-        "net_open_market_value": -63498.91,
-        "net_open_market_fmt": "-$63K",
+        "net_open_market_value": -57013.35,
+        "net_open_market_fmt": "-$57K",
         "largest_single_transaction": {
-          "name": "Saraci Marsida",
+          "name": "ARNOLD FRANCES",
           "direction": "sell",
-          "dollar_value": 33823.54,
-          "dollar_fmt": "$34K",
-          "date": "2026-07-25",
-          "shares_traded": 106,
-          "price_per_share": 319.09,
+          "dollar_value": 27337.98,
+          "dollar_fmt": "$27K",
+          "date": "2026-07-30",
+          "shares_traded": 82,
+          "price_per_share": 333.39,
           "transaction_code": ""
         },
         "notable_transactions": [],
@@ -283,7 +283,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:25.532421"
+      "scanned_at": "2026-08-03T14:02:02.299803"
     },
     "META": {
       "insider_signal": {
@@ -390,7 +390,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:26.532892"
+      "scanned_at": "2026-08-03T14:02:04.589239"
     },
     "AMZN": {
       "insider_signal": {
@@ -426,8 +426,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:27.362919"
+      "trump_mentions": [
+        {
+          "headline": "Trump's DOT Introduces Changes to 'Accelerate' AV Deployment, Directs NHTSA to Grant Zoox Temporary Exemption",
+          "date": "2026-08-02 22:30",
+          "summary": "The Donald Trump administration on Thursday introduced changes to Department of Transportation (DOT) regulations aimed at expediting the development and deployment of autonomous vehicles, granting Ama",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-08-03T14:02:07.184032"
     },
     "TSLA": {
       "insider_signal": {
@@ -484,7 +493,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:28.165873"
+      "scanned_at": "2026-08-03T14:02:12.220021"
     },
     "LLY": {
       "insider_signal": {
@@ -520,8 +529,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:28.874314"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Rise, Oil Prices Dive As Trump Shifts On Iran; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
+          "date": "2026-08-02 23:49",
+          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Dow Jones Futures Due As Trump Calls Off Iran Attacks; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
+          "date": "2026-08-02 13:32",
+          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Dow Jones Futures: Trump Calls Off Iran Attacks; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
+          "date": "2026-08-02 03:06",
+          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-03T14:02:15.052660"
     },
     "UNH": {
       "insider_signal": {
@@ -538,7 +572,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:29.551159"
+      "scanned_at": "2026-08-03T14:02:18.134626"
     },
     "JPM": {
       "insider_signal": {
@@ -574,8 +608,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:30.544604"
+      "trump_mentions": [
+        {
+          "headline": "Capital One Cites Money Laundering Review in Trump-Related Suit",
+          "date": "2026-08-01 16:52",
+          "summary": "(Bloomberg) -- Capital One Financial Corp. said in a court filing late Friday that it closed accounts belonging to President Donald Trump’s sprawling real estate company in 2021 for legitimate reasons",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-03T14:02:19.810907"
     },
     "GS": {
       "insider_signal": {
@@ -622,7 +665,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:31.220712"
+      "scanned_at": "2026-08-03T14:02:23.539443"
     },
     "XOM": {
       "insider_signal": {
@@ -639,7 +682,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:31.935864"
+      "scanned_at": "2026-08-03T14:02:25.483857"
     },
     "CVX": {
       "insider_signal": {
@@ -656,7 +699,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:32.683948"
+      "scanned_at": "2026-08-03T14:02:28.013429"
     },
     "CAT": {
       "insider_signal": {
@@ -682,7 +725,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:33.367102"
+      "scanned_at": "2026-08-03T14:02:30.331090"
     },
     "GE": {
       "insider_signal": {
@@ -769,7 +812,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:34.035461"
+      "scanned_at": "2026-08-03T14:02:32.635576"
     },
     "WMT": {
       "insider_signal": {
@@ -825,8 +868,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:34.704111"
+      "trump_mentions": [
+        {
+          "headline": "A Supreme Court Ruling Against Trump's Tariffs Could Trigger Up to $175 Billion in Refunds, a Potential Tailwind for Import-Heavy Retailers",
+          "date": "2026-07-31 20:50",
+          "summary": "Retailers could receive an unexpected financial windfall.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-03T14:02:36.674826"
     },
     "COST": {
       "insider_signal": {
@@ -862,8 +914,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:35.372620"
+      "trump_mentions": [
+        {
+          "headline": "A Supreme Court Ruling Against Trump's Tariffs Could Trigger Up to $175 Billion in Refunds, a Potential Tailwind for Import-Heavy Retailers",
+          "date": "2026-07-31 20:50",
+          "summary": "Retailers could receive an unexpected financial windfall.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-03T14:02:38.884193"
     },
     "FCX": {
       "insider_signal": {
@@ -889,7 +950,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:36.028128"
+      "scanned_at": "2026-08-03T14:02:40.110849"
     },
     "NEE": {
       "insider_signal": {
@@ -914,17 +975,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Top Midday Stories: Stocks Down, Oil Up as Trump Vows Strong Response to Iran Attacks; Vertiv Q2 Revenue Misses Estimates",
-          "date": "2026-07-29 15:40",
-          "summary": "All three major US stock indexes were down in late-morning trading Wednesday after President Trump v",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-07-31T13:18:36.700633"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-03T14:02:41.171740"
     },
     "PLD": {
       "insider_signal": {
@@ -961,7 +1013,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-07-31T13:18:37.356450"
+      "scanned_at": "2026-08-03T14:02:44.906142"
     }
   }
 }
