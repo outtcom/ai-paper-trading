@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-03",
-  "last_notified_date": "2026-08-03",
+  "date": "2026-08-04",
+  "last_notified_date": "2026-08-04",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +17,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:01:41.754910"
+      "scanned_at": "2026-08-04T13:22:09.000154"
     },
     "NVDA": {
       "insider_signal": {
@@ -114,7 +114,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:01:51.407179"
+      "scanned_at": "2026-08-04T13:22:10.128176"
     },
     "MSFT": {
       "insider_signal": {
@@ -140,7 +140,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:01:53.724719"
+      "scanned_at": "2026-08-04T13:22:11.234456"
     },
     "MU": {
       "insider_signal": {
@@ -257,7 +257,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:01:57.222344"
+      "scanned_at": "2026-08-04T13:22:12.343897"
     },
     "GOOGL": {
       "insider_signal": {
@@ -282,8 +282,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:02.299803"
+      "trump_mentions": [
+        {
+          "headline": "President Trump Buys 2 AI Stocks That Wall Street Says Are Undervalued",
+          "date": "2026-08-04 08:32",
+          "summary": "President Trump's brokerage accounts have bought substantial shares of Alphabet and Meta Platforms stock this year.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-04T13:22:13.483801"
     },
     "META": {
       "insider_signal": {
@@ -389,8 +398,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:04.589239"
+      "trump_mentions": [
+        {
+          "headline": "President Trump Buys 2 AI Stocks That Wall Street Says Are Undervalued",
+          "date": "2026-08-04 08:32",
+          "summary": "President Trump's brokerage accounts have bought substantial shares of Alphabet and Meta Platforms stock this year.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "META, GOOGL Stocks In Focus — White House Plans Meeting With Tech Giants On Tuesday Over AI Safety Tests, Says Report",
+          "date": "2026-08-03 23:44",
+          "summary": "Apart from Google and Meta, OpenAI and Anthropic were also reportedly invited to discuss voluntary AI safety testing with White House officials.",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-04T13:22:14.720309"
     },
     "AMZN": {
       "insider_signal": {
@@ -426,17 +452,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's DOT Introduces Changes to 'Accelerate' AV Deployment, Directs NHTSA to Grant Zoox Temporary Exemption",
-          "date": "2026-08-02 22:30",
-          "summary": "The Donald Trump administration on Thursday introduced changes to Department of Transportation (DOT) regulations aimed at expediting the development and deployment of autonomous vehicles, granting Ama",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-08-03T14:02:07.184032"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-04T13:22:15.840923"
     },
     "TSLA": {
       "insider_signal": {
@@ -444,7 +461,7 @@
         "days_back": 60,
         "open_market_buys": 1,
         "open_market_sells": 2,
-        "compensation_grants": 3,
+        "compensation_grants": 1,
         "net_open_market_value": -1048125.38,
         "net_open_market_fmt": "-$1.0M",
         "largest_single_transaction": {
@@ -493,7 +510,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:12.220021"
+      "scanned_at": "2026-08-04T13:22:17.003367"
     },
     "LLY": {
       "insider_signal": {
@@ -529,33 +546,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Jones Futures Rise, Oil Prices Dive As Trump Shifts On Iran; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
-          "date": "2026-08-02 23:49",
-          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures Due As Trump Calls Off Iran Attacks; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
-          "date": "2026-08-02 13:32",
-          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures: Trump Calls Off Iran Attacks; SpaceX, AMD, Sandisk, Eli Lilly Earnings Loom",
-          "date": "2026-08-02 03:06",
-          "summary": "President Trump said he's holding off on massive new Iran attacks. SpaceX, AMD, Sandisk, Lilly earnings loom as market rally attempt begins.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-03T14:02:15.052660"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-04T13:22:18.044072"
     },
     "UNH": {
       "insider_signal": {
@@ -572,7 +564,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:18.134626"
+      "scanned_at": "2026-08-04T13:22:19.014092"
     },
     "JPM": {
       "insider_signal": {
@@ -608,17 +600,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Capital One Cites Money Laundering Review in Trump-Related Suit",
-          "date": "2026-08-01 16:52",
-          "summary": "(Bloomberg) -- Capital One Financial Corp. said in a court filing late Friday that it closed accounts belonging to President Donald Trump’s sprawling real estate company in 2021 for legitimate reasons",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-03T14:02:19.810907"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-04T13:22:20.036689"
     },
     "GS": {
       "insider_signal": {
@@ -664,8 +647,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:23.539443"
+      "trump_mentions": [
+        {
+          "headline": "Oil Slips as Trump Holds Off Iran Attack, Says Talks to Resume",
+          "date": "2026-08-03 15:39",
+          "summary": "(Bloomberg) -- Oil fell after US President Donald Trump said he called off a planned attack on Iran and that new talks with the Islamic Republic would begin on Monday.Most Read from BloombergTrump Say",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-04T13:22:21.057625"
     },
     "XOM": {
       "insider_signal": {
@@ -681,8 +673,49 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:25.483857"
+      "trump_mentions": [
+        {
+          "headline": "Trump blasts Exxon, Chevron for making 'too much money'",
+          "date": "2026-08-04 02:47",
+          "summary": "STORY: :: Trump blasts Chevron and ExxonMobil for 'making too much money' from higher fuel prices:: Washington, D.C. / August 3, 2026\"They're making too much money. Based on a shortage, they're making",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "\"Too Much Money:\" President Trump Just Lashed Out at ExxonMobil and Chevron for Windfall Profits, Warns Both Companies They Should \"Give Some of That Back.\"",
+          "date": "2026-08-04 01:32",
+          "summary": "But what can Trump actually do?",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Calls Out Exxon, Chevron for Profiting From a War He Started",
+          "date": "2026-08-03 22:53",
+          "summary": "Trump criticized Exxon and Chevron for windfall profits tied to the Iran war and demanded lower gas prices for consumers.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump says Exxon, Chevron are 'making too much money' amid Iran war",
+          "date": "2026-08-03 20:44",
+          "summary": "President Trump called out the nation's two largest oil companies, accusing ExxonMobil and Chevron of \"making too much money\" during the Iran war.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "XOM, CVX Stocks In Focus: Trump Criticizes Exxon And Chevron For Profiting From Iran-Driven Oil Price Surge — ‘They’re Making Too Much Money’",
+          "date": "2026-08-03 20:16",
+          "summary": "Donald Trump said Exxon Mobil and Chevron earned excessive profits as oil prices surged during the Iran war.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-08-04T13:22:22.070457"
     },
     "CVX": {
       "insider_signal": {
@@ -698,8 +731,65 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:28.013429"
+      "trump_mentions": [
+        {
+          "headline": "Trump blasts Exxon, Chevron for making 'too much money'",
+          "date": "2026-08-04 02:47",
+          "summary": "STORY: :: Trump blasts Chevron and ExxonMobil for 'making too much money' from higher fuel prices:: Washington, D.C. / August 3, 2026\"They're making too much money. Based on a shortage, they're making",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "\"Too Much Money:\" President Trump Just Lashed Out at ExxonMobil and Chevron for Windfall Profits, Warns Both Companies They Should \"Give Some of That Back.\"",
+          "date": "2026-08-04 01:32",
+          "summary": "But what can Trump actually do?",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Calls Out Exxon, Chevron for Profiting From a War He Started",
+          "date": "2026-08-03 22:53",
+          "summary": "Trump criticized Exxon and Chevron for windfall profits tied to the Iran war and demanded lower gas prices for consumers.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump says Exxon, Chevron are 'making too much money' amid Iran war",
+          "date": "2026-08-03 20:44",
+          "summary": "President Trump called out the nation's two largest oil companies, accusing ExxonMobil and Chevron of \"making too much money\" during the Iran war.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "XOM, CVX Stocks In Focus: Trump Criticizes Exxon And Chevron For Profiting From Iran-Driven Oil Price Surge — ‘They’re Making Too Much Money’",
+          "date": "2026-08-03 20:16",
+          "summary": "Donald Trump said Exxon Mobil and Chevron earned excessive profits as oil prices surged during the Iran war.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Trump calls out Chevron and Exxon profits: 'They're making too much money'",
+          "date": "2026-08-03 19:41",
+          "summary": "President Donald Trump criticizes major energy producers like Chevron (CVX) and ExxonMobil (XOM), stating they are making 'too much money' from high oil prices.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Says Exxon, Chevron Are 'Making Too Much Money'",
+          "date": "2026-08-03 19:15",
+          "summary": "\"They're going to give some of that back to the public, and they better cut the retail price,\" President Donald Trump says when asked about the profits of ExxonMobil and Chevron during remarks with re",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-04T13:22:23.346868"
     },
     "CAT": {
       "insider_signal": {
@@ -725,7 +815,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:30.331090"
+      "scanned_at": "2026-08-04T13:22:24.434597"
     },
     "GE": {
       "insider_signal": {
@@ -812,7 +902,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:32.635576"
+      "scanned_at": "2026-08-04T13:22:25.435722"
     },
     "WMT": {
       "insider_signal": {
@@ -878,7 +968,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-03T14:02:36.674826"
+      "scanned_at": "2026-08-04T13:22:26.437962"
     },
     "COST": {
       "insider_signal": {
@@ -924,7 +1014,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-03T14:02:38.884193"
+      "scanned_at": "2026-08-04T13:22:27.373401"
     },
     "FCX": {
       "insider_signal": {
@@ -950,7 +1040,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:40.110849"
+      "scanned_at": "2026-08-04T13:22:28.296951"
     },
     "NEE": {
       "insider_signal": {
@@ -976,7 +1066,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:41.171740"
+      "scanned_at": "2026-08-04T13:22:29.253805"
     },
     "PLD": {
       "insider_signal": {
@@ -1013,7 +1103,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-03T14:02:44.906142"
+      "scanned_at": "2026-08-04T13:22:30.208085"
     }
   }
 }
