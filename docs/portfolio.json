@@ -4,7 +4,7 @@
     "current_day": 30,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-08-04T19:54:29.358965+00:00",
+    "last_updated": "2026-08-05T13:36:06.488666+00:00",
     "session_number": 3
   },
   "cash": 2703.78,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.53,
-    "sortino": -2.91,
-    "calmar": -3.36,
+    "sharpe": -2.51,
+    "sortino": -2.85,
+    "calmar": -3.3,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
     "spy_current_price": 772.37,
@@ -782,6 +782,11 @@
     {
       "day": 29,
       "date": "2026-08-04",
+      "equity": 4851.98
+    },
+    {
+      "day": 30,
+      "date": "2026-08-05",
       "equity": 4851.98
     }
   ],
@@ -1969,186 +1974,186 @@
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 177.32,
-        "mom_5d": 0.82,
-        "mom_1m": -4.47,
-        "mom_3m": 9.54,
-        "above_ma50": false,
-        "rsi_14": 45.1,
-        "score": -0.08,
+        "price": 187.38,
+        "mom_5d": 12.49,
+        "mom_1m": 4.58,
+        "mom_3m": 10.2,
+        "above_ma50": true,
+        "rsi_14": 61.5,
+        "score": 9.08,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 107.1,
-        "mom_5d": 0.75,
-        "mom_1m": -2.41,
-        "mom_3m": -8.24,
-        "above_ma50": false,
-        "rsi_14": 37.7,
-        "score": -2.63,
+        "price": 112.59,
+        "mom_5d": 2.81,
+        "mom_1m": 1.41,
+        "mom_3m": -4.06,
+        "above_ma50": true,
+        "rsi_14": 49.9,
+        "score": 1.74,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 115.26,
-        "mom_5d": 5.35,
-        "mom_1m": -2.4,
-        "mom_3m": -2.84,
-        "above_ma50": false,
-        "rsi_14": 47.9,
-        "score": -0.16,
+        "price": 119.3,
+        "mom_5d": 6.89,
+        "mom_1m": 1.63,
+        "mom_3m": -0.48,
+        "above_ma50": true,
+        "rsi_14": 54.6,
+        "score": 3.79,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 162.03,
-        "mom_5d": -0.33,
-        "mom_1m": 1.56,
-        "mom_3m": 11.62,
+        "price": 163.59,
+        "mom_5d": -1.59,
+        "mom_1m": -0.52,
+        "mom_3m": 12.51,
         "above_ma50": true,
-        "rsi_14": 51.3,
-        "score": 4.0,
+        "rsi_14": 54.7,
+        "score": 2.77,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 56.97,
-        "mom_5d": 1.17,
-        "mom_1m": 4.0,
-        "mom_3m": 9.73,
+        "price": 58.31,
+        "mom_5d": 2.88,
+        "mom_1m": 4.03,
+        "mom_3m": 12.48,
         "above_ma50": true,
-        "rsi_14": 59.4,
-        "score": 5.3,
+        "rsi_14": 64.2,
+        "score": 6.38,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 59.05,
-        "mom_5d": -0.96,
-        "mom_1m": 11.82,
-        "mom_3m": 0.34,
+        "price": 58.72,
+        "mom_5d": 0.12,
+        "mom_1m": 7.47,
+        "mom_3m": 3.02,
         "above_ma50": true,
-        "rsi_14": 65.8,
-        "score": 6.69,
+        "rsi_14": 60.8,
+        "score": 5.38,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 180.13,
-        "mom_5d": -1.39,
-        "mom_1m": -1.76,
-        "mom_3m": 4.15,
+        "price": 186.69,
+        "mom_5d": 5.68,
+        "mom_1m": 2.36,
+        "mom_3m": 5.55,
         "above_ma50": true,
-        "rsi_14": 49.3,
-        "score": 0.53,
+        "rsi_14": 63.8,
+        "score": 4.99,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 84.83,
-        "mom_5d": 0.83,
-        "mom_1m": 1.84,
-        "mom_3m": 0.78,
+        "price": 85.61,
+        "mom_5d": -2.0,
+        "mom_1m": 0.88,
+        "mom_3m": 1.63,
         "above_ma50": true,
-        "rsi_14": 50.9,
-        "score": 2.33,
+        "rsi_14": 49.1,
+        "score": 1.17,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
-        "price": 50.84,
-        "mom_5d": -0.82,
-        "mom_1m": -0.35,
-        "mom_3m": -0.99,
-        "above_ma50": false,
-        "rsi_14": 52.1,
-        "score": -0.62,
+        "price": 52.7,
+        "mom_5d": 1.85,
+        "mom_1m": 2.3,
+        "mom_3m": 0.54,
+        "above_ma50": true,
+        "rsi_14": 60.7,
+        "score": 2.81,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.67,
-        "mom_5d": -3.5,
-        "mom_1m": -0.22,
-        "mom_3m": -4.04,
+        "price": 44.09,
+        "mom_5d": -1.83,
+        "mom_1m": -3.52,
+        "mom_3m": -3.54,
         "above_ma50": false,
-        "rsi_14": 37.8,
-        "score": -1.97,
+        "rsi_14": 33.3,
+        "score": -3.02,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
         "price": 45.22,
-        "mom_5d": -1.59,
-        "mom_1m": 2.35,
-        "mom_3m": 2.03,
+        "mom_5d": -1.61,
+        "mom_1m": 0.74,
+        "mom_3m": 1.07,
         "above_ma50": true,
-        "rsi_14": 56.6,
-        "score": 2.1,
+        "rsi_14": 46.1,
+        "score": 1.1,
         "sector": "Real Estate"
       }
     },
     "ranking": [
-      "Energy",
-      "Financials",
-      "Healthcare",
-      "Consumer Staples",
-      "Real Estate",
-      "Industrials",
       "Technology",
+      "Financials",
+      "Energy",
+      "Industrials",
       "Consumer Discretionary",
       "Materials",
-      "Utilities",
-      "Communication Services"
+      "Healthcare",
+      "Communication Services",
+      "Consumer Staples",
+      "Real Estate",
+      "Utilities"
     ],
     "top_3": [
-      "Energy",
+      "Technology",
       "Financials",
-      "Healthcare"
+      "Energy"
     ],
     "bottom_3": [
-      "Materials",
-      "Utilities",
-      "Communication Services"
+      "Consumer Staples",
+      "Real Estate",
+      "Utilities"
     ],
-    "as_of": "2026-07-31"
+    "as_of": "2026-08-05"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.4,
+    "risk_budget_multiplier": 1.3,
     "focus_sectors": [
-      "Energy",
+      "Technology",
       "Financials",
-      "Healthcare"
+      "Energy"
     ],
     "avoid_sectors": [
-      "Materials",
-      "Utilities",
-      "Communication Services"
+      "Consumer Staples",
+      "Real Estate",
+      "Utilities"
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "Alpha deficit of -12% vs SPY is critical and demands aggressive capital deployment into leading sectors immediately \u2014 VIX at 17.1 with a falling trajectory, bullish SPY trend, and healthy credit conditions provide a green light for full positioning with no macro justification for restraint. Rotate cash into high-momentum Energy and Financials names to close the performance gap before week's end.",
+    "primary_thesis": "VIX at 16.9 with a sharp 5-day decline signals expanding risk appetite in a confirmed SPY uptrend \u2014 the -5.3% alpha gap demands immediate capital deployment into leading sectors to close the performance deficit. Rotate aggressively into Technology, Financials, and Energy momentum names to convert cash drag into productive beta.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
   "index_etf_signals": {
     "SPY": {
-      "action": "buy",
+      "action": "hold",
       "confidence": 0.35
     },
     "QQQ": {
-      "action": "hold",
-      "confidence": 0.65
+      "action": "buy",
+      "confidence": 0.35
     },
     "IWM": {
       "action": "hold",
-      "confidence": 0.65
+      "confidence": 0.35
     },
     "GLD": {
       "action": "hold",
-      "confidence": 0.65
+      "confidence": 0.35
     }
   },
   "agent_tracker": {
