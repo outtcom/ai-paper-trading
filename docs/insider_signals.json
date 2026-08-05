@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-04",
-  "last_notified_date": "2026-08-04",
+  "date": "2026-08-05",
+  "last_notified_date": "2026-08-05",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -16,8 +16,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:09.000154"
+      "trump_mentions": [
+        {
+          "headline": "Corporate America got billions of dollars in tariff refunds. Where’s your cut?",
+          "date": "2026-08-05 09:00",
+          "summary": "Apple got an estimated $2.2 billion tariff refund last quarter. Amazon got $600 million. Nike got $300 million. But American consumers who paid higher prices as President Donald Trump’s tariffs filter",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-05T13:20:44.298145"
     },
     "NVDA": {
       "insider_signal": {
@@ -113,8 +122,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:10.128176"
+      "trump_mentions": [
+        {
+          "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
+          "date": "2026-08-05 11:08",
+          "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-05T13:20:45.231862"
     },
     "MSFT": {
       "insider_signal": {
@@ -140,7 +158,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:11.234456"
+      "scanned_at": "2026-08-05T13:20:46.329691"
     },
     "MU": {
       "insider_signal": {
@@ -257,7 +275,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:12.343897"
+      "scanned_at": "2026-08-05T13:20:47.442381"
     },
     "GOOGL": {
       "insider_signal": {
@@ -282,17 +300,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "President Trump Buys 2 AI Stocks That Wall Street Says Are Undervalued",
-          "date": "2026-08-04 08:32",
-          "summary": "President Trump's brokerage accounts have bought substantial shares of Alphabet and Meta Platforms stock this year.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-04T13:22:13.483801"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-05T13:20:48.572924"
     },
     "META": {
       "insider_signal": {
@@ -398,25 +407,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "President Trump Buys 2 AI Stocks That Wall Street Says Are Undervalued",
-          "date": "2026-08-04 08:32",
-          "summary": "President Trump's brokerage accounts have bought substantial shares of Alphabet and Meta Platforms stock this year.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "META, GOOGL Stocks In Focus — White House Plans Meeting With Tech Giants On Tuesday Over AI Safety Tests, Says Report",
-          "date": "2026-08-03 23:44",
-          "summary": "Apart from Google and Meta, OpenAI and Anthropic were also reportedly invited to discuss voluntary AI safety testing with White House officials.",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-04T13:22:14.720309"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-05T13:20:49.555850"
     },
     "AMZN": {
       "insider_signal": {
@@ -452,8 +444,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:15.840923"
+      "trump_mentions": [
+        {
+          "headline": "Corporate America got billions of dollars in tariff refunds. Where’s your cut?",
+          "date": "2026-08-05 09:00",
+          "summary": "Apple got an estimated $2.2 billion tariff refund last quarter. Amazon got $600 million. Nike got $300 million. But American consumers who paid higher prices as President Donald Trump’s tariffs filter",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-05T13:20:50.720575"
     },
     "TSLA": {
       "insider_signal": {
@@ -510,44 +511,44 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:17.003367"
+      "scanned_at": "2026-08-05T13:20:51.983407"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 8,
+        "open_market_buys": 7,
         "open_market_sells": 1,
-        "compensation_grants": 0,
-        "net_open_market_value": -2790427.5,
-        "net_open_market_fmt": "-$2.8M",
+        "compensation_grants": 2,
+        "net_open_market_value": -422360.66,
+        "net_open_market_fmt": "-$422K",
         "largest_single_transaction": {
-          "name": "Yuffa Ilya",
+          "name": "Seymour Melissa",
           "direction": "sell",
-          "dollar_value": 2876925.0,
-          "dollar_fmt": "$2.9M",
-          "date": "2026-06-10",
-          "shares_traded": 2500,
-          "price_per_share": 1150.77,
+          "dollar_value": 504340.76,
+          "dollar_fmt": "$504K",
+          "date": "2026-08-01",
+          "shares_traded": 439,
+          "price_per_share": 1148.84,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Yuffa Ilya",
+            "name": "Seymour Melissa",
             "direction": "sell",
-            "dollar_value": 2876925.0,
-            "dollar_fmt": "$2.9M",
-            "date": "2026-06-10",
-            "shares_traded": 2500,
-            "price_per_share": 1150.77,
+            "dollar_value": 504340.76,
+            "dollar_fmt": "$504K",
+            "date": "2026-08-01",
+            "shares_traded": 439,
+            "price_per_share": 1148.84,
             "transaction_code": ""
           }
         ],
-        "signal_strength": "strong_sell",
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:18.044072"
+      "scanned_at": "2026-08-05T13:20:52.795235"
     },
     "UNH": {
       "insider_signal": {
@@ -564,7 +565,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:19.014092"
+      "scanned_at": "2026-08-05T13:20:53.619998"
     },
     "JPM": {
       "insider_signal": {
@@ -600,8 +601,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:20.036689"
+      "trump_mentions": [
+        {
+          "headline": "Jamie Dimon Reportedly Wants Banks, Tech Giants, Utilities, And Other Sectors To Team Up Against AI Risks As Trump Finalizes Frontier AI Guidelines",
+          "date": "2026-08-05 11:40",
+          "summary": "According to a Reuters report, Dimon has personally contacted CEOs across industries to expand the Alliance for Critical Infrastructure.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-05T13:20:54.456792"
     },
     "GS": {
       "insider_signal": {
@@ -647,17 +657,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil Slips as Trump Holds Off Iran Attack, Says Talks to Resume",
-          "date": "2026-08-03 15:39",
-          "summary": "(Bloomberg) -- Oil fell after US President Donald Trump said he called off a planned attack on Iran and that new talks with the Islamic Republic would begin on Monday.Most Read from BloombergTrump Say",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-04T13:22:21.057625"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-05T13:20:55.309260"
     },
     "XOM": {
       "insider_signal": {
@@ -675,47 +676,39 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump blasts Exxon, Chevron for making 'too much money'",
-          "date": "2026-08-04 02:47",
-          "summary": "STORY: :: Trump blasts Chevron and ExxonMobil for 'making too much money' from higher fuel prices:: Washington, D.C. / August 3, 2026\"They're making too much money. Based on a shortage, they're making",
+          "headline": "Trump says oil companies made 'too much money'",
+          "date": "2026-08-04 22:47",
+          "summary": "U.S. President Donald Trump says Exxon and Chevron made “too much money” after higher crude prices lifted oil profits. We look at the factors that pushed energy prices higher and the political conside",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "\"Too Much Money:\" President Trump Just Lashed Out at ExxonMobil and Chevron for Windfall Profits, Warns Both Companies They Should \"Give Some of That Back.\"",
-          "date": "2026-08-04 01:32",
-          "summary": "But what can Trump actually do?",
-          "source": "Yahoo",
+          "headline": "'White House Set To Extend Jones Act Waiver As Trump Hunts For Cheaper Gasoline' - Reuters Exclusive",
+          "date": "2026-08-04 14:20",
+          "summary": "Waiver could expire on August 16 after nearly 200 uses through end-July, US government data showsOfficials discuss narrowing waiver&#39;s scope while preserving flexibility for critical fuel supplies,",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump Calls Out Exxon, Chevron for Profiting From a War He Started",
-          "date": "2026-08-03 22:53",
-          "summary": "Trump criticized Exxon and Chevron for windfall profits tied to the Iran war and demanded lower gas prices for consumers.",
+          "headline": "Trump demands Exxon, Chevron cut gas prices after Iran war profits",
+          "date": "2026-08-04 13:17",
+          "summary": "The Strait of Hormuz disruption has been described by the International Energy Agency as the largest supply disruption in the history of the global oil market",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Chevron, Exxon Making Too Much From Surging Oil, Trump Says. BP Profit More Than Doubles.",
+          "date": "2026-08-04 11:52",
+          "summary": "BP  stock was edging higher after the British oil major reported a surge in its second-quarter profit, just a day after President Donald Trump slammed rivals  Chevron  and  ExxonMobil  for making too ",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump says Exxon, Chevron are 'making too much money' amid Iran war",
-          "date": "2026-08-03 20:44",
-          "summary": "President Trump called out the nation's two largest oil companies, accusing ExxonMobil and Chevron of \"making too much money\" during the Iran war.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "XOM, CVX Stocks In Focus: Trump Criticizes Exxon And Chevron For Profiting From Iran-Driven Oil Price Surge — ‘They’re Making Too Much Money’",
-          "date": "2026-08-03 20:16",
-          "summary": "Donald Trump said Exxon Mobil and Chevron earned excessive profits as oil prices surged during the Iran war.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-04T13:22:22.070457"
+      "scanned_at": "2026-08-05T13:20:56.177545"
     },
     "CVX": {
       "insider_signal": {
@@ -733,63 +726,47 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump blasts Exxon, Chevron for making 'too much money'",
-          "date": "2026-08-04 02:47",
-          "summary": "STORY: :: Trump blasts Chevron and ExxonMobil for 'making too much money' from higher fuel prices:: Washington, D.C. / August 3, 2026\"They're making too much money. Based on a shortage, they're making",
+          "headline": "Trump says Houston's biggest oil giants are making 'too much money'",
+          "date": "2026-08-05 00:30",
+          "summary": "\"Chevron, too much money. Exxon Mobil, too much, too much money.\"",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "\"Too Much Money:\" President Trump Just Lashed Out at ExxonMobil and Chevron for Windfall Profits, Warns Both Companies They Should \"Give Some of That Back.\"",
-          "date": "2026-08-04 01:32",
-          "summary": "But what can Trump actually do?",
+          "headline": "Trump says oil companies made 'too much money'",
+          "date": "2026-08-04 22:47",
+          "summary": "U.S. President Donald Trump says Exxon and Chevron made “too much money” after higher crude prices lifted oil profits. We look at the factors that pushed energy prices higher and the political conside",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump Calls Out Exxon, Chevron for Profiting From a War He Started",
-          "date": "2026-08-03 22:53",
-          "summary": "Trump criticized Exxon and Chevron for windfall profits tied to the Iran war and demanded lower gas prices for consumers.",
-          "source": "Yahoo",
+          "headline": "'White House Set To Extend Jones Act Waiver As Trump Hunts For Cheaper Gasoline' - Reuters Exclusive",
+          "date": "2026-08-04 14:20",
+          "summary": "Waiver could expire on August 16 after nearly 200 uses through end-July, US government data showsOfficials discuss narrowing waiver&#39;s scope while preserving flexibility for critical fuel supplies,",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump says Exxon, Chevron are 'making too much money' amid Iran war",
-          "date": "2026-08-03 20:44",
-          "summary": "President Trump called out the nation's two largest oil companies, accusing ExxonMobil and Chevron of \"making too much money\" during the Iran war.",
+          "headline": "Trump demands Exxon, Chevron cut gas prices after Iran war profits",
+          "date": "2026-08-04 13:17",
+          "summary": "The Strait of Hormuz disruption has been described by the International Energy Agency as the largest supply disruption in the history of the global oil market",
           "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         },
         {
-          "headline": "XOM, CVX Stocks In Focus: Trump Criticizes Exxon And Chevron For Profiting From Iran-Driven Oil Price Surge — ‘They’re Making Too Much Money’",
-          "date": "2026-08-03 20:16",
-          "summary": "Donald Trump said Exxon Mobil and Chevron earned excessive profits as oil prices surged during the Iran war.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Trump calls out Chevron and Exxon profits: 'They're making too much money'",
-          "date": "2026-08-03 19:41",
-          "summary": "President Donald Trump criticizes major energy producers like Chevron (CVX) and ExxonMobil (XOM), stating they are making 'too much money' from high oil prices.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Says Exxon, Chevron Are 'Making Too Much Money'",
-          "date": "2026-08-03 19:15",
-          "summary": "\"They're going to give some of that back to the public, and they better cut the retail price,\" President Donald Trump says when asked about the profits of ExxonMobil and Chevron during remarks with re",
+          "headline": "Refiners Can't Deliver Gas Price Relief Trump Wants, Says Stephen Schork",
+          "date": "2026-08-04 12:28",
+          "summary": "Stephen Schork, principal and editor at The Schork Group, says refiners have virtually no ability to increase capacity and deliver more gasoline and diesel products and lower costs for consumers. Pres",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-04T13:22:23.346868"
+      "scanned_at": "2026-08-05T13:20:57.062358"
     },
     "CAT": {
       "insider_signal": {
@@ -815,7 +792,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:24.434597"
+      "scanned_at": "2026-08-05T13:20:57.940304"
     },
     "GE": {
       "insider_signal": {
@@ -902,7 +879,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:25.435722"
+      "scanned_at": "2026-08-05T13:20:58.735689"
     },
     "WMT": {
       "insider_signal": {
@@ -960,15 +937,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "A Supreme Court Ruling Against Trump's Tariffs Could Trigger Up to $175 Billion in Refunds, a Potential Tailwind for Import-Heavy Retailers",
-          "date": "2026-07-31 20:50",
-          "summary": "Retailers could receive an unexpected financial windfall.",
+          "headline": "Tariff refund drives Q2 profit at Delta Galil",
+          "date": "2026-08-05 10:55",
+          "summary": "Activewear maker Delta Galil has reported an increase in Q2 profit, lifted by tariff refunds, a portion of which it will invest in its manufacturing and supply chain to drive future growth.",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-04T13:22:26.437962"
+      "scanned_at": "2026-08-05T13:20:59.586232"
     },
     "COST": {
       "insider_signal": {
@@ -1006,41 +983,61 @@
       },
       "trump_mentions": [
         {
-          "headline": "A Supreme Court Ruling Against Trump's Tariffs Could Trigger Up to $175 Billion in Refunds, a Potential Tailwind for Import-Heavy Retailers",
-          "date": "2026-07-31 20:50",
-          "summary": "Retailers could receive an unexpected financial windfall.",
+          "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
+          "date": "2026-08-05 11:08",
+          "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-04T13:22:27.373401"
+      "scanned_at": "2026-08-05T13:21:00.445906"
     },
     "FCX": {
       "insider_signal": {
         "ticker": "FCX",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 0,
+        "open_market_sells": 1,
         "compensation_grants": 0,
-        "net_open_market_value": 54274.07,
-        "net_open_market_fmt": "+$54K",
+        "net_open_market_value": -421375.93,
+        "net_open_market_fmt": "-$421K",
         "largest_single_transaction": {
-          "name": "GRANT HUGH",
-          "direction": "buy",
-          "dollar_value": 33709.04,
-          "dollar_fmt": "$34K",
-          "date": "2026-07-01",
-          "shares_traded": 536,
-          "price_per_share": 62.89,
+          "name": "Higgins Stephen T.",
+          "direction": "sell",
+          "dollar_value": 475650,
+          "dollar_fmt": "$476K",
+          "date": "2026-07-30",
+          "shares_traded": 7550,
+          "price_per_share": 63,
           "transaction_code": ""
         },
-        "notable_transactions": [],
-        "signal_strength": "buy",
+        "notable_transactions": [
+          {
+            "name": "Higgins Stephen T.",
+            "direction": "sell",
+            "dollar_value": 475650,
+            "dollar_fmt": "$476K",
+            "date": "2026-07-30",
+            "shares_traded": 7550,
+            "price_per_share": 63,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:28.296951"
+      "trump_mentions": [
+        {
+          "headline": "Shares of copper-related companies are trading higher, possibly as July inflows break records as investors prepare for anticipated tariffs on refined imports. The commodity is seeing increasing demand since it supports AI infrastructure, and recent storms in Chile have disrupted production.",
+          "date": "2026-08-04 15:10",
+          "summary": "",
+          "source": "Benzinga",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-05T13:21:01.263870"
     },
     "NEE": {
       "insider_signal": {
@@ -1066,7 +1063,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:29.253805"
+      "scanned_at": "2026-08-05T13:21:02.058940"
     },
     "PLD": {
       "insider_signal": {
@@ -1103,7 +1100,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-04T13:22:30.208085"
+      "scanned_at": "2026-08-05T13:21:02.979752"
     }
   }
 }
