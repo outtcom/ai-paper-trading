@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-05",
-  "last_notified_date": "2026-08-05",
+  "date": "2026-08-06",
+  "last_notified_date": "2026-08-06",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -18,15 +18,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Corporate America got billions of dollars in tariff refunds. Where’s your cut?",
-          "date": "2026-08-05 09:00",
-          "summary": "Apple got an estimated $2.2 billion tariff refund last quarter. Amazon got $600 million. Nike got $300 million. But American consumers who paid higher prices as President Donald Trump’s tariffs filter",
+          "headline": "Amazon says it will share $600 million in Trump tariff refunds with some of its customers — will you get a payout?",
+          "date": "2026-08-05 16:15",
+          "summary": "Of the $166 billion in tariff refunds available, $71 billion has been claimed by companies, but very little of the refund money has gone directly to consumers.",
           "source": "Yahoo",
-          "keyword_matched": "tariff",
+          "keyword_matched": "trump",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-05T13:20:44.298145"
+      "scanned_at": "2026-08-06T13:17:43.112105"
     },
     "NVDA": {
       "insider_signal": {
@@ -122,17 +122,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
-          "date": "2026-08-05 11:08",
-          "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-05T13:20:45.231862"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-06T13:17:44.456513"
     },
     "MSFT": {
       "insider_signal": {
@@ -157,8 +148,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:46.329691"
+      "trump_mentions": [
+        {
+          "headline": "Nintendo Tops Estimates With Strong Games and Tariff Refunds",
+          "date": "2026-08-06 06:34",
+          "summary": "(Bloomberg) -- Nintendo Co. reported stronger-than-expected earnings buoyed by tariff refunds from the US and strong sales of a pair of in-house titles for its flagship Switch 2 console.Most Read from",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-06T13:17:45.863688"
     },
     "MU": {
       "insider_signal": {
@@ -275,7 +275,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:47.442381"
+      "scanned_at": "2026-08-06T13:17:47.043199"
     },
     "GOOGL": {
       "insider_signal": {
@@ -301,28 +301,38 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:48.572924"
+      "scanned_at": "2026-08-06T13:17:48.671592"
     },
     "META": {
       "insider_signal": {
         "ticker": "META",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 10,
-        "compensation_grants": 0,
-        "net_open_market_value": -2376603.29,
-        "net_open_market_fmt": "-$2.4M",
+        "open_market_sells": 6,
+        "compensation_grants": 4,
+        "net_open_market_value": -1199027.94,
+        "net_open_market_fmt": "-$1.2M",
         "largest_single_transaction": {
           "name": "Olivan Javier",
           "direction": "sell",
-          "dollar_value": 1013936.42,
-          "dollar_fmt": "$1.0M",
-          "date": "2026-07-13",
-          "shares_traded": 1534,
-          "price_per_share": 660.9755,
+          "dollar_value": 540576.45,
+          "dollar_fmt": "$541K",
+          "date": "2026-07-20",
+          "shares_traded": 837,
+          "price_per_share": 645.85,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Alford Peggy",
+            "direction": "sell",
+            "dollar_value": 252211.84,
+            "dollar_fmt": "$252K",
+            "date": "2026-07-31",
+            "shares_traded": 464,
+            "price_per_share": 543.56,
+            "transaction_code": ""
+          },
           {
             "name": "Olivan Javier",
             "direction": "sell",
@@ -362,53 +372,13 @@
             "shares_traded": 837,
             "price_per_share": 645.85,
             "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 269741.04,
-            "dollar_fmt": "$270K",
-            "date": "2026-07-13",
-            "shares_traded": 408,
-            "price_per_share": 661.13,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 54212.66,
-            "dollar_fmt": "$54K",
-            "date": "2026-07-13",
-            "shares_traded": 82,
-            "price_per_share": 661.13,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 54212.66,
-            "dollar_fmt": "$54K",
-            "date": "2026-07-13",
-            "shares_traded": 82,
-            "price_per_share": 661.13,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 1013936.42,
-            "dollar_fmt": "$1.0M",
-            "date": "2026-07-13",
-            "shares_traded": 1534,
-            "price_per_share": 660.9755,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:49.555850"
+      "scanned_at": "2026-08-06T13:17:49.977438"
     },
     "AMZN": {
       "insider_signal": {
@@ -444,17 +414,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Corporate America got billions of dollars in tariff refunds. Where’s your cut?",
-          "date": "2026-08-05 09:00",
-          "summary": "Apple got an estimated $2.2 billion tariff refund last quarter. Amazon got $600 million. Nike got $300 million. But American consumers who paid higher prices as President Donald Trump’s tariffs filter",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-05T13:20:50.720575"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-06T13:17:51.127932"
     },
     "TSLA": {
       "insider_signal": {
@@ -511,7 +472,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:51.983407"
+      "scanned_at": "2026-08-06T13:17:52.256174"
     },
     "LLY": {
       "insider_signal": {
@@ -548,7 +509,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:52.795235"
+      "scanned_at": "2026-08-06T13:17:53.449854"
     },
     "UNH": {
       "insider_signal": {
@@ -565,7 +526,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:53.619998"
+      "scanned_at": "2026-08-06T13:17:54.467990"
     },
     "JPM": {
       "insider_signal": {
@@ -601,17 +562,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Jamie Dimon Reportedly Wants Banks, Tech Giants, Utilities, And Other Sectors To Team Up Against AI Risks As Trump Finalizes Frontier AI Guidelines",
-          "date": "2026-08-05 11:40",
-          "summary": "According to a Reuters report, Dimon has personally contacted CEOs across industries to expand the Alliance for Critical Infrastructure.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-05T13:20:54.456792"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-06T13:17:55.527650"
     },
     "GS": {
       "insider_signal": {
@@ -657,8 +609,25 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:55.309260"
+      "trump_mentions": [
+        {
+          "headline": "Strategy Will Match Government's $1,000 Contribution for Employees' Children in Trump Accounts Initiative",
+          "date": "2026-08-05 17:30",
+          "summary": "Strategy Inc. is joining Invest America Business Pledge, making annual $250 contribution to Trump Accounts for eligible children of US employees.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Goldman Sachs President John Waldron: Earnings growth has powered the market",
+          "date": "2026-08-05 08:44",
+          "summary": "Goldman Sachs President and COO John Waldron joins 'Squawk Box' to discuss the latest market trends, impact of the U.S.-Iran war on oil prices, state of the AI boom, impact of AI on businesses, and mo",
+          "source": "CNBC",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-06T13:17:56.597772"
     },
     "XOM": {
       "insider_signal": {
@@ -676,6 +645,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump rips Exxon, Chevron for ‘making too much money’ as US gas prices soar above $4 — but is Big Oil the bad guy?",
+          "date": "2026-08-05 12:55",
+          "summary": "“They ought to give some of that back to the public.”",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump says oil companies made 'too much money'",
           "date": "2026-08-04 22:47",
           "summary": "U.S. President Donald Trump says Exxon and Chevron made “too much money” after higher crude prices lifted oil profits. We look at the factors that pushed energy prices higher and the political conside",
@@ -698,17 +675,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Chevron, Exxon Making Too Much From Surging Oil, Trump Says. BP Profit More Than Doubles.",
-          "date": "2026-08-04 11:52",
-          "summary": "BP  stock was edging higher after the British oil major reported a surge in its second-quarter profit, just a day after President Donald Trump slammed rivals  Chevron  and  ExxonMobil  for making too ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-05T13:20:56.177545"
+      "scanned_at": "2026-08-06T13:17:57.751145"
     },
     "CVX": {
       "insider_signal": {
@@ -726,6 +695,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump rips Exxon, Chevron for ‘making too much money’ as US gas prices soar above $4 — but is Big Oil the bad guy?",
+          "date": "2026-08-05 12:55",
+          "summary": "“They ought to give some of that back to the public.”",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump says Houston's biggest oil giants are making 'too much money'",
           "date": "2026-08-05 00:30",
           "summary": "\"Chevron, too much money. Exxon Mobil, too much, too much money.\"",
@@ -740,33 +717,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "'White House Set To Extend Jones Act Waiver As Trump Hunts For Cheaper Gasoline' - Reuters Exclusive",
-          "date": "2026-08-04 14:20",
-          "summary": "Waiver could expire on August 16 after nearly 200 uses through end-July, US government data showsOfficials discuss narrowing waiver&#39;s scope while preserving flexibility for critical fuel supplies,",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump demands Exxon, Chevron cut gas prices after Iran war profits",
-          "date": "2026-08-04 13:17",
-          "summary": "The Strait of Hormuz disruption has been described by the International Energy Agency as the largest supply disruption in the history of the global oil market",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Refiners Can't Deliver Gas Price Relief Trump Wants, Says Stephen Schork",
-          "date": "2026-08-04 12:28",
-          "summary": "Stephen Schork, principal and editor at The Schork Group, says refiners have virtually no ability to increase capacity and deliver more gasoline and diesel products and lower costs for consumers. Pres",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-05T13:20:57.062358"
+      "scanned_at": "2026-08-06T13:17:58.800902"
     },
     "CAT": {
       "insider_signal": {
@@ -792,7 +745,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:57.940304"
+      "scanned_at": "2026-08-06T13:17:59.878974"
     },
     "GE": {
       "insider_signal": {
@@ -879,28 +832,38 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:20:58.735689"
+      "scanned_at": "2026-08-06T13:18:00.894325"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
-        "open_market_buys": 3,
-        "open_market_sells": 7,
+        "open_market_buys": 2,
+        "open_market_sells": 8,
         "compensation_grants": 0,
-        "net_open_market_value": -765212.86,
-        "net_open_market_fmt": "-$765K",
+        "net_open_market_value": -1213581.9,
+        "net_open_market_fmt": "-$1.2M",
         "largest_single_transaction": {
           "name": "Bartlett Daniel J",
           "direction": "sell",
-          "dollar_value": 413891.0,
-          "dollar_fmt": "$414K",
-          "date": "2026-07-01",
-          "shares_traded": 3775,
-          "price_per_share": 109.64,
+          "dollar_value": 419601.0,
+          "dollar_fmt": "$420K",
+          "date": "2026-08-03",
+          "shares_traded": 3710,
+          "price_per_share": 113.1,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Bartlett Daniel J",
+            "direction": "sell",
+            "dollar_value": 419601.0,
+            "dollar_fmt": "$420K",
+            "date": "2026-08-03",
+            "shares_traded": 3710,
+            "price_per_share": 113.1,
+            "transaction_code": ""
+          },
           {
             "name": "Nicholas Christopher James",
             "direction": "sell",
@@ -937,6 +900,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Amazon says it will share $600 million in Trump tariff refunds with some of its customers — will you get a payout?",
+          "date": "2026-08-05 16:15",
+          "summary": "Of the $166 billion in tariff refunds available, $71 billion has been claimed by companies, but very little of the refund money has gone directly to consumers.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Tariff refund drives Q2 profit at Delta Galil",
           "date": "2026-08-05 10:55",
           "summary": "Activewear maker Delta Galil has reported an increase in Q2 profit, lifted by tariff refunds, a portion of which it will invest in its manufacturing and supply chain to drive future growth.",
@@ -945,7 +916,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-05T13:20:59.586232"
+      "scanned_at": "2026-08-06T13:18:01.971433"
     },
     "COST": {
       "insider_signal": {
@@ -983,6 +954,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Amazon says it will share $600 million in Trump tariff refunds with some of its customers — will you get a payout?",
+          "date": "2026-08-05 16:15",
+          "summary": "Of the $166 billion in tariff refunds available, $71 billion has been claimed by companies, but very little of the refund money has gone directly to consumers.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
           "date": "2026-08-05 11:08",
           "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
@@ -991,7 +970,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-05T13:21:00.445906"
+      "scanned_at": "2026-08-06T13:18:03.000023"
     },
     "FCX": {
       "insider_signal": {
@@ -1037,7 +1016,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-05T13:21:01.263870"
+      "scanned_at": "2026-08-06T13:18:04.026928"
     },
     "NEE": {
       "insider_signal": {
@@ -1063,7 +1042,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:21:02.058940"
+      "scanned_at": "2026-08-06T13:18:05.070760"
     },
     "PLD": {
       "insider_signal": {
@@ -1100,7 +1079,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-05T13:21:02.979752"
+      "scanned_at": "2026-08-06T13:18:06.063461"
     }
   }
 }
