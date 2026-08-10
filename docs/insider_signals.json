@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-07",
-  "last_notified_date": "2026-08-07",
+  "date": "2026-08-10",
+  "last_notified_date": "2026-08-10",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -16,17 +16,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Apple, Amazon, and Nike Get $166 Billion in Tariff Refunds – Consumers Get Nothing",
-          "date": "2026-08-06 18:46",
-          "summary": "Tariff refunds sent billions to Apple, Amazon, and Nike - but average households saw none of it. Here is why the law works that way.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:26:53.548683"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-10T12:30:08.748596"
     },
     "NVDA": {
       "insider_signal": {
@@ -123,28 +114,38 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:54.350730"
+      "scanned_at": "2026-08-10T12:30:10.300523"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
-        "compensation_grants": 7,
-        "net_open_market_value": -2414453.2,
-        "net_open_market_fmt": "-$2.4M",
+        "open_market_sells": 4,
+        "compensation_grants": 1,
+        "net_open_market_value": -7293383.2,
+        "net_open_market_fmt": "-$7.3M",
         "largest_single_transaction": {
-          "name": "Numoto Takeshi",
+          "name": "Althoff Judson",
           "direction": "sell",
-          "dollar_value": 2388068.8,
-          "dollar_fmt": "$2.4M",
-          "date": "2026-08-04",
-          "shares_traded": 4810,
-          "price_per_share": 496.48,
+          "dollar_value": 4878930.0,
+          "dollar_fmt": "$4.9M",
+          "date": "2026-08-05",
+          "shares_traded": 10000,
+          "price_per_share": 487.893,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Althoff Judson",
+            "direction": "sell",
+            "dollar_value": 4878930.0,
+            "dollar_fmt": "$4.9M",
+            "date": "2026-08-05",
+            "shares_traded": 10000,
+            "price_per_share": 487.893,
+            "transaction_code": ""
+          },
           {
             "name": "Numoto Takeshi",
             "direction": "sell",
@@ -160,7 +161,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:55.084120"
+      "scanned_at": "2026-08-10T12:30:11.059586"
     },
     "MU": {
       "insider_signal": {
@@ -277,17 +278,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:55.808898"
+      "scanned_at": "2026-08-10T12:30:11.752545"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -57013.35,
-        "net_open_market_fmt": "-$57K",
+        "open_market_sells": 4,
+        "compensation_grants": 6,
+        "net_open_market_value": -48397.92,
+        "net_open_market_fmt": "-$48K",
         "largest_single_transaction": {
           "name": "ARNOLD FRANCES",
           "direction": "sell",
@@ -299,11 +300,11 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "sell",
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:56.575762"
+      "scanned_at": "2026-08-10T12:30:13.004712"
     },
     "META": {
       "insider_signal": {
@@ -312,8 +313,8 @@
         "open_market_buys": 0,
         "open_market_sells": 6,
         "compensation_grants": 4,
-        "net_open_market_value": -939231.49,
-        "net_open_market_fmt": "-$939K",
+        "net_open_market_value": -783898.93,
+        "net_open_market_fmt": "-$784K",
         "largest_single_transaction": {
           "name": "KIMMITT ROBERT M",
           "direction": "sell",
@@ -325,6 +326,26 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Andreessen Marc L",
+            "direction": "sell",
+            "dollar_value": 51263.88,
+            "dollar_fmt": "$51K",
+            "date": "2026-08-04",
+            "shares_traded": 87,
+            "price_per_share": 589.24,
+            "transaction_code": ""
+          },
+          {
+            "name": "Andreessen Marc L",
+            "direction": "sell",
+            "dollar_value": 147040.0,
+            "dollar_fmt": "$147K",
+            "date": "2026-08-04",
+            "shares_traded": 250,
+            "price_per_share": 588.16,
+            "transaction_code": ""
+          },
           {
             "name": "KIMMITT ROBERT M",
             "direction": "sell",
@@ -344,43 +365,13 @@
             "shares_traded": 464,
             "price_per_share": 543.56,
             "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 263506.8,
-            "dollar_fmt": "$264K",
-            "date": "2026-07-20",
-            "shares_traded": 408,
-            "price_per_share": 645.85,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 52959.7,
-            "dollar_fmt": "$53K",
-            "date": "2026-07-20",
-            "shares_traded": 82,
-            "price_per_share": 645.85,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 52959.7,
-            "dollar_fmt": "$53K",
-            "date": "2026-07-20",
-            "shares_traded": 82,
-            "price_per_share": 645.85,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:57.455469"
+      "scanned_at": "2026-08-10T12:30:16.437279"
     },
     "AMZN": {
       "insider_signal": {
@@ -436,17 +427,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Companies are getting tariff refunds — but that doesn’t mean you will",
-          "date": "2026-08-06 22:11",
-          "summary": "The Trump administration has paid about $100 billion in tariff refunds to businesses, but what about consumers?",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:26:58.359127"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-10T12:30:17.646490"
     },
     "TSLA": {
       "insider_signal": {
@@ -493,7 +475,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:59.168467"
+      "scanned_at": "2026-08-10T12:30:18.959147"
     },
     "LLY": {
       "insider_signal": {
@@ -530,7 +512,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:59.845034"
+      "scanned_at": "2026-08-10T12:30:21.310478"
     },
     "UNH": {
       "insider_signal": {
@@ -547,7 +529,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:00.577605"
+      "scanned_at": "2026-08-10T12:30:22.280056"
     },
     "JPM": {
       "insider_signal": {
@@ -583,18 +565,27 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:01.256302"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Homegrown Solar Push Risks Widening Green Energy Divide",
+          "date": "2026-08-07 15:04",
+          "summary": "(Bloomberg) -- President Donald Trump’s latest move to shun foreign solar power equipment is part of his effort to rebuild US manufacturing clout. It may simultaneously exacerbate the fast-widening gr",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-10T12:30:23.492859"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 2,
+        "open_market_sells": 5,
         "compensation_grants": 5,
-        "net_open_market_value": -287950.64,
-        "net_open_market_fmt": "-$288K",
+        "net_open_market_value": -472395.64,
+        "net_open_market_fmt": "-$472K",
         "largest_single_transaction": {
           "name": "LESLIE ERICKA T",
           "direction": "sell",
@@ -606,6 +597,16 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 135989.22,
+            "dollar_fmt": "$136K",
+            "date": "2026-08-04",
+            "shares_traded": 129,
+            "price_per_share": 1054.18,
+            "transaction_code": ""
+          },
           {
             "name": "LESLIE ERICKA T",
             "direction": "sell",
@@ -630,17 +631,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Strategy Will Match Government's $1,000 Contribution for Employees' Children in Trump Accounts Initiative",
-          "date": "2026-08-05 17:30",
-          "summary": "Strategy Inc. is joining Invest America Business Pledge, making annual $250 contribution to Trump Accounts for eligible children of US employees.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:27:01.984810"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-10T12:30:24.681948"
     },
     "XOM": {
       "insider_signal": {
@@ -658,23 +650,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "Why Trump’s Waiver of the Jones Act Is Unlikely To Lower Gas Prices",
+          "date": "2026-08-09 23:00",
+          "summary": "Trump is considering extending the Jones Act waiver as gasoline prices above $4 per gallon become a growing political risk ahead of the midterms.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
           "date": "2026-08-07 09:00",
           "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil company profits from Iran War infuriated President Donald Trump. He only has himself to blame.",
-          "date": "2026-08-06 12:00",
-          "summary": "If President Donald Trump wants lower gas prices, he needs to end some wars, writes columnist Chris Tomlinson.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:02.643860"
+      "scanned_at": "2026-08-10T12:30:26.159689"
     },
     "CVX": {
       "insider_signal": {
@@ -752,6 +744,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Why Trump’s Waiver of the Jones Act Is Unlikely To Lower Gas Prices",
+          "date": "2026-08-09 23:00",
+          "summary": "Trump is considering extending the Jones Act waiver as gasoline prices above $4 per gallon become a growing political risk ahead of the midterms.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
           "date": "2026-08-07 09:00",
           "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
@@ -760,7 +760,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:03.436892"
+      "scanned_at": "2026-08-10T12:30:27.010320"
     },
     "CAT": {
       "insider_signal": {
@@ -768,7 +768,7 @@
         "days_back": 60,
         "open_market_buys": 1,
         "open_market_sells": 0,
-        "compensation_grants": 8,
+        "compensation_grants": 0,
         "net_open_market_value": 23217.26,
         "net_open_market_fmt": "+$23K",
         "largest_single_transaction": {
@@ -785,8 +785,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:04.124657"
+      "trump_mentions": [
+        {
+          "headline": "Caterpillar tariffs send major signal on margins",
+          "date": "2026-08-08 20:07",
+          "summary": "Caterpillar delivered a quarter that its own leadership called historic. Sales topped $20 billion for the first time in company history, and profit per share jumped 73% from last year. Notably, Caterp",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Tariff refunds boost quarterly earnings for some of biggest US companies",
+          "date": "2026-08-07 10:00",
+          "summary": "Tariff refunds are showing up on Wall Street. The latest quarter spanned the Trump administration handing back the bulk of the $100 billion returned so far. It’s providing many companies a boost as th",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-08-10T12:30:27.727053"
     },
     "GE": {
       "insider_signal": {
@@ -873,7 +890,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:04.843023"
+      "scanned_at": "2026-08-10T12:30:28.390697"
     },
     "WMT": {
       "insider_signal": {
@@ -939,8 +956,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:05.536189"
+      "trump_mentions": [
+        {
+          "headline": "Trump pressures retailers over the cost of living",
+          "date": "2026-08-10 09:12",
+          "summary": "Trump’s price-cutting campaign is forcing retailers to balance political pressure with rising costs, supplier pressures and margin protection.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "‘Your refund: $0’: Companies claim billions in tariff refunds, months after Trump floated $2,000 checks",
+          "date": "2026-08-07 18:50",
+          "summary": "Walmart gets $2.4 billion, Apple $2.2 billion. And you? Nothing.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-10T12:30:29.053733"
     },
     "COST": {
       "insider_signal": {
@@ -978,23 +1012,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Amazon says it will share $600 million in Trump tariff refunds with some of its customers — will you get a payout?",
-          "date": "2026-08-05 16:15",
-          "summary": "Of the $166 billion in tariff refunds available, $71 billion has been claimed by companies, but very little of the refund money has gone directly to consumers.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
-          "date": "2026-08-05 11:08",
-          "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
+          "headline": "CBP has paid $100B in IEEPA tariff refunds",
+          "date": "2026-08-07 10:16",
+          "summary": "Despite reaching the milestone, the agency has still yet to launch a capability to process finally liquidated entries as a Department of Justice appeal lingers.",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:06.259774"
+      "scanned_at": "2026-08-10T12:30:29.986820"
     },
     "FCX": {
       "insider_signal": {
@@ -1052,6 +1078,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Touts $3 Billion in Minerals Projects to Counter China",
+          "date": "2026-08-07 19:39",
+          "summary": "(Bloomberg) -- President Donald Trump touted $3 billion in US investments in critical minerals mining at a meeting Friday with top industry executives aimed at weaning the US off supply chains dominat",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Shares of copper-related companies are trading higher, possibly as July inflows break records as investors prepare for anticipated tariffs on refined imports. The commodity is seeing increasing demand since it supports AI infrastructure, and recent storms in Chile have disrupted production.",
           "date": "2026-08-04 15:10",
           "summary": "",
@@ -1060,7 +1094,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:06.904783"
+      "scanned_at": "2026-08-10T12:30:30.679968"
     },
     "NEE": {
       "insider_signal": {
@@ -1085,8 +1119,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:07.612803"
+      "trump_mentions": [
+        {
+          "headline": "Trump Targets China's Grip on Global Polysilicon Supply With 15% Tariff— Solar Stocks Climb in Friday Pre-Market (UPDATED)",
+          "date": "2026-08-07 08:04",
+          "summary": "Trump imposed 15% polysilicon tariffs and minimum import prices, targeting China&#39;s dominance in a key solar and semiconductor material.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-10T12:30:31.618313"
     },
     "PLD": {
       "insider_signal": {
@@ -1123,7 +1166,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:08.275287"
+      "scanned_at": "2026-08-10T12:30:32.272750"
     }
   }
 }
