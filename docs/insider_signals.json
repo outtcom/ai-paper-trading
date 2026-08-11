@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-10",
-  "last_notified_date": "2026-08-10",
+  "date": "2026-08-11",
+  "last_notified_date": "2026-08-11",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -16,8 +16,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:08.748596"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures: Trump Claims 'Control' Of Strait Of Hormuz; SpaceX Rival Rocket Lab Dives On Earnings",
+          "date": "2026-08-11 02:08",
+          "summary": "Dow Jones Futures: Trump claimed \"control\" of the Strait of Hormuz. SpaceX rival Rocket Lab tumbled on earnings late.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-11T12:27:42.035955"
     },
     "NVDA": {
       "insider_signal": {
@@ -113,8 +122,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:10.300523"
+      "trump_mentions": [
+        {
+          "headline": "U.S. Futures Flat as Trump Rejects Iran Reparations, Intel Raises $20 Billion: Dow Jones, S&P, Nasdaq, Wall Street",
+          "date": "2026-08-11 08:55",
+          "summary": "U. S. stock futures traded close to unchanged on Tuesday as investors monitored renewed Middle East tensions, higher oil prices and developments across the artificial intelligence sector ahead of key ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-11T12:27:43.230987"
     },
     "MSFT": {
       "insider_signal": {
@@ -161,7 +179,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:11.059586"
+      "scanned_at": "2026-08-11T12:27:44.391115"
     },
     "MU": {
       "insider_signal": {
@@ -278,7 +296,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:11.752545"
+      "scanned_at": "2026-08-11T12:27:45.540128"
     },
     "GOOGL": {
       "insider_signal": {
@@ -304,7 +322,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:13.004712"
+      "scanned_at": "2026-08-11T12:27:46.784634"
     },
     "META": {
       "insider_signal": {
@@ -370,8 +388,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:16.437279"
+      "trump_mentions": [
+        {
+          "headline": "As Trump Media scraps some businesses, it's doubling down on Truth Social and the president",
+          "date": "2026-08-11 00:03",
+          "summary": "The president's media company has tried its hand at a half-dozen new lines of business to lift its stock, but nothing has worked.  In a conference call with investors Monday, the company behind Truth ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-11T12:27:48.216393"
     },
     "AMZN": {
       "insider_signal": {
@@ -427,8 +454,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:17.646490"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures: Trump Claims 'Control' Of Strait Of Hormuz; SpaceX Rival Rocket Lab Dives On Earnings",
+          "date": "2026-08-11 02:08",
+          "summary": "Dow Jones Futures: Trump claimed \"control\" of the Strait of Hormuz. SpaceX rival Rocket Lab tumbled on earnings late.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-11T12:27:49.647462"
     },
     "TSLA": {
       "insider_signal": {
@@ -475,7 +511,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:18.959147"
+      "scanned_at": "2026-08-11T12:27:50.789173"
     },
     "LLY": {
       "insider_signal": {
@@ -512,7 +548,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:21.310478"
+      "scanned_at": "2026-08-11T12:27:51.920988"
     },
     "UNH": {
       "insider_signal": {
@@ -529,7 +565,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:22.280056"
+      "scanned_at": "2026-08-11T12:27:52.925210"
     },
     "JPM": {
       "insider_signal": {
@@ -565,17 +601,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s Homegrown Solar Push Risks Widening Green Energy Divide",
-          "date": "2026-08-07 15:04",
-          "summary": "(Bloomberg) -- President Donald Trump’s latest move to shun foreign solar power equipment is part of his effort to rebuild US manufacturing clout. It may simultaneously exacerbate the fast-widening gr",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-10T12:30:23.492859"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-11T12:27:54.008836"
     },
     "GS": {
       "insider_signal": {
@@ -632,7 +659,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:24.681948"
+      "scanned_at": "2026-08-11T12:27:55.067613"
     },
     "XOM": {
       "insider_signal": {
@@ -650,6 +677,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump says oil supermajors are making too much money. What will they do with it?",
+          "date": "2026-08-10 01:00",
+          "summary": "The windfall is fueling fresh political and environmental backlash, with Trump accusing Exxon Mobil and Chevron of making “too much money.”",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Why Trump’s Waiver of the Jones Act Is Unlikely To Lower Gas Prices",
           "date": "2026-08-09 23:00",
           "summary": "Trump is considering extending the Jones Act waiver as gasoline prices above $4 per gallon become a growing political risk ahead of the midterms.",
@@ -658,15 +693,15 @@
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
-          "date": "2026-08-07 09:00",
-          "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
-          "source": "Yahoo",
+          "headline": "Trump May Open the Hormuz, But He Can’t Prevent Next Oil Shock",
+          "date": "2026-08-09 14:46",
+          "summary": "The investment community watching the Strait of Hormuz is treating a possible armistice, freer tanker traffic and pressure from Washington as if they could settle the oil market’s bigger question.\n\n\n\n",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:26.159689"
+      "scanned_at": "2026-08-11T12:27:56.156275"
     },
     "CVX": {
       "insider_signal": {
@@ -742,25 +777,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Trump’s Waiver of the Jones Act Is Unlikely To Lower Gas Prices",
-          "date": "2026-08-09 23:00",
-          "summary": "Trump is considering extending the Jones Act waiver as gasoline prices above $4 per gallon become a growing political risk ahead of the midterms.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
-          "date": "2026-08-07 09:00",
-          "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-10T12:30:27.010320"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-11T12:27:57.206732"
     },
     "CAT": {
       "insider_signal": {
@@ -787,23 +805,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "Stock Market Today: Dow Falls, SpaceX Wavers; Energy Stocks Shine, Oil Rises As Trump Says This (Live Coverage)",
+          "date": "2026-08-10 14:47",
+          "summary": "Stock Market Today: The Dow Jones index falls Monday as oil prices climb amid a lack of progress in U.S.-Iran talks. SpaceX stock falls, then reverses higher.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Caterpillar tariffs send major signal on margins",
           "date": "2026-08-08 20:07",
           "summary": "Caterpillar delivered a quarter that its own leadership called historic. Sales topped $20 billion for the first time in company history, and profit per share jumped 73% from last year. Notably, Caterp",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Tariff refunds boost quarterly earnings for some of biggest US companies",
-          "date": "2026-08-07 10:00",
-          "summary": "Tariff refunds are showing up on Wall Street. The latest quarter spanned the Trump administration handing back the bulk of the $100 billion returned so far. It’s providing many companies a boost as th",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:27.727053"
+      "scanned_at": "2026-08-11T12:27:58.311868"
     },
     "GE": {
       "insider_signal": {
@@ -890,7 +908,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:28.390697"
+      "scanned_at": "2026-08-11T12:27:59.337811"
     },
     "WMT": {
       "insider_signal": {
@@ -958,23 +976,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "'CEOs Pushed White House to Delay Ultra-Processed Food Definition' - Bloomberg",
+          "date": "2026-08-10 13:41",
+          "summary": "https://www.bloomberg.com/news/articles/2026-08-10/ceos-pushed-white-house-to-delay-ultra-processed-food-definition",
+          "source": "Benzinga",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump pressures retailers over the cost of living",
           "date": "2026-08-10 09:12",
           "summary": "Trump’s price-cutting campaign is forcing retailers to balance political pressure with rising costs, supplier pressures and margin protection.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "‘Your refund: $0’: Companies claim billions in tariff refunds, months after Trump floated $2,000 checks",
-          "date": "2026-08-07 18:50",
-          "summary": "Walmart gets $2.4 billion, Apple $2.2 billion. And you? Nothing.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:29.053733"
+      "scanned_at": "2026-08-11T12:28:00.414669"
     },
     "COST": {
       "insider_signal": {
@@ -1012,6 +1030,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "'CEOs Pushed White House to Delay Ultra-Processed Food Definition' - Bloomberg",
+          "date": "2026-08-10 13:41",
+          "summary": "https://www.bloomberg.com/news/articles/2026-08-10/ceos-pushed-white-house-to-delay-ultra-processed-food-definition",
+          "source": "Benzinga",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "CBP has paid $100B in IEEPA tariff refunds",
           "date": "2026-08-07 10:16",
           "summary": "Despite reaching the milestone, the agency has still yet to launch a capability to process finally liquidated entries as a Department of Justice appeal lingers.",
@@ -1020,7 +1046,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:29.986820"
+      "scanned_at": "2026-08-11T12:28:01.408405"
     },
     "FCX": {
       "insider_signal": {
@@ -1094,7 +1120,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:30.679968"
+      "scanned_at": "2026-08-11T12:28:02.409824"
     },
     "NEE": {
       "insider_signal": {
@@ -1129,7 +1155,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-10T12:30:31.618313"
+      "scanned_at": "2026-08-11T12:28:03.392785"
     },
     "PLD": {
       "insider_signal": {
@@ -1166,7 +1192,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-10T12:30:32.272750"
+      "scanned_at": "2026-08-11T12:28:04.396683"
     }
   }
 }
