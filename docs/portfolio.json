@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 34,
+    "current_day": 35,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-08-11T14:21:56.963162+00:00",
+    "last_updated": "2026-08-11T19:17:41.907866+00:00",
     "session_number": 3
   },
-  "cash": 3049.81,
+  "cash": 3873.31,
   "initial_capital": 5000.0,
-  "equity": 4895.61,
+  "equity": 4908.39,
   "peak_equity": 5033.78,
   "circuit_breaker": {
     "triggered": false,
@@ -17,55 +17,38 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -1.56,
-    "sortino": -1.71,
-    "calmar": -2.07,
+    "sharpe": -1.35,
+    "sortino": -1.47,
+    "calmar": -1.8,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
-    "spy_current_price": 773.34,
-    "benchmark_return_pct": 2.43
+    "spy_current_price": 770.39,
+    "benchmark_return_pct": 2.04
   },
   "positions": {
     "ABT": {
       "direction": "long",
-      "qty": 4,
+      "qty": 2,
       "entry_price": 101.66,
-      "cost_basis": 406.64,
-      "last_price": 109.72,
-      "stop_loss": 101.08,
+      "cost_basis": 203.32,
+      "last_price": 109.94,
+      "stop_loss": 102.24,
       "take_profit": 115.89,
       "partial_profit_price": 108.78,
       "stop_loss_pct": 7.0,
       "take_profit_pct": 14.0,
-      "highest_price": 108.69,
+      "highest_price": 109.94,
       "lowest_price": 101.66,
-      "partial_taken": false,
+      "partial_taken": true,
       "opened_date": "2026-07-21",
       "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
-    },
-    "TMO": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 566.41,
-      "cost_basis": 566.41,
-      "last_price": 601.48,
-      "stop_loss": 562.34,
-      "take_profit": 634.38,
-      "partial_profit_price": 600.39,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 598.23,
-      "lowest_price": 566.41,
-      "partial_taken": false,
-      "opened_date": "2026-07-30",
-      "journal_note": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD."
     },
     "MA": {
       "direction": "long",
       "qty": 1,
       "entry_price": 577.39,
       "cost_basis": 577.39,
-      "last_price": 566.4,
+      "last_price": 562.42,
       "stop_loss": 548.52,
       "take_profit": 635.13,
       "partial_profit_price": 606.26,
@@ -82,7 +65,7 @@
       "qty": 3,
       "entry_price": 84.62,
       "cost_basis": 253.85,
-      "last_price": 83.85,
+      "last_price": 84.26,
       "stop_loss": 79.54,
       "take_profit": 94.77,
       "partial_profit_price": 89.69,
@@ -543,6 +526,36 @@
       "opened_date": "2026-07-30",
       "closed_date": "2026-08-10",
       "journal_note": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment."
+    },
+    {
+      "ticker": "ABT",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 101.66,
+      "exit_price": 109.78,
+      "cost_basis": 203.32,
+      "proceeds": 219.55,
+      "pnl": 16.23,
+      "pnl_pct": 7.98,
+      "reason": "partial_profit",
+      "opened_date": "2026-07-21",
+      "closed_date": "2026-08-11",
+      "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
+    },
+    {
+      "ticker": "TMO",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 566.41,
+      "exit_price": 603.95,
+      "cost_basis": 566.41,
+      "proceeds": 603.95,
+      "pnl": 37.54,
+      "pnl_pct": 6.63,
+      "reason": "partial_profit",
+      "opened_date": "2026-07-30",
+      "closed_date": "2026-08-11",
+      "journal_note": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD."
     }
   ],
   "equity_curve": [
@@ -855,6 +868,11 @@
       "day": 34,
       "date": "2026-08-11",
       "equity": 4895.61
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 4908.39
     }
   ],
   "journal": [
@@ -1666,15 +1684,16 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 30.51,
+      "exit_date": "2026-08-11",
+      "pnl_pct": 4.99,
+      "outcome": "win",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $29.06 | stock +3.5% vs ETF +0.0% (5d) | vol 1.5x | RSI 62",
       "qty": 84,
-      "allocated_usd": 2441.04
+      "allocated_usd": 2441.04,
+      "pnl_usd": 121.8
     },
     {
       "id": "MC-2026-08-06-HSIC",
@@ -1689,15 +1708,16 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 89.48,
+      "exit_date": "2026-08-11",
+      "pnl_pct": -0.12,
+      "outcome": "loss",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $89.59 | stock +5.2% vs ETF +0.0% (5d) | vol 1.6x | RSI 68",
       "qty": 13,
-      "allocated_usd": 1164.67
+      "allocated_usd": 1164.67,
+      "pnl_usd": -1.43
     },
     {
       "id": "MC-2026-08-06-PRGO",
@@ -1712,21 +1732,22 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 12.87,
+      "exit_date": "2026-08-11",
+      "pnl_pct": -3.01,
+      "outcome": "loss",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $13.27 | stock +28.7% vs ETF +0.0% (5d) | vol 1.5x | RSI 75",
       "qty": 49,
-      "allocated_usd": 650.23
+      "allocated_usd": 650.23,
+      "pnl_usd": -19.6
     }
   ],
   "midcap_capital": {
     "initial": 5000.0,
-    "cash": 655.24,
-    "equity": 4911.18
+    "cash": 5011.95,
+    "equity": 5011.95
   },
   "penny_signals": [],
   "penny_capital": {
@@ -1839,6 +1860,11 @@
       "day": 33,
       "date": "2026-08-10",
       "equity": 5121.52
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5101.99
     }
   ],
   "midcap_equity_curve": [
@@ -2006,6 +2032,11 @@
       "day": 33,
       "date": "2026-08-10",
       "equity": 4911.18
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5011.95
     }
   ],
   "penny_equity_curve": [
@@ -2173,28 +2204,33 @@
       "day": 33,
       "date": "2026-08-10",
       "equity": 5000.0
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 773.34,
-      "return_pct": 2.43
+      "current_price": 770.39,
+      "return_pct": 2.04
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 722.02,
-      "return_pct": 0.79
+      "current_price": 717.72,
+      "return_pct": 0.19
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 300.05,
-      "return_pct": 0.38
+      "current_price": 301.26,
+      "return_pct": 0.79
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 402.03,
-      "return_pct": 8.82
+      "current_price": 400.36,
+      "return_pct": 8.36
     }
   },
   "sector_strength": {
@@ -2392,9 +2428,9 @@
           "pnl_sum": -8.559999999999999
         },
         "bullish": {
-          "n": 5,
-          "wins": 2,
-          "pnl_sum": -5.430000000000001
+          "n": 7,
+          "wins": 4,
+          "pnl_sum": 9.18
         }
       },
       "technical": {
@@ -2404,9 +2440,9 @@
           "pnl_sum": -10.409999999999998
         },
         "bullish": {
-          "n": 6,
-          "wins": 3,
-          "pnl_sum": -3.580000000000001
+          "n": 8,
+          "wins": 5,
+          "pnl_sum": 11.03
         }
       },
       "sentiment": {
@@ -2416,16 +2452,16 @@
           "pnl_sum": -10.199999999999998
         },
         "bullish": {
-          "n": 5,
-          "wins": 2,
-          "pnl_sum": -3.79
+          "n": 7,
+          "wins": 4,
+          "pnl_sum": 10.82
         }
       },
       "conviction": {
         "medium": {
-          "n": 14,
-          "wins": 6,
-          "pnl_sum": -11.209999999999997
+          "n": 16,
+          "wins": 8,
+          "pnl_sum": 3.400000000000003
         },
         "low": {
           "n": 1,
@@ -2435,9 +2471,9 @@
       },
       "risk": {
         "approved": {
-          "n": 8,
-          "wins": 3,
-          "pnl_sum": -11.2
+          "n": 10,
+          "wins": 5,
+          "pnl_sum": 3.410000000000001
         },
         "overridden": {
           "n": 1,
@@ -2447,24 +2483,26 @@
       }
     },
     "_counted_trades": [
-      "PM_2026-07-20",
+      "TMO_2026-07-16",
+      "EOG_2026-07-21",
+      "UNH_2026-07-08",
+      "HD_2026-06-29",
+      "GS_2026-07-16",
       "BAC_2026-07-20",
       "BA_2026-07-08",
-      "BTC-USD_2026-07-10",
-      "EOG_2026-07-21",
       "UNH_2026-06-29",
-      "UNH_2026-07-08",
-      "VLO_2026-07-23",
-      "HD_2026-06-29",
-      "TMO_2026-07-16",
-      "GS_2026-07-16",
+      "PM_2026-07-20",
       "ETH-USD_2026-07-13",
-      "TSLA_2026-07-07",
       "CMG_2026-07-31",
-      "LMT_2026-07-30"
+      "VLO_2026-07-23",
+      "LMT_2026-07-30",
+      "BTC-USD_2026-07-10",
+      "TSLA_2026-07-07",
+      "ABT_2026-07-21",
+      "TMO_2026-07-30"
     ],
-    "last_updated": "2026-08-10",
-    "total_closed": 15
+    "last_updated": "2026-08-11",
+    "total_closed": 17
   },
   "data_corrections": [
     {
