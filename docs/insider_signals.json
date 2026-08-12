@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-11",
-  "last_notified_date": "2026-08-11",
+  "date": "2026-08-12",
+  "last_notified_date": "2026-08-12",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -10,11 +10,11 @@
         "open_market_sells": 0,
         "compensation_grants": 0,
         "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
+        "net_open_market_fmt": "$0",
         "largest_single_transaction": null,
         "notable_transactions": [],
         "signal_strength": "neutral",
-        "error": null
+        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
       },
       "trump_mentions": [
         {
@@ -26,160 +26,41 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:27:42.035955"
+      "scanned_at": "2026-08-12T12:31:10.340166"
     },
     "NVDA": {
       "insider_signal": {
         "ticker": "NVDA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 7,
-        "compensation_grants": 2,
-        "net_open_market_value": -226268589.83,
-        "net_open_market_fmt": "-$226.3M",
-        "largest_single_transaction": {
-          "name": "STEVENS MARK A",
-          "direction": "sell",
-          "dollar_value": 119026436.88,
-          "dollar_fmt": "$119.0M",
-          "date": "2026-06-18",
-          "shares_traded": 565615,
-          "price_per_share": 210.4372,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 119026436.88,
-            "dollar_fmt": "$119.0M",
-            "date": "2026-06-18",
-            "shares_traded": 565615,
-            "price_per_share": 210.4372,
-            "transaction_code": ""
-          },
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 66973501.45,
-            "dollar_fmt": "$67.0M",
-            "date": "2026-06-18",
-            "shares_traded": 319385,
-            "price_per_share": 209.6952,
-            "transaction_code": ""
-          },
-          {
-            "name": "Teter Timothy S.",
-            "direction": "sell",
-            "dollar_value": 7413248.22,
-            "dollar_fmt": "$7.4M",
-            "date": "2026-06-17",
-            "shares_traded": 35742,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Kress Colette",
-            "direction": "sell",
-            "dollar_value": 8451127.86,
-            "dollar_fmt": "$8.5M",
-            "date": "2026-06-17",
-            "shares_traded": 40746,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Puri Ajay K",
-            "direction": "sell",
-            "dollar_value": 7659029.07,
-            "dollar_fmt": "$7.7M",
-            "date": "2026-06-17",
-            "shares_traded": 36927,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Shoquist Debora",
-            "direction": "sell",
-            "dollar_value": 7261838.92,
-            "dollar_fmt": "$7.3M",
-            "date": "2026-06-17",
-            "shares_traded": 35012,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "HUANG JEN HSUN",
-            "direction": "sell",
-            "dollar_value": 9483407.43,
-            "dollar_fmt": "$9.5M",
-            "date": "2026-06-17",
-            "shares_traded": 45723,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
       },
-      "trump_mentions": [
-        {
-          "headline": "U.S. Futures Flat as Trump Rejects Iran Reparations, Intel Raises $20 Billion: Dow Jones, S&P, Nasdaq, Wall Street",
-          "date": "2026-08-11 08:55",
-          "summary": "U. S. stock futures traded close to unchanged on Tuesday as investors monitored renewed Middle East tensions, higher oil prices and developments across the artificial intelligence sector ahead of key ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-11T12:27:43.230987"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-12T12:31:11.258683"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
-        "compensation_grants": 1,
-        "net_open_market_value": -7293383.2,
-        "net_open_market_fmt": "-$7.3M",
-        "largest_single_transaction": {
-          "name": "Althoff Judson",
-          "direction": "sell",
-          "dollar_value": 4878930.0,
-          "dollar_fmt": "$4.9M",
-          "date": "2026-08-05",
-          "shares_traded": 10000,
-          "price_per_share": 487.893,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Althoff Judson",
-            "direction": "sell",
-            "dollar_value": 4878930.0,
-            "dollar_fmt": "$4.9M",
-            "date": "2026-08-05",
-            "shares_traded": 10000,
-            "price_per_share": 487.893,
-            "transaction_code": ""
-          },
-          {
-            "name": "Numoto Takeshi",
-            "direction": "sell",
-            "dollar_value": 2388068.8,
-            "dollar_fmt": "$2.4M",
-            "date": "2026-08-04",
-            "shares_traded": 4810,
-            "price_per_share": 496.48,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
+        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:44.391115"
+      "scanned_at": "2026-08-12T12:31:12.049859"
     },
     "MU": {
       "insider_signal": {
@@ -296,7 +177,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:45.540128"
+      "scanned_at": "2026-08-12T12:31:13.001877"
     },
     "GOOGL": {
       "insider_signal": {
@@ -322,7 +203,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:46.784634"
+      "scanned_at": "2026-08-12T12:31:14.226218"
     },
     "META": {
       "insider_signal": {
@@ -388,17 +269,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "As Trump Media scraps some businesses, it's doubling down on Truth Social and the president",
-          "date": "2026-08-11 00:03",
-          "summary": "The president's media company has tried its hand at a half-dozen new lines of business to lift its stock, but nothing has worked.  In a conference call with investors Monday, the company behind Truth ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-11T12:27:48.216393"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-12T12:31:16.919186"
     },
     "AMZN": {
       "insider_signal": {
@@ -454,17 +326,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Jones Futures: Trump Claims 'Control' Of Strait Of Hormuz; SpaceX Rival Rocket Lab Dives On Earnings",
-          "date": "2026-08-11 02:08",
-          "summary": "Dow Jones Futures: Trump claimed \"control\" of the Strait of Hormuz. SpaceX rival Rocket Lab tumbled on earnings late.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-11T12:27:49.647462"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-12T12:31:17.816096"
     },
     "TSLA": {
       "insider_signal": {
@@ -511,7 +374,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:50.789173"
+      "scanned_at": "2026-08-12T12:31:19.194770"
     },
     "LLY": {
       "insider_signal": {
@@ -548,7 +411,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:51.920988"
+      "scanned_at": "2026-08-12T12:31:20.276825"
     },
     "UNH": {
       "insider_signal": {
@@ -565,7 +428,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:52.925210"
+      "scanned_at": "2026-08-12T12:31:21.132320"
     },
     "JPM": {
       "insider_signal": {
@@ -602,7 +465,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:54.008836"
+      "scanned_at": "2026-08-12T12:31:21.942755"
     },
     "GS": {
       "insider_signal": {
@@ -659,7 +522,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:55.067613"
+      "scanned_at": "2026-08-12T12:31:22.645881"
     },
     "XOM": {
       "insider_signal": {
@@ -676,6 +539,14 @@
         "error": null
       },
       "trump_mentions": [
+        {
+          "headline": "Elizabeth Warren Blasts ‘Trump Math’ as Oil Giants That Put $5 Million Into His Inauguration Fund See '$23 Billion in Excess War Profits’",
+          "date": "2026-08-11 00:44",
+          "summary": "Sen. Elizabeth Warren slams Trump for aiding oil companies&#39; $23B profits during Iran war as Gas prices remain high.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
         {
           "headline": "Trump says oil supermajors are making too much money. What will they do with it?",
           "date": "2026-08-10 01:00",
@@ -701,7 +572,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:27:56.156275"
+      "scanned_at": "2026-08-12T12:31:23.341027"
     },
     "CVX": {
       "insider_signal": {
@@ -777,8 +648,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:57.206732"
+      "trump_mentions": [
+        {
+          "headline": "Elizabeth Warren Blasts ‘Trump Math’ as Oil Giants That Put $5 Million Into His Inauguration Fund See '$23 Billion in Excess War Profits’",
+          "date": "2026-08-11 00:44",
+          "summary": "Sen. Elizabeth Warren slams Trump for aiding oil companies&#39; $23B profits during Iran war as Gas prices remain high.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-12T12:31:24.284399"
     },
     "CAT": {
       "insider_signal": {
@@ -821,7 +701,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:27:58.311868"
+      "scanned_at": "2026-08-12T12:31:25.034684"
     },
     "GE": {
       "insider_signal": {
@@ -908,7 +788,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:27:59.337811"
+      "scanned_at": "2026-08-12T12:31:25.698104"
     },
     "WMT": {
       "insider_signal": {
@@ -976,6 +856,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Taylor Farms Recalls Jalapeño Products Amid Salmonella Outbreak—  Chuck Schumer Says Trump Is Doing Everything to ‘Make America Sick Again’",
+          "date": "2026-08-11 04:48",
+          "summary": "Taylor Farms recalls jalapeño-based products over salmonella concerns as FDA and CDC investigate a multistate outbreak.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "'CEOs Pushed White House to Delay Ultra-Processed Food Definition' - Bloomberg",
           "date": "2026-08-10 13:41",
           "summary": "https://www.bloomberg.com/news/articles/2026-08-10/ceos-pushed-white-house-to-delay-ultra-processed-food-definition",
@@ -992,7 +880,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:28:00.414669"
+      "scanned_at": "2026-08-12T12:31:26.513255"
     },
     "COST": {
       "insider_signal": {
@@ -1046,7 +934,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-11T12:28:01.408405"
+      "scanned_at": "2026-08-12T12:31:27.363073"
     },
     "FCX": {
       "insider_signal": {
@@ -1110,17 +998,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Shares of copper-related companies are trading higher, possibly as July inflows break records as investors prepare for anticipated tariffs on refined imports. The commodity is seeing increasing demand since it supports AI infrastructure, and recent storms in Chile have disrupted production.",
-          "date": "2026-08-04 15:10",
-          "summary": "",
-          "source": "Benzinga",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:28:02.409824"
+      "scanned_at": "2026-08-12T12:31:28.009357"
     },
     "NEE": {
       "insider_signal": {
@@ -1155,7 +1035,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-11T12:28:03.392785"
+      "scanned_at": "2026-08-12T12:31:28.667359"
     },
     "PLD": {
       "insider_signal": {
@@ -1192,7 +1072,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-11T12:28:04.396683"
+      "scanned_at": "2026-08-12T12:31:29.621858"
     }
   }
 }
