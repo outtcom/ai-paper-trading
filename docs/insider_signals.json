@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-13",
-  "last_notified_date": "2026-08-13",
+  "date": "2026-08-14",
+  "last_notified_date": "2026-08-14",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -18,15 +18,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Your Newborn’s Trump Account Auto-Buys This S&P 500 ETF: The Hidden Costs Parents Never See",
-          "date": "2026-08-12 22:05",
-          "summary": "The government seeds your newborn's investment account with what looks like a nearly free S&P 500 ETF, but the fund fee is the smallest number on the bill. The real costs are buried in decisions the a",
+          "headline": "Trump Wanted Advanced Tech Made in America, Tim Cook Brought Mac Mini Production to Texas: 'Thank You' for the $600 Billion Commitment, Says Howard Lutnick",
+          "date": "2026-08-14 02:07",
+          "summary": "On Thursday, Apple Inc. (NASDAQ:AAPL) CEO Tim Cook was joined by U.S. Commerce Secretary Howard Lutnick and others at the opening of the new Advanced Manufacturing Center in Houston, Texas, where Cupe",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-13T12:30:57.741972"
+      "scanned_at": "2026-08-14T12:28:15.254348"
     },
     "NVDA": {
       "insider_signal": {
@@ -122,17 +122,26 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:30:58.906008"
+      "trump_mentions": [
+        {
+          "headline": "Could Trump Cut Capital Gains Tax?",
+          "date": "2026-08-14 07:30",
+          "summary": "Proposed tax policy changes like a $2M primary home exemption could unlock housing market inventory and spur economic activity. Click here to read more.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-14T12:28:16.452154"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
-        "compensation_grants": 1,
-        "net_open_market_value": -7293383.2,
+        "open_market_sells": 3,
+        "compensation_grants": 0,
+        "net_open_market_value": -7279316.56,
         "net_open_market_fmt": "-$7.3M",
         "largest_single_transaction": {
           "name": "Althoff Judson",
@@ -169,17 +178,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Your Newborn’s Trump Account Auto-Buys This S&P 500 ETF: The Hidden Costs Parents Never See",
-          "date": "2026-08-12 22:05",
-          "summary": "The government seeds your newborn's investment account with what looks like a nearly free S&P 500 ETF, but the fund fee is the smallest number on the bill. The real costs are buried in decisions the a",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-13T12:31:00.246323"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-14T12:28:17.611204"
     },
     "MU": {
       "insider_signal": {
@@ -296,101 +296,250 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:01.484080"
+      "scanned_at": "2026-08-14T12:28:18.820999"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
+        "open_market_sells": 4,
+        "compensation_grants": 6,
+        "net_open_market_value": -48397.92,
+        "net_open_market_fmt": "-$48K",
+        "largest_single_transaction": {
+          "name": "ARNOLD FRANCES",
+          "direction": "sell",
+          "dollar_value": 27337.98,
+          "dollar_fmt": "$27K",
+          "date": "2026-07-30",
+          "shares_traded": 82,
+          "price_per_share": 333.39,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
         "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:02.576907"
+      "scanned_at": "2026-08-14T12:28:20.069969"
     },
     "META": {
       "insider_signal": {
         "ticker": "META",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "open_market_sells": 6,
+        "compensation_grants": 4,
+        "net_open_market_value": -783898.93,
+        "net_open_market_fmt": "-$784K",
+        "largest_single_transaction": {
+          "name": "KIMMITT ROBERT M",
+          "direction": "sell",
+          "dollar_value": 280780.0,
+          "dollar_fmt": "$281K",
+          "date": "2026-08-03",
+          "shares_traded": 500,
+          "price_per_share": 561.56,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Andreessen Marc L",
+            "direction": "sell",
+            "dollar_value": 51263.88,
+            "dollar_fmt": "$51K",
+            "date": "2026-08-04",
+            "shares_traded": 87,
+            "price_per_share": 589.24,
+            "transaction_code": ""
+          },
+          {
+            "name": "Andreessen Marc L",
+            "direction": "sell",
+            "dollar_value": 147040.0,
+            "dollar_fmt": "$147K",
+            "date": "2026-08-04",
+            "shares_traded": 250,
+            "price_per_share": 588.16,
+            "transaction_code": ""
+          },
+          {
+            "name": "KIMMITT ROBERT M",
+            "direction": "sell",
+            "dollar_value": 280780.0,
+            "dollar_fmt": "$281K",
+            "date": "2026-08-03",
+            "shares_traded": 500,
+            "price_per_share": 561.56,
+            "transaction_code": ""
+          },
+          {
+            "name": "Alford Peggy",
+            "direction": "sell",
+            "dollar_value": 252211.84,
+            "dollar_fmt": "$252K",
+            "date": "2026-07-31",
+            "shares_traded": 464,
+            "price_per_share": 543.56,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:03.621482"
+      "scanned_at": "2026-08-14T12:28:21.442342"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
+        "open_market_sells": 3,
         "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "net_open_market_value": -346971673.69,
+        "net_open_market_fmt": "-$347.0M",
+        "largest_single_transaction": {
+          "name": "BEZOS JEFFREY P",
+          "direction": "sell",
+          "dollar_value": 346453513.69,
+          "dollar_fmt": "$346.5M",
+          "date": "2026-08-03",
+          "shares_traded": 1209649,
+          "price_per_share": 286.4083,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Herrington Douglas J",
+            "direction": "sell",
+            "dollar_value": 278390.0,
+            "dollar_fmt": "$278K",
+            "date": "2026-08-03",
+            "shares_traded": 1000,
+            "price_per_share": 278.39,
+            "transaction_code": ""
+          },
+          {
+            "name": "BEZOS JEFFREY P",
+            "direction": "sell",
+            "dollar_value": 346453513.69,
+            "dollar_fmt": "$346.5M",
+            "date": "2026-08-03",
+            "shares_traded": 1209649,
+            "price_per_share": 286.4083,
+            "transaction_code": ""
+          },
+          {
+            "name": "Herrington Douglas J",
+            "direction": "sell",
+            "dollar_value": 239770.0,
+            "dollar_fmt": "$240K",
+            "date": "2026-07-01",
+            "shares_traded": 1000,
+            "price_per_share": 239.77,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:04.663076"
+      "scanned_at": "2026-08-14T12:28:22.714932"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
+        "open_market_buys": 1,
+        "open_market_sells": 1,
+        "compensation_grants": 1,
         "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": {
+          "name": "Musk Elon",
+          "direction": "sell",
+          "dollar_value": 500000000,
+          "dollar_fmt": "$500.0M",
+          "date": "2026-06-16",
+          "shares_traded": 17531857,
+          "price_per_share": 404.66,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Musk Elon",
+            "direction": "sell",
+            "dollar_value": 500000000,
+            "dollar_fmt": "$500.0M",
+            "date": "2026-06-16",
+            "shares_traded": 17531857,
+            "price_per_share": 404.66,
+            "transaction_code": ""
+          },
+          {
+            "name": "Musk Elon",
+            "direction": "buy",
+            "dollar_value": 500000000,
+            "dollar_fmt": "$500.0M",
+            "date": "2026-06-16",
+            "shares_traded": 303960630,
+            "price_per_share": 23.34,
+            "transaction_code": ""
+          }
+        ],
         "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "error": null
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s Capital Gains Tax Cut Plan Could Save Elon Musk Millions — Maybe Billions — of Dollars on Tesla",
-          "date": "2026-08-12 18:36",
-          "summary": "A Washington tax proposal targeting inflation adjustments on capital gains could reshape what Elon Musk eventually owes on his massive Tesla stake, but the math reveals a far messier picture than the ",
-          "source": "Yahoo",
+          "headline": "Could Trump Cut Capital Gains Tax?",
+          "date": "2026-08-14 07:30",
+          "summary": "Proposed tax policy changes like a $2M primary home exemption could unlock housing market inventory and spur economic activity. Click here to read more.",
+          "source": "SeekingAlpha",
           "keyword_matched": "trump",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-13T12:31:05.700893"
+      "scanned_at": "2026-08-14T12:28:23.896898"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "open_market_buys": 4,
+        "open_market_sells": 1,
+        "compensation_grants": 2,
+        "net_open_market_value": -460758.56,
+        "net_open_market_fmt": "-$461K",
+        "largest_single_transaction": {
+          "name": "Seymour Melissa",
+          "direction": "sell",
+          "dollar_value": 504340.76,
+          "dollar_fmt": "$504K",
+          "date": "2026-08-01",
+          "shares_traded": 439,
+          "price_per_share": 1148.84,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Seymour Melissa",
+            "direction": "sell",
+            "dollar_value": 504340.76,
+            "dollar_fmt": "$504K",
+            "date": "2026-08-01",
+            "shares_traded": 439,
+            "price_per_share": 1148.84,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:06.667798"
+      "scanned_at": "2026-08-14T12:28:25.022349"
     },
     "UNH": {
       "insider_signal": {
@@ -398,50 +547,110 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 0,
+        "compensation_grants": 10,
         "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
+        "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
         "notable_transactions": [],
         "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:07.606577"
+      "scanned_at": "2026-08-14T12:28:26.050884"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
-        "open_market_buys": 0,
+        "open_market_buys": 4,
         "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "compensation_grants": 6,
+        "net_open_market_value": 181013.49,
+        "net_open_market_fmt": "+$181K",
+        "largest_single_transaction": {
+          "name": "BURKE STEPHEN B",
+          "direction": "buy",
+          "dollar_value": 56300.76,
+          "dollar_fmt": "$56K",
+          "date": "2026-06-30",
+          "shares_traded": 172,
+          "price_per_share": 327.33,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "BURKE STEPHEN B",
+            "direction": "buy",
+            "dollar_value": 56300.76,
+            "dollar_fmt": "$56K",
+            "date": "2026-06-30",
+            "shares_traded": 172,
+            "price_per_share": 327.33,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_buy",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:08.564482"
+      "scanned_at": "2026-08-14T12:28:27.119536"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -472395.64,
+        "net_open_market_fmt": "-$472K",
+        "largest_single_transaction": {
+          "name": "LESLIE ERICKA T",
+          "direction": "sell",
+          "dollar_value": 171670.35,
+          "dollar_fmt": "$172K",
+          "date": "2026-07-15",
+          "shares_traded": 149,
+          "price_per_share": 1152.15,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 135989.22,
+            "dollar_fmt": "$136K",
+            "date": "2026-08-04",
+            "shares_traded": 129,
+            "price_per_share": 1054.18,
+            "transaction_code": ""
+          },
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 171670.35,
+            "dollar_fmt": "$172K",
+            "date": "2026-07-15",
+            "shares_traded": 149,
+            "price_per_share": 1152.15,
+            "transaction_code": ""
+          },
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 116280.29,
+            "dollar_fmt": "$116K",
+            "date": "2026-07-15",
+            "shares_traded": 101,
+            "price_per_share": 1151.29,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:09.521411"
+      "scanned_at": "2026-08-14T12:28:28.208987"
     },
     "XOM": {
       "insider_signal": {
@@ -451,11 +660,11 @@
         "open_market_sells": 0,
         "compensation_grants": 0,
         "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
+        "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
         "notable_transactions": [],
         "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "error": null
       },
       "trump_mentions": [
         {
@@ -475,21 +684,81 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-13T12:31:10.582766"
+      "scanned_at": "2026-08-14T12:28:29.300215"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -103953635.54,
+        "net_open_market_fmt": "-$104.0M",
+        "largest_single_transaction": {
+          "name": "HESS JOHN B",
+          "direction": "sell",
+          "dollar_value": 52888194.05,
+          "dollar_fmt": "$52.9M",
+          "date": "2026-08-03",
+          "shares_traded": 271946,
+          "price_per_share": 194.4805,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "HESS JOHN B",
+            "direction": "sell",
+            "dollar_value": 5860162.25,
+            "dollar_fmt": "$5.9M",
+            "date": "2026-08-03",
+            "shares_traded": 30031,
+            "price_per_share": 195.1371,
+            "transaction_code": ""
+          },
+          {
+            "name": "HESS JOHN B",
+            "direction": "sell",
+            "dollar_value": 52888194.05,
+            "dollar_fmt": "$52.9M",
+            "date": "2026-08-03",
+            "shares_traded": 271946,
+            "price_per_share": 194.4805,
+            "transaction_code": ""
+          },
+          {
+            "name": "HESS JOHN B",
+            "direction": "sell",
+            "dollar_value": 22935045.41,
+            "dollar_fmt": "$22.9M",
+            "date": "2026-08-03",
+            "shares_traded": 118657,
+            "price_per_share": 193.2886,
+            "transaction_code": ""
+          },
+          {
+            "name": "HESS JOHN B",
+            "direction": "sell",
+            "dollar_value": 17353349.21,
+            "dollar_fmt": "$17.4M",
+            "date": "2026-08-03",
+            "shares_traded": 90031,
+            "price_per_share": 192.7486,
+            "transaction_code": ""
+          },
+          {
+            "name": "HESS JOHN B",
+            "direction": "sell",
+            "dollar_value": 4916884.62,
+            "dollar_fmt": "$4.9M",
+            "date": "2026-08-03",
+            "shares_traded": 25179,
+            "price_per_share": 195.2772,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [
         {
@@ -501,41 +770,120 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-13T12:31:11.546930"
+      "scanned_at": "2026-08-14T12:28:30.344046"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 0,
+        "open_market_buys": 1,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
+        "net_open_market_value": 23217.26,
+        "net_open_market_fmt": "+$23K",
+        "largest_single_transaction": {
+          "name": "MacLennan David",
+          "direction": "buy",
+          "dollar_value": 23217.26,
+          "dollar_fmt": "$23K",
+          "date": "2026-06-30",
+          "shares_traded": 22,
+          "price_per_share": 1055.33,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
         "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:12.523376"
+      "scanned_at": "2026-08-14T12:28:31.422767"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
-        "error": "FinnhubAPIException(status_code: 502): JSON error message from Finnhub: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0</center>\r\n</body>\r\n</html>\r\n"
+        "open_market_buys": 4,
+        "open_market_sells": 4,
+        "compensation_grants": 2,
+        "net_open_market_value": -2165493.21,
+        "net_open_market_fmt": "-$2.2M",
+        "largest_single_transaction": {
+          "name": "Ali Mohamed",
+          "direction": "sell",
+          "dollar_value": 984049.04,
+          "dollar_fmt": "$984K",
+          "date": "2026-07-24",
+          "shares_traded": 2782,
+          "price_per_share": 353.72,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 805945.56,
+            "dollar_fmt": "$806K",
+            "date": "2026-07-24",
+            "shares_traded": 2279,
+            "price_per_share": 353.64,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 984049.04,
+            "dollar_fmt": "$984K",
+            "date": "2026-07-24",
+            "shares_traded": 2782,
+            "price_per_share": 353.72,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "buy",
+            "dollar_value": 351992.55,
+            "dollar_fmt": "$352K",
+            "date": "2026-07-24",
+            "shares_traded": 5061,
+            "price_per_share": 69.55,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 447834.84,
+            "dollar_fmt": "$448K",
+            "date": "2026-07-24",
+            "shares_traded": 1266,
+            "price_per_share": 353.74,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "sell",
+            "dollar_value": 625783.75,
+            "dollar_fmt": "$626K",
+            "date": "2026-07-24",
+            "shares_traded": 1769,
+            "price_per_share": 353.75,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ali Mohamed",
+            "direction": "buy",
+            "dollar_value": 273180.35,
+            "dollar_fmt": "$273K",
+            "date": "2026-07-24",
+            "shares_traded": 3035,
+            "price_per_share": 90.01,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
+        "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:13.451555"
+      "scanned_at": "2026-08-14T12:28:32.445355"
     },
     "WMT": {
       "insider_signal": {
@@ -601,8 +949,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:14.482894"
+      "trump_mentions": [
+        {
+          "headline": "Democrats Aim to Link Parasite Spread to Trump-Grower Ties",
+          "date": "2026-08-13 18:01",
+          "summary": "Senator Elizabeth Warren is pushing the US’s top health official to detail the government’s cyclospora outbreak response in the wake of a major produce supplier’s campaign contributions to political g",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-14T12:28:33.546139"
     },
     "COST": {
       "insider_signal": {
@@ -639,7 +996,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:15.590568"
+      "scanned_at": "2026-08-14T12:28:34.552767"
     },
     "FCX": {
       "insider_signal": {
@@ -705,17 +1062,17 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-13T12:31:16.680440"
+      "scanned_at": "2026-08-14T12:28:35.550754"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 1,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 69598.79,
-        "net_open_market_fmt": "+$70K",
+        "net_open_market_value": 36184.23,
+        "net_open_market_fmt": "+$36K",
         "largest_single_transaction": {
           "name": "Arnaboldi Nicole S",
           "direction": "buy",
@@ -727,20 +1084,11 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "strong_buy",
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Targets China's Grip on Global Polysilicon Supply With 15% Tariff— Solar Stocks Climb in Friday Pre-Market (UPDATED)",
-          "date": "2026-08-07 08:04",
-          "summary": "Trump imposed 15% polysilicon tariffs and minimum import prices, targeting China&#39;s dominance in a key solar and semiconductor material.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-13T12:31:17.638778"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-14T12:28:36.526591"
     },
     "PLD": {
       "insider_signal": {
@@ -777,7 +1125,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-13T12:31:18.761824"
+      "scanned_at": "2026-08-14T12:28:37.523714"
     }
   }
 }
