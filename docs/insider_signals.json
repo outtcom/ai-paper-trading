@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-14",
-  "last_notified_date": "2026-08-14",
+  "date": "2026-08-17",
+  "last_notified_date": "2026-08-17",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -18,121 +18,41 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Wanted Advanced Tech Made in America, Tim Cook Brought Mac Mini Production to Texas: 'Thank You' for the $600 Billion Commitment, Says Howard Lutnick",
-          "date": "2026-08-14 02:07",
-          "summary": "On Thursday, Apple Inc. (NASDAQ:AAPL) CEO Tim Cook was joined by U.S. Commerce Secretary Howard Lutnick and others at the opening of the new Advanced Manufacturing Center in Houston, Texas, where Cupe",
-          "source": "Yahoo",
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-14T12:28:15.254348"
+      "scanned_at": "2026-08-17T11:57:33.550528"
     },
     "NVDA": {
       "insider_signal": {
         "ticker": "NVDA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 7,
-        "compensation_grants": 2,
-        "net_open_market_value": -226268589.83,
-        "net_open_market_fmt": "-$226.3M",
-        "largest_single_transaction": {
-          "name": "STEVENS MARK A",
-          "direction": "sell",
-          "dollar_value": 119026436.88,
-          "dollar_fmt": "$119.0M",
-          "date": "2026-06-18",
-          "shares_traded": 565615,
-          "price_per_share": 210.4372,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 119026436.88,
-            "dollar_fmt": "$119.0M",
-            "date": "2026-06-18",
-            "shares_traded": 565615,
-            "price_per_share": 210.4372,
-            "transaction_code": ""
-          },
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 66973501.45,
-            "dollar_fmt": "$67.0M",
-            "date": "2026-06-18",
-            "shares_traded": 319385,
-            "price_per_share": 209.6952,
-            "transaction_code": ""
-          },
-          {
-            "name": "Teter Timothy S.",
-            "direction": "sell",
-            "dollar_value": 7413248.22,
-            "dollar_fmt": "$7.4M",
-            "date": "2026-06-17",
-            "shares_traded": 35742,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Kress Colette",
-            "direction": "sell",
-            "dollar_value": 8451127.86,
-            "dollar_fmt": "$8.5M",
-            "date": "2026-06-17",
-            "shares_traded": 40746,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Puri Ajay K",
-            "direction": "sell",
-            "dollar_value": 7659029.07,
-            "dollar_fmt": "$7.7M",
-            "date": "2026-06-17",
-            "shares_traded": 36927,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Shoquist Debora",
-            "direction": "sell",
-            "dollar_value": 7261838.92,
-            "dollar_fmt": "$7.3M",
-            "date": "2026-06-17",
-            "shares_traded": 35012,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "HUANG JEN HSUN",
-            "direction": "sell",
-            "dollar_value": 9483407.43,
-            "dollar_fmt": "$9.5M",
-            "date": "2026-06-17",
-            "shares_traded": 45723,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 1,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
         {
-          "headline": "Could Trump Cut Capital Gains Tax?",
-          "date": "2026-08-14 07:30",
-          "summary": "Proposed tax policy changes like a $2M primary home exemption could unlock housing market inventory and spur economic activity. Click here to read more.",
-          "source": "SeekingAlpha",
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-14T12:28:16.452154"
+      "scanned_at": "2026-08-17T11:57:34.878114"
     },
     "MSFT": {
       "insider_signal": {
@@ -178,8 +98,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:17.611204"
+      "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-17T11:57:36.030371"
     },
     "MU": {
       "insider_signal": {
@@ -296,7 +225,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:18.820999"
+      "scanned_at": "2026-08-17T11:57:37.336534"
     },
     "GOOGL": {
       "insider_signal": {
@@ -321,8 +250,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:20.069969"
+      "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-17T11:57:38.762708"
     },
     "META": {
       "insider_signal": {
@@ -388,8 +326,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:21.442342"
+      "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-17T11:57:40.106233"
     },
     "AMZN": {
       "insider_signal": {
@@ -445,54 +392,41 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:22.714932"
+      "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-17T11:57:41.295238"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 1,
-        "open_market_sells": 1,
-        "compensation_grants": 1,
+        "open_market_buys": 0,
+        "open_market_sells": 0,
+        "compensation_grants": 0,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
-        "largest_single_transaction": {
-          "name": "Musk Elon",
-          "direction": "sell",
-          "dollar_value": 500000000,
-          "dollar_fmt": "$500.0M",
-          "date": "2026-06-16",
-          "shares_traded": 17531857,
-          "price_per_share": 404.66,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Musk Elon",
-            "direction": "sell",
-            "dollar_value": 500000000,
-            "dollar_fmt": "$500.0M",
-            "date": "2026-06-16",
-            "shares_traded": 17531857,
-            "price_per_share": 404.66,
-            "transaction_code": ""
-          },
-          {
-            "name": "Musk Elon",
-            "direction": "buy",
-            "dollar_value": 500000000,
-            "dollar_fmt": "$500.0M",
-            "date": "2026-06-16",
-            "shares_traded": 303960630,
-            "price_per_share": 23.34,
-            "transaction_code": ""
-          }
-        ],
+        "largest_single_transaction": null,
+        "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
         {
           "headline": "Could Trump Cut Capital Gains Tax?",
           "date": "2026-08-14 07:30",
@@ -500,9 +434,17 @@
           "source": "SeekingAlpha",
           "keyword_matched": "trump",
           "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Howard Lutnick Says Trump's Auto Tariffs Are Bringing Thousands of Jobs Into the US: 'Ford Is Going To Rock…'",
+          "date": "2026-08-14 03:01",
+          "summary": "Commerce Sec. Lutnick praises Trump&#39;s auto tariffs &amp; Ford&#39;s Lincoln move, says thousands of jobs coming back to US.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-14T12:28:23.896898"
+      "scanned_at": "2026-08-17T11:57:42.340535"
     },
     "LLY": {
       "insider_signal": {
@@ -539,7 +481,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:25.022349"
+      "scanned_at": "2026-08-17T11:57:43.462441"
     },
     "UNH": {
       "insider_signal": {
@@ -556,7 +498,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:26.050884"
+      "scanned_at": "2026-08-17T11:57:44.457275"
     },
     "JPM": {
       "insider_signal": {
@@ -593,7 +535,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:27.119536"
+      "scanned_at": "2026-08-17T11:57:45.516703"
     },
     "GS": {
       "insider_signal": {
@@ -649,8 +591,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:28.208987"
+      "trump_mentions": [
+        {
+          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
+          "date": "2026-08-15 09:51",
+          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-17T11:57:46.553064"
     },
     "XOM": {
       "insider_signal": {
@@ -684,7 +635,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-14T12:28:29.300215"
+      "scanned_at": "2026-08-17T11:57:47.550341"
     },
     "CVX": {
       "insider_signal": {
@@ -760,17 +711,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "ExxonMobil Holdings Corporation (XOM) vs. Chevron Corporation (CVX): Trump Attacks the Oil Giants for Making “Too Much Money”",
-          "date": "2026-08-11 20:12",
-          "summary": "On August 3, 2026, President Trump accused ExxonMobil Holdings Corporation (NYSE:XOM) and Chevron Corporation (NYSE:CVX) of making “too much money” off high fuel prices just three days after both comp",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-14T12:28:30.344046"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-17T11:57:48.590247"
     },
     "CAT": {
       "insider_signal": {
@@ -796,7 +738,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:31.422767"
+      "scanned_at": "2026-08-17T11:57:49.736547"
     },
     "GE": {
       "insider_signal": {
@@ -883,7 +825,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:32.445355"
+      "scanned_at": "2026-08-17T11:57:50.706930"
     },
     "WMT": {
       "insider_signal": {
@@ -949,17 +891,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Democrats Aim to Link Parasite Spread to Trump-Grower Ties",
-          "date": "2026-08-13 18:01",
-          "summary": "Senator Elizabeth Warren is pushing the US’s top health official to detail the government’s cyclospora outbreak response in the wake of a major produce supplier’s campaign contributions to political g",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-14T12:28:33.546139"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-17T11:57:51.766224"
     },
     "COST": {
       "insider_signal": {
@@ -996,7 +929,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:34.552767"
+      "scanned_at": "2026-08-17T11:57:52.760441"
     },
     "FCX": {
       "insider_signal": {
@@ -1052,17 +985,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Touts $3 Billion in Minerals Projects to Counter China",
-          "date": "2026-08-07 19:39",
-          "summary": "(Bloomberg) -- President Donald Trump touted $3 billion in US investments in critical minerals mining at a meeting Friday with top industry executives aimed at weaning the US off supply chains dominat",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-14T12:28:35.550754"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-17T11:57:53.731799"
     },
     "NEE": {
       "insider_signal": {
@@ -1088,7 +1012,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:36.526591"
+      "scanned_at": "2026-08-17T11:57:54.705403"
     },
     "PLD": {
       "insider_signal": {
@@ -1125,7 +1049,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-14T12:28:37.523714"
+      "scanned_at": "2026-08-17T11:57:55.676435"
     }
   }
 }
