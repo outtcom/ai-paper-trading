@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-18",
-  "last_notified_date": "2026-08-18",
+  "date": "2026-08-19",
+  "last_notified_date": "2026-08-19",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:04.904517"
+      "scanned_at": "2026-08-19T11:59:05.918827"
     },
     "NVDA": {
       "insider_signal": {
@@ -54,7 +54,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:05.601362"
+      "scanned_at": "2026-08-19T11:59:07.064063"
     },
     "MSFT": {
       "insider_signal": {
@@ -101,7 +101,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:06.398591"
+      "scanned_at": "2026-08-19T11:59:08.157560"
     },
     "MU": {
       "insider_signal": {
@@ -218,7 +218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:07.046276"
+      "scanned_at": "2026-08-19T11:59:09.198591"
     },
     "GOOGL": {
       "insider_signal": {
@@ -256,15 +256,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Home Depot Earnings Prediction Market Preview: Will CEO Ted Decker Talk About Tariffs?",
-          "date": "2026-08-17 14:28",
-          "summary": "Home Depot reports earnings Tuesday as investors watch tariffs, Mexico operations, housing demand and whether stronger second-half sales can materialize.",
+          "headline": "Gavin Newsom Touts Rideshare Drivers Union in California, Praises Push to Represent Uber, Lyft Drivers — Slams Trump for Attacking ‘Workers’ Rights’",
+          "date": "2026-08-18 03:12",
+          "summary": "Gavin Newsom applauds unionization of Uber and Lyft drivers in California, stating it as a win for workers&#39; rights against Trump&#39;s policies.",
           "source": "Benzinga",
-          "keyword_matched": "tariff",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-18T11:59:07.859225"
+      "scanned_at": "2026-08-19T11:59:10.333184"
     },
     "META": {
       "insider_signal": {
@@ -360,8 +360,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:08.683405"
+      "trump_mentions": [
+        {
+          "headline": "Trump-Backed World Liberty Partners With Platform Offering Chinese AI Models Flagged by US: Report",
+          "date": "2026-08-18 06:33",
+          "summary": "Trump-backed World Liberty Financial reportedly partners with Hong Kong venture raising concerns over Chinese AI models and profits.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-19T11:59:11.513262"
     },
     "AMZN": {
       "insider_signal": {
@@ -418,7 +427,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:09.415896"
+      "scanned_at": "2026-08-19T11:59:12.583739"
     },
     "TSLA": {
       "insider_signal": {
@@ -436,31 +445,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Idea for flying Roadster has been around 'since the beginning': Former Tesla president Jon McNeill",
-          "date": "2026-08-17 12:28",
-          "summary": "Jon McNeill, VistaShares co-founder, DVx CEO and former Tesla president, joins 'Squawk on the Street' to discuss Tesla's plans to unveil a new design for a flying roadster as soon as this month.",
-          "source": "CNBC",
+          "headline": "Former Tesla President Says Roadster Demo Could Be a ‘Not-So-Hidden Attempt’ to Knit TSLA and SPCX Together: ‘Probably Sooner Rather Than Later’",
+          "date": "2026-08-18 06:19",
+          "summary": "Former Tesla President Jon McNeill says Tesla&#39;s upcoming Roadster demo may signal deeper convergence with SpaceX.",
+          "source": "Benzinga",
           "keyword_matched": "president",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Elon Musk Says Tesla Is ‘Most Made in America’ Car Brand as Trump Tariffs Shake Up Auto Industry",
-          "date": "2026-08-16 23:59",
-          "summary": "Elon Musk touts domestic manufacturing prowess amid President Donald Trump&#39;s tariffs on auto industry backed by Howard Lutnick.",
+          "headline": "US, Canada Trade Officials Mull Cutting Tariffs on Auto Sector: Report",
+          "date": "2026-08-18 04:26",
+          "summary": "Negotiations are reportedly underway between U.S. and Canada to reduce US auto tariffs to 15% ahead of Wednesday&#39;s deadline.",
           "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
-          "date": "2026-08-15 09:51",
-          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-18T11:59:10.178683"
+      "scanned_at": "2026-08-19T11:59:13.621896"
     },
     "LLY": {
       "insider_signal": {
@@ -517,7 +518,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:10.842903"
+      "scanned_at": "2026-08-19T11:59:14.603450"
     },
     "UNH": {
       "insider_signal": {
@@ -564,7 +565,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:11.471252"
+      "scanned_at": "2026-08-19T11:59:15.556149"
     },
     "JPM": {
       "insider_signal": {
@@ -620,7 +621,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-18T11:59:12.177700"
+      "scanned_at": "2026-08-19T11:59:16.567093"
     },
     "GS": {
       "insider_signal": {
@@ -686,7 +687,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-18T11:59:12.797474"
+      "scanned_at": "2026-08-19T11:59:17.563372"
     },
     "XOM": {
       "insider_signal": {
@@ -704,15 +705,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "ExxonMobil Holdings Corporation (XOM) vs. Chevron Corporation (CVX): Trump Attacks the Oil Giants for Making “Too Much Money”",
-          "date": "2026-08-11 20:12",
-          "summary": "On August 3, 2026, President Trump accused ExxonMobil Holdings Corporation (NYSE:XOM) and Chevron Corporation (NYSE:CVX) of making “too much money” off high fuel prices just three days after both comp",
-          "source": "Yahoo",
+          "headline": "Trump’s Hormuz Shock Sends Oil Above $85: 3 ETFs Poised for the Next Energy Rally",
+          "date": "2026-08-18 14:10",
+          "summary": "Trump’s Hormuz escalation sends oil above $85. These ETFs are positioned to benefit if crude prices stay elevated and energy stocks rally.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-18T11:59:13.426831"
+      "scanned_at": "2026-08-19T11:59:18.518905"
     },
     "CVX": {
       "insider_signal": {
@@ -788,8 +789,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:14.045254"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Hormuz Shock Sends Oil Above $85: 3 ETFs Poised for the Next Energy Rally",
+          "date": "2026-08-18 14:10",
+          "summary": "Trump’s Hormuz escalation sends oil above $85. These ETFs are positioned to benefit if crude prices stay elevated and energy stocks rally.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-08-19T11:59:19.456936"
     },
     "CAT": {
       "insider_signal": {
@@ -815,7 +825,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:14.751514"
+      "scanned_at": "2026-08-19T11:59:20.404780"
     },
     "GE": {
       "insider_signal": {
@@ -912,7 +922,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:15.445839"
+      "scanned_at": "2026-08-19T11:59:21.343076"
     },
     "WMT": {
       "insider_signal": {
@@ -979,7 +989,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:16.088221"
+      "scanned_at": "2026-08-19T11:59:22.365158"
     },
     "COST": {
       "insider_signal": {
@@ -1016,7 +1026,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:16.710144"
+      "scanned_at": "2026-08-19T11:59:23.373736"
     },
     "FCX": {
       "insider_signal": {
@@ -1073,7 +1083,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:17.322037"
+      "scanned_at": "2026-08-19T11:59:24.345320"
     },
     "NEE": {
       "insider_signal": {
@@ -1099,7 +1109,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:17.949690"
+      "scanned_at": "2026-08-19T11:59:25.311849"
     },
     "PLD": {
       "insider_signal": {
@@ -1136,7 +1146,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-18T11:59:18.580714"
+      "scanned_at": "2026-08-19T11:59:26.237294"
     }
   }
 }
