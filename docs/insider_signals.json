@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-19",
-  "last_notified_date": "2026-08-19",
+  "date": "2026-08-20",
+  "last_notified_date": "2026-08-20",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:05.918827"
+      "scanned_at": "2026-08-20T11:59:26.180034"
     },
     "NVDA": {
       "insider_signal": {
@@ -54,7 +54,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:07.064063"
+      "scanned_at": "2026-08-20T11:59:27.015745"
     },
     "MSFT": {
       "insider_signal": {
@@ -101,7 +101,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:08.157560"
+      "scanned_at": "2026-08-20T11:59:27.772616"
     },
     "MU": {
       "insider_signal": {
@@ -218,7 +218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:09.198591"
+      "scanned_at": "2026-08-20T11:59:28.588988"
     },
     "GOOGL": {
       "insider_signal": {
@@ -254,17 +254,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Gavin Newsom Touts Rideshare Drivers Union in California, Praises Push to Represent Uber, Lyft Drivers — Slams Trump for Attacking ‘Workers’ Rights’",
-          "date": "2026-08-18 03:12",
-          "summary": "Gavin Newsom applauds unionization of Uber and Lyft drivers in California, stating it as a win for workers&#39; rights against Trump&#39;s policies.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-19T11:59:10.333184"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-20T11:59:29.559559"
     },
     "META": {
       "insider_signal": {
@@ -360,17 +351,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump-Backed World Liberty Partners With Platform Offering Chinese AI Models Flagged by US: Report",
-          "date": "2026-08-18 06:33",
-          "summary": "Trump-backed World Liberty Financial reportedly partners with Hong Kong venture raising concerns over Chinese AI models and profits.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-19T11:59:11.513262"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-20T11:59:30.834188"
     },
     "AMZN": {
       "insider_signal": {
@@ -427,7 +409,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:12.583739"
+      "scanned_at": "2026-08-20T11:59:31.527474"
     },
     "TSLA": {
       "insider_signal": {
@@ -443,25 +425,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Former Tesla President Says Roadster Demo Could Be a ‘Not-So-Hidden Attempt’ to Knit TSLA and SPCX Together: ‘Probably Sooner Rather Than Later’",
-          "date": "2026-08-18 06:19",
-          "summary": "Former Tesla President Jon McNeill says Tesla&#39;s upcoming Roadster demo may signal deeper convergence with SpaceX.",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "US, Canada Trade Officials Mull Cutting Tariffs on Auto Sector: Report",
-          "date": "2026-08-18 04:26",
-          "summary": "Negotiations are reportedly underway between U.S. and Canada to reduce US auto tariffs to 15% ahead of Wednesday&#39;s deadline.",
-          "source": "Benzinga",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-19T11:59:13.621896"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-20T11:59:32.216080"
     },
     "LLY": {
       "insider_signal": {
@@ -518,7 +483,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:14.603450"
+      "scanned_at": "2026-08-20T11:59:32.936538"
     },
     "UNH": {
       "insider_signal": {
@@ -565,7 +530,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:15.556149"
+      "scanned_at": "2026-08-20T11:59:33.589664"
     },
     "JPM": {
       "insider_signal": {
@@ -621,7 +586,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-19T11:59:16.567093"
+      "scanned_at": "2026-08-20T11:59:34.263344"
     },
     "GS": {
       "insider_signal": {
@@ -677,17 +642,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Consumer Tech (Aug 10-14): Trump Faces Federal Lawsuits, Apple & Alibaba To Create AI Model For China & More",
-          "date": "2026-08-15 09:51",
-          "summary": "AI spending continues reshaping technology as Nvidia, AMD, Cisco, Intel and semiconductor companies announce new investments, partnerships and infrastructure initiatives.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-19T11:59:17.563372"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-20T11:59:34.900080"
     },
     "XOM": {
       "insider_signal": {
@@ -713,7 +669,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-19T11:59:18.518905"
+      "scanned_at": "2026-08-20T11:59:35.567915"
     },
     "CVX": {
       "insider_signal": {
@@ -799,7 +755,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-19T11:59:19.456936"
+      "scanned_at": "2026-08-20T11:59:36.240928"
     },
     "CAT": {
       "insider_signal": {
@@ -825,7 +781,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:20.404780"
+      "scanned_at": "2026-08-20T11:59:36.904513"
     },
     "GE": {
       "insider_signal": {
@@ -922,7 +878,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:21.343076"
+      "scanned_at": "2026-08-20T11:59:37.550281"
     },
     "WMT": {
       "insider_signal": {
@@ -989,7 +945,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:22.365158"
+      "scanned_at": "2026-08-20T11:59:38.286607"
     },
     "COST": {
       "insider_signal": {
@@ -1026,7 +982,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:23.373736"
+      "scanned_at": "2026-08-20T11:59:38.925223"
     },
     "FCX": {
       "insider_signal": {
@@ -1083,7 +1039,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:24.345320"
+      "scanned_at": "2026-08-20T11:59:39.559985"
     },
     "NEE": {
       "insider_signal": {
@@ -1109,7 +1065,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:25.311849"
+      "scanned_at": "2026-08-20T11:59:40.240372"
     },
     "PLD": {
       "insider_signal": {
@@ -1146,7 +1102,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-19T11:59:26.237294"
+      "scanned_at": "2026-08-20T11:59:40.921018"
     }
   }
 }
