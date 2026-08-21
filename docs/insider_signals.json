@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-20",
-  "last_notified_date": "2026-08-20",
+  "date": "2026-08-21",
+  "last_notified_date": "2026-08-21",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:26.180034"
+      "scanned_at": "2026-08-21T11:59:48.141768"
     },
     "NVDA": {
       "insider_signal": {
@@ -54,7 +54,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:27.015745"
+      "scanned_at": "2026-08-21T11:59:49.317774"
     },
     "MSFT": {
       "insider_signal": {
@@ -101,7 +101,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:27.772616"
+      "scanned_at": "2026-08-21T11:59:50.363674"
     },
     "MU": {
       "insider_signal": {
@@ -218,7 +218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:28.588988"
+      "scanned_at": "2026-08-21T11:59:51.435623"
     },
     "GOOGL": {
       "insider_signal": {
@@ -255,7 +255,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:29.559559"
+      "scanned_at": "2026-08-21T11:59:52.638914"
     },
     "META": {
       "insider_signal": {
@@ -352,7 +352,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:30.834188"
+      "scanned_at": "2026-08-21T11:59:53.778919"
     },
     "AMZN": {
       "insider_signal": {
@@ -409,7 +409,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:31.527474"
+      "scanned_at": "2026-08-21T11:59:54.888488"
     },
     "TSLA": {
       "insider_signal": {
@@ -425,8 +425,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:32.216080"
+      "trump_mentions": [
+        {
+          "headline": "Trump Could Reportedly Cut Canadian Auto Tariffs to 15%, Aluminum and Steel to 25%: NUE, STLD, CENX in Focus (UPDATED)",
+          "date": "2026-08-20 09:08",
+          "summary": "The U.S. and Canada could be close to an agreement on cutting auto tariffs to 15% but effective rates may be lower.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-21T11:59:55.929965"
     },
     "LLY": {
       "insider_signal": {
@@ -483,7 +492,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:32.936538"
+      "scanned_at": "2026-08-21T11:59:56.906976"
     },
     "UNH": {
       "insider_signal": {
@@ -530,7 +539,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:33.589664"
+      "scanned_at": "2026-08-21T11:59:57.868144"
     },
     "JPM": {
       "insider_signal": {
@@ -586,7 +595,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-20T11:59:34.263344"
+      "scanned_at": "2026-08-21T11:59:58.805388"
     },
     "GS": {
       "insider_signal": {
@@ -642,8 +651,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:34.900080"
+      "trump_mentions": [
+        {
+          "headline": "Robinhood CEO Says Trump Accounts Give Kids a Simple Way Into S&P 500 — ‘See the Magic of Compound Interest’",
+          "date": "2026-08-20 07:12",
+          "summary": "Robinhood CEO Vlad Tenev explains Trump Accounts&#39; S&amp;P 500 access and potential for more investment options.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-21T11:59:59.735251"
     },
     "XOM": {
       "insider_signal": {
@@ -669,7 +687,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-20T11:59:35.567915"
+      "scanned_at": "2026-08-21T12:00:00.804563"
     },
     "CVX": {
       "insider_signal": {
@@ -755,7 +773,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-20T11:59:36.240928"
+      "scanned_at": "2026-08-21T12:00:02.137945"
     },
     "CAT": {
       "insider_signal": {
@@ -781,7 +799,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:36.904513"
+      "scanned_at": "2026-08-21T12:00:03.522178"
     },
     "GE": {
       "insider_signal": {
@@ -877,8 +895,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:37.550281"
+      "trump_mentions": [
+        {
+          "headline": "Shares of shipbuilders are trading higher, as President Trump is epected to make an announcement on shipbuildings.",
+          "date": "2026-08-20 12:37",
+          "summary": "",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-21T12:00:04.502612"
     },
     "WMT": {
       "insider_signal": {
@@ -944,8 +971,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:38.286607"
+      "trump_mentions": [
+        {
+          "headline": "Walmart's Guide-Down Sinks the Dow as Trump Readies an \"Economic D-Day\" for Iran",
+          "date": "2026-08-21 08:39",
+          "summary": "US stocks closed sharply lower on Thursday, August 20, 2026, as Walmart's downbeat outlook wiped nearly 10% off the shares, President Trump threatened Iran with the harshest sanctions package ever fro",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-21T12:00:05.974576"
     },
     "COST": {
       "insider_signal": {
@@ -982,7 +1018,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:38.925223"
+      "scanned_at": "2026-08-21T12:00:07.324587"
     },
     "FCX": {
       "insider_signal": {
@@ -1038,8 +1074,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:39.559985"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s $500 Million Critical Minerals Bet Puts These Lithium & Battery ETFs in Focus",
+          "date": "2026-08-20 17:24",
+          "summary": "Trump’s $500M critical minerals push targets lithium, refining and battery recycling. Here are 3 ETFs positioned for the U.S. reshoring boom.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-21T12:00:09.259954"
     },
     "NEE": {
       "insider_signal": {
@@ -1065,7 +1110,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:40.240372"
+      "scanned_at": "2026-08-21T12:00:10.373907"
     },
     "PLD": {
       "insider_signal": {
@@ -1102,7 +1147,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-20T11:59:40.921018"
+      "scanned_at": "2026-08-21T12:00:11.595851"
     }
   }
 }
