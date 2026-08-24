@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-21",
-  "last_notified_date": "2026-08-21",
+  "date": "2026-08-24",
+  "last_notified_date": "2026-08-24",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -37,7 +37,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:48.141768"
+      "scanned_at": "2026-08-24T12:00:11.992857"
     },
     "NVDA": {
       "insider_signal": {
@@ -53,8 +53,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:49.317774"
+      "trump_mentions": [
+        {
+          "headline": "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+          "date": "2026-08-23 18:30",
+          "summary": "The market rally suffered damage last week, though bitcoin and gold shined. New Trump tariffs on Canada began Saturday. Nvidia, CrowdStrike and Fed's Warsh loom.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-24T12:00:13.821581"
     },
     "MSFT": {
       "insider_signal": {
@@ -101,7 +110,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:50.363674"
+      "scanned_at": "2026-08-24T12:00:16.175256"
     },
     "MU": {
       "insider_signal": {
@@ -218,7 +227,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:51.435623"
+      "scanned_at": "2026-08-24T12:00:17.124627"
     },
     "GOOGL": {
       "insider_signal": {
@@ -255,7 +264,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:52.638914"
+      "scanned_at": "2026-08-24T12:00:18.357640"
     },
     "META": {
       "insider_signal": {
@@ -351,8 +360,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:53.778919"
+      "trump_mentions": [
+        {
+          "headline": "Trump Continues Trading Stocks at Warp Speed: Berkshire Bought, Meta Sold",
+          "date": "2026-08-23 14:44",
+          "summary": "President Trump's accounts executed more than 1,000 trades in a single month, including moves in a major defense contractor timed suspiciously close to a surprise geopolitical agreement, and Congress ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-24T12:00:21.590155"
     },
     "AMZN": {
       "insider_signal": {
@@ -408,8 +426,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:54.888488"
+      "trump_mentions": [
+        {
+          "headline": "Tariff refunds are hitting retailers' wallets. Here's what they're doing with the money.",
+          "date": "2026-08-22 15:29",
+          "summary": "Companies are using tariff refunds to lower prices, cushion their margins, and, to a very small extent, return the money straight to the customer.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-24T12:00:22.363965"
     },
     "TSLA": {
       "insider_signal": {
@@ -425,17 +452,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Could Reportedly Cut Canadian Auto Tariffs to 15%, Aluminum and Steel to 25%: NUE, STLD, CENX in Focus (UPDATED)",
-          "date": "2026-08-20 09:08",
-          "summary": "The U.S. and Canada could be close to an agreement on cutting auto tariffs to 15% but effective rates may be lower.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-21T11:59:55.929965"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-24T12:00:23.279428"
     },
     "LLY": {
       "insider_signal": {
@@ -492,7 +510,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:56.906976"
+      "scanned_at": "2026-08-24T12:00:24.014137"
     },
     "UNH": {
       "insider_signal": {
@@ -539,7 +557,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T11:59:57.868144"
+      "scanned_at": "2026-08-24T12:00:25.116778"
     },
     "JPM": {
       "insider_signal": {
@@ -547,7 +565,7 @@
         "days_back": 60,
         "open_market_buys": 4,
         "open_market_sells": 1,
-        "compensation_grants": 5,
+        "compensation_grants": 2,
         "net_open_market_value": -722504.51,
         "net_open_market_fmt": "-$723K",
         "largest_single_transaction": {
@@ -585,17 +603,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Top Economist Warns Trump’s Immigration Policies Are Hurting American Workers: ‘Only Reason Economy Isn’t in Complete Shambles Is...’",
-          "date": "2026-08-17 05:49",
-          "summary": "Mark Zandi warns Trump’s policies are driving unemployment and stagflation, while AI keeps the U.S. economy from ‘complete shambles.’",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-21T11:59:58.805388"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-24T12:00:26.001413"
     },
     "GS": {
       "insider_signal": {
@@ -651,17 +660,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Robinhood CEO Says Trump Accounts Give Kids a Simple Way Into S&P 500 — ‘See the Magic of Compound Interest’",
-          "date": "2026-08-20 07:12",
-          "summary": "Robinhood CEO Vlad Tenev explains Trump Accounts&#39; S&amp;P 500 access and potential for more investment options.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-21T11:59:59.735251"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-24T12:00:26.793670"
     },
     "XOM": {
       "insider_signal": {
@@ -679,15 +679,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s Hormuz Shock Sends Oil Above $85: 3 ETFs Poised for the Next Energy Rally",
-          "date": "2026-08-18 14:10",
-          "summary": "Trump’s Hormuz escalation sends oil above $85. These ETFs are positioned to benefit if crude prices stay elevated and energy stocks rally.",
-          "source": "Benzinga",
+          "headline": "Oil Nears $100 as Trump’s ‘Economic D-Day’ Raises the Stakes",
+          "date": "2026-08-21 16:01",
+          "summary": "Hormuz traffic remains near a standstill as Trump’s ‘Economic D-Day’ campaign pushes Brent closer to $100.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-21T12:00:00.804563"
+      "scanned_at": "2026-08-24T12:00:27.597531"
     },
     "CVX": {
       "insider_signal": {
@@ -763,17 +763,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s Hormuz Shock Sends Oil Above $85: 3 ETFs Poised for the Next Energy Rally",
-          "date": "2026-08-18 14:10",
-          "summary": "Trump’s Hormuz escalation sends oil above $85. These ETFs are positioned to benefit if crude prices stay elevated and energy stocks rally.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-08-21T12:00:02.137945"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-24T12:00:28.424861"
     },
     "CAT": {
       "insider_signal": {
@@ -798,8 +789,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-21T12:00:03.522178"
+      "trump_mentions": [
+        {
+          "headline": "Caterpillar bags $392M tariff refund as duty costs shrink",
+          "date": "2026-08-20 08:09",
+          "summary": "Excluding the refund, the heavy-equipment maker incurred $400 million in tariff expenses in the quarter that ended June 30.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-24T12:00:29.191785"
     },
     "GE": {
       "insider_signal": {
@@ -905,7 +905,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-21T12:00:04.502612"
+      "scanned_at": "2026-08-24T12:00:30.140102"
     },
     "WMT": {
       "insider_signal": {
@@ -973,52 +973,41 @@
       },
       "trump_mentions": [
         {
-          "headline": "Walmart's Guide-Down Sinks the Dow as Trump Readies an \"Economic D-Day\" for Iran",
-          "date": "2026-08-21 08:39",
-          "summary": "US stocks closed sharply lower on Thursday, August 20, 2026, as Walmart's downbeat outlook wiped nearly 10% off the shares, President Trump threatened Iran with the harshest sanctions package ever fro",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "headline": "Tariff refunds are hitting retailers' wallets. Here's what they're doing with the money.",
+          "date": "2026-08-22 15:29",
+          "summary": "Companies are using tariff refunds to lower prices, cushion their margins, and, to a very small extent, return the money straight to the customer.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-21T12:00:05.974576"
+      "scanned_at": "2026-08-24T12:00:30.937540"
     },
     "COST": {
       "insider_signal": {
         "ticker": "COST",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 1,
-        "net_open_market_value": -847345.46,
-        "net_open_market_fmt": "-$847K",
-        "largest_single_transaction": {
-          "name": "DENMAN KENNETH D",
-          "direction": "sell",
-          "dollar_value": 847345.46,
-          "dollar_fmt": "$847K",
-          "date": "2026-06-23",
-          "shares_traded": 885,
-          "price_per_share": 957.4525,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "DENMAN KENNETH D",
-            "direction": "sell",
-            "dollar_value": 847345.46,
-            "dollar_fmt": "$847K",
-            "date": "2026-06-23",
-            "shares_traded": 885,
-            "price_per_share": 957.4525,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-21T12:00:07.324587"
+      "trump_mentions": [
+        {
+          "headline": "Target Raises View as Growth Momentum Extends Beyond Tariff Tailwinds",
+          "date": "2026-08-21 15:40",
+          "summary": "Target lifts its fiscal 2026 outlook as sales, digital growth and category strength signal momentum beyond tariff refund benefits, with higher earnings guidance.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-24T12:00:31.688329"
     },
     "FCX": {
       "insider_signal": {
@@ -1076,6 +1065,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+          "date": "2026-08-23 18:30",
+          "summary": "The market rally suffered damage last week, though bitcoin and gold shined. New Trump tariffs on Canada began Saturday. Nvidia, CrowdStrike and Fed's Warsh loom.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump’s $500 Million Critical Minerals Bet Puts These Lithium & Battery ETFs in Focus",
           "date": "2026-08-20 17:24",
           "summary": "Trump’s $500M critical minerals push targets lithium, refining and battery recycling. Here are 3 ETFs positioned for the U.S. reshoring boom.",
@@ -1084,7 +1081,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-21T12:00:09.259954"
+      "scanned_at": "2026-08-24T12:00:32.447144"
     },
     "NEE": {
       "insider_signal": {
@@ -1110,7 +1107,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T12:00:10.373907"
+      "scanned_at": "2026-08-24T12:00:33.361004"
     },
     "PLD": {
       "insider_signal": {
@@ -1147,7 +1144,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-21T12:00:11.595851"
+      "scanned_at": "2026-08-24T12:00:34.158073"
     }
   }
 }
