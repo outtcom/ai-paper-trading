@@ -1,14 +1,60 @@
 {
-  "date": "2026-08-07",
-  "last_notified_date": "2026-08-07",
+  "date": "2026-08-25",
+  "last_notified_date": "2026-08-25",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
+        "open_market_sells": 1,
         "compensation_grants": 0,
+        "net_open_market_value": -442852.25,
+        "net_open_market_fmt": "-$443K",
+        "largest_single_transaction": {
+          "name": "Newstead Jennifer",
+          "direction": "sell",
+          "dollar_value": 442852.25,
+          "dollar_fmt": "$443K",
+          "date": "2026-08-11",
+          "shares_traded": 1439,
+          "price_per_share": 307.75,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 442852.25,
+            "dollar_fmt": "$443K",
+            "date": "2026-08-11",
+            "shares_traded": 1439,
+            "price_per_share": 307.75,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
+        "error": null
+      },
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:09.373202"
+    },
+    "NVDA": {
+      "insider_signal": {
+        "ticker": "NVDA",
+        "days_back": 60,
+        "open_market_buys": 0,
+        "open_market_sells": 0,
+        "compensation_grants": 1,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -18,112 +64,31 @@
       },
       "trump_mentions": [
         {
-          "headline": "Apple, Amazon, and Nike Get $166 Billion in Tariff Refunds – Consumers Get Nothing",
-          "date": "2026-08-06 18:46",
-          "summary": "Tariff refunds sent billions to Apple, Amazon, and Nike - but average households saw none of it. Here is why the law works that way.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
           "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
+          "date": "2026-08-24 13:16",
+          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:26:53.548683"
-    },
-    "NVDA": {
-      "insider_signal": {
-        "ticker": "NVDA",
-        "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 7,
-        "compensation_grants": 2,
-        "net_open_market_value": -226268589.83,
-        "net_open_market_fmt": "-$226.3M",
-        "largest_single_transaction": {
-          "name": "STEVENS MARK A",
-          "direction": "sell",
-          "dollar_value": 119026436.88,
-          "dollar_fmt": "$119.0M",
-          "date": "2026-06-18",
-          "shares_traded": 565615,
-          "price_per_share": 210.4372,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 119026436.88,
-            "dollar_fmt": "$119.0M",
-            "date": "2026-06-18",
-            "shares_traded": 565615,
-            "price_per_share": 210.4372,
-            "transaction_code": ""
-          },
-          {
-            "name": "STEVENS MARK A",
-            "direction": "sell",
-            "dollar_value": 66973501.45,
-            "dollar_fmt": "$67.0M",
-            "date": "2026-06-18",
-            "shares_traded": 319385,
-            "price_per_share": 209.6952,
-            "transaction_code": ""
-          },
-          {
-            "name": "Teter Timothy S.",
-            "direction": "sell",
-            "dollar_value": 7413248.22,
-            "dollar_fmt": "$7.4M",
-            "date": "2026-06-17",
-            "shares_traded": 35742,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Kress Colette",
-            "direction": "sell",
-            "dollar_value": 8451127.86,
-            "dollar_fmt": "$8.5M",
-            "date": "2026-06-17",
-            "shares_traded": 40746,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Puri Ajay K",
-            "direction": "sell",
-            "dollar_value": 7659029.07,
-            "dollar_fmt": "$7.7M",
-            "date": "2026-06-17",
-            "shares_traded": 36927,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Shoquist Debora",
-            "direction": "sell",
-            "dollar_value": 7261838.92,
-            "dollar_fmt": "$7.3M",
-            "date": "2026-06-17",
-            "shares_traded": 35012,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "HUANG JEN HSUN",
-            "direction": "sell",
-            "dollar_value": 9483407.43,
-            "dollar_fmt": "$9.5M",
-            "date": "2026-06-17",
-            "shares_traded": 45723,
-            "price_per_share": 207.41,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
-        "error": null
-      },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:54.350730"
+      "scanned_at": "2026-08-25T12:01:10.754257"
     },
     "MSFT": {
       "insider_signal": {
@@ -131,20 +96,30 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 3,
-        "compensation_grants": 7,
-        "net_open_market_value": -2414453.2,
-        "net_open_market_fmt": "-$2.4M",
+        "compensation_grants": 0,
+        "net_open_market_value": -7279316.56,
+        "net_open_market_fmt": "-$7.3M",
         "largest_single_transaction": {
-          "name": "Numoto Takeshi",
+          "name": "Althoff Judson",
           "direction": "sell",
-          "dollar_value": 2388068.8,
-          "dollar_fmt": "$2.4M",
-          "date": "2026-08-04",
-          "shares_traded": 4810,
-          "price_per_share": 496.48,
+          "dollar_value": 4878930.0,
+          "dollar_fmt": "$4.9M",
+          "date": "2026-08-05",
+          "shares_traded": 10000,
+          "price_per_share": 487.893,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Althoff Judson",
+            "direction": "sell",
+            "dollar_value": 4878930.0,
+            "dollar_fmt": "$4.9M",
+            "date": "2026-08-05",
+            "shares_traded": 10000,
+            "price_per_share": 487.893,
+            "transaction_code": ""
+          },
           {
             "name": "Numoto Takeshi",
             "direction": "sell",
@@ -159,8 +134,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:55.084120"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:11.798421"
     },
     "MU": {
       "insider_signal": {
@@ -276,111 +268,193 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:55.808898"
+      "trump_mentions": [
+        {
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
+          "date": "2026-08-24 13:16",
+          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:12.806786"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -57013.35,
-        "net_open_market_fmt": "-$57K",
+        "open_market_sells": 3,
+        "compensation_grants": 7,
+        "net_open_market_value": -183326.58,
+        "net_open_market_fmt": "-$183K",
         "largest_single_transaction": {
-          "name": "ARNOLD FRANCES",
+          "name": "Saraci Marsida",
           "direction": "sell",
-          "dollar_value": 27337.98,
-          "dollar_fmt": "$27K",
-          "date": "2026-07-30",
-          "shares_traded": 82,
-          "price_per_share": 333.39,
+          "dollar_value": 149606.8,
+          "dollar_fmt": "$150K",
+          "date": "2026-07-29",
+          "shares_traded": 449,
+          "price_per_share": 333.2,
           "transaction_code": ""
         },
-        "notable_transactions": [],
+        "notable_transactions": [
+          {
+            "name": "Saraci Marsida",
+            "direction": "sell",
+            "dollar_value": 149606.8,
+            "dollar_fmt": "$150K",
+            "date": "2026-07-29",
+            "shares_traded": 449,
+            "price_per_share": 333.2,
+            "transaction_code": ""
+          }
+        ],
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:56.575762"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:14.001860"
     },
     "META": {
       "insider_signal": {
         "ticker": "META",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 6,
-        "compensation_grants": 4,
-        "net_open_market_value": -939231.49,
-        "net_open_market_fmt": "-$939K",
+        "open_market_sells": 10,
+        "compensation_grants": 0,
+        "net_open_market_value": -1042999.03,
+        "net_open_market_fmt": "-$1.0M",
         "largest_single_transaction": {
-          "name": "KIMMITT ROBERT M",
+          "name": "Olivan Javier",
           "direction": "sell",
-          "dollar_value": 280780.0,
-          "dollar_fmt": "$281K",
-          "date": "2026-08-03",
-          "shares_traded": 500,
-          "price_per_share": 561.56,
+          "dollar_value": 489600,
+          "dollar_fmt": "$490K",
+          "date": "2026-08-10",
+          "shares_traded": 816,
+          "price_per_share": 600,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "KIMMITT ROBERT M",
+            "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 280780.0,
-            "dollar_fmt": "$281K",
-            "date": "2026-08-03",
-            "shares_traded": 500,
-            "price_per_share": 561.56,
-            "transaction_code": ""
-          },
-          {
-            "name": "Alford Peggy",
-            "direction": "sell",
-            "dollar_value": 252211.84,
-            "dollar_fmt": "$252K",
-            "date": "2026-07-31",
-            "shares_traded": 464,
-            "price_per_share": 543.56,
+            "dollar_value": 489600,
+            "dollar_fmt": "$490K",
+            "date": "2026-08-10",
+            "shares_traded": 816,
+            "price_per_share": 600,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 263506.8,
-            "dollar_fmt": "$264K",
-            "date": "2026-07-20",
-            "shares_traded": 408,
-            "price_per_share": 645.85,
+            "dollar_value": 98400,
+            "dollar_fmt": "$98K",
+            "date": "2026-08-10",
+            "shares_traded": 164,
+            "price_per_share": 600,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 52959.7,
-            "dollar_fmt": "$53K",
-            "date": "2026-07-20",
-            "shares_traded": 82,
-            "price_per_share": 645.85,
+            "dollar_value": 68400,
+            "dollar_fmt": "$68K",
+            "date": "2026-08-10",
+            "shares_traded": 114,
+            "price_per_share": 600,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 52959.7,
-            "dollar_fmt": "$53K",
-            "date": "2026-07-20",
-            "shares_traded": 82,
-            "price_per_share": 645.85,
+            "dollar_value": 98400,
+            "dollar_fmt": "$98K",
+            "date": "2026-08-10",
+            "shares_traded": 164,
+            "price_per_share": 600,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 55575.68,
+            "dollar_fmt": "$56K",
+            "date": "2026-08-10",
+            "shares_traded": 92,
+            "price_per_share": 604.0835,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 68072.89,
+            "dollar_fmt": "$68K",
+            "date": "2026-08-10",
+            "shares_traded": 113,
+            "price_per_share": 602.415,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 89400,
+            "dollar_fmt": "$89K",
+            "date": "2026-08-10",
+            "shares_traded": 149,
+            "price_per_share": 600,
             "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:57.455469"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Continues Trading Stocks at Warp Speed: Berkshire Bought, Meta Sold",
+          "date": "2026-08-23 14:44",
+          "summary": "President Trump's accounts executed more than 1,000 trades in a single month, including moves in a major defense contractor timed suspiciously close to a surprise geopolitical agreement, and Congress ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:15.128968"
     },
     "AMZN": {
       "insider_signal": {
@@ -438,83 +512,90 @@
       },
       "trump_mentions": [
         {
-          "headline": "Companies are getting tariff refunds — but that doesn’t mean you will",
-          "date": "2026-08-06 22:11",
-          "summary": "The Trump administration has paid about $100 billion in tariff refunds to businesses, but what about consumers?",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:26:58.359127"
+      "scanned_at": "2026-08-25T12:01:16.367264"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
-        "open_market_buys": 1,
-        "open_market_sells": 1,
-        "compensation_grants": 1,
+        "open_market_buys": 0,
+        "open_market_sells": 0,
+        "compensation_grants": 0,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
-        "largest_single_transaction": {
-          "name": "Musk Elon",
-          "direction": "sell",
-          "dollar_value": 500000000,
-          "dollar_fmt": "$500.0M",
-          "date": "2026-06-16",
-          "shares_traded": 17531857,
-          "price_per_share": 404.66,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Musk Elon",
-            "direction": "sell",
-            "dollar_value": 500000000,
-            "dollar_fmt": "$500.0M",
-            "date": "2026-06-16",
-            "shares_traded": 17531857,
-            "price_per_share": 404.66,
-            "transaction_code": ""
-          },
-          {
-            "name": "Musk Elon",
-            "direction": "buy",
-            "dollar_value": 500000000,
-            "dollar_fmt": "$500.0M",
-            "date": "2026-06-16",
-            "shares_traded": 303960630,
-            "price_per_share": 23.34,
-            "transaction_code": ""
-          }
-        ],
+        "largest_single_transaction": null,
+        "notable_transactions": [],
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:59.168467"
+      "trump_mentions": [
+        {
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:17.642440"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 7,
-        "open_market_sells": 1,
+        "open_market_buys": 4,
+        "open_market_sells": 3,
         "compensation_grants": 2,
-        "net_open_market_value": -422360.66,
-        "net_open_market_fmt": "-$422K",
+        "net_open_market_value": -8780778.56,
+        "net_open_market_fmt": "-$8.8M",
         "largest_single_transaction": {
-          "name": "Seymour Melissa",
+          "name": "Hakim Anat",
           "direction": "sell",
-          "dollar_value": 504340.76,
-          "dollar_fmt": "$504K",
-          "date": "2026-08-01",
-          "shares_traded": 439,
-          "price_per_share": 1148.84,
+          "dollar_value": 5950000,
+          "dollar_fmt": "$6.0M",
+          "date": "2026-08-07",
+          "shares_traded": 5000,
+          "price_per_share": 1190,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Zakrowski Donald A",
+            "direction": "sell",
+            "dollar_value": 2370020.0,
+            "dollar_fmt": "$2.4M",
+            "date": "2026-08-10",
+            "shares_traded": 2000,
+            "price_per_share": 1185.01,
+            "transaction_code": ""
+          },
+          {
+            "name": "Hakim Anat",
+            "direction": "sell",
+            "dollar_value": 5950000,
+            "dollar_fmt": "$6.0M",
+            "date": "2026-08-07",
+            "shares_traded": 5000,
+            "price_per_share": 1190,
+            "transaction_code": ""
+          },
           {
             "name": "Seymour Melissa",
             "direction": "sell",
@@ -526,49 +607,98 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:26:59.845034"
+      "trump_mentions": [
+        {
+          "headline": "Sanofi: Trump's Vaccine Policy Won't Break The Story",
+          "date": "2026-08-24 08:52",
+          "summary": "Sanofi stock faces temporary pressure after Trumpâs vaccine order, but trades cheap (9.2x P/E) with raised 2026 guidance. Click for this SNY update.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:18.819221"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "open_market_sells": 2,
+        "compensation_grants": 8,
+        "net_open_market_value": -298710.27,
+        "net_open_market_fmt": "-$299K",
+        "largest_single_transaction": {
+          "name": "Conway Patrick Hugh",
+          "direction": "sell",
+          "dollar_value": 205000,
+          "dollar_fmt": "$205K",
+          "date": "2026-08-05",
+          "shares_traded": 500,
+          "price_per_share": 410,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "Stankiewicz Dennis Andrew",
+            "direction": "sell",
+            "dollar_value": 93710.27,
+            "dollar_fmt": "$94K",
+            "date": "2026-08-11",
+            "shares_traded": 233,
+            "price_per_share": 402.19,
+            "transaction_code": ""
+          },
+          {
+            "name": "Conway Patrick Hugh",
+            "direction": "sell",
+            "dollar_value": 205000,
+            "dollar_fmt": "$205K",
+            "date": "2026-08-05",
+            "shares_traded": 500,
+            "price_per_share": 410,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:00.577605"
+      "scanned_at": "2026-08-25T12:01:19.762797"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 0,
-        "compensation_grants": 6,
-        "net_open_market_value": 181013.49,
-        "net_open_market_fmt": "+$181K",
+        "open_market_sells": 1,
+        "compensation_grants": 2,
+        "net_open_market_value": -722504.51,
+        "net_open_market_fmt": "-$723K",
         "largest_single_transaction": {
-          "name": "BURKE STEPHEN B",
-          "direction": "buy",
-          "dollar_value": 56300.76,
-          "dollar_fmt": "$56K",
-          "date": "2026-06-30",
-          "shares_traded": 172,
-          "price_per_share": 327.33,
+          "name": "Leopold Robin",
+          "direction": "sell",
+          "dollar_value": 903518.0,
+          "dollar_fmt": "$904K",
+          "date": "2026-08-11",
+          "shares_traded": 2500,
+          "price_per_share": 361.4072,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Leopold Robin",
+            "direction": "sell",
+            "dollar_value": 903518.0,
+            "dollar_fmt": "$904K",
+            "date": "2026-08-11",
+            "shares_traded": 2500,
+            "price_per_share": 361.4072,
+            "transaction_code": ""
+          },
           {
             "name": "BURKE STEPHEN B",
             "direction": "buy",
@@ -580,21 +710,21 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "strong_buy",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:01.256302"
+      "scanned_at": "2026-08-25T12:01:20.682857"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 2,
+        "open_market_sells": 5,
         "compensation_grants": 5,
-        "net_open_market_value": -287950.64,
-        "net_open_market_fmt": "-$288K",
+        "net_open_market_value": -472395.64,
+        "net_open_market_fmt": "-$472K",
         "largest_single_transaction": {
           "name": "LESLIE ERICKA T",
           "direction": "sell",
@@ -606,6 +736,16 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 135989.22,
+            "dollar_fmt": "$136K",
+            "date": "2026-08-04",
+            "shares_traded": 129,
+            "price_per_share": 1054.18,
+            "transaction_code": ""
+          },
           {
             "name": "LESLIE ERICKA T",
             "direction": "sell",
@@ -630,17 +770,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Strategy Will Match Government's $1,000 Contribution for Employees' Children in Trump Accounts Initiative",
-          "date": "2026-08-05 17:30",
-          "summary": "Strategy Inc. is joining Invest America Business Pledge, making annual $250 contribution to Trump Accounts for eligible children of US employees.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:27:01.984810"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-25T12:01:21.553861"
     },
     "XOM": {
       "insider_signal": {
@@ -656,121 +787,95 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
-          "date": "2026-08-07 09:00",
-          "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil company profits from Iran War infuriated President Donald Trump. He only has himself to blame.",
-          "date": "2026-08-06 12:00",
-          "summary": "If President Donald Trump wants lower gas prices, he needs to end some wars, writes columnist Chris Tomlinson.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:27:02.643860"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-25T12:01:22.424316"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 5,
+        "open_market_buys": 3,
+        "open_market_sells": 2,
         "compensation_grants": 5,
-        "net_open_market_value": -103953635.54,
-        "net_open_market_fmt": "-$104.0M",
+        "net_open_market_value": -2110333.11,
+        "net_open_market_fmt": "-$2.1M",
         "largest_single_transaction": {
-          "name": "HESS JOHN B",
+          "name": "GUSTAVSON JEFF B",
           "direction": "sell",
-          "dollar_value": 52888194.05,
-          "dollar_fmt": "$52.9M",
-          "date": "2026-08-03",
-          "shares_traded": 271946,
-          "price_per_share": 194.4805,
+          "dollar_value": 2737866.56,
+          "dollar_fmt": "$2.7M",
+          "date": "2026-08-11",
+          "shares_traded": 14044,
+          "price_per_share": 194.9492,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "HESS JOHN B",
+            "name": "GUSTAVSON JEFF B",
             "direction": "sell",
-            "dollar_value": 5860162.25,
-            "dollar_fmt": "$5.9M",
-            "date": "2026-08-03",
-            "shares_traded": 30031,
-            "price_per_share": 195.1371,
+            "dollar_value": 2737866.56,
+            "dollar_fmt": "$2.7M",
+            "date": "2026-08-11",
+            "shares_traded": 14044,
+            "price_per_share": 194.9492,
             "transaction_code": ""
           },
           {
-            "name": "HESS JOHN B",
-            "direction": "sell",
-            "dollar_value": 52888194.05,
-            "dollar_fmt": "$52.9M",
-            "date": "2026-08-03",
-            "shares_traded": 271946,
-            "price_per_share": 194.4805,
+            "name": "GUSTAVSON JEFF B",
+            "direction": "buy",
+            "dollar_value": 515438.61,
+            "dollar_fmt": "$515K",
+            "date": "2026-08-11",
+            "shares_traded": 4561,
+            "price_per_share": 113.01,
             "transaction_code": ""
           },
           {
-            "name": "HESS JOHN B",
-            "direction": "sell",
-            "dollar_value": 22935045.41,
-            "dollar_fmt": "$22.9M",
-            "date": "2026-08-03",
-            "shares_traded": 118657,
-            "price_per_share": 193.2886,
+            "name": "GUSTAVSON JEFF B",
+            "direction": "buy",
+            "dollar_value": 580746.55,
+            "dollar_fmt": "$581K",
+            "date": "2026-08-11",
+            "shares_traded": 4633,
+            "price_per_share": 125.35,
             "transaction_code": ""
           },
           {
-            "name": "HESS JOHN B",
-            "direction": "sell",
-            "dollar_value": 17353349.21,
-            "dollar_fmt": "$17.4M",
-            "date": "2026-08-03",
-            "shares_traded": 90031,
-            "price_per_share": 192.7486,
+            "name": "GUSTAVSON JEFF B",
+            "direction": "buy",
+            "dollar_value": 568614.0,
+            "dollar_fmt": "$569K",
+            "date": "2026-08-11",
+            "shares_traded": 4850,
+            "price_per_share": 117.24,
             "transaction_code": ""
           },
           {
-            "name": "HESS JOHN B",
+            "name": "Wirth Michael K",
             "direction": "sell",
-            "dollar_value": 4916884.62,
-            "dollar_fmt": "$4.9M",
-            "date": "2026-08-03",
-            "shares_traded": 25179,
-            "price_per_share": 195.2772,
+            "dollar_value": 1037265.7,
+            "dollar_fmt": "$1.0M",
+            "date": "2026-08-05",
+            "shares_traded": 5547,
+            "price_per_share": 186.9958,
             "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
-          "date": "2026-08-07 09:00",
-          "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-07T12:27:03.436892"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-25T12:01:23.398485"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 1,
+        "open_market_buys": 5,
         "open_market_sells": 0,
-        "compensation_grants": 8,
-        "net_open_market_value": 23217.26,
-        "net_open_market_fmt": "+$23K",
+        "compensation_grants": 0,
+        "net_open_market_value": 58766.46,
+        "net_open_market_fmt": "+$59K",
         "largest_single_transaction": {
           "name": "MacLennan David",
           "direction": "buy",
@@ -782,32 +887,71 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:04.124657"
+      "trump_mentions": [
+        {
+          "headline": "Caterpillar bags $392M tariff refund as duty costs shrink",
+          "date": "2026-08-20 08:09",
+          "summary": "Excluding the refund, the heavy-equipment maker incurred $400 million in tariff expenses in the quarter that ended June 30.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:24.310899"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 4,
-        "open_market_sells": 4,
-        "compensation_grants": 2,
-        "net_open_market_value": -2165493.21,
-        "net_open_market_fmt": "-$2.2M",
+        "open_market_buys": 2,
+        "open_market_sells": 5,
+        "compensation_grants": 3,
+        "net_open_market_value": -5299219.37,
+        "net_open_market_fmt": "-$5.3M",
         "largest_single_transaction": {
-          "name": "Ali Mohamed",
+          "name": "Giglietti Robert M.",
           "direction": "sell",
-          "dollar_value": 984049.04,
-          "dollar_fmt": "$984K",
-          "date": "2026-07-24",
-          "shares_traded": 2782,
-          "price_per_share": 353.72,
+          "dollar_value": 1976638.72,
+          "dollar_fmt": "$2.0M",
+          "date": "2026-08-11",
+          "shares_traded": 5344,
+          "price_per_share": 369.88,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "sell",
+            "dollar_value": 1812113.06,
+            "dollar_fmt": "$1.8M",
+            "date": "2026-08-11",
+            "shares_traded": 4898,
+            "price_per_share": 369.97,
+            "transaction_code": ""
+          },
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "sell",
+            "dollar_value": 1976638.72,
+            "dollar_fmt": "$2.0M",
+            "date": "2026-08-11",
+            "shares_traded": 5344,
+            "price_per_share": 369.88,
+            "transaction_code": ""
+          },
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "buy",
+            "dollar_value": 375369.3,
+            "dollar_fmt": "$375K",
+            "date": "2026-08-11",
+            "shares_traded": 10242,
+            "price_per_share": 36.65,
+            "transaction_code": ""
+          },
           {
             "name": "Ali Mohamed",
             "direction": "sell",
@@ -847,33 +991,22 @@
             "shares_traded": 1266,
             "price_per_share": 353.74,
             "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "sell",
-            "dollar_value": 625783.75,
-            "dollar_fmt": "$626K",
-            "date": "2026-07-24",
-            "shares_traded": 1769,
-            "price_per_share": 353.75,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "buy",
-            "dollar_value": 273180.35,
-            "dollar_fmt": "$273K",
-            "date": "2026-07-24",
-            "shares_traded": 3035,
-            "price_per_share": 90.01,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:04.843023"
+      "trump_mentions": [
+        {
+          "headline": "Shares of shipbuilders are trading higher, as President Trump is epected to make an announcement on shipbuildings.",
+          "date": "2026-08-20 12:37",
+          "summary": "",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:25.254637"
     },
     "WMT": {
       "insider_signal": {
@@ -940,61 +1073,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:05.536189"
+      "scanned_at": "2026-08-25T12:01:26.198868"
     },
     "COST": {
       "insider_signal": {
         "ticker": "COST",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 1,
-        "net_open_market_value": -847345.46,
-        "net_open_market_fmt": "-$847K",
-        "largest_single_transaction": {
-          "name": "DENMAN KENNETH D",
-          "direction": "sell",
-          "dollar_value": 847345.46,
-          "dollar_fmt": "$847K",
-          "date": "2026-06-23",
-          "shares_traded": 885,
-          "price_per_share": 957.4525,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "DENMAN KENNETH D",
-            "direction": "sell",
-            "dollar_value": 847345.46,
-            "dollar_fmt": "$847K",
-            "date": "2026-06-23",
-            "shares_traded": 885,
-            "price_per_share": 957.4525,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
         {
-          "headline": "Amazon says it will share $600 million in Trump tariff refunds with some of its customers — will you get a payout?",
-          "date": "2026-08-05 16:15",
-          "summary": "Of the $166 billion in tariff refunds available, $71 billion has been claimed by companies, but very little of the refund money has gone directly to consumers.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "The Treasury Has Now Refunded $100 Billion Of Tariff Revenue, and Scott Bessent Predicts None of It Is Going to You",
-          "date": "2026-08-05 11:08",
-          "summary": "The Supreme Court forced Washington to return over a hundred billion dollars in tariff money, but Treasury Secretary Scott Bessent made a bold prediction about where that cash would actually land. Six",
+          "headline": "Target Raises View as Growth Momentum Extends Beyond Tariff Tailwinds",
+          "date": "2026-08-21 15:40",
+          "summary": "Target lifts its fiscal 2026 outlook as sales, digital growth and category strength signal momentum beyond tariff refund benefits, with higher earnings guidance.",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:06.259774"
+      "scanned_at": "2026-08-25T12:01:27.107244"
     },
     "FCX": {
       "insider_signal": {
@@ -1052,25 +1157,25 @@
       },
       "trump_mentions": [
         {
-          "headline": "Shares of copper-related companies are trading higher, possibly as July inflows break records as investors prepare for anticipated tariffs on refined imports. The commodity is seeing increasing demand since it supports AI infrastructure, and recent storms in Chile have disrupted production.",
-          "date": "2026-08-04 15:10",
-          "summary": "",
-          "source": "Benzinga",
+          "headline": "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
+          "date": "2026-08-23 18:30",
+          "summary": "The market rally suffered damage last week, though bitcoin and gold shined. New Trump tariffs on Canada began Saturday. Nvidia, CrowdStrike and Fed's Warsh loom.",
+          "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-07T12:27:06.904783"
+      "scanned_at": "2026-08-25T12:01:28.000064"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 1,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 69598.79,
-        "net_open_market_fmt": "+$70K",
+        "net_open_market_value": 36184.23,
+        "net_open_market_fmt": "+$36K",
         "largest_single_transaction": {
           "name": "Arnaboldi Nicole S",
           "direction": "buy",
@@ -1082,11 +1187,11 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "strong_buy",
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:07.612803"
+      "scanned_at": "2026-08-25T12:01:28.920960"
     },
     "PLD": {
       "insider_signal": {
@@ -1123,7 +1228,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-07T12:27:08.275287"
+      "scanned_at": "2026-08-25T12:01:29.813844"
     }
   }
 }

@@ -1,15 +1,15 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 33,
+    "current_day": 44,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-08-25T15:30:48.446265+00:00",
+    "last_updated": "2026-08-24T18:57:37.701982+00:00",
     "session_number": 3
   },
-  "cash": 2449.93,
+  "cash": 4919.95,
   "initial_capital": 5000.0,
-  "equity": 4868.73,
+  "equity": 4919.95,
   "peak_equity": 5033.78,
   "circuit_breaker": {
     "triggered": false,
@@ -17,102 +17,15 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -2.01,
-    "sortino": -2.13,
-    "calmar": -2.55,
+    "sharpe": -1.08,
+    "sortino": -1.07,
+    "calmar": -1.35,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
-    "spy_current_price": 773.0,
-    "benchmark_return_pct": 2.39
+    "spy_current_price": 764.17,
+    "benchmark_return_pct": 1.22
   },
-  "positions": {
-    "ABT": {
-      "direction": "long",
-      "qty": 4,
-      "entry_price": 101.66,
-      "cost_basis": 406.64,
-      "last_price": 107.33,
-      "stop_loss": 100.4,
-      "take_profit": 115.89,
-      "partial_profit_price": 108.78,
-      "stop_loss_pct": 7.0,
-      "take_profit_pct": 14.0,
-      "highest_price": 107.96,
-      "lowest_price": 101.66,
-      "partial_taken": false,
-      "opened_date": "2026-07-21",
-      "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
-    },
-    "TMO": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 566.41,
-      "cost_basis": 566.41,
-      "last_price": 588.34,
-      "stop_loss": 553.04,
-      "take_profit": 634.38,
-      "partial_profit_price": 600.39,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 588.34,
-      "lowest_price": 566.41,
-      "partial_taken": false,
-      "opened_date": "2026-07-30",
-      "journal_note": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD."
-    },
-    "LMT": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 564.33,
-      "cost_basis": 564.33,
-      "last_price": 587.78,
-      "stop_loss": 554.3,
-      "take_profit": 632.05,
-      "partial_profit_price": 598.19,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 589.68,
-      "lowest_price": 564.33,
-      "partial_taken": false,
-      "opened_date": "2026-07-30",
-      "journal_note": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment."
-    },
-    "MA": {
-      "direction": "long",
-      "qty": 1,
-      "entry_price": 577.39,
-      "cost_basis": 577.39,
-      "last_price": 562.02,
-      "stop_loss": 548.52,
-      "take_profit": 635.13,
-      "partial_profit_price": 606.26,
-      "stop_loss_pct": 5.0,
-      "take_profit_pct": 10.0,
-      "highest_price": 577.39,
-      "lowest_price": 577.39,
-      "partial_taken": false,
-      "opened_date": "2026-07-31",
-      "journal_note": "MA is a Financials sector name \u2014 one of the strategy brief's focus sectors \u2014 with strong post-earnings momentum: Q2 revenue of $9.28B (+14% YoY) and EPS of $5.04 beating estimates by 5.66%, triggering a bullish MACD crossover (14.49 vs signal 12.02) with RSI at 66.14, comfortably below overbought. Risk team approved at 5% sizing; the conservative perspective flagged debt levels but MA's 206% ROE and 13.82% revenue CAGR justify the 34.3x P/E premium in digital payments. Entry near $570.67 targets $577 resistance (upper Bollinger Band $574.38 and recent high $577.35) for ~1.2% near-term upside, with a 5% stop at ~$542 near the middle Bollinger Band limiting downside to ~$28/share \u2014 favorable risk/reward given risk-on posture and HIGH capital deployment priority to close the -12% alpha deficit."
-    },
-    "SYY": {
-      "direction": "long",
-      "qty": 3,
-      "entry_price": 84.62,
-      "cost_basis": 253.85,
-      "last_price": 83.78,
-      "stop_loss": 79.54,
-      "take_profit": 94.77,
-      "partial_profit_price": 89.69,
-      "stop_loss_pct": 6.0,
-      "take_profit_pct": 12.0,
-      "highest_price": 84.62,
-      "lowest_price": 84.62,
-      "partial_taken": false,
-      "opened_date": "2026-08-06",
-      "opened_session_day": 31,
-      "journal_note": "SYY is a BUY driven primarily by the concentrated insider buying cluster ($829K+ in open-market purchases on July 31 by multiple executives), which is a high-conviction near-term signal that insiders view post-earnings levels as undervalued. The stock trades at a P/E of 22.85x with ROE of 75.42%, and just beat Q4 earnings with 4.7% sales growth \u2014 UBS raised its price target to $95. The risk-conservative perspective flagged the 5.07x D/E leverage and stretched valuation, recommending a smaller position, but two of three risk perspectives approved at 4% sizing, and the risk assessment is approved \u2014 I agree the insider buying catalysts and earnings beat justify proceeding. With a 6% stop-loss, downside is roughly $5 per share while upside to the $95 UBS target offers meaningfully better asymmetry. Position is sized conservatively at 4% (~$302) given missing technicals and the Consumer Staples sector isn't a focus sector, but capital deployment priority is HIGH and this is a legitimate alpha opportunity."
-    }
-  },
+  "positions": {},
   "open_orders": [
     {
       "ticker": "UNH",
@@ -545,6 +458,96 @@
       "opened_date": "2026-07-31",
       "closed_date": "2026-08-04",
       "journal_note": "CMG is a Consumer Discretionary name \u2014 not in any avoided sector \u2014 with a clean technical breakout above both 20d EMA ($34.31) and 50d EMA ($33.52), currently at $37.80 consolidating below the $38.52 resistance with a bullish MACD crossover (histogram +0.35). Fundamentals are exceptional: 48.45% ROE, zero debt, 11.36% 3-year revenue CAGR, and a Q2 earnings beat with 9.3% revenue growth to $3.35B. The risk team approved at 5% position size with an 8% stop-loss; the conservative perspective flagged high P/E valuation, but I agree with the majority that the growth trajectory and insider buying cluster ($215K each across five executives) justify the entry. Upside target is the $38.52 breakout level and beyond (~2% near-term, with potential for re-rating higher), while the 8% stop at ~$34.77 limits downside to roughly $27 on this position \u2014 an asymmetric setup given the risk-on posture and HIGH capital deployment priority."
+    },
+    {
+      "ticker": "LMT",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 564.33,
+      "exit_price": 599.88,
+      "cost_basis": 564.33,
+      "proceeds": 599.88,
+      "pnl": 35.55,
+      "pnl_pct": 6.3,
+      "reason": "partial_profit",
+      "opened_date": "2026-07-30",
+      "closed_date": "2026-08-10",
+      "journal_note": "LMT is in the Industrials/Defense sector, which is not among the focus sectors (Healthcare, Financials, Energy) listed in today's strategy brief. While not explicitly in the 'avoid' list, the brief calls for 'disciplined selectivity' and 'opportunistically adding one high-conviction name in leading sectors.' LMT does not qualify as a leading sector pick. Additionally, RSI at 72.3 signals overbought conditions, the risk team's consolidated assessment was 'rejected' with 2 of 3 perspectives recommending reduce or reject, and the stock at $569 is extended above the 50-day EMA at $530 (7.4% premium). With only $3,294 cash and market posture NEUTRAL, deploying into a non-focus sector with overbought technicals is not the highest-conviction use of limited capital. HOLD preserves dry powder for a Healthcare, Financials, or Energy opportunity with better risk/reward alignment."
+    },
+    {
+      "ticker": "ABT",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 101.66,
+      "exit_price": 109.78,
+      "cost_basis": 203.32,
+      "proceeds": 219.55,
+      "pnl": 16.23,
+      "pnl_pct": 7.98,
+      "reason": "partial_profit",
+      "opened_date": "2026-07-21",
+      "closed_date": "2026-08-11",
+      "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
+    },
+    {
+      "ticker": "TMO",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 566.41,
+      "exit_price": 603.95,
+      "cost_basis": 566.41,
+      "proceeds": 603.95,
+      "pnl": 37.54,
+      "pnl_pct": 6.63,
+      "reason": "partial_profit",
+      "opened_date": "2026-07-30",
+      "closed_date": "2026-08-11",
+      "journal_note": "TMO is already held in the portfolio. The trader's recommendation is to add to the existing TMO position, but with RSI at 72.15 (overbought territory) and price trading 7% above the 20-day EMA (~$538.74), chasing an extended move in a name we already own adds concentration risk without sufficient margin of safety. The risk-conservative perspective flagged long-term growth concerns, and I agree \u2014 adding here near the upper Bollinger Band (~$580) offers poor entry asymmetry: ~$5-70 upside to analyst targets ($580-$650) versus ~$35 downside to the 6% stop (~$540). With market posture NEUTRAL, VIX rising, and capital deployment priority NORMAL, the prudent move is to hold the existing TMO position rather than increase exposure at technically stretched levels. Setting qty to 0 as HOLD."
+    },
+    {
+      "ticker": "MA",
+      "direction": "long",
+      "qty": 1,
+      "entry_price": 577.39,
+      "exit_price": 565.18,
+      "cost_basis": 577.39,
+      "proceeds": 565.18,
+      "pnl": -12.21,
+      "pnl_pct": -2.11,
+      "reason": "time_exit",
+      "opened_date": "2026-07-31",
+      "closed_date": "2026-08-13",
+      "journal_note": "MA is a Financials sector name \u2014 one of the strategy brief's focus sectors \u2014 with strong post-earnings momentum: Q2 revenue of $9.28B (+14% YoY) and EPS of $5.04 beating estimates by 5.66%, triggering a bullish MACD crossover (14.49 vs signal 12.02) with RSI at 66.14, comfortably below overbought. Risk team approved at 5% sizing; the conservative perspective flagged debt levels but MA's 206% ROE and 13.82% revenue CAGR justify the 34.3x P/E premium in digital payments. Entry near $570.67 targets $577 resistance (upper Bollinger Band $574.38 and recent high $577.35) for ~1.2% near-term upside, with a 5% stop at ~$542 near the middle Bollinger Band limiting downside to ~$28/share \u2014 favorable risk/reward given risk-on posture and HIGH capital deployment priority to close the -12% alpha deficit."
+    },
+    {
+      "ticker": "SYY",
+      "direction": "long",
+      "qty": 3,
+      "entry_price": 84.62,
+      "exit_price": 83.34,
+      "cost_basis": 253.85,
+      "proceeds": 250.03,
+      "pnl": -3.82,
+      "pnl_pct": -1.5,
+      "reason": "time_exit",
+      "opened_date": "2026-08-06",
+      "closed_date": "2026-08-20",
+      "journal_note": "SYY is a BUY driven primarily by the concentrated insider buying cluster ($829K+ in open-market purchases on July 31 by multiple executives), which is a high-conviction near-term signal that insiders view post-earnings levels as undervalued. The stock trades at a P/E of 22.85x with ROE of 75.42%, and just beat Q4 earnings with 4.7% sales growth \u2014 UBS raised its price target to $95. The risk-conservative perspective flagged the 5.07x D/E leverage and stretched valuation, recommending a smaller position, but two of three risk perspectives approved at 4% sizing, and the risk assessment is approved \u2014 I agree the insider buying catalysts and earnings beat justify proceeding. With a 6% stop-loss, downside is roughly $5 per share while upside to the $95 UBS target offers meaningfully better asymmetry. Position is sized conservatively at 4% (~$302) given missing technicals and the Consumer Staples sector isn't a focus sector, but capital deployment priority is HIGH and this is a legitimate alpha opportunity."
+    },
+    {
+      "ticker": "ABT",
+      "direction": "long",
+      "qty": 2,
+      "entry_price": 101.66,
+      "exit_price": 115.72,
+      "cost_basis": 203.32,
+      "proceeds": 231.43,
+      "pnl": 28.11,
+      "pnl_pct": 13.83,
+      "reason": "take_profit",
+      "opened_date": "2026-07-21",
+      "closed_date": "2026-08-21",
+      "journal_note": "ABT is a Healthcare sector name \u2014 one of the strategy brief's focus sectors \u2014 with a fresh Q2 earnings beat catalyst and medium conviction from the trader. At $101.66, ABT broke above its upper Bollinger Band ($101.14) with MACD bullish (2.07 vs signal 1.42) and RSI at 66.8, still below overbought, sitting well above 20d EMA ($94.06) and 50d EMA ($91.84). The risk team approved at 0.06 position size with 7% stop-loss; the conservative perspective flagged stagnant revenue growth but the post-earnings analyst upgrades (Citi, JPM, Wells, Piper, Evercore all raising targets) and insider net buying of +$137K mitigate that concern. Upside target is in the $108-110 range based on analyst revisions (~6-8% from entry), while the 7% stop at ~$94.54 limits downside to roughly $28 on a 4-share position \u2014 a favorable risk/reward of better than 1:1 on a high-quality healthcare compounder that helps close our -1.2% alpha deficit."
     }
   ],
   "equity_curve": [
@@ -845,23 +848,78 @@
     },
     {
       "day": 33,
-      "date": "2026-08-25",
+      "date": "2026-08-10",
       "equity": 4868.73
     },
     {
       "day": 33,
-      "date": "2026-08-25",
-      "equity": 4868.73
+      "date": "2026-08-10",
+      "equity": 4895.61
     },
     {
-      "day": 33,
-      "date": "2026-08-25",
-      "equity": 4868.73
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 4895.61
     },
     {
-      "day": 33,
-      "date": "2026-08-25",
-      "equity": 4868.73
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 4908.39
+    },
+    {
+      "day": 35,
+      "date": "2026-08-12",
+      "equity": 4908.39
+    },
+    {
+      "day": 35,
+      "date": "2026-08-12",
+      "equity": 4910.41
+    },
+    {
+      "day": 36,
+      "date": "2026-08-13",
+      "equity": 4910.41
+    },
+    {
+      "day": 36,
+      "date": "2026-08-13",
+      "equity": 4911.76
+    },
+    {
+      "day": 37,
+      "date": "2026-08-14",
+      "equity": 4910.84
+    },
+    {
+      "day": 38,
+      "date": "2026-08-17",
+      "equity": 4904.62
+    },
+    {
+      "day": 39,
+      "date": "2026-08-18",
+      "equity": 4912.67
+    },
+    {
+      "day": 40,
+      "date": "2026-08-19",
+      "equity": 4915.2
+    },
+    {
+      "day": 41,
+      "date": "2026-08-20",
+      "equity": 4918.08
+    },
+    {
+      "day": 42,
+      "date": "2026-08-21",
+      "equity": 4919.95
+    },
+    {
+      "day": 43,
+      "date": "2026-08-24",
+      "equity": 4919.95
     }
   ],
   "journal": [
@@ -1673,15 +1731,16 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 30.51,
+      "exit_date": "2026-08-11",
+      "pnl_pct": 4.99,
+      "outcome": "win",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $29.06 | stock +3.5% vs ETF +0.0% (5d) | vol 1.5x | RSI 62",
       "qty": 84,
-      "allocated_usd": 2441.04
+      "allocated_usd": 2441.04,
+      "pnl_usd": 121.8
     },
     {
       "id": "MC-2026-08-06-HSIC",
@@ -1696,15 +1755,16 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 89.48,
+      "exit_date": "2026-08-11",
+      "pnl_pct": -0.12,
+      "outcome": "loss",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $89.59 | stock +5.2% vs ETF +0.0% (5d) | vol 1.6x | RSI 68",
       "qty": 13,
-      "allocated_usd": 1164.67
+      "allocated_usd": 1164.67,
+      "pnl_usd": -1.43
     },
     {
       "id": "MC-2026-08-06-PRGO",
@@ -1719,21 +1779,22 @@
       "target_pct": 5.0,
       "stop_pct": 3.0,
       "rrr": 1.67,
-      "status": "open",
-      "exit_price": null,
-      "exit_date": null,
-      "pnl_pct": null,
-      "outcome": null,
+      "status": "closed",
+      "exit_price": 12.87,
+      "exit_date": "2026-08-11",
+      "pnl_pct": -3.01,
+      "outcome": "loss",
       "auto_close_date": "2026-08-11",
       "rationale": "20d high $13.27 | stock +28.7% vs ETF +0.0% (5d) | vol 1.5x | RSI 75",
       "qty": 49,
-      "allocated_usd": 650.23
+      "allocated_usd": 650.23,
+      "pnl_usd": -19.6
     }
   ],
   "midcap_capital": {
     "initial": 5000.0,
-    "cash": 655.24,
-    "equity": 4911.18
+    "cash": 5011.95,
+    "equity": 5011.95
   },
   "penny_signals": [],
   "penny_capital": {
@@ -1841,6 +1902,61 @@
       "day": 32,
       "date": "2026-08-07",
       "equity": 5119.27
+    },
+    {
+      "day": 33,
+      "date": "2026-08-10",
+      "equity": 5121.52
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5101.99
+    },
+    {
+      "day": 35,
+      "date": "2026-08-12",
+      "equity": 5120.66
+    },
+    {
+      "day": 36,
+      "date": "2026-08-13",
+      "equity": 5151.79
+    },
+    {
+      "day": 37,
+      "date": "2026-08-14",
+      "equity": 5140.53
+    },
+    {
+      "day": 38,
+      "date": "2026-08-17",
+      "equity": 5123.51
+    },
+    {
+      "day": 39,
+      "date": "2026-08-18",
+      "equity": 5085.63
+    },
+    {
+      "day": 40,
+      "date": "2026-08-19",
+      "equity": 5098.48
+    },
+    {
+      "day": 41,
+      "date": "2026-08-20",
+      "equity": 5057.29
+    },
+    {
+      "day": 42,
+      "date": "2026-08-21",
+      "equity": 5072.25
+    },
+    {
+      "day": 43,
+      "date": "2026-08-24",
+      "equity": 5060.8
     }
   ],
   "midcap_equity_curve": [
@@ -2003,6 +2119,61 @@
       "day": 32,
       "date": "2026-08-07",
       "equity": 4911.18
+    },
+    {
+      "day": 33,
+      "date": "2026-08-10",
+      "equity": 4911.18
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5011.95
+    },
+    {
+      "day": 35,
+      "date": "2026-08-12",
+      "equity": 5011.95
+    },
+    {
+      "day": 36,
+      "date": "2026-08-13",
+      "equity": 5011.95
+    },
+    {
+      "day": 37,
+      "date": "2026-08-14",
+      "equity": 5011.95
+    },
+    {
+      "day": 38,
+      "date": "2026-08-17",
+      "equity": 5011.95
+    },
+    {
+      "day": 39,
+      "date": "2026-08-18",
+      "equity": 5011.95
+    },
+    {
+      "day": 40,
+      "date": "2026-08-19",
+      "equity": 5011.95
+    },
+    {
+      "day": 41,
+      "date": "2026-08-20",
+      "equity": 5011.95
+    },
+    {
+      "day": 42,
+      "date": "2026-08-21",
+      "equity": 5011.95
+    },
+    {
+      "day": 43,
+      "date": "2026-08-24",
+      "equity": 5011.95
     }
   ],
   "penny_equity_curve": [
@@ -2165,186 +2336,241 @@
       "day": 32,
       "date": "2026-08-07",
       "equity": 5000.0
+    },
+    {
+      "day": 33,
+      "date": "2026-08-10",
+      "equity": 5000.0
+    },
+    {
+      "day": 34,
+      "date": "2026-08-11",
+      "equity": 5000.0
+    },
+    {
+      "day": 35,
+      "date": "2026-08-12",
+      "equity": 5000.0
+    },
+    {
+      "day": 36,
+      "date": "2026-08-13",
+      "equity": 5000.0
+    },
+    {
+      "day": 37,
+      "date": "2026-08-14",
+      "equity": 5000.0
+    },
+    {
+      "day": 38,
+      "date": "2026-08-17",
+      "equity": 5000.0
+    },
+    {
+      "day": 39,
+      "date": "2026-08-18",
+      "equity": 5000.0
+    },
+    {
+      "day": 40,
+      "date": "2026-08-19",
+      "equity": 5000.0
+    },
+    {
+      "day": 41,
+      "date": "2026-08-20",
+      "equity": 5000.0
+    },
+    {
+      "day": 42,
+      "date": "2026-08-21",
+      "equity": 5000.0
+    },
+    {
+      "day": 43,
+      "date": "2026-08-24",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 773.0,
-      "return_pct": 2.39
+      "current_price": 764.17,
+      "return_pct": 1.22
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 722.35,
-      "return_pct": 0.83
+      "current_price": 707.82,
+      "return_pct": -1.19
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 301.73,
-      "return_pct": 0.94
+      "current_price": 298.16,
+      "return_pct": -0.25
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 398.6,
-      "return_pct": 7.89
+      "current_price": 425.14,
+      "return_pct": 15.07
     }
   },
   "sector_strength": {
     "sectors": {
       "Technology": {
         "etf": "XLK",
-        "price": 183.32,
-        "mom_5d": 4.32,
-        "mom_1m": 1.06,
-        "mom_3m": 8.03,
+        "price": 188.86,
+        "mom_5d": 1.59,
+        "mom_1m": 2.85,
+        "mom_3m": 6.79,
         "above_ma50": true,
-        "rsi_14": 58.8,
-        "score": 4.43,
+        "rsi_14": 62.4,
+        "score": 4.26,
         "sector": "Technology"
       },
       "Communication Services": {
         "etf": "XLC",
-        "price": 111.32,
-        "mom_5d": 4.45,
-        "mom_1m": 1.7,
-        "mom_3m": -5.16,
+        "price": 110.27,
+        "mom_5d": -1.58,
+        "mom_1m": -1.18,
+        "mom_3m": -4.82,
         "above_ma50": true,
-        "rsi_14": 51.7,
-        "score": 2.15,
+        "rsi_14": 52.6,
+        "score": -1.03,
         "sector": "Communication Services"
       },
       "Consumer Discretionary": {
         "etf": "XLY",
-        "price": 118.56,
-        "mom_5d": 5.49,
-        "mom_1m": 2.83,
-        "mom_3m": -1.1,
+        "price": 117.89,
+        "mom_5d": -0.63,
+        "mom_1m": 1.72,
+        "mom_3m": -0.7,
         "above_ma50": true,
-        "rsi_14": 58.3,
-        "score": 3.84,
+        "rsi_14": 78.7,
+        "score": 1.53,
         "sector": "Consumer Discretionary"
       },
       "Healthcare": {
         "etf": "XLV",
-        "price": 166.34,
-        "mom_5d": 1.72,
-        "mom_1m": 2.49,
-        "mom_3m": 14.94,
+        "price": 168.44,
+        "mom_5d": 2.61,
+        "mom_1m": 6.41,
+        "mom_3m": 14.81,
         "above_ma50": true,
-        "rsi_14": 62.6,
-        "score": 5.75,
+        "rsi_14": 69.3,
+        "score": 7.95,
         "sector": "Healthcare"
       },
       "Financials": {
         "etf": "XLF",
-        "price": 58.29,
-        "mom_5d": 2.26,
-        "mom_1m": 6.04,
-        "mom_3m": 13.07,
+        "price": 57.92,
+        "mom_5d": -0.14,
+        "mom_1m": 3.1,
+        "mom_3m": 13.59,
         "above_ma50": true,
-        "rsi_14": 70.3,
-        "score": 7.31,
+        "rsi_14": 71.5,
+        "score": 5.23,
         "sector": "Financials"
       },
       "Energy": {
         "etf": "XLE",
-        "price": 58.3,
-        "mom_5d": -1.12,
-        "mom_1m": 4.86,
-        "mom_3m": 4.2,
+        "price": 61.03,
+        "mom_5d": 6.49,
+        "mom_1m": 7.16,
+        "mom_3m": 5.9,
         "above_ma50": true,
-        "rsi_14": 53.4,
-        "score": 3.93,
+        "rsi_14": 57.1,
+        "score": 7.71,
         "sector": "Energy"
       },
       "Industrials": {
         "etf": "XLI",
-        "price": 186.62,
-        "mom_5d": 4.61,
-        "mom_1m": 3.43,
-        "mom_3m": 7.25,
+        "price": 185.88,
+        "mom_5d": -0.25,
+        "mom_1m": 3.01,
+        "mom_3m": 7.06,
         "above_ma50": true,
-        "rsi_14": 65.7,
-        "score": 5.55,
+        "rsi_14": 59.2,
+        "score": 3.84,
         "sector": "Industrials"
       },
       "Consumer Staples": {
         "etf": "XLP",
-        "price": 86.23,
-        "mom_5d": 0.89,
-        "mom_1m": 2.18,
-        "mom_3m": 2.68,
+        "price": 85.08,
+        "mom_5d": -0.29,
+        "mom_1m": 1.99,
+        "mom_3m": 0.42,
         "above_ma50": true,
-        "rsi_14": 54.9,
-        "score": 2.89,
+        "rsi_14": 61.3,
+        "score": 1.99,
         "sector": "Consumer Staples"
       },
       "Materials": {
         "etf": "XLB",
         "price": 52.58,
-        "mom_5d": 1.82,
-        "mom_1m": 4.82,
-        "mom_3m": 2.3,
+        "mom_5d": -0.11,
+        "mom_1m": 3.83,
+        "mom_3m": 1.0,
         "above_ma50": true,
-        "rsi_14": 62.7,
-        "score": 4.42,
+        "rsi_14": 63.7,
+        "score": 3.08,
         "sector": "Materials"
       },
       "Utilities": {
         "etf": "XLU",
-        "price": 44.2,
-        "mom_5d": -1.03,
-        "mom_1m": -2.56,
-        "mom_3m": -2.04,
+        "price": 43.84,
+        "mom_5d": 0.41,
+        "mom_1m": -4.05,
+        "mom_3m": -1.86,
         "above_ma50": false,
-        "rsi_14": 39.9,
-        "score": -2.0,
+        "rsi_14": 23.6,
+        "score": -2.27,
         "sector": "Utilities"
       },
       "Real Estate": {
         "etf": "XLRE",
-        "price": 45.38,
-        "mom_5d": 0.18,
-        "mom_1m": 2.79,
-        "mom_3m": 2.21,
-        "above_ma50": true,
-        "rsi_14": 49.4,
-        "score": 2.89,
+        "price": 44.49,
+        "mom_5d": -1.51,
+        "mom_1m": -0.47,
+        "mom_3m": -0.2,
+        "above_ma50": false,
+        "rsi_14": 43.2,
+        "score": -0.73,
         "sector": "Real Estate"
       }
     },
     "ranking": [
-      "Financials",
       "Healthcare",
-      "Industrials",
-      "Technology",
-      "Materials",
       "Energy",
-      "Consumer Discretionary",
+      "Financials",
+      "Technology",
+      "Industrials",
+      "Materials",
       "Consumer Staples",
+      "Consumer Discretionary",
       "Real Estate",
       "Communication Services",
       "Utilities"
     ],
     "top_3": [
-      "Financials",
       "Healthcare",
-      "Industrials"
+      "Energy",
+      "Financials"
     ],
     "bottom_3": [
       "Real Estate",
       "Communication Services",
       "Utilities"
     ],
-    "as_of": "2026-08-06"
+    "as_of": "2026-08-13"
   },
   "strategy_brief": {
     "market_posture": "risk-on",
-    "risk_budget_multiplier": 1.3,
+    "risk_budget_multiplier": 1.4,
     "focus_sectors": [
-      "Financials",
       "Healthcare",
-      "Industrials"
+      "Energy",
+      "Financials"
     ],
     "avoid_sectors": [
       "Real Estate",
@@ -2353,7 +2579,7 @@
     ],
     "target_new_positions": 2,
     "conviction_floor": "medium",
-    "primary_thesis": "VIX at 16 and falling with bullish SPY trend and healthy credit conditions warrant aggressive deployment into momentum leaders \u2014 Financials, Healthcare, and Industrials. Portfolio alpha is critically negative at -5.1% vs SPY, and while deployment is technically ahead of pace at 44%, the alpha gap demands immediate broadening of exposure into high-momentum names to close the performance deficit.",
+    "primary_thesis": "With VIX at 14.6 and falling, SPY in a confirmed uptrend, and credit conditions healthy, the portfolio is critically under-deployed at 21% versus a 40% pace target \u2014 the -4.2% alpha gap is pure cash drag and must be closed aggressively today by initiating two new positions in leading sectors (Healthcare, Energy, Financials). Every idle dollar is a guaranteed underperformance against SPY in this environment.",
     "capital_deployment_priority": "high",
     "day_trade_go": true
   },
@@ -2379,26 +2605,26 @@
     "by_agent": {
       "fundamental": {
         "neutral": {
-          "n": 10,
+          "n": 11,
           "wins": 4,
-          "pnl_sum": -8.559999999999999
+          "pnl_sum": -10.669999999999998
         },
         "bullish": {
-          "n": 4,
-          "wins": 1,
-          "pnl_sum": -11.73
+          "n": 8,
+          "wins": 4,
+          "pnl_sum": 7.68
         }
       },
       "technical": {
         "neutral": {
-          "n": 9,
+          "n": 10,
           "wins": 3,
-          "pnl_sum": -10.409999999999998
+          "pnl_sum": -11.909999999999998
         },
         "bullish": {
-          "n": 5,
-          "wins": 2,
-          "pnl_sum": -9.88
+          "n": 9,
+          "wins": 5,
+          "pnl_sum": 8.92
         }
       },
       "sentiment": {
@@ -2408,16 +2634,16 @@
           "pnl_sum": -10.199999999999998
         },
         "bullish": {
-          "n": 4,
-          "wins": 1,
-          "pnl_sum": -10.09
+          "n": 9,
+          "wins": 4,
+          "pnl_sum": 7.210000000000001
         }
       },
       "conviction": {
         "medium": {
-          "n": 13,
-          "wins": 5,
-          "pnl_sum": -17.509999999999998
+          "n": 18,
+          "wins": 8,
+          "pnl_sum": -0.20999999999999686
         },
         "low": {
           "n": 1,
@@ -2427,30 +2653,40 @@
       },
       "risk": {
         "approved": {
-          "n": 8,
-          "wins": 3,
-          "pnl_sum": -11.2
+          "n": 12,
+          "wins": 5,
+          "pnl_sum": -0.19999999999999885
+        },
+        "overridden": {
+          "n": 1,
+          "wins": 1,
+          "pnl_sum": 6.3
         }
       }
     },
     "_counted_trades": [
-      "EOG_2026-07-21",
-      "TMO_2026-07-16",
-      "BA_2026-07-08",
-      "TSLA_2026-07-07",
+      "ABT_2026-07-21",
       "BTC-USD_2026-07-10",
       "ETH-USD_2026-07-13",
-      "HD_2026-06-29",
-      "GS_2026-07-16",
-      "UNH_2026-06-29",
-      "BAC_2026-07-20",
-      "VLO_2026-07-23",
-      "UNH_2026-07-08",
+      "TMO_2026-07-30",
       "PM_2026-07-20",
-      "CMG_2026-07-31"
+      "MA_2026-07-31",
+      "UNH_2026-06-29",
+      "TSLA_2026-07-07",
+      "BAC_2026-07-20",
+      "GS_2026-07-16",
+      "UNH_2026-07-08",
+      "BA_2026-07-08",
+      "CMG_2026-07-31",
+      "VLO_2026-07-23",
+      "TMO_2026-07-16",
+      "LMT_2026-07-30",
+      "HD_2026-06-29",
+      "EOG_2026-07-21",
+      "SYY_2026-08-06"
     ],
-    "last_updated": "2026-08-04",
-    "total_closed": 14
+    "last_updated": "2026-08-20",
+    "total_closed": 19
   },
   "data_corrections": [
     {
@@ -2463,11 +2699,5 @@
       "old_equity": 4306.93,
       "new_equity": 4881.73
     }
-  ],
-  "last_run_dates": {
-    "premarket_check": "2026-08-25",
-    "midcap_scan": "2026-08-25",
-    "penny_scan": "2026-08-25",
-    "morning_session": "2026-08-25"
-  }
+  ]
 }
