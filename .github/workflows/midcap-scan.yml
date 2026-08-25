@@ -2,7 +2,7 @@ name: Mid-Cap Relative Strength Scan
 
 on:
   schedule:
-    - cron: '10 11 * * 1-5'  # 7:10 AM UTC + ~3h20min GHA queue → arrives ~10:30–11:30 AM ET
+    - cron: '45 13 * * 1-5'  # 9:45 AM EDT + ~5-90min GHA queue → arrives ~9:50–11:15 AM ET
   workflow_dispatch:
 
 permissions:
@@ -22,12 +22,13 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: ~10:30 AM ET. Accept: 8:00 AM–4:00 PM (480–960 min). Wide for GHA queue variance.
-          if [ $MINS -ge 480 ] && [ $MINS -le 960 ]; then
+          # Target: ~10:30 AM ET. Accept: 8:00 AM–1:00 PM (480–780 min). Recalibrated 2026-08-25 for
+          # current ~5-90min GHA dispatch delay (was 480-960, sized for a since-resolved 2-8h queue).
+          if [ $MINS -ge 480 ] && [ $MINS -le 780 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:00 AM–4:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 8:00 AM–1:00 PM window, skipping."
           fi
 
   midcap-scan:

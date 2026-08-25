@@ -19,8 +19,9 @@ import argparse
 import json
 import os
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from dotenv import load_dotenv
 
@@ -41,7 +42,7 @@ from config import INITIAL_CAPITAL, SESSION_DAYS
 # ──────────────────────────────────────────────────────────────────────────────
 
 def _et_now() -> datetime:
-    return datetime.now(timezone(timedelta(hours=-4)))  # EDT (≈ ET year-round ±1h in winter)
+    return datetime.now(ZoneInfo("America/New_York"))
 
 
 def _load_portfolio() -> dict:
@@ -138,6 +139,34 @@ def check_drawdown(portfolio: dict) -> tuple:
     return "ok", f"{dd:.1f}%"
 
 
+_DAILY_PIPELINES = [
+    "premarket_check", "morning_session", "penny_scan", "midcap_scan", "eod_session",
+]
+
+
+def check_pipeline_freshness(portfolio: dict, date_str: str) -> tuple:
+    """
+    Catches the failure mode that let morning_session.py silently skip for 19 days
+    (2026-08-07 to 2026-08-25): each workflow's dst-gate job set skip=true every run,
+    but the workflow still reported "success" in the Actions UI (a skipped job doesn't
+    count as a failure). qa-analyst.yml only reacts to workflow_run conclusion=='failure',
+    so it structurally cannot see a "succeeded but skipped everything" run — this check
+    has to live here instead, on its own unconditional schedule.
+
+    Uses last_run_dates (stamped by mark_ran_today() in each script) rather than
+    journal/signal entries, since a quiet-but-healthy no-trade day looks identical to a
+    silently-skipped day if you only look at whether anything was written.
+    """
+    if not portfolio.get("session", {}).get("active"):
+        return "ok", "Session inactive — freshness check skipped"
+    last_run = portfolio.get("last_run_dates", {})
+    stale = [name for name in _DAILY_PIPELINES if last_run.get(name) != date_str]
+    if not stale:
+        return "ok", "All scheduled pipelines ran today"
+    status = "error" if len(stale) >= 2 else "warn"
+    return status, f"Did not run today: {', '.join(stale)} — check dst-gate windows"
+
+
 def check_alpha(portfolio: dict) -> tuple:
     equity  = portfolio.get("equity", INITIAL_CAPITAL)
     initial = portfolio.get("initial_capital", INITIAL_CAPITAL)
@@ -230,9 +259,10 @@ def build_recap(portfolio: dict, date_str: str) -> str:
     spy_ret = portfolio.get("stats", {}).get("benchmark_return_pct") or 0
     alpha   = our_ret - spy_ret
 
-    labels = ["Workflow freshness", "Circuit breaker", "Deployment", "Max drawdown", "Alpha vs SPY"]
+    labels = ["Workflow freshness", "Pipeline freshness", "Circuit breaker", "Deployment", "Max drawdown", "Alpha vs SPY"]
     checks = [
         check_staleness(portfolio),
+        check_pipeline_freshness(portfolio, date_str),
         check_circuit_breaker(portfolio),
         check_deployment(portfolio),
         check_drawdown(portfolio),

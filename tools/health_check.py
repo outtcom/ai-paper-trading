@@ -22,11 +22,15 @@ _TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "")
 _DASHBOARD      = "https://outtcom.github.io/ai-paper-trading/"
 
 # Map provider → (model_key, display_name, agents_affected)
+# display_name is derived from config.py so it can't drift out of sync with
+# MODELS again the way "Groq llama-3.3-70b" did after the 2026-08-25
+# gpt-oss-120b swap (that model was decommissioned by Groq; label was stale
+# in every log line and Telegram alert until fixed here).
 _PROVIDERS = [
-    ("fast",     "Groq llama-3.3-70b",  "Fundamental / Sentiment / Technical / Risk Manager"),
-    ("debate",   "OpenAI gpt-4o-mini",  "Bull & Bear Researchers"),
-    ("analyst",  "Anthropic Sonnet",     "Trader"),
-    ("decision", "Anthropic Opus",       "Fund Manager"),
+    ("fast",     f"Groq {MODELS['fast'].split('/', 1)[-1]}",   "Fundamental / Sentiment / Technical / Risk Manager"),
+    ("debate",   f"OpenAI {MODELS['debate'].split('/', 1)[-1]}", "Bull & Bear Researchers"),
+    ("analyst",  "Anthropic Sonnet",                             "Trader"),
+    ("decision", "Anthropic Opus",                                "Fund Manager"),
 ]
 
 

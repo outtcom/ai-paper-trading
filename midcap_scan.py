@@ -1,7 +1,9 @@
 """
 Mid-Cap Relative Strength Breakout Scanner
 Runs ~10:30 AM ET (Mon–Fri) via GitHub Actions.
-Cron: 10 11 * * 1-5 UTC (7:10 AM ET) + ~3h20min GHA queue delay.
+Cron: 45 13 * * 1-5 UTC (9:45 AM EDT) + ~5-90min GHA queue delay.
+Timing is enforced solely by the YAML dst-gate job (.github/workflows/midcap-scan.yml) —
+no internal time gate here, to avoid two independently-drifting timing thresholds.
 
 Strategy: Catch mid-cap stocks ($2B–$10B mkt cap) outperforming their sector
 ETF while making new 20-day price highs. The institutional accumulation sweet
@@ -40,18 +42,9 @@ from config import (
 )
 from tools.market_data import get_ohlcv, get_latest_price
 from tools.session_manager import (
-    get_portfolio, add_midcap_signal, get_open_midcap_signals,
+    get_portfolio, add_midcap_signal, get_open_midcap_signals, mark_ran_today,
 )
 from tools.telegram_bot import broadcast_message
-
-
-# ---------------------------------------------------------------------------
-# DST gate — skip if outside the expected ET arrival window
-# ---------------------------------------------------------------------------
-
-def _within_dst_gate() -> bool:
-    et_hour = datetime.now(ZoneInfo("America/New_York")).hour
-    return 8 <= et_hour < 15   # 8 AM–3 PM ET
 
 
 # ---------------------------------------------------------------------------
@@ -242,19 +235,20 @@ def _scan(today: str, dry_run: bool = False) -> list:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Print signals without writing or alerting")
-    parser.add_argument("--force", action="store_true", help="Skip time-window gate (for manual/demo runs)")
+    parser.add_argument("--force", action="store_true",
+                         help="No-op now that timing is enforced solely by the YAML dst-gate job; "
+                              "kept for CLI back-compat")
     args = parser.parse_args()
 
     today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[midcap] ========== Mid-Cap Scan {today} ==========")
 
-    if not args.force and not _within_dst_gate():
-        print("[midcap] Outside operating window (8 AM–3 PM ET). Exiting.")
-        return
-
     if not get_portfolio()["session"]["active"]:
         print("[midcap] No active session. Exiting.")
         return
+
+    if not args.dry_run:
+        mark_ran_today("midcap_scan")
 
     signals = _scan(today, dry_run=args.dry_run)
     print(f"[midcap] {len(signals)} signal(s) generated.")

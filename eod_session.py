@@ -631,6 +631,12 @@ def main():
         print(f"[eod] Session is paused ({_pause_reason}). Skipping.")
         return
 
+    if already_ran_today("eod_session"):
+        print("[eod] Already ran today. Exiting (idempotency guard).")
+        return
+
+    mark_ran_today("eod_session")
+
     session_day = get_session_day()
     total_days = portfolio["session"]["total_days"]
     print(f"[eod] Day {session_day}/{total_days}")

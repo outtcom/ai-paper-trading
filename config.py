@@ -122,11 +122,18 @@ VIX_ROC_THRESHOLD = 20.0    # % rise in VIX over 5 days → additional 0.5× siz
 # Model Assignments (tiered for token efficiency)
 # ---------------------------------------------------------------------------
 MODELS = {
-    "fast":     "groq/llama-3.3-70b-versatile",  # formatters (fundamental, sentiment, technical, risk manager)
+    "fast":     "groq/openai/gpt-oss-120b",       # formatters (fundamental, sentiment, technical, risk manager) — llama-3.3-70b-versatile decommissioned by Groq 2026-08-25
     "debate":   "openai/gpt-4o-mini",             # bull/bear researchers
     "analyst":  "claude-sonnet-4-6",              # trader
     "decision": "claude-opus-4-6",                # fund manager only
 }
+# NOTE: gpt-oss-120b is a reasoning model — it burns completion tokens on hidden
+# "reasoning" before any visible output. At default effort it can consume an
+# entire small max_tokens budget (confirmed: 400/400 tokens on reasoning, empty
+# content, finish_reason="length") and every downstream json.loads() call fails
+# silently. tools/groq_quota.py's groq_completion() forces reasoning_effort="low"
+# whenever the effective model contains "gpt-oss" — do not remove that without
+# re-verifying token headroom against every fast-agent's max_tokens.
 
 # ---------------------------------------------------------------------------
 # Trading Parameters

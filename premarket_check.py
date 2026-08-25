@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import WATCHLIST
 from tools.market_regime import get_premarket_gaps, is_event_blocked
-from tools.session_manager import get_portfolio
+from tools.session_manager import get_portfolio, mark_ran_today
 from tools.telegram_bot import broadcast_message
 
 GAP_THRESHOLD = 2.0   # percent — flag if gap exceeds this
@@ -29,6 +29,8 @@ def main():
     if not portfolio["session"]["active"]:
         print("[premarket] No active session. Skipping.")
         return
+
+    mark_ran_today("premarket_check")
 
     event_blocked, event_reason = is_event_blocked(today)
     if event_blocked:

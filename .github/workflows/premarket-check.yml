@@ -2,7 +2,7 @@ name: Pre-Market Gap Scanner
 
 on:
   schedule:
-    - cron: '30 7 * * 1-5'  # 3:30 AM UTC + ~3h30min queue → 7:00 AM ET (gate handles ±1h DST drift)
+    - cron: '15 10 * * 1-5'  # 6:15 AM EDT + ~5-90min queue → ~7:00 AM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:
@@ -22,12 +22,13 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: 7:00 AM ET. Accept: 5:00 AM–1:00 PM (300–780 min). Wide window handles up to 8h GHA queue delays.
-          if [ $MINS -ge 300 ] && [ $MINS -le 780 ]; then
+          # Target: 7:00 AM ET. Accept: 4:30 AM–9:30 AM (270–570 min). Recalibrated 2026-08-25 for
+          # current ~5-90min GHA dispatch delay (was 300-780, sized for a since-resolved 2-8h queue).
+          if [ $MINS -ge 270 ] && [ $MINS -le 570 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 5:00 AM–1:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 4:30 AM–9:30 AM window, skipping."
           fi
 
   premarket-check:

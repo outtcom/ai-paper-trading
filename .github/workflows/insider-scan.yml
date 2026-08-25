@@ -22,7 +22,8 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: 7:30 AM ET. Accept: 5:00 AM–2:00 PM (300–840 min). Wide window handles up to 8h GHA queue delays.
+          # Cron fires 7:45 AM EDT; current ~5-90min GHA queue → arrives ~7:50-9:15 AM ET.
+          # Accept: 5:00 AM–2:00 PM (300–840 min) — not currently broken, left unchanged.
           if [ $MINS -ge 300 ] && [ $MINS -le 840 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else

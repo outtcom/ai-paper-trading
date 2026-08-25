@@ -2,7 +2,7 @@ name: Morning Session
 
 on:
   schedule:
-    - cron: '10 10 * * 1-5'  # 6:10 AM UTC + ~3h20min queue → 9:30 AM ET (gate handles ±1h DST drift)
+    - cron: '45 12 * * 1-5'  # 8:45 AM EDT + ~5-90min queue → ~8:50-10:15 AM ET (gate handles ±1h DST drift)
   workflow_dispatch:
 
 permissions:
@@ -22,12 +22,13 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: 9:30 AM ET. Accept: 7:00 AM–3:00 PM (420–900 min). Wide window handles up to 8h GHA queue delays.
-          if [ $MINS -ge 420 ] && [ $MINS -le 900 ]; then
+          # Target: 9:30 AM ET. Accept: 7:00 AM–12:00 PM (420–720 min). Recalibrated 2026-08-25 for
+          # current ~5-90min GHA dispatch delay (was 420-900, sized for a since-resolved 2-8h queue).
+          if [ $MINS -ge 420 ] && [ $MINS -le 720 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 7:00 AM–3:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 7:00 AM–12:00 PM window, skipping."
           fi
 
   morning-session:

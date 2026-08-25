@@ -2,9 +2,9 @@ name: Penny Stock Volume Breakout Scan
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'  # 3:00 AM ET — earliest practical cron to target market open
-                             # With ~3h–4h GHA queue → arrives ~9:00–11:00 AM ET
-                             # Market-open guard in penny_scan.py waits until 9:30 AM if early
+    - cron: '55 12 * * 1-5'  # 8:55 AM EDT + ~5-90min queue → ~9:00-10:25 AM ET, close to market open
+                              # Offset 5min from midday-check's 0 13 to avoid an exact-cron collision
+                              # Market-open guard in penny_scan.py waits until 9:30 AM if early
   workflow_dispatch:
 
 permissions:
@@ -24,19 +24,21 @@ jobs:
             exit 0
           fi
           MINS=$(( 10#$(TZ=America/New_York date +%H) * 60 + 10#$(TZ=America/New_York date +%M) ))
-          # Target: 9:30 AM ET. Accept: 5:00 AM–1:00 PM (300–780 min). Wide window for 2h–10h GHA queue.
-          if [ $MINS -ge 300 ] && [ $MINS -le 780 ]; then
+          # Target: 9:30 AM ET. Accept: 7:00 AM–12:00 PM (420–720 min). Recalibrated 2026-08-25 for
+          # current ~5-90min GHA dispatch delay (was 300-780, sized for a since-resolved 2-8h queue).
+          if [ $MINS -ge 420 ] && [ $MINS -le 720 ]; then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 5:00 AM–1:00 PM window, skipping."
+            echo "ET time: $(TZ=America/New_York date +%H:%M) — outside 7:00 AM–12:00 PM window, skipping."
           fi
 
   penny-scan:
     needs: dst-gate
     if: needs.dst-gate.outputs.skip != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45   # bumped from 30 (2026-08-25): worst-case arrival now needs close to the
+                           # full 30min internal market-open wait in penny_scan.py before the scan runs
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
