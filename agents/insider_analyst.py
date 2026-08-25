@@ -136,7 +136,7 @@ def run(state: dict) -> dict:
 
 Data source: {source_note}"""
 
-        response = litellm.completion(
+        _fast_kwargs = dict(
             model=MODELS["fast"],
             max_tokens=400,
             messages=[
@@ -144,6 +144,12 @@ Data source: {source_note}"""
                 {"role": "user", "content": user_content},
             ],
         )
+        # gpt-oss is a reasoning model — default effort can burn the whole
+        # max_tokens budget on hidden reasoning and return empty content.
+        # See tools/groq_quota.py::groq_completion for the same fix.
+        if "gpt-oss" in MODELS["fast"]:
+            _fast_kwargs["reasoning_effort"] = "low"
+        response = litellm.completion(**_fast_kwargs)
 
         report = response.choices[0].message.content
         state["insider_report"] = report

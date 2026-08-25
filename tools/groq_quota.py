@@ -142,6 +142,13 @@ def groq_completion(**kwargs):
     import litellm
     model = get_effective_fast_model()
     kwargs["model"] = model
+    # gpt-oss models are reasoning models: unset/"medium" effort can burn an
+    # entire small max_tokens budget on hidden reasoning tokens before any
+    # visible content is emitted (confirmed empty content, finish_reason=
+    # "length" at max_tokens=400). Force low effort so the structured-JSON
+    # formatter calls this function serves actually get content back.
+    if "gpt-oss" in model and "reasoning_effort" not in kwargs:
+        kwargs["reasoning_effort"] = "low"
     try:
         response = litellm.completion(**kwargs)
         track_tokens(response)
@@ -151,6 +158,7 @@ def groq_completion(**kwargs):
             print(f"[groq_quota] Groq 429 received — activating failover and retrying with {_FAILOVER_MODEL}")
             _activate_failover()
             kwargs["model"] = _FAILOVER_MODEL
+            kwargs.pop("reasoning_effort", None)  # not a gpt-oss model — param doesn't apply
             response = litellm.completion(**kwargs)
             track_tokens(response)
             return response
