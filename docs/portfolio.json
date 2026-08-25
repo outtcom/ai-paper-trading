@@ -4,7 +4,7 @@
     "current_day": 33,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-08-25T14:54:47.317635+00:00",
+    "last_updated": "2026-08-25T14:58:50.737976+00:00",
     "session_number": 3
   },
   "cash": 2449.93,
@@ -2450,6 +2450,7 @@
     }
   ],
   "last_run_dates": {
-    "premarket_check": "2026-08-25"
+    "premarket_check": "2026-08-25",
+    "midcap_scan": "2026-08-25"
   }
 }
