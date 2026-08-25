@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-24",
-  "last_notified_date": "2026-08-24",
+  "date": "2026-08-25",
+  "last_notified_date": "2026-08-25",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -36,8 +36,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:11.992857"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:09.373202"
     },
     "NVDA": {
       "insider_signal": {
@@ -55,15 +64,31 @@
       },
       "trump_mentions": [
         {
-          "headline": "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
-          "date": "2026-08-23 18:30",
-          "summary": "The market rally suffered damage last week, though bitcoin and gold shined. New Trump tariffs on Canada began Saturday. Nvidia, CrowdStrike and Fed's Warsh loom.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
+          "date": "2026-08-24 13:16",
+          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:13.821581"
+      "scanned_at": "2026-08-25T12:01:10.754257"
     },
     "MSFT": {
       "insider_signal": {
@@ -109,8 +134,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:16.175256"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:11.798421"
     },
     "MU": {
       "insider_signal": {
@@ -226,8 +268,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:17.124627"
+      "trump_mentions": [
+        {
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
+          "date": "2026-08-24 13:16",
+          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:12.806786"
     },
     "GOOGL": {
       "insider_signal": {
@@ -263,8 +330,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:18.357640"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:14.001860"
     },
     "META": {
       "insider_signal": {
@@ -362,6 +438,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump Continues Trading Stocks at Warp Speed: Berkshire Bought, Meta Sold",
           "date": "2026-08-23 14:44",
           "summary": "President Trump's accounts executed more than 1,000 trades in a single month, including moves in a major defense contractor timed suspiciously close to a surprise geopolitical agreement, and Congress ",
@@ -370,7 +454,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:21.590155"
+      "scanned_at": "2026-08-25T12:01:15.128968"
     },
     "AMZN": {
       "insider_signal": {
@@ -428,15 +512,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Tariff refunds are hitting retailers' wallets. Here's what they're doing with the money.",
-          "date": "2026-08-22 15:29",
-          "summary": "Companies are using tariff refunds to lower prices, cushion their margins, and, to a very small extent, return the money straight to the customer.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
+          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
+          "date": "2026-08-24 02:16",
+          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:22.363965"
+      "scanned_at": "2026-08-25T12:01:16.367264"
     },
     "TSLA": {
       "insider_signal": {
@@ -452,8 +536,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:23.279428"
+      "trump_mentions": [
+        {
+          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
+          "date": "2026-08-25 07:43",
+          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
+          "source": "ChartMill",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
+          "date": "2026-08-24 14:14",
+          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:17.642440"
     },
     "LLY": {
       "insider_signal": {
@@ -509,8 +610,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:24.014137"
+      "trump_mentions": [
+        {
+          "headline": "Sanofi: Trump's Vaccine Policy Won't Break The Story",
+          "date": "2026-08-24 08:52",
+          "summary": "Sanofi stock faces temporary pressure after Trumpâs vaccine order, but trades cheap (9.2x P/E) with raised 2026 guidance. Click for this SNY update.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-25T12:01:18.819221"
     },
     "UNH": {
       "insider_signal": {
@@ -557,7 +667,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:25.116778"
+      "scanned_at": "2026-08-25T12:01:19.762797"
     },
     "JPM": {
       "insider_signal": {
@@ -604,7 +714,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:26.001413"
+      "scanned_at": "2026-08-25T12:01:20.682857"
     },
     "GS": {
       "insider_signal": {
@@ -661,7 +771,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:26.793670"
+      "scanned_at": "2026-08-25T12:01:21.553861"
     },
     "XOM": {
       "insider_signal": {
@@ -677,17 +787,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Oil Nears $100 as Trump’s ‘Economic D-Day’ Raises the Stakes",
-          "date": "2026-08-21 16:01",
-          "summary": "Hormuz traffic remains near a standstill as Trump’s ‘Economic D-Day’ campaign pushes Brent closer to $100.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-24T12:00:27.597531"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-25T12:01:22.424316"
     },
     "CVX": {
       "insider_signal": {
@@ -764,7 +865,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:28.424861"
+      "scanned_at": "2026-08-25T12:01:23.398485"
     },
     "CAT": {
       "insider_signal": {
@@ -799,7 +900,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:29.191785"
+      "scanned_at": "2026-08-25T12:01:24.310899"
     },
     "GE": {
       "insider_signal": {
@@ -905,7 +1006,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:30.140102"
+      "scanned_at": "2026-08-25T12:01:25.254637"
     },
     "WMT": {
       "insider_signal": {
@@ -971,17 +1072,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Tariff refunds are hitting retailers' wallets. Here's what they're doing with the money.",
-          "date": "2026-08-22 15:29",
-          "summary": "Companies are using tariff refunds to lower prices, cushion their margins, and, to a very small extent, return the money straight to the customer.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-24T12:00:30.937540"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-25T12:01:26.198868"
     },
     "COST": {
       "insider_signal": {
@@ -1007,7 +1099,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:31.688329"
+      "scanned_at": "2026-08-25T12:01:27.107244"
     },
     "FCX": {
       "insider_signal": {
@@ -1071,17 +1163,9 @@
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s $500 Million Critical Minerals Bet Puts These Lithium & Battery ETFs in Focus",
-          "date": "2026-08-20 17:24",
-          "summary": "Trump’s $500M critical minerals push targets lithium, refining and battery recycling. Here are 3 ETFs positioned for the U.S. reshoring boom.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-24T12:00:32.447144"
+      "scanned_at": "2026-08-25T12:01:28.000064"
     },
     "NEE": {
       "insider_signal": {
@@ -1107,7 +1191,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:33.361004"
+      "scanned_at": "2026-08-25T12:01:28.920960"
     },
     "PLD": {
       "insider_signal": {
@@ -1144,7 +1228,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-24T12:00:34.158073"
+      "scanned_at": "2026-08-25T12:01:29.813844"
     }
   }
 }
