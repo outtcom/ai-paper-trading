@@ -13,6 +13,9 @@ import urllib.request
 import json
 from datetime import datetime, timedelta
 from typing import List, Dict
+from zoneinfo import ZoneInfo
+
+_ET = ZoneInfo("America/New_York")
 
 
 # ---------------------------------------------------------------------------
@@ -180,17 +183,13 @@ def _yahoo_intraday_ohlcv(ticker: str, date: str, interval: str = "5m") -> List[
     """
     try:
         import urllib.parse
-        from datetime import timezone
 
-        # Build UTC timestamps for the regular session window.
-        # ET is UTC-4 (EDT, April–Nov) or UTC-5 (EST, Nov–Mar).
-        # Approximate with UTC-4 for the full year — misses 1 bar at most in winter.
+        # Build the regular-session window in ET directly — ZoneInfo resolves the
+        # correct UTC offset (EDT vs EST) for whichever date is passed, so this is
+        # correct year-round instead of approximating with a fixed UTC-4 offset.
         day = datetime.strptime(date, "%Y-%m-%d")
-        et_offset = 4 * 3600  # EDT = UTC-4 (close enough for bar filtering)
-        # 9:25 AM ET = 13:25 UTC (EDT)
-        period1 = int(day.replace(tzinfo=timezone.utc).timestamp()) + 13 * 3600 + 25 * 60
-        # 4:05 PM ET = 20:05 UTC (EDT)
-        period2 = int(day.replace(tzinfo=timezone.utc).timestamp()) + 20 * 3600 + 5 * 60
+        period1 = int(day.replace(hour=9, minute=25, tzinfo=_ET).timestamp())
+        period2 = int(day.replace(hour=16, minute=5, tzinfo=_ET).timestamp())
 
         encoded = urllib.parse.quote(ticker)
         url = (
@@ -218,8 +217,7 @@ def _yahoo_intraday_ohlcv(ticker: str, date: str, interval: str = "5m") -> List[
             v = quotes.get("volume", [None] * len(timestamps))[i]
             if None in (o, h, l, c):
                 continue
-            # Approximate ET time for the timestamp label (UTC-4 / EDT)
-            dt_et = datetime.utcfromtimestamp(ts - et_offset)
+            dt_et = datetime.fromtimestamp(ts, tz=_ET)
             bars.append({
                 "timestamp_et": dt_et.strftime("%Y-%m-%d %H:%M"),
                 "open":   round(float(o), 4),

@@ -1,8 +1,10 @@
 """
 Penny Stock Unusual Volume Breakout Scanner
 Runs ~9:30–10:30 AM ET (Mon–Fri) via GitHub Actions — earliest available slot.
-Cron: 0 7 * * 1-5 UTC (3:00 AM ET) + ~3h–4h GHA queue delay.
+Cron: 55 12 * * 1-5 UTC (8:55 AM EDT) + ~5-90min GHA queue delay.
 Market-open guard waits until 9:30 AM ET if runner arrives early.
+Timing is otherwise enforced solely by the YAML dst-gate job (.github/workflows/penny-scan.yml) —
+no internal hour-of-day gate, to avoid two independently-drifting timing thresholds.
 
 Strategy: Catch liquid sub-$10 stocks where volume is spiking 3× above normal
 on a price breakout. Pure supply/demand mechanics — when unusual volume hits a
@@ -44,19 +46,14 @@ from config import (
 )
 from tools.market_data import get_ohlcv, get_latest_price
 from tools.session_manager import (
-    get_portfolio, add_penny_signal, get_open_penny_signals,
+    get_portfolio, add_penny_signal, get_open_penny_signals, mark_ran_today,
 )
 from tools.telegram_bot import broadcast_message
 
 
 # ---------------------------------------------------------------------------
-# DST gate + market-open guard
+# Market-open guard
 # ---------------------------------------------------------------------------
-
-def _within_dst_gate() -> bool:
-    et_hour = datetime.now(ZoneInfo("America/New_York")).hour
-    return 8 <= et_hour < 14   # 8:30 AM–2 PM ET (penny stocks need morning volume)
-
 
 def _wait_for_market_open(max_wait_minutes: int = 30) -> None:
     """Wait until 9:30 AM ET if we arrive early — penny stocks need post-open volume."""
@@ -222,22 +219,22 @@ def _scan(today: str, dry_run: bool = False) -> list:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Print signals without writing or alerting")
-    parser.add_argument("--force", action="store_true", help="Skip time-window gate (for manual/demo runs)")
+    parser.add_argument("--force", action="store_true",
+                         help="Skip the market-open wait (for manual/demo runs)")
     args = parser.parse_args()
 
     today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     print(f"\n[penny] ========== Penny Stock Scan {today} ==========")
 
-    if not args.force and not _within_dst_gate():
-        print("[penny] Outside operating window (8:30 AM–2 PM ET). Exiting.")
-        return
-
-    if not args.dry_run:
+    if not args.dry_run and not args.force:
         _wait_for_market_open(max_wait_minutes=30)
 
     if not get_portfolio()["session"]["active"]:
         print("[penny] No active session. Exiting.")
         return
+
+    if not args.dry_run:
+        mark_ran_today("penny_scan")
 
     signals = _scan(today, dry_run=args.dry_run)
     print(f"[penny] {len(signals)} signal(s) generated.")

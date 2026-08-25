@@ -63,6 +63,7 @@ from tools.session_manager import (
     get_portfolio,
     get_session_day,
     is_session_active,
+    mark_ran_today,
     open_position,
     record_equity,
     set_spy_start_price,
@@ -617,6 +618,8 @@ def main():
         send_private_only(f"⏸️ <b>Morning session skipped — PAUSED</b>\n\nReason: {_pause_reason}\n\nRun <code>python resume_session.py</code> to resume trading.")
         print(f"[morning] Session is paused ({_pause_reason}). Skipping.")
         return
+
+    mark_ran_today("morning_session")
 
     session_day = get_session_day()
     total_days  = portfolio["session"]["total_days"]
