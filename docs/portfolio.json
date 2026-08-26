@@ -4,7 +4,7 @@
     "current_day": 45,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-08-25T18:55:24.219372+00:00",
+    "last_updated": "2026-08-26T10:52:38.922758+00:00",
     "session_number": 3
   },
   "cash": 4919.95,
@@ -2727,6 +2727,7 @@
   ],
   "last_run_dates": {
     "morning_session": "2026-08-25",
-    "eod_session": "2026-08-25"
+    "eod_session": "2026-08-25",
+    "premarket_check": "2026-08-26"
   }
 }
