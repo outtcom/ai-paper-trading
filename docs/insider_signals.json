@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-25",
-  "last_notified_date": "2026-08-25",
+  "date": "2026-08-26",
+  "last_notified_date": "2026-08-26",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -38,6 +38,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
+          "date": "2026-08-24 23:35",
+          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
           "date": "2026-08-24 14:14",
           "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
@@ -46,7 +54,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:09.373202"
+      "scanned_at": "2026-08-26T12:01:24.672037"
     },
     "NVDA": {
       "insider_signal": {
@@ -62,33 +70,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
-          "date": "2026-08-25 07:43",
-          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
-          "date": "2026-08-24 13:16",
-          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-25T12:01:10.754257"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-26T12:01:25.437762"
     },
     "MSFT": {
       "insider_signal": {
@@ -136,23 +119,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
-          "date": "2026-08-24 02:16",
-          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
+          "date": "2026-08-25 03:46",
+          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:11.798421"
+      "scanned_at": "2026-08-26T12:01:26.212928"
     },
     "MU": {
       "insider_signal": {
@@ -276,25 +251,9 @@
           "source": "ChartMill",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
-          "date": "2026-08-24 13:16",
-          "summary": "US equities mixed as tech stocks drag Nasdaq 100 lower, Trump escalates trade fight with Canada, and Fed Chair Warsh speaks at Jackson Hole.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:12.806786"
+      "scanned_at": "2026-08-26T12:01:27.103596"
     },
     "GOOGL": {
       "insider_signal": {
@@ -330,17 +289,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-25T12:01:14.001860"
+      "trump_mentions": [],
+      "scanned_at": "2026-08-26T12:01:27.877068"
     },
     "META": {
       "insider_signal": {
@@ -438,23 +388,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
-          "date": "2026-08-24 02:16",
-          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
+          "date": "2026-08-25 03:46",
+          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
           "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Continues Trading Stocks at Warp Speed: Berkshire Bought, Meta Sold",
-          "date": "2026-08-23 14:44",
-          "summary": "President Trump's accounts executed more than 1,000 trades in a single month, including moves in a major defense contractor timed suspiciously close to a surprise geopolitical agreement, and Congress ",
-          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:15.128968"
+      "scanned_at": "2026-08-26T12:01:28.863206"
     },
     "AMZN": {
       "insider_signal": {
@@ -512,15 +454,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Communities Rejecting Data Centers Are ‘Making a Mistake,’ Says US Leads China In AI ‘By a Lot’",
-          "date": "2026-08-24 02:16",
-          "summary": "President Donald Trump defends the US data-center boom, says communities rejecting projects are making a mistake.",
+          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
+          "date": "2026-08-25 03:46",
+          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
+          "date": "2026-08-24 23:35",
+          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:16.367264"
+      "scanned_at": "2026-08-26T12:01:29.555003"
     },
     "TSLA": {
       "insider_signal": {
@@ -546,6 +496,14 @@
           "sentiment_hint": "neutral"
         },
         {
+          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
+          "date": "2026-08-24 23:35",
+          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
           "date": "2026-08-24 14:14",
           "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
@@ -554,7 +512,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:17.642440"
+      "scanned_at": "2026-08-26T12:01:33.624662"
     },
     "LLY": {
       "insider_signal": {
@@ -620,7 +578,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:18.819221"
+      "scanned_at": "2026-08-26T12:01:34.440610"
     },
     "UNH": {
       "insider_signal": {
@@ -667,7 +625,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:19.762797"
+      "scanned_at": "2026-08-26T12:01:35.129535"
     },
     "JPM": {
       "insider_signal": {
@@ -714,7 +672,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:20.682857"
+      "scanned_at": "2026-08-26T12:01:35.807318"
     },
     "GS": {
       "insider_signal": {
@@ -771,7 +729,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:21.553861"
+      "scanned_at": "2026-08-26T12:01:36.459259"
     },
     "XOM": {
       "insider_signal": {
@@ -787,8 +745,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:22.424316"
+      "trump_mentions": [
+        {
+          "headline": "Airline Stocks Rally, Treasury Yields Fall as Oil Tumbles on Iran Sanctions",
+          "date": "2026-08-25 10:45",
+          "summary": "Every major US carrier opened higher as crude fell 3% on Iran de-escalation signals, while Treasury yields fell across the curve and energy lagged.",
+          "source": "Benzinga",
+          "keyword_matched": "sanctions",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s oil and gas stocks gained up to $15.5 million amid Iran war, congressional Democrats say",
+          "date": "2026-08-24 14:34",
+          "summary": "Trump’s stock trading could face heightened congressional scrutiny if Democrats retake either chamber in the midterms.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-26T12:01:37.234484"
     },
     "CVX": {
       "insider_signal": {
@@ -864,8 +839,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:23.398485"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s oil and gas stocks gained up to $15.5 million amid Iran war, congressional Democrats say",
+          "date": "2026-08-24 14:34",
+          "summary": "Trump’s stock trading could face heightened congressional scrutiny if Democrats retake either chamber in the midterms.",
+          "source": "CNBC",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-08-26T12:01:37.904473"
     },
     "CAT": {
       "insider_signal": {
@@ -900,7 +884,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:24.310899"
+      "scanned_at": "2026-08-26T12:01:38.587578"
     },
     "GE": {
       "insider_signal": {
@@ -1006,7 +990,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:25.254637"
+      "scanned_at": "2026-08-26T12:01:39.234867"
     },
     "WMT": {
       "insider_signal": {
@@ -1072,8 +1056,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:26.198868"
+      "trump_mentions": [
+        {
+          "headline": "Ross Stores: Forget The Tariff Tailwind; Organic Growth Is Even More Impressive",
+          "date": "2026-08-25 10:47",
+          "summary": "Ross Stores, Inc. saw another explosion in growth in Q2 and continues to enjoy enhanced customer traffic. Learn more about ROST stock here.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-08-26T12:01:40.005128"
     },
     "COST": {
       "insider_signal": {
@@ -1091,6 +1084,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Ross Stores: Forget The Tariff Tailwind; Organic Growth Is Even More Impressive",
+          "date": "2026-08-25 10:47",
+          "summary": "Ross Stores, Inc. saw another explosion in growth in Q2 and continues to enjoy enhanced customer traffic. Learn more about ROST stock here.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Target Raises View as Growth Momentum Extends Beyond Tariff Tailwinds",
           "date": "2026-08-21 15:40",
           "summary": "Target lifts its fiscal 2026 outlook as sales, digital growth and category strength signal momentum beyond tariff refund benefits, with higher earnings guidance.",
@@ -1099,7 +1100,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:27.107244"
+      "scanned_at": "2026-08-26T12:01:40.745802"
     },
     "FCX": {
       "insider_signal": {
@@ -1165,7 +1166,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-25T12:01:28.000064"
+      "scanned_at": "2026-08-26T12:01:41.478357"
     },
     "NEE": {
       "insider_signal": {
@@ -1191,7 +1192,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:28.920960"
+      "scanned_at": "2026-08-26T12:01:42.175455"
     },
     "PLD": {
       "insider_signal": {
@@ -1228,7 +1229,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-25T12:01:29.813844"
+      "scanned_at": "2026-08-26T12:01:42.825912"
     }
   }
 }
