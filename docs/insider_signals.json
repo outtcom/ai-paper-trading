@@ -1,27 +1,37 @@
 {
-  "date": "2026-08-26",
-  "last_notified_date": "2026-08-26",
+  "date": "2026-09-01",
+  "last_notified_date": "2026-09-01",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 2,
         "compensation_grants": 0,
-        "net_open_market_value": -442852.25,
-        "net_open_market_fmt": "-$443K",
+        "net_open_market_value": -890309.3,
+        "net_open_market_fmt": "-$890K",
         "largest_single_transaction": {
           "name": "Newstead Jennifer",
           "direction": "sell",
-          "dollar_value": 442852.25,
-          "dollar_fmt": "$443K",
-          "date": "2026-08-11",
+          "dollar_value": 447457.05,
+          "dollar_fmt": "$447K",
+          "date": "2026-08-25",
           "shares_traded": 1439,
-          "price_per_share": 307.75,
+          "price_per_share": 310.95,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 447457.05,
+            "dollar_fmt": "$447K",
+            "date": "2026-08-25",
+            "shares_traded": 1439,
+            "price_per_share": 310.95,
+            "transaction_code": ""
+          },
           {
             "name": "Newstead Jennifer",
             "direction": "sell",
@@ -33,28 +43,28 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [
         {
-          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
-          "date": "2026-08-24 23:35",
-          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
-          "source": "Benzinga",
+          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
+          "date": "2026-09-01 12:59",
+          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
+          "headline": "MapQuest vs. Trump: OG of Maps Keeps Lake Ontario Name, Sees Download Surge and Stock Boost for Parent",
+          "date": "2026-08-31 17:00",
+          "summary": "President Donald Trump changed the name of Lake Ontario to Lake America. A mapping company said they wouldn&#39;t comply.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:24.672037"
+      "scanned_at": "2026-09-01T15:32:42.686920"
     },
     "NVDA": {
       "insider_signal": {
@@ -62,7 +72,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 1,
+        "compensation_grants": 0,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -70,8 +80,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:25.437762"
+      "trump_mentions": [
+        {
+          "headline": "Trump Media Falls 3% as Rising Yields and Higher Oil Squeeze Risk Appetite",
+          "date": "2026-09-01 15:09",
+          "summary": "Rising Treasury yields and surging oil prices are creating a punishing combination for speculative small caps, and Trump Media stock is absorbing far more pain than the broader market suggests it shou",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-01T15:32:43.778306"
     },
     "MSFT": {
       "insider_signal": {
@@ -117,17 +136,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
-          "date": "2026-08-25 03:46",
-          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-26T12:01:26.212928"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-01T15:32:44.845772"
     },
     "MU": {
       "insider_signal": {
@@ -136,107 +146,117 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -6712697.38,
-        "net_open_market_fmt": "-$6.7M",
+        "net_open_market_value": -5848841.34,
+        "net_open_market_fmt": "-$5.8M",
         "largest_single_transaction": {
           "name": "MEHROTRA SANJAY",
           "direction": "sell",
-          "dollar_value": 1456262.14,
-          "dollar_fmt": "$1.5M",
-          "date": "2026-07-24",
-          "shares_traded": 1523,
-          "price_per_share": 956.18,
+          "dollar_value": 1331130.94,
+          "dollar_fmt": "$1.3M",
+          "date": "2026-08-21",
+          "shares_traded": 1354,
+          "price_per_share": 983.11,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 967781.7,
-            "dollar_fmt": "$968K",
-            "date": "2026-07-24",
-            "shares_traded": 1002,
-            "price_per_share": 965.85,
+            "dollar_value": 255314.22,
+            "dollar_fmt": "$255K",
+            "date": "2026-08-21",
+            "shares_traded": 258,
+            "price_per_share": 989.59,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 303360,
-            "dollar_fmt": "$303K",
-            "date": "2026-07-24",
-            "shares_traded": 316,
-            "price_per_share": 960,
+            "dollar_value": 346823.1,
+            "dollar_fmt": "$347K",
+            "date": "2026-08-21",
+            "shares_traded": 351,
+            "price_per_share": 988.1,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 387455.4,
-            "dollar_fmt": "$387K",
-            "date": "2026-07-24",
-            "shares_traded": 405,
-            "price_per_share": 956.68,
+            "dollar_value": 336307.84,
+            "dollar_fmt": "$336K",
+            "date": "2026-08-21",
+            "shares_traded": 341,
+            "price_per_share": 986.24,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 1456262.14,
-            "dollar_fmt": "$1.5M",
-            "date": "2026-07-24",
-            "shares_traded": 1523,
-            "price_per_share": 956.18,
+            "dollar_value": 82773.6,
+            "dollar_fmt": "$83K",
+            "date": "2026-08-21",
+            "shares_traded": 84,
+            "price_per_share": 985.4,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 691787.75,
-            "dollar_fmt": "$692K",
-            "date": "2026-07-24",
-            "shares_traded": 725,
-            "price_per_share": 954.19,
+            "dollar_value": 626884.44,
+            "dollar_fmt": "$627K",
+            "date": "2026-08-21",
+            "shares_traded": 637,
+            "price_per_share": 984.12,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 102683.16,
-            "dollar_fmt": "$103K",
-            "date": "2026-07-24",
-            "shares_traded": 108,
-            "price_per_share": 950.77,
+            "dollar_value": 1331130.94,
+            "dollar_fmt": "$1.3M",
+            "date": "2026-08-21",
+            "shares_traded": 1354,
+            "price_per_share": 983.11,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 1144525.68,
+            "dollar_value": 703054.72,
+            "dollar_fmt": "$703K",
+            "date": "2026-08-21",
+            "shares_traded": 716,
+            "price_per_share": 981.92,
+            "transaction_code": ""
+          },
+          {
+            "name": "MEHROTRA SANJAY",
+            "direction": "sell",
+            "dollar_value": 448840,
+            "dollar_fmt": "$449K",
+            "date": "2026-08-21",
+            "shares_traded": 458,
+            "price_per_share": 980,
+            "transaction_code": ""
+          },
+          {
+            "name": "MEHROTRA SANJAY",
+            "direction": "sell",
+            "dollar_value": 1068307.2,
             "dollar_fmt": "$1.1M",
-            "date": "2026-07-24",
-            "shares_traded": 1207,
-            "price_per_share": 948.24,
+            "date": "2026-08-21",
+            "shares_traded": 1091,
+            "price_per_share": 979.2,
             "transaction_code": ""
           },
           {
             "name": "MEHROTRA SANJAY",
             "direction": "sell",
-            "dollar_value": 754583.66,
-            "dollar_fmt": "$755K",
-            "date": "2026-07-24",
-            "shares_traded": 797,
-            "price_per_share": 946.78,
-            "transaction_code": ""
-          },
-          {
-            "name": "MEHROTRA SANJAY",
-            "direction": "sell",
-            "dollar_value": 903305.85,
-            "dollar_fmt": "$903K",
-            "date": "2026-07-24",
-            "shares_traded": 955,
-            "price_per_share": 945.87,
+            "dollar_value": 649405.28,
+            "dollar_fmt": "$649K",
+            "date": "2026-08-21",
+            "shares_traded": 664,
+            "price_per_share": 978.02,
             "transaction_code": ""
           }
         ],
@@ -245,52 +265,95 @@
       },
       "trump_mentions": [
         {
-          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
-          "date": "2026-08-25 07:43",
-          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
-          "source": "ChartMill",
+          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
+          "date": "2026-09-01 12:59",
+          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
+          "date": "2026-09-01 06:11",
+          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Dow Jones Futures: Trump's Iran Warning Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Rally",
+          "date": "2026-09-01 01:12",
+          "summary": "Dow Jones Futures: President Trump's Iran warning sparked stock market losses Monday. Elon Musk-led SpaceX and Tesla rallied.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:27.103596"
+      "scanned_at": "2026-09-01T15:32:45.845286"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
-        "compensation_grants": 7,
-        "net_open_market_value": -183326.58,
-        "net_open_market_fmt": "-$183K",
+        "open_market_sells": 4,
+        "compensation_grants": 6,
+        "net_open_market_value": -1342647.66,
+        "net_open_market_fmt": "-$1.3M",
         "largest_single_transaction": {
-          "name": "Saraci Marsida",
+          "name": "Schindler Philipp",
           "direction": "sell",
-          "dollar_value": 149606.8,
-          "dollar_fmt": "$150K",
-          "date": "2026-07-29",
-          "shares_traded": 449,
-          "price_per_share": 333.2,
+          "dollar_value": 694348.85,
+          "dollar_fmt": "$694K",
+          "date": "2026-08-25",
+          "shares_traded": 2015,
+          "price_per_share": 344.59,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Saraci Marsida",
+            "name": "Schindler Philipp",
             "direction": "sell",
-            "dollar_value": 149606.8,
-            "dollar_fmt": "$150K",
-            "date": "2026-07-29",
-            "shares_traded": 449,
-            "price_per_share": 333.2,
+            "dollar_value": 694348.85,
+            "dollar_fmt": "$694K",
+            "date": "2026-08-25",
+            "shares_traded": 2015,
+            "price_per_share": 344.59,
+            "transaction_code": ""
+          },
+          {
+            "name": "Ashkenazi Anat",
+            "direction": "sell",
+            "dollar_value": 613714.79,
+            "dollar_fmt": "$614K",
+            "date": "2026-08-25",
+            "shares_traded": 1781,
+            "price_per_share": 344.59,
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:27.877068"
+      "trump_mentions": [
+        {
+          "headline": "MapQuest vs. Trump: OG of Maps Keeps Lake Ontario Name, Sees Download Surge and Stock Boost for Parent",
+          "date": "2026-08-31 17:00",
+          "summary": "President Donald Trump changed the name of Lake Ontario to Lake America. A mapping company said they wouldn&#39;t comply.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Trump’s Truth Social ETF Manager Is Betting Big on AI, Crypto and New ETFs",
+          "date": "2026-08-31 16:18",
+          "summary": "Trump’s Truth Social ETF manager is expanding into AI, crypto, and macro strategies with a new MANGOS ETF and a planned acquisition.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-01T15:32:47.380125"
     },
     "META": {
       "insider_signal": {
@@ -388,64 +451,74 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
-          "date": "2026-08-25 03:46",
-          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
-          "source": "Benzinga",
+          "headline": "Trump Says ‘Let Data Reign’ As He Slams Data Center Backlash: Communities Risk Being ‘Backwards And Poor’",
+          "date": "2026-09-01 08:12",
+          "summary": "President Donald Trump has backed the AI infrastructure buildout as data center projects face growing public resistance.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:28.863206"
+      "scanned_at": "2026-09-01T15:32:48.503784"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
-        "compensation_grants": 0,
-        "net_open_market_value": -346971673.69,
-        "net_open_market_fmt": "-$347.0M",
+        "open_market_sells": 4,
+        "compensation_grants": 6,
+        "net_open_market_value": -5615722.53,
+        "net_open_market_fmt": "-$5.6M",
         "largest_single_transaction": {
-          "name": "BEZOS JEFFREY P",
+          "name": "Zapolsky David",
           "direction": "sell",
-          "dollar_value": 346453513.69,
-          "dollar_fmt": "$346.5M",
-          "date": "2026-08-03",
-          "shares_traded": 1209649,
-          "price_per_share": 286.4083,
+          "dollar_value": 2404950.66,
+          "dollar_fmt": "$2.4M",
+          "date": "2026-08-24",
+          "shares_traded": 9258,
+          "price_per_share": 259.77,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Herrington Douglas J",
+            "name": "Zapolsky David",
             "direction": "sell",
-            "dollar_value": 278390.0,
-            "dollar_fmt": "$278K",
-            "date": "2026-08-03",
-            "shares_traded": 1000,
-            "price_per_share": 278.39,
+            "dollar_value": 2404950.66,
+            "dollar_fmt": "$2.4M",
+            "date": "2026-08-24",
+            "shares_traded": 9258,
+            "price_per_share": 259.77,
             "transaction_code": ""
           },
           {
-            "name": "BEZOS JEFFREY P",
+            "name": "Garman Matthew S",
             "direction": "sell",
-            "dollar_value": 346453513.69,
-            "dollar_fmt": "$346.5M",
-            "date": "2026-08-03",
-            "shares_traded": 1209649,
-            "price_per_share": 286.4083,
+            "dollar_value": 507922.56,
+            "dollar_fmt": "$508K",
+            "date": "2026-08-21",
+            "shares_traded": 1951,
+            "price_per_share": 260.3396,
             "transaction_code": ""
           },
           {
-            "name": "Herrington Douglas J",
+            "name": "Garman Matthew S",
             "direction": "sell",
-            "dollar_value": 239770.0,
-            "dollar_fmt": "$240K",
-            "date": "2026-07-01",
-            "shares_traded": 1000,
-            "price_per_share": 239.77,
+            "dollar_value": 1360147.85,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-08-21",
+            "shares_traded": 5240,
+            "price_per_share": 259.5702,
+            "transaction_code": ""
+          },
+          {
+            "name": "Garman Matthew S",
+            "direction": "sell",
+            "dollar_value": 1342701.46,
+            "dollar_fmt": "$1.3M",
+            "date": "2026-08-21",
+            "shares_traded": 5191,
+            "price_per_share": 258.6595,
             "transaction_code": ""
           }
         ],
@@ -454,23 +527,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Administration Proposes Over $100,000 H-1B Fee After Court Struck Down $100,000 Levy",
-          "date": "2026-08-25 03:46",
-          "summary": "DHS proposes a $103,265 H-1B visa fee for cap-subject workers, with companies and workers given 30 days to comment.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
-          "date": "2026-08-24 23:35",
-          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
-          "source": "Benzinga",
+          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
+          "date": "2026-09-01 12:59",
+          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:29.555003"
+      "scanned_at": "2026-09-01T15:32:49.516758"
     },
     "TSLA": {
       "insider_signal": {
@@ -486,33 +551,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chips Take the Punch Ahead of Nvidia as Trump's Canada Tariffs Rattle Detroit",
-          "date": "2026-08-25 07:43",
-          "summary": "Wall Street opened the week split on Monday, August 24, 2026, with the Nasdaq bleeding 0.8% as semiconductor names sold off ahead of Nvidia's Wednesday print and Asian equity supply raised AI dilution",
-          "source": "ChartMill",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Snapped Up SpaceX Shares 11 Days After $1.77 Trillion IPO: Here's What Else He Purchased",
-          "date": "2026-08-24 23:35",
-          "summary": "Trump bought up to $50,000 in SpaceX shares as his administration advances policies that could benefit the company.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s 50% Canada Auto Tariff Shock: These ETFs Could Be in the Crosshairs",
-          "date": "2026-08-24 14:14",
-          "summary": "Trump’s proposed 50% tariff on Canadian autos could hit automakers and supply chains. Here are the ETFs most exposed to the trade-war shock.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-26T12:01:33.624662"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-01T15:32:50.506958"
     },
     "LLY": {
       "insider_signal": {
@@ -570,36 +610,46 @@
       },
       "trump_mentions": [
         {
-          "headline": "Sanofi: Trump's Vaccine Policy Won't Break The Story",
-          "date": "2026-08-24 08:52",
-          "summary": "Sanofi stock faces temporary pressure after Trumpâs vaccine order, but trades cheap (9.2x P/E) with raised 2026 guidance. Click for this SNY update.",
+          "headline": "Trump Admin To Target Biotechs With Curbs On Drug Pricing? What Investors Should Know",
+          "date": "2026-08-31 14:57",
+          "summary": "",
           "source": "SeekingAlpha",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:34.440610"
+      "scanned_at": "2026-09-01T15:32:51.489824"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 2,
-        "compensation_grants": 8,
-        "net_open_market_value": -298710.27,
-        "net_open_market_fmt": "-$299K",
+        "open_market_sells": 3,
+        "compensation_grants": 0,
+        "net_open_market_value": -754620.27,
+        "net_open_market_fmt": "-$755K",
         "largest_single_transaction": {
           "name": "Conway Patrick Hugh",
           "direction": "sell",
-          "dollar_value": 205000,
-          "dollar_fmt": "$205K",
-          "date": "2026-08-05",
-          "shares_traded": 500,
-          "price_per_share": 410,
+          "dollar_value": 455910,
+          "dollar_fmt": "$456K",
+          "date": "2026-08-21",
+          "shares_traded": 1169,
+          "price_per_share": 390,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Conway Patrick Hugh",
+            "direction": "sell",
+            "dollar_value": 455910,
+            "dollar_fmt": "$456K",
+            "date": "2026-08-21",
+            "shares_traded": 1169,
+            "price_per_share": 390,
+            "transaction_code": ""
+          },
           {
             "name": "Stankiewicz Dennis Andrew",
             "direction": "sell",
@@ -621,21 +671,30 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:35.129535"
+      "trump_mentions": [
+        {
+          "headline": "Asbury Automotive Group Announces Appointment of Senior Vice President and Chief Human Resources Officer",
+          "date": "2026-08-31 21:30",
+          "summary": "ATLANTA, August 31, 2026--Asbury Automotive Group Announces Appointment of Senior Vice President and Chief Human Resources Officer",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-01T15:32:52.427879"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 0,
         "open_market_sells": 1,
         "compensation_grants": 2,
-        "net_open_market_value": -722504.51,
-        "net_open_market_fmt": "-$723K",
+        "net_open_market_value": -903518.0,
+        "net_open_market_fmt": "-$904K",
         "largest_single_transaction": {
           "name": "Leopold Robin",
           "direction": "sell",
@@ -656,23 +715,22 @@
             "shares_traded": 2500,
             "price_per_share": 361.4072,
             "transaction_code": ""
-          },
-          {
-            "name": "BURKE STEPHEN B",
-            "direction": "buy",
-            "dollar_value": 56300.76,
-            "dollar_fmt": "$56K",
-            "date": "2026-06-30",
-            "shares_traded": 172,
-            "price_per_share": 327.33,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:35.807318"
+      "trump_mentions": [
+        {
+          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
+          "date": "2026-09-01 06:11",
+          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-01T15:32:53.344062"
     },
     "GS": {
       "insider_signal": {
@@ -728,8 +786,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:36.459259"
+      "trump_mentions": [
+        {
+          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
+          "date": "2026-09-01 06:11",
+          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-01T15:32:54.282241"
     },
     "XOM": {
       "insider_signal": {
@@ -747,23 +814,31 @@
       },
       "trump_mentions": [
         {
-          "headline": "Airline Stocks Rally, Treasury Yields Fall as Oil Tumbles on Iran Sanctions",
-          "date": "2026-08-25 10:45",
-          "summary": "Every major US carrier opened higher as crude fell 3% on Iran de-escalation signals, while Treasury yields fell across the curve and energy lagged.",
-          "source": "Benzinga",
-          "keyword_matched": "sanctions",
+          "headline": "This Oil Major Is Perfectly Positioned to Benefit From Trump's Oil Deal With Venezuela",
+          "date": "2026-09-01 03:35",
+          "summary": "The Trump deal to acquire Venezuelan oil could be a windfall for Chevron.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Trump Says Exxon Will Enter Venezuela as Oil Investment Ramps Up",
+          "date": "2026-09-01 00:54",
+          "summary": "President Donald Trump said ExxonMobil Holdings Corporation (NYSE:XOM) is among the major oil companies preparing to enter Venezuela, signaling a potential reversal of Exxon’s nearly two-decade absenc",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump’s oil and gas stocks gained up to $15.5 million amid Iran war, congressional Democrats say",
-          "date": "2026-08-24 14:34",
-          "summary": "Trump’s stock trading could face heightened congressional scrutiny if Democrats retake either chamber in the midterms.",
-          "source": "CNBC",
+          "headline": "Update: Market Chatter: Trump to Host Oil Company Executives on Tuesday",
+          "date": "2026-08-31 18:59",
+          "summary": "(Updates with White House comment in last paragraph.) President Donald Trump is expected to host",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:37.234484"
+      "scanned_at": "2026-09-01T15:32:55.217759"
     },
     "CVX": {
       "insider_signal": {
@@ -841,50 +916,49 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump’s oil and gas stocks gained up to $15.5 million amid Iran war, congressional Democrats say",
-          "date": "2026-08-24 14:34",
-          "summary": "Trump’s stock trading could face heightened congressional scrutiny if Democrats retake either chamber in the midterms.",
-          "source": "CNBC",
+          "headline": "This Oil Major Is Perfectly Positioned to Benefit From Trump's Oil Deal With Venezuela",
+          "date": "2026-09-01 03:35",
+          "summary": "The Trump deal to acquire Venezuelan oil could be a windfall for Chevron.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
+          "date": "2026-08-31 21:39",
+          "summary": "The Dow Jones index dropped on the stock market today as President Trump gave an AI warning. Tesla jumped and some equities tested entries.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:37.904473"
+      "scanned_at": "2026-09-01T15:32:56.251502"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 5,
+        "open_market_buys": 8,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 58766.46,
-        "net_open_market_fmt": "+$59K",
+        "net_open_market_value": 75001.84,
+        "net_open_market_fmt": "+$75K",
         "largest_single_transaction": {
-          "name": "MacLennan David",
+          "name": "Creed Joseph E",
           "direction": "buy",
-          "dollar_value": 23217.26,
-          "dollar_fmt": "$23K",
-          "date": "2026-06-30",
-          "shares_traded": 22,
-          "price_per_share": 1055.33,
+          "dollar_value": 15997.14,
+          "dollar_fmt": "$16K",
+          "date": "2026-07-24",
+          "shares_traded": 18,
+          "price_per_share": 888.73,
           "transaction_code": ""
         },
         "notable_transactions": [],
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Caterpillar bags $392M tariff refund as duty costs shrink",
-          "date": "2026-08-20 08:09",
-          "summary": "Excluding the refund, the heavy-equipment maker incurred $400 million in tariff expenses in the quarter that ended June 30.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-08-26T12:01:38.587578"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-01T15:32:57.211551"
     },
     "GE": {
       "insider_signal": {
@@ -980,38 +1054,49 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Shares of shipbuilders are trading higher, as President Trump is epected to make an announcement on shipbuildings.",
-          "date": "2026-08-20 12:37",
-          "summary": "",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-26T12:01:39.234867"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-01T15:32:58.135144"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 8,
+        "open_market_buys": 0,
+        "open_market_sells": 9,
         "compensation_grants": 0,
-        "net_open_market_value": -1213581.9,
-        "net_open_market_fmt": "-$1.2M",
+        "net_open_market_value": -11770210.27,
+        "net_open_market_fmt": "-$11.8M",
         "largest_single_transaction": {
-          "name": "Bartlett Daniel J",
+          "name": "Danker Daniel",
           "direction": "sell",
-          "dollar_value": 419601.0,
-          "dollar_fmt": "$420K",
-          "date": "2026-08-03",
-          "shares_traded": 3710,
-          "price_per_share": 113.1,
+          "dollar_value": 5586358.91,
+          "dollar_fmt": "$5.6M",
+          "date": "2026-08-25",
+          "shares_traded": 52459,
+          "price_per_share": 106.49,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Danker Daniel",
+            "direction": "sell",
+            "dollar_value": 5335345.4,
+            "dollar_fmt": "$5.3M",
+            "date": "2026-08-26",
+            "shares_traded": 50644,
+            "price_per_share": 105.35,
+            "transaction_code": ""
+          },
+          {
+            "name": "Danker Daniel",
+            "direction": "sell",
+            "dollar_value": 5586358.91,
+            "dollar_fmt": "$5.6M",
+            "date": "2026-08-25",
+            "shares_traded": 52459,
+            "price_per_share": 106.49,
+            "transaction_code": ""
+          },
           {
             "name": "Bartlett Daniel J",
             "direction": "sell",
@@ -1041,16 +1126,6 @@
             "shares_traded": 1639,
             "price_per_share": 113.8743,
             "transaction_code": ""
-          },
-          {
-            "name": "Bartlett Daniel J",
-            "direction": "sell",
-            "dollar_value": 413891.0,
-            "dollar_fmt": "$414K",
-            "date": "2026-07-01",
-            "shares_traded": 3775,
-            "price_per_share": 109.64,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
@@ -1058,15 +1133,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Ross Stores: Forget The Tariff Tailwind; Organic Growth Is Even More Impressive",
-          "date": "2026-08-25 10:47",
-          "summary": "Ross Stores, Inc. saw another explosion in growth in Q2 and continues to enjoy enhanced customer traffic. Learn more about ROST stock here.",
-          "source": "SeekingAlpha",
+          "headline": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
+          "date": "2026-08-31 21:39",
+          "summary": "The Dow Jones index dropped on the stock market today as President Trump gave an AI warning. Tesla jumped and some equities tested entries.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "The 'choose your own adventure' earnings: Why retailers are handling tariff refunds so differently",
+          "date": "2026-08-30 08:00",
+          "summary": "Retailers have diverged on how they've reported tariff refunds in their earnings this quarter, with some choosing to lower prices and others boosting margins.",
+          "source": "CNBC",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:40.005128"
+      "scanned_at": "2026-09-01T15:32:59.069947"
     },
     "COST": {
       "insider_signal": {
@@ -1084,44 +1167,76 @@
       },
       "trump_mentions": [
         {
-          "headline": "Ross Stores: Forget The Tariff Tailwind; Organic Growth Is Even More Impressive",
-          "date": "2026-08-25 10:47",
-          "summary": "Ross Stores, Inc. saw another explosion in growth in Q2 and continues to enjoy enhanced customer traffic. Learn more about ROST stock here.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Target Raises View as Growth Momentum Extends Beyond Tariff Tailwinds",
-          "date": "2026-08-21 15:40",
-          "summary": "Target lifts its fiscal 2026 outlook as sales, digital growth and category strength signal momentum beyond tariff refund benefits, with higher earnings guidance.",
+          "headline": "Amazon, Target customers aim to move location of tariff refund suits",
+          "date": "2026-08-28 15:43",
+          "summary": "A debate over where class actions filed by customers seeking tariff refunds from large retailers should be heard comes as the money has begun to flow back into company coffers.",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-08-26T12:01:40.745802"
+      "scanned_at": "2026-09-01T15:33:00.017635"
     },
     "FCX": {
       "insider_signal": {
         "ticker": "FCX",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 3,
-        "compensation_grants": 0,
-        "net_open_market_value": -1747737.43,
-        "net_open_market_fmt": "-$1.7M",
+        "open_market_sells": 5,
+        "compensation_grants": 2,
+        "net_open_market_value": -7182246.29,
+        "net_open_market_fmt": "-$7.2M",
         "largest_single_transaction": {
-          "name": "Higgins Stephen T.",
+          "name": "Currault Douglas N. II",
           "direction": "sell",
-          "dollar_value": 992251.5,
-          "dollar_fmt": "$992K",
-          "date": "2026-08-05",
-          "shares_traded": 14277,
-          "price_per_share": 69.5,
+          "dollar_value": 6284464.0,
+          "dollar_fmt": "$6.3M",
+          "date": "2026-08-25",
+          "shares_traded": 80000,
+          "price_per_share": 78.5558,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "KENNARD LYDIA H",
+            "direction": "sell",
+            "dollar_value": 300470.79,
+            "dollar_fmt": "$300K",
+            "date": "2026-08-27",
+            "shares_traded": 3798,
+            "price_per_share": 79.1129,
+            "transaction_code": ""
+          },
+          {
+            "name": "Currault Douglas N. II",
+            "direction": "sell",
+            "dollar_value": 6284464.0,
+            "dollar_fmt": "$6.3M",
+            "date": "2026-08-25",
+            "shares_traded": 80000,
+            "price_per_share": 78.5558,
+            "transaction_code": ""
+          },
+          {
+            "name": "Currault Douglas N. II",
+            "direction": "buy",
+            "dollar_value": 422100.0,
+            "dollar_fmt": "$422K",
+            "date": "2026-08-25",
+            "shares_traded": 15000,
+            "price_per_share": 28.14,
+            "transaction_code": ""
+          },
+          {
+            "name": "Currault Douglas N. II",
+            "direction": "buy",
+            "dollar_value": 782600.0,
+            "dollar_fmt": "$783K",
+            "date": "2026-08-25",
+            "shares_traded": 65000,
+            "price_per_share": 12.04,
+            "transaction_code": ""
+          },
           {
             "name": "Mikes Ellie L.",
             "direction": "sell",
@@ -1156,17 +1271,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Jones Futures Due With Nvidia Earnings, Tariffs, Warsh In Focus",
-          "date": "2026-08-23 18:30",
-          "summary": "The market rally suffered damage last week, though bitcoin and gold shined. New Trump tariffs on Canada began Saturday. Nvidia, CrowdStrike and Fed's Warsh loom.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-08-26T12:01:41.478357"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-01T15:33:00.936693"
     },
     "NEE": {
       "insider_signal": {
@@ -1192,7 +1298,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:42.175455"
+      "scanned_at": "2026-09-01T15:33:01.867935"
     },
     "PLD": {
       "insider_signal": {
@@ -1200,7 +1306,7 @@
         "days_back": 60,
         "open_market_buys": 6,
         "open_market_sells": 1,
-        "compensation_grants": 3,
+        "compensation_grants": 0,
         "net_open_market_value": -7494895.31,
         "net_open_market_fmt": "-$7.5M",
         "largest_single_transaction": {
@@ -1229,7 +1335,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-08-26T12:01:42.825912"
+      "scanned_at": "2026-09-01T15:33:02.777902"
     }
   }
 }
