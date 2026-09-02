@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-01",
-  "last_notified_date": "2026-09-01",
+  "date": "2026-09-02",
+  "last_notified_date": "2026-09-02",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -48,23 +48,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
-          "date": "2026-09-01 12:59",
-          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "headline": "Ford and GM Will Have to Pay Tariffs on Cars Made in Canada",
+          "date": "2026-09-02 13:00",
+          "summary": "New Canada tariffs are landing as a direct bill to two of America's biggest automakers, and the ripple effects stretch well beyond car lots into the housing market and household budgets.",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "MapQuest vs. Trump: OG of Maps Keeps Lake Ontario Name, Sees Download Surge and Stock Boost for Parent",
-          "date": "2026-08-31 17:00",
-          "summary": "President Donald Trump changed the name of Lake Ontario to Lake America. A mapping company said they wouldn&#39;t comply.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:42.686920"
+      "scanned_at": "2026-09-02T15:17:23.916649"
     },
     "NVDA": {
       "insider_signal": {
@@ -80,17 +72,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Media Falls 3% as Rising Yields and Higher Oil Squeeze Risk Appetite",
-          "date": "2026-09-01 15:09",
-          "summary": "Rising Treasury yields and surging oil prices are creating a punishing combination for speculative small caps, and Trump Media stock is absorbing far more pain than the broader market suggests it shou",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:43.778306"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:25.076503"
     },
     "MSFT": {
       "insider_signal": {
@@ -137,7 +120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:32:44.845772"
+      "scanned_at": "2026-09-02T15:17:26.154418"
     },
     "MU": {
       "insider_signal": {
@@ -265,31 +248,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
-          "date": "2026-09-01 12:59",
-          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "headline": "‘Only in America’: Trump hails Nvidia’s record $96.2B quarter and Micron’s massive $250B US bet — are you cashing in?",
+          "date": "2026-09-02 12:40",
+          "summary": "“The Golden Age of America is HERE.”",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
-          "date": "2026-09-01 06:11",
-          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Dow Jones Futures: Trump's Iran Warning Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Rally",
-          "date": "2026-09-01 01:12",
-          "summary": "Dow Jones Futures: President Trump's Iran warning sparked stock market losses Monday. Elon Musk-led SpaceX and Tesla rallied.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:45.845286"
+      "scanned_at": "2026-09-02T15:17:27.239197"
     },
     "GOOGL": {
       "insider_signal": {
@@ -335,25 +302,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "MapQuest vs. Trump: OG of Maps Keeps Lake Ontario Name, Sees Download Surge and Stock Boost for Parent",
-          "date": "2026-08-31 17:00",
-          "summary": "President Donald Trump changed the name of Lake Ontario to Lake America. A mapping company said they wouldn&#39;t comply.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Trump’s Truth Social ETF Manager Is Betting Big on AI, Crypto and New ETFs",
-          "date": "2026-08-31 16:18",
-          "summary": "Trump’s Truth Social ETF manager is expanding into AI, crypto, and macro strategies with a new MANGOS ETF and a planned acquisition.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:47.380125"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:28.538605"
     },
     "META": {
       "insider_signal": {
@@ -451,15 +401,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says ‘Let Data Reign’ As He Slams Data Center Backlash: Communities Risk Being ‘Backwards And Poor’",
-          "date": "2026-09-01 08:12",
-          "summary": "President Donald Trump has backed the AI infrastructure buildout as data center projects face growing public resistance.",
+          "headline": "The New York Times Company's Executive Vice President and CFO William Bardeen to Participate in the Citi 2026 Global TMT Conference",
+          "date": "2026-09-02 15:00",
+          "summary": "NEW YORK, September 02, 2026--The New York Times Company (NYSE: NYT) announced today that it will participate in the Citi Global TMT Conference on Wednesday, September 9, 2026, in New York City.",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:48.503784"
+      "scanned_at": "2026-09-02T15:17:29.742890"
     },
     "AMZN": {
       "insider_signal": {
@@ -527,15 +477,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says “Let Data Reign” — Even as Data Centers Drive Up Utility Costs for Ordinary Families",
-          "date": "2026-09-01 12:59",
-          "summary": "Trump is cheering on the AI data center boom as a golden goose, but the CEOs of Apple, Amazon, and Micron are quietly confirming what millions of families already sense at the checkout counter and on ",
+          "headline": "How the Death of an $800 Tariff Loophole Erased 70% of Shein’s Value",
+          "date": "2026-09-02 14:53",
+          "summary": "A single line in U.S. customs law quietly bankrolled the ultra-cheap fashion giants shipping from Guangzhou to your door. Now that the loophole is closed, the bill is coming due and investors are only",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:49.516758"
+      "scanned_at": "2026-09-02T15:17:30.898838"
     },
     "TSLA": {
       "insider_signal": {
@@ -551,8 +501,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:32:50.506958"
+      "trump_mentions": [
+        {
+          "headline": "Trump Declares Bulk Power 'Emergency'; These Energy Storage Players Benefit",
+          "date": "2026-09-02 13:22",
+          "summary": "Energy storage stocks Tesla and Fluence may get a Trump boost as he bans some inverters, BESS, and transformers from China.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Ford and GM Will Have to Pay Tariffs on Cars Made in Canada",
+          "date": "2026-09-02 13:00",
+          "summary": "New Canada tariffs are landing as a direct bill to two of America's biggest automakers, and the ripple effects stretch well beyond car lots into the housing market and household budgets.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-02T15:17:32.110083"
     },
     "LLY": {
       "insider_signal": {
@@ -610,15 +577,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Admin To Target Biotechs With Curbs On Drug Pricing? What Investors Should Know",
-          "date": "2026-08-31 14:57",
-          "summary": "",
-          "source": "SeekingAlpha",
+          "headline": "Trump Expands Drug Pricing Deals With 9 Pharma Companies, Bringing Total to 26 — RFK Jr. Details 'Very, Very Emotional' Conversations With President",
+          "date": "2026-09-01 04:57",
+          "summary": "Trump secures drug pricing deals with nine pharma companies as Kennedy reveals intense pressure from the President to deliver.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:51.489824"
+      "scanned_at": "2026-09-02T15:17:33.144508"
     },
     "UNH": {
       "insider_signal": {
@@ -674,17 +641,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Asbury Automotive Group Announces Appointment of Senior Vice President and Chief Human Resources Officer",
-          "date": "2026-08-31 21:30",
-          "summary": "ATLANTA, August 31, 2026--Asbury Automotive Group Announces Appointment of Senior Vice President and Chief Human Resources Officer",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:52.427879"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:34.146334"
     },
     "JPM": {
       "insider_signal": {
@@ -722,15 +680,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
-          "date": "2026-09-01 06:11",
-          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "headline": "Scotiabank's President and Chief Executive Officer Scott Thomson to Speak at the 27th Annual Scotiabank Global Banking and Markets Financials Summit",
+          "date": "2026-09-02 14:00",
+          "summary": "Scotiabank's President and Chief Executive Officer, Scott Thomson, will participate in the 27th Annual Scotiabank Global Banking and Markets Financials Summit on September 9, 2026.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:53.344062"
+      "scanned_at": "2026-09-02T15:17:35.222456"
     },
     "GS": {
       "insider_signal": {
@@ -786,17 +744,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Accounts Get Major Corporate Boost: American Airlines Offers $1,000 Match, Dell Starts $250 Payments",
-          "date": "2026-09-01 06:11",
-          "summary": "Trump Accounts gain fresh private support as American Airlines offers $1,000 matches and Dell begins $250 grants for eligible children.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:54.282241"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:36.289679"
     },
     "XOM": {
       "insider_signal": {
@@ -814,31 +763,31 @@
       },
       "trump_mentions": [
         {
-          "headline": "This Oil Major Is Perfectly Positioned to Benefit From Trump's Oil Deal With Venezuela",
-          "date": "2026-09-01 03:35",
-          "summary": "The Trump deal to acquire Venezuelan oil could be a windfall for Chevron.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Trump Says Exxon Will Enter Venezuela as Oil Investment Ramps Up",
-          "date": "2026-09-01 00:54",
-          "summary": "President Donald Trump said ExxonMobil Holdings Corporation (NYSE:XOM) is among the major oil companies preparing to enter Venezuela, signaling a potential reversal of Exxon’s nearly two-decade absenc",
+          "headline": "Gulf Coast Refineries Pour Cold Water on Trump’s 65-Billion-Barrel Venezuelan Victory Lap",
+          "date": "2026-09-01 17:55",
+          "summary": "Trump just claimed rights to more oil than exists beneath all 50 states combined, but the Gulf Coast refiners responsible for turning that crude into gasoline have a very different reaction than the W",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Update: Market Chatter: Trump to Host Oil Company Executives on Tuesday",
-          "date": "2026-08-31 18:59",
-          "summary": "(Updates with White House comment in last paragraph.) President Donald Trump is expected to host",
+          "headline": "Trump to meet with oil executives on lowering gas prices — and Exxon isn't invited",
+          "date": "2026-09-01 16:27",
+          "summary": "President Trump is meeting with several oil executives on Tuesday to discuss expanding refining capacity in the US, with the goal of lowering gas prices. This comes after the US entered a major oil de",
           "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Presses Refiners on Gas Prices Tuesday — and He's Been Buying Their Stocks",
+          "date": "2026-09-01 11:32",
+          "summary": "President Donald Trump is set to meet with oil executives Tuesday.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-01T15:32:55.217759"
+      "scanned_at": "2026-09-02T15:17:37.352025"
     },
     "CVX": {
       "insider_signal": {
@@ -914,25 +863,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "This Oil Major Is Perfectly Positioned to Benefit From Trump's Oil Deal With Venezuela",
-          "date": "2026-09-01 03:35",
-          "summary": "The Trump deal to acquire Venezuelan oil could be a windfall for Chevron.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
-          "date": "2026-08-31 21:39",
-          "summary": "The Dow Jones index dropped on the stock market today as President Trump gave an AI warning. Tesla jumped and some equities tested entries.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:56.251502"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:38.427723"
     },
     "CAT": {
       "insider_signal": {
@@ -958,7 +890,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:32:57.211551"
+      "scanned_at": "2026-09-02T15:17:39.441541"
     },
     "GE": {
       "insider_signal": {
@@ -1055,7 +987,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:32:58.135144"
+      "scanned_at": "2026-09-02T15:17:40.422960"
     },
     "WMT": {
       "insider_signal": {
@@ -1131,25 +1063,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Skids As Trump Gives This AI Warning; Tesla Pops Ahead Of Key Event",
-          "date": "2026-08-31 21:39",
-          "summary": "The Dow Jones index dropped on the stock market today as President Trump gave an AI warning. Tesla jumped and some equities tested entries.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "The 'choose your own adventure' earnings: Why retailers are handling tariff refunds so differently",
-          "date": "2026-08-30 08:00",
-          "summary": "Retailers have diverged on how they've reported tariff refunds in their earnings this quarter, with some choosing to lower prices and others boosting margins.",
-          "source": "CNBC",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:32:59.069947"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:41.471216"
     },
     "COST": {
       "insider_signal": {
@@ -1165,17 +1080,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Amazon, Target customers aim to move location of tariff refund suits",
-          "date": "2026-08-28 15:43",
-          "summary": "A debate over where class actions filed by customers seeking tariff refunds from large retailers should be heard comes as the money has begun to flow back into company coffers.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-01T15:33:00.017635"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-02T15:17:42.458216"
     },
     "FCX": {
       "insider_signal": {
@@ -1272,7 +1178,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:33:00.936693"
+      "scanned_at": "2026-09-02T15:17:43.434235"
     },
     "NEE": {
       "insider_signal": {
@@ -1298,7 +1204,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:33:01.867935"
+      "scanned_at": "2026-09-02T15:17:44.416067"
     },
     "PLD": {
       "insider_signal": {
@@ -1335,7 +1241,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-01T15:33:02.777902"
+      "scanned_at": "2026-09-02T15:17:45.401851"
     }
   }
 }
