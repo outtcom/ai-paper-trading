@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-02",
-  "last_notified_date": "2026-09-02",
+  "date": "2026-09-03",
+  "last_notified_date": "2026-09-03",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,17 +46,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Ford and GM Will Have to Pay Tariffs on Cars Made in Canada",
-          "date": "2026-09-02 13:00",
-          "summary": "New Canada tariffs are landing as a direct bill to two of America's biggest automakers, and the ripple effects stretch well beyond car lots into the housing market and household budgets.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:23.916649"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:30.776320"
     },
     "NVDA": {
       "insider_signal": {
@@ -73,7 +64,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:25.076503"
+      "scanned_at": "2026-09-03T15:10:31.901716"
     },
     "MSFT": {
       "insider_signal": {
@@ -120,7 +111,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:26.154418"
+      "scanned_at": "2026-09-03T15:10:33.060236"
     },
     "MU": {
       "insider_signal": {
@@ -246,17 +237,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "‘Only in America’: Trump hails Nvidia’s record $96.2B quarter and Micron’s massive $250B US bet — are you cashing in?",
-          "date": "2026-09-02 12:40",
-          "summary": "“The Golden Age of America is HERE.”",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:27.239197"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:34.377944"
     },
     "GOOGL": {
       "insider_signal": {
@@ -303,7 +285,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:28.538605"
+      "scanned_at": "2026-09-03T15:10:36.112417"
     },
     "META": {
       "insider_signal": {
@@ -399,17 +381,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The New York Times Company's Executive Vice President and CFO William Bardeen to Participate in the Citi 2026 Global TMT Conference",
-          "date": "2026-09-02 15:00",
-          "summary": "NEW YORK, September 02, 2026--The New York Times Company (NYSE: NYT) announced today that it will participate in the Citi Global TMT Conference on Wednesday, September 9, 2026, in New York City.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:29.742890"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:37.395259"
     },
     "AMZN": {
       "insider_signal": {
@@ -475,17 +448,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "How the Death of an $800 Tariff Loophole Erased 70% of Shein’s Value",
-          "date": "2026-09-02 14:53",
-          "summary": "A single line in U.S. customs law quietly bankrolled the ultra-cheap fashion giants shipping from Guangzhou to your door. Now that the loophole is closed, the bill is coming due and investors are only",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:30.898838"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:38.768487"
     },
     "TSLA": {
       "insider_signal": {
@@ -501,25 +465,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Declares Bulk Power 'Emergency'; These Energy Storage Players Benefit",
-          "date": "2026-09-02 13:22",
-          "summary": "Energy storage stocks Tesla and Fluence may get a Trump boost as he bans some inverters, BESS, and transformers from China.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Ford and GM Will Have to Pay Tariffs on Cars Made in Canada",
-          "date": "2026-09-02 13:00",
-          "summary": "New Canada tariffs are landing as a direct bill to two of America's biggest automakers, and the ripple effects stretch well beyond car lots into the housing market and household budgets.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:32.110083"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:39.828761"
     },
     "LLY": {
       "insider_signal": {
@@ -578,14 +525,14 @@
       "trump_mentions": [
         {
           "headline": "Trump Expands Drug Pricing Deals With 9 Pharma Companies, Bringing Total to 26 — RFK Jr. Details 'Very, Very Emotional' Conversations With President",
-          "date": "2026-09-01 04:57",
-          "summary": "Trump secures drug pricing deals with nine pharma companies as Kennedy reveals intense pressure from the President to deliver.",
-          "source": "Benzinga",
+          "date": "2026-09-02 22:00",
+          "summary": "President Donald Trump has secured new drug pricing agreements with nine pharmaceutical companies, with an aim to align the prices of drugs in the U.S. with international prices. The companies include",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-02T15:17:33.144508"
+      "scanned_at": "2026-09-03T15:10:40.867927"
     },
     "UNH": {
       "insider_signal": {
@@ -642,7 +589,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:34.146334"
+      "scanned_at": "2026-09-03T15:10:41.958630"
     },
     "JPM": {
       "insider_signal": {
@@ -678,17 +625,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Scotiabank's President and Chief Executive Officer Scott Thomson to Speak at the 27th Annual Scotiabank Global Banking and Markets Financials Summit",
-          "date": "2026-09-02 14:00",
-          "summary": "Scotiabank's President and Chief Executive Officer, Scott Thomson, will participate in the 27th Annual Scotiabank Global Banking and Markets Financials Summit on September 9, 2026.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-02T15:17:35.222456"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-03T15:10:43.046187"
     },
     "GS": {
       "insider_signal": {
@@ -745,7 +683,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:36.289679"
+      "scanned_at": "2026-09-03T15:10:44.094532"
     },
     "XOM": {
       "insider_signal": {
@@ -777,17 +715,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Presses Refiners on Gas Prices Tuesday — and He's Been Buying Their Stocks",
-          "date": "2026-09-01 11:32",
-          "summary": "President Donald Trump is set to meet with oil executives Tuesday.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-02T15:17:37.352025"
+      "scanned_at": "2026-09-03T15:10:45.167726"
     },
     "CVX": {
       "insider_signal": {
@@ -864,7 +794,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:38.427723"
+      "scanned_at": "2026-09-03T15:10:46.203334"
     },
     "CAT": {
       "insider_signal": {
@@ -890,7 +820,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:39.441541"
+      "scanned_at": "2026-09-03T15:10:47.299106"
     },
     "GE": {
       "insider_signal": {
@@ -987,7 +917,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:40.422960"
+      "scanned_at": "2026-09-03T15:10:48.275195"
     },
     "WMT": {
       "insider_signal": {
@@ -1063,8 +993,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:41.471216"
+      "trump_mentions": [
+        {
+          "headline": "Kroger names Mark Ibbotson Executive Vice President and Chief Store Operations Officer",
+          "date": "2026-09-02 21:30",
+          "summary": "The Kroger Co. (NYSE: KR) today announced that Mark Ibbotson will join the company as Executive Vice President and Chief Store Operations Officer, effective September 14.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-03T15:10:49.380272"
     },
     "COST": {
       "insider_signal": {
@@ -1081,7 +1020,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:42.458216"
+      "scanned_at": "2026-09-03T15:10:50.383625"
     },
     "FCX": {
       "insider_signal": {
@@ -1178,7 +1117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:43.434235"
+      "scanned_at": "2026-09-03T15:10:51.349649"
     },
     "NEE": {
       "insider_signal": {
@@ -1204,7 +1143,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:44.416067"
+      "scanned_at": "2026-09-03T15:10:52.353778"
     },
     "PLD": {
       "insider_signal": {
@@ -1241,7 +1180,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-02T15:17:45.401851"
+      "scanned_at": "2026-09-03T15:10:53.330417"
     }
   }
 }
