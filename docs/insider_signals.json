@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-03",
-  "last_notified_date": "2026-09-03",
+  "date": "2026-09-04",
+  "last_notified_date": "2026-09-04",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -47,7 +47,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:30.776320"
+      "scanned_at": "2026-09-04T15:05:49.906827"
     },
     "NVDA": {
       "insider_signal": {
@@ -64,7 +64,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:31.901716"
+      "scanned_at": "2026-09-04T15:05:50.985208"
     },
     "MSFT": {
       "insider_signal": {
@@ -110,8 +110,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:33.060236"
+      "trump_mentions": [
+        {
+          "headline": "Mark Zuckerberg Opposes Federal AI Watchdog in Call With Trump: Report",
+          "date": "2026-09-04 04:37",
+          "summary": "Meta Platforms Inc. (NASDAQ:META) CEO Mark Zuckerberg reportedly pushed back against a proposed national artificial-intelligence regulator during an August phone call with President Donald Trump, as t",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-04T15:05:51.975954"
     },
     "MU": {
       "insider_signal": {
@@ -238,7 +247,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:34.377944"
+      "scanned_at": "2026-09-04T15:05:52.997658"
     },
     "GOOGL": {
       "insider_signal": {
@@ -285,7 +294,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:36.112417"
+      "scanned_at": "2026-09-04T15:05:54.530810"
     },
     "META": {
       "insider_signal": {
@@ -381,8 +390,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:37.395259"
+      "trump_mentions": [
+        {
+          "headline": "Mark Zuckerberg Opposes Federal AI Watchdog in Call With Trump: Report",
+          "date": "2026-09-04 04:37",
+          "summary": "Meta Platforms Inc. (NASDAQ:META) CEO Mark Zuckerberg reportedly pushed back against a proposed national artificial-intelligence regulator during an August phone call with President Donald Trump, as t",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-04T15:05:55.670016"
     },
     "AMZN": {
       "insider_signal": {
@@ -449,7 +467,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:38.768487"
+      "scanned_at": "2026-09-04T15:05:56.825743"
     },
     "TSLA": {
       "insider_signal": {
@@ -466,7 +484,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:39.828761"
+      "scanned_at": "2026-09-04T15:05:57.833167"
     },
     "LLY": {
       "insider_signal": {
@@ -532,7 +550,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-03T15:10:40.867927"
+      "scanned_at": "2026-09-04T15:05:58.794209"
     },
     "UNH": {
       "insider_signal": {
@@ -589,7 +607,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:41.958630"
+      "scanned_at": "2026-09-04T15:05:59.927309"
     },
     "JPM": {
       "insider_signal": {
@@ -626,7 +644,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:43.046187"
+      "scanned_at": "2026-09-04T15:06:00.923191"
     },
     "GS": {
       "insider_signal": {
@@ -683,7 +701,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:44.094532"
+      "scanned_at": "2026-09-04T15:06:01.883174"
     },
     "XOM": {
       "insider_signal": {
@@ -701,23 +719,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "ExxonMobil (XOM) Was Excluded From A White House Oil Meeting",
+          "date": "2026-09-04 13:13",
+          "summary": "ExxonMobil Holdings (NYSE:XOM) was left out of a recent White House meeting of major oil executives on US gasoline prices, according to people familiar with the talks. The gathering focused on refiner",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Gulf Coast Refineries Pour Cold Water on Trump’s 65-Billion-Barrel Venezuelan Victory Lap",
           "date": "2026-09-01 17:55",
           "summary": "Trump just claimed rights to more oil than exists beneath all 50 states combined, but the Gulf Coast refiners responsible for turning that crude into gasoline have a very different reaction than the W",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump to meet with oil executives on lowering gas prices — and Exxon isn't invited",
-          "date": "2026-09-01 16:27",
-          "summary": "President Trump is meeting with several oil executives on Tuesday to discuss expanding refining capacity in the US, with the goal of lowering gas prices. This comes after the US entered a major oil de",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-03T15:10:45.167726"
+      "scanned_at": "2026-09-04T15:06:02.831797"
     },
     "CVX": {
       "insider_signal": {
@@ -794,7 +812,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:46.203334"
+      "scanned_at": "2026-09-04T15:06:03.791071"
     },
     "CAT": {
       "insider_signal": {
@@ -820,7 +838,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:47.299106"
+      "scanned_at": "2026-09-04T15:06:04.743874"
     },
     "GE": {
       "insider_signal": {
@@ -917,7 +935,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:48.275195"
+      "scanned_at": "2026-09-04T15:06:05.629693"
     },
     "WMT": {
       "insider_signal": {
@@ -993,17 +1011,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Kroger names Mark Ibbotson Executive Vice President and Chief Store Operations Officer",
-          "date": "2026-09-02 21:30",
-          "summary": "The Kroger Co. (NYSE: KR) today announced that Mark Ibbotson will join the company as Executive Vice President and Chief Store Operations Officer, effective September 14.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-03T15:10:49.380272"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-04T15:06:06.634086"
     },
     "COST": {
       "insider_signal": {
@@ -1019,8 +1028,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:50.383625"
+      "trump_mentions": [
+        {
+          "headline": "Trump's DOJ Expands Beef Price Probe to Walmart, Costco, Amazon and 5 Other Retail Giants — Calls it a 'Critical Concern'",
+          "date": "2026-09-03 04:54",
+          "summary": "DOJ probes Walmart, Costco, Amazon and other retailers over rising beef prices, expanding its scrutiny of the meat market.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-04T15:06:07.699000"
     },
     "FCX": {
       "insider_signal": {
@@ -1117,7 +1135,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:51.349649"
+      "scanned_at": "2026-09-04T15:06:08.732101"
     },
     "NEE": {
       "insider_signal": {
@@ -1143,7 +1161,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:52.353778"
+      "scanned_at": "2026-09-04T15:06:09.624065"
     },
     "PLD": {
       "insider_signal": {
@@ -1180,7 +1198,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-03T15:10:53.330417"
+      "scanned_at": "2026-09-04T15:06:10.553874"
     }
   }
 }
