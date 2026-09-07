@@ -1,10 +1,10 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 52,
+    "current_day": 53,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-09-06T22:36:58.682364+00:00",
+    "last_updated": "2026-09-07T21:28:56.426798+00:00",
     "session_number": 3
   },
   "cash": 4919.95,
@@ -17,9 +17,9 @@
     "triggered_date": null
   },
   "stats": {
-    "sharpe": -1.01,
-    "sortino": -0.94,
-    "calmar": -1.19,
+    "sharpe": -1.0,
+    "sortino": -0.93,
+    "calmar": -1.18,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
     "spy_current_price": 770.19,
@@ -969,6 +969,11 @@
     {
       "day": 51,
       "date": "2026-09-04",
+      "equity": 4919.95
+    },
+    {
+      "day": 52,
+      "date": "2026-09-07",
       "equity": 4919.95
     }
   ],
@@ -2047,6 +2052,11 @@
       "day": 51,
       "date": "2026-09-04",
       "equity": 5100.66
+    },
+    {
+      "day": 52,
+      "date": "2026-09-07",
+      "equity": 5100.66
     }
   ],
   "midcap_equity_curve": [
@@ -2304,6 +2314,11 @@
       "day": 51,
       "date": "2026-09-04",
       "equity": 5011.95
+    },
+    {
+      "day": 52,
+      "date": "2026-09-07",
+      "equity": 5011.95
     }
   ],
   "penny_equity_curve": [
@@ -2560,6 +2575,11 @@
     {
       "day": 51,
       "date": "2026-09-04",
+      "equity": 5000.0
+    },
+    {
+      "day": 52,
+      "date": "2026-09-07",
       "equity": 5000.0
     }
   ],
@@ -2872,7 +2892,7 @@
   ],
   "last_run_dates": {
     "morning_session": "2026-08-26",
-    "eod_session": "2026-09-04",
+    "eod_session": "2026-09-07",
     "premarket_check": "2026-08-26",
     "penny_scan": "2026-08-26",
     "midcap_scan": "2026-08-26"
