@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-07",
-  "last_notified_date": "2026-09-07",
+  "date": "2026-09-08",
+  "last_notified_date": "2026-09-08",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -47,7 +47,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:40.609498"
+      "scanned_at": "2026-09-08T15:18:33.007816"
     },
     "NVDA": {
       "insider_signal": {
@@ -64,7 +64,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:41.286435"
+      "scanned_at": "2026-09-08T15:18:34.412100"
     },
     "MSFT": {
       "insider_signal": {
@@ -111,7 +111,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:41.950664"
+      "scanned_at": "2026-09-08T15:18:35.588072"
     },
     "MU": {
       "insider_signal": {
@@ -238,7 +238,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:42.614762"
+      "scanned_at": "2026-09-08T15:18:36.731150"
     },
     "GOOGL": {
       "insider_signal": {
@@ -285,7 +285,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:43.459013"
+      "scanned_at": "2026-09-08T15:18:37.947046"
     },
     "META": {
       "insider_signal": {
@@ -382,7 +382,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:44.256650"
+      "scanned_at": "2026-09-08T15:18:39.208800"
     },
     "AMZN": {
       "insider_signal": {
@@ -449,7 +449,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:44.955042"
+      "scanned_at": "2026-09-08T15:18:40.403397"
     },
     "TSLA": {
       "insider_signal": {
@@ -466,7 +466,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:45.614060"
+      "scanned_at": "2026-09-08T15:18:41.546427"
     },
     "LLY": {
       "insider_signal": {
@@ -523,7 +523,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:46.256688"
+      "scanned_at": "2026-09-08T15:18:42.670041"
     },
     "UNH": {
       "insider_signal": {
@@ -580,7 +580,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:46.884378"
+      "scanned_at": "2026-09-08T15:18:43.725152"
     },
     "JPM": {
       "insider_signal": {
@@ -617,7 +617,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:47.541141"
+      "scanned_at": "2026-09-08T15:18:44.800915"
     },
     "GS": {
       "insider_signal": {
@@ -683,7 +683,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-07T16:39:48.168256"
+      "scanned_at": "2026-09-08T15:18:45.867640"
     },
     "XOM": {
       "insider_signal": {
@@ -715,17 +715,9 @@
           "source": "CNBC",
           "keyword_matched": "trump",
           "sentiment_hint": "positive"
-        },
-        {
-          "headline": "ExxonMobil (XOM) Was Excluded From A White House Oil Meeting",
-          "date": "2026-09-04 13:13",
-          "summary": "ExxonMobil Holdings (NYSE:XOM) was left out of a recent White House meeting of major oil executives on US gasoline prices, according to people familiar with the talks. The gathering focused on refiner",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-07T16:39:48.785852"
+      "scanned_at": "2026-09-08T15:18:46.952414"
     },
     "CVX": {
       "insider_signal": {
@@ -819,7 +811,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-07T16:39:49.436813"
+      "scanned_at": "2026-09-08T15:18:48.036177"
     },
     "CAT": {
       "insider_signal": {
@@ -845,7 +837,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:50.093063"
+      "scanned_at": "2026-09-08T15:18:49.284657"
     },
     "GE": {
       "insider_signal": {
@@ -942,7 +934,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:50.728157"
+      "scanned_at": "2026-09-08T15:18:50.777485"
     },
     "WMT": {
       "insider_signal": {
@@ -1044,7 +1036,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-07T16:39:51.380666"
+      "scanned_at": "2026-09-08T15:18:51.860082"
     },
     "COST": {
       "insider_signal": {
@@ -1052,7 +1044,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 0,
-        "compensation_grants": 1,
+        "compensation_grants": 0,
         "net_open_market_value": 0.0,
         "net_open_market_fmt": "+$0",
         "largest_single_transaction": null,
@@ -1068,17 +1060,9 @@
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump's DOJ Expands Beef Price Probe to Walmart, Costco, Amazon and 5 Other Retail Giants — Calls it a 'Critical Concern'",
-          "date": "2026-09-04 14:30",
-          "summary": "The Department of Justice (DOJ) has extended the federal government’s scrutiny of rising beef prices to the retail level of the food supply chain. The retailers now under investigation include Kroger,",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-07T16:39:52.019984"
+      "scanned_at": "2026-09-08T15:18:52.921703"
     },
     "FCX": {
       "insider_signal": {
@@ -1175,7 +1159,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:52.622823"
+      "scanned_at": "2026-09-08T15:18:53.904602"
     },
     "NEE": {
       "insider_signal": {
@@ -1192,7 +1176,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:53.248119"
+      "scanned_at": "2026-09-08T15:18:54.938424"
     },
     "PLD": {
       "insider_signal": {
@@ -1229,7 +1213,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-07T16:39:53.990181"
+      "scanned_at": "2026-09-08T15:18:55.936350"
     }
   }
 }
