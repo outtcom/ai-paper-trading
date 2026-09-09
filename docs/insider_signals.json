@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-08",
-  "last_notified_date": "2026-09-08",
+  "date": "2026-09-09",
+  "last_notified_date": "2026-09-09",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -47,7 +47,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:33.007816"
+      "scanned_at": "2026-09-09T15:16:45.475695"
     },
     "NVDA": {
       "insider_signal": {
@@ -64,7 +64,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:34.412100"
+      "scanned_at": "2026-09-09T15:16:46.149700"
     },
     "MSFT": {
       "insider_signal": {
@@ -111,7 +111,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:35.588072"
+      "scanned_at": "2026-09-09T15:16:46.951582"
     },
     "MU": {
       "insider_signal": {
@@ -238,7 +238,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:36.731150"
+      "scanned_at": "2026-09-09T15:16:47.609315"
     },
     "GOOGL": {
       "insider_signal": {
@@ -285,7 +285,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:37.947046"
+      "scanned_at": "2026-09-09T15:16:48.448734"
     },
     "META": {
       "insider_signal": {
@@ -382,7 +382,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:39.208800"
+      "scanned_at": "2026-09-09T15:16:49.413122"
     },
     "AMZN": {
       "insider_signal": {
@@ -449,7 +449,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:40.403397"
+      "scanned_at": "2026-09-09T15:16:50.114140"
     },
     "TSLA": {
       "insider_signal": {
@@ -466,7 +466,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:41.546427"
+      "scanned_at": "2026-09-09T15:16:50.962119"
     },
     "LLY": {
       "insider_signal": {
@@ -523,7 +523,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:42.670041"
+      "scanned_at": "2026-09-09T15:16:51.707102"
     },
     "UNH": {
       "insider_signal": {
@@ -580,7 +580,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:43.725152"
+      "scanned_at": "2026-09-09T15:16:52.368929"
     },
     "JPM": {
       "insider_signal": {
@@ -616,8 +616,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:44.800915"
+      "trump_mentions": [
+        {
+          "headline": "No industry is spared from costly U.S. tariff regime",
+          "date": "2026-09-09 09:11",
+          "summary": "The volume of companies’ duty payments to the federal government remains far above the pre-2025 norm, according to a recent JPMorganChase Institute analysis.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-09T15:16:53.009904"
     },
     "GS": {
       "insider_signal": {
@@ -673,17 +682,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Top White House Economist Points to 1.6% Inflation as Evidence the Fed Doesn’t Need Higher Rates",
-          "date": "2026-09-06 14:27",
-          "summary": "Kevin Hassett says the economy is roaring without sparking inflation, but former Fed officials, record gas prices, and skeptical analysts are lining up to challenge that claim before the next rate dec",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-08T15:18:45.867640"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-09T15:16:53.644745"
     },
     "XOM": {
       "insider_signal": {
@@ -701,23 +701,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Why I Just Added to My Chevron Position Despite Trump Criticism",
-          "date": "2026-09-05 18:13",
-          "summary": "Speculation that Chevron is about to close two major oil-field deals in Venezuela \"trumps\" White House knocks on the company.",
+          "headline": "Trump oil and gas holdings gained up to $4.4M during Iran war",
+          "date": "2026-09-09 11:58",
+          "summary": "A CNBC analysis found Trump's 9 largest energy positions rose between $1.5M and $4.4M in the first six months of fighting",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump’s state capitalism comes to the oil industry with his unprecedented Venezuela deal",
-          "date": "2026-09-05 08:14",
-          "summary": "The deal comes eight months after Washington ousted former President Nicolás Maduro in a military raid.",
-          "source": "CNBC",
+          "headline": "ExxonMobil's CEO Called Venezuela 'Uninvestable.' Trump Says It's Going In Anyway. Here's Why Investors Should Pay Attention.",
+          "date": "2026-09-08 09:20",
+          "summary": "Chevron's recently expanded agreement in Venezuela could provide a blueprint for Exxon's return.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-08T15:18:46.952414"
+      "scanned_at": "2026-09-09T15:16:54.307913"
     },
     "CVX": {
       "insider_signal": {
@@ -795,23 +795,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Why I Just Added to My Chevron Position Despite Trump Criticism",
-          "date": "2026-09-05 18:13",
-          "summary": "Speculation that Chevron is about to close two major oil-field deals in Venezuela \"trumps\" White House knocks on the company.",
+          "headline": "Trump oil and gas holdings gained up to $4.4M during Iran war",
+          "date": "2026-09-09 11:58",
+          "summary": "A CNBC analysis found Trump's 9 largest energy positions rose between $1.5M and $4.4M in the first six months of fighting",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump’s state capitalism comes to the oil industry with his unprecedented Venezuela deal",
-          "date": "2026-09-05 08:14",
-          "summary": "The deal comes eight months after Washington ousted former President Nicolás Maduro in a military raid.",
-          "source": "CNBC",
+          "headline": "Top Economist Slams Trump’s Venezuela Oil Deal ‘Theft’ — ‘Toppled Their Leader’ and ‘Had Him Sign Over Billions’",
+          "date": "2026-09-08 06:58",
+          "summary": "Economist Justin Wolfers calls Trump’s Venezuela oil deal “theft,” criticizing regime change and the transfer of oil rights.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-08T15:18:48.036177"
+      "scanned_at": "2026-09-09T15:16:54.954681"
     },
     "CAT": {
       "insider_signal": {
@@ -836,8 +836,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:49.284657"
+      "trump_mentions": [
+        {
+          "headline": "Canada Claps Back at Trump With Retaliatory Tariffs on More Than $20 Billion of US Goods, Hitting Steel, Milk and More",
+          "date": "2026-09-08 05:06",
+          "summary": "Canada’s new tariffs on over $20 billion of U.S. goods take effect, targeting steel, milk, apparel and other imports.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-09T15:16:55.601961"
     },
     "GE": {
       "insider_signal": {
@@ -934,7 +943,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:50.777485"
+      "scanned_at": "2026-09-09T15:16:56.227657"
     },
     "WMT": {
       "insider_signal": {
@@ -1012,31 +1021,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Retailers are Handling Tariff Refunds in Very Different Ways: Walmart and Home Depot",
-          "date": "2026-09-06 23:56",
-          "summary": "Walmart Inc. (NASDAQ:WMT) and The Home Depot, Inc. (NYSE:HD) are both booking real tariff refund windfalls, but reporting and using the money in noticeably different ways, CNBC reported. Walmart CFO J",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "S&P 500 Companies Snag More Than $10 Billion in Tariff Refunds. What Goes to You.",
-          "date": "2026-09-06 07:00",
-          "summary": "Companies mostly are using tariff refunds to offset inflation, but some like Walmart are lowering prices",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Trump Says Tariff-Free Beef From Brazil, Argentina Coming — Also Targets 'Monopoly' in Industry",
-          "date": "2026-09-04 23:57",
-          "summary": "Trump announced tariff-free beef imports from Argentina, Brazil and other countries to help lower record U.S. beef prices.",
+          "headline": "Canada Claps Back at Trump With Retaliatory Tariffs on More Than $20 Billion of US Goods, Hitting Steel, Milk and More",
+          "date": "2026-09-08 05:06",
+          "summary": "Canada’s new tariffs on over $20 billion of U.S. goods take effect, targeting steel, milk, apparel and other imports.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-08T15:18:51.860082"
+      "scanned_at": "2026-09-09T15:16:56.890329"
     },
     "COST": {
       "insider_signal": {
@@ -1052,17 +1045,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Says Tariff-Free Beef From Brazil, Argentina Coming — Also Targets 'Monopoly' in Industry",
-          "date": "2026-09-04 23:57",
-          "summary": "Trump announced tariff-free beef imports from Argentina, Brazil and other countries to help lower record U.S. beef prices.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-08T15:18:52.921703"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-09T15:16:57.533292"
     },
     "FCX": {
       "insider_signal": {
@@ -1158,8 +1142,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:53.904602"
+      "trump_mentions": [
+        {
+          "headline": "Canada tariffs put loonie, supply chains in focus as trade war deepens",
+          "date": "2026-09-08 17:10",
+          "summary": "Investing.com -- Canada’s C$27.6 billion retaliation against U.S. imports took effect on Tuesday, putting the Canadian dollar and North American supply chains under fresh pressure as investors assesse",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Forget Trump’s Tariffs: Copper Is Facing a $400 Billion Problem Nobody Can Fix",
+          "date": "2026-09-08 06:32",
+          "summary": "Copper hits all-time high of $14,533/ton. Mine production drops, aging assets fail, and supply deficits push prices toward $15,000.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-09T15:16:58.176575"
     },
     "NEE": {
       "insider_signal": {
@@ -1176,7 +1177,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:54.938424"
+      "scanned_at": "2026-09-09T15:16:58.807329"
     },
     "PLD": {
       "insider_signal": {
@@ -1213,7 +1214,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-08T15:18:55.936350"
+      "scanned_at": "2026-09-09T15:16:59.425511"
     }
   }
 }
