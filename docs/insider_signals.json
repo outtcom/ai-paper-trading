@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-09",
-  "last_notified_date": "2026-09-09",
+  "date": "2026-09-10",
+  "last_notified_date": "2026-09-10",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,8 +46,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:45.475695"
+      "trump_mentions": [
+        {
+          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
+          "date": "2026-09-10 11:34",
+          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:12.059617"
     },
     "NVDA": {
       "insider_signal": {
@@ -64,7 +73,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:46.149700"
+      "scanned_at": "2026-09-10T15:09:13.188061"
     },
     "MSFT": {
       "insider_signal": {
@@ -111,7 +120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:46.951582"
+      "scanned_at": "2026-09-10T15:09:14.332315"
     },
     "MU": {
       "insider_signal": {
@@ -237,8 +246,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:47.609315"
+      "trump_mentions": [
+        {
+          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
+          "date": "2026-09-10 11:34",
+          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:15.568893"
     },
     "GOOGL": {
       "insider_signal": {
@@ -284,8 +302,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:48.448734"
+      "trump_mentions": [
+        {
+          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
+          "date": "2026-09-10 11:34",
+          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:16.725632"
     },
     "META": {
       "insider_signal": {
@@ -381,8 +408,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:49.413122"
+      "trump_mentions": [
+        {
+          "headline": "President Trump Sold 2 Popular Artificial Intelligence (AI) Stocks. Wall Street Says Investors Should Buy Both.",
+          "date": "2026-09-10 09:08",
+          "summary": "President Donald Trump sold stock in Palantir and Meta Platforms in June, according to a recent disclosure.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:17.930102"
     },
     "AMZN": {
       "insider_signal": {
@@ -449,7 +485,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:50.114140"
+      "scanned_at": "2026-09-10T15:09:19.033521"
     },
     "TSLA": {
       "insider_signal": {
@@ -465,8 +501,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:50.962119"
+      "trump_mentions": [
+        {
+          "headline": "Tesla, Rivian In For A Rough Ride? Senator Warns Trump Could Let Chinese EV Makers Into America Under Xi Deal",
+          "date": "2026-09-10 05:12",
+          "summary": "Slotkin called the rumored move a “strategic mistake” that could threaten 1.2 million Michigan auto-related jobs and broader U.S. manufacturing.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:20.128480"
     },
     "LLY": {
       "insider_signal": {
@@ -523,7 +568,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:51.707102"
+      "scanned_at": "2026-09-10T15:09:21.162239"
     },
     "UNH": {
       "insider_signal": {
@@ -580,7 +625,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:52.368929"
+      "scanned_at": "2026-09-10T15:09:22.203449"
     },
     "JPM": {
       "insider_signal": {
@@ -616,17 +661,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "No industry is spared from costly U.S. tariff regime",
-          "date": "2026-09-09 09:11",
-          "summary": "The volume of companies’ duty payments to the federal government remains far above the pre-2025 norm, according to a recent JPMorganChase Institute analysis.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-09T15:16:53.009904"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-10T15:09:23.222023"
     },
     "GS": {
       "insider_signal": {
@@ -683,7 +719,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:53.644745"
+      "scanned_at": "2026-09-10T15:09:24.243709"
     },
     "XOM": {
       "insider_signal": {
@@ -709,15 +745,15 @@
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "ExxonMobil's CEO Called Venezuela 'Uninvestable.' Trump Says It's Going In Anyway. Here's Why Investors Should Pay Attention.",
-          "date": "2026-09-08 09:20",
-          "summary": "Chevron's recently expanded agreement in Venezuela could provide a blueprint for Exxon's return.",
-          "source": "Yahoo",
+          "headline": "Trump's oil investments have gained millions during Iran war as his accounts keep trading",
+          "date": "2026-09-09 06:30",
+          "summary": "Donald Trump retained major oil and gas investments as the Iran war has moved energy markets. CNBC analyzed his holdings, trades and estimated gains.",
+          "source": "CNBC",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-09T15:16:54.307913"
+      "scanned_at": "2026-09-10T15:09:25.242442"
     },
     "CVX": {
       "insider_signal": {
@@ -801,17 +837,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Top Economist Slams Trump’s Venezuela Oil Deal ‘Theft’ — ‘Toppled Their Leader’ and ‘Had Him Sign Over Billions’",
-          "date": "2026-09-08 06:58",
-          "summary": "Economist Justin Wolfers calls Trump’s Venezuela oil deal “theft,” criticizing regime change and the transfer of oil rights.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-09T15:16:54.954681"
+      "scanned_at": "2026-09-10T15:09:26.269202"
     },
     "CAT": {
       "insider_signal": {
@@ -846,7 +874,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-09T15:16:55.601961"
+      "scanned_at": "2026-09-10T15:09:27.388877"
     },
     "GE": {
       "insider_signal": {
@@ -943,7 +971,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:56.227657"
+      "scanned_at": "2026-09-10T15:09:28.369442"
     },
     "WMT": {
       "insider_signal": {
@@ -1019,17 +1047,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Canada Claps Back at Trump With Retaliatory Tariffs on More Than $20 Billion of US Goods, Hitting Steel, Milk and More",
-          "date": "2026-09-08 05:06",
-          "summary": "Canada’s new tariffs on over $20 billion of U.S. goods take effect, targeting steel, milk, apparel and other imports.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-09T15:16:56.890329"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-10T15:09:29.395904"
     },
     "COST": {
       "insider_signal": {
@@ -1045,8 +1064,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:57.533292"
+      "trump_mentions": [
+        {
+          "headline": "Is conceding to Trump administration on DEI a recipe for business success?",
+          "date": "2026-09-09 10:03",
+          "summary": "Jacob Grumbach spearheaded research that determined S&P 500 companies that stuck with DEI outperformed their peers. Here’s his advice for HR.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:30.382838"
     },
     "FCX": {
       "insider_signal": {
@@ -1144,23 +1172,31 @@
       },
       "trump_mentions": [
         {
+          "headline": "Copper, FCX Stock Plunge On Tariff Report, Surging Yields; Silver, Gold Also Fall",
+          "date": "2026-09-10 13:13",
+          "summary": "The copper price and shares of S&P 500 copper mining giant Freeport-McMoRan turned sharply lower on Thursday morning after a Reuters report cast doubt that the White House would broaden tariffs to cov",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "'White House copper tariff plan stalls amid affordability concerns, sources say' - Reuters Exclusive",
+          "date": "2026-09-10 06:38",
+          "summary": "https://www.reuters.com/world/us/white-house-copper-tariff-plan-stalls-amid-affordability-concerns-sources-say-2026-09-10/",
+          "source": "Benzinga",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Canada tariffs put loonie, supply chains in focus as trade war deepens",
           "date": "2026-09-08 17:10",
           "summary": "Investing.com -- Canada’s C$27.6 billion retaliation against U.S. imports took effect on Tuesday, putting the Canadian dollar and North American supply chains under fresh pressure as investors assesse",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Forget Trump’s Tariffs: Copper Is Facing a $400 Billion Problem Nobody Can Fix",
-          "date": "2026-09-08 06:32",
-          "summary": "Copper hits all-time high of $14,533/ton. Mine production drops, aging assets fail, and supply deficits push prices toward $15,000.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-09T15:16:58.176575"
+      "scanned_at": "2026-09-10T15:09:31.323921"
     },
     "NEE": {
       "insider_signal": {
@@ -1177,7 +1213,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:58.807329"
+      "scanned_at": "2026-09-10T15:09:32.313870"
     },
     "PLD": {
       "insider_signal": {
@@ -1213,8 +1249,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-09T15:16:59.425511"
+      "trump_mentions": [
+        {
+          "headline": "EV Realty Names Henrik Holland President to Accelerate National Expansion of Its Powered Properties® Platform",
+          "date": "2026-09-10 12:00",
+          "summary": "Former Prologis and Shell executive joins the NGP-backed platform, as demand grows for grid power-secured infrastructure serving trucks, autonomous fleets, and other emerging technologiesSAN FRANCISCO",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-10T15:09:33.244729"
     }
   }
 }
