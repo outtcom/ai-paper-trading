@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-10",
-  "last_notified_date": "2026-09-10",
+  "date": "2026-09-11",
+  "last_notified_date": "2026-09-11",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -48,15 +48,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
-          "date": "2026-09-10 11:34",
-          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
-          "source": "Yahoo",
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:12.059617"
+      "scanned_at": "2026-09-11T15:12:07.976811"
     },
     "NVDA": {
       "insider_signal": {
@@ -73,7 +73,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:13.188061"
+      "scanned_at": "2026-09-11T15:12:09.133894"
     },
     "MSFT": {
       "insider_signal": {
@@ -119,8 +119,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:14.332315"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-11T15:12:10.308554"
     },
     "MU": {
       "insider_signal": {
@@ -246,17 +255,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
-          "date": "2026-09-10 11:34",
-          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-10T15:09:15.568893"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-11T15:12:11.458669"
     },
     "GOOGL": {
       "insider_signal": {
@@ -302,17 +302,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Buy the Stocks Dip or Foldable iPhone? How to Spend Trump’s $5,000 Handout.",
-          "date": "2026-09-10 11:34",
-          "summary": "Oil prices stay above $100, stoking stock market inflation fears; Macy’s and other key earnings; and more news to start your day.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-10T15:09:16.725632"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-11T15:12:12.806489"
     },
     "META": {
       "insider_signal": {
@@ -410,15 +401,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "President Trump Sold 2 Popular Artificial Intelligence (AI) Stocks. Wall Street Says Investors Should Buy Both.",
-          "date": "2026-09-10 09:08",
-          "summary": "President Donald Trump sold stock in Palantir and Meta Platforms in June, according to a recent disclosure.",
-          "source": "Yahoo",
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:17.930102"
+      "scanned_at": "2026-09-11T15:12:14.086834"
     },
     "AMZN": {
       "insider_signal": {
@@ -485,7 +476,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:19.033521"
+      "scanned_at": "2026-09-11T15:12:15.250187"
     },
     "TSLA": {
       "insider_signal": {
@@ -501,17 +492,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Tesla, Rivian In For A Rough Ride? Senator Warns Trump Could Let Chinese EV Makers Into America Under Xi Deal",
-          "date": "2026-09-10 05:12",
-          "summary": "Slotkin called the rumored move a “strategic mistake” that could threaten 1.2 million Michigan auto-related jobs and broader U.S. manufacturing.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-09-10T15:09:20.128480"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-11T15:12:16.406397"
     },
     "LLY": {
       "insider_signal": {
@@ -567,8 +549,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:21.162239"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-11T15:12:17.585320"
     },
     "UNH": {
       "insider_signal": {
@@ -624,8 +615,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:22.203449"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-11T15:12:18.592382"
     },
     "JPM": {
       "insider_signal": {
@@ -661,8 +661,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:23.222023"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-11T15:12:19.653335"
     },
     "GS": {
       "insider_signal": {
@@ -719,7 +728,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:24.243709"
+      "scanned_at": "2026-09-11T15:12:20.710500"
     },
     "XOM": {
       "insider_signal": {
@@ -737,23 +746,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump oil and gas holdings gained up to $4.4M during Iran war",
-          "date": "2026-09-09 11:58",
-          "summary": "A CNBC analysis found Trump's 9 largest energy positions rose between $1.5M and $4.4M in the first six months of fighting",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump's oil investments have gained millions during Iran war as his accounts keep trading",
-          "date": "2026-09-09 06:30",
-          "summary": "Donald Trump retained major oil and gas investments as the Iran war has moved energy markets. CNBC analyzed his holdings, trades and estimated gains.",
-          "source": "CNBC",
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:25.242442"
+      "scanned_at": "2026-09-11T15:12:21.762825"
     },
     "CVX": {
       "insider_signal": {
@@ -831,15 +832,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump oil and gas holdings gained up to $4.4M during Iran war",
-          "date": "2026-09-09 11:58",
-          "summary": "A CNBC analysis found Trump's 9 largest energy positions rose between $1.5M and $4.4M in the first six months of fighting",
-          "source": "Yahoo",
+          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
+          "date": "2026-09-11 03:24",
+          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Stock Market Today: Dow Drops As Fear Gauge Spikes; Copper Players Tumble On Tariff News (Live Coverage)",
+          "date": "2026-09-10 17:20",
+          "summary": "Stock Market Today: The Dow Jones index falls Thursday after a surprise inflation reading, as oil prices and Treasury yields surge.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:26.269202"
+      "scanned_at": "2026-09-11T15:12:22.814071"
     },
     "CAT": {
       "insider_signal": {
@@ -864,17 +873,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Canada Claps Back at Trump With Retaliatory Tariffs on More Than $20 Billion of US Goods, Hitting Steel, Milk and More",
-          "date": "2026-09-08 05:06",
-          "summary": "Canada’s new tariffs on over $20 billion of U.S. goods take effect, targeting steel, milk, apparel and other imports.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-10T15:09:27.388877"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-11T15:12:23.815861"
     },
     "GE": {
       "insider_signal": {
@@ -971,7 +971,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:28.369442"
+      "scanned_at": "2026-09-11T15:12:24.866243"
     },
     "WMT": {
       "insider_signal": {
@@ -1048,7 +1048,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:29.395904"
+      "scanned_at": "2026-09-11T15:12:25.931713"
     },
     "COST": {
       "insider_signal": {
@@ -1074,7 +1074,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:30.382838"
+      "scanned_at": "2026-09-11T15:12:26.942649"
     },
     "FCX": {
       "insider_signal": {
@@ -1172,10 +1172,34 @@
       },
       "trump_mentions": [
         {
+          "headline": "Stock Market Today: Dow Drops As Fear Gauge Spikes; Copper Players Tumble On Tariff News (Live Coverage)",
+          "date": "2026-09-10 17:20",
+          "summary": "Stock Market Today: The Dow Jones index falls Thursday after a surprise inflation reading, as oil prices and Treasury yields surge.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Copper Stocks Tumble as Tariff Doubt Reverses Record Rally: Freeport-McMoRan Sinks 8%, Teck Resources and Southern Copper Drop 7%",
+          "date": "2026-09-10 14:43",
+          "summary": "A single policy update with no operational content just sent the entire copper mining sector into freefall, erasing billions in gains that took months to build. Here is why tariff uncertainty can repr",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Copper, FCX Stock Plunge On Tariff Report, Surging Yields; Silver, Gold Also Fall",
           "date": "2026-09-10 13:13",
           "summary": "The copper price and shares of S&P 500 copper mining giant Freeport-McMoRan turned sharply lower on Thursday morning after a Reuters report cast doubt that the White House would broaden tariffs to cov",
           "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
+          "headline": "Freeport-McMoRan Stock Drops on Copper Tariff Uncertainty",
+          "date": "2026-09-10 13:12",
+          "summary": "Freeport-McMoRan Inc. (NYSE: FCX) shares are falling Thursday amid uncertainty over White House copper tariff plans.",
+          "source": "Benzinga",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         },
@@ -1186,17 +1210,9 @@
           "source": "Benzinga",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Canada tariffs put loonie, supply chains in focus as trade war deepens",
-          "date": "2026-09-08 17:10",
-          "summary": "Investing.com -- Canada’s C$27.6 billion retaliation against U.S. imports took effect on Tuesday, putting the Canadian dollar and North American supply chains under fresh pressure as investors assesse",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:31.323921"
+      "scanned_at": "2026-09-11T15:12:27.927346"
     },
     "NEE": {
       "insider_signal": {
@@ -1213,7 +1229,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-10T15:09:32.313870"
+      "scanned_at": "2026-09-11T15:12:28.911844"
     },
     "PLD": {
       "insider_signal": {
@@ -1259,7 +1275,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-10T15:09:33.244729"
+      "scanned_at": "2026-09-11T15:12:29.907011"
     }
   }
 }
