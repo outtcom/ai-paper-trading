@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-11",
-  "last_notified_date": "2026-09-11",
+  "date": "2026-09-14",
+  "last_notified_date": "2026-09-14",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,17 +46,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-11T15:12:07.976811"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-14T17:03:07.560312"
     },
     "NVDA": {
       "insider_signal": {
@@ -73,16 +64,16 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:09.133894"
+      "scanned_at": "2026-09-14T17:03:08.208475"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
+        "open_market_sells": 2,
         "compensation_grants": 0,
-        "net_open_market_value": -7279316.56,
+        "net_open_market_value": -7266998.8,
         "net_open_market_fmt": "-$7.3M",
         "largest_single_transaction": {
           "name": "Althoff Judson",
@@ -121,15 +112,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
+          "date": "2026-09-14 10:02",
+          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:10.308554"
+      "scanned_at": "2026-09-14T17:03:08.892064"
     },
     "MU": {
       "insider_signal": {
@@ -256,7 +247,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:11.458669"
+      "scanned_at": "2026-09-14T17:03:09.613369"
     },
     "GOOGL": {
       "insider_signal": {
@@ -302,8 +293,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:12.806489"
+      "trump_mentions": [
+        {
+          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
+          "date": "2026-09-14 10:02",
+          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-14T17:03:11.205645"
     },
     "META": {
       "insider_signal": {
@@ -401,15 +401,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
+          "headline": "Trump Pushes Back on AI Slowdown, Says 'Whoever Wins With AI Wins,' Microsoft CEO Satya Nadella Says Tech Must Stay 'Under Human Control'",
+          "date": "2026-09-13 23:19",
+          "summary": "President Trump said the U.S. shouldn&#39;t slow AI development, arguing &#39;whoever wins with AI wins&#39; matters more than regulation.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "President Trump On Sunday, Said U.S. Is Leading China In AI, Wants To Keep It That Way; Trump Said “Whoever Wins AI, Wins”",
+          "date": "2026-09-13 16:56",
+          "summary": "https://x.com/CBSNews/status/2099148341166657560",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:14.086834"
+      "scanned_at": "2026-09-14T17:03:11.998311"
     },
     "AMZN": {
       "insider_signal": {
@@ -475,8 +483,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:15.250187"
+      "trump_mentions": [
+        {
+          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
+          "date": "2026-09-14 10:02",
+          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-14T17:03:12.691952"
     },
     "TSLA": {
       "insider_signal": {
@@ -493,7 +510,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:16.406397"
+      "scanned_at": "2026-09-14T17:03:13.355408"
     },
     "LLY": {
       "insider_signal": {
@@ -549,17 +566,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-11T15:12:17.585320"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-14T17:03:13.997131"
     },
     "UNH": {
       "insider_signal": {
@@ -625,7 +633,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:18.592382"
+      "scanned_at": "2026-09-14T17:03:14.633276"
     },
     "JPM": {
       "insider_signal": {
@@ -661,35 +669,26 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-11T15:12:19.653335"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-14T17:03:15.457678"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -472395.64,
-        "net_open_market_fmt": "-$472K",
+        "open_market_sells": 3,
+        "compensation_grants": 0,
+        "net_open_market_value": -184445.0,
+        "net_open_market_fmt": "-$184K",
         "largest_single_transaction": {
           "name": "LESLIE ERICKA T",
           "direction": "sell",
-          "dollar_value": 171670.35,
-          "dollar_fmt": "$172K",
-          "date": "2026-07-15",
-          "shares_traded": 149,
-          "price_per_share": 1152.15,
+          "dollar_value": 135989.22,
+          "dollar_fmt": "$136K",
+          "date": "2026-08-04",
+          "shares_traded": 129,
+          "price_per_share": 1054.18,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -702,33 +701,13 @@
             "shares_traded": 129,
             "price_per_share": 1054.18,
             "transaction_code": ""
-          },
-          {
-            "name": "LESLIE ERICKA T",
-            "direction": "sell",
-            "dollar_value": 171670.35,
-            "dollar_fmt": "$172K",
-            "date": "2026-07-15",
-            "shares_traded": 149,
-            "price_per_share": 1152.15,
-            "transaction_code": ""
-          },
-          {
-            "name": "LESLIE ERICKA T",
-            "direction": "sell",
-            "dollar_value": 116280.29,
-            "dollar_fmt": "$116K",
-            "date": "2026-07-15",
-            "shares_traded": 101,
-            "price_per_share": 1151.29,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:20.710500"
+      "scanned_at": "2026-09-14T17:03:16.164479"
     },
     "XOM": {
       "insider_signal": {
@@ -746,15 +725,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
+          "headline": "Chevron Already Committed $7 Billion to Venezuela. Trump Says Exxon Is Next. Here's the Big Difference Between the 2.",
+          "date": "2026-09-12 12:35",
+          "summary": "Chevron's commitment to staying the course in Venezuela is finally paying dividends.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:21.762825"
+      "scanned_at": "2026-09-14T17:03:16.853057"
     },
     "CVX": {
       "insider_signal": {
@@ -832,23 +811,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
+          "headline": "Chevron Already Committed $7 Billion to Venezuela. Trump Says Exxon Is Next. Here's the Big Difference Between the 2.",
+          "date": "2026-09-12 12:35",
+          "summary": "Chevron's commitment to staying the course in Venezuela is finally paying dividends.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Stock Market Today: Dow Drops As Fear Gauge Spikes; Copper Players Tumble On Tariff News (Live Coverage)",
-          "date": "2026-09-10 17:20",
-          "summary": "Stock Market Today: The Dow Jones index falls Thursday after a surprise inflation reading, as oil prices and Treasury yields surge.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:22.814071"
+      "scanned_at": "2026-09-14T17:03:17.563404"
     },
     "CAT": {
       "insider_signal": {
@@ -874,7 +845,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:23.815861"
+      "scanned_at": "2026-09-14T17:03:18.200220"
     },
     "GE": {
       "insider_signal": {
@@ -971,17 +942,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:24.866243"
+      "scanned_at": "2026-09-14T17:03:18.843729"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 9,
+        "open_market_sells": 3,
         "compensation_grants": 0,
-        "net_open_market_value": -11770210.27,
-        "net_open_market_fmt": "-$11.8M",
+        "net_open_market_value": -11341305.31,
+        "net_open_market_fmt": "-$11.3M",
         "largest_single_transaction": {
           "name": "Danker Daniel",
           "direction": "sell",
@@ -1022,33 +993,22 @@
             "shares_traded": 3710,
             "price_per_share": 113.1,
             "transaction_code": ""
-          },
-          {
-            "name": "Nicholas Christopher James",
-            "direction": "sell",
-            "dollar_value": 144357.64,
-            "dollar_fmt": "$144K",
-            "date": "2026-07-16",
-            "shares_traded": 1261,
-            "price_per_share": 114.4787,
-            "transaction_code": ""
-          },
-          {
-            "name": "Nicholas Christopher James",
-            "direction": "sell",
-            "dollar_value": 186639.98,
-            "dollar_fmt": "$187K",
-            "date": "2026-07-16",
-            "shares_traded": 1639,
-            "price_per_share": 113.8743,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:25.931713"
+      "trump_mentions": [
+        {
+          "headline": "Trump Just Promised You $5,000. There’s a Catch, and It Changes Everything About How You’d Spend It.",
+          "date": "2026-09-13 19:15",
+          "summary": "Trump's promise of a $5,000 cash payment comes with a restriction no US transfer program has ever tried to enforce, and that single condition rewrites the math on what the money would actually be wort",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-14T17:03:19.818507"
     },
     "COST": {
       "insider_signal": {
@@ -1064,17 +1024,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Is conceding to Trump administration on DEI a recipe for business success?",
-          "date": "2026-09-09 10:03",
-          "summary": "Jacob Grumbach spearheaded research that determined S&P 500 companies that stuck with DEI outperformed their peers. Here’s his advice for HR.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-11T15:12:26.942649"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-14T17:03:20.616996"
     },
     "FCX": {
       "insider_signal": {
@@ -1172,6 +1123,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Why Did Freeport-McMoRan Stock Drop On Doubts Over A Tariff It Would Gain From?",
+          "date": "2026-09-11 21:25",
+          "summary": "Freeport-McMoRan (FCX) stock fell 6.6% on Thursday to close at $71.21, while the S&P 500 slipped 0.6%. Copper sold off on surging yields and on reports that the White House has yet to decide on copper",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Stock Market Today: Dow Drops As Fear Gauge Spikes; Copper Players Tumble On Tariff News (Live Coverage)",
           "date": "2026-09-10 17:20",
           "summary": "Stock Market Today: The Dow Jones index falls Thursday after a surprise inflation reading, as oil prices and Treasury yields surge.",
@@ -1186,33 +1145,9 @@
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Copper, FCX Stock Plunge On Tariff Report, Surging Yields; Silver, Gold Also Fall",
-          "date": "2026-09-10 13:13",
-          "summary": "The copper price and shares of S&P 500 copper mining giant Freeport-McMoRan turned sharply lower on Thursday morning after a Reuters report cast doubt that the White House would broaden tariffs to cov",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Freeport-McMoRan Stock Drops on Copper Tariff Uncertainty",
-          "date": "2026-09-10 13:12",
-          "summary": "Freeport-McMoRan Inc. (NYSE: FCX) shares are falling Thursday amid uncertainty over White House copper tariff plans.",
-          "source": "Benzinga",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "'White House copper tariff plan stalls amid affordability concerns, sources say' - Reuters Exclusive",
-          "date": "2026-09-10 06:38",
-          "summary": "https://www.reuters.com/world/us/white-house-copper-tariff-plan-stalls-amid-affordability-concerns-sources-say-2026-09-10/",
-          "source": "Benzinga",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:27.927346"
+      "scanned_at": "2026-09-14T17:03:21.243357"
     },
     "NEE": {
       "insider_signal": {
@@ -1229,40 +1164,20 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-11T15:12:28.911844"
+      "scanned_at": "2026-09-14T17:03:21.997613"
     },
     "PLD": {
       "insider_signal": {
         "ticker": "PLD",
         "days_back": 60,
-        "open_market_buys": 6,
-        "open_market_sells": 1,
+        "open_market_buys": 0,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -7494895.31,
-        "net_open_market_fmt": "-$7.5M",
-        "largest_single_transaction": {
-          "name": "Moghadam Hamid",
-          "direction": "sell",
-          "dollar_value": 7495500.0,
-          "dollar_fmt": "$7.5M",
-          "date": "2026-07-16",
-          "shares_traded": 50000,
-          "price_per_share": 149.91,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Moghadam Hamid",
-            "direction": "sell",
-            "dollar_value": 7495500.0,
-            "dollar_fmt": "$7.5M",
-            "date": "2026-07-16",
-            "shares_traded": 50000,
-            "price_per_share": 149.91,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
@@ -1275,7 +1190,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-11T15:12:29.907011"
+      "scanned_at": "2026-09-14T17:03:22.641290"
     }
   }
 }
