@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-14",
-  "last_notified_date": "2026-09-14",
+  "date": "2026-09-15",
+  "last_notified_date": "2026-09-15",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -47,7 +47,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:07.560312"
+      "scanned_at": "2026-09-15T15:40:51.372998"
     },
     "NVDA": {
       "insider_signal": {
@@ -63,8 +63,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:08.208475"
+      "trump_mentions": [
+        {
+          "headline": "Trump Compares AI Data Centers To Oil Boom — Nvidia CEO Agrees",
+          "date": "2026-09-15 10:50",
+          "summary": "Trump called AI data centers “the oil” of the next 25 years as consumers reckon with the environmental toll and high costs to communities.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-15T15:40:53.028104"
     },
     "MSFT": {
       "insider_signal": {
@@ -112,15 +121,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
-          "date": "2026-09-14 10:02",
-          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "headline": "DG Matrix Appoints Daniel Doimo, MGE UPS Systems Co-Founder and Former Schneider Electric Executive Vice President, to Executive Advisory Board",
+          "date": "2026-09-15 12:10",
+          "summary": "RALEIGH, N.C. & DURHAM, N.C., September 15, 2026--DG Matrix, the global leader in solid-state transformer solutions, today announced the appointment of Daniel Doimo, an executive who has built, merged",
+          "source": "Yahoo",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-14T17:03:08.892064"
+      "scanned_at": "2026-09-15T15:40:54.641143"
     },
     "MU": {
       "insider_signal": {
@@ -247,7 +256,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:09.613369"
+      "scanned_at": "2026-09-15T15:40:55.776139"
     },
     "GOOGL": {
       "insider_signal": {
@@ -293,17 +302,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
-          "date": "2026-09-14 10:02",
-          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-14T17:03:11.205645"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-15T15:40:56.961967"
     },
     "META": {
       "insider_signal": {
@@ -399,25 +399,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Pushes Back on AI Slowdown, Says 'Whoever Wins With AI Wins,' Microsoft CEO Satya Nadella Says Tech Must Stay 'Under Human Control'",
-          "date": "2026-09-13 23:19",
-          "summary": "President Trump said the U.S. shouldn&#39;t slow AI development, arguing &#39;whoever wins with AI wins&#39; matters more than regulation.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "President Trump On Sunday, Said U.S. Is Leading China In AI, Wants To Keep It That Way; Trump Said “Whoever Wins AI, Wins”",
-          "date": "2026-09-13 16:56",
-          "summary": "https://x.com/CBSNews/status/2099148341166657560",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-14T17:03:11.998311"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-15T15:40:58.275882"
     },
     "AMZN": {
       "insider_signal": {
@@ -483,17 +466,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "President Trump Posts On X \"... We already have tremendous CRIMINAL and REGULATORY power over these companies! There is a SICK conspiracy going on against AI and Data Centers, and the only one that is happy about it is China. WHOEVER WINS AI, WINS! We are leading China, and all others, and will continue to do so. Conspiracy Theorists, Treasonists, Traitors, and Leakers, BEWARE!\"",
-          "date": "2026-09-14 10:02",
-          "summary": "https://truthsocial.com/@realDonaldTrump/posts/117269745153543631",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-14T17:03:12.691952"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-15T15:40:59.788586"
     },
     "TSLA": {
       "insider_signal": {
@@ -510,7 +484,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:13.355408"
+      "scanned_at": "2026-09-15T15:41:01.126034"
     },
     "LLY": {
       "insider_signal": {
@@ -567,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:13.997131"
+      "scanned_at": "2026-09-15T15:41:02.222182"
     },
     "UNH": {
       "insider_signal": {
@@ -623,17 +597,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Surgeon General Pick Has Tobacco, Cola Stocks In Portfolio Even as Robert Kennedy Jr. Wages War On Sugary Drinks, Processed Food",
-          "date": "2026-09-11 03:24",
-          "summary": "President Trump&#39;s Surgeon General nominee Dr. Nicole Saphier disclosed investments in Philip Morris and other companies, agreeing to divest if confirmed.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-14T17:03:14.633276"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-15T15:41:03.199388"
     },
     "JPM": {
       "insider_signal": {
@@ -670,7 +635,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:15.457678"
+      "scanned_at": "2026-09-15T15:41:04.282735"
     },
     "GS": {
       "insider_signal": {
@@ -707,7 +672,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:16.164479"
+      "scanned_at": "2026-09-15T15:41:05.538287"
     },
     "XOM": {
       "insider_signal": {
@@ -725,6 +690,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Gavin Newsom Says Trump Knew Iran War Would Cause Hormuz Disruptions, Skyrocketing Costs, but Did 'Nothing'—Americans 'Owed' Answers",
+          "date": "2026-09-15 00:43",
+          "summary": "Gavin Newsom accuses Trump and Wright of failing to protect Americans from Iran war disruptions as fuel prices surge.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Chevron Already Committed $7 Billion to Venezuela. Trump Says Exxon Is Next. Here's the Big Difference Between the 2.",
           "date": "2026-09-12 12:35",
           "summary": "Chevron's commitment to staying the course in Venezuela is finally paying dividends.",
@@ -733,7 +706,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-14T17:03:16.853057"
+      "scanned_at": "2026-09-15T15:41:06.809173"
     },
     "CVX": {
       "insider_signal": {
@@ -811,15 +784,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Chevron Already Committed $7 Billion to Venezuela. Trump Says Exxon Is Next. Here's the Big Difference Between the 2.",
-          "date": "2026-09-12 12:35",
-          "summary": "Chevron's commitment to staying the course in Venezuela is finally paying dividends.",
+          "headline": "Chevron Australia President on LNG outlook",
+          "date": "2026-09-14 03:06",
+          "summary": "Balaji Krishnamurthy, President of Chevron in Australia, discusses the outlook for LNG supply and demand, and pricing levels, as energy disruptions continue on Middle East tensions. He speaks with Has",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-14T17:03:17.563404"
+      "scanned_at": "2026-09-15T15:41:07.870327"
     },
     "CAT": {
       "insider_signal": {
@@ -844,8 +817,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:18.200220"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Tries For A Gain, Trump Hits Out At AI Fears; This Fuel Play Clears Entry (Live Coverage)",
+          "date": "2026-09-14 16:59",
+          "summary": "The Dow Jones index drops on the stock market today as oil prices surge. President Trump hits out amid AI leaders calls for a slowdown.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-15T15:41:09.075658"
     },
     "GE": {
       "insider_signal": {
@@ -942,7 +924,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:18.843729"
+      "scanned_at": "2026-09-15T15:41:10.148613"
     },
     "WMT": {
       "insider_signal": {
@@ -998,17 +980,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Just Promised You $5,000. There’s a Catch, and It Changes Everything About How You’d Spend It.",
-          "date": "2026-09-13 19:15",
-          "summary": "Trump's promise of a $5,000 cash payment comes with a restriction no US transfer program has ever tried to enforce, and that single condition rewrites the math on what the money would actually be wort",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-14T17:03:19.818507"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-15T15:41:11.385736"
     },
     "COST": {
       "insider_signal": {
@@ -1024,8 +997,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:20.616996"
+      "trump_mentions": [
+        {
+          "headline": "Costco Gross Margin Pressure From Higher Fuel Costs Likely to be Offset by Tariff Refunds, RBC Says",
+          "date": "2026-09-15 13:05",
+          "summary": "Costco Wholesale (COST) likely faced core gross-margin pressure in its fiscal fourth quarter from hi",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-15T15:41:12.415955"
     },
     "FCX": {
       "insider_signal": {
@@ -1147,7 +1129,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-14T17:03:21.243357"
+      "scanned_at": "2026-09-15T15:41:13.399800"
     },
     "NEE": {
       "insider_signal": {
@@ -1164,7 +1146,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-14T17:03:21.997613"
+      "scanned_at": "2026-09-15T15:41:14.377093"
     },
     "PLD": {
       "insider_signal": {
@@ -1190,7 +1172,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-14T17:03:22.641290"
+      "scanned_at": "2026-09-15T15:41:15.376876"
     }
   }
 }
