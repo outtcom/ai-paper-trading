@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-15",
-  "last_notified_date": "2026-09-15",
+  "date": "2026-09-16",
+  "last_notified_date": "2026-09-16",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,8 +46,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:40:51.372998"
+      "trump_mentions": [
+        {
+          "headline": "The White House Thinks the Fed Is About to Hike Into a Slowdown",
+          "date": "2026-09-16 13:00",
+          "summary": "The White House's top economist built a statistical case that inflation is already dead, presented it as a hypothetical dissenter's argument, then handed it to no one. Whether the Fed agrees tomorrow ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-16T15:32:34.110166"
     },
     "NVDA": {
       "insider_signal": {
@@ -65,15 +74,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Compares AI Data Centers To Oil Boom — Nvidia CEO Agrees",
-          "date": "2026-09-15 10:50",
-          "summary": "Trump called AI data centers “the oil” of the next 25 years as consumers reckon with the environmental toll and high costs to communities.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "headline": "The White House Thinks the Fed Is About to Hike Into a Slowdown",
+          "date": "2026-09-16 13:00",
+          "summary": "The White House's top economist built a statistical case that inflation is already dead, presented it as a hypothetical dissenter's argument, then handed it to no one. Whether the Fed agrees tomorrow ",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-15T15:40:53.028104"
+      "scanned_at": "2026-09-16T15:32:35.076270"
     },
     "MSFT": {
       "insider_signal": {
@@ -119,17 +128,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "DG Matrix Appoints Daniel Doimo, MGE UPS Systems Co-Founder and Former Schneider Electric Executive Vice President, to Executive Advisory Board",
-          "date": "2026-09-15 12:10",
-          "summary": "RALEIGH, N.C. & DURHAM, N.C., September 15, 2026--DG Matrix, the global leader in solid-state transformer solutions, today announced the appointment of Daniel Doimo, an executive who has built, merged",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-15T15:40:54.641143"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-16T15:32:35.925829"
     },
     "MU": {
       "insider_signal": {
@@ -256,7 +256,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:40:55.776139"
+      "scanned_at": "2026-09-16T15:32:36.844893"
     },
     "GOOGL": {
       "insider_signal": {
@@ -303,7 +303,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:40:56.961967"
+      "scanned_at": "2026-09-16T15:32:37.727657"
     },
     "META": {
       "insider_signal": {
@@ -400,7 +400,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:40:58.275882"
+      "scanned_at": "2026-09-16T15:32:38.759769"
     },
     "AMZN": {
       "insider_signal": {
@@ -467,7 +467,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:40:59.788586"
+      "scanned_at": "2026-09-16T15:32:39.675088"
     },
     "TSLA": {
       "insider_signal": {
@@ -483,8 +483,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:01.126034"
+      "trump_mentions": [
+        {
+          "headline": "Elon Musk Could Fund Every $1,000 'Trump Account' Through 2028 and Still Be Worth Over $900 Billion",
+          "date": "2026-09-16 03:30",
+          "summary": "The launch of Trump accounts for children born from 2025 through 2028 with $1,000 from the government has drawn support from Americans and billionaires. Some billionaires and companies are stepping up",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-16T15:32:40.460334"
     },
     "LLY": {
       "insider_signal": {
@@ -541,7 +550,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:02.222182"
+      "scanned_at": "2026-09-16T15:32:41.220284"
     },
     "UNH": {
       "insider_signal": {
@@ -598,7 +607,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:03.199388"
+      "scanned_at": "2026-09-16T15:32:41.991112"
     },
     "JPM": {
       "insider_signal": {
@@ -635,7 +644,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:04.282735"
+      "scanned_at": "2026-09-16T15:32:42.740256"
     },
     "GS": {
       "insider_signal": {
@@ -672,7 +681,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:05.538287"
+      "scanned_at": "2026-09-16T15:32:43.522879"
     },
     "XOM": {
       "insider_signal": {
@@ -696,17 +705,9 @@
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Chevron Already Committed $7 Billion to Venezuela. Trump Says Exxon Is Next. Here's the Big Difference Between the 2.",
-          "date": "2026-09-12 12:35",
-          "summary": "Chevron's commitment to staying the course in Venezuela is finally paying dividends.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-15T15:41:06.809173"
+      "scanned_at": "2026-09-16T15:32:44.243771"
     },
     "CVX": {
       "insider_signal": {
@@ -782,17 +783,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Chevron Australia President on LNG outlook",
-          "date": "2026-09-14 03:06",
-          "summary": "Balaji Krishnamurthy, President of Chevron in Australia, discusses the outlook for LNG supply and demand, and pricing levels, as energy disruptions continue on Middle East tensions. He speaks with Has",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-15T15:41:07.870327"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-16T15:32:44.976756"
     },
     "CAT": {
       "insider_signal": {
@@ -819,6 +811,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "They ‘Just Want High Tariffs Forever’: Ted Cruz Says There Are 2 Tariff Camps Inside the Trump Administration and Most View Them as ‘Leverage’",
+          "date": "2026-09-15 12:01",
+          "summary": "Senator Ted Cruz says the fight over tariffs inside the Trump administration comes down to two positions, and he named the Treasury Secretary as being on his side. \"There are two camps in the Trump ad",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Stock Market Today: Dow Tries For A Gain, Trump Hits Out At AI Fears; This Fuel Play Clears Entry (Live Coverage)",
           "date": "2026-09-14 16:59",
           "summary": "The Dow Jones index drops on the stock market today as oil prices surge. President Trump hits out amid AI leaders calls for a slowdown.",
@@ -827,7 +827,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-15T15:41:09.075658"
+      "scanned_at": "2026-09-16T15:32:45.719115"
     },
     "GE": {
       "insider_signal": {
@@ -924,7 +924,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:10.148613"
+      "scanned_at": "2026-09-16T15:32:46.429794"
     },
     "WMT": {
       "insider_signal": {
@@ -981,7 +981,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:11.385736"
+      "scanned_at": "2026-09-16T15:32:47.170764"
     },
     "COST": {
       "insider_signal": {
@@ -999,6 +999,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Costco Wholesale Q4 Gross Margin Pressure Likely Offset by Tariff Refunds, RBC Says",
+          "date": "2026-09-15 14:59",
+          "summary": "Costco Wholesale's (COST) fiscal Q4 gross margin is likely to face pressure from higher fuel and tra",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Costco Gross Margin Pressure From Higher Fuel Costs Likely to be Offset by Tariff Refunds, RBC Says",
           "date": "2026-09-15 13:05",
           "summary": "Costco Wholesale (COST) likely faced core gross-margin pressure in its fiscal fourth quarter from hi",
@@ -1007,7 +1015,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-15T15:41:12.415955"
+      "scanned_at": "2026-09-16T15:32:47.915675"
     },
     "FCX": {
       "insider_signal": {
@@ -1129,7 +1137,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-15T15:41:13.399800"
+      "scanned_at": "2026-09-16T15:32:48.617259"
     },
     "NEE": {
       "insider_signal": {
@@ -1146,7 +1154,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-15T15:41:14.377093"
+      "scanned_at": "2026-09-16T15:32:49.333235"
     },
     "PLD": {
       "insider_signal": {
@@ -1172,7 +1180,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-15T15:41:15.376876"
+      "scanned_at": "2026-09-16T15:32:50.083854"
     }
   }
 }
