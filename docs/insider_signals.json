@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-16",
-  "last_notified_date": "2026-09-16",
+  "date": "2026-09-17",
+  "last_notified_date": "2026-09-17",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -48,15 +48,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "The White House Thinks the Fed Is About to Hike Into a Slowdown",
-          "date": "2026-09-16 13:00",
-          "summary": "The White House's top economist built a statistical case that inflation is already dead, presented it as a hypothetical dissenter's argument, then handed it to no one. Whether the Fed agrees tomorrow ",
+          "headline": "Why Stocks Are Loving the Fed’s Rate Hike Even If Trump Hates It",
+          "date": "2026-09-17 11:42",
+          "summary": "Nvidia looks like a bargain, OpenAI reveals 6 ‘concerning’ incidents, and more news to start your day.",
           "source": "Yahoo",
-          "keyword_matched": "white house",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-16T15:32:34.110166"
+      "scanned_at": "2026-09-17T15:39:15.679975"
     },
     "NVDA": {
       "insider_signal": {
@@ -72,17 +72,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The White House Thinks the Fed Is About to Hike Into a Slowdown",
-          "date": "2026-09-16 13:00",
-          "summary": "The White House's top economist built a statistical case that inflation is already dead, presented it as a hypothetical dissenter's argument, then handed it to no one. Whether the Fed agrees tomorrow ",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-16T15:32:35.076270"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-17T15:39:16.501061"
     },
     "MSFT": {
       "insider_signal": {
@@ -129,7 +120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:35.925829"
+      "scanned_at": "2026-09-17T15:39:17.436900"
     },
     "MU": {
       "insider_signal": {
@@ -256,7 +247,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:36.844893"
+      "scanned_at": "2026-09-17T15:39:18.207154"
     },
     "GOOGL": {
       "insider_signal": {
@@ -303,7 +294,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:37.727657"
+      "scanned_at": "2026-09-17T15:39:20.272624"
     },
     "META": {
       "insider_signal": {
@@ -400,7 +391,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:38.759769"
+      "scanned_at": "2026-09-17T15:39:21.175032"
     },
     "AMZN": {
       "insider_signal": {
@@ -467,7 +458,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:39.675088"
+      "scanned_at": "2026-09-17T15:39:22.049514"
     },
     "TSLA": {
       "insider_signal": {
@@ -483,17 +474,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Elon Musk Could Fund Every $1,000 'Trump Account' Through 2028 and Still Be Worth Over $900 Billion",
-          "date": "2026-09-16 03:30",
-          "summary": "The launch of Trump accounts for children born from 2025 through 2028 with $1,000 from the government has drawn support from Americans and billionaires. Some billionaires and companies are stepping up",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-16T15:32:40.460334"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-17T15:39:23.023242"
     },
     "LLY": {
       "insider_signal": {
@@ -550,7 +532,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:41.220284"
+      "scanned_at": "2026-09-17T15:39:23.763099"
     },
     "UNH": {
       "insider_signal": {
@@ -606,8 +588,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:41.991112"
+      "trump_mentions": [
+        {
+          "headline": "Incyte Appoints Suketu (Suky) Upadhyay As Executive Vice President And CFO Effective May 4, 2026",
+          "date": "2026-09-16 13:02",
+          "summary": "",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-17T15:39:24.505054"
     },
     "JPM": {
       "insider_signal": {
@@ -644,7 +635,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:42.740256"
+      "scanned_at": "2026-09-17T15:39:25.248993"
     },
     "GS": {
       "insider_signal": {
@@ -681,7 +672,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:43.522879"
+      "scanned_at": "2026-09-17T15:39:25.979266"
     },
     "XOM": {
       "insider_signal": {
@@ -697,17 +688,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Gavin Newsom Says Trump Knew Iran War Would Cause Hormuz Disruptions, Skyrocketing Costs, but Did 'Nothing'—Americans 'Owed' Answers",
-          "date": "2026-09-15 00:43",
-          "summary": "Gavin Newsom accuses Trump and Wright of failing to protect Americans from Iran war disruptions as fuel prices surge.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-16T15:32:44.243771"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-17T15:39:26.722886"
     },
     "CVX": {
       "insider_signal": {
@@ -783,8 +765,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:44.976756"
+      "trump_mentions": [
+        {
+          "headline": "Gavin Newsom Fires Back at Trump, Energy Secretary Over ‘Iran War Blend’ as Gas Prices Remain Elevated: ‘Scapegoating California’",
+          "date": "2026-09-17 03:40",
+          "summary": "California Governor Gavin Newsom renewed attacks on Trump and Energy Secretary Wright over surging Iran war fuel costs.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Warren Buffett, Donald Trump Bet on Same 17 Stocks — Some Might Surprise You",
+          "date": "2026-09-16 12:13",
+          "summary": "The investment portfolio of President Donald Trump and Berkshire Hathaway have 17 stocks in common. Here&#39;s a look at the list.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-17T15:39:27.465356"
     },
     "CAT": {
       "insider_signal": {
@@ -817,17 +816,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Stock Market Today: Dow Tries For A Gain, Trump Hits Out At AI Fears; This Fuel Play Clears Entry (Live Coverage)",
-          "date": "2026-09-14 16:59",
-          "summary": "The Dow Jones index drops on the stock market today as oil prices surge. President Trump hits out amid AI leaders calls for a slowdown.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-16T15:32:45.719115"
+      "scanned_at": "2026-09-17T15:39:28.199796"
     },
     "GE": {
       "insider_signal": {
@@ -924,7 +915,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:46.429794"
+      "scanned_at": "2026-09-17T15:39:28.967372"
     },
     "WMT": {
       "insider_signal": {
@@ -980,8 +971,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:47.170764"
+      "trump_mentions": [
+        {
+          "headline": "Amazon, Walmart Among 6 Companies Returning Tariff Savings — How It Impacts Your Budget",
+          "date": "2026-09-16 17:00",
+          "summary": "From Amazon to Walmart, companies are handling tariff refunds differently. Here's what it could mean for your wallet.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-17T15:39:29.737061"
     },
     "COST": {
       "insider_signal": {
@@ -997,25 +997,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Costco Wholesale Q4 Gross Margin Pressure Likely Offset by Tariff Refunds, RBC Says",
-          "date": "2026-09-15 14:59",
-          "summary": "Costco Wholesale's (COST) fiscal Q4 gross margin is likely to face pressure from higher fuel and tra",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Costco Gross Margin Pressure From Higher Fuel Costs Likely to be Offset by Tariff Refunds, RBC Says",
-          "date": "2026-09-15 13:05",
-          "summary": "Costco Wholesale (COST) likely faced core gross-margin pressure in its fiscal fourth quarter from hi",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-16T15:32:47.915675"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-17T15:39:30.484570"
     },
     "FCX": {
       "insider_signal": {
@@ -1127,17 +1110,9 @@
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Copper Stocks Tumble as Tariff Doubt Reverses Record Rally: Freeport-McMoRan Sinks 8%, Teck Resources and Southern Copper Drop 7%",
-          "date": "2026-09-10 14:43",
-          "summary": "A single policy update with no operational content just sent the entire copper mining sector into freefall, erasing billions in gains that took months to build. Here is why tariff uncertainty can repr",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-16T15:32:48.617259"
+      "scanned_at": "2026-09-17T15:39:31.189734"
     },
     "NEE": {
       "insider_signal": {
@@ -1153,8 +1128,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-16T15:32:49.333235"
+      "trump_mentions": [
+        {
+          "headline": "How a Trade Deal With Japan Could Change the Face of U.S. Energy",
+          "date": "2026-09-16 14:46",
+          "summary": "Japan is set to fund the three gargantuan natural-gas plans in Ohio, Pennsylvania, and Texas. Sizing up the opportunities and the obstacles.",
+          "source": "Yahoo",
+          "keyword_matched": "trade deal",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-09-17T15:39:31.948790"
     },
     "PLD": {
       "insider_signal": {
@@ -1180,7 +1164,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-16T15:32:50.083854"
+      "scanned_at": "2026-09-17T15:39:32.662998"
     }
   }
 }
