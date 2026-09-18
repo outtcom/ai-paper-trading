@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-17",
-  "last_notified_date": "2026-09-17",
+  "date": "2026-09-18",
+  "last_notified_date": "2026-09-18",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,17 +46,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Stocks Are Loving the Fed’s Rate Hike Even If Trump Hates It",
-          "date": "2026-09-17 11:42",
-          "summary": "Nvidia looks like a bargain, OpenAI reveals 6 ‘concerning’ incidents, and more news to start your day.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-17T15:39:15.679975"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-18T15:08:05.903205"
     },
     "NVDA": {
       "insider_signal": {
@@ -73,7 +64,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:16.501061"
+      "scanned_at": "2026-09-18T15:08:06.981153"
     },
     "MSFT": {
       "insider_signal": {
@@ -120,7 +111,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:17.436900"
+      "scanned_at": "2026-09-18T15:08:07.950977"
     },
     "MU": {
       "insider_signal": {
@@ -247,7 +238,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:18.207154"
+      "scanned_at": "2026-09-18T15:08:09.075046"
     },
     "GOOGL": {
       "insider_signal": {
@@ -294,7 +285,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:20.272624"
+      "scanned_at": "2026-09-18T15:08:10.045519"
     },
     "META": {
       "insider_signal": {
@@ -391,7 +382,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:21.175032"
+      "scanned_at": "2026-09-18T15:08:11.229142"
     },
     "AMZN": {
       "insider_signal": {
@@ -458,7 +449,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:22.049514"
+      "scanned_at": "2026-09-18T15:08:12.185836"
     },
     "TSLA": {
       "insider_signal": {
@@ -474,17 +465,26 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:23.023242"
+      "trump_mentions": [
+        {
+          "headline": "Senator Elissa Slotkin Sounds Alarm Over Possible Trump-BYD Meeting: ‘Watch What the President Does, Not What He Says’",
+          "date": "2026-09-18 04:41",
+          "summary": "Sen. Slotkin warned Thursday that BYD&#39;s CEO joining Xi&#39;s delegation could signal a deal letting Chinese automakers into the U.S",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-18T15:08:13.122377"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 0,
         "open_market_sells": 3,
         "compensation_grants": 2,
-        "net_open_market_value": -8780778.56,
+        "net_open_market_value": -8824360.76,
         "net_open_market_fmt": "-$8.8M",
         "largest_single_transaction": {
           "name": "Hakim Anat",
@@ -532,7 +532,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:23.763099"
+      "scanned_at": "2026-09-18T15:08:13.954942"
     },
     "UNH": {
       "insider_signal": {
@@ -598,7 +598,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-17T15:39:24.505054"
+      "scanned_at": "2026-09-18T15:08:14.793465"
     },
     "JPM": {
       "insider_signal": {
@@ -635,7 +635,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:25.248993"
+      "scanned_at": "2026-09-18T15:08:15.713389"
     },
     "GS": {
       "insider_signal": {
@@ -671,8 +671,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:25.979266"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Inflation Approval Slumps to 19%: What Do Prediction Markets Say About the Midterms?",
+          "date": "2026-09-17 15:18",
+          "summary": "Trump’s inflation approval fell to 19% as prediction markets moved toward Democrats ahead of the midterms.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-18T15:08:16.516471"
     },
     "XOM": {
       "insider_signal": {
@@ -688,8 +697,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:26.722886"
+      "trump_mentions": [
+        {
+          "headline": "Exxon Nears Venezuelan Oil Deal, After Trump Says U.S. Secured 65 Billion Barrel Agreement With Country",
+          "date": "2026-09-17 16:43",
+          "summary": "Exxon Mobil is closing in on a return to Venezuela nearly two decades after Hugo Chavez seized its operations there, and the barrel figures flying around the deal tell very different stories depending",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Senate Majority Leader John Thune Floats a Diesel Export Ban as Prices Hit $6.31 a Gallon. Trump Team Not Convinced It Would Work",
+          "date": "2026-09-17 13:36",
+          "summary": "Diesel prices just hit a level that has Washington reaching for a policy tool it has never once deployed on refined fuel, but the experts arguing it would backfire may have the more convincing case.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-18T15:08:17.345707"
     },
     "CVX": {
       "insider_signal": {
@@ -767,23 +793,31 @@
       },
       "trump_mentions": [
         {
+          "headline": "Exxon Nears Venezuelan Oil Deal, After Trump Says U.S. Secured 65 Billion Barrel Agreement With Country",
+          "date": "2026-09-17 16:43",
+          "summary": "Exxon Mobil is closing in on a return to Venezuela nearly two decades after Hugo Chavez seized its operations there, and the barrel figures flying around the deal tell very different stories depending",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Senate Majority Leader John Thune Floats a Diesel Export Ban as Prices Hit $6.31 a Gallon. Trump Team Not Convinced It Would Work",
+          "date": "2026-09-17 13:36",
+          "summary": "Diesel prices just hit a level that has Washington reaching for a policy tool it has never once deployed on refined fuel, but the experts arguing it would backfire may have the more convincing case.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        },
+        {
           "headline": "Gavin Newsom Fires Back at Trump, Energy Secretary Over ‘Iran War Blend’ as Gas Prices Remain Elevated: ‘Scapegoating California’",
           "date": "2026-09-17 03:40",
           "summary": "California Governor Gavin Newsom renewed attacks on Trump and Energy Secretary Wright over surging Iran war fuel costs.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Warren Buffett, Donald Trump Bet on Same 17 Stocks — Some Might Surprise You",
-          "date": "2026-09-16 12:13",
-          "summary": "The investment portfolio of President Donald Trump and Berkshire Hathaway have 17 stocks in common. Here&#39;s a look at the list.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-17T15:39:27.465356"
+      "scanned_at": "2026-09-18T15:08:18.198342"
     },
     "CAT": {
       "insider_signal": {
@@ -808,17 +842,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "They ‘Just Want High Tariffs Forever’: Ted Cruz Says There Are 2 Tariff Camps Inside the Trump Administration and Most View Them as ‘Leverage’",
-          "date": "2026-09-15 12:01",
-          "summary": "Senator Ted Cruz says the fight over tariffs inside the Trump administration comes down to two positions, and he named the Treasury Secretary as being on his side. \"There are two camps in the Trump ad",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-17T15:39:28.199796"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-18T15:08:18.970692"
     },
     "GE": {
       "insider_signal": {
@@ -915,7 +940,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:28.967372"
+      "scanned_at": "2026-09-18T15:08:19.756682"
     },
     "WMT": {
       "insider_signal": {
@@ -973,15 +998,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Amazon, Walmart Among 6 Companies Returning Tariff Savings — How It Impacts Your Budget",
-          "date": "2026-09-16 17:00",
-          "summary": "From Amazon to Walmart, companies are handling tariff refunds differently. Here's what it could mean for your wallet.",
+          "headline": "CogitX AI Appoints Michael Ellgass as President, Retail",
+          "date": "2026-09-17 13:30",
+          "summary": "SEATTLE & LONDON, September 17, 2026--CogitX AI, a sovereign AI platform company, today announced the appointment of Michael Ellgass as President, Retail.",
           "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-17T15:39:29.737061"
+      "scanned_at": "2026-09-18T15:08:20.576625"
     },
     "COST": {
       "insider_signal": {
@@ -998,7 +1023,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-17T15:39:30.484570"
+      "scanned_at": "2026-09-18T15:08:21.408438"
     },
     "FCX": {
       "insider_signal": {
@@ -1102,17 +1127,9 @@
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Stock Market Today: Dow Drops As Fear Gauge Spikes; Copper Players Tumble On Tariff News (Live Coverage)",
-          "date": "2026-09-10 17:20",
-          "summary": "Stock Market Today: The Dow Jones index falls Thursday after a surprise inflation reading, as oil prices and Treasury yields surge.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-17T15:39:31.189734"
+      "scanned_at": "2026-09-18T15:08:22.186266"
     },
     "NEE": {
       "insider_signal": {
@@ -1138,7 +1155,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-17T15:39:31.948790"
+      "scanned_at": "2026-09-18T15:08:22.958726"
     },
     "PLD": {
       "insider_signal": {
@@ -1154,17 +1171,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "EV Realty Names Henrik Holland President to Accelerate National Expansion of Its Powered Properties® Platform",
-          "date": "2026-09-10 12:00",
-          "summary": "Former Prologis and Shell executive joins the NGP-backed platform, as demand grows for grid power-secured infrastructure serving trucks, autonomous fleets, and other emerging technologiesSAN FRANCISCO",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-17T15:39:32.662998"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-18T15:08:23.775957"
     }
   }
 }
