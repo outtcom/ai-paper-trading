@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-18",
-  "last_notified_date": "2026-09-18",
+  "date": "2026-09-21",
+  "last_notified_date": "2026-09-21",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -47,7 +47,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:05.903205"
+      "scanned_at": "2026-09-21T17:11:29.185976"
     },
     "NVDA": {
       "insider_signal": {
@@ -63,8 +63,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:06.981153"
+      "trump_mentions": [
+        {
+          "headline": "Nvidia Holds Flat Before Trump-Xi Talks Test China Optionality",
+          "date": "2026-09-21 15:42",
+          "summary": "Political negotiations could reopen chip access, but they are neither licenses nor customer orders.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-21T17:11:29.834663"
     },
     "MSFT": {
       "insider_signal": {
@@ -111,7 +120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:07.950977"
+      "scanned_at": "2026-09-21T17:11:30.684842"
     },
     "MU": {
       "insider_signal": {
@@ -238,7 +247,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:09.075046"
+      "scanned_at": "2026-09-21T17:11:31.350554"
     },
     "GOOGL": {
       "insider_signal": {
@@ -284,8 +293,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:10.045519"
+      "trump_mentions": [
+        {
+          "headline": "ELEMENTL POWER NAMES ROBEY CLARK SENIOR VICE PRESIDENT OF PROJECTS",
+          "date": "2026-09-21 14:42",
+          "summary": "Elementl Power, an independent developer of utility-scale nuclear power projects, has named Robey Clark the company's senior vice president of Projects.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-21T17:11:32.092692"
     },
     "META": {
       "insider_signal": {
@@ -382,7 +400,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:11.229142"
+      "scanned_at": "2026-09-21T17:11:33.120453"
     },
     "AMZN": {
       "insider_signal": {
@@ -449,7 +467,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:12.185836"
+      "scanned_at": "2026-09-21T17:11:33.867483"
     },
     "TSLA": {
       "insider_signal": {
@@ -467,15 +485,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Senator Elissa Slotkin Sounds Alarm Over Possible Trump-BYD Meeting: ‘Watch What the President Does, Not What He Says’",
-          "date": "2026-09-18 04:41",
-          "summary": "Sen. Slotkin warned Thursday that BYD&#39;s CEO joining Xi&#39;s delegation could signal a deal letting Chinese automakers into the U.S",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
+          "headline": "Two Vice Presidents Join Castillo Engineering to Scale Utility Solar & Storage Offerings",
+          "date": "2026-09-21 12:57",
+          "summary": "Castillo Engineering, a leading national solar and energy storage engineering firm, announces the appointment of two executives to lead its next phase of growth: Aaron Carrillo as Vice President of Op",
+          "source": "Yahoo",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-18T15:08:13.122377"
+      "scanned_at": "2026-09-21T17:11:34.524551"
     },
     "LLY": {
       "insider_signal": {
@@ -532,7 +550,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:13.954942"
+      "scanned_at": "2026-09-21T17:11:35.163507"
     },
     "UNH": {
       "insider_signal": {
@@ -588,17 +606,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Incyte Appoints Suketu (Suky) Upadhyay As Executive Vice President And CFO Effective May 4, 2026",
-          "date": "2026-09-16 13:02",
-          "summary": "",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:14.793465"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:35.825113"
     },
     "JPM": {
       "insider_signal": {
@@ -634,8 +643,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:15.713389"
+      "trump_mentions": [
+        {
+          "headline": "Iran’s Ghalibaf Warns Trump Over Strait of Hormuz: ‘Trying to Suffocate Iran Without Blowback’ Is ‘Impossible’",
+          "date": "2026-09-21 01:02",
+          "summary": "Iranian Parliament Speaker Ghalibaf warns that targeting Iran via the Strait of Hormuz would trigger unavoidable blowback.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Bessent Meets Chinese Vice Premier He Lifeng Ahead of High-Stakes Trump-Xi Summit",
+          "date": "2026-09-20 15:47",
+          "summary": "Bessent and China’s He Lifeng met in New York ahead of the Trump-Xi summit, focusing on AI, tariffs, rare earths and trade tensions.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-21T17:11:36.475541"
     },
     "GS": {
       "insider_signal": {
@@ -671,17 +697,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Inflation Approval Slumps to 19%: What Do Prediction Markets Say About the Midterms?",
-          "date": "2026-09-17 15:18",
-          "summary": "Trump’s inflation approval fell to 19% as prediction markets moved toward Democrats ahead of the midterms.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:16.516471"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:37.357785"
     },
     "XOM": {
       "insider_signal": {
@@ -697,25 +714,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Exxon Nears Venezuelan Oil Deal, After Trump Says U.S. Secured 65 Billion Barrel Agreement With Country",
-          "date": "2026-09-17 16:43",
-          "summary": "Exxon Mobil is closing in on a return to Venezuela nearly two decades after Hugo Chavez seized its operations there, and the barrel figures flying around the deal tell very different stories depending",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Senate Majority Leader John Thune Floats a Diesel Export Ban as Prices Hit $6.31 a Gallon. Trump Team Not Convinced It Would Work",
-          "date": "2026-09-17 13:36",
-          "summary": "Diesel prices just hit a level that has Washington reaching for a policy tool it has never once deployed on refined fuel, but the experts arguing it would backfire may have the more convincing case.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:17.345707"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:37.979678"
     },
     "CVX": {
       "insider_signal": {
@@ -791,33 +791,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Exxon Nears Venezuelan Oil Deal, After Trump Says U.S. Secured 65 Billion Barrel Agreement With Country",
-          "date": "2026-09-17 16:43",
-          "summary": "Exxon Mobil is closing in on a return to Venezuela nearly two decades after Hugo Chavez seized its operations there, and the barrel figures flying around the deal tell very different stories depending",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Senate Majority Leader John Thune Floats a Diesel Export Ban as Prices Hit $6.31 a Gallon. Trump Team Not Convinced It Would Work",
-          "date": "2026-09-17 13:36",
-          "summary": "Diesel prices just hit a level that has Washington reaching for a policy tool it has never once deployed on refined fuel, but the experts arguing it would backfire may have the more convincing case.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Gavin Newsom Fires Back at Trump, Energy Secretary Over ‘Iran War Blend’ as Gas Prices Remain Elevated: ‘Scapegoating California’",
-          "date": "2026-09-17 03:40",
-          "summary": "California Governor Gavin Newsom renewed attacks on Trump and Energy Secretary Wright over surging Iran war fuel costs.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:18.198342"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:38.615859"
     },
     "CAT": {
       "insider_signal": {
@@ -842,8 +817,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:18.970692"
+      "trump_mentions": [
+        {
+          "headline": "Should Caterpillar's Tariff Bill Worry You More Than Its Backlog?",
+          "date": "2026-09-18 20:35",
+          "summary": "Caterpillar (CAT) delivered the biggest quarter in its history, with a $72 billion order book behind it—59% of which it expects to ship over the next twelve months. The stock has gained 82.8% on a pri",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-09-21T17:11:39.251015"
     },
     "GE": {
       "insider_signal": {
@@ -940,7 +924,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:19.756682"
+      "scanned_at": "2026-09-21T17:11:39.879063"
     },
     "WMT": {
       "insider_signal": {
@@ -996,17 +980,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "CogitX AI Appoints Michael Ellgass as President, Retail",
-          "date": "2026-09-17 13:30",
-          "summary": "SEATTLE & LONDON, September 17, 2026--CogitX AI, a sovereign AI platform company, today announced the appointment of Michael Ellgass as President, Retail.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:20.576625"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:40.592194"
     },
     "COST": {
       "insider_signal": {
@@ -1022,8 +997,25 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:21.408438"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: S&P 500, Nasdaq 100, Dow Jones Futures Gain as Trump Issues Fresh Warning to Iran — MRVL, AAPL, ACN in Focus (UPDATED)",
+          "date": "2026-09-21 06:02",
+          "summary": "U.S. stock futures advanced on Monday, as the Dow Jones, S&amp;P 500 and Nasdaq 100 indices rose, following Friday&#39;s mixed close.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump-Xi Summit, Costco, Autozone, General Mills, and More to Watch This Week",
+          "date": "2026-09-20 18:00",
+          "summary": "Presidents Donald Trump and Xi Jinping will meet Thursday to discuss a range of economic and geopolitical topics. We’ll see data on manufacturing , services, and new homes, and earnings from KB Home a",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-21T17:11:41.360253"
     },
     "FCX": {
       "insider_signal": {
@@ -1119,17 +1111,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Did Freeport-McMoRan Stock Drop On Doubts Over A Tariff It Would Gain From?",
-          "date": "2026-09-11 21:25",
-          "summary": "Freeport-McMoRan (FCX) stock fell 6.6% on Thursday to close at $71.21, while the S&P 500 slipped 0.6%. Copper sold off on surging yields and on reports that the White House has yet to decide on copper",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-18T15:08:22.186266"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-21T17:11:41.985832"
     },
     "NEE": {
       "insider_signal": {
@@ -1147,6 +1130,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "2 Big Trump Breakthroughs Can Power Stock Markets Higher",
+          "date": "2026-09-21 11:44",
+          "summary": "President Donald Trump has woken up on the right side of bed to start the week–and so has the stock market.  Two potential breakthroughs, instigated by the Trump administration, are being cheered by W",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "How a Trade Deal With Japan Could Change the Face of U.S. Energy",
           "date": "2026-09-16 14:46",
           "summary": "Japan is set to fund the three gargantuan natural-gas plans in Ohio, Pennsylvania, and Texas. Sizing up the opportunities and the obstacles.",
@@ -1155,7 +1146,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-18T15:08:22.958726"
+      "scanned_at": "2026-09-21T17:11:42.604109"
     },
     "PLD": {
       "insider_signal": {
@@ -1172,7 +1163,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-18T15:08:23.775957"
+      "scanned_at": "2026-09-21T17:11:43.216697"
     }
   }
 }
