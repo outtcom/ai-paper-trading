@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-21",
-  "last_notified_date": "2026-09-21",
+  "date": "2026-09-22",
+  "last_notified_date": "2026-09-22",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -46,8 +46,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:29.185976"
+      "trump_mentions": [
+        {
+          "headline": "Treasury yields ease, oil falls as Trump-Xi meeting looms: AlphaCheck",
+          "date": "2026-09-22 13:41",
+          "summary": "Here's a check of the markets in the first few minutes of trading.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-22T15:41:42.379354"
     },
     "NVDA": {
       "insider_signal": {
@@ -63,17 +72,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Nvidia Holds Flat Before Trump-Xi Talks Test China Optionality",
-          "date": "2026-09-21 15:42",
-          "summary": "Political negotiations could reopen chip access, but they are neither licenses nor customer orders.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-21T17:11:29.834663"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-22T15:41:43.073868"
     },
     "MSFT": {
       "insider_signal": {
@@ -120,7 +120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:30.684842"
+      "scanned_at": "2026-09-22T15:41:43.826082"
     },
     "MU": {
       "insider_signal": {
@@ -247,7 +247,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:31.350554"
+      "scanned_at": "2026-09-22T15:41:44.651907"
     },
     "GOOGL": {
       "insider_signal": {
@@ -295,15 +295,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "ELEMENTL POWER NAMES ROBEY CLARK SENIOR VICE PRESIDENT OF PROJECTS",
-          "date": "2026-09-21 14:42",
-          "summary": "Elementl Power, an independent developer of utility-scale nuclear power projects, has named Robey Clark the company's senior vice president of Projects.",
+          "headline": "DeepSeek, Moonshot Reportedly Face China Scrutiny Over Anthropic Claims Ahead Of Trump-Xi AI Talks",
+          "date": "2026-09-22 13:11",
+          "summary": "China’s Cyberspace Administration reportedly summoned representatives from all seven Chinese companies named in Anthropic’s report before narrowing its focus to DeepSeek and Moonshot.",
           "source": "Yahoo",
-          "keyword_matched": "president",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-21T17:11:32.092692"
+      "scanned_at": "2026-09-22T15:41:45.408475"
     },
     "META": {
       "insider_signal": {
@@ -399,8 +399,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:33.120453"
+      "trump_mentions": [
+        {
+          "headline": "Treasury yields ease, oil falls as Trump-Xi meeting looms: AlphaCheck",
+          "date": "2026-09-22 13:41",
+          "summary": "Here's a check of the markets in the first few minutes of trading.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-22T15:41:46.215312"
     },
     "AMZN": {
       "insider_signal": {
@@ -466,8 +475,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:33.867483"
+      "trump_mentions": [
+        {
+          "headline": "DeepSeek, Moonshot Reportedly Face China Scrutiny Over Anthropic Claims Ahead Of Trump-Xi AI Talks",
+          "date": "2026-09-22 13:11",
+          "summary": "China’s Cyberspace Administration reportedly summoned representatives from all seven Chinese companies named in Anthropic’s report before narrowing its focus to DeepSeek and Moonshot.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-22T15:41:46.937338"
     },
     "TSLA": {
       "insider_signal": {
@@ -483,17 +501,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Two Vice Presidents Join Castillo Engineering to Scale Utility Solar & Storage Offerings",
-          "date": "2026-09-21 12:57",
-          "summary": "Castillo Engineering, a leading national solar and energy storage engineering firm, announces the appointment of two executives to lead its next phase of growth: Aaron Carrillo as Vice President of Op",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-21T17:11:34.524551"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-22T15:41:47.617952"
     },
     "LLY": {
       "insider_signal": {
@@ -549,8 +558,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:35.163507"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Drug Price Achievements Questioned Following Separate Most Favored Nation Contract Disclosures with Lilly, Pfizer",
+          "date": "2026-09-22 08:28",
+          "summary": "Public Citizen exposes separate government drug deals with Pfizer and Eli Lilly, warning the pacts could increase global drug prices.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-22T15:41:48.279671"
     },
     "UNH": {
       "insider_signal": {
@@ -607,7 +625,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:35.825113"
+      "scanned_at": "2026-09-22T15:41:48.943979"
     },
     "JPM": {
       "insider_signal": {
@@ -615,7 +633,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 1,
-        "compensation_grants": 2,
+        "compensation_grants": 1,
         "net_open_market_value": -903518.0,
         "net_open_market_fmt": "-$904K",
         "largest_single_transaction": {
@@ -645,23 +663,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Iran’s Ghalibaf Warns Trump Over Strait of Hormuz: ‘Trying to Suffocate Iran Without Blowback’ Is ‘Impossible’",
-          "date": "2026-09-21 01:02",
-          "summary": "Iranian Parliament Speaker Ghalibaf warns that targeting Iran via the Strait of Hormuz would trigger unavoidable blowback.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Bessent Meets Chinese Vice Premier He Lifeng Ahead of High-Stakes Trump-Xi Summit",
-          "date": "2026-09-20 15:47",
-          "summary": "Bessent and China’s He Lifeng met in New York ahead of the Trump-Xi summit, focusing on AI, tariffs, rare earths and trade tensions.",
+          "headline": "Elizabeth Warren Slams Trump as $6.9 Billion in Russia-Linked Payments Reportedly Slipped Through Global Banks Despite Sanctions (UPDATED)",
+          "date": "2026-09-22 06:41",
+          "summary": "Global banks, including Standard Chartered and Citigroup, processed over $6.9 billion from a Russia-backed financial firm that deceived its way into the system via document forgery.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-21T17:11:36.475541"
+      "scanned_at": "2026-09-22T15:41:49.624177"
     },
     "GS": {
       "insider_signal": {
@@ -698,7 +708,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:37.357785"
+      "scanned_at": "2026-09-22T15:41:50.282750"
     },
     "XOM": {
       "insider_signal": {
@@ -715,7 +725,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:37.979678"
+      "scanned_at": "2026-09-22T15:41:50.983382"
     },
     "CVX": {
       "insider_signal": {
@@ -792,29 +802,29 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:38.615859"
+      "scanned_at": "2026-09-22T15:41:51.713289"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 8,
+        "open_market_buys": 4,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 75001.84,
-        "net_open_market_fmt": "+$75K",
+        "net_open_market_value": 39452.64,
+        "net_open_market_fmt": "+$39K",
         "largest_single_transaction": {
           "name": "Creed Joseph E",
           "direction": "buy",
-          "dollar_value": 15997.14,
+          "dollar_value": 15616.67,
           "dollar_fmt": "$16K",
-          "date": "2026-07-24",
-          "shares_traded": 18,
-          "price_per_share": 888.73,
+          "date": "2026-08-26",
+          "shares_traded": 19,
+          "price_per_share": 821.93,
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "strong_buy",
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [
@@ -827,17 +837,17 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-21T17:11:39.251015"
+      "scanned_at": "2026-09-22T15:41:52.389963"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 5,
-        "compensation_grants": 3,
-        "net_open_market_value": -5299219.37,
-        "net_open_market_fmt": "-$5.3M",
+        "open_market_buys": 1,
+        "open_market_sells": 2,
+        "compensation_grants": 1,
+        "net_open_market_value": -3413382.48,
+        "net_open_market_fmt": "-$3.4M",
         "largest_single_transaction": {
           "name": "Giglietti Robert M.",
           "direction": "sell",
@@ -878,53 +888,13 @@
             "shares_traded": 10242,
             "price_per_share": 36.65,
             "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "sell",
-            "dollar_value": 805945.56,
-            "dollar_fmt": "$806K",
-            "date": "2026-07-24",
-            "shares_traded": 2279,
-            "price_per_share": 353.64,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "sell",
-            "dollar_value": 984049.04,
-            "dollar_fmt": "$984K",
-            "date": "2026-07-24",
-            "shares_traded": 2782,
-            "price_per_share": 353.72,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "buy",
-            "dollar_value": 351992.55,
-            "dollar_fmt": "$352K",
-            "date": "2026-07-24",
-            "shares_traded": 5061,
-            "price_per_share": 69.55,
-            "transaction_code": ""
-          },
-          {
-            "name": "Ali Mohamed",
-            "direction": "sell",
-            "dollar_value": 447834.84,
-            "dollar_fmt": "$448K",
-            "date": "2026-07-24",
-            "shares_traded": 1266,
-            "price_per_share": 353.74,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:39.879063"
+      "scanned_at": "2026-09-22T15:41:53.067232"
     },
     "WMT": {
       "insider_signal": {
@@ -981,7 +951,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:40.592194"
+      "scanned_at": "2026-09-22T15:41:53.875498"
     },
     "COST": {
       "insider_signal": {
@@ -1015,7 +985,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-21T17:11:41.360253"
+      "scanned_at": "2026-09-22T15:41:54.557725"
     },
     "FCX": {
       "insider_signal": {
@@ -1111,8 +1081,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:41.985832"
+      "trump_mentions": [
+        {
+          "headline": "Trump, Greenland Deal Puts Rare-Earth ETFs In Focus: Funds to Watch as US Targets China’s Supply Chain",
+          "date": "2026-09-21 13:20",
+          "summary": "Stocks related to Greenland surged after the new U.S.-Greenland deal. Here’s what it could mean for rare-earth and critical-minerals ETFs.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-09-22T15:41:55.209905"
     },
     "NEE": {
       "insider_signal": {
@@ -1136,17 +1115,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "How a Trade Deal With Japan Could Change the Face of U.S. Energy",
-          "date": "2026-09-16 14:46",
-          "summary": "Japan is set to fund the three gargantuan natural-gas plans in Ohio, Pennsylvania, and Texas. Sizing up the opportunities and the obstacles.",
-          "source": "Yahoo",
-          "keyword_matched": "trade deal",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-21T17:11:42.604109"
+      "scanned_at": "2026-09-22T15:41:55.873776"
     },
     "PLD": {
       "insider_signal": {
@@ -1163,7 +1134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-21T17:11:43.216697"
+      "scanned_at": "2026-09-22T15:41:56.516941"
     }
   }
 }
