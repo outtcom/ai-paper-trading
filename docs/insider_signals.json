@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-25",
-  "last_notified_date": "2026-09-25",
+  "date": "2026-09-29",
+  "last_notified_date": "2026-09-29",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,8 +9,8 @@
         "open_market_buys": 0,
         "open_market_sells": 7,
         "compensation_grants": 3,
-        "net_open_market_value": -8096940.28,
-        "net_open_market_fmt": "-$8.1M",
+        "net_open_market_value": -8469891.97,
+        "net_open_market_fmt": "-$8.5M",
         "largest_single_transaction": {
           "name": "Newstead Jennifer",
           "direction": "sell",
@@ -22,6 +22,16 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 815803.94,
+            "dollar_fmt": "$816K",
+            "date": "2026-09-22",
+            "shares_traded": 2399,
+            "price_per_share": 340.06,
+            "transaction_code": ""
+          },
           {
             "name": "Newstead Jennifer",
             "direction": "sell",
@@ -81,23 +91,13 @@
             "shares_traded": 1439,
             "price_per_share": 307.49,
             "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 442852.25,
-            "dollar_fmt": "$443K",
-            "date": "2026-08-11",
-            "shares_traded": 1439,
-            "price_per_share": 307.75,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:39.199614"
+      "scanned_at": "2026-09-29T17:01:07.221744"
     },
     "NVDA": {
       "insider_signal": {
@@ -213,25 +213,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck",
-          "date": "2026-09-25 13:51",
-          "summary": "Here's a check of the markets in the first few minutes of trading.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump and Xi Buy Time on Trade. Farm and Chip Stocks Are Watching Closely.",
-          "date": "2026-09-25 13:40",
-          "summary": "The U.S. and China extended their trade truce, but the deal treated soybeans and semiconductors very differently. Which sector actually has something to gain, and which is already priced as if China d",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:39.982764"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:09.035333"
     },
     "MSFT": {
       "insider_signal": {
@@ -297,25 +280,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck",
-          "date": "2026-09-25 13:51",
-          "summary": "Here's a check of the markets in the first few minutes of trading.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "'Trump Tells OpenAI, Anthropic to Withhold Models From UK Agency' - Bloomberg",
-          "date": "2026-09-25 09:14",
-          "summary": "https://www.bloomberg.com/news/articles/2026-09-25/trump-tells-openai-anthropic-to-withhold-models-from-uk-agency",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:40.792487"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:10.130406"
     },
     "MU": {
       "insider_signal": {
@@ -442,7 +408,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:41.801778"
+      "scanned_at": "2026-09-29T17:01:11.521703"
     },
     "GOOGL": {
       "insider_signal": {
@@ -458,17 +424,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "'Trump Tells OpenAI, Anthropic to Withhold Models From UK Agency' - Bloomberg",
-          "date": "2026-09-25 09:14",
-          "summary": "https://www.bloomberg.com/news/articles/2026-09-25/trump-tells-openai-anthropic-to-withhold-models-from-uk-agency",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:43.036738"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:13.464568"
     },
     "META": {
       "insider_signal": {
@@ -586,15 +543,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck",
-          "date": "2026-09-25 13:51",
-          "summary": "Here's a check of the markets in the first few minutes of trading.",
+          "headline": "Nvidia, Anthropic CEOs to Attend Trump Meeting on AI Risks",
+          "date": "2026-09-29 13:40",
+          "summary": "Nvidia Corp. Chief Executive Officer Jensen Huang, Anthropic PBC head Dario Amodei and Palantir Technologies Inc. CEO Alex Karp are slated to attend a lunch with US President Donald Trump to discuss a",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-25T15:55:43.991269"
+      "scanned_at": "2026-09-29T17:01:15.531878"
     },
     "AMZN": {
       "insider_signal": {
@@ -640,17 +597,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "'Trump Tells OpenAI, Anthropic to Withhold Models From UK Agency' - Bloomberg",
-          "date": "2026-09-25 09:14",
-          "summary": "https://www.bloomberg.com/news/articles/2026-09-25/trump-tells-openai-anthropic-to-withhold-models-from-uk-agency",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:44.769907"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:17.230492"
     },
     "TSLA": {
       "insider_signal": {
@@ -688,15 +636,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Tech stocks gain after tech titan dinner with Trump and China's Xi Jinping: AlphaCheck",
-          "date": "2026-09-25 13:51",
-          "summary": "Here's a check of the markets in the first few minutes of trading.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
+          "headline": "'Elon Musk, CEOs Of Palantir, Amazon, Service Now, Altimeter To Attend White House Meeting On AI; Microsoft CEO Satya Nadella To Attend White House Meeting On AI' - Axios",
+          "date": "2026-09-29 09:49",
+          "summary": "https://www.axios.com/2026/09/29/trump-ai-meeting-list-ceos-johnson",
+          "source": "Benzinga",
+          "keyword_matched": "white house",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-25T15:55:45.532548"
+      "scanned_at": "2026-09-29T17:01:18.291813"
     },
     "LLY": {
       "insider_signal": {
@@ -733,74 +681,49 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:46.271056"
+      "scanned_at": "2026-09-29T17:01:19.646237"
     },
     "UNH": {
       "insider_signal": {
         "ticker": "UNH",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
-        "compensation_grants": 0,
-        "net_open_market_value": -1237809.21,
-        "net_open_market_fmt": "-$1.2M",
-        "largest_single_transaction": {
-          "name": "DeVeydt Wayne S",
-          "direction": "sell",
-          "dollar_value": 483188.94,
-          "dollar_fmt": "$483K",
-          "date": "2026-09-02",
-          "shares_traded": 1209,
-          "price_per_share": 399.66,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "DeVeydt Wayne S",
-            "direction": "sell",
-            "dollar_value": 483188.94,
-            "dollar_fmt": "$483K",
-            "date": "2026-09-02",
-            "shares_traded": 1209,
-            "price_per_share": 399.66,
-            "transaction_code": ""
-          },
-          {
-            "name": "Conway Patrick Hugh",
-            "direction": "sell",
-            "dollar_value": 455910,
-            "dollar_fmt": "$456K",
-            "date": "2026-08-21",
-            "shares_traded": 1169,
-            "price_per_share": 390,
-            "transaction_code": ""
-          },
-          {
-            "name": "Stankiewicz Dennis Andrew",
-            "direction": "sell",
-            "dollar_value": 93710.27,
-            "dollar_fmt": "$94K",
-            "date": "2026-08-11",
-            "shares_traded": 233,
-            "price_per_share": 402.19,
-            "transaction_code": ""
-          },
-          {
-            "name": "Conway Patrick Hugh",
-            "direction": "sell",
-            "dollar_value": 205000,
-            "dollar_fmt": "$205K",
-            "date": "2026-08-05",
-            "shares_traded": 500,
-            "price_per_share": 410,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 10,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:47.002136"
+      "trump_mentions": [
+        {
+          "headline": "UnitedHealthcare names new president in latest leadership shuffle",
+          "date": "2026-09-29 15:38",
+          "summary": "Robert Hunter will focus on UnitedHealthcare’s “modernization agenda” in the new role. It’s the latest in a slew of leadership changes at UnitedHealth as the company works to restore its image.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Robert (Bobby) Hunter Posts On LinkedIn \"I'm excited and grateful to share that I am stepping into a new role as President of UnitedHealthcare...\"",
+          "date": "2026-09-28 13:16",
+          "summary": "https://www.linkedin.com/feed/update/urn:li:activity:7510375416864342017/",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "UnitedHealthcare Government Programs CEO Bobby Hunter Says In LinkedIn Post He Is Stepping Into Role As President Of UnitedHealthcare",
+          "date": "2026-09-28 13:11",
+          "summary": "https://www.linkedin.com/feed/update/urn:li:activity:7510375416864342017/",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-29T17:01:20.957675"
     },
     "JPM": {
       "insider_signal": {
@@ -846,17 +769,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Office of the President of the Republic of Paraguay and J.P. Morgan Asset Management Announce $200 Million Investment in Sustainable Forestry in Paraguay",
-          "date": "2026-09-24 19:00",
-          "summary": "At this week's Paraguay Investment Forum NYC 2026, the Office of the President of the Republic of Paraguay and J.P. Morgan Natural Capital announced an investment of approximately USD 200 million to d",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:47.746520"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:22.012532"
     },
     "GS": {
       "insider_signal": {
@@ -902,8 +816,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:48.472192"
+      "trump_mentions": [
+        {
+          "headline": "Goldman Sachs Board Reportedly Discussed Plan for CEO David Solomon to Step Down, Hand the Top Job to President John Waldron",
+          "date": "2026-09-29 01:34",
+          "summary": "Goldman Sachs Group, Inc.‘s (NYSE:GS) board has reportedly discussed a succession plan in which CEO David Solomon would step down and hand the top job to President and Chief Operating Officer John Wal",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-29T17:01:23.096014"
     },
     "XOM": {
       "insider_signal": {
@@ -921,39 +844,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Update: Market Chatter: US Oil Executives Push Back Against Donald Trump's Potential Ban on Diesel Exports",
-          "date": "2026-09-24 12:40",
-          "summary": "(Updates with Phillips 66's response in the last paragraph.) Chevron (CVX), Phillips 66 (PSX), Ex",
+          "headline": "TMC Announces Appointment of Liam Mallon, Former President of ExxonMobil Upstream, to its Board of Directors",
+          "date": "2026-09-29 12:00",
+          "summary": "Liam Mallon, former President of ExxonMobil Upstream Company, brings over 40 years of global energy and offshore operating experience, including leadership of ExxonMobil’s worldwide upstream businessM",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
         },
         {
-          "headline": "Market Chatter: US Oil Executives Push Back Against Donald Trump's Potential Ban on Diesel Exports",
-          "date": "2026-09-24 11:22",
-          "summary": "Chevron (CVX), Phillips 66 (PSX), ExxonMobil (XOM) and Valero's (VLO) top executives are pushing bac",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Dozens Of U.S. Oil Refining And Business Groups Urge Trump To Reject Any Effort To Impose Ban On Diesel Exports",
-          "date": "2026-09-23 17:07",
-          "summary": "- Reuters Citing Letter",
+          "headline": "Trump Offers Iran Sanctions Relief for Nuclear Progress as Traders Raise Deal Odds",
+          "date": "2026-09-28 14:14",
+          "summary": "Trump is open to sanctions relief for Iranian nuclear progress as prediction-market odds of a year-end deal rise to 15%.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Elizabeth Warren Counts Trump's Oil, Gas Gains Amid Iran War As Americans Pay More At Pump: Ban President From 'Owning And Trading Stock'",
-          "date": "2026-09-22 22:07",
-          "summary": "Sen. Elizabeth Warren accused President Trump of profiting from oil and gas holdings during the Iran war, as pump prices rose.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-09-25T15:55:49.184706"
+      "scanned_at": "2026-09-29T17:01:24.051105"
     },
     "CVX": {
       "insider_signal": {
@@ -1021,23 +928,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Update: Market Chatter: US Oil Executives Push Back Against Donald Trump's Potential Ban on Diesel Exports",
-          "date": "2026-09-24 12:40",
-          "summary": "(Updates with Phillips 66's response in the last paragraph.) Chevron (CVX), Phillips 66 (PSX), Ex",
+          "headline": "Stock Market Today: Dow Falls, Trump Rejects Iran Deal; Oil, Yields Jump As Nvidia Rises On Buyback (Live Coverage)",
+          "date": "2026-09-28 15:37",
+          "summary": "Stock Market Today: The Dow Jones index drops Monday after Trump rejected an Iran peace deal. Oil prices and Treasury yields jump.",
           "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        },
-        {
-          "headline": "Market Chatter: US Oil Executives Push Back Against Donald Trump's Potential Ban on Diesel Exports",
-          "date": "2026-09-24 11:22",
-          "summary": "Chevron (CVX), Phillips 66 (PSX), ExxonMobil (XOM) and Valero's (VLO) top executives are pushing bac",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-25T15:55:49.901123"
+      "scanned_at": "2026-09-29T17:01:25.012412"
     },
     "CAT": {
       "insider_signal": {
@@ -1164,7 +1063,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:50.635858"
+      "scanned_at": "2026-09-29T17:01:26.014878"
     },
     "GE": {
       "insider_signal": {
@@ -1221,7 +1120,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:51.345866"
+      "scanned_at": "2026-09-29T17:01:27.231892"
     },
     "WMT": {
       "insider_signal": {
@@ -1307,17 +1206,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Firms are keeping billions in tariff refunds. Fed study says only 15% plan to lower prices, including Walmart",
-          "date": "2026-09-25 10:00",
-          "summary": "U.S. Customs and Border Protection has collected $166 billion in tariffs on imported goods from 330,000 importers.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:52.158758"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:28.210960"
     },
     "COST": {
       "insider_signal": {
@@ -1395,25 +1285,25 @@
       },
       "trump_mentions": [
         {
-          "headline": "Costco Q4 2026 earnings beat expectations on tariff refund",
-          "date": "2026-09-25 11:09",
-          "summary": "The warehouse retailer's fourth-quarter net income rose 15% to $3 billion, boosted by $184 million in IEEPA tariff refunds",
+          "headline": "How Tariff Refunds Could Shape Costco's Earnings in Fiscal 2027",
+          "date": "2026-09-28 15:29",
+          "summary": "Costco's tariff refunds are likely to provide periodic fiscal 2027 earnings benefits, though most future proceeds are set to be reinvested in lower prices.",
           "source": "Yahoo",
           "keyword_matched": "tariff",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-09-25T15:55:52.916924"
+      "scanned_at": "2026-09-29T17:01:29.362685"
     },
     "FCX": {
       "insider_signal": {
         "ticker": "FCX",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 5,
+        "open_market_sells": 4,
         "compensation_grants": 2,
-        "net_open_market_value": -7182246.29,
-        "net_open_market_fmt": "-$7.2M",
+        "net_open_market_value": -6706596.29,
+        "net_open_market_fmt": "-$6.7M",
         "largest_single_transaction": {
           "name": "Currault Douglas N. II",
           "direction": "sell",
@@ -1484,32 +1374,13 @@
             "shares_traded": 14277,
             "price_per_share": 69.5,
             "transaction_code": ""
-          },
-          {
-            "name": "Higgins Stephen T.",
-            "direction": "sell",
-            "dollar_value": 475650,
-            "dollar_fmt": "$476K",
-            "date": "2026-07-30",
-            "shares_traded": 7550,
-            "price_per_share": 63,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump, Greenland Deal Puts Rare-Earth ETFs In Focus: Funds to Watch as US Targets China’s Supply Chain",
-          "date": "2026-09-21 13:20",
-          "summary": "Stocks related to Greenland surged after the new U.S.-Greenland deal. Here’s what it could mean for rare-earth and critical-minerals ETFs.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:53.602905"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:30.285167"
     },
     "NEE": {
       "insider_signal": {
@@ -1534,17 +1405,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "2 Big Trump Breakthroughs Can Power Stock Markets Higher",
-          "date": "2026-09-21 11:44",
-          "summary": "President Donald Trump has woken up on the right side of bed to start the week–and so has the stock market.  Two potential breakthroughs, instigated by the Trump administration, are being cheered by W",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-25T15:55:54.299897"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-29T17:01:31.192567"
     },
     "PLD": {
       "insider_signal": {
@@ -1561,7 +1423,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-25T15:55:54.999430"
+      "scanned_at": "2026-09-29T17:01:32.125247"
     }
   }
 }
