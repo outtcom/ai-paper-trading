@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-29",
-  "last_notified_date": "2026-09-29",
+  "date": "2026-09-30",
+  "last_notified_date": "2026-09-30",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -97,7 +97,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:07.221744"
+      "scanned_at": "2026-09-30T17:00:19.663841"
     },
     "NVDA": {
       "insider_signal": {
@@ -213,8 +213,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:09.035333"
+      "trump_mentions": [
+        {
+          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
+          "date": "2026-09-30 15:28",
+          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:21.648334"
     },
     "MSFT": {
       "insider_signal": {
@@ -281,7 +290,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:10.130406"
+      "scanned_at": "2026-09-30T17:00:22.878761"
     },
     "MU": {
       "insider_signal": {
@@ -407,8 +416,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:11.521703"
+      "trump_mentions": [
+        {
+          "headline": "Trump signs 'morally binding' agreement with AI leaders, OpenAI's newest AI model",
+          "date": "2026-09-30 14:03",
+          "summary": "The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley examine some of the trading day's biggest developing stories, reporting on the Federal Reserve's inflation reading for August, OpenAI's (O",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:24.209645"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,117 +442,126 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:13.464568"
+      "trump_mentions": [
+        {
+          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
+          "date": "2026-09-30 15:28",
+          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:27.592149"
     },
     "META": {
       "insider_signal": {
         "ticker": "META",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 10,
-        "compensation_grants": 0,
-        "net_open_market_value": -43408528.95,
-        "net_open_market_fmt": "-$43.4M",
+        "open_market_sells": 9,
+        "compensation_grants": 1,
+        "net_open_market_value": -19736561.68,
+        "net_open_market_fmt": "-$19.7M",
         "largest_single_transaction": {
-          "name": "Cox Christopher K",
+          "name": "Zuckerberg Mark",
           "direction": "sell",
-          "dollar_value": 14500328.0,
-          "dollar_fmt": "$14.5M",
-          "date": "2026-09-21",
-          "shares_traded": 20000,
-          "price_per_share": 725.0164,
+          "dollar_value": 5915433.69,
+          "dollar_fmt": "$5.9M",
+          "date": "2026-09-24",
+          "shares_traded": 7607,
+          "price_per_share": 777.6303,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Cox Christopher K",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 14500328.0,
-            "dollar_fmt": "$14.5M",
-            "date": "2026-09-21",
-            "shares_traded": 20000,
-            "price_per_share": 725.0164,
+            "dollar_value": 370935.61,
+            "dollar_fmt": "$371K",
+            "date": "2026-09-24",
+            "shares_traded": 476,
+            "price_per_share": 779.2765,
             "transaction_code": ""
           },
           {
-            "name": "Cox Christopher K",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 14009932.0,
-            "dollar_fmt": "$14.0M",
-            "date": "2026-09-21",
-            "shares_traded": 20000,
-            "price_per_share": 700.4966,
+            "dollar_value": 1670444.9,
+            "dollar_fmt": "$1.7M",
+            "date": "2026-09-24",
+            "shares_traded": 2146,
+            "price_per_share": 778.3993,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 277550.16,
-            "dollar_fmt": "$278K",
-            "date": "2026-09-21",
-            "shares_traded": 408,
-            "price_per_share": 680.27,
+            "dollar_value": 3740552.3,
+            "dollar_fmt": "$3.7M",
+            "date": "2026-09-24",
+            "shares_traded": 4810,
+            "price_per_share": 777.6616,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 55782.14,
-            "dollar_fmt": "$56K",
-            "date": "2026-09-21",
-            "shares_traded": 82,
-            "price_per_share": 680.27,
+            "dollar_value": 1373738.89,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-09-24",
+            "shares_traded": 1769,
+            "price_per_share": 776.5624,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 55782.14,
-            "dollar_fmt": "$56K",
-            "date": "2026-09-21",
-            "shares_traded": 82,
-            "price_per_share": 680.27,
+            "dollar_value": 878435.86,
+            "dollar_fmt": "$878K",
+            "date": "2026-09-24",
+            "shares_traded": 1133,
+            "price_per_share": 775.3185,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 643535.42,
-            "dollar_fmt": "$644K",
-            "date": "2026-09-21",
-            "shares_traded": 946,
-            "price_per_share": 680.27,
+            "dollar_value": 467595.78,
+            "dollar_fmt": "$468K",
+            "date": "2026-09-24",
+            "shares_traded": 600,
+            "price_per_share": 779.3263,
             "transaction_code": ""
           },
           {
-            "name": "Cox Christopher K",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 13504556.0,
-            "dollar_fmt": "$13.5M",
-            "date": "2026-09-15",
-            "shares_traded": 20000,
-            "price_per_share": 675.2278,
+            "dollar_value": 3365608.75,
+            "dollar_fmt": "$3.4M",
+            "date": "2026-09-24",
+            "shares_traded": 4324,
+            "price_per_share": 778.3554,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 268353.84,
-            "dollar_fmt": "$268K",
-            "date": "2026-09-14",
-            "shares_traded": 408,
-            "price_per_share": 657.73,
+            "dollar_value": 5915433.69,
+            "dollar_fmt": "$5.9M",
+            "date": "2026-09-24",
+            "shares_traded": 7607,
+            "price_per_share": 777.6303,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Zuckerberg Mark",
             "direction": "sell",
-            "dollar_value": 53933.86,
-            "dollar_fmt": "$54K",
-            "date": "2026-09-14",
-            "shares_traded": 82,
-            "price_per_share": 657.73,
+            "dollar_value": 1953815.9,
+            "dollar_fmt": "$2.0M",
+            "date": "2026-09-24",
+            "shares_traded": 2516,
+            "price_per_share": 776.5564,
             "transaction_code": ""
           }
         ],
@@ -543,15 +570,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Nvidia, Anthropic CEOs to Attend Trump Meeting on AI Risks",
-          "date": "2026-09-29 13:40",
-          "summary": "Nvidia Corp. Chief Executive Officer Jensen Huang, Anthropic PBC head Dario Amodei and Palantir Technologies Inc. CEO Alex Karp are slated to attend a lunch with US President Donald Trump to discuss a",
+          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
+          "date": "2026-09-30 15:28",
+          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
           "source": "Yahoo",
-          "keyword_matched": "trump",
+          "keyword_matched": "white house",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-29T17:01:15.531878"
+      "scanned_at": "2026-09-30T17:00:29.436041"
     },
     "AMZN": {
       "insider_signal": {
@@ -598,7 +625,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:17.230492"
+      "scanned_at": "2026-09-30T17:00:31.458932"
     },
     "TSLA": {
       "insider_signal": {
@@ -634,17 +661,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "'Elon Musk, CEOs Of Palantir, Amazon, Service Now, Altimeter To Attend White House Meeting On AI; Microsoft CEO Satya Nadella To Attend White House Meeting On AI' - Axios",
-          "date": "2026-09-29 09:49",
-          "summary": "https://www.axios.com/2026/09/29/trump-ai-meeting-list-ceos-johnson",
-          "source": "Benzinga",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-29T17:01:18.291813"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-30T17:00:33.020238"
     },
     "LLY": {
       "insider_signal": {
@@ -681,7 +699,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:19.646237"
+      "scanned_at": "2026-09-30T17:00:34.175074"
     },
     "UNH": {
       "insider_signal": {
@@ -698,6 +716,14 @@
         "error": null
       },
       "trump_mentions": [
+        {
+          "headline": "Robert Hunter Named UnitedHealth (UNH) Insurance President",
+          "date": "2026-09-30 06:55",
+          "summary": "UnitedHealth Group Incorporated (NYSE:UNH) is getting a new head of its insurance division, with executive Robert Hunter disclosing on September 28 that he will take the role. Hunter announced it hims",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
         {
           "headline": "UnitedHealthcare names new president in latest leadership shuffle",
           "date": "2026-09-29 15:38",
@@ -723,7 +749,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-29T17:01:20.957675"
+      "scanned_at": "2026-09-30T17:00:35.159124"
     },
     "JPM": {
       "insider_signal": {
@@ -769,8 +795,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:22.012532"
+      "trump_mentions": [
+        {
+          "headline": "Jamie Dimon Proposes Sweeping US-Europe Free Trade Deal — But Only If Europe Fixes Its Capital Markets First",
+          "date": "2026-09-29 16:55",
+          "summary": "Why JPMorgan CEO Jamie Dimon thinks the West needs a ‘big, beautiful’ US-Europe free trade agreement to get its mojo back.",
+          "source": "Yahoo",
+          "keyword_matched": "trade deal",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:35.832677"
     },
     "GS": {
       "insider_signal": {
@@ -816,17 +851,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Goldman Sachs Board Reportedly Discussed Plan for CEO David Solomon to Step Down, Hand the Top Job to President John Waldron",
-          "date": "2026-09-29 01:34",
-          "summary": "Goldman Sachs Group, Inc.‘s (NYSE:GS) board has reportedly discussed a succession plan in which CEO David Solomon would step down and hand the top job to President and Chief Operating Officer John Wal",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-29T17:01:23.096014"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-30T17:00:36.741132"
     },
     "XOM": {
       "insider_signal": {
@@ -844,23 +870,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "TMC Announces Appointment of Liam Mallon, Former President of ExxonMobil Upstream, to its Board of Directors",
-          "date": "2026-09-29 12:00",
-          "summary": "Liam Mallon, former President of ExxonMobil Upstream Company, brings over 40 years of global energy and offshore operating experience, including leadership of ExxonMobil’s worldwide upstream businessM",
+          "headline": "America’s Strategic Oil Reserves Are at 44-Year Lows — And Trump Just Gave Away Another 40 Million Barrels",
+          "date": "2026-09-30 15:41",
+          "summary": "Oil markets are operating with little room for error. West Texas Intermediate crude trades above $91 a barrel this morning, while the Iran conflict, disrupted shipping, and tight diesel supplies conti",
           "source": "Yahoo",
-          "keyword_matched": "president",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump Offers Iran Sanctions Relief for Nuclear Progress as Traders Raise Deal Odds",
-          "date": "2026-09-28 14:14",
-          "summary": "Trump is open to sanctions relief for Iranian nuclear progress as prediction-market odds of a year-end deal rise to 15%.",
-          "source": "Benzinga",
+          "headline": "ExxonMobil Got a $180 Target as Trump Weighed a Diesel Export Ban. Here’s What It Means for the Stock",
+          "date": "2026-09-29 14:25",
+          "summary": "Key Stats for ExxonMobil StockCurrent Price: $162. 52Target Price (Mid): ~$165Street Target: ~$172Potential Total Return: ~2%Annualized IRR: ~0.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-29T17:01:24.051105"
+      "scanned_at": "2026-09-30T17:00:37.756980"
     },
     "CVX": {
       "insider_signal": {
@@ -928,25 +954,25 @@
       },
       "trump_mentions": [
         {
-          "headline": "Stock Market Today: Dow Falls, Trump Rejects Iran Deal; Oil, Yields Jump As Nvidia Rises On Buyback (Live Coverage)",
-          "date": "2026-09-28 15:37",
-          "summary": "Stock Market Today: The Dow Jones index drops Monday after Trump rejected an Iran peace deal. Oil prices and Treasury yields jump.",
+          "headline": "America’s Strategic Oil Reserves Are at 44-Year Lows — And Trump Just Gave Away Another 40 Million Barrels",
+          "date": "2026-09-30 15:41",
+          "summary": "Oil markets are operating with little room for error. West Texas Intermediate crude trades above $91 a barrel this morning, while the Iran conflict, disrupted shipping, and tight diesel supplies conti",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-29T17:01:25.012412"
+      "scanned_at": "2026-09-30T17:00:39.133795"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 0,
-        "open_market_sells": 10,
+        "open_market_buys": 4,
+        "open_market_sells": 6,
         "compensation_grants": 0,
-        "net_open_market_value": -33907944.25,
-        "net_open_market_fmt": "-$33.9M",
+        "net_open_market_value": -22967226.48,
+        "net_open_market_fmt": "-$23.0M",
         "largest_single_transaction": {
           "name": "Creed Joseph E",
           "direction": "sell",
@@ -1017,53 +1043,22 @@
             "shares_traded": 2137,
             "price_per_share": 809.08,
             "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 2132839.8,
-            "dollar_fmt": "$2.1M",
-            "date": "2026-08-28",
-            "shares_traded": 2639,
-            "price_per_share": 808.2,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 4953460.35,
-            "dollar_fmt": "$5.0M",
-            "date": "2026-08-28",
-            "shares_traded": 6135,
-            "price_per_share": 807.41,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 2726940.42,
-            "dollar_fmt": "$2.7M",
-            "date": "2026-08-28",
-            "shares_traded": 3382,
-            "price_per_share": 806.31,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 1088041.36,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-08-28",
-            "shares_traded": 1351,
-            "price_per_share": 805.36,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:26.014878"
+      "trump_mentions": [
+        {
+          "headline": "Donald Trump, Cathie Wood Bet on the Same 32 Stocks – Some Might Surprise You",
+          "date": "2026-09-29 16:32",
+          "summary": "A look at the stocks that are owned by Cathie Wood&#39;s Ark Invest and Donald Trump.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:40.248075"
     },
     "GE": {
       "insider_signal": {
@@ -1120,7 +1115,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:27.231892"
+      "scanned_at": "2026-09-30T17:00:41.306507"
     },
     "WMT": {
       "insider_signal": {
@@ -1206,8 +1201,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:28.210960"
+      "trump_mentions": [
+        {
+          "headline": "Mark Zuckerberg's Muse Could Charge You for Saving You Money — META President Reveals AI Agent's Potential Monetization Model",
+          "date": "2026-09-30 06:58",
+          "summary": "Meta President Dina Powell McCormick reveals Muse AI will monetize by taking a fee on user savings and offering paid subscriptions.",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-09-30T17:00:42.592133"
     },
     "COST": {
       "insider_signal": {
@@ -1283,17 +1287,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "How Tariff Refunds Could Shape Costco's Earnings in Fiscal 2027",
-          "date": "2026-09-28 15:29",
-          "summary": "Costco's tariff refunds are likely to provide periodic fiscal 2027 earnings benefits, though most future proceeds are set to be reinvested in lower prices.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-09-29T17:01:29.362685"
+      "trump_mentions": [],
+      "scanned_at": "2026-09-30T17:00:44.114672"
     },
     "FCX": {
       "insider_signal": {
@@ -1380,7 +1375,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:30.285167"
+      "scanned_at": "2026-09-30T17:00:44.952555"
     },
     "NEE": {
       "insider_signal": {
@@ -1406,7 +1401,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:31.192567"
+      "scanned_at": "2026-09-30T17:00:45.726426"
     },
     "PLD": {
       "insider_signal": {
@@ -1423,7 +1418,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-29T17:01:32.125247"
+      "scanned_at": "2026-09-30T17:00:46.864254"
     }
   }
 }
