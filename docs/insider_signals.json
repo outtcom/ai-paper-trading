@@ -1,103 +1,23 @@
 {
-  "date": "2026-09-30",
-  "last_notified_date": "2026-09-30",
+  "date": "2026-10-01",
+  "last_notified_date": "2026-10-01",
   "signals": {
     "AAPL": {
       "insider_signal": {
         "ticker": "AAPL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 7,
-        "compensation_grants": 3,
-        "net_open_market_value": -8469891.97,
-        "net_open_market_fmt": "-$8.5M",
-        "largest_single_transaction": {
-          "name": "Newstead Jennifer",
-          "direction": "sell",
-          "dollar_value": 5376985.52,
-          "dollar_fmt": "$5.4M",
-          "date": "2026-09-15",
-          "shares_traded": 16228,
-          "price_per_share": 331.34,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 815803.94,
-            "dollar_fmt": "$816K",
-            "date": "2026-09-22",
-            "shares_traded": 2399,
-            "price_per_share": 340.06,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 5376985.52,
-            "dollar_fmt": "$5.4M",
-            "date": "2026-09-15",
-            "shares_traded": 16228,
-            "price_per_share": 331.34,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 474813.22,
-            "dollar_fmt": "$475K",
-            "date": "2026-09-15",
-            "shares_traded": 1438,
-            "price_per_share": 330.19,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 456176.74,
-            "dollar_fmt": "$456K",
-            "date": "2026-09-08",
-            "shares_traded": 1438,
-            "price_per_share": 317.23,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 456177.39,
-            "dollar_fmt": "$456K",
-            "date": "2026-09-01",
-            "shares_traded": 1439,
-            "price_per_share": 317.01,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 447457.05,
-            "dollar_fmt": "$447K",
-            "date": "2026-08-25",
-            "shares_traded": 1439,
-            "price_per_share": 310.95,
-            "transaction_code": ""
-          },
-          {
-            "name": "Newstead Jennifer",
-            "direction": "sell",
-            "dollar_value": 442478.11,
-            "dollar_fmt": "$442K",
-            "date": "2026-08-18",
-            "shares_traded": 1439,
-            "price_per_share": 307.49,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "open_market_sells": 0,
+        "compensation_grants": 10,
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:19.663841"
+      "scanned_at": "2026-10-01T17:29:36.872114"
     },
     "NVDA": {
       "insider_signal": {
@@ -213,17 +133,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
-          "date": "2026-09-30 15:28",
-          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-30T17:00:21.648334"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-01T17:29:37.829584"
     },
     "MSFT": {
       "insider_signal": {
@@ -290,7 +201,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:22.878761"
+      "scanned_at": "2026-10-01T17:29:38.850579"
     },
     "MU": {
       "insider_signal": {
@@ -416,43 +327,34 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump signs 'morally binding' agreement with AI leaders, OpenAI's newest AI model",
-          "date": "2026-09-30 14:03",
-          "summary": "The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley examine some of the trading day's biggest developing stories, reporting on the Federal Reserve's inflation reading for August, OpenAI's (O",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-09-30T17:00:24.209645"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-01T17:29:39.813830"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
-        "compensation_grants": 10,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -67462.99,
+        "net_open_market_fmt": "-$67K",
+        "largest_single_transaction": {
+          "name": "Saraci Marsida",
+          "direction": "sell",
+          "dollar_value": 35935.06,
+          "dollar_fmt": "$36K",
+          "date": "2026-09-25",
+          "shares_traded": 106,
+          "price_per_share": 339.01,
+          "transaction_code": ""
+        },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
-          "date": "2026-09-30 15:28",
-          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-30T17:00:27.592149"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-01T17:29:40.877608"
     },
     "META": {
       "insider_signal": {
@@ -570,15 +472,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Top Midday Stories: Fed's Preferred Inflation Gauge Rises as Expected in August; AI Companies Sign White House Accord",
-          "date": "2026-09-30 15:28",
-          "summary": "All three major US stock indexes were up in late-morning trading Wednesday after the latest reading",
+          "headline": "Meta Platforms (META) Signed A White House AI Safety Accord",
+          "date": "2026-10-01 14:07",
+          "summary": "Meta Platforms (NasdaqGS:META) joined other large AI developers at the White House to sign a voluntary AI safety accord. The agreement commits participants to independent testing of AI systems, strong",
           "source": "Yahoo",
           "keyword_matched": "white house",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-30T17:00:29.436041"
+      "scanned_at": "2026-10-01T17:29:41.926325"
     },
     "AMZN": {
       "insider_signal": {
@@ -625,7 +527,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:31.458932"
+      "scanned_at": "2026-10-01T17:29:42.999858"
     },
     "TSLA": {
       "insider_signal": {
@@ -661,8 +563,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:33.020238"
+      "trump_mentions": [
+        {
+          "headline": "Bernie Sanders Slams Trump’s AI ‘Oligarchs’ as Elon Musk, Jeff Bezos, Mark Zuckerberg and Jensen Huang’s Wealth Tops $1.7 Trillion: ‘You’re Asking Us To Trust The People…’",
+          "date": "2026-10-01 04:39",
+          "summary": "Bernie Sanders questioned Trump’s AI self-regulation approach, citing tech leaders’ combined $1.7 trillion-plus wealth.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "TSLA, SPCX Rise After Cathie Wood Says Musk Is ‘Working All Angles’ With Trump, Xi Amid China Merger Hurdles",
+          "date": "2026-10-01 04:39",
+          "summary": "Cathie Wood predicted a potential Tesla-SpaceX merger, agreeing that a deal could be announced this year.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-01T17:29:43.848196"
     },
     "LLY": {
       "insider_signal": {
@@ -699,7 +618,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:34.175074"
+      "scanned_at": "2026-10-01T17:29:44.630101"
     },
     "UNH": {
       "insider_signal": {
@@ -731,25 +650,9 @@
           "source": "Yahoo",
           "keyword_matched": "president",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Robert (Bobby) Hunter Posts On LinkedIn \"I'm excited and grateful to share that I am stepping into a new role as President of UnitedHealthcare...\"",
-          "date": "2026-09-28 13:16",
-          "summary": "https://www.linkedin.com/feed/update/urn:li:activity:7510375416864342017/",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "UnitedHealthcare Government Programs CEO Bobby Hunter Says In LinkedIn Post He Is Stepping Into Role As President Of UnitedHealthcare",
-          "date": "2026-09-28 13:11",
-          "summary": "https://www.linkedin.com/feed/update/urn:li:activity:7510375416864342017/",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-30T17:00:35.159124"
+      "scanned_at": "2026-10-01T17:29:45.477660"
     },
     "JPM": {
       "insider_signal": {
@@ -797,15 +700,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Jamie Dimon Proposes Sweeping US-Europe Free Trade Deal — But Only If Europe Fixes Its Capital Markets First",
-          "date": "2026-09-29 16:55",
-          "summary": "Why JPMorgan CEO Jamie Dimon thinks the West needs a ‘big, beautiful’ US-Europe free trade agreement to get its mojo back.",
+          "headline": "JPMorgan Elevated Doug Petno and Troy Rohrbaugh to Co-Presidents as Jamie Dimon's Board Accelerates Succession Planning. Here's What That Reshuffle Signals for JPMorgan's Next Chapter.",
+          "date": "2026-10-01 00:35",
+          "summary": "CEO transitions can be difficult, particularly when they involve replacing a highly respected and public leader.",
           "source": "Yahoo",
-          "keyword_matched": "trade deal",
-          "sentiment_hint": "positive"
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-30T17:00:35.832677"
+      "scanned_at": "2026-10-01T17:29:46.276187"
     },
     "GS": {
       "insider_signal": {
@@ -851,8 +754,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:36.741132"
+      "trump_mentions": [
+        {
+          "headline": "Trump Threatens To Ban Diesel Exports To France And Germany Unless They Release 120 Million Barrels From Reserves. Analysts Say Ban Could Backfire On American Drivers.",
+          "date": "2026-10-01 11:43",
+          "summary": "Washington is threatening to cut off diesel exports to France and Germany unless they drain 120 million barrels from emergency reserves, but the official wielding that threat already said the tool is ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-10-01T17:29:47.116677"
     },
     "XOM": {
       "insider_signal": {
@@ -876,17 +788,9 @@
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "ExxonMobil Got a $180 Target as Trump Weighed a Diesel Export Ban. Here’s What It Means for the Stock",
-          "date": "2026-09-29 14:25",
-          "summary": "Key Stats for ExxonMobil StockCurrent Price: $162. 52Target Price (Mid): ~$165Street Target: ~$172Potential Total Return: ~2%Annualized IRR: ~0.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-30T17:00:37.756980"
+      "scanned_at": "2026-10-01T17:29:47.887269"
     },
     "CVX": {
       "insider_signal": {
@@ -962,7 +866,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-09-30T17:00:39.133795"
+      "scanned_at": "2026-10-01T17:29:48.664283"
     },
     "CAT": {
       "insider_signal": {
@@ -1048,17 +952,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Donald Trump, Cathie Wood Bet on the Same 32 Stocks – Some Might Surprise You",
-          "date": "2026-09-29 16:32",
-          "summary": "A look at the stocks that are owned by Cathie Wood&#39;s Ark Invest and Donald Trump.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-30T17:00:40.248075"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-01T17:29:49.646254"
     },
     "GE": {
       "insider_signal": {
@@ -1115,7 +1010,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:41.306507"
+      "scanned_at": "2026-10-01T17:29:50.506663"
     },
     "WMT": {
       "insider_signal": {
@@ -1201,17 +1096,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Mark Zuckerberg's Muse Could Charge You for Saving You Money — META President Reveals AI Agent's Potential Monetization Model",
-          "date": "2026-09-30 06:58",
-          "summary": "Meta President Dina Powell McCormick reveals Muse AI will monetize by taking a fee on user savings and offering paid subscriptions.",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-09-30T17:00:42.592133"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-01T17:29:51.296784"
     },
     "COST": {
       "insider_signal": {
@@ -1288,7 +1174,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:44.114672"
+      "scanned_at": "2026-10-01T17:29:52.113967"
     },
     "FCX": {
       "insider_signal": {
@@ -1375,7 +1261,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:44.952555"
+      "scanned_at": "2026-10-01T17:29:52.928961"
     },
     "NEE": {
       "insider_signal": {
@@ -1401,7 +1287,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:45.726426"
+      "scanned_at": "2026-10-01T17:29:53.699212"
     },
     "PLD": {
       "insider_signal": {
@@ -1418,7 +1304,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-09-30T17:00:46.864254"
+      "scanned_at": "2026-10-01T17:29:54.440386"
     }
   }
 }
