@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-01",
-  "last_notified_date": "2026-10-01",
+  "date": "2026-10-02",
+  "last_notified_date": "2026-10-02",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -17,7 +17,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:36.872114"
+      "scanned_at": "2026-10-02T16:49:27.289011"
     },
     "NVDA": {
       "insider_signal": {
@@ -134,7 +134,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:37.829584"
+      "scanned_at": "2026-10-02T16:49:27.986542"
     },
     "MSFT": {
       "insider_signal": {
@@ -201,7 +201,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:38.850579"
+      "scanned_at": "2026-10-02T16:49:28.696525"
     },
     "MU": {
       "insider_signal": {
@@ -328,7 +328,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:39.813830"
+      "scanned_at": "2026-10-02T16:49:29.403430"
     },
     "GOOGL": {
       "insider_signal": {
@@ -354,7 +354,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:40.877608"
+      "scanned_at": "2026-10-02T16:49:30.207783"
     },
     "META": {
       "insider_signal": {
@@ -470,17 +470,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Meta Platforms (META) Signed A White House AI Safety Accord",
-          "date": "2026-10-01 14:07",
-          "summary": "Meta Platforms (NasdaqGS:META) joined other large AI developers at the White House to sign a voluntary AI safety accord. The agreement commits participants to independent testing of AI systems, strong",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-01T17:29:41.926325"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-02T16:49:31.529893"
     },
     "AMZN": {
       "insider_signal": {
@@ -527,7 +518,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:42.999858"
+      "scanned_at": "2026-10-02T16:49:32.402743"
     },
     "TSLA": {
       "insider_signal": {
@@ -563,25 +554,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Bernie Sanders Slams Trump’s AI ‘Oligarchs’ as Elon Musk, Jeff Bezos, Mark Zuckerberg and Jensen Huang’s Wealth Tops $1.7 Trillion: ‘You’re Asking Us To Trust The People…’",
-          "date": "2026-10-01 04:39",
-          "summary": "Bernie Sanders questioned Trump’s AI self-regulation approach, citing tech leaders’ combined $1.7 trillion-plus wealth.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "TSLA, SPCX Rise After Cathie Wood Says Musk Is ‘Working All Angles’ With Trump, Xi Amid China Merger Hurdles",
-          "date": "2026-10-01 04:39",
-          "summary": "Cathie Wood predicted a potential Tesla-SpaceX merger, agreeing that a deal could be announced this year.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-01T17:29:43.848196"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-02T16:49:33.254275"
     },
     "LLY": {
       "insider_signal": {
@@ -618,7 +592,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:44.630101"
+      "scanned_at": "2026-10-02T16:49:33.931799"
     },
     "UNH": {
       "insider_signal": {
@@ -642,17 +616,9 @@
           "source": "Yahoo",
           "keyword_matched": "president",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "UnitedHealthcare names new president in latest leadership shuffle",
-          "date": "2026-09-29 15:38",
-          "summary": "Robert Hunter will focus on UnitedHealthcare’s “modernization agenda” in the new role. It’s the latest in a slew of leadership changes at UnitedHealth as the company works to restore its image.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-01T17:29:45.477660"
+      "scanned_at": "2026-10-02T16:49:34.580950"
     },
     "JPM": {
       "insider_signal": {
@@ -698,17 +664,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "JPMorgan Elevated Doug Petno and Troy Rohrbaugh to Co-Presidents as Jamie Dimon's Board Accelerates Succession Planning. Here's What That Reshuffle Signals for JPMorgan's Next Chapter.",
-          "date": "2026-10-01 00:35",
-          "summary": "CEO transitions can be difficult, particularly when they involve replacing a highly respected and public leader.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-01T17:29:46.276187"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-02T16:49:35.263595"
     },
     "GS": {
       "insider_signal": {
@@ -756,15 +713,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Threatens To Ban Diesel Exports To France And Germany Unless They Release 120 Million Barrels From Reserves. Analysts Say Ban Could Backfire On American Drivers.",
-          "date": "2026-10-01 11:43",
-          "summary": "Washington is threatening to cut off diesel exports to France and Germany unless they drain 120 million barrels from emergency reserves, but the official wielding that threat already said the tool is ",
+          "headline": "Could Trump Ban Diesel Exports? Here's What Prediction Markets Say",
+          "date": "2026-10-01 19:19",
+          "summary": "President Donald Trump is still weighing a U.S. diesel export ban, but prediction market traders see an outright prohibition as a long shot this month. Polymarket puts the probability of the U.S. anno",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-10-01T17:29:47.116677"
+      "scanned_at": "2026-10-02T16:49:35.922836"
     },
     "XOM": {
       "insider_signal": {
@@ -782,15 +739,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "America’s Strategic Oil Reserves Are at 44-Year Lows — And Trump Just Gave Away Another 40 Million Barrels",
-          "date": "2026-09-30 15:41",
-          "summary": "Oil markets are operating with little room for error. West Texas Intermediate crude trades above $91 a barrel this morning, while the Iran conflict, disrupted shipping, and tight diesel supplies conti",
-          "source": "Yahoo",
+          "headline": "US Weighs Tighter Aircraft-Part Controls For China as Trump Administration Turns Up Trade Pressure: Report",
+          "date": "2026-10-02 08:59",
+          "summary": "US slows aircraft-part export licenses to China, using aviation supplier dependence as leverage in trade talks with COMAC.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-01T17:29:47.887269"
+      "scanned_at": "2026-10-02T16:49:36.720904"
     },
     "CVX": {
       "insider_signal": {
@@ -856,17 +813,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "America’s Strategic Oil Reserves Are at 44-Year Lows — And Trump Just Gave Away Another 40 Million Barrels",
-          "date": "2026-09-30 15:41",
-          "summary": "Oil markets are operating with little room for error. West Texas Intermediate crude trades above $91 a barrel this morning, while the Iran conflict, disrupted shipping, and tight diesel supplies conti",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-01T17:29:48.664283"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-02T16:49:37.399931"
     },
     "CAT": {
       "insider_signal": {
@@ -953,7 +901,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:49.646254"
+      "scanned_at": "2026-10-02T16:49:38.088861"
     },
     "GE": {
       "insider_signal": {
@@ -1010,7 +958,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:50.506663"
+      "scanned_at": "2026-10-02T16:49:38.738691"
     },
     "WMT": {
       "insider_signal": {
@@ -1096,8 +1044,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:51.296784"
+      "trump_mentions": [
+        {
+          "headline": "How Walmart, Target and Dollar General Gain From Tariff Refunds",
+          "date": "2026-10-02 13:00",
+          "summary": "Tariff refunds boost Walmart, Target and Dollar General's margins, giving the retailers more room to invest in pricing, promotions and customer experience.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-10-02T16:49:39.476049"
     },
     "COST": {
       "insider_signal": {
@@ -1174,7 +1131,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:52.113967"
+      "scanned_at": "2026-10-02T16:49:40.144105"
     },
     "FCX": {
       "insider_signal": {
@@ -1261,7 +1218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:52.928961"
+      "scanned_at": "2026-10-02T16:49:40.822370"
     },
     "NEE": {
       "insider_signal": {
@@ -1287,7 +1244,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:53.699212"
+      "scanned_at": "2026-10-02T16:49:41.489499"
     },
     "PLD": {
       "insider_signal": {
@@ -1304,7 +1261,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-01T17:29:54.440386"
+      "scanned_at": "2026-10-02T16:49:42.170509"
     }
   }
 }
