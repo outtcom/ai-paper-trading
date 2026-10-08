@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-07",
-  "last_notified_date": "2026-10-07",
+  "date": "2026-10-08",
+  "last_notified_date": "2026-10-08",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:50.116522"
+      "scanned_at": "2026-10-08T18:00:13.024489"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,8 +233,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:50.814306"
+      "trump_mentions": [
+        {
+          "headline": "Stock Market Today: Dow Slides After Trump Remarks; Yields, Oil Prices Surge (Live Coverage)",
+          "date": "2026-10-08 13:47",
+          "summary": "The Dow Jones index declines Thursday after Trump's latest Iran comments. Treasury yields and oil prices surge.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-10-08T18:00:15.086566"
     },
     "MSFT": {
       "insider_signal": {
@@ -301,7 +310,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:51.899549"
+      "scanned_at": "2026-10-08T18:00:16.724749"
     },
     "MU": {
       "insider_signal": {
@@ -397,17 +406,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The Fed Just Put AI on Its List of Inflation Shocks, Next to Tariffs and Oil",
-          "date": "2026-10-07 14:35",
-          "summary": "The San Francisco Fed just named AI chips as a persistent inflation shock alongside tariffs and oil, and the official driving that view says relief is nowhere close. What that means for the companies ",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-07T17:57:52.597301"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-08T18:00:18.316908"
     },
     "GOOGL": {
       "insider_signal": {
@@ -433,7 +433,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:53.431528"
+      "scanned_at": "2026-10-08T18:00:21.841537"
     },
     "META": {
       "insider_signal": {
@@ -549,8 +549,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:54.445040"
+      "trump_mentions": [
+        {
+          "headline": "Trump's Portfolio Invested Tens of Millions in Debt of Two of The World's Largest Companies, Disclosure Shows",
+          "date": "2026-10-08 14:36",
+          "summary": "Trump disclosed more than 500 transactions in August totaling almost $75 million.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump discloses $25 million Meta stake, multimillion-dollar SpaceX investment",
+          "date": "2026-10-08 14:18",
+          "summary": "Investing.com -- Meta Platforms (NASDAQ: META) shares rose more than 1% after President Donald Trump’s latest financial disclosure revealed he had purchased as much as $25 million of the stock, before",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump August disclosure: Meta stock, SpaceX debt purchases",
+          "date": "2026-10-08 13:41",
+          "summary": "The August filing covers more than 500 transactions totaling between roughly $74M and $273M, according to a CNBC analysis",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-08T18:00:24.454640"
     },
     "AMZN": {
       "insider_signal": {
@@ -607,7 +632,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:55.536583"
+      "scanned_at": "2026-10-08T18:00:27.608828"
     },
     "TSLA": {
       "insider_signal": {
@@ -644,7 +669,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:56.286704"
+      "scanned_at": "2026-10-08T18:00:29.732256"
     },
     "LLY": {
       "insider_signal": {
@@ -682,23 +707,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "The \"Trumpflation\" Trade Could Get Worse Before It Gets Better. History Says These 2 Stocks Are the Place to Hide.",
-          "date": "2026-10-07 02:35",
-          "summary": "People have long been willing to pay for healthcare despite rising costs, with Medtronic and Eli Lilly offering two different angles on the space.",
-          "source": "Yahoo",
+          "headline": "Pharma Lobby Sues Trump Administration Over Medicare Drug Pricing Rule, Calls It ‘Unlawful Overreach’ — ‘The Results Are Preordained’",
+          "date": "2026-10-08 06:35",
+          "summary": "PhRMA sued the Trump administration over its Medicare drug pricing rule, arguing CMS exceeded its authority under federal law.",
+          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Becton Dickinson to Invest $19 Billion in U.S. in Exchange for Tariff Relief",
-          "date": "2026-10-06 12:35",
-          "summary": "The move makes the needle- and medical-device maker the latest company to pledge to expand domestic manufacturing to secure an exemption from the Trump administration’s tariffs.",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-10-07T17:57:56.962181"
+      "scanned_at": "2026-10-08T18:00:33.275475"
     },
     "UNH": {
       "insider_signal": {
@@ -715,7 +732,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:57.615253"
+      "scanned_at": "2026-10-08T18:00:35.100294"
     },
     "JPM": {
       "insider_signal": {
@@ -772,7 +789,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:58.247670"
+      "scanned_at": "2026-10-08T18:00:36.499985"
     },
     "GS": {
       "insider_signal": {
@@ -810,15 +827,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "America’s Trade Deficit Just Hit $105.6 Billion, the Widest Since Before the Tariffs",
-          "date": "2026-10-07 12:30",
-          "summary": "August's trade gap blew past forecasts while the stock market shrugged and climbed higher, and the reason behind both moves points to a spending wave that could just as easily flip into the next reces",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
+          "headline": "Elon Musk’s SpaceX Gets Green Light from Trump's FCC for 15,000 Starlink Satellites: Here’s What Comes Next",
+          "date": "2026-10-08 05:59",
+          "summary": "FCC approved SpaceX’s 15,000 Starlink satellites for mobile and Direct-to-Cell service without requiring ground-provider leases.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-07T17:57:58.888154"
+      "scanned_at": "2026-10-08T18:00:38.282028"
     },
     "XOM": {
       "insider_signal": {
@@ -834,8 +851,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:57:59.624170"
+      "trump_mentions": [
+        {
+          "headline": "Trump EPA Moves To Roll Back Biden-Era Methane Rules, Says Changes Could Save Oil and Gas Producers $45 Billion",
+          "date": "2026-10-08 04:54",
+          "summary": "Trump’s EPA plans to roll back Biden-era methane rules, easing standards for marginal wells, super-emitter leaks and gas flaring.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-08T18:00:40.477730"
     },
     "CVX": {
       "insider_signal": {
@@ -903,15 +929,39 @@
       },
       "trump_mentions": [
         {
-          "headline": "Chevron CEO Mike Wirth warns Trump diesel export ban would hurt supply",
-          "date": "2026-10-07 12:48",
-          "summary": "Mike Wirth said export bans \"take supply off the global market\" and called such a move \"unwise\" as global inventories thin ahead of winter",
+          "headline": "Trump's Portfolio Invested Tens of Millions in Debt of Two of The World's Largest Companies, Disclosure Shows",
+          "date": "2026-10-08 14:36",
+          "summary": "Trump disclosed more than 500 transactions in August totaling almost $75 million.",
           "source": "Yahoo",
           "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump August disclosure: Meta stock, SpaceX debt purchases",
+          "date": "2026-10-08 13:41",
+          "summary": "The August filing covers more than 500 transactions totaling between roughly $74M and $273M, according to a CNBC analysis",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Oil near $105 as Trump reportedly weighs renewed Iran strikes",
+          "date": "2026-10-08 13:09",
+          "summary": "Brent crude prices climbed back above $105 on Thursday as bond yields rose amid escalating tensions in the Middle East",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Chevron CEO Mike Wirth Warns White House Against Implementing Unwise Diesel Export Ban",
+          "date": "2026-10-08 12:42",
+          "summary": "Key Stats for Chevron StockPrice change for Chevron stock in the last 6 months: 6%$CVX Stock Price as of Oct. 7: $20552-Week High: $218$CVX Stock Price Target: $225What Happened?Chevron (CVX:NYSE) CEO",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-10-07T17:58:00.403545"
+      "scanned_at": "2026-10-08T18:00:41.757101"
     },
     "CAT": {
       "insider_signal": {
@@ -978,7 +1028,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:01.049051"
+      "scanned_at": "2026-10-08T18:00:43.745848"
     },
     "GE": {
       "insider_signal": {
@@ -1035,7 +1085,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:01.674412"
+      "scanned_at": "2026-10-08T18:00:45.188744"
     },
     "WMT": {
       "insider_signal": {
@@ -1072,7 +1122,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:02.330346"
+      "scanned_at": "2026-10-08T18:00:46.585141"
     },
     "COST": {
       "insider_signal": {
@@ -1149,7 +1199,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:03.004889"
+      "scanned_at": "2026-10-08T18:00:48.471406"
     },
     "FCX": {
       "insider_signal": {
@@ -1216,7 +1266,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:03.618870"
+      "scanned_at": "2026-10-08T18:00:50.196183"
     },
     "NEE": {
       "insider_signal": {
@@ -1242,7 +1292,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:04.407743"
+      "scanned_at": "2026-10-08T18:00:51.255066"
     },
     "PLD": {
       "insider_signal": {
@@ -1259,7 +1309,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-07T17:58:05.029087"
+      "scanned_at": "2026-10-08T18:00:52.557322"
     }
   }
 }
