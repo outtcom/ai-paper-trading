@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-08",
-  "last_notified_date": "2026-10-08",
+  "date": "2026-10-09",
+  "last_notified_date": "2026-10-09",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:13.024489"
+      "scanned_at": "2026-10-09T17:33:00.007009"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,17 +233,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Stock Market Today: Dow Slides After Trump Remarks; Yields, Oil Prices Surge (Live Coverage)",
-          "date": "2026-10-08 13:47",
-          "summary": "The Dow Jones index declines Thursday after Trump's latest Iran comments. Treasury yields and oil prices surge.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-10-08T18:00:15.086566"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-09T17:33:00.886328"
     },
     "MSFT": {
       "insider_signal": {
@@ -309,8 +300,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:16.724749"
+      "trump_mentions": [
+        {
+          "headline": "Trump suspended Microsoft's green card program & awarded its CEO, all in the same day",
+          "date": "2026-10-09 13:50",
+          "summary": "President Trump honored Microsoft (MSFT) CEO Satya Nadella at the White House while cutting the company's green card employee program on Thursday. The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jak",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-09T17:33:01.827117"
     },
     "MU": {
       "insider_signal": {
@@ -406,8 +406,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:18.316908"
+      "trump_mentions": [
+        {
+          "headline": "The major companies putting $1,000 into their employees' Trump accounts, from Goldman Sachs to Micron",
+          "date": "2026-10-09 11:54",
+          "summary": "From IBM to Citi, a growing number of companies have pledged to match the government's $1,000 contribution for employees' kids' Trump Accounts.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-09T17:33:02.707779"
     },
     "GOOGL": {
       "insider_signal": {
@@ -433,7 +442,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:21.841537"
+      "scanned_at": "2026-10-09T17:33:03.799019"
     },
     "META": {
       "insider_signal": {
@@ -442,19 +451,59 @@
         "open_market_buys": 0,
         "open_market_sells": 9,
         "compensation_grants": 1,
-        "net_open_market_value": -19736561.68,
-        "net_open_market_fmt": "-$19.7M",
+        "net_open_market_value": -8302397.69,
+        "net_open_market_fmt": "-$8.3M",
         "largest_single_transaction": {
           "name": "Zuckerberg Mark",
           "direction": "sell",
-          "dollar_value": 5915433.69,
-          "dollar_fmt": "$5.9M",
+          "dollar_value": 3740552.3,
+          "dollar_fmt": "$3.7M",
           "date": "2026-09-24",
-          "shares_traded": 7607,
-          "price_per_share": 777.6303,
+          "shares_traded": 4810,
+          "price_per_share": 777.6616,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 297056.64,
+            "dollar_fmt": "$297K",
+            "date": "2026-10-05",
+            "shares_traded": 408,
+            "price_per_share": 728.08,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 59702.56,
+            "dollar_fmt": "$60K",
+            "date": "2026-10-05",
+            "shares_traded": 82,
+            "price_per_share": 728.08,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 59702.56,
+            "dollar_fmt": "$60K",
+            "date": "2026-10-05",
+            "shares_traded": 82,
+            "price_per_share": 728.08,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 688763.68,
+            "dollar_fmt": "$689K",
+            "date": "2026-10-05",
+            "shares_traded": 946,
+            "price_per_share": 728.08,
+            "transaction_code": ""
+          },
           {
             "name": "Zuckerberg Mark",
             "direction": "sell",
@@ -494,88 +543,13 @@
             "shares_traded": 1769,
             "price_per_share": 776.5624,
             "transaction_code": ""
-          },
-          {
-            "name": "Zuckerberg Mark",
-            "direction": "sell",
-            "dollar_value": 878435.86,
-            "dollar_fmt": "$878K",
-            "date": "2026-09-24",
-            "shares_traded": 1133,
-            "price_per_share": 775.3185,
-            "transaction_code": ""
-          },
-          {
-            "name": "Zuckerberg Mark",
-            "direction": "sell",
-            "dollar_value": 467595.78,
-            "dollar_fmt": "$468K",
-            "date": "2026-09-24",
-            "shares_traded": 600,
-            "price_per_share": 779.3263,
-            "transaction_code": ""
-          },
-          {
-            "name": "Zuckerberg Mark",
-            "direction": "sell",
-            "dollar_value": 3365608.75,
-            "dollar_fmt": "$3.4M",
-            "date": "2026-09-24",
-            "shares_traded": 4324,
-            "price_per_share": 778.3554,
-            "transaction_code": ""
-          },
-          {
-            "name": "Zuckerberg Mark",
-            "direction": "sell",
-            "dollar_value": 5915433.69,
-            "dollar_fmt": "$5.9M",
-            "date": "2026-09-24",
-            "shares_traded": 7607,
-            "price_per_share": 777.6303,
-            "transaction_code": ""
-          },
-          {
-            "name": "Zuckerberg Mark",
-            "direction": "sell",
-            "dollar_value": 1953815.9,
-            "dollar_fmt": "$2.0M",
-            "date": "2026-09-24",
-            "shares_traded": 2516,
-            "price_per_share": 776.5564,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump's Portfolio Invested Tens of Millions in Debt of Two of The World's Largest Companies, Disclosure Shows",
-          "date": "2026-10-08 14:36",
-          "summary": "Trump disclosed more than 500 transactions in August totaling almost $75 million.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump discloses $25 million Meta stake, multimillion-dollar SpaceX investment",
-          "date": "2026-10-08 14:18",
-          "summary": "Investing.com -- Meta Platforms (NASDAQ: META) shares rose more than 1% after President Donald Trump’s latest financial disclosure revealed he had purchased as much as $25 million of the stock, before",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump August disclosure: Meta stock, SpaceX debt purchases",
-          "date": "2026-10-08 13:41",
-          "summary": "The August filing covers more than 500 transactions totaling between roughly $74M and $273M, according to a CNBC analysis",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-08T18:00:24.454640"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-09T17:33:09.071637"
     },
     "AMZN": {
       "insider_signal": {
@@ -632,7 +606,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:27.608828"
+      "scanned_at": "2026-10-09T17:33:09.927618"
     },
     "TSLA": {
       "insider_signal": {
@@ -669,7 +643,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:29.732256"
+      "scanned_at": "2026-10-09T17:33:11.304376"
     },
     "LLY": {
       "insider_signal": {
@@ -705,17 +679,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Pharma Lobby Sues Trump Administration Over Medicare Drug Pricing Rule, Calls It ‘Unlawful Overreach’ — ‘The Results Are Preordained’",
-          "date": "2026-10-08 06:35",
-          "summary": "PhRMA sued the Trump administration over its Medicare drug pricing rule, arguing CMS exceeded its authority under federal law.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-08T18:00:33.275475"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-09T17:33:12.151021"
     },
     "UNH": {
       "insider_signal": {
@@ -732,7 +697,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:35.100294"
+      "scanned_at": "2026-10-09T17:33:13.055455"
     },
     "JPM": {
       "insider_signal": {
@@ -789,7 +754,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:36.499985"
+      "scanned_at": "2026-10-09T17:33:13.890523"
     },
     "GS": {
       "insider_signal": {
@@ -825,17 +790,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Elon Musk’s SpaceX Gets Green Light from Trump's FCC for 15,000 Starlink Satellites: Here’s What Comes Next",
-          "date": "2026-10-08 05:59",
-          "summary": "FCC approved SpaceX’s 15,000 Starlink satellites for mobile and Direct-to-Cell service without requiring ground-provider leases.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-08T18:00:38.282028"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-09T17:33:14.731795"
     },
     "XOM": {
       "insider_signal": {
@@ -853,15 +809,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump EPA Moves To Roll Back Biden-Era Methane Rules, Says Changes Could Save Oil and Gas Producers $45 Billion",
-          "date": "2026-10-08 04:54",
-          "summary": "Trump’s EPA plans to roll back Biden-era methane rules, easing standards for marginal wells, super-emitter leaks and gas flaring.",
+          "headline": "QUICK SPARK: Trump Says US Will Not Attack Iran Before Midterm Election",
+          "date": "2026-10-08 13:13",
+          "summary": "President Donald Trump rules out U.S. military action against Iran before the Nov. 3 midterm elections.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-08T18:00:40.477730"
+      "scanned_at": "2026-10-09T17:33:15.596243"
     },
     "CVX": {
       "insider_signal": {
@@ -929,39 +885,23 @@
       },
       "trump_mentions": [
         {
+          "headline": "Market Chatter: Trump Disclosed 517 Securities Transactions in August, Including Up to $25 Million Meta Purchase",
+          "date": "2026-10-08 23:12",
+          "summary": "President Donald Trump disclosed 517 securities transactions in August, including a purchase of up t",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "Trump's Portfolio Invested Tens of Millions in Debt of Two of The World's Largest Companies, Disclosure Shows",
           "date": "2026-10-08 14:36",
           "summary": "Trump disclosed more than 500 transactions in August totaling almost $75 million.",
           "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump August disclosure: Meta stock, SpaceX debt purchases",
-          "date": "2026-10-08 13:41",
-          "summary": "The August filing covers more than 500 transactions totaling between roughly $74M and $273M, according to a CNBC analysis",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Oil near $105 as Trump reportedly weighs renewed Iran strikes",
-          "date": "2026-10-08 13:09",
-          "summary": "Brent crude prices climbed back above $105 on Thursday as bond yields rose amid escalating tensions in the Middle East",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Chevron CEO Mike Wirth Warns White House Against Implementing Unwise Diesel Export Ban",
-          "date": "2026-10-08 12:42",
-          "summary": "Key Stats for Chevron StockPrice change for Chevron stock in the last 6 months: 6%$CVX Stock Price as of Oct. 7: $20552-Week High: $218$CVX Stock Price Target: $225What Happened?Chevron (CVX:NYSE) CEO",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-10-08T18:00:41.757101"
+      "scanned_at": "2026-10-09T17:33:16.396805"
     },
     "CAT": {
       "insider_signal": {
@@ -1028,7 +968,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:43.745848"
+      "scanned_at": "2026-10-09T17:33:17.216418"
     },
     "GE": {
       "insider_signal": {
@@ -1085,7 +1025,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:45.188744"
+      "scanned_at": "2026-10-09T17:33:17.960504"
     },
     "WMT": {
       "insider_signal": {
@@ -1122,7 +1062,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:46.585141"
+      "scanned_at": "2026-10-09T17:33:18.895537"
     },
     "COST": {
       "insider_signal": {
@@ -1199,7 +1139,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:48.471406"
+      "scanned_at": "2026-10-09T17:33:19.656989"
     },
     "FCX": {
       "insider_signal": {
@@ -1266,7 +1206,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:50.196183"
+      "scanned_at": "2026-10-09T17:33:20.469078"
     },
     "NEE": {
       "insider_signal": {
@@ -1292,7 +1232,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:51.255066"
+      "scanned_at": "2026-10-09T17:33:21.290851"
     },
     "PLD": {
       "insider_signal": {
@@ -1309,7 +1249,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-08T18:00:52.557322"
+      "scanned_at": "2026-10-09T17:33:22.084074"
     }
   }
 }
