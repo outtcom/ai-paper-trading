@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-09",
-  "last_notified_date": "2026-10-09",
+  "date": "2026-10-14",
+  "last_notified_date": "2026-10-14",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,8 +9,8 @@
         "open_market_buys": 0,
         "open_market_sells": 9,
         "compensation_grants": 1,
-        "net_open_market_value": -80102988.41,
-        "net_open_market_fmt": "-$80.1M",
+        "net_open_market_value": -67781817.68,
+        "net_open_market_fmt": "-$67.8M",
         "largest_single_transaction": {
           "name": "COOK TIMOTHY D",
           "direction": "sell",
@@ -22,6 +22,16 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 796491.99,
+            "dollar_fmt": "$796K",
+            "date": "2026-10-06",
+            "shares_traded": 2399,
+            "price_per_share": 332.01,
+            "transaction_code": ""
+          },
           {
             "name": "Ternus John",
             "direction": "sell",
@@ -101,33 +111,40 @@
             "shares_traded": 88239,
             "price_per_share": 333.26,
             "transaction_code": ""
-          },
-          {
-            "name": "COOK TIMOTHY D",
-            "direction": "sell",
-            "dollar_value": 13117662.72,
-            "dollar_fmt": "$13.1M",
-            "date": "2026-10-02",
-            "shares_traded": 39492,
-            "price_per_share": 332.16,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:00.007009"
+      "trump_mentions": [
+        {
+          "headline": "Mexico President Says She Will Sign Decree On Wednesday To Order Digital Platforms To Protect Minors From Violent And Sexual Content; Mexico To Give Platforms One Month To Come Into Compliance With Decree",
+          "date": "2026-10-14 09:58",
+          "summary": "- Reuters ",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Three Weeks Before The Midterms, Donald Trump Has A Stock Market Problem Hiding In Plain Sight. The Stealth Bear Market Is Already Here",
+          "date": "2026-10-14 08:38",
+          "summary": "The S&P 500 sits near record highs, but that headline number may be hiding a very different reality for the stocks most Americans actually own, and the timing could not be more awkward for the White H",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-14T15:57:36.829380"
     },
     "NVDA": {
       "insider_signal": {
         "ticker": "NVDA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 9,
-        "compensation_grants": 1,
-        "net_open_market_value": -322164791.9,
-        "net_open_market_fmt": "-$322.2M",
+        "open_market_sells": 8,
+        "compensation_grants": 2,
+        "net_open_market_value": -314582260.44,
+        "net_open_market_fmt": "-$314.6M",
         "largest_single_transaction": {
           "name": "STEVENS MARK A",
           "direction": "sell",
@@ -218,23 +235,22 @@
             "shares_traded": 4681,
             "price_per_share": 218.0144,
             "transaction_code": ""
-          },
-          {
-            "name": "Teter Timothy S.",
-            "direction": "sell",
-            "dollar_value": 7582531.46,
-            "dollar_fmt": "$7.6M",
-            "date": "2026-09-16",
-            "shares_traded": 35738,
-            "price_per_share": 212.17,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:00.886328"
+      "trump_mentions": [
+        {
+          "headline": "Trump and Nancy Pelosi’s Top AI Stock Pick: NVIDIA (NVDA)",
+          "date": "2026-10-14 13:33",
+          "summary": "NVIDIA (NASDAQ:NVDA) remains a top AI pick among US politicians. It is one of the four stocks in our list of President Trump and Nancy Pelosi Portfolio: Top 4 Picks. Unusual Whales’ 2025 Congress trad",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-14T15:57:37.711271"
     },
     "MSFT": {
       "insider_signal": {
@@ -302,15 +318,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump suspended Microsoft's green card program & awarded its CEO, all in the same day",
-          "date": "2026-10-09 13:50",
-          "summary": "President Trump honored Microsoft (MSFT) CEO Satya Nadella at the White House while cutting the company's green card employee program on Thursday. The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jak",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
+          "headline": "U.S. Diplomat In Riyadh, Microsoft Arabia President Ayman Al-Ghamdi Discussion Expansion Of U.S.-Saudi Partnership In Super Intelligence, Cloud Computing",
+          "date": "2026-10-14 10:24",
+          "summary": "https://x.com/USAinKSA/status/2110370705527165226?s=20",
+          "source": "Benzinga",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Mexico President Says She Will Sign Decree On Wednesday To Order Digital Platforms To Protect Minors From Violent And Sexual Content; Mexico To Give Platforms One Month To Come Into Compliance With Decree",
+          "date": "2026-10-14 09:58",
+          "summary": "- Reuters ",
+          "source": "Benzinga",
+          "keyword_matched": "president",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-09T17:33:01.827117"
+      "scanned_at": "2026-10-14T15:57:38.725696"
     },
     "MU": {
       "insider_signal": {
@@ -406,17 +430,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "The major companies putting $1,000 into their employees' Trump accounts, from Goldman Sachs to Micron",
-          "date": "2026-10-09 11:54",
-          "summary": "From IBM to Citi, a growing number of companies have pledged to match the government's $1,000 contribution for employees' kids' Trump Accounts.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-09T17:33:02.707779"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-14T15:57:39.592201"
     },
     "GOOGL": {
       "insider_signal": {
@@ -442,7 +457,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:03.799019"
+      "scanned_at": "2026-10-14T15:57:40.636159"
     },
     "META": {
       "insider_signal": {
@@ -549,7 +564,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:09.071637"
+      "scanned_at": "2026-10-14T15:57:41.762085"
     },
     "AMZN": {
       "insider_signal": {
@@ -606,7 +621,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:09.927618"
+      "scanned_at": "2026-10-14T15:57:42.744936"
     },
     "TSLA": {
       "insider_signal": {
@@ -643,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:11.304376"
+      "scanned_at": "2026-10-14T15:57:43.584256"
     },
     "LLY": {
       "insider_signal": {
@@ -680,7 +695,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:12.151021"
+      "scanned_at": "2026-10-14T15:57:44.430962"
     },
     "UNH": {
       "insider_signal": {
@@ -697,25 +712,25 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:13.055455"
+      "scanned_at": "2026-10-14T15:57:45.325090"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 2,
+        "open_market_sells": 1,
         "compensation_grants": 0,
-        "net_open_market_value": -1604249.66,
-        "net_open_market_fmt": "-$1.6M",
+        "net_open_market_value": -700731.66,
+        "net_open_market_fmt": "-$701K",
         "largest_single_transaction": {
           "name": "Leopold Robin",
           "direction": "sell",
-          "dollar_value": 903518.0,
-          "dollar_fmt": "$904K",
-          "date": "2026-08-11",
+          "dollar_value": 882026.5,
+          "dollar_fmt": "$882K",
+          "date": "2026-09-10",
           "shares_traded": 2500,
-          "price_per_share": 361.4072,
+          "price_per_share": 352.8106,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -738,23 +753,13 @@
             "shares_traded": 2500,
             "price_per_share": 352.8106,
             "transaction_code": ""
-          },
-          {
-            "name": "Leopold Robin",
-            "direction": "sell",
-            "dollar_value": 903518.0,
-            "dollar_fmt": "$904K",
-            "date": "2026-08-11",
-            "shares_traded": 2500,
-            "price_per_share": 361.4072,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:13.890523"
+      "scanned_at": "2026-10-14T15:57:46.146968"
     },
     "GS": {
       "insider_signal": {
@@ -790,8 +795,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:14.731795"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Russian Diesel Deal May Cut Prices by Just $1-$2 Per Barrel, Says Goldman Sachs; Cover Only 10 Days of US Demand",
+          "date": "2026-10-14 07:16",
+          "summary": "Trump’s Russian diesel deal could cut wholesale prices by just $1-$2 per barrel and cover only 10 days of U.S. demand.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        }
+      ],
+      "scanned_at": "2026-10-14T15:57:47.192796"
     },
     "XOM": {
       "insider_signal": {
@@ -807,17 +821,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "QUICK SPARK: Trump Says US Will Not Attack Iran Before Midterm Election",
-          "date": "2026-10-08 13:13",
-          "summary": "President Donald Trump rules out U.S. military action against Iran before the Nov. 3 midterm elections.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-09T17:33:15.596243"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-14T15:57:48.094640"
     },
     "CVX": {
       "insider_signal": {
@@ -825,7 +830,7 @@
         "days_back": 60,
         "open_market_buys": 4,
         "open_market_sells": 2,
-        "compensation_grants": 4,
+        "compensation_grants": 3,
         "net_open_market_value": -1790837.42,
         "net_open_market_fmt": "-$1.8M",
         "largest_single_transaction": {
@@ -883,25 +888,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Market Chatter: Trump Disclosed 517 Securities Transactions in August, Including Up to $25 Million Meta Purchase",
-          "date": "2026-10-08 23:12",
-          "summary": "President Donald Trump disclosed 517 securities transactions in August, including a purchase of up t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump's Portfolio Invested Tens of Millions in Debt of Two of The World's Largest Companies, Disclosure Shows",
-          "date": "2026-10-08 14:36",
-          "summary": "Trump disclosed more than 500 transactions in August totaling almost $75 million.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-09T17:33:16.396805"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-14T15:57:49.292084"
     },
     "CAT": {
       "insider_signal": {
@@ -968,74 +956,43 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:17.216418"
+      "scanned_at": "2026-10-14T15:57:50.298741"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 4,
-        "open_market_sells": 2,
-        "compensation_grants": 1,
-        "net_open_market_value": -3325852.88,
-        "net_open_market_fmt": "-$3.3M",
+        "open_market_buys": 3,
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 87529.6,
+        "net_open_market_fmt": "+$88K",
         "largest_single_transaction": {
-          "name": "Giglietti Robert M.",
-          "direction": "sell",
-          "dollar_value": 1976638.72,
-          "dollar_fmt": "$2.0M",
-          "date": "2026-08-11",
-          "shares_traded": 5344,
-          "price_per_share": 369.88,
+          "name": "BUSH WESLEY G",
+          "direction": "buy",
+          "dollar_value": 38616.0,
+          "dollar_fmt": "$39K",
+          "date": "2026-09-30",
+          "shares_traded": 120,
+          "price_per_share": 321.8,
           "transaction_code": ""
         },
-        "notable_transactions": [
-          {
-            "name": "Giglietti Robert M.",
-            "direction": "sell",
-            "dollar_value": 1812113.06,
-            "dollar_fmt": "$1.8M",
-            "date": "2026-08-11",
-            "shares_traded": 4898,
-            "price_per_share": 369.97,
-            "transaction_code": ""
-          },
-          {
-            "name": "Giglietti Robert M.",
-            "direction": "sell",
-            "dollar_value": 1976638.72,
-            "dollar_fmt": "$2.0M",
-            "date": "2026-08-11",
-            "shares_traded": 5344,
-            "price_per_share": 369.88,
-            "transaction_code": ""
-          },
-          {
-            "name": "Giglietti Robert M.",
-            "direction": "buy",
-            "dollar_value": 375369.3,
-            "dollar_fmt": "$375K",
-            "date": "2026-08-11",
-            "shares_traded": 10242,
-            "price_per_share": 36.65,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "notable_transactions": [],
+        "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:17.960504"
+      "scanned_at": "2026-10-14T15:57:51.096167"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 9,
-        "net_open_market_value": -416595.9,
-        "net_open_market_fmt": "-$417K",
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -506325.68,
+        "net_open_market_fmt": "-$506K",
         "largest_single_transaction": {
           "name": "Bartlett Daniel J",
           "direction": "sell",
@@ -1058,11 +1015,11 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:18.895537"
+      "scanned_at": "2026-10-14T15:57:51.927710"
     },
     "COST": {
       "insider_signal": {
@@ -1139,7 +1096,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:19.656989"
+      "scanned_at": "2026-10-14T15:57:52.704308"
     },
     "FCX": {
       "insider_signal": {
@@ -1206,7 +1163,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:20.469078"
+      "scanned_at": "2026-10-14T15:57:53.582559"
     },
     "NEE": {
       "insider_signal": {
@@ -1214,7 +1171,7 @@
         "days_back": 60,
         "open_market_buys": 4,
         "open_market_sells": 1,
-        "compensation_grants": 0,
+        "compensation_grants": 1,
         "net_open_market_value": 60708.57,
         "net_open_market_fmt": "+$61K",
         "largest_single_transaction": {
@@ -1232,7 +1189,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:21.290851"
+      "scanned_at": "2026-10-14T15:57:54.402702"
     },
     "PLD": {
       "insider_signal": {
@@ -1249,7 +1206,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-09T17:33:22.084074"
+      "scanned_at": "2026-10-14T15:57:55.171607"
     }
   }
 }
