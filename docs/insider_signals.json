@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-14",
-  "last_notified_date": "2026-10-14",
+  "date": "2026-10-15",
+  "last_notified_date": "2026-10-15",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -116,25 +116,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Mexico President Says She Will Sign Decree On Wednesday To Order Digital Platforms To Protect Minors From Violent And Sexual Content; Mexico To Give Platforms One Month To Come Into Compliance With Decree",
-          "date": "2026-10-14 09:58",
-          "summary": "- Reuters ",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Three Weeks Before The Midterms, Donald Trump Has A Stock Market Problem Hiding In Plain Sight. The Stealth Bear Market Is Already Here",
-          "date": "2026-10-14 08:38",
-          "summary": "The S&P 500 sits near record highs, but that headline number may be hiding a very different reality for the stocks most Americans actually own, and the timing could not be more awkward for the White H",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-14T15:57:36.829380"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-15T15:43:37.387393"
     },
     "NVDA": {
       "insider_signal": {
@@ -240,17 +223,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump and Nancy Pelosi’s Top AI Stock Pick: NVIDIA (NVDA)",
-          "date": "2026-10-14 13:33",
-          "summary": "NVIDIA (NASDAQ:NVDA) remains a top AI pick among US politicians. It is one of the four stocks in our list of President Trump and Nancy Pelosi Portfolio: Top 4 Picks. Unusual Whales’ 2025 Congress trad",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-14T15:57:37.711271"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-15T15:43:38.443956"
     },
     "MSFT": {
       "insider_signal": {
@@ -318,23 +292,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "U.S. Diplomat In Riyadh, Microsoft Arabia President Ayman Al-Ghamdi Discussion Expansion Of U.S.-Saudi Partnership In Super Intelligence, Cloud Computing",
-          "date": "2026-10-14 10:24",
-          "summary": "https://x.com/USAinKSA/status/2110370705527165226?s=20",
-          "source": "Benzinga",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Mexico President Says She Will Sign Decree On Wednesday To Order Digital Platforms To Protect Minors From Violent And Sexual Content; Mexico To Give Platforms One Month To Come Into Compliance With Decree",
-          "date": "2026-10-14 09:58",
+          "headline": "FTC Spokesman Says President Trump Task Force On AI To Meet Thursday",
+          "date": "2026-10-15 09:40",
           "summary": "- Reuters ",
           "source": "Benzinga",
-          "keyword_matched": "president",
+          "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-14T15:57:38.725696"
+      "scanned_at": "2026-10-15T15:43:39.774991"
     },
     "MU": {
       "insider_signal": {
@@ -431,7 +397,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:39.592201"
+      "scanned_at": "2026-10-15T15:43:41.301711"
     },
     "GOOGL": {
       "insider_signal": {
@@ -457,7 +423,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:40.636159"
+      "scanned_at": "2026-10-15T15:43:42.437096"
     },
     "META": {
       "insider_signal": {
@@ -563,8 +529,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:41.762085"
+      "trump_mentions": [
+        {
+          "headline": "FTC Spokesman Says President Trump Task Force On AI To Meet Thursday",
+          "date": "2026-10-15 09:40",
+          "summary": "- Reuters ",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-15T15:43:43.845558"
     },
     "AMZN": {
       "insider_signal": {
@@ -621,7 +596,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:42.744936"
+      "scanned_at": "2026-10-15T15:43:44.909077"
     },
     "TSLA": {
       "insider_signal": {
@@ -658,7 +633,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:43.584256"
+      "scanned_at": "2026-10-15T15:43:46.006375"
     },
     "LLY": {
       "insider_signal": {
@@ -695,7 +670,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:44.430962"
+      "scanned_at": "2026-10-15T15:43:46.985973"
     },
     "UNH": {
       "insider_signal": {
@@ -712,7 +687,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:45.325090"
+      "scanned_at": "2026-10-15T15:43:47.965165"
     },
     "JPM": {
       "insider_signal": {
@@ -759,7 +734,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:46.146968"
+      "scanned_at": "2026-10-15T15:43:48.984006"
     },
     "GS": {
       "insider_signal": {
@@ -795,17 +770,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s Russian Diesel Deal May Cut Prices by Just $1-$2 Per Barrel, Says Goldman Sachs; Cover Only 10 Days of US Demand",
-          "date": "2026-10-14 07:16",
-          "summary": "Trump’s Russian diesel deal could cut wholesale prices by just $1-$2 per barrel and cover only 10 days of U.S. demand.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-10-14T15:57:47.192796"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-15T15:43:50.012115"
     },
     "XOM": {
       "insider_signal": {
@@ -822,7 +788,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:48.094640"
+      "scanned_at": "2026-10-15T15:43:50.982294"
     },
     "CVX": {
       "insider_signal": {
@@ -889,7 +855,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:49.292084"
+      "scanned_at": "2026-10-15T15:43:51.942540"
     },
     "CAT": {
       "insider_signal": {
@@ -956,7 +922,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:50.298741"
+      "scanned_at": "2026-10-15T15:43:52.914292"
     },
     "GE": {
       "insider_signal": {
@@ -982,7 +948,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:51.096167"
+      "scanned_at": "2026-10-15T15:43:53.838543"
     },
     "WMT": {
       "insider_signal": {
@@ -1019,7 +985,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:51.927710"
+      "scanned_at": "2026-10-15T15:43:54.892092"
     },
     "COST": {
       "insider_signal": {
@@ -1096,7 +1062,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:52.704308"
+      "scanned_at": "2026-10-15T15:43:55.933750"
     },
     "FCX": {
       "insider_signal": {
@@ -1163,7 +1129,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:53.582559"
+      "scanned_at": "2026-10-15T15:43:56.861563"
     },
     "NEE": {
       "insider_signal": {
@@ -1189,7 +1155,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:54.402702"
+      "scanned_at": "2026-10-15T15:43:57.782818"
     },
     "PLD": {
       "insider_signal": {
@@ -1206,7 +1172,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-14T15:57:55.171607"
+      "scanned_at": "2026-10-15T15:43:58.762986"
     }
   }
 }
