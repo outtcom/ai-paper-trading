@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-16",
-  "last_notified_date": "2026-10-16",
+  "date": "2026-10-19",
+  "last_notified_date": "2026-10-19",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,19 +9,29 @@
         "open_market_buys": 0,
         "open_market_sells": 9,
         "compensation_grants": 1,
-        "net_open_market_value": -67781817.68,
-        "net_open_market_fmt": "-$67.8M",
+        "net_open_market_value": -39202943.54,
+        "net_open_market_fmt": "-$39.2M",
         "largest_single_transaction": {
           "name": "COOK TIMOTHY D",
           "direction": "sell",
-          "dollar_value": 29406529.14,
-          "dollar_fmt": "$29.4M",
+          "dollar_value": 13651133.26,
+          "dollar_fmt": "$13.7M",
           "date": "2026-10-02",
-          "shares_traded": 88239,
-          "price_per_share": 333.26,
+          "shares_traded": 40879,
+          "price_per_share": 333.94,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 827655,
+            "dollar_fmt": "$828K",
+            "date": "2026-10-13",
+            "shares_traded": 2399,
+            "price_per_share": 345,
+            "transaction_code": ""
+          },
           {
             "name": "Newstead Jennifer",
             "direction": "sell",
@@ -101,32 +111,13 @@
             "shares_traded": 40879,
             "price_per_share": 333.94,
             "transaction_code": ""
-          },
-          {
-            "name": "COOK TIMOTHY D",
-            "direction": "sell",
-            "dollar_value": 29406529.14,
-            "dollar_fmt": "$29.4M",
-            "date": "2026-10-02",
-            "shares_traded": 88239,
-            "price_per_share": 333.26,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s $330 Million White House Ballroom Donor List Reveals Nvidia, Apple and Google Among Top Tech Contributors: Report",
-          "date": "2026-10-16 09:19",
-          "summary": "Trump’s $330 million White House ballroom donor list names major corporate contributors and raises questions over political ties and a pardon.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-16T15:32:19.975919"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-19T17:46:08.765667"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,16 +224,16 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:20.669821"
+      "scanned_at": "2026-10-19T17:46:09.437880"
     },
     "MSFT": {
       "insider_signal": {
         "ticker": "MSFT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -4064663.18,
+        "open_market_sells": 6,
+        "compensation_grants": 4,
+        "net_open_market_value": -4081741.26,
         "net_open_market_fmt": "-$4.1M",
         "largest_single_transaction": {
           "name": "Hood Amy",
@@ -299,106 +290,117 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s $330 Million White House Ballroom Donor List Reveals Nvidia, Apple and Google Among Top Tech Contributors: Report",
-          "date": "2026-10-16 09:19",
-          "summary": "Trump’s $330 million White House ballroom donor list names major corporate contributors and raises questions over political ties and a pardon.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-16T15:32:21.471792"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-19T17:46:10.086669"
     },
     "MU": {
       "insider_signal": {
         "ticker": "MU",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 7,
-        "compensation_grants": 3,
-        "net_open_market_value": -3682288.86,
-        "net_open_market_fmt": "-$3.7M",
+        "open_market_sells": 10,
+        "compensation_grants": 0,
+        "net_open_market_value": -2465428.53,
+        "net_open_market_fmt": "-$2.5M",
         "largest_single_transaction": {
-          "name": "MEHROTRA SANJAY",
+          "name": "ALLEN SCOTT R.",
           "direction": "sell",
-          "dollar_value": 1331130.94,
-          "dollar_fmt": "$1.3M",
-          "date": "2026-08-21",
-          "shares_traded": 1354,
-          "price_per_share": 983.11,
+          "dollar_value": 532937.79,
+          "dollar_fmt": "$533K",
+          "date": "2026-10-15",
+          "shares_traded": 583,
+          "price_per_share": 914.13,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "ALLEN SCOTT R.",
             "direction": "sell",
-            "dollar_value": 255314.22,
-            "dollar_fmt": "$255K",
-            "date": "2026-08-21",
-            "shares_traded": 258,
-            "price_per_share": 989.59,
+            "dollar_value": 199280.34,
+            "dollar_fmt": "$199K",
+            "date": "2026-10-15",
+            "shares_traded": 218,
+            "price_per_share": 914.13,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "ALLEN SCOTT R.",
             "direction": "sell",
-            "dollar_value": 346823.1,
-            "dollar_fmt": "$347K",
-            "date": "2026-08-21",
-            "shares_traded": 351,
-            "price_per_share": 988.1,
+            "dollar_value": 532937.79,
+            "dollar_fmt": "$533K",
+            "date": "2026-10-15",
+            "shares_traded": 583,
+            "price_per_share": 914.13,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "RAY MICHAEL CHARLES",
             "direction": "sell",
-            "dollar_value": 336307.84,
-            "dollar_fmt": "$336K",
-            "date": "2026-08-21",
-            "shares_traded": 341,
-            "price_per_share": 986.24,
+            "dollar_value": 113509.2,
+            "dollar_fmt": "$114K",
+            "date": "2026-10-14",
+            "shares_traded": 120,
+            "price_per_share": 945.91,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "RAY MICHAEL CHARLES",
             "direction": "sell",
-            "dollar_value": 82773.6,
-            "dollar_fmt": "$83K",
-            "date": "2026-08-21",
-            "shares_traded": 84,
-            "price_per_share": 985.4,
+            "dollar_value": 188996.0,
+            "dollar_fmt": "$189K",
+            "date": "2026-10-14",
+            "shares_traded": 200,
+            "price_per_share": 944.98,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "RAY MICHAEL CHARLES",
             "direction": "sell",
-            "dollar_value": 626884.44,
-            "dollar_fmt": "$627K",
-            "date": "2026-08-21",
-            "shares_traded": 637,
-            "price_per_share": 984.12,
+            "dollar_value": 226514.4,
+            "dollar_fmt": "$227K",
+            "date": "2026-10-14",
+            "shares_traded": 240,
+            "price_per_share": 943.81,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "RAY MICHAEL CHARLES",
             "direction": "sell",
-            "dollar_value": 1331130.94,
-            "dollar_fmt": "$1.3M",
-            "date": "2026-08-21",
-            "shares_traded": 1354,
-            "price_per_share": 983.11,
+            "dollar_value": 301625.6,
+            "dollar_fmt": "$302K",
+            "date": "2026-10-14",
+            "shares_traded": 320,
+            "price_per_share": 942.58,
             "transaction_code": ""
           },
           {
-            "name": "MEHROTRA SANJAY",
+            "name": "RAY MICHAEL CHARLES",
             "direction": "sell",
-            "dollar_value": 703054.72,
-            "dollar_fmt": "$703K",
-            "date": "2026-08-21",
-            "shares_traded": 716,
-            "price_per_share": 981.92,
+            "dollar_value": 188200,
+            "dollar_fmt": "$188K",
+            "date": "2026-10-14",
+            "shares_traded": 200,
+            "price_per_share": 941,
+            "transaction_code": ""
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 526276.8,
+            "dollar_fmt": "$526K",
+            "date": "2026-10-14",
+            "shares_traded": 560,
+            "price_per_share": 939.78,
+            "transaction_code": ""
+          },
+          {
+            "name": "RAY MICHAEL CHARLES",
+            "direction": "sell",
+            "dollar_value": 150196.8,
+            "dollar_fmt": "$150K",
+            "date": "2026-10-14",
+            "shares_traded": 160,
+            "price_per_share": 938.73,
             "transaction_code": ""
           }
         ],
@@ -406,17 +408,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:22.244136"
+      "scanned_at": "2026-10-19T17:46:10.766262"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -59785.28,
-        "net_open_market_fmt": "-$60K",
+        "open_market_sells": 1,
+        "compensation_grants": 9,
+        "net_open_market_value": -28257.35,
+        "net_open_market_fmt": "-$28K",
         "largest_single_transaction": {
           "name": "ARNOLD FRANCES",
           "direction": "sell",
@@ -428,11 +430,11 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "sell",
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:22.950322"
+      "scanned_at": "2026-10-19T17:46:11.474399"
     },
     "META": {
       "insider_signal": {
@@ -539,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:23.869723"
+      "scanned_at": "2026-10-19T17:46:12.254054"
     },
     "AMZN": {
       "insider_signal": {
@@ -595,17 +597,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Nancy Pelosi and Trump Like This Top AI Stock",
-          "date": "2026-10-16 13:08",
-          "summary": "Amazon.com (NASDAQ:AMZN) ranks second on our list of President Trump and Nancy Pelosi Portfolio: Top 4 Picks. Many elite money managers and billionaires were also piling into the stock earlier this ye",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-16T15:32:24.666234"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-19T17:46:12.927445"
     },
     "TSLA": {
       "insider_signal": {
@@ -642,7 +635,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:25.454748"
+      "scanned_at": "2026-10-19T17:46:13.573295"
     },
     "LLY": {
       "insider_signal": {
@@ -668,7 +661,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:26.294478"
+      "scanned_at": "2026-10-19T17:46:14.195726"
     },
     "UNH": {
       "insider_signal": {
@@ -685,7 +678,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:27.052390"
+      "scanned_at": "2026-10-19T17:46:14.839546"
     },
     "JPM": {
       "insider_signal": {
@@ -693,7 +686,7 @@
         "days_back": 60,
         "open_market_buys": 4,
         "open_market_sells": 1,
-        "compensation_grants": 0,
+        "compensation_grants": 1,
         "net_open_market_value": -700731.66,
         "net_open_market_fmt": "-$701K",
         "largest_single_transaction": {
@@ -731,17 +724,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s $330 Million White House Ballroom Donor List Reveals Nvidia, Apple and Google Among Top Tech Contributors: Report",
-          "date": "2026-10-16 09:19",
-          "summary": "Trump’s $330 million White House ballroom donor list names major corporate contributors and raises questions over political ties and a pardon.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-16T15:32:27.706443"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-19T17:46:15.479314"
     },
     "GS": {
       "insider_signal": {
@@ -749,7 +733,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 1,
-        "compensation_grants": 0,
+        "compensation_grants": 4,
         "net_open_market_value": -620280.0,
         "net_open_market_fmt": "-$620K",
         "largest_single_transaction": {
@@ -778,7 +762,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:28.350924"
+      "scanned_at": "2026-10-19T17:46:16.097768"
     },
     "XOM": {
       "insider_signal": {
@@ -795,44 +779,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:29.091000"
+      "scanned_at": "2026-10-19T17:46:16.745798"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
         "open_market_buys": 2,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -459787.22,
-        "net_open_market_fmt": "-$460K",
+        "net_open_market_value": 46831.52,
+        "net_open_market_fmt": "+$47K",
         "largest_single_transaction": {
-          "name": "Pate R. Hewitt",
-          "direction": "sell",
-          "dollar_value": 506618.74,
-          "dollar_fmt": "$507K",
-          "date": "2026-08-18",
-          "shares_traded": 2470,
-          "price_per_share": 205.1088,
+          "name": "HEWSON MARILLYN A",
+          "direction": "buy",
+          "dollar_value": 42996.18,
+          "dollar_fmt": "$43K",
+          "date": "2026-08-28",
+          "shares_traded": 213,
+          "price_per_share": 201.86,
           "transaction_code": ""
         },
-        "notable_transactions": [
-          {
-            "name": "Pate R. Hewitt",
-            "direction": "sell",
-            "dollar_value": 506618.74,
-            "dollar_fmt": "$507K",
-            "date": "2026-08-18",
-            "shares_traded": 2470,
-            "price_per_share": 205.1088,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "sell",
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:29.762714"
+      "scanned_at": "2026-10-19T17:46:17.378294"
     },
     "CAT": {
       "insider_signal": {
@@ -899,7 +872,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:30.540060"
+      "scanned_at": "2026-10-19T17:46:18.010602"
     },
     "GE": {
       "insider_signal": {
@@ -925,28 +898,78 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:31.277535"
+      "scanned_at": "2026-10-19T17:46:18.622949"
     },
     "WMT": {
       "insider_signal": {
         "ticker": "WMT",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 5,
-        "compensation_grants": 5,
-        "net_open_market_value": -506325.68,
-        "net_open_market_fmt": "-$506K",
+        "open_market_sells": 10,
+        "compensation_grants": 0,
+        "net_open_market_value": -3013978.42,
+        "net_open_market_fmt": "-$3.0M",
         "largest_single_transaction": {
-          "name": "Bartlett Daniel J",
+          "name": "Furner John R.",
           "direction": "sell",
-          "dollar_value": 416595.9,
-          "dollar_fmt": "$417K",
-          "date": "2026-10-01",
-          "shares_traded": 3990,
-          "price_per_share": 104.41,
+          "dollar_value": 852994.56,
+          "dollar_fmt": "$853K",
+          "date": "2026-10-15",
+          "shares_traded": 7089,
+          "price_per_share": 120.3265,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Nicholas Christopher James",
+            "direction": "sell",
+            "dollar_value": 157229.02,
+            "dollar_fmt": "$157K",
+            "date": "2026-10-15",
+            "shares_traded": 1300,
+            "price_per_share": 120.9454,
+            "transaction_code": ""
+          },
+          {
+            "name": "Nicholas Christopher James",
+            "direction": "sell",
+            "dollar_value": 192522.24,
+            "dollar_fmt": "$193K",
+            "date": "2026-10-15",
+            "shares_traded": 1600,
+            "price_per_share": 120.3264,
+            "transaction_code": ""
+          },
+          {
+            "name": "Furner John R.",
+            "direction": "sell",
+            "dollar_value": 729906.92,
+            "dollar_fmt": "$730K",
+            "date": "2026-10-15",
+            "shares_traded": 6036,
+            "price_per_share": 120.9256,
+            "transaction_code": ""
+          },
+          {
+            "name": "Furner John R.",
+            "direction": "sell",
+            "dollar_value": 852994.56,
+            "dollar_fmt": "$853K",
+            "date": "2026-10-15",
+            "shares_traded": 7089,
+            "price_per_share": 120.3265,
+            "transaction_code": ""
+          },
+          {
+            "name": "Watkins Latriece",
+            "direction": "sell",
+            "dollar_value": 575000,
+            "dollar_fmt": "$575K",
+            "date": "2026-10-14",
+            "shares_traded": 5000,
+            "price_per_share": 115,
+            "transaction_code": ""
+          },
           {
             "name": "Bartlett Daniel J",
             "direction": "sell",
@@ -962,7 +985,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:31.923825"
+      "scanned_at": "2026-10-19T17:46:19.291675"
     },
     "COST": {
       "insider_signal": {
@@ -1049,7 +1072,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:32.616377"
+      "scanned_at": "2026-10-19T17:46:19.994167"
     },
     "FCX": {
       "insider_signal": {
@@ -1116,7 +1139,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:33.227271"
+      "scanned_at": "2026-10-19T17:46:20.610999"
     },
     "NEE": {
       "insider_signal": {
@@ -1152,8 +1175,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:34.007018"
+      "trump_mentions": [
+        {
+          "headline": "NextEra’s $4M Trump ballroom donation muddies Dominion merger debate, watchdogs say",
+          "date": "2026-10-16 10:28",
+          "summary": "The donation, which advocates called “problematic” and “convenient” for the company, comes to light as federal regulators chosen by President Donald Trump consider whether to allow NextEra to merge wi",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-19T17:46:21.223121"
     },
     "PLD": {
       "insider_signal": {
@@ -1170,7 +1202,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-16T15:32:34.810989"
+      "scanned_at": "2026-10-19T17:46:21.839608"
     }
   }
 }
