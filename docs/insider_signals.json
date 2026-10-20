@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-19",
-  "last_notified_date": "2026-10-19",
+  "date": "2026-10-20",
+  "last_notified_date": "2026-10-20",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:08.765667"
+      "scanned_at": "2026-10-20T15:50:11.098153"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:09.437880"
+      "scanned_at": "2026-10-20T15:50:11.783408"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:10.086669"
+      "scanned_at": "2026-10-20T15:50:12.665467"
     },
     "MU": {
       "insider_signal": {
@@ -408,7 +408,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:10.766262"
+      "scanned_at": "2026-10-20T15:50:13.329498"
     },
     "GOOGL": {
       "insider_signal": {
@@ -434,7 +434,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:11.474399"
+      "scanned_at": "2026-10-20T15:50:14.539130"
     },
     "META": {
       "insider_signal": {
@@ -541,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:12.254054"
+      "scanned_at": "2026-10-20T15:50:15.314175"
     },
     "AMZN": {
       "insider_signal": {
@@ -549,7 +549,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 3,
-        "compensation_grants": 7,
+        "compensation_grants": 4,
         "net_open_market_value": -2911220.66,
         "net_open_market_fmt": "-$2.9M",
         "largest_single_transaction": {
@@ -597,8 +597,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:12.927445"
+      "trump_mentions": [
+        {
+          "headline": "Jeff Bezos Says He Agrees With Trump On Calling Al 'Super Intelligence' — 'Artificial Is Not A Very Flattering Thing. Nobody Wants An Artificial Sweetener’",
+          "date": "2026-10-20 12:00",
+          "summary": "Artificial sweeteners already have a reputation problem. Now artificial intelligence is getting a similar branding critique from one of the biggest names in technology. Amazon and Blue Origin founder ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-20T15:50:16.281822"
     },
     "TSLA": {
       "insider_signal": {
@@ -635,7 +644,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:13.573295"
+      "scanned_at": "2026-10-20T15:50:16.942008"
     },
     "LLY": {
       "insider_signal": {
@@ -661,7 +670,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:14.195726"
+      "scanned_at": "2026-10-20T15:50:17.602510"
     },
     "UNH": {
       "insider_signal": {
@@ -678,7 +687,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:14.839546"
+      "scanned_at": "2026-10-20T15:50:18.241923"
     },
     "JPM": {
       "insider_signal": {
@@ -725,7 +734,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:15.479314"
+      "scanned_at": "2026-10-20T15:50:18.892497"
     },
     "GS": {
       "insider_signal": {
@@ -761,8 +770,25 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:16.097768"
+      "trump_mentions": [
+        {
+          "headline": "Anthony Scaramucci Says Ukraine Gave Up Nuclear Arsenal, And Trump Is Treating The Deal ‘As If It Never Existed’",
+          "date": "2026-10-20 03:18",
+          "summary": "SkyBridge’s Anthony Scaramucci said Monday that Trump abandoned a 1994 promise to Ukraine by waiving Russia sanctions to do Putin a favor.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "positive"
+        },
+        {
+          "headline": "Jim Cramer Calls Trump's Russia Sanctions Waiver 'Tragic' After Report Says President 'Openly Aiding the Kremlin'",
+          "date": "2026-10-19 22:58",
+          "summary": "Jim Cramer weighed in on a report that Trump has made America an ally of Russia, days after he waived the sanctions law.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-20T15:50:19.520543"
     },
     "XOM": {
       "insider_signal": {
@@ -779,7 +805,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:16.745798"
+      "scanned_at": "2026-10-20T15:50:20.145180"
     },
     "CVX": {
       "insider_signal": {
@@ -804,8 +830,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:17.378294"
+      "trump_mentions": [
+        {
+          "headline": "Trump and Famous Billionaires Were Buying This Oil Stock",
+          "date": "2026-10-19 20:06",
+          "summary": "Chevron Corporation (NYSE:CVX) reports Q3 results on Oct. 30, and the stock ranks ninth on our list of the 10 stocks in Trump’s latest stock portfolio. Click to see the other nine. Billionaires Added ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-20T15:50:20.772926"
     },
     "CAT": {
       "insider_signal": {
@@ -872,7 +907,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:18.010602"
+      "scanned_at": "2026-10-20T15:50:21.474199"
     },
     "GE": {
       "insider_signal": {
@@ -897,8 +932,25 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:18.622949"
+      "trump_mentions": [
+        {
+          "headline": "Update: US Equity Futures Lower Pre-Bell as Trump Unveils $8 Billion Plan to Help US Farmers Offset Diesel Costs",
+          "date": "2026-10-20 12:53",
+          "summary": "(Updates with economic data, recent oil price movement, world markets' overview and corporate stock",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "US Equity Futures Mostly Lower Pre-Bell as Trump Unveils $8 Billion Plan to Help US Farmers Offset Diesel Costs",
+          "date": "2026-10-20 11:55",
+          "summary": "US equity futures were mostly lower pre-bell Tuesday as President Donald Trump unveiled an $8 billio",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-20T15:50:22.134413"
     },
     "WMT": {
       "insider_signal": {
@@ -985,7 +1037,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:19.291675"
+      "scanned_at": "2026-10-20T15:50:22.770531"
     },
     "COST": {
       "insider_signal": {
@@ -1072,7 +1124,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:19.994167"
+      "scanned_at": "2026-10-20T15:50:23.429955"
     },
     "FCX": {
       "insider_signal": {
@@ -1139,7 +1191,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:20.610999"
+      "scanned_at": "2026-10-20T15:50:24.100841"
     },
     "NEE": {
       "insider_signal": {
@@ -1185,7 +1237,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-19T17:46:21.223121"
+      "scanned_at": "2026-10-20T15:50:24.789352"
     },
     "PLD": {
       "insider_signal": {
@@ -1202,7 +1254,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-19T17:46:21.839608"
+      "scanned_at": "2026-10-20T15:50:25.405215"
     }
   }
 }
