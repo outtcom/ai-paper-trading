@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-20",
-  "last_notified_date": "2026-10-20",
+  "date": "2026-10-21",
+  "last_notified_date": "2026-10-21",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:11.098153"
+      "scanned_at": "2026-10-21T16:05:40.476356"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:11.783408"
+      "scanned_at": "2026-10-21T16:05:41.570134"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:12.665467"
+      "scanned_at": "2026-10-21T16:05:46.233955"
     },
     "MU": {
       "insider_signal": {
@@ -408,7 +408,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:13.329498"
+      "scanned_at": "2026-10-21T16:05:47.602374"
     },
     "GOOGL": {
       "insider_signal": {
@@ -434,7 +434,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:14.539130"
+      "scanned_at": "2026-10-21T16:05:48.793549"
     },
     "META": {
       "insider_signal": {
@@ -541,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:15.314175"
+      "scanned_at": "2026-10-21T16:05:49.878455"
     },
     "AMZN": {
       "insider_signal": {
@@ -597,17 +597,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Jeff Bezos Says He Agrees With Trump On Calling Al 'Super Intelligence' — 'Artificial Is Not A Very Flattering Thing. Nobody Wants An Artificial Sweetener’",
-          "date": "2026-10-20 12:00",
-          "summary": "Artificial sweeteners already have a reputation problem. Now artificial intelligence is getting a similar branding critique from one of the biggest names in technology. Amazon and Blue Origin founder ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-20T15:50:16.281822"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-21T16:05:54.796375"
     },
     "TSLA": {
       "insider_signal": {
@@ -644,7 +635,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:16.942008"
+      "scanned_at": "2026-10-21T16:05:55.853394"
     },
     "LLY": {
       "insider_signal": {
@@ -670,7 +661,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:17.602510"
+      "scanned_at": "2026-10-21T16:05:56.860634"
     },
     "UNH": {
       "insider_signal": {
@@ -687,7 +678,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:18.241923"
+      "scanned_at": "2026-10-21T16:05:58.056842"
     },
     "JPM": {
       "insider_signal": {
@@ -734,7 +725,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:18.892497"
+      "scanned_at": "2026-10-21T16:05:58.956151"
     },
     "GS": {
       "insider_signal": {
@@ -770,25 +761,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Anthony Scaramucci Says Ukraine Gave Up Nuclear Arsenal, And Trump Is Treating The Deal ‘As If It Never Existed’",
-          "date": "2026-10-20 03:18",
-          "summary": "SkyBridge’s Anthony Scaramucci said Monday that Trump abandoned a 1994 promise to Ukraine by waiving Russia sanctions to do Putin a favor.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        },
-        {
-          "headline": "Jim Cramer Calls Trump's Russia Sanctions Waiver 'Tragic' After Report Says President 'Openly Aiding the Kremlin'",
-          "date": "2026-10-19 22:58",
-          "summary": "Jim Cramer weighed in on a report that Trump has made America an ally of Russia, days after he waived the sanctions law.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-20T15:50:19.520543"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-21T16:05:59.817158"
     },
     "XOM": {
       "insider_signal": {
@@ -805,7 +779,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:20.145180"
+      "scanned_at": "2026-10-21T16:06:00.681752"
     },
     "CVX": {
       "insider_signal": {
@@ -830,17 +804,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump and Famous Billionaires Were Buying This Oil Stock",
-          "date": "2026-10-19 20:06",
-          "summary": "Chevron Corporation (NYSE:CVX) reports Q3 results on Oct. 30, and the stock ranks ninth on our list of the 10 stocks in Trump’s latest stock portfolio. Click to see the other nine. Billionaires Added ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-20T15:50:20.772926"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-21T16:06:01.602597"
     },
     "CAT": {
       "insider_signal": {
@@ -907,7 +872,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:21.474199"
+      "scanned_at": "2026-10-21T16:06:02.458251"
     },
     "GE": {
       "insider_signal": {
@@ -932,25 +897,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Update: US Equity Futures Lower Pre-Bell as Trump Unveils $8 Billion Plan to Help US Farmers Offset Diesel Costs",
-          "date": "2026-10-20 12:53",
-          "summary": "(Updates with economic data, recent oil price movement, world markets' overview and corporate stock",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "US Equity Futures Mostly Lower Pre-Bell as Trump Unveils $8 Billion Plan to Help US Farmers Offset Diesel Costs",
-          "date": "2026-10-20 11:55",
-          "summary": "US equity futures were mostly lower pre-bell Tuesday as President Donald Trump unveiled an $8 billio",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-20T15:50:22.134413"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-21T16:06:03.325062"
     },
     "WMT": {
       "insider_signal": {
@@ -1037,7 +985,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:22.770531"
+      "scanned_at": "2026-10-21T16:06:04.256617"
     },
     "COST": {
       "insider_signal": {
@@ -1124,7 +1072,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:23.429955"
+      "scanned_at": "2026-10-21T16:06:05.131876"
     },
     "FCX": {
       "insider_signal": {
@@ -1191,7 +1139,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:24.100841"
+      "scanned_at": "2026-10-21T16:06:05.937584"
     },
     "NEE": {
       "insider_signal": {
@@ -1227,17 +1175,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "NextEra’s $4M Trump ballroom donation muddies Dominion merger debate, watchdogs say",
-          "date": "2026-10-16 10:28",
-          "summary": "The donation, which advocates called “problematic” and “convenient” for the company, comes to light as federal regulators chosen by President Donald Trump consider whether to allow NextEra to merge wi",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-20T15:50:24.789352"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-21T16:06:06.787627"
     },
     "PLD": {
       "insider_signal": {
@@ -1254,7 +1193,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-20T15:50:25.405215"
+      "scanned_at": "2026-10-21T16:06:07.691859"
     }
   }
 }
