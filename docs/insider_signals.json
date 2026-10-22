@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-21",
-  "last_notified_date": "2026-10-21",
+  "date": "2026-10-22",
+  "last_notified_date": "2026-10-22",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:40.476356"
+      "scanned_at": "2026-10-22T16:01:17.966184"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:41.570134"
+      "scanned_at": "2026-10-22T16:01:18.986046"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:46.233955"
+      "scanned_at": "2026-10-22T16:01:20.193819"
     },
     "MU": {
       "insider_signal": {
@@ -300,19 +300,39 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -2465428.53,
-        "net_open_market_fmt": "-$2.5M",
+        "net_open_market_value": -27291356.94,
+        "net_open_market_fmt": "-$27.3M",
         "largest_single_transaction": {
-          "name": "ALLEN SCOTT R.",
+          "name": "Deboer Scott J",
           "direction": "sell",
-          "dollar_value": 532937.79,
-          "dollar_fmt": "$533K",
-          "date": "2026-10-15",
-          "shares_traded": 583,
-          "price_per_share": 914.13,
+          "dollar_value": 25599600,
+          "dollar_fmt": "$25.6M",
+          "date": "2026-10-16",
+          "shares_traded": 28444,
+          "price_per_share": 900,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Deboer Scott J",
+            "direction": "sell",
+            "dollar_value": 90100,
+            "dollar_fmt": "$90K",
+            "date": "2026-10-16",
+            "shares_traded": 100,
+            "price_per_share": 901,
+            "transaction_code": ""
+          },
+          {
+            "name": "Deboer Scott J",
+            "direction": "sell",
+            "dollar_value": 25599600,
+            "dollar_fmt": "$25.6M",
+            "date": "2026-10-16",
+            "shares_traded": 28444,
+            "price_per_share": 900,
+            "transaction_code": ""
+          },
           {
             "name": "ALLEN SCOTT R.",
             "direction": "sell",
@@ -372,43 +392,13 @@
             "shares_traded": 320,
             "price_per_share": 942.58,
             "transaction_code": ""
-          },
-          {
-            "name": "RAY MICHAEL CHARLES",
-            "direction": "sell",
-            "dollar_value": 188200,
-            "dollar_fmt": "$188K",
-            "date": "2026-10-14",
-            "shares_traded": 200,
-            "price_per_share": 941,
-            "transaction_code": ""
-          },
-          {
-            "name": "RAY MICHAEL CHARLES",
-            "direction": "sell",
-            "dollar_value": 526276.8,
-            "dollar_fmt": "$526K",
-            "date": "2026-10-14",
-            "shares_traded": 560,
-            "price_per_share": 939.78,
-            "transaction_code": ""
-          },
-          {
-            "name": "RAY MICHAEL CHARLES",
-            "direction": "sell",
-            "dollar_value": 150196.8,
-            "dollar_fmt": "$150K",
-            "date": "2026-10-14",
-            "shares_traded": 160,
-            "price_per_share": 938.73,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:47.602374"
+      "scanned_at": "2026-10-22T16:01:21.532905"
     },
     "GOOGL": {
       "insider_signal": {
@@ -434,7 +424,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:48.793549"
+      "scanned_at": "2026-10-22T16:01:23.099736"
     },
     "META": {
       "insider_signal": {
@@ -541,7 +531,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:49.878455"
+      "scanned_at": "2026-10-22T16:01:24.234803"
     },
     "AMZN": {
       "insider_signal": {
@@ -597,8 +587,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:54.796375"
+      "trump_mentions": [
+        {
+          "headline": "Trump Wants Data Centers to Pay a “Dividend” to Their Neighbors",
+          "date": "2026-10-22 12:05",
+          "summary": "Trump declared on Truth Social that data center developers must generate their own power and pay neighbors a dividend, but his posts named no amounts, no enforcement mechanism, and no federal program ",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-22T16:01:25.262779"
     },
     "TSLA": {
       "insider_signal": {
@@ -635,17 +634,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:55.853394"
+      "scanned_at": "2026-10-22T16:01:27.710176"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 8,
         "open_market_sells": 0,
-        "compensation_grants": 3,
-        "net_open_market_value": 44265.82,
-        "net_open_market_fmt": "+$44K",
+        "compensation_grants": 2,
+        "net_open_market_value": 87677.72,
+        "net_open_market_fmt": "+$88K",
         "largest_single_transaction": {
           "name": "LUCIANO JUAN R",
           "direction": "buy",
@@ -657,11 +656,11 @@
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:56.860634"
+      "scanned_at": "2026-10-22T16:01:29.258700"
     },
     "UNH": {
       "insider_signal": {
@@ -678,7 +677,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:58.056842"
+      "scanned_at": "2026-10-22T16:01:30.237766"
     },
     "JPM": {
       "insider_signal": {
@@ -725,7 +724,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:58.956151"
+      "scanned_at": "2026-10-22T16:01:31.189051"
     },
     "GS": {
       "insider_signal": {
@@ -762,7 +761,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:05:59.817158"
+      "scanned_at": "2026-10-22T16:01:32.272500"
     },
     "XOM": {
       "insider_signal": {
@@ -779,7 +778,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:00.681752"
+      "scanned_at": "2026-10-22T16:01:33.555499"
     },
     "CVX": {
       "insider_signal": {
@@ -805,7 +804,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:01.602597"
+      "scanned_at": "2026-10-22T16:01:34.883523"
     },
     "CAT": {
       "insider_signal": {
@@ -872,7 +871,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:02.458251"
+      "scanned_at": "2026-10-22T16:01:36.019716"
     },
     "GE": {
       "insider_signal": {
@@ -898,7 +897,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:03.325062"
+      "scanned_at": "2026-10-22T16:01:37.032813"
     },
     "WMT": {
       "insider_signal": {
@@ -985,7 +984,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:04.256617"
+      "scanned_at": "2026-10-22T16:01:37.989055"
     },
     "COST": {
       "insider_signal": {
@@ -1072,7 +1071,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:05.131876"
+      "scanned_at": "2026-10-22T16:01:39.008792"
     },
     "FCX": {
       "insider_signal": {
@@ -1139,7 +1138,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:05.937584"
+      "scanned_at": "2026-10-22T16:01:39.897793"
     },
     "NEE": {
       "insider_signal": {
@@ -1175,8 +1174,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:06.787627"
+      "trump_mentions": [
+        {
+          "headline": "Punchbowl Senior Energy Reporter Joshua Siegel Posts On X \"SCOOP: The Trump admin is easing its blockade on wind projects as it looks to motivate Democrats to support the Senate’s bipartisan permitting reform bill. A White House official told me DOD has advanced 2  projects in Maine & SD with more to come. Text subscribers got it 1st!\"",
+          "date": "2026-10-22 09:08",
+          "summary": "https://x.com/SiegelScribe/status/2113249297554973141",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-22T16:01:41.043240"
     },
     "PLD": {
       "insider_signal": {
@@ -1193,7 +1201,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-21T16:06:07.691859"
+      "scanned_at": "2026-10-22T16:01:42.266888"
     }
   }
 }
