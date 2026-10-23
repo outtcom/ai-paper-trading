@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-22",
-  "last_notified_date": "2026-10-22",
+  "date": "2026-10-23",
+  "last_notified_date": "2026-10-23",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:17.966184"
+      "scanned_at": "2026-10-23T15:54:57.552543"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:18.986046"
+      "scanned_at": "2026-10-23T15:54:58.297013"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:20.193819"
+      "scanned_at": "2026-10-23T15:54:59.179605"
     },
     "MU": {
       "insider_signal": {
@@ -398,7 +398,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:21.532905"
+      "scanned_at": "2026-10-23T15:55:00.074923"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,7 +424,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:23.099736"
+      "scanned_at": "2026-10-23T15:55:01.158723"
     },
     "META": {
       "insider_signal": {
@@ -433,7 +433,7 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -2293483.5,
+        "net_open_market_value": -2260597.5,
         "net_open_market_fmt": "-$2.3M",
         "largest_single_transaction": {
           "name": "Olivan Javier",
@@ -446,6 +446,46 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 288537.6,
+            "dollar_fmt": "$289K",
+            "date": "2026-10-19",
+            "shares_traded": 408,
+            "price_per_share": 707.2,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 57990.4,
+            "dollar_fmt": "$58K",
+            "date": "2026-10-19",
+            "shares_traded": 82,
+            "price_per_share": 707.2,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 57990.4,
+            "dollar_fmt": "$58K",
+            "date": "2026-10-19",
+            "shares_traded": 82,
+            "price_per_share": 707.2,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 669011.2,
+            "dollar_fmt": "$669K",
+            "date": "2026-10-19",
+            "shares_traded": 946,
+            "price_per_share": 707.2,
+            "transaction_code": ""
+          },
           {
             "name": "Olivan Javier",
             "direction": "sell",
@@ -485,71 +525,31 @@
             "shares_traded": 946,
             "price_per_share": 728.1,
             "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 297056.64,
-            "dollar_fmt": "$297K",
-            "date": "2026-10-05",
-            "shares_traded": 408,
-            "price_per_share": 728.08,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 59702.56,
-            "dollar_fmt": "$60K",
-            "date": "2026-10-05",
-            "shares_traded": 82,
-            "price_per_share": 728.08,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 59702.56,
-            "dollar_fmt": "$60K",
-            "date": "2026-10-05",
-            "shares_traded": 82,
-            "price_per_share": 728.08,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 688763.68,
-            "dollar_fmt": "$689K",
-            "date": "2026-10-05",
-            "shares_traded": 946,
-            "price_per_share": 728.08,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:24.234803"
+      "scanned_at": "2026-10-23T15:55:02.210411"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 3,
+        "open_market_sells": 2,
         "compensation_grants": 4,
-        "net_open_market_value": -2911220.66,
-        "net_open_market_fmt": "-$2.9M",
+        "net_open_market_value": -506270.0,
+        "net_open_market_fmt": "-$506K",
         "largest_single_transaction": {
-          "name": "Zapolsky David",
+          "name": "Herrington Douglas J",
           "direction": "sell",
-          "dollar_value": 2404950.66,
-          "dollar_fmt": "$2.4M",
-          "date": "2026-08-24",
-          "shares_traded": 9258,
-          "price_per_share": 259.77,
+          "dollar_value": 254770.0,
+          "dollar_fmt": "$255K",
+          "date": "2026-09-01",
+          "shares_traded": 1000,
+          "price_per_share": 254.77,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -572,32 +572,13 @@
             "shares_traded": 1000,
             "price_per_share": 254.77,
             "transaction_code": ""
-          },
-          {
-            "name": "Zapolsky David",
-            "direction": "sell",
-            "dollar_value": 2404950.66,
-            "dollar_fmt": "$2.4M",
-            "date": "2026-08-24",
-            "shares_traded": 9258,
-            "price_per_share": 259.77,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump Wants Data Centers to Pay a “Dividend” to Their Neighbors",
-          "date": "2026-10-22 12:05",
-          "summary": "Trump declared on Truth Social that data center developers must generate their own power and pay neighbors a dividend, but his posts named no amounts, no enforcement mechanism, and no federal program ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-22T16:01:25.262779"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-23T15:55:03.029521"
     },
     "TSLA": {
       "insider_signal": {
@@ -634,7 +615,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:27.710176"
+      "scanned_at": "2026-10-23T15:55:03.953713"
     },
     "LLY": {
       "insider_signal": {
@@ -660,7 +641,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:29.258700"
+      "scanned_at": "2026-10-23T15:55:04.649758"
     },
     "UNH": {
       "insider_signal": {
@@ -677,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:30.237766"
+      "scanned_at": "2026-10-23T15:55:05.378766"
     },
     "JPM": {
       "insider_signal": {
@@ -724,7 +705,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:31.189051"
+      "scanned_at": "2026-10-23T15:55:06.110235"
     },
     "GS": {
       "insider_signal": {
@@ -761,7 +742,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:32.272500"
+      "scanned_at": "2026-10-23T15:55:06.873274"
     },
     "XOM": {
       "insider_signal": {
@@ -778,33 +759,74 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:33.555499"
+      "scanned_at": "2026-10-23T15:55:07.808592"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 46831.52,
-        "net_open_market_fmt": "+$47K",
+        "open_market_buys": 4,
+        "open_market_sells": 2,
+        "compensation_grants": 2,
+        "net_open_market_value": -4000472.5,
+        "net_open_market_fmt": "-$4.0M",
         "largest_single_transaction": {
-          "name": "HEWSON MARILLYN A",
-          "direction": "buy",
-          "dollar_value": 42996.18,
-          "dollar_fmt": "$43K",
-          "date": "2026-08-28",
-          "shares_traded": 213,
-          "price_per_share": 201.86,
+          "name": "Pate R. Hewitt",
+          "direction": "sell",
+          "dollar_value": 9224777.1,
+          "dollar_fmt": "$9.2M",
+          "date": "2026-10-20",
+          "shares_traded": 40700,
+          "price_per_share": 226.653,
           "transaction_code": ""
         },
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "notable_transactions": [
+          {
+            "name": "Pate R. Hewitt",
+            "direction": "sell",
+            "dollar_value": 9224777.1,
+            "dollar_fmt": "$9.2M",
+            "date": "2026-10-20",
+            "shares_traded": 40700,
+            "price_per_share": 226.653,
+            "transaction_code": ""
+          },
+          {
+            "name": "Pate R. Hewitt",
+            "direction": "buy",
+            "dollar_value": 5400483.0,
+            "dollar_fmt": "$5.4M",
+            "date": "2026-10-20",
+            "shares_traded": 40700,
+            "price_per_share": 132.69,
+            "transaction_code": ""
+          },
+          {
+            "name": "Pate R. Hewitt",
+            "direction": "sell",
+            "dollar_value": 541465.92,
+            "dollar_fmt": "$541K",
+            "date": "2026-10-19",
+            "shares_traded": 2400,
+            "price_per_share": 225.6108,
+            "transaction_code": ""
+          },
+          {
+            "name": "Pate R. Hewitt",
+            "direction": "buy",
+            "dollar_value": 318456.0,
+            "dollar_fmt": "$318K",
+            "date": "2026-10-19",
+            "shares_traded": 2400,
+            "price_per_share": 132.69,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:34.883523"
+      "scanned_at": "2026-10-23T15:55:10.032802"
     },
     "CAT": {
       "insider_signal": {
@@ -871,7 +893,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:36.019716"
+      "scanned_at": "2026-10-23T15:55:11.089003"
     },
     "GE": {
       "insider_signal": {
@@ -897,7 +919,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:37.032813"
+      "scanned_at": "2026-10-23T15:55:11.771519"
     },
     "WMT": {
       "insider_signal": {
@@ -984,7 +1006,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:37.989055"
+      "scanned_at": "2026-10-23T15:55:12.528910"
     },
     "COST": {
       "insider_signal": {
@@ -1071,7 +1093,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:39.008792"
+      "scanned_at": "2026-10-23T15:55:13.213196"
     },
     "FCX": {
       "insider_signal": {
@@ -1138,7 +1160,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:39.897793"
+      "scanned_at": "2026-10-23T15:55:13.880618"
     },
     "NEE": {
       "insider_signal": {
@@ -1184,7 +1206,7 @@
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-22T16:01:41.043240"
+      "scanned_at": "2026-10-23T15:55:14.767117"
     },
     "PLD": {
       "insider_signal": {
@@ -1201,7 +1223,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-22T16:01:42.266888"
+      "scanned_at": "2026-10-23T15:55:15.462055"
     }
   }
 }
