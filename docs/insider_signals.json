@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-23",
-  "last_notified_date": "2026-10-23",
+  "date": "2026-10-26",
+  "last_notified_date": "2026-10-26",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,19 +9,29 @@
         "open_market_buys": 0,
         "open_market_sells": 9,
         "compensation_grants": 1,
-        "net_open_market_value": -39202943.54,
-        "net_open_market_fmt": "-$39.2M",
+        "net_open_market_value": -26366558.66,
+        "net_open_market_fmt": "-$26.4M",
         "largest_single_transaction": {
-          "name": "COOK TIMOTHY D",
+          "name": "O'BRIEN DEIRDRE",
           "direction": "sell",
-          "dollar_value": 13651133.26,
-          "dollar_fmt": "$13.7M",
+          "dollar_value": 13588679.4,
+          "dollar_fmt": "$13.6M",
           "date": "2026-10-02",
-          "shares_traded": 40879,
-          "price_per_share": 333.94,
+          "shares_traded": 40764,
+          "price_per_share": 333.35,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 814748.38,
+            "dollar_fmt": "$815K",
+            "date": "2026-10-20",
+            "shares_traded": 2399,
+            "price_per_share": 339.62,
+            "transaction_code": ""
+          },
           {
             "name": "Newstead Jennifer",
             "direction": "sell",
@@ -101,23 +111,13 @@
             "shares_traded": 40764,
             "price_per_share": 333.35,
             "transaction_code": ""
-          },
-          {
-            "name": "COOK TIMOTHY D",
-            "direction": "sell",
-            "dollar_value": 13651133.26,
-            "dollar_fmt": "$13.7M",
-            "date": "2026-10-02",
-            "shares_traded": 40879,
-            "price_per_share": 333.94,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:54:57.552543"
+      "scanned_at": "2026-10-26T17:38:47.435475"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:54:58.297013"
+      "scanned_at": "2026-10-26T17:38:48.393741"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:54:59.179605"
+      "scanned_at": "2026-10-26T17:38:49.406042"
     },
     "MU": {
       "insider_signal": {
@@ -398,7 +398,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:00.074923"
+      "scanned_at": "2026-10-26T17:38:50.615584"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,7 +424,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:01.158723"
+      "scanned_at": "2026-10-26T17:38:51.798444"
     },
     "META": {
       "insider_signal": {
@@ -531,7 +531,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:02.210411"
+      "scanned_at": "2026-10-26T17:38:52.922834"
     },
     "AMZN": {
       "insider_signal": {
@@ -539,7 +539,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 2,
-        "compensation_grants": 4,
+        "compensation_grants": 2,
         "net_open_market_value": -506270.0,
         "net_open_market_fmt": "-$506K",
         "largest_single_transaction": {
@@ -578,7 +578,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:03.029521"
+      "scanned_at": "2026-10-26T17:38:53.894447"
     },
     "TSLA": {
       "insider_signal": {
@@ -615,7 +615,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:03.953713"
+      "scanned_at": "2026-10-26T17:38:54.898033"
     },
     "LLY": {
       "insider_signal": {
@@ -641,7 +641,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:04.649758"
+      "scanned_at": "2026-10-26T17:38:55.824923"
     },
     "UNH": {
       "insider_signal": {
@@ -658,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:05.378766"
+      "scanned_at": "2026-10-26T17:38:56.713759"
     },
     "JPM": {
       "insider_signal": {
@@ -705,7 +705,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:06.110235"
+      "scanned_at": "2026-10-26T17:38:57.649178"
     },
     "GS": {
       "insider_signal": {
@@ -742,7 +742,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:06.873274"
+      "scanned_at": "2026-10-26T17:38:58.546780"
     },
     "XOM": {
       "insider_signal": {
@@ -758,8 +758,33 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:07.808592"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says “We’re Making A Freaking Fortune” From The Iran War’s Oil Spike. Here’s What The Economic Data Actually Show",
+          "date": "2026-10-26 08:36",
+          "summary": "Trump claims the Iran war's oil surge is filling US coffers with hundreds of billions, and the export numbers from April tell a striking story. But what happened to those records by summer, and who ac",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
+          "date": "2026-10-26 02:19",
+          "summary": "Bernie Sanders criticized Trump for celebrating oil profits while Americans face rising gas prices amid the Iran war.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil—Analyst Says Diesel Is $2.72/Gallon Higher",
+          "date": "2026-10-26 00:44",
+          "summary": "Gavin Newsom, Pete Buttigieg accuse President Trump of favoring Big Oil as gas and diesel prices rise nationwide.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-26T17:38:59.432160"
     },
     "CVX": {
       "insider_signal": {
@@ -825,8 +850,33 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:10.032802"
+      "trump_mentions": [
+        {
+          "headline": "Trump Says “We’re Making A Freaking Fortune” From The Iran War’s Oil Spike. Here’s What The Economic Data Actually Show",
+          "date": "2026-10-26 08:36",
+          "summary": "Trump claims the Iran war's oil surge is filling US coffers with hundreds of billions, and the export numbers from April tell a striking story. But what happened to those records by summer, and who ac",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
+          "date": "2026-10-26 02:19",
+          "summary": "Bernie Sanders criticized Trump for celebrating oil profits while Americans face rising gas prices amid the Iran war.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil—Analyst Says Diesel Is $2.72/Gallon Higher",
+          "date": "2026-10-26 00:44",
+          "summary": "Gavin Newsom, Pete Buttigieg accuse President Trump of favoring Big Oil as gas and diesel prices rise nationwide.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-26T17:39:00.349317"
     },
     "CAT": {
       "insider_signal": {
@@ -893,7 +943,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:11.089003"
+      "scanned_at": "2026-10-26T17:39:01.393531"
     },
     "GE": {
       "insider_signal": {
@@ -919,7 +969,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:11.771519"
+      "scanned_at": "2026-10-26T17:39:02.321349"
     },
     "WMT": {
       "insider_signal": {
@@ -1006,7 +1056,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:12.528910"
+      "scanned_at": "2026-10-26T17:39:03.237707"
     },
     "COST": {
       "insider_signal": {
@@ -1093,74 +1143,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:13.213196"
+      "scanned_at": "2026-10-26T17:39:04.129254"
     },
     "FCX": {
       "insider_signal": {
         "ticker": "FCX",
         "days_back": 60,
-        "open_market_buys": 4,
-        "open_market_sells": 2,
-        "compensation_grants": 2,
-        "net_open_market_value": -5325914.79,
-        "net_open_market_fmt": "-$5.3M",
+        "open_market_buys": 2,
+        "open_market_sells": 0,
+        "compensation_grants": 0,
+        "net_open_market_value": 54320.0,
+        "net_open_market_fmt": "+$54K",
         "largest_single_transaction": {
-          "name": "Currault Douglas N. II",
-          "direction": "sell",
-          "dollar_value": 6284464.0,
-          "dollar_fmt": "$6.3M",
-          "date": "2026-08-25",
-          "shares_traded": 80000,
-          "price_per_share": 78.5558,
+          "name": "GRANT HUGH",
+          "direction": "buy",
+          "dollar_value": 33740,
+          "dollar_fmt": "$34K",
+          "date": "2026-10-01",
+          "shares_traded": 482,
+          "price_per_share": 70,
           "transaction_code": ""
         },
-        "notable_transactions": [
-          {
-            "name": "KENNARD LYDIA H",
-            "direction": "sell",
-            "dollar_value": 300470.79,
-            "dollar_fmt": "$300K",
-            "date": "2026-08-27",
-            "shares_traded": 3798,
-            "price_per_share": 79.1129,
-            "transaction_code": ""
-          },
-          {
-            "name": "Currault Douglas N. II",
-            "direction": "sell",
-            "dollar_value": 6284464.0,
-            "dollar_fmt": "$6.3M",
-            "date": "2026-08-25",
-            "shares_traded": 80000,
-            "price_per_share": 78.5558,
-            "transaction_code": ""
-          },
-          {
-            "name": "Currault Douglas N. II",
-            "direction": "buy",
-            "dollar_value": 422100.0,
-            "dollar_fmt": "$422K",
-            "date": "2026-08-25",
-            "shares_traded": 15000,
-            "price_per_share": 28.14,
-            "transaction_code": ""
-          },
-          {
-            "name": "Currault Douglas N. II",
-            "direction": "buy",
-            "dollar_value": 782600.0,
-            "dollar_fmt": "$783K",
-            "date": "2026-08-25",
-            "shares_traded": 65000,
-            "price_per_share": 12.04,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "notable_transactions": [],
+        "signal_strength": "buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:13.880618"
+      "scanned_at": "2026-10-26T17:39:04.991542"
     },
     "NEE": {
       "insider_signal": {
@@ -1168,7 +1177,7 @@
         "days_back": 60,
         "open_market_buys": 4,
         "open_market_sells": 1,
-        "compensation_grants": 1,
+        "compensation_grants": 2,
         "net_open_market_value": -77601.33,
         "net_open_market_fmt": "-$78K",
         "largest_single_transaction": {
@@ -1196,17 +1205,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Punchbowl Senior Energy Reporter Joshua Siegel Posts On X \"SCOOP: The Trump admin is easing its blockade on wind projects as it looks to motivate Democrats to support the Senate’s bipartisan permitting reform bill. A White House official told me DOD has advanced 2  projects in Maine & SD with more to come. Text subscribers got it 1st!\"",
-          "date": "2026-10-22 09:08",
-          "summary": "https://x.com/SiegelScribe/status/2113249297554973141",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-23T15:55:14.767117"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-26T17:39:05.865833"
     },
     "PLD": {
       "insider_signal": {
@@ -1223,7 +1223,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-23T15:55:15.462055"
+      "scanned_at": "2026-10-26T17:39:06.744051"
     }
   }
 }
