@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-26",
-  "last_notified_date": "2026-10-26",
+  "date": "2026-10-27",
+  "last_notified_date": "2026-10-27",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:47.435475"
+      "scanned_at": "2026-10-27T16:51:26.150914"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:48.393741"
+      "scanned_at": "2026-10-27T16:51:27.241875"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:49.406042"
+      "scanned_at": "2026-10-27T16:51:28.361773"
     },
     "MU": {
       "insider_signal": {
@@ -398,7 +398,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:50.615584"
+      "scanned_at": "2026-10-27T16:51:29.443393"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,7 +424,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:51.798444"
+      "scanned_at": "2026-10-27T16:51:30.581925"
     },
     "META": {
       "insider_signal": {
@@ -531,7 +531,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:52.922834"
+      "scanned_at": "2026-10-27T16:51:31.881327"
     },
     "AMZN": {
       "insider_signal": {
@@ -578,7 +578,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:53.894447"
+      "scanned_at": "2026-10-27T16:51:33.250778"
     },
     "TSLA": {
       "insider_signal": {
@@ -615,7 +615,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:54.898033"
+      "scanned_at": "2026-10-27T16:51:34.378498"
     },
     "LLY": {
       "insider_signal": {
@@ -641,7 +641,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:55.824923"
+      "scanned_at": "2026-10-27T16:51:35.388551"
     },
     "UNH": {
       "insider_signal": {
@@ -658,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:56.713759"
+      "scanned_at": "2026-10-27T16:51:36.346479"
     },
     "JPM": {
       "insider_signal": {
@@ -705,44 +705,24 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:57.649178"
+      "scanned_at": "2026-10-27T16:51:37.352815"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 4,
-        "net_open_market_value": -620280.0,
-        "net_open_market_fmt": "-$620K",
-        "largest_single_transaction": {
-          "name": "LESLIE ERICKA T",
-          "direction": "sell",
-          "dollar_value": 620280.0,
-          "dollar_fmt": "$620K",
-          "date": "2026-08-28",
-          "shares_traded": 600,
-          "price_per_share": 1033.8,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "LESLIE ERICKA T",
-            "direction": "sell",
-            "dollar_value": 620280.0,
-            "dollar_fmt": "$620K",
-            "date": "2026-08-28",
-            "shares_traded": 600,
-            "price_per_share": 1033.8,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:38:58.546780"
+      "scanned_at": "2026-10-27T16:51:38.394034"
     },
     "XOM": {
       "insider_signal": {
@@ -760,40 +740,40 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says “We’re Making A Freaking Fortune” From The Iran War’s Oil Spike. Here’s What The Economic Data Actually Show",
-          "date": "2026-10-26 08:36",
-          "summary": "Trump claims the Iran war's oil surge is filling US coffers with hundreds of billions, and the export numbers from April tell a striking story. But what happened to those records by summer, and who ac",
+          "headline": "Trump's Oil Holdings Could Top $81 Million, New Report Says — Gavin Newsom Says President Swore ‘Oath’ to Big Oil",
+          "date": "2026-10-27 01:59",
+          "summary": "Gavin Newsom attacks Trump as his oil holdings reportedly rose 43% to as much as $81.6 million amid surging energy costs.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Chuck Schumer Says Americans Paid ‘Billions More for Gas’ as Trump Profited From Oil Stocks; White House Insists Low Prices Are ‘Priority’",
+          "date": "2026-10-26 22:13",
+          "summary": "Chuck Schumer accused Donald Trump of profiting from oil and gas stocks while Americans pay more for gas, vowing to hold him accountable.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s Treasury Says Gulf Oil Is “Roaring Back” as Exxon Heads Into Earnings Near a Record",
+          "date": "2026-10-26 18:21",
+          "summary": "Key TakeawaysTreasury Secretary Scott Bessent said on Friday that Persian Gulf oil exports have passed pre-conflict levels, and Brent crude fell 1% on Monday on hopes the Iran war is easing. Analysts ",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
-          "date": "2026-10-26 02:19",
-          "summary": "Bernie Sanders criticized Trump for celebrating oil profits while Americans face rising gas prices amid the Iran war.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil—Analyst Says Diesel Is $2.72/Gallon Higher",
-          "date": "2026-10-26 00:44",
-          "summary": "Gavin Newsom, Pete Buttigieg accuse President Trump of favoring Big Oil as gas and diesel prices rise nationwide.",
-          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-26T17:38:59.432160"
+      "scanned_at": "2026-10-27T16:51:39.401635"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
-        "open_market_buys": 4,
+        "open_market_buys": 2,
         "open_market_sells": 2,
         "compensation_grants": 2,
-        "net_open_market_value": -4000472.5,
+        "net_open_market_value": -4047304.02,
         "net_open_market_fmt": "-$4.0M",
         "largest_single_transaction": {
           "name": "Pate R. Hewitt",
@@ -852,98 +832,57 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says “We’re Making A Freaking Fortune” From The Iran War’s Oil Spike. Here’s What The Economic Data Actually Show",
-          "date": "2026-10-26 08:36",
-          "summary": "Trump claims the Iran war's oil surge is filling US coffers with hundreds of billions, and the export numbers from April tell a striking story. But what happened to those records by summer, and who ac",
+          "headline": "Trump's Oil Holdings Could Top $81 Million, New Report Says — Gavin Newsom Says President Swore ‘Oath’ to Big Oil",
+          "date": "2026-10-27 01:59",
+          "summary": "Gavin Newsom attacks Trump as his oil holdings reportedly rose 43% to as much as $81.6 million amid surging energy costs.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Chuck Schumer Says Americans Paid ‘Billions More for Gas’ as Trump Profited From Oil Stocks; White House Insists Low Prices Are ‘Priority’",
+          "date": "2026-10-26 22:13",
+          "summary": "Chuck Schumer accused Donald Trump of profiting from oil and gas stocks while Americans pay more for gas, vowing to hold him accountable.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "Trump’s Treasury Says Gulf Oil Is “Roaring Back” as Exxon Heads Into Earnings Near a Record",
+          "date": "2026-10-26 18:21",
+          "summary": "Key TakeawaysTreasury Secretary Scott Bessent said on Friday that Persian Gulf oil exports have passed pre-conflict levels, and Brent crude fell 1% on Monday on hopes the Iran war is easing. Analysts ",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
-          "date": "2026-10-26 02:19",
-          "summary": "Bernie Sanders criticized Trump for celebrating oil profits while Americans face rising gas prices amid the Iran war.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil—Analyst Says Diesel Is $2.72/Gallon Higher",
-          "date": "2026-10-26 00:44",
-          "summary": "Gavin Newsom, Pete Buttigieg accuse President Trump of favoring Big Oil as gas and diesel prices rise nationwide.",
-          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-26T17:39:00.349317"
+      "scanned_at": "2026-10-27T16:51:40.404215"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
         "open_market_buys": 6,
-        "open_market_sells": 4,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -18726451.23,
-        "net_open_market_fmt": "-$18.7M",
+        "net_open_market_value": 87054.42,
+        "net_open_market_fmt": "+$87K",
         "largest_single_transaction": {
-          "name": "Creed Joseph E",
-          "direction": "sell",
-          "dollar_value": 9758003.28,
-          "dollar_fmt": "$9.8M",
-          "date": "2026-08-28",
-          "shares_traded": 44403,
-          "price_per_share": 219.76,
+          "name": "GOOD LYNN J",
+          "direction": "buy",
+          "dollar_value": 24630.3,
+          "dollar_fmt": "$25K",
+          "date": "2026-09-30",
+          "shares_traded": 30,
+          "price_per_share": 821.01,
           "transaction_code": ""
         },
-        "notable_transactions": [
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 9758003.28,
-            "dollar_fmt": "$9.8M",
-            "date": "2026-08-28",
-            "shares_traded": 44403,
-            "price_per_share": 219.76,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 3931081.32,
-            "dollar_fmt": "$3.9M",
-            "date": "2026-08-28",
-            "shares_traded": 4831,
-            "price_per_share": 813.72,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 1039475.2,
-            "dollar_fmt": "$1.0M",
-            "date": "2026-08-28",
-            "shares_traded": 1280,
-            "price_per_share": 812.09,
-            "transaction_code": ""
-          },
-          {
-            "name": "Creed Joseph E",
-            "direction": "sell",
-            "dollar_value": 4084945.85,
-            "dollar_fmt": "$4.1M",
-            "date": "2026-08-28",
-            "shares_traded": 5035,
-            "price_per_share": 811.31,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "notable_transactions": [],
+        "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:01.393531"
+      "scanned_at": "2026-10-27T16:51:41.411219"
     },
     "GE": {
       "insider_signal": {
@@ -969,7 +908,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:02.321349"
+      "scanned_at": "2026-10-27T16:51:42.420627"
     },
     "WMT": {
       "insider_signal": {
@@ -1056,7 +995,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:03.237707"
+      "scanned_at": "2026-10-27T16:51:43.534491"
     },
     "COST": {
       "insider_signal": {
@@ -1143,7 +1082,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:04.129254"
+      "scanned_at": "2026-10-27T16:51:44.539257"
     },
     "FCX": {
       "insider_signal": {
@@ -1169,7 +1108,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:04.991542"
+      "scanned_at": "2026-10-27T16:51:45.485186"
     },
     "NEE": {
       "insider_signal": {
@@ -1206,7 +1145,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:05.865833"
+      "scanned_at": "2026-10-27T16:51:46.470922"
     },
     "PLD": {
       "insider_signal": {
@@ -1223,7 +1162,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-26T17:39:06.744051"
+      "scanned_at": "2026-10-27T16:51:47.409562"
     }
   }
 }
