@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-27",
-  "last_notified_date": "2026-10-27",
+  "date": "2026-10-28",
+  "last_notified_date": "2026-10-28",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:26.150914"
+      "scanned_at": "2026-10-28T17:23:05.997897"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:27.241875"
+      "scanned_at": "2026-10-28T17:23:06.947529"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:28.361773"
+      "scanned_at": "2026-10-28T17:23:07.872989"
     },
     "MU": {
       "insider_signal": {
@@ -398,7 +398,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:29.443393"
+      "scanned_at": "2026-10-28T17:23:08.808116"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,7 +424,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:30.581925"
+      "scanned_at": "2026-10-28T17:23:09.750924"
     },
     "META": {
       "insider_signal": {
@@ -531,7 +531,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:31.881327"
+      "scanned_at": "2026-10-28T17:23:11.091713"
     },
     "AMZN": {
       "insider_signal": {
@@ -578,7 +578,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:33.250778"
+      "scanned_at": "2026-10-28T17:23:12.043182"
     },
     "TSLA": {
       "insider_signal": {
@@ -615,7 +615,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:34.378498"
+      "scanned_at": "2026-10-28T17:23:13.236242"
     },
     "LLY": {
       "insider_signal": {
@@ -640,8 +640,25 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:35.388551"
+      "trump_mentions": [
+        {
+          "headline": "Micron Biomedical Appoints Anand Subramony, Ph.D., as Executive Vice President, Global Product Development and Combination Product Commercialization",
+          "date": "2026-10-28 11:25",
+          "summary": "Seasoned drug delivery and product development leader formerly at Lilly and AstraZeneca to advance Micron Biomedical's transition from platform technology to commercial product company Anand Subramony",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        },
+        {
+          "headline": "'Trump Administration Backs Down on an Opioid Ban After Kratom Industry Lobbying' - NY Times",
+          "date": "2026-10-28 07:29",
+          "summary": "https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-10-28T17:23:14.152431"
     },
     "UNH": {
       "insider_signal": {
@@ -658,7 +675,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:36.346479"
+      "scanned_at": "2026-10-28T17:23:15.106290"
     },
     "JPM": {
       "insider_signal": {
@@ -705,24 +722,54 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:37.352815"
+      "scanned_at": "2026-10-28T17:23:16.140623"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 0,
+        "open_market_sells": 2,
         "compensation_grants": 4,
-        "net_open_market_value": 0.0,
-        "net_open_market_fmt": "+$0",
-        "largest_single_transaction": null,
-        "notable_transactions": [],
-        "signal_strength": "neutral",
+        "net_open_market_value": -222562.44,
+        "net_open_market_fmt": "-$223K",
+        "largest_single_transaction": {
+          "name": "LESLIE ERICKA T",
+          "direction": "sell",
+          "dollar_value": 162875.49,
+          "dollar_fmt": "$163K",
+          "date": "2026-10-22",
+          "shares_traded": 183,
+          "price_per_share": 890.03,
+          "transaction_code": ""
+        },
+        "notable_transactions": [
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 59686.95,
+            "dollar_fmt": "$60K",
+            "date": "2026-10-22",
+            "shares_traded": 67,
+            "price_per_share": 890.85,
+            "transaction_code": ""
+          },
+          {
+            "name": "LESLIE ERICKA T",
+            "direction": "sell",
+            "dollar_value": 162875.49,
+            "dollar_fmt": "$163K",
+            "date": "2026-10-22",
+            "shares_traded": 183,
+            "price_per_share": 890.03,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:38.394034"
+      "scanned_at": "2026-10-28T17:23:16.988989"
     },
     "XOM": {
       "insider_signal": {
@@ -740,31 +787,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Oil Holdings Could Top $81 Million, New Report Says — Gavin Newsom Says President Swore ‘Oath’ to Big Oil",
-          "date": "2026-10-27 01:59",
-          "summary": "Gavin Newsom attacks Trump as his oil holdings reportedly rose 43% to as much as $81.6 million amid surging energy costs.",
+          "headline": "Trump Says Iran Wants a Deal as 1 Million Barrels of Venezuelan Oil Arrive in Texas Ahead of Midterms: 'It's a Question of When Do I Want to End It'",
+          "date": "2026-10-28 03:37",
+          "summary": "Trump says Iran wants a deal but Washington controls the timing of any agreements; touts Venezuelan oil gains.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         },
         {
-          "headline": "Chuck Schumer Says Americans Paid ‘Billions More for Gas’ as Trump Profited From Oil Stocks; White House Insists Low Prices Are ‘Priority’",
-          "date": "2026-10-26 22:13",
-          "summary": "Chuck Schumer accused Donald Trump of profiting from oil and gas stocks while Americans pay more for gas, vowing to hold him accountable.",
+          "headline": "Trump Could Allow More Russian Diesel Into US to Push Putin Toward Peace — But Energy Secretary Says There’s a Catch",
+          "date": "2026-10-28 03:13",
+          "summary": "Wright signals more Russian diesel shipments if Moscow seeks peace; Trump rolls back methane rules, touting $45B in savings amid criticism.",
           "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s Treasury Says Gulf Oil Is “Roaring Back” as Exxon Heads Into Earnings Near a Record",
-          "date": "2026-10-26 18:21",
-          "summary": "Key TakeawaysTreasury Secretary Scott Bessent said on Friday that Persian Gulf oil exports have passed pre-conflict levels, and Brent crude fell 1% on Monday on hopes the Iran war is easing. Analysts ",
-          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-27T16:51:39.401635"
+      "scanned_at": "2026-10-28T17:23:17.830201"
     },
     "CVX": {
       "insider_signal": {
@@ -832,31 +871,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump's Oil Holdings Could Top $81 Million, New Report Says — Gavin Newsom Says President Swore ‘Oath’ to Big Oil",
-          "date": "2026-10-27 01:59",
-          "summary": "Gavin Newsom attacks Trump as his oil holdings reportedly rose 43% to as much as $81.6 million amid surging energy costs.",
+          "headline": "Trump Says Iran Wants a Deal as 1 Million Barrels of Venezuelan Oil Arrive in Texas Ahead of Midterms: 'It's a Question of When Do I Want to End It'",
+          "date": "2026-10-28 03:37",
+          "summary": "Trump says Iran wants a deal but Washington controls the timing of any agreements; touts Venezuelan oil gains.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Chuck Schumer Says Americans Paid ‘Billions More for Gas’ as Trump Profited From Oil Stocks; White House Insists Low Prices Are ‘Priority’",
-          "date": "2026-10-26 22:13",
-          "summary": "Chuck Schumer accused Donald Trump of profiting from oil and gas stocks while Americans pay more for gas, vowing to hold him accountable.",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Trump’s Treasury Says Gulf Oil Is “Roaring Back” as Exxon Heads Into Earnings Near a Record",
-          "date": "2026-10-26 18:21",
-          "summary": "Key TakeawaysTreasury Secretary Scott Bessent said on Friday that Persian Gulf oil exports have passed pre-conflict levels, and Brent crude fell 1% on Monday on hopes the Iran war is easing. Analysts ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
+          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-10-27T16:51:40.404215"
+      "scanned_at": "2026-10-28T17:23:18.735137"
     },
     "CAT": {
       "insider_signal": {
@@ -882,7 +905,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:41.411219"
+      "scanned_at": "2026-10-28T17:23:19.573023"
     },
     "GE": {
       "insider_signal": {
@@ -908,7 +931,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:42.420627"
+      "scanned_at": "2026-10-28T17:23:20.445219"
     },
     "WMT": {
       "insider_signal": {
@@ -994,87 +1017,96 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:43.534491"
+      "trump_mentions": [
+        {
+          "headline": "Sorry, Trump. More Russian Oil Won’t Take Down Energy Prices. Here’s What Will.",
+          "date": "2026-10-27 18:09",
+          "summary": "Trump needs to do more than welcome Russian diesel into the U.S., Michael Bernstam and Steven Rosefielde write.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-28T17:23:21.343960"
     },
     "COST": {
       "insider_signal": {
         "ticker": "COST",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 6,
-        "compensation_grants": 4,
-        "net_open_market_value": -7846239.76,
-        "net_open_market_fmt": "-$7.8M",
+        "open_market_sells": 8,
+        "compensation_grants": 2,
+        "net_open_market_value": -624162.73,
+        "net_open_market_fmt": "-$624K",
         "largest_single_transaction": {
-          "name": "Wilcox William Richard",
+          "name": "Barbre Tiffany Marie",
           "direction": "sell",
-          "dollar_value": 1746105.3,
-          "dollar_fmt": "$1.7M",
-          "date": "2026-09-10",
-          "shares_traded": 1935,
-          "price_per_share": 902.38,
+          "dollar_value": 169022.86,
+          "dollar_fmt": "$169K",
+          "date": "2026-10-22",
+          "shares_traded": 166,
+          "price_per_share": 1018.21,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Wilcox William Richard",
+            "name": "George Sarah Catherine",
             "direction": "sell",
-            "dollar_value": 1054025.5,
-            "dollar_fmt": "$1.1M",
-            "date": "2026-10-13",
-            "shares_traded": 1100,
-            "price_per_share": 958.205,
+            "dollar_value": 57019.76,
+            "dollar_fmt": "$57K",
+            "date": "2026-10-22",
+            "shares_traded": 56,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Wilcox William Richard",
+            "name": "George Sarah Catherine",
             "direction": "sell",
-            "dollar_value": 1746105.3,
-            "dollar_fmt": "$1.7M",
-            "date": "2026-09-10",
-            "shares_traded": 1935,
-            "price_per_share": 902.38,
+            "dollar_value": 63129.02,
+            "dollar_fmt": "$63K",
+            "date": "2026-10-22",
+            "shares_traded": 62,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Jones Teresa A.",
+            "name": "George Sarah Catherine",
             "direction": "sell",
-            "dollar_value": 1316572.42,
-            "dollar_fmt": "$1.3M",
-            "date": "2026-09-10",
-            "shares_traded": 1459,
-            "price_per_share": 902.38,
+            "dollar_value": 61092.6,
+            "dollar_fmt": "$61K",
+            "date": "2026-10-22",
+            "shares_traded": 60,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Frates Caton",
+            "name": "Barbre Tiffany Marie",
             "direction": "sell",
-            "dollar_value": 1492536.52,
-            "dollar_fmt": "$1.5M",
-            "date": "2026-09-10",
-            "shares_traded": 1654,
-            "price_per_share": 902.38,
+            "dollar_value": 169022.86,
+            "dollar_fmt": "$169K",
+            "date": "2026-10-22",
+            "shares_traded": 166,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Riel Pierre",
+            "name": "Barbre Tiffany Marie",
             "direction": "sell",
-            "dollar_value": 1409517.56,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-09-10",
-            "shares_traded": 1562,
-            "price_per_share": 902.38,
+            "dollar_value": 86547.85,
+            "dollar_fmt": "$87K",
+            "date": "2026-10-22",
+            "shares_traded": 85,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Adamo Claudine",
+            "name": "Barbre Tiffany Marie",
             "direction": "sell",
-            "dollar_value": 827482.46,
-            "dollar_fmt": "$827K",
-            "date": "2026-09-10",
-            "shares_traded": 917,
-            "price_per_share": 902.38,
+            "dollar_value": 103857.42,
+            "dollar_fmt": "$104K",
+            "date": "2026-10-22",
+            "shares_traded": 102,
+            "price_per_share": 1018.21,
             "transaction_code": ""
           }
         ],
@@ -1082,7 +1114,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:44.539257"
+      "scanned_at": "2026-10-28T17:23:22.148541"
     },
     "FCX": {
       "insider_signal": {
@@ -1108,7 +1140,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:45.485186"
+      "scanned_at": "2026-10-28T17:23:22.960834"
     },
     "NEE": {
       "insider_signal": {
@@ -1145,7 +1177,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:46.470922"
+      "scanned_at": "2026-10-28T17:23:23.773270"
     },
     "PLD": {
       "insider_signal": {
@@ -1162,7 +1194,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-27T16:51:47.409562"
+      "scanned_at": "2026-10-28T17:23:24.553260"
     }
   }
 }
