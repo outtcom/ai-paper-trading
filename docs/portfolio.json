@@ -1,10 +1,10 @@
 {
   "session": {
     "start_date": "2026-06-25",
-    "current_day": 89,
+    "current_day": 90,
     "total_days": 90,
     "active": true,
-    "last_updated": "2026-10-27T22:09:02.277785+00:00",
+    "last_updated": "2026-10-28T22:31:27.111801+00:00",
     "session_number": 3
   },
   "cash": 4919.95,
@@ -18,12 +18,12 @@
   },
   "stats": {
     "sharpe": -0.84,
-    "sortino": -0.65,
+    "sortino": -0.64,
     "calmar": -0.83,
     "max_drawdown_pct": 3.96,
     "spy_start_price": 754.99,
-    "spy_current_price": 769.66,
-    "benchmark_return_pct": 1.94
+    "spy_current_price": 772.31,
+    "benchmark_return_pct": 2.29
   },
   "positions": {},
   "open_orders": [
@@ -1154,6 +1154,11 @@
     {
       "day": 88,
       "date": "2026-10-27",
+      "equity": 4919.95
+    },
+    {
+      "day": 89,
+      "date": "2026-10-28",
       "equity": 4919.95
     }
   ],
@@ -2417,6 +2422,11 @@
       "day": 88,
       "date": "2026-10-27",
       "equity": 5097.15
+    },
+    {
+      "day": 89,
+      "date": "2026-10-28",
+      "equity": 5114.7
     }
   ],
   "midcap_equity_curve": [
@@ -2858,6 +2868,11 @@
     {
       "day": 88,
       "date": "2026-10-27",
+      "equity": 5011.95
+    },
+    {
+      "day": 89,
+      "date": "2026-10-28",
       "equity": 5011.95
     }
   ],
@@ -3301,28 +3316,33 @@
       "day": 88,
       "date": "2026-10-27",
       "equity": 5000.0
+    },
+    {
+      "day": 89,
+      "date": "2026-10-28",
+      "equity": 5000.0
     }
   ],
   "benchmark_indices": {
     "SPY": {
       "start_price": 754.99,
-      "current_price": 769.66,
-      "return_pct": 1.94
+      "current_price": 772.31,
+      "return_pct": 2.29
     },
     "QQQ": {
       "start_price": 716.38,
-      "current_price": 721.25,
-      "return_pct": 0.68
+      "current_price": 725.61,
+      "return_pct": 1.29
     },
     "IWM": {
       "start_price": 298.91,
-      "current_price": 280.18,
-      "return_pct": -6.27
+      "current_price": 281.29,
+      "return_pct": -5.89
     },
     "GLD": {
       "start_price": 369.46,
-      "current_price": 372.28,
-      "return_pct": 0.76
+      "current_price": 373.51,
+      "return_pct": 1.1
     }
   },
   "sector_strength": {
@@ -3612,7 +3632,7 @@
   ],
   "last_run_dates": {
     "morning_session": "2026-08-26",
-    "eod_session": "2026-10-27",
+    "eod_session": "2026-10-28",
     "premarket_check": "2026-08-26",
     "penny_scan": "2026-08-26",
     "midcap_scan": "2026-08-26"
