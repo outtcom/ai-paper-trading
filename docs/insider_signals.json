@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-28",
-  "last_notified_date": "2026-10-28",
+  "date": "2026-10-29",
+  "last_notified_date": "2026-10-29",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:05.997897"
+      "scanned_at": "2026-10-29T17:31:58.283014"
     },
     "NVDA": {
       "insider_signal": {
@@ -224,7 +224,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:06.947529"
+      "scanned_at": "2026-10-29T17:31:59.852833"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +291,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:07.872989"
+      "scanned_at": "2026-10-29T17:32:01.218402"
     },
     "MU": {
       "insider_signal": {
@@ -398,33 +398,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:08.808116"
+      "scanned_at": "2026-10-29T17:32:02.281082"
     },
     "GOOGL": {
       "insider_signal": {
         "ticker": "GOOGL",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
-        "compensation_grants": 9,
-        "net_open_market_value": -28257.35,
-        "net_open_market_fmt": "-$28K",
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -64207.88,
+        "net_open_market_fmt": "-$64K",
         "largest_single_transaction": {
-          "name": "ARNOLD FRANCES",
+          "name": "Saraci Marsida",
           "direction": "sell",
-          "dollar_value": 28257.35,
-          "dollar_fmt": "$28K",
-          "date": "2026-09-30",
-          "shares_traded": 83,
-          "price_per_share": 340.45,
+          "dollar_value": 33948.96,
+          "dollar_fmt": "$34K",
+          "date": "2026-10-25",
+          "shares_traded": 107,
+          "price_per_share": 317.28,
           "transaction_code": ""
         },
         "notable_transactions": [],
-        "signal_strength": "neutral",
+        "signal_strength": "sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:09.750924"
+      "scanned_at": "2026-10-29T17:32:05.342455"
     },
     "META": {
       "insider_signal": {
@@ -531,7 +531,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:11.091713"
+      "scanned_at": "2026-10-29T17:32:07.266777"
     },
     "AMZN": {
       "insider_signal": {
@@ -578,7 +578,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:12.043182"
+      "scanned_at": "2026-10-29T17:32:08.220123"
     },
     "TSLA": {
       "insider_signal": {
@@ -615,7 +615,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:13.236242"
+      "scanned_at": "2026-10-29T17:32:09.362413"
     },
     "LLY": {
       "insider_signal": {
@@ -640,25 +640,8 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Micron Biomedical Appoints Anand Subramony, Ph.D., as Executive Vice President, Global Product Development and Combination Product Commercialization",
-          "date": "2026-10-28 11:25",
-          "summary": "Seasoned drug delivery and product development leader formerly at Lilly and AstraZeneca to advance Micron Biomedical's transition from platform technology to commercial product company Anand Subramony",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "'Trump Administration Backs Down on an Opioid Ban After Kratom Industry Lobbying' - NY Times",
-          "date": "2026-10-28 07:29",
-          "summary": "https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html",
-          "source": "Benzinga",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-10-28T17:23:14.152431"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-29T17:32:10.262332"
     },
     "UNH": {
       "insider_signal": {
@@ -675,7 +658,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:15.106290"
+      "scanned_at": "2026-10-29T17:32:11.104687"
     },
     "JPM": {
       "insider_signal": {
@@ -722,54 +705,84 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:16.140623"
+      "scanned_at": "2026-10-29T17:32:12.011438"
     },
     "GS": {
       "insider_signal": {
         "ticker": "GS",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 2,
-        "compensation_grants": 4,
-        "net_open_market_value": -222562.44,
-        "net_open_market_fmt": "-$223K",
+        "open_market_sells": 5,
+        "compensation_grants": 5,
+        "net_open_market_value": -38014410.21,
+        "net_open_market_fmt": "-$38.0M",
         "largest_single_transaction": {
-          "name": "LESLIE ERICKA T",
+          "name": "COLEMAN DENIS P.",
           "direction": "sell",
-          "dollar_value": 162875.49,
-          "dollar_fmt": "$163K",
-          "date": "2026-10-22",
-          "shares_traded": 183,
-          "price_per_share": 890.03,
+          "dollar_value": 18056846.7,
+          "dollar_fmt": "$18.1M",
+          "date": "2026-10-23",
+          "shares_traded": 20259,
+          "price_per_share": 891.3,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "LESLIE ERICKA T",
+            "name": "SOLOMON DAVID M",
             "direction": "sell",
-            "dollar_value": 59686.95,
-            "dollar_fmt": "$60K",
-            "date": "2026-10-22",
-            "shares_traded": 67,
-            "price_per_share": 890.85,
+            "dollar_value": 398592.07,
+            "dollar_fmt": "$399K",
+            "date": "2026-10-27",
+            "shares_traded": 437,
+            "price_per_share": 912.11,
             "transaction_code": ""
           },
           {
-            "name": "LESLIE ERICKA T",
+            "name": "SOLOMON DAVID M",
             "direction": "sell",
-            "dollar_value": 162875.49,
-            "dollar_fmt": "$163K",
-            "date": "2026-10-22",
-            "shares_traded": 183,
-            "price_per_share": 890.03,
+            "dollar_value": 2171169.18,
+            "dollar_fmt": "$2.2M",
+            "date": "2026-10-27",
+            "shares_traded": 2382,
+            "price_per_share": 911.49,
+            "transaction_code": ""
+          },
+          {
+            "name": "SOLOMON DAVID M",
+            "direction": "sell",
+            "dollar_value": 8358933.26,
+            "dollar_fmt": "$8.4M",
+            "date": "2026-10-27",
+            "shares_traded": 9181,
+            "price_per_share": 910.46,
+            "transaction_code": ""
+          },
+          {
+            "name": "COLEMAN DENIS P.",
+            "direction": "sell",
+            "dollar_value": 18056846.7,
+            "dollar_fmt": "$18.1M",
+            "date": "2026-10-23",
+            "shares_traded": 20259,
+            "price_per_share": 891.3,
+            "transaction_code": ""
+          },
+          {
+            "name": "FREDMAN SHEARA J",
+            "direction": "sell",
+            "dollar_value": 9028869.0,
+            "dollar_fmt": "$9.0M",
+            "date": "2026-10-23",
+            "shares_traded": 10130,
+            "price_per_share": 891.3,
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:16.988989"
+      "scanned_at": "2026-10-29T17:32:13.057975"
     },
     "XOM": {
       "insider_signal": {
@@ -787,23 +800,23 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Iran Wants a Deal as 1 Million Barrels of Venezuelan Oil Arrive in Texas Ahead of Midterms: 'It's a Question of When Do I Want to End It'",
-          "date": "2026-10-28 03:37",
-          "summary": "Trump says Iran wants a deal but Washington controls the timing of any agreements; touts Venezuelan oil gains.",
-          "source": "Benzinga",
+          "headline": "Exxon’s Report Lands After Trump Called the Oil Spike “A Freaking Fortune”. Here’s the Number to Watch",
+          "date": "2026-10-29 10:58",
+          "summary": "Key TakeawaysExxonMobil reports third-quarter results before the open on Friday, Oct. 30, days after President Trump said the US is “making a freaking fortune” from the Iran war’s oil spike.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "sentiment_hint": "neutral"
         },
         {
-          "headline": "Trump Could Allow More Russian Diesel Into US to Push Putin Toward Peace — But Energy Secretary Says There’s a Catch",
-          "date": "2026-10-28 03:13",
-          "summary": "Wright signals more Russian diesel shipments if Moscow seeks peace; Trump rolls back methane rules, touting $45B in savings amid criticism.",
+          "headline": "Kevin Warsh Admits Rising Oil Prices Are Fueling Inflation Expectations as Trump's Energy Holdings Reportedly Soar 3X Amid Iran War",
+          "date": "2026-10-29 05:11",
+          "summary": "Trump&#39;s energy holdings may reach $81.6M as Iran war boosts oil stocks; Fed&#39;s Warsh admits fuel costs are lifting inflation expectations.",
           "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-28T17:23:17.830201"
+      "scanned_at": "2026-10-29T17:32:13.924755"
     },
     "CVX": {
       "insider_signal": {
@@ -871,25 +884,25 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Iran Wants a Deal as 1 Million Barrels of Venezuelan Oil Arrive in Texas Ahead of Midterms: 'It's a Question of When Do I Want to End It'",
-          "date": "2026-10-28 03:37",
-          "summary": "Trump says Iran wants a deal but Washington controls the timing of any agreements; touts Venezuelan oil gains.",
+          "headline": "Kevin Warsh Admits Rising Oil Prices Are Fueling Inflation Expectations as Trump's Energy Holdings Reportedly Soar 3X Amid Iran War",
+          "date": "2026-10-29 05:11",
+          "summary": "Trump&#39;s energy holdings may reach $81.6M as Iran war boosts oil stocks; Fed&#39;s Warsh admits fuel costs are lifting inflation expectations.",
           "source": "Benzinga",
           "keyword_matched": "trump",
-          "sentiment_hint": "positive"
+          "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-28T17:23:18.735137"
+      "scanned_at": "2026-10-29T17:32:14.838276"
     },
     "CAT": {
       "insider_signal": {
         "ticker": "CAT",
         "days_back": 60,
-        "open_market_buys": 6,
+        "open_market_buys": 10,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 87054.42,
-        "net_open_market_fmt": "+$87K",
+        "net_open_market_value": 126505.83,
+        "net_open_market_fmt": "+$127K",
         "largest_single_transaction": {
           "name": "GOOD LYNN J",
           "direction": "buy",
@@ -905,7 +918,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:19.573023"
+      "scanned_at": "2026-10-29T17:32:15.731712"
     },
     "GE": {
       "insider_signal": {
@@ -931,7 +944,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:20.445219"
+      "scanned_at": "2026-10-29T17:32:16.766359"
     },
     "WMT": {
       "insider_signal": {
@@ -1017,50 +1030,51 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Sorry, Trump. More Russian Oil Won’t Take Down Energy Prices. Here’s What Will.",
-          "date": "2026-10-27 18:09",
-          "summary": "Trump needs to do more than welcome Russian diesel into the U.S., Michael Bernstam and Steven Rosefielde write.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-10-28T17:23:21.343960"
+      "trump_mentions": [],
+      "scanned_at": "2026-10-29T17:32:18.215689"
     },
     "COST": {
       "insider_signal": {
         "ticker": "COST",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 8,
-        "compensation_grants": 2,
-        "net_open_market_value": -624162.73,
-        "net_open_market_fmt": "-$624K",
+        "open_market_sells": 10,
+        "compensation_grants": 0,
+        "net_open_market_value": -4096258.83,
+        "net_open_market_fmt": "-$4.1M",
         "largest_single_transaction": {
-          "name": "Barbre Tiffany Marie",
+          "name": "Sullivan John Christopher",
           "direction": "sell",
-          "dollar_value": 169022.86,
-          "dollar_fmt": "$169K",
+          "dollar_value": 992754.75,
+          "dollar_fmt": "$993K",
           "date": "2026-10-22",
-          "shares_traded": 166,
+          "shares_traded": 975,
           "price_per_share": 1018.21,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "George Sarah Catherine",
+            "name": "Self Adam Webb",
             "direction": "sell",
-            "dollar_value": 57019.76,
-            "dollar_fmt": "$57K",
+            "dollar_value": 58037.97,
+            "dollar_fmt": "$58K",
             "date": "2026-10-22",
-            "shares_traded": 56,
+            "shares_traded": 57,
             "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "George Sarah Catherine",
+            "name": "Self Adam Webb",
+            "direction": "sell",
+            "dollar_value": 65165.44,
+            "dollar_fmt": "$65K",
+            "date": "2026-10-22",
+            "shares_traded": 64,
+            "price_per_share": 1018.21,
+            "transaction_code": ""
+          },
+          {
+            "name": "Self Adam Webb",
             "direction": "sell",
             "dollar_value": 63129.02,
             "dollar_fmt": "$63K",
@@ -1070,42 +1084,52 @@
             "transaction_code": ""
           },
           {
-            "name": "George Sarah Catherine",
+            "name": "Sullivan John Christopher",
             "direction": "sell",
-            "dollar_value": 61092.6,
-            "dollar_fmt": "$61K",
+            "dollar_value": 851223.56,
+            "dollar_fmt": "$851K",
             "date": "2026-10-22",
-            "shares_traded": 60,
+            "shares_traded": 836,
             "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Barbre Tiffany Marie",
+            "name": "Sullivan John Christopher",
             "direction": "sell",
-            "dollar_value": 169022.86,
-            "dollar_fmt": "$169K",
+            "dollar_value": 745329.72,
+            "dollar_fmt": "$745K",
             "date": "2026-10-22",
-            "shares_traded": 166,
+            "shares_traded": 732,
             "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Barbre Tiffany Marie",
+            "name": "Sullivan John Christopher",
             "direction": "sell",
-            "dollar_value": 86547.85,
-            "dollar_fmt": "$87K",
+            "dollar_value": 992754.75,
+            "dollar_fmt": "$993K",
             "date": "2026-10-22",
-            "shares_traded": 85,
+            "shares_traded": 975,
             "price_per_share": 1018.21,
             "transaction_code": ""
           },
           {
-            "name": "Barbre Tiffany Marie",
+            "name": "Sullivan John Christopher",
             "direction": "sell",
-            "dollar_value": 103857.42,
-            "dollar_fmt": "$104K",
+            "dollar_value": 658781.87,
+            "dollar_fmt": "$659K",
             "date": "2026-10-22",
-            "shares_traded": 102,
+            "shares_traded": 647,
+            "price_per_share": 1018.21,
+            "transaction_code": ""
+          },
+          {
+            "name": "Sullivan John Christopher",
+            "direction": "sell",
+            "dollar_value": 583434.33,
+            "dollar_fmt": "$583K",
+            "date": "2026-10-22",
+            "shares_traded": 573,
             "price_per_share": 1018.21,
             "transaction_code": ""
           }
@@ -1114,7 +1138,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:22.148541"
+      "scanned_at": "2026-10-29T17:32:19.094482"
     },
     "FCX": {
       "insider_signal": {
@@ -1140,7 +1164,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:22.960834"
+      "scanned_at": "2026-10-29T17:32:19.952387"
     },
     "NEE": {
       "insider_signal": {
@@ -1177,7 +1201,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:23.773270"
+      "scanned_at": "2026-10-29T17:32:20.784918"
     },
     "PLD": {
       "insider_signal": {
@@ -1194,7 +1218,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-28T17:23:24.553260"
+      "scanned_at": "2026-10-29T17:32:21.621427"
     }
   }
 }
