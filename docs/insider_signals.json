@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-29",
-  "last_notified_date": "2026-10-29",
+  "date": "2026-10-30",
+  "last_notified_date": "2026-10-30",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -117,7 +117,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:31:58.283014"
+      "scanned_at": "2026-10-30T17:10:48.909041"
     },
     "NVDA": {
       "insider_signal": {
@@ -223,8 +223,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:31:59.852833"
+      "trump_mentions": [
+        {
+          "headline": "Trump’s Commerce Department’s Intel Stake Fell By More Than $10 Billion In A Day As Stock Craters",
+          "date": "2026-10-30 14:55",
+          "summary": "Intel's stock cratered overnight, and the U.S. government woke up holding a stake worth billions less than the day before. Whether that paper loss signals a deeper foundry crisis or a buying opportuni",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-10-30T17:10:50.073505"
     },
     "MSFT": {
       "insider_signal": {
@@ -291,7 +300,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:01.218402"
+      "scanned_at": "2026-10-30T17:10:51.076072"
     },
     "MU": {
       "insider_signal": {
@@ -398,7 +407,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:02.281082"
+      "scanned_at": "2026-10-30T17:10:52.230607"
     },
     "GOOGL": {
       "insider_signal": {
@@ -424,7 +433,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:05.342455"
+      "scanned_at": "2026-10-30T17:10:53.386400"
     },
     "META": {
       "insider_signal": {
@@ -433,19 +442,69 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -2260597.5,
-        "net_open_market_fmt": "-$2.3M",
+        "net_open_market_value": -1702428.8,
+        "net_open_market_fmt": "-$1.7M",
         "largest_single_transaction": {
           "name": "Olivan Javier",
           "direction": "sell",
-          "dollar_value": 688782.6,
-          "dollar_fmt": "$689K",
-          "date": "2026-10-12",
+          "dollar_value": 605440,
+          "dollar_fmt": "$605K",
+          "date": "2026-10-26",
           "shares_traded": 946,
-          "price_per_share": 728.1,
+          "price_per_share": 640,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Alford Peggy",
+            "direction": "sell",
+            "dollar_value": 249600,
+            "dollar_fmt": "$250K",
+            "date": "2026-10-26",
+            "shares_traded": 390,
+            "price_per_share": 640,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 261120,
+            "dollar_fmt": "$261K",
+            "date": "2026-10-26",
+            "shares_traded": 408,
+            "price_per_share": 640,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 52480,
+            "dollar_fmt": "$52K",
+            "date": "2026-10-26",
+            "shares_traded": 82,
+            "price_per_share": 640,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 52480,
+            "dollar_fmt": "$52K",
+            "date": "2026-10-26",
+            "shares_traded": 82,
+            "price_per_share": 640,
+            "transaction_code": ""
+          },
+          {
+            "name": "Olivan Javier",
+            "direction": "sell",
+            "dollar_value": 605440,
+            "dollar_fmt": "$605K",
+            "date": "2026-10-26",
+            "shares_traded": 946,
+            "price_per_share": 640,
+            "transaction_code": ""
+          },
           {
             "name": "Olivan Javier",
             "direction": "sell",
@@ -475,63 +534,13 @@
             "shares_traded": 82,
             "price_per_share": 707.2,
             "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 669011.2,
-            "dollar_fmt": "$669K",
-            "date": "2026-10-19",
-            "shares_traded": 946,
-            "price_per_share": 707.2,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 297064.8,
-            "dollar_fmt": "$297K",
-            "date": "2026-10-12",
-            "shares_traded": 408,
-            "price_per_share": 728.1,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 59704.2,
-            "dollar_fmt": "$60K",
-            "date": "2026-10-12",
-            "shares_traded": 82,
-            "price_per_share": 728.1,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 59704.2,
-            "dollar_fmt": "$60K",
-            "date": "2026-10-12",
-            "shares_traded": 82,
-            "price_per_share": 728.1,
-            "transaction_code": ""
-          },
-          {
-            "name": "Olivan Javier",
-            "direction": "sell",
-            "dollar_value": 688782.6,
-            "dollar_fmt": "$689K",
-            "date": "2026-10-12",
-            "shares_traded": 946,
-            "price_per_share": 728.1,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:07.266777"
+      "scanned_at": "2026-10-30T17:10:54.519474"
     },
     "AMZN": {
       "insider_signal": {
@@ -578,7 +587,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:08.220123"
+      "scanned_at": "2026-10-30T17:10:55.474607"
     },
     "TSLA": {
       "insider_signal": {
@@ -614,8 +623,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:09.362413"
+      "trump_mentions": [
+        {
+          "headline": "ORLY Q3 Earnings Beat Estimates on Strong Sales & Tariff Refunds",
+          "date": "2026-10-30 12:46",
+          "summary": "O'Reilly's Q3 2026 earnings beat estimates on robust sales and tariff refunds, while strong professional demand and margin gains fueled a higher 2026 outlook.",
+          "source": "Yahoo",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-10-30T17:10:56.464140"
     },
     "LLY": {
       "insider_signal": {
@@ -641,7 +659,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:10.262332"
+      "scanned_at": "2026-10-30T17:10:57.414457"
     },
     "UNH": {
       "insider_signal": {
@@ -658,7 +676,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:11.104687"
+      "scanned_at": "2026-10-30T17:10:58.289812"
     },
     "JPM": {
       "insider_signal": {
@@ -705,7 +723,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:12.011438"
+      "scanned_at": "2026-10-30T17:10:59.297242"
     },
     "GS": {
       "insider_signal": {
@@ -782,7 +800,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:13.057975"
+      "scanned_at": "2026-10-30T17:11:00.197189"
     },
     "XOM": {
       "insider_signal": {
@@ -800,23 +818,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Exxon’s Report Lands After Trump Called the Oil Spike “A Freaking Fortune”. Here’s the Number to Watch",
-          "date": "2026-10-29 10:58",
-          "summary": "Key TakeawaysExxonMobil reports third-quarter results before the open on Friday, Oct. 30, days after President Trump said the US is “making a freaking fortune” from the Iran war’s oil spike.",
+          "headline": "Trump Says Gasoline Prices Will Come “Plummeting Down.” Exxon and Chevron Didn’t Get the Memo",
+          "date": "2026-10-30 15:24",
+          "summary": "Key TakeawaysExxonMobil and Chevron beat third-quarter estimates on Friday, with adjusted EPS of $4. 23 and $5.",
           "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "Kevin Warsh Admits Rising Oil Prices Are Fueling Inflation Expectations as Trump's Energy Holdings Reportedly Soar 3X Amid Iran War",
-          "date": "2026-10-29 05:11",
-          "summary": "Trump&#39;s energy holdings may reach $81.6M as Iran war boosts oil stocks; Fed&#39;s Warsh admits fuel costs are lifting inflation expectations.",
-          "source": "Benzinga",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-29T17:32:13.924755"
+      "scanned_at": "2026-10-30T17:11:01.351499"
     },
     "CVX": {
       "insider_signal": {
@@ -884,15 +894,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Kevin Warsh Admits Rising Oil Prices Are Fueling Inflation Expectations as Trump's Energy Holdings Reportedly Soar 3X Amid Iran War",
-          "date": "2026-10-29 05:11",
-          "summary": "Trump&#39;s energy holdings may reach $81.6M as Iran war boosts oil stocks; Fed&#39;s Warsh admits fuel costs are lifting inflation expectations.",
-          "source": "Benzinga",
+          "headline": "Trump Says Gasoline Prices Will Come “Plummeting Down.” Exxon and Chevron Didn’t Get the Memo",
+          "date": "2026-10-30 15:24",
+          "summary": "Key TakeawaysExxonMobil and Chevron beat third-quarter estimates on Friday, with adjusted EPS of $4. 23 and $5.",
+          "source": "Yahoo",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
         }
       ],
-      "scanned_at": "2026-10-29T17:32:14.838276"
+      "scanned_at": "2026-10-30T17:11:02.328172"
     },
     "CAT": {
       "insider_signal": {
@@ -918,7 +928,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:15.731712"
+      "scanned_at": "2026-10-30T17:11:03.231576"
     },
     "GE": {
       "insider_signal": {
@@ -944,7 +954,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:16.766359"
+      "scanned_at": "2026-10-30T17:11:04.108837"
     },
     "WMT": {
       "insider_signal": {
@@ -1031,7 +1041,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:18.215689"
+      "scanned_at": "2026-10-30T17:11:05.010197"
     },
     "COST": {
       "insider_signal": {
@@ -1138,7 +1148,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:19.094482"
+      "scanned_at": "2026-10-30T17:11:05.983467"
     },
     "FCX": {
       "insider_signal": {
@@ -1164,7 +1174,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:19.952387"
+      "scanned_at": "2026-10-30T17:11:06.834948"
     },
     "NEE": {
       "insider_signal": {
@@ -1201,7 +1211,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:20.784918"
+      "scanned_at": "2026-10-30T17:11:07.685412"
     },
     "PLD": {
       "insider_signal": {
@@ -1218,7 +1228,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-10-29T17:32:21.621427"
+      "scanned_at": "2026-10-30T17:11:08.562416"
     }
   }
 }
