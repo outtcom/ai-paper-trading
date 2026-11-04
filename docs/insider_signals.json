@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-03",
-  "last_notified_date": "2026-11-03",
+  "date": "2026-11-04",
+  "last_notified_date": "2026-11-04",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -126,8 +126,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:28.036594"
+      "trump_mentions": [
+        {
+          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
+          "date": "2026-11-04 17:02",
+          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-04T18:52:16.797472"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,8 +242,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:28.653050"
+      "trump_mentions": [
+        {
+          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
+          "date": "2026-11-04 17:02",
+          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-04T18:52:17.439754"
     },
     "MSFT": {
       "insider_signal": {
@@ -300,8 +318,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:29.325590"
+      "trump_mentions": [
+        {
+          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
+          "date": "2026-11-04 17:02",
+          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-04T18:52:18.078455"
     },
     "MU": {
       "insider_signal": {
@@ -408,7 +435,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:29.959533"
+      "scanned_at": "2026-11-04T18:52:18.702670"
     },
     "GOOGL": {
       "insider_signal": {
@@ -433,8 +460,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:30.786300"
+      "trump_mentions": [
+        {
+          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
+          "date": "2026-11-04 17:02",
+          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-04T18:52:20.088993"
     },
     "META": {
       "insider_signal": {
@@ -541,7 +577,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:31.595314"
+      "scanned_at": "2026-11-04T18:52:23.132134"
     },
     "AMZN": {
       "insider_signal": {
@@ -577,8 +613,17 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:32.225895"
+      "trump_mentions": [
+        {
+          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
+          "date": "2026-11-04 17:02",
+          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-04T18:52:24.134323"
     },
     "TSLA": {
       "insider_signal": {
@@ -586,7 +631,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 1,
-        "compensation_grants": 2,
+        "compensation_grants": 0,
         "net_open_market_value": -938509.2,
         "net_open_market_fmt": "-$939K",
         "largest_single_transaction": {
@@ -615,7 +660,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:32.967136"
+      "scanned_at": "2026-11-04T18:52:24.796281"
     },
     "LLY": {
       "insider_signal": {
@@ -641,7 +686,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:33.577489"
+      "scanned_at": "2026-11-04T18:52:25.428072"
     },
     "UNH": {
       "insider_signal": {
@@ -667,7 +712,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-11-03T18:39:34.182879"
+      "scanned_at": "2026-11-04T18:52:26.221835"
     },
     "JPM": {
       "insider_signal": {
@@ -714,7 +759,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:34.821313"
+      "scanned_at": "2026-11-04T18:52:26.844202"
     },
     "GS": {
       "insider_signal": {
@@ -801,7 +846,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:35.430735"
+      "scanned_at": "2026-11-04T18:52:27.479039"
     },
     "XOM": {
       "insider_signal": {
@@ -819,6 +864,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Says Iran “Wants a Settlement.” CEO Predicts Peace Sends Oil 40% Lower for Exxon, Chevron",
+          "date": "2026-11-03 20:36",
+          "summary": "Key TakeawaysBrent crude fell 8% on Nov. 2 after Iran signaled it was open to peace talks and President Trump posted that Iran wants a settlement.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "The U.S. Has Been Striking Iran as Trump Talks Up a Deal",
           "date": "2026-11-03 17:47",
           "summary": "Trump posted that oil was crashing because Iran wants peace, then US officials said American jets had just struck Iranian territory. The two stories cannot both be true, and oil traders are now bettin",
@@ -827,7 +880,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-11-03T18:39:36.026184"
+      "scanned_at": "2026-11-04T18:52:28.210594"
     },
     "CVX": {
       "insider_signal": {
@@ -895,6 +948,14 @@
       },
       "trump_mentions": [
         {
+          "headline": "Trump Says Iran “Wants a Settlement.” CEO Predicts Peace Sends Oil 40% Lower for Exxon, Chevron",
+          "date": "2026-11-03 20:36",
+          "summary": "Key TakeawaysBrent crude fell 8% on Nov. 2 after Iran signaled it was open to peace talks and President Trump posted that Iran wants a settlement.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        },
+        {
           "headline": "The U.S. Has Been Striking Iran as Trump Talks Up a Deal",
           "date": "2026-11-03 17:47",
           "summary": "Trump posted that oil was crashing because Iran wants peace, then US officials said American jets had just struck Iranian territory. The two stories cannot both be true, and oil traders are now bettin",
@@ -903,7 +964,7 @@
           "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-11-03T18:39:36.674694"
+      "scanned_at": "2026-11-04T18:52:28.882208"
     },
     "CAT": {
       "insider_signal": {
@@ -929,7 +990,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:37.415435"
+      "scanned_at": "2026-11-04T18:52:29.504988"
     },
     "GE": {
       "insider_signal": {
@@ -955,7 +1016,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:38.180807"
+      "scanned_at": "2026-11-04T18:52:30.100940"
     },
     "WMT": {
       "insider_signal": {
@@ -1041,17 +1102,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Trump’s FTC Turns to DoorDash’s Pricing and Dasher Pay After the Instacart Deal",
-          "date": "2026-11-03 17:46",
-          "summary": "Key TakeawaysOn Oct. 28, the FTC ordered DoorDash, Instacart, Walmart and six other companies to explain whether they use personal data to set prices and gig-worker pay, a day before DoorDash agreed t",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-11-03T18:39:38.811349"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-04T18:52:30.733821"
     },
     "COST": {
       "insider_signal": {
@@ -1157,17 +1209,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Why Is Costco (COST) Facing Class Action Lawsuits Over Tariff Refunds?",
-          "date": "2026-11-02 14:07",
-          "summary": "Costco Wholesale (NasdaqGS:COST) is facing multiple class action lawsuits over how it handled tariff-related refunds to members. Plaintiffs claim Costco passed import tariffs on to shoppers, then did ",
-          "source": "Yahoo",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-03T18:39:39.479573"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-04T18:52:31.339122"
     },
     "FCX": {
       "insider_signal": {
@@ -1193,7 +1236,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:40.105372"
+      "scanned_at": "2026-11-04T18:52:31.928462"
     },
     "NEE": {
       "insider_signal": {
@@ -1230,7 +1273,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:40.740000"
+      "scanned_at": "2026-11-04T18:52:32.521476"
     },
     "PLD": {
       "insider_signal": {
@@ -1247,7 +1290,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-03T18:39:41.395965"
+      "scanned_at": "2026-11-04T18:52:33.110829"
     }
   }
 }
