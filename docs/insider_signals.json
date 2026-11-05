@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-04",
-  "last_notified_date": "2026-11-04",
+  "date": "2026-11-05",
+  "last_notified_date": "2026-11-05",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -126,17 +126,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
-          "date": "2026-11-04 17:02",
-          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:16.797472"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:12.027353"
     },
     "NVDA": {
       "insider_signal": {
@@ -242,17 +233,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
-          "date": "2026-11-04 17:02",
-          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:17.439754"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:13.169038"
     },
     "MSFT": {
       "insider_signal": {
@@ -318,17 +300,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
-          "date": "2026-11-04 17:02",
-          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:18.078455"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:14.495074"
     },
     "MU": {
       "insider_signal": {
@@ -435,7 +408,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:18.702670"
+      "scanned_at": "2026-11-05T18:58:15.597009"
     },
     "GOOGL": {
       "insider_signal": {
@@ -460,17 +433,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
-          "date": "2026-11-04 17:02",
-          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:20.088993"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:16.756130"
     },
     "META": {
       "insider_signal": {
@@ -577,7 +541,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:23.132134"
+      "scanned_at": "2026-11-05T18:58:17.985105"
     },
     "AMZN": {
       "insider_signal": {
@@ -613,17 +577,8 @@
         "signal_strength": "sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Dow Skyrockets 1,500 Points in Best Day Since Trump's Tariff Pause",
-          "date": "2026-11-04 17:02",
-          "summary": "The Dow was on track for its best post-Election Day performance since 1986.",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:24.134323"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:19.097840"
     },
     "TSLA": {
       "insider_signal": {
@@ -660,33 +615,74 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:24.796281"
+      "scanned_at": "2026-11-05T18:58:20.193223"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
-        "open_market_buys": 8,
-        "open_market_sells": 0,
-        "compensation_grants": 1,
-        "net_open_market_value": 87677.72,
-        "net_open_market_fmt": "+$88K",
+        "open_market_buys": 0,
+        "open_market_sells": 4,
+        "compensation_grants": 6,
+        "net_open_market_value": -12034944.22,
+        "net_open_market_fmt": "-$12.0M",
         "largest_single_transaction": {
-          "name": "LUCIANO JUAN R",
-          "direction": "buy",
-          "dollar_value": 16308.46,
-          "dollar_fmt": "$16K",
-          "date": "2026-09-21",
-          "shares_traded": 14,
-          "price_per_share": 1164.89,
+          "name": "Hakim Anat",
+          "direction": "sell",
+          "dollar_value": 7012600.0,
+          "dollar_fmt": "$7.0M",
+          "date": "2026-11-02",
+          "shares_traded": 5000,
+          "price_per_share": 1402.52,
           "transaction_code": ""
         },
-        "notable_transactions": [],
-        "signal_strength": "strong_buy",
+        "notable_transactions": [
+          {
+            "name": "Hakim Anat",
+            "direction": "sell",
+            "dollar_value": 7012600.0,
+            "dollar_fmt": "$7.0M",
+            "date": "2026-11-02",
+            "shares_traded": 5000,
+            "price_per_share": 1402.52,
+            "transaction_code": ""
+          },
+          {
+            "name": "Brown Adrienne S",
+            "direction": "sell",
+            "dollar_value": 1557876.46,
+            "dollar_fmt": "$1.6M",
+            "date": "2026-11-01",
+            "shares_traded": 1099,
+            "price_per_share": 1417.54,
+            "transaction_code": ""
+          },
+          {
+            "name": "Custer Kenneth L.",
+            "direction": "sell",
+            "dollar_value": 2019994.5,
+            "dollar_fmt": "$2.0M",
+            "date": "2026-11-01",
+            "shares_traded": 1425,
+            "price_per_share": 1417.54,
+            "transaction_code": ""
+          },
+          {
+            "name": "Dozier Eric",
+            "direction": "sell",
+            "dollar_value": 1444473.26,
+            "dollar_fmt": "$1.4M",
+            "date": "2026-11-01",
+            "shares_traded": 1019,
+            "price_per_share": 1417.54,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:25.428072"
+      "scanned_at": "2026-11-05T18:58:21.281906"
     },
     "UNH": {
       "insider_signal": {
@@ -702,17 +698,8 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "‘We Need to Break Up Big Medicine’: Elizabeth Warren Says Trump DOJ Gave UnitedHealth ‘More Power’ in $3.3 Billion Amedisys Deal",
-          "date": "2026-11-03 14:30",
-          "summary": "Sen. Elizabeth Warren (D-Mass.) blamed President Donald Trump‘s administration for letting UnitedHealth Group Inc. buy Amedisys Inc. for $3.3 billion, arguing it gives the insurer more power to raise ",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
-        }
-      ],
-      "scanned_at": "2026-11-04T18:52:26.221835"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-05T18:58:22.332967"
     },
     "JPM": {
       "insider_signal": {
@@ -759,7 +746,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:26.844202"
+      "scanned_at": "2026-11-05T18:58:23.354227"
     },
     "GS": {
       "insider_signal": {
@@ -846,7 +833,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:27.479039"
+      "scanned_at": "2026-11-05T18:58:24.356394"
     },
     "XOM": {
       "insider_signal": {
@@ -864,23 +851,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Iran “Wants a Settlement.” CEO Predicts Peace Sends Oil 40% Lower for Exxon, Chevron",
-          "date": "2026-11-03 20:36",
-          "summary": "Key TakeawaysBrent crude fell 8% on Nov. 2 after Iran signaled it was open to peace talks and President Trump posted that Iran wants a settlement.",
-          "source": "Yahoo",
+          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
+          "date": "2026-11-04 13:52",
+          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
+          "source": "SeekingAlpha",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "The U.S. Has Been Striking Iran as Trump Talks Up a Deal",
-          "date": "2026-11-03 17:47",
-          "summary": "Trump posted that oil was crashing because Iran wants peace, then US officials said American jets had just struck Iranian territory. The two stories cannot both be true, and oil traders are now bettin",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-11-04T18:52:28.210594"
+      "scanned_at": "2026-11-05T18:58:25.372289"
     },
     "CVX": {
       "insider_signal": {
@@ -948,23 +927,15 @@
       },
       "trump_mentions": [
         {
-          "headline": "Trump Says Iran “Wants a Settlement.” CEO Predicts Peace Sends Oil 40% Lower for Exxon, Chevron",
-          "date": "2026-11-03 20:36",
-          "summary": "Key TakeawaysBrent crude fell 8% on Nov. 2 after Iran signaled it was open to peace talks and President Trump posted that Iran wants a settlement.",
-          "source": "Yahoo",
+          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
+          "date": "2026-11-04 13:52",
+          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
+          "source": "SeekingAlpha",
           "keyword_matched": "trump",
           "sentiment_hint": "neutral"
-        },
-        {
-          "headline": "The U.S. Has Been Striking Iran as Trump Talks Up a Deal",
-          "date": "2026-11-03 17:47",
-          "summary": "Trump posted that oil was crashing because Iran wants peace, then US officials said American jets had just struck Iranian territory. The two stories cannot both be true, and oil traders are now bettin",
-          "source": "Yahoo",
-          "keyword_matched": "trump",
-          "sentiment_hint": "positive"
         }
       ],
-      "scanned_at": "2026-11-04T18:52:28.882208"
+      "scanned_at": "2026-11-05T18:58:26.448012"
     },
     "CAT": {
       "insider_signal": {
@@ -973,24 +944,35 @@
         "open_market_buys": 10,
         "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": 126505.83,
-        "net_open_market_fmt": "+$127K",
+        "net_open_market_value": 731285.81,
+        "net_open_market_fmt": "+$731K",
         "largest_single_transaction": {
-          "name": "GOOD LYNN J",
+          "name": "Fish James C Jr",
           "direction": "buy",
-          "dollar_value": 24630.3,
-          "dollar_fmt": "$25K",
-          "date": "2026-09-30",
-          "shares_traded": 30,
-          "price_per_share": 821.01,
+          "dollar_value": 620390.0,
+          "dollar_fmt": "$620K",
+          "date": "2026-11-02",
+          "shares_traded": 1000,
+          "price_per_share": 620.39,
           "transaction_code": ""
         },
-        "notable_transactions": [],
+        "notable_transactions": [
+          {
+            "name": "Fish James C Jr",
+            "direction": "buy",
+            "dollar_value": 620390.0,
+            "dollar_fmt": "$620K",
+            "date": "2026-11-02",
+            "shares_traded": 1000,
+            "price_per_share": 620.39,
+            "transaction_code": ""
+          }
+        ],
         "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:29.504988"
+      "scanned_at": "2026-11-05T18:58:27.492498"
     },
     "GE": {
       "insider_signal": {
@@ -1016,7 +998,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:30.100940"
+      "scanned_at": "2026-11-05T18:58:28.503080"
     },
     "WMT": {
       "insider_signal": {
@@ -1025,19 +1007,39 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -3013978.42,
-        "net_open_market_fmt": "-$3.0M",
+        "net_open_market_value": -23485136.56,
+        "net_open_market_fmt": "-$23.5M",
         "largest_single_transaction": {
-          "name": "Furner John R.",
+          "name": "Kumar Suresh",
           "direction": "sell",
-          "dollar_value": 852994.56,
-          "dollar_fmt": "$853K",
-          "date": "2026-10-15",
-          "shares_traded": 7089,
-          "price_per_share": 120.3265,
+          "dollar_value": 20494997.82,
+          "dollar_fmt": "$20.5M",
+          "date": "2026-10-30",
+          "shares_traded": 166342,
+          "price_per_share": 123.21,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Bartlett Daniel J",
+            "direction": "sell",
+            "dollar_value": 416607.11,
+            "dollar_fmt": "$417K",
+            "date": "2026-11-02",
+            "shares_traded": 3346,
+            "price_per_share": 124.509,
+            "transaction_code": ""
+          },
+          {
+            "name": "Kumar Suresh",
+            "direction": "sell",
+            "dollar_value": 20494997.82,
+            "dollar_fmt": "$20.5M",
+            "date": "2026-10-30",
+            "shares_traded": 166342,
+            "price_per_share": 123.21,
+            "transaction_code": ""
+          },
           {
             "name": "Nicholas Christopher James",
             "direction": "sell",
@@ -1087,23 +1089,13 @@
             "shares_traded": 5000,
             "price_per_share": 115,
             "transaction_code": ""
-          },
-          {
-            "name": "Bartlett Daniel J",
-            "direction": "sell",
-            "dollar_value": 416595.9,
-            "dollar_fmt": "$417K",
-            "date": "2026-10-01",
-            "shares_traded": 3990,
-            "price_per_share": 104.41,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:30.733821"
+      "scanned_at": "2026-11-05T18:58:29.547571"
     },
     "COST": {
       "insider_signal": {
@@ -1210,7 +1202,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:31.339122"
+      "scanned_at": "2026-11-05T18:58:30.593790"
     },
     "FCX": {
       "insider_signal": {
@@ -1235,29 +1227,48 @@
         "signal_strength": "buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:31.928462"
+      "trump_mentions": [
+        {
+          "headline": "Democratic Sweep Revives the Stalled Copper Tariff Trade",
+          "date": "2026-11-04 17:40",
+          "summary": "Copper markets face a political twist as Democratic gains threaten AI data-center growth while Trump&#39;s tariff powers could give Freeport-McMoRan an unexpected edge.",
+          "source": "Benzinga",
+          "keyword_matched": "tariff",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-05T18:58:31.768735"
     },
     "NEE": {
       "insider_signal": {
         "ticker": "NEE",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 1,
+        "open_market_sells": 2,
         "compensation_grants": 2,
-        "net_open_market_value": -77601.33,
-        "net_open_market_fmt": "-$78K",
+        "net_open_market_value": -663081.33,
+        "net_open_market_fmt": "-$663K",
         "largest_single_transaction": {
-          "name": "May James Michael",
+          "name": "Dunne Michael",
           "direction": "sell",
-          "dollar_value": 145636.05,
-          "dollar_fmt": "$146K",
-          "date": "2026-10-12",
-          "shares_traded": 1855,
-          "price_per_share": 78.51,
+          "dollar_value": 585480,
+          "dollar_fmt": "$585K",
+          "date": "2026-11-02",
+          "shares_traded": 6888,
+          "price_per_share": 85,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Dunne Michael",
+            "direction": "sell",
+            "dollar_value": 585480,
+            "dollar_fmt": "$585K",
+            "date": "2026-11-02",
+            "shares_traded": 6888,
+            "price_per_share": 85,
+            "transaction_code": ""
+          },
           {
             "name": "May James Michael",
             "direction": "sell",
@@ -1269,11 +1280,20 @@
             "transaction_code": ""
           }
         ],
-        "signal_strength": "sell",
+        "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:32.521476"
+      "trump_mentions": [
+        {
+          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
+          "date": "2026-11-04 13:52",
+          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
+          "source": "SeekingAlpha",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-05T18:58:32.706921"
     },
     "PLD": {
       "insider_signal": {
@@ -1290,7 +1310,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-04T18:52:33.110829"
+      "scanned_at": "2026-11-05T18:58:33.686617"
     }
   }
 }
