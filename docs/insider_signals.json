@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-05",
-  "last_notified_date": "2026-11-05",
+  "date": "2026-11-06",
+  "last_notified_date": "2026-11-06",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -127,7 +127,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:12.027353"
+      "scanned_at": "2026-11-06T18:27:04.720750"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,8 +233,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:13.169038"
+      "trump_mentions": [
+        {
+          "headline": "Bitcoin rebounds after sell-off, and the White House gets crypto broker rules",
+          "date": "2026-11-06 17:00",
+          "summary": "Scott Melker discusses bitcoin (BTC-USD) erasing its losses from a sell-off, Trump Media  (DJT)moves bitcoin, and the SEC crypto broker rules hitting the White House. \"The Daily Wolf with Scott Melker",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-06T18:27:05.346743"
     },
     "MSFT": {
       "insider_signal": {
@@ -301,7 +310,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:14.495074"
+      "scanned_at": "2026-11-06T18:27:06.142418"
     },
     "MU": {
       "insider_signal": {
@@ -407,8 +416,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:15.597009"
+      "trump_mentions": [
+        {
+          "headline": "Bitcoin rebounds after sell-off, and the White House gets crypto broker rules",
+          "date": "2026-11-06 17:00",
+          "summary": "Scott Melker discusses bitcoin (BTC-USD) erasing its losses from a sell-off, Trump Media  (DJT)moves bitcoin, and the SEC crypto broker rules hitting the White House. \"The Daily Wolf with Scott Melker",
+          "source": "Yahoo",
+          "keyword_matched": "white house",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-06T18:27:06.782800"
     },
     "GOOGL": {
       "insider_signal": {
@@ -434,7 +452,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:16.756130"
+      "scanned_at": "2026-11-06T18:27:07.517902"
     },
     "META": {
       "insider_signal": {
@@ -443,97 +461,97 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -1702428.8,
-        "net_open_market_fmt": "-$1.7M",
+        "net_open_market_value": -8632830.86,
+        "net_open_market_fmt": "-$8.6M",
         "largest_single_transaction": {
-          "name": "Olivan Javier",
+          "name": "Andreessen Marc L",
           "direction": "sell",
-          "dollar_value": 605440,
-          "dollar_fmt": "$605K",
-          "date": "2026-10-26",
-          "shares_traded": 946,
-          "price_per_share": 640,
+          "dollar_value": 2824939.83,
+          "dollar_fmt": "$2.8M",
+          "date": "2026-11-02",
+          "shares_traded": 4629,
+          "price_per_share": 610.27,
           "transaction_code": ""
         },
         "notable_transactions": [
           {
-            "name": "Alford Peggy",
-            "direction": "sell",
-            "dollar_value": 249600,
-            "dollar_fmt": "$250K",
-            "date": "2026-10-26",
-            "shares_traded": 390,
-            "price_per_share": 640,
-            "transaction_code": ""
-          },
-          {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 261120,
-            "dollar_fmt": "$261K",
-            "date": "2026-10-26",
+            "dollar_value": 250573.2,
+            "dollar_fmt": "$251K",
+            "date": "2026-11-02",
             "shares_traded": 408,
-            "price_per_share": 640,
+            "price_per_share": 614.15,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 52480,
-            "dollar_fmt": "$52K",
-            "date": "2026-10-26",
+            "dollar_value": 50360.3,
+            "dollar_fmt": "$50K",
+            "date": "2026-11-02",
             "shares_traded": 82,
-            "price_per_share": 640,
+            "price_per_share": 614.15,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 52480,
-            "dollar_fmt": "$52K",
-            "date": "2026-10-26",
+            "dollar_value": 50360.3,
+            "dollar_fmt": "$50K",
+            "date": "2026-11-02",
             "shares_traded": 82,
-            "price_per_share": 640,
+            "price_per_share": 614.15,
             "transaction_code": ""
           },
           {
             "name": "Olivan Javier",
             "direction": "sell",
-            "dollar_value": 605440,
-            "dollar_fmt": "$605K",
-            "date": "2026-10-26",
+            "dollar_value": 580985.9,
+            "dollar_fmt": "$581K",
+            "date": "2026-11-02",
             "shares_traded": 946,
-            "price_per_share": 640,
+            "price_per_share": 614.15,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Andreessen Marc L",
             "direction": "sell",
-            "dollar_value": 288537.6,
-            "dollar_fmt": "$289K",
-            "date": "2026-10-19",
-            "shares_traded": 408,
-            "price_per_share": 707.2,
+            "dollar_value": 792125.2,
+            "dollar_fmt": "$792K",
+            "date": "2026-11-02",
+            "shares_traded": 1292,
+            "price_per_share": 613.1,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Andreessen Marc L",
             "direction": "sell",
-            "dollar_value": 57990.4,
-            "dollar_fmt": "$58K",
-            "date": "2026-10-19",
-            "shares_traded": 82,
-            "price_per_share": 707.2,
+            "dollar_value": 1215670.32,
+            "dollar_fmt": "$1.2M",
+            "date": "2026-11-02",
+            "shares_traded": 1986,
+            "price_per_share": 612.12,
             "transaction_code": ""
           },
           {
-            "name": "Olivan Javier",
+            "name": "Andreessen Marc L",
             "direction": "sell",
-            "dollar_value": 57990.4,
-            "dollar_fmt": "$58K",
-            "date": "2026-10-19",
-            "shares_traded": 82,
-            "price_per_share": 707.2,
+            "dollar_value": 2793520.94,
+            "dollar_fmt": "$2.8M",
+            "date": "2026-11-02",
+            "shares_traded": 4571,
+            "price_per_share": 611.14,
+            "transaction_code": ""
+          },
+          {
+            "name": "Andreessen Marc L",
+            "direction": "sell",
+            "dollar_value": 2824939.83,
+            "dollar_fmt": "$2.8M",
+            "date": "2026-11-02",
+            "shares_traded": 4629,
+            "price_per_share": 610.27,
             "transaction_code": ""
           }
         ],
@@ -541,17 +559,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:17.985105"
+      "scanned_at": "2026-11-06T18:27:08.372098"
     },
     "AMZN": {
       "insider_signal": {
         "ticker": "AMZN",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 2,
         "compensation_grants": 2,
-        "net_open_market_value": -251500.0,
-        "net_open_market_fmt": "-$252K",
+        "net_open_market_value": -494970.0,
+        "net_open_market_fmt": "-$495K",
         "largest_single_transaction": {
           "name": "Herrington Douglas J",
           "direction": "sell",
@@ -563,6 +581,16 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Herrington Douglas J",
+            "direction": "sell",
+            "dollar_value": 243470.0,
+            "dollar_fmt": "$243K",
+            "date": "2026-11-02",
+            "shares_traded": 1000,
+            "price_per_share": 243.47,
+            "transaction_code": ""
+          },
           {
             "name": "Herrington Douglas J",
             "direction": "sell",
@@ -578,7 +606,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:19.097840"
+      "scanned_at": "2026-11-06T18:27:09.108181"
     },
     "TSLA": {
       "insider_signal": {
@@ -615,17 +643,17 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:20.193223"
+      "scanned_at": "2026-11-06T18:27:09.782642"
     },
     "LLY": {
       "insider_signal": {
         "ticker": "LLY",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 4,
-        "compensation_grants": 6,
-        "net_open_market_value": -12034944.22,
-        "net_open_market_fmt": "-$12.0M",
+        "open_market_sells": 3,
+        "compensation_grants": 7,
+        "net_open_market_value": -10590470.96,
+        "net_open_market_fmt": "-$10.6M",
         "largest_single_transaction": {
           "name": "Hakim Anat",
           "direction": "sell",
@@ -666,23 +694,13 @@
             "shares_traded": 1425,
             "price_per_share": 1417.54,
             "transaction_code": ""
-          },
-          {
-            "name": "Dozier Eric",
-            "direction": "sell",
-            "dollar_value": 1444473.26,
-            "dollar_fmt": "$1.4M",
-            "date": "2026-11-01",
-            "shares_traded": 1019,
-            "price_per_share": 1417.54,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:21.281906"
+      "scanned_at": "2026-11-06T18:27:10.406851"
     },
     "UNH": {
       "insider_signal": {
@@ -699,7 +717,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:22.332967"
+      "scanned_at": "2026-11-06T18:27:11.017795"
     },
     "JPM": {
       "insider_signal": {
@@ -746,7 +764,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:23.354227"
+      "scanned_at": "2026-11-06T18:27:11.649607"
     },
     "GS": {
       "insider_signal": {
@@ -833,7 +851,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:24.356394"
+      "scanned_at": "2026-11-06T18:27:12.270520"
     },
     "XOM": {
       "insider_signal": {
@@ -849,27 +867,18 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
-          "date": "2026-11-04 13:52",
-          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-05T18:58:25.372289"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-06T18:27:12.871515"
     },
     "CVX": {
       "insider_signal": {
         "ticker": "CVX",
         "days_back": 60,
-        "open_market_buys": 2,
-        "open_market_sells": 2,
-        "compensation_grants": 2,
-        "net_open_market_value": -4047304.02,
-        "net_open_market_fmt": "-$4.0M",
+        "open_market_buys": 3,
+        "open_market_sells": 3,
+        "compensation_grants": 4,
+        "net_open_market_value": -7283367.89,
+        "net_open_market_fmt": "-$7.3M",
         "largest_single_transaction": {
           "name": "Pate R. Hewitt",
           "direction": "sell",
@@ -881,6 +890,36 @@
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "GUSTAVSON JEFF B",
+            "direction": "sell",
+            "dollar_value": 5638275.26,
+            "dollar_fmt": "$5.6M",
+            "date": "2026-11-02",
+            "shares_traded": 24439,
+            "price_per_share": 230.7081,
+            "transaction_code": ""
+          },
+          {
+            "name": "GUSTAVSON JEFF B",
+            "direction": "buy",
+            "dollar_value": 1721772.0,
+            "dollar_fmt": "$1.7M",
+            "date": "2026-11-02",
+            "shares_traded": 15600,
+            "price_per_share": 110.37,
+            "transaction_code": ""
+          },
+          {
+            "name": "GUSTAVSON JEFF B",
+            "direction": "buy",
+            "dollar_value": 998895.39,
+            "dollar_fmt": "$999K",
+            "date": "2026-11-02",
+            "shares_traded": 8839,
+            "price_per_share": 113.01,
+            "transaction_code": ""
+          },
           {
             "name": "Pate R. Hewitt",
             "direction": "sell",
@@ -910,32 +949,13 @@
             "shares_traded": 2400,
             "price_per_share": 225.6108,
             "transaction_code": ""
-          },
-          {
-            "name": "Pate R. Hewitt",
-            "direction": "buy",
-            "dollar_value": 318456.0,
-            "dollar_fmt": "$318K",
-            "date": "2026-10-19",
-            "shares_traded": 2400,
-            "price_per_share": 132.69,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
-          "date": "2026-11-04 13:52",
-          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-05T18:58:26.448012"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-06T18:27:13.472147"
     },
     "CAT": {
       "insider_signal": {
@@ -971,8 +991,17 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:27.492498"
+      "trump_mentions": [
+        {
+          "headline": "Caterpillar Group President of Construction Industries Rod Shurman to Participate in Fireside Chat Hosted by Chad Dillard of Bernstein",
+          "date": "2026-11-06 14:15",
+          "summary": "Caterpillar Inc. (NYSE: CAT) Group President of Construction Industries Rod Shurman is expected to participate in a fireside chat hosted by Chad Dillard of Bernstein in North Carolina on Tuesday, Nov.",
+          "source": "Yahoo",
+          "keyword_matched": "president",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-06T18:27:14.090692"
     },
     "GE": {
       "insider_signal": {
@@ -998,7 +1027,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:28.503080"
+      "scanned_at": "2026-11-06T18:27:14.756238"
     },
     "WMT": {
       "insider_signal": {
@@ -1095,7 +1124,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:29.547571"
+      "scanned_at": "2026-11-06T18:27:15.380123"
     },
     "COST": {
       "insider_signal": {
@@ -1202,7 +1231,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:30.593790"
+      "scanned_at": "2026-11-06T18:27:15.985649"
     },
     "FCX": {
       "insider_signal": {
@@ -1237,7 +1266,7 @@
           "sentiment_hint": "negative"
         }
       ],
-      "scanned_at": "2026-11-05T18:58:31.768735"
+      "scanned_at": "2026-11-06T18:27:16.571651"
     },
     "NEE": {
       "insider_signal": {
@@ -1283,17 +1312,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "U.S. Midterms: Blue Tsunami, Trump Loses Congress, Wall Street Picks New Winners",
-          "date": "2026-11-04 13:52",
-          "summary": "Investors are rotating from oil and gas to renewable energy, nuclear, and AI infrastructure enablers amid new political & power constraints. Discover more here.",
-          "source": "SeekingAlpha",
-          "keyword_matched": "trump",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-05T18:58:32.706921"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-06T18:27:17.167096"
     },
     "PLD": {
       "insider_signal": {
@@ -1310,7 +1330,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-05T18:58:33.686617"
+      "scanned_at": "2026-11-06T18:27:17.763221"
     }
   }
 }
