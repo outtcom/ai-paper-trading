@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-06",
-  "last_notified_date": "2026-11-06",
+  "date": "2026-11-10",
+  "last_notified_date": "2026-11-10",
   "signals": {
     "AAPL": {
       "insider_signal": {
@@ -9,19 +9,29 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -27190279.3,
-        "net_open_market_fmt": "-$27.2M",
+        "net_open_market_value": -14383074.15,
+        "net_open_market_fmt": "-$14.4M",
         "largest_single_transaction": {
-          "name": "O'BRIEN DEIRDRE",
+          "name": "Ternus John",
           "direction": "sell",
-          "dollar_value": 13588679.4,
-          "dollar_fmt": "$13.6M",
+          "dollar_value": 4248751.64,
+          "dollar_fmt": "$4.2M",
           "date": "2026-10-02",
-          "shares_traded": 40764,
-          "price_per_share": 333.35,
+          "shares_traded": 12746,
+          "price_per_share": 333.34,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Newstead Jennifer",
+            "direction": "sell",
+            "dollar_value": 781474.25,
+            "dollar_fmt": "$781K",
+            "date": "2026-11-03",
+            "shares_traded": 2399,
+            "price_per_share": 325.75,
+            "transaction_code": ""
+          },
           {
             "name": "Newstead Jennifer",
             "direction": "sell",
@@ -111,23 +121,13 @@
             "shares_traded": 5625,
             "price_per_share": 333.91,
             "transaction_code": ""
-          },
-          {
-            "name": "O'BRIEN DEIRDRE",
-            "direction": "sell",
-            "dollar_value": 13588679.4,
-            "dollar_fmt": "$13.6M",
-            "date": "2026-10-02",
-            "shares_traded": 40764,
-            "price_per_share": 333.35,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:04.720750"
+      "scanned_at": "2026-11-10T18:49:47.751615"
     },
     "NVDA": {
       "insider_signal": {
@@ -233,17 +233,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Bitcoin rebounds after sell-off, and the White House gets crypto broker rules",
-          "date": "2026-11-06 17:00",
-          "summary": "Scott Melker discusses bitcoin (BTC-USD) erasing its losses from a sell-off, Trump Media  (DJT)moves bitcoin, and the SEC crypto broker rules hitting the White House. \"The Daily Wolf with Scott Melker",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-06T18:27:05.346743"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-10T18:49:48.761383"
     },
     "MSFT": {
       "insider_signal": {
@@ -309,8 +300,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:06.142418"
+      "trump_mentions": [
+        {
+          "headline": "Microsoft challenges Trump's new ban over major AI risk",
+          "date": "2026-11-10 14:44",
+          "summary": "The company warns that restrictions on Chinese optical transceivers could delay U.S. AI infrastructure projects.",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "negative"
+        }
+      ],
+      "scanned_at": "2026-11-10T18:49:49.710618"
     },
     "MU": {
       "insider_signal": {
@@ -416,17 +416,8 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Bitcoin rebounds after sell-off, and the White House gets crypto broker rules",
-          "date": "2026-11-06 17:00",
-          "summary": "Scott Melker discusses bitcoin (BTC-USD) erasing its losses from a sell-off, Trump Media  (DJT)moves bitcoin, and the SEC crypto broker rules hitting the White House. \"The Daily Wolf with Scott Melker",
-          "source": "Yahoo",
-          "keyword_matched": "white house",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-06T18:27:06.782800"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-10T18:49:50.714291"
     },
     "GOOGL": {
       "insider_signal": {
@@ -452,7 +443,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:07.517902"
+      "scanned_at": "2026-11-10T18:49:51.833128"
     },
     "META": {
       "insider_signal": {
@@ -461,19 +452,29 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -8632830.86,
-        "net_open_market_fmt": "-$8.6M",
+        "net_open_market_value": -67879094.03,
+        "net_open_market_fmt": "-$67.9M",
         "largest_single_transaction": {
-          "name": "Andreessen Marc L",
+          "name": "Zuckerberg Mark",
           "direction": "sell",
-          "dollar_value": 2824939.83,
-          "dollar_fmt": "$2.8M",
-          "date": "2026-11-02",
-          "shares_traded": 4629,
-          "price_per_share": 610.27,
+          "dollar_value": 62071203.0,
+          "dollar_fmt": "$62.1M",
+          "date": "2026-11-04",
+          "shares_traded": 97935,
+          "price_per_share": 633.8,
           "transaction_code": ""
         },
         "notable_transactions": [
+          {
+            "name": "Zuckerberg Mark",
+            "direction": "sell",
+            "dollar_value": 62071203.0,
+            "dollar_fmt": "$62.1M",
+            "date": "2026-11-04",
+            "shares_traded": 97935,
+            "price_per_share": 633.8,
+            "transaction_code": ""
+          },
           {
             "name": "Olivan Javier",
             "direction": "sell",
@@ -543,23 +544,22 @@
             "shares_traded": 4571,
             "price_per_share": 611.14,
             "transaction_code": ""
-          },
-          {
-            "name": "Andreessen Marc L",
-            "direction": "sell",
-            "dollar_value": 2824939.83,
-            "dollar_fmt": "$2.8M",
-            "date": "2026-11-02",
-            "shares_traded": 4629,
-            "price_per_share": 610.27,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:08.372098"
+      "trump_mentions": [
+        {
+          "headline": "Trump Media Jumps 9% as Crypto Gains Drive $410 Million Q3 Profit; Rumble Falls 3%, Meta Holds Steady",
+          "date": "2026-11-10 16:57",
+          "summary": "Trump Media's bottom line flipped dramatically last quarter, yet the real story hides beneath the headline number. While Rumble slips and Meta barely moves, one quiet product and a looming December vo",
+          "source": "Yahoo",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-10T18:49:53.098080"
     },
     "AMZN": {
       "insider_signal": {
@@ -567,7 +567,7 @@
         "days_back": 60,
         "open_market_buys": 0,
         "open_market_sells": 2,
-        "compensation_grants": 2,
+        "compensation_grants": 0,
         "net_open_market_value": -494970.0,
         "net_open_market_fmt": "-$495K",
         "largest_single_transaction": {
@@ -606,44 +606,33 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:09.108181"
+      "scanned_at": "2026-11-10T18:49:54.176456"
     },
     "TSLA": {
       "insider_signal": {
         "ticker": "TSLA",
         "days_back": 60,
         "open_market_buys": 0,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 0,
-        "net_open_market_value": -938509.2,
-        "net_open_market_fmt": "-$939K",
-        "largest_single_transaction": {
-          "name": "Taneja Vaibhav",
-          "direction": "sell",
-          "dollar_value": 938509.2,
-          "dollar_fmt": "$939K",
-          "date": "2026-09-08",
-          "shares_traded": 2606,
-          "price_per_share": 360.134,
-          "transaction_code": ""
-        },
-        "notable_transactions": [
-          {
-            "name": "Taneja Vaibhav",
-            "direction": "sell",
-            "dollar_value": 938509.2,
-            "dollar_fmt": "$939K",
-            "date": "2026-09-08",
-            "shares_traded": 2606,
-            "price_per_share": 360.134,
-            "transaction_code": ""
-          }
-        ],
-        "signal_strength": "strong_sell",
+        "net_open_market_value": 0.0,
+        "net_open_market_fmt": "+$0",
+        "largest_single_transaction": null,
+        "notable_transactions": [],
+        "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:09.782642"
+      "trump_mentions": [
+        {
+          "headline": "'Elon Musk and Michael Miebach to join Trump at Apec in Shenzhen. What about Jensen Huang?' - SCMP",
+          "date": "2026-11-10 04:18",
+          "summary": "https://www.scmp.com/news/china/diplomacy/article/3373901/top-us-business-leaders-including-elon-musk-set-join-donald-trump-apec-china ",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-10T18:49:55.155611"
     },
     "LLY": {
       "insider_signal": {
@@ -700,7 +689,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:10.406851"
+      "scanned_at": "2026-11-10T18:49:56.086415"
     },
     "UNH": {
       "insider_signal": {
@@ -717,25 +706,25 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:11.017795"
+      "scanned_at": "2026-11-10T18:49:57.005352"
     },
     "JPM": {
       "insider_signal": {
         "ticker": "JPM",
         "days_back": 60,
         "open_market_buys": 4,
-        "open_market_sells": 1,
+        "open_market_sells": 0,
         "compensation_grants": 1,
-        "net_open_market_value": -700731.66,
-        "net_open_market_fmt": "-$701K",
+        "net_open_market_value": 181294.84,
+        "net_open_market_fmt": "+$181K",
         "largest_single_transaction": {
-          "name": "Leopold Robin",
-          "direction": "sell",
-          "dollar_value": 882026.5,
-          "dollar_fmt": "$882K",
-          "date": "2026-09-10",
-          "shares_traded": 2500,
-          "price_per_share": 352.8106,
+          "name": "BURKE STEPHEN B",
+          "direction": "buy",
+          "dollar_value": 56241.1,
+          "dollar_fmt": "$56K",
+          "date": "2026-09-30",
+          "shares_traded": 170,
+          "price_per_share": 330.83,
           "transaction_code": ""
         },
         "notable_transactions": [
@@ -748,23 +737,13 @@
             "shares_traded": 170,
             "price_per_share": 330.83,
             "transaction_code": ""
-          },
-          {
-            "name": "Leopold Robin",
-            "direction": "sell",
-            "dollar_value": 882026.5,
-            "dollar_fmt": "$882K",
-            "date": "2026-09-10",
-            "shares_traded": 2500,
-            "price_per_share": 352.8106,
-            "transaction_code": ""
           }
         ],
-        "signal_strength": "strong_sell",
+        "signal_strength": "strong_buy",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:11.649607"
+      "scanned_at": "2026-11-10T18:49:57.890107"
     },
     "GS": {
       "insider_signal": {
@@ -851,7 +830,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:12.270520"
+      "scanned_at": "2026-11-10T18:49:58.758599"
     },
     "XOM": {
       "insider_signal": {
@@ -867,8 +846,17 @@
         "signal_strength": "neutral",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:12.871515"
+      "trump_mentions": [
+        {
+          "headline": "Mark Kelly Slams President as Americans Pay More at The Pump: 'Trump Is Getting Richer Off His Oil and Gas Stocks'",
+          "date": "2026-11-10 09:05",
+          "summary": "Kelly accused Trump of profiting from rising oil and gas stocks while families face higher gas prices, spotlighting conflicts of interest.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-10T18:49:59.620372"
     },
     "CVX": {
       "insider_signal": {
@@ -954,8 +942,17 @@
         "signal_strength": "strong_sell",
         "error": null
       },
-      "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:13.472147"
+      "trump_mentions": [
+        {
+          "headline": "Mark Kelly Slams President as Americans Pay More at The Pump: 'Trump Is Getting Richer Off His Oil and Gas Stocks'",
+          "date": "2026-11-10 09:05",
+          "summary": "Kelly accused Trump of profiting from rising oil and gas stocks while families face higher gas prices, spotlighting conflicts of interest.",
+          "source": "Benzinga",
+          "keyword_matched": "trump",
+          "sentiment_hint": "neutral"
+        }
+      ],
+      "scanned_at": "2026-11-10T18:50:00.650639"
     },
     "CAT": {
       "insider_signal": {
@@ -991,43 +988,65 @@
         "signal_strength": "strong_buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Caterpillar Group President of Construction Industries Rod Shurman to Participate in Fireside Chat Hosted by Chad Dillard of Bernstein",
-          "date": "2026-11-06 14:15",
-          "summary": "Caterpillar Inc. (NYSE: CAT) Group President of Construction Industries Rod Shurman is expected to participate in a fireside chat hosted by Chad Dillard of Bernstein in North Carolina on Tuesday, Nov.",
-          "source": "Yahoo",
-          "keyword_matched": "president",
-          "sentiment_hint": "neutral"
-        }
-      ],
-      "scanned_at": "2026-11-06T18:27:14.090692"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-10T18:50:01.544905"
     },
     "GE": {
       "insider_signal": {
         "ticker": "GE",
         "days_back": 60,
-        "open_market_buys": 3,
-        "open_market_sells": 0,
-        "compensation_grants": 0,
-        "net_open_market_value": 87529.6,
-        "net_open_market_fmt": "+$88K",
+        "open_market_buys": 4,
+        "open_market_sells": 2,
+        "compensation_grants": 1,
+        "net_open_market_value": -4057782.56,
+        "net_open_market_fmt": "-$4.1M",
         "largest_single_transaction": {
-          "name": "BUSH WESLEY G",
-          "direction": "buy",
-          "dollar_value": 38616.0,
-          "dollar_fmt": "$39K",
-          "date": "2026-09-30",
-          "shares_traded": 120,
-          "price_per_share": 321.8,
+          "name": "Giglietti Robert M.",
+          "direction": "sell",
+          "dollar_value": 3664913.04,
+          "dollar_fmt": "$3.7M",
+          "date": "2026-11-04",
+          "shares_traded": 11016,
+          "price_per_share": 332.69,
           "transaction_code": ""
         },
-        "notable_transactions": [],
-        "signal_strength": "strong_buy",
+        "notable_transactions": [
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "sell",
+            "dollar_value": 3664913.04,
+            "dollar_fmt": "$3.7M",
+            "date": "2026-11-04",
+            "shares_traded": 11016,
+            "price_per_share": 332.69,
+            "transaction_code": ""
+          },
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "sell",
+            "dollar_value": 1255413.6,
+            "dollar_fmt": "$1.3M",
+            "date": "2026-11-04",
+            "shares_traded": 3780,
+            "price_per_share": 332.12,
+            "transaction_code": ""
+          },
+          {
+            "name": "Giglietti Robert M.",
+            "direction": "buy",
+            "dollar_value": 775014.48,
+            "dollar_fmt": "$775K",
+            "date": "2026-11-04",
+            "shares_traded": 14796,
+            "price_per_share": 52.38,
+            "transaction_code": ""
+          }
+        ],
+        "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:14.756238"
+      "scanned_at": "2026-11-10T18:50:02.463355"
     },
     "WMT": {
       "insider_signal": {
@@ -1036,8 +1055,8 @@
         "open_market_buys": 0,
         "open_market_sells": 10,
         "compensation_grants": 0,
-        "net_open_market_value": -23485136.56,
-        "net_open_market_fmt": "-$23.5M",
+        "net_open_market_value": -22953304.93,
+        "net_open_market_fmt": "-$23.0M",
         "largest_single_transaction": {
           "name": "Kumar Suresh",
           "direction": "sell",
@@ -1108,23 +1127,13 @@
             "shares_traded": 7089,
             "price_per_share": 120.3265,
             "transaction_code": ""
-          },
-          {
-            "name": "Watkins Latriece",
-            "direction": "sell",
-            "dollar_value": 575000,
-            "dollar_fmt": "$575K",
-            "date": "2026-10-14",
-            "shares_traded": 5000,
-            "price_per_share": 115,
-            "transaction_code": ""
           }
         ],
         "signal_strength": "strong_sell",
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:15.380123"
+      "scanned_at": "2026-11-10T18:50:03.791242"
     },
     "COST": {
       "insider_signal": {
@@ -1231,7 +1240,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:15.985649"
+      "scanned_at": "2026-11-10T18:50:05.106049"
     },
     "FCX": {
       "insider_signal": {
@@ -1256,17 +1265,8 @@
         "signal_strength": "buy",
         "error": null
       },
-      "trump_mentions": [
-        {
-          "headline": "Democratic Sweep Revives the Stalled Copper Tariff Trade",
-          "date": "2026-11-04 17:40",
-          "summary": "Copper markets face a political twist as Democratic gains threaten AI data-center growth while Trump&#39;s tariff powers could give Freeport-McMoRan an unexpected edge.",
-          "source": "Benzinga",
-          "keyword_matched": "tariff",
-          "sentiment_hint": "negative"
-        }
-      ],
-      "scanned_at": "2026-11-06T18:27:16.571651"
+      "trump_mentions": [],
+      "scanned_at": "2026-11-10T18:50:05.944063"
     },
     "NEE": {
       "insider_signal": {
@@ -1313,7 +1313,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:17.167096"
+      "scanned_at": "2026-11-10T18:50:06.791386"
     },
     "PLD": {
       "insider_signal": {
@@ -1330,7 +1330,7 @@
         "error": null
       },
       "trump_mentions": [],
-      "scanned_at": "2026-11-06T18:27:17.763221"
+      "scanned_at": "2026-11-10T18:50:07.655644"
     }
   }
 }
